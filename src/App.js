@@ -1,11 +1,14 @@
-import logo from './logo.svg';
+import { Routes, Route, Link } from "react-router-dom";
 import './App.css';
+import Home from "./Components/Home/Home";
 
 function App() {
   return (
-    <>
-    <h1>Hello world</h1>
-    </>
+    <div data-theme="light">
+    <Routes>
+      <Route path="/" element={<Home></Home>}></Route>
+    </Routes>
+    </div>
   );
 }
 
