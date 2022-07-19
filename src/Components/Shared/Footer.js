@@ -38,10 +38,9 @@ const Footer = () => {
                 <div class="md:place-self-center md:justify-self-end">
                     <div class="grid grid-flow-col gap-4">
 
-                        <a href='https://www.linkedin.com/in/rashelmahomud/'><i class="fa-brands fa-linkedin"></i></a>
-                        <a href='https://github.com/rashelmahomud'><i class="fa-brands fa-github"></i></a>
-                        <a href='https://web.facebook.com/rashelmahomud.raj'><i className="fa-brands fa-facebook"></i></a>
-
+                        <a className='text-2xl' href='https://www.linkedin.com/in/rashelmahomud/'><i class="fa-brands fa-linkedin"></i></a>
+                        <a className='text-2xl' href='https://github.com/rashelmahomud'><i class="fa-brands fa-github"></i></a>
+                        <a className='text-2xl' href='https://web.facebook.com/rashelmahomud.raj'><i className="fa-brands fa-facebook"></i></a>
 
                     </div>
                 </div>
