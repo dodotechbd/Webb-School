@@ -21,10 +21,10 @@ const Navbar = () => {
         {manuItems}
       </ul>
     </div>
-    <Link to ="/"><img width='200px' src={wslogo} alt=''></img></Link>
+    <Link to ="/"><img width='170px' src={wslogo} alt=''></img></Link>
   </div>
   <div class="navbar-end hidden lg:flex">
-    <ul class="menu menu-horizontal p-0">
+    <ul class="menu menu-horizontal p-0  font-bold">
     {manuItems}
     </ul>
   </div>
