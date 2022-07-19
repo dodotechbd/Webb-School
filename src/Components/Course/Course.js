@@ -4,7 +4,7 @@ const Course = ({ course }) => {
     const { id, name, img, description, price } = course;
     return (
         <div>
-            <div class="card w-100 bg-base-100 shadow-xl">
+            <a href='#' class="card w-100 bg-base-100 border border-2 h-full transform transition duration-500 hover:scale-110 hover:shadow-xl">
                 <figure>
                     <img src={img} alt="Shoes" />
                 </figure>
@@ -15,9 +15,9 @@ const Course = ({ course }) => {
                     </h2>
                     <p className='text-xl'>{description}</p>
                     <p className='text-2xl font-bold'>${price}</p>
-                    <button className="btn btn-success mt-4">Enroll Course</button>
+                    <div className="text-center font-bold text-xl text-primary border-t-2 w-full border-gray pt-2">Enroll Course</div>
                 </div>
-            </div>
+            </a>
         </div>
     );
 };
