@@ -5,7 +5,7 @@ const AdmissionCard = ({ admission }) => {
   console.log(name);
   return (
     <div>
-      <a href={link} target="blank" class="group rounded h-28 card card-side bg-base-200 shadow-sm hover:bg-primary">
+      <a href={link} target="blank" class="group mx-4 rounded h-28 card card-side bg-base-200 shadow-sm hover:bg-neutral">
         <figure>
           <img className="w-48 h-28" src={img} alt="Movie" />
         </figure>

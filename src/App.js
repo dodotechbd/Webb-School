@@ -4,7 +4,7 @@ import Home from "./Components/Home/Home";
 
 function App() {
   return (
-    <div data-theme="light">
+    <div data-theme="mytheme">
     <Routes>
       <Route path="/" element={<Home></Home>}></Route>
     </Routes>
