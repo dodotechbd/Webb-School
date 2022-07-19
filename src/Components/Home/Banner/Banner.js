@@ -17,9 +17,9 @@ const Banner = () => {
   return (
     <div>
       <div className="px-12 py-12 bg-neutral">
-        <h1 className="font-bold text-5xl text-white text-center
-        my-4">Special discount!</h1>
-        <p className="text-xl text-white text-center
+        <h1 className="font-bold text-4xl text-white text-center
+        my-4">Special Discount!</h1>
+        <p className="text-xl hidden lg:block text-white text-center
         mb-12">On the occasion of Eid, various courses of Webb School can be done more cost-effectively throughout the month of July!</p>
         <Swiper
           slidesPerView={5}
