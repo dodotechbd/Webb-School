@@ -7,10 +7,10 @@ const Admission = () => {
 
   return (
     <div className="my-10">
-      <h1 className="text-4xl font-semibold text-center">
+      <h1 className="text-3xl font-semibold text-center">
         Admission Preparation
       </h1>
-      <p className="text-2xl text-center text-gray-500">
+      <p className="text-xl text-center text-gray-500">
         Prepare for your dream university
       </p>
       <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-2 gap-5 lg:mx-8 my-12">
