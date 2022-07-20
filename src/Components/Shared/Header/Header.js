@@ -44,9 +44,9 @@ const Header = () => {
   return (
     <div class="navbar bg-base-100 shadow-lg fixed top-0 w-full z-50 lg:px-10">
       <div class="navbar-start">
-        <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
           <div>
-            <ul tabindex="0" class="p-2 bg-base-100 rounded-box">
+            <ul tabindex="0" class="p-2 bg-base-100 ">
                 <Link to="/">
                   <img className="w-36 mt-2 mb-1 mx-auto" src={wslogo} alt=""></img>
                 </Link>
@@ -70,15 +70,16 @@ const Header = () => {
               <li className="my-2 text-lg text-center">
                 <Link to="login">Login</Link>
               </li>
-              <hr />
             </ul>
           </div>
         </Drawer>
         <Link to="/">
-          <img width="140px" src={wslogo} alt=""></img>
+          <div>
+          <img className="w-36" src={wslogo} alt=""></img>
+          </div>
         </Link>
       </div>
-      <div class="navbar-center mr-56">
+      <div class="navbar-center lg:mr-56">
         <ul class="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
       </div>
       <div class="navbar-end lg:hidden">
@@ -86,22 +87,9 @@ const Header = () => {
           <label
             onClick={toggleDrawer}
             tabindex="0"
-            class="btn btn-ghost lg:hidden"
+            class="mx-4 text-2xl lg:hidden"
           >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
+            <i class="fa-solid fa-bars"></i>
           </label>
         </div>
       </div>

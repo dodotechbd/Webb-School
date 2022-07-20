@@ -5,17 +5,17 @@ const Navigation = () => {
   return (
     <div className="lg:mx-10 mx-3">
       <div className="my-10">
-        <h1 className="text-3xl font-semibold text-center">
+        <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
           We have everything you <br /> need to learn anything
         </h1>
-        <p className="text-xl text-center text-gray-500">
+        <p className="lg:text-xl text-md my-5 text-center text-gray-500">
           Choose your topic from our vast library to get started
         </p>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 bg-gray-100 px-3 py-3 rounded-xl">
+      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 bg-gray-100 px-3 py-3 rounded-xl">
         <a
           href="#store"
-          class="hover:border hover:border-primary border border-white hover:text-primary text-lg font-bold bg-base-100 rounded-xl text-black"
+          class="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
         >
           {" "}
           <div className="">
@@ -30,7 +30,7 @@ const Navigation = () => {
         </a>
         <a
           href="#admission"
-          class="hover:border hover:border-primary border border-white hover:text-primary text-lg font-bold bg-base-100 rounded-xl text-black"
+          class="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
         >
           {" "}
           <div className="">
@@ -45,7 +45,7 @@ const Navigation = () => {
         </a>
         <a
           href="#job"
-          class="hover:border hover:border-primary border border-white hover:text-primary text-lg font-bold bg-base-100 rounded-xl text-black"
+          class="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
         >
           {" "}
           <div className="">
@@ -60,7 +60,7 @@ const Navigation = () => {
         </a>
         <a
           href="#courses"
-          class="hover:border hover:border-primary border border-white hover:text-primary text-lg font-bold bg-base-100 rounded-xl text-black"
+          class="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
         >
           {" "}
           <div className="">
@@ -74,9 +74,9 @@ const Navigation = () => {
           </div>
         </a>
       </div>
-      <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3">
+      <div className="grid grid-cols-2 lg:gap-5 md:grid-cols-2 lg:grid-cols-3">
         <div class="card bg-base-100">
-          <div class="card-body">
+          <div class="card-body p-0 mt-9">
             <div class="avatar mx-auto lg:my-3">
               <div class="w-18 rounded-full">
                 <img src="https://cdn.10minuteschool.com/images/Landing_page/Video%20lecture.svg" />
@@ -89,7 +89,7 @@ const Navigation = () => {
           </div>
         </div>
         <div class="card bg-base-100">
-          <div class="card-body">
+          <div class="card-body p-0 mt-9">
             <div class="avatar mx-auto lg:my-3">
               <div class="w-18 rounded-full">
                 <img src="https://cdn.10minuteschool.com/images/Landing_page/Exercise.svg" />
@@ -102,7 +102,7 @@ const Navigation = () => {
           </div>
         </div>
         <div class="card bg-base-100">
-          <div class="card-body">
+          <div class="card-body p-0 mt-9">
             <div class="avatar mx-auto lg:my-3">
               <div class="w-18 rounded-full">
                 <img src="https://cdn.10minuteschool.com/images/Landing_page/LIve%20Class.svg" />
@@ -115,7 +115,7 @@ const Navigation = () => {
           </div>
         </div>
         <div class="card bg-base-100">
-          <div class="card-body">
+          <div class="card-body p-0 mt-9">
             <div class="avatar mx-auto lg:my-3">
               <div class="w-18 rounded-full">
                 <img src="https://cdn.10minuteschool.com/images/Landing_page/Lecture%20sheet.svg" />
@@ -128,7 +128,7 @@ const Navigation = () => {
           </div>
         </div>
         <div class="card bg-base-100">
-          <div class="card-body">
+          <div class="card-body p-0 mt-9">
             <div class="avatar mx-auto lg:my-3">
               <div class="w-18 rounded-full">
                 <img src="https://cdn.10minuteschool.com/images/Landing_page/Daily%20result%20and%20leaderboard.svg" />
@@ -141,7 +141,7 @@ const Navigation = () => {
           </div>
         </div>
         <div class="card bg-base-100">
-          <div class="card-body">
+          <div class="card-body p-0 mt-9">
             <div class="avatar mx-auto lg:my-3">
               <div class="w-18 rounded-full">
                 <img src="https://cdn.10minuteschool.com/images/Landing_page/ask%20question.svg" />
