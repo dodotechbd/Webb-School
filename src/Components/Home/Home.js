@@ -5,10 +5,12 @@ import Banner from "./Banner/Banner";
 import JobCourse from "./JobCourse";
 import Navigation from "./Navigation";
 import Review from './Review/Review'
+import Header from '../Shared/Header/Header';
 
 const Home = () => {
   return (
     <div>
+      <Header></Header>
       <Banner></Banner>
       <Navigation></Navigation>
       <Courses></Courses>
