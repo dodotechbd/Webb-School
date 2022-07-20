@@ -12,7 +12,7 @@ const JobCourse = () => {
 
       <div className="my-12">
         <div className="grid grid-cols-1 lg:grid-cols-4  gap-16 px-12  bg-[#F7F8FA]">
-          <a href="#" class="card card-compact w-72 h-72 bg-base-100 shadow-xl  transform transition duration-500 hover:scale-110">
+          <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/BCS-Course-Thumbnail.jpg"
@@ -27,7 +27,7 @@ const JobCourse = () => {
               </div>
             </div>
           </a>
-          <a href="#" class="card card-compact w-72 h-72 bg-base-100 shadow-xl  transform transition duration-500 hover:scale-110">
+          <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/bank_jobs_updated_thumbnail.jpg"
@@ -42,7 +42,7 @@ const JobCourse = () => {
               </div>
             </div>
           </a>
-          <a href="#" class="card card-compact w-72 h-72 bg-base-100 shadow-xl  transform transition duration-500 hover:scale-110">
+          <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/basic_job.jpg"
@@ -57,7 +57,7 @@ const JobCourse = () => {
               </div>
             </div>
           </a>
-          <a href="#" class="card card-compact w-72 h-72 bg-base-100 shadow-xl  transform transition duration-500 hover:scale-110">
+          <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/bcs_qs_thumbnail.jpg"
