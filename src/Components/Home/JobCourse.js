@@ -1,5 +1,4 @@
 import React from "react";
-
 const JobCourse = () => {
   return (
     <div className="mb-16">
@@ -15,7 +14,7 @@ const JobCourse = () => {
           <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
-                src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/BCS-Course-Thumbnail.jpg"
+                src="https://i.postimg.cc/8zh9KJp3/Bank-Job.png"
                 alt="Shoes"
               />
             </figure>
@@ -30,7 +29,7 @@ const JobCourse = () => {
           <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
-                src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/bank_jobs_updated_thumbnail.jpg"
+                src="https://i.postimg.cc/vZfT0z6s/Bank-Job-3.png"
                 alt="Shoes"
               />
             </figure>
@@ -45,7 +44,7 @@ const JobCourse = () => {
           <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
-                src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/basic_job.jpg"
+                src="https://i.postimg.cc/tJnpYq3j/Bank-Job-4.png"
                 alt="Shoes"
               />
             </figure>
@@ -60,7 +59,7 @@ const JobCourse = () => {
           <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
-                src="https://cdn.10minuteschool.com/images/skills/Updated_Thumbnail_v3/bcs_qs_thumbnail.jpg"
+                src="https://i.postimg.cc/P5WfW5Bf/job-2.png"
                 alt="Shoes"
               />
             </figure>
