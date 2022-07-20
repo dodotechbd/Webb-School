@@ -4,6 +4,7 @@ import Admission from "./Admission/Admission";
 import Banner from "./Banner/Banner";
 import JobCourse from "./JobCourse";
 import Navigation from "./Navigation";
+import Review from './Review/Review'
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Courses></Courses>
       <Admission></Admission>
       <JobCourse></JobCourse>
+      <Review></Review>
     </div>
   );
 };
