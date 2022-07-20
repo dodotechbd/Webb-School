@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import useAdmission from "../../../Hooks/useAdmission";
 import AdmissionCard from "./AdmissionCard";
 
@@ -6,7 +6,7 @@ const Admission = () => {
   const [admission, setAdmission] = useAdmission();
 
   return (
-    <div className="">
+    <div id="admission" className="" >
       <div className="mb-10">
       <h1 className="text-3xl font-semibold text-center">
         Admission Preparation

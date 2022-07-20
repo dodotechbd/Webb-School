@@ -32,7 +32,7 @@ const Header = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-200 navbar fixed top-0 w-full z-50 lg:px-10">
+    <div class="navbar bg-base-200 fixed top-0 w-full z-50 lg:px-10">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
