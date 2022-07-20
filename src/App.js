@@ -1,15 +1,20 @@
 import { Routes, Route, Link } from "react-router-dom";
-import './App.css';
+import "./App.css";
+import Courses from "./Components/Course/Courses";
 import Home from "./Components/Home/Home";
-import Review from "./Components/Home/Review/Review";
+import Footer from "./Components/Shared/Footer";
+import Header from "./Components/Shared/Header/Header";
 
 function App() {
   return (
-    <div data-theme="light">
+    <div data-theme="mytheme">
+      <Header></Header>
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/courses" element={<Courses></Courses>}></Route>
       </Routes>
-      <Review></Review>
+       <Review></Review>
+      <Footer></Footer>
     </div>
   );
 }
