@@ -11,7 +11,7 @@ const JobCourse = () => {
       </h2>
 
       <div id="job" className="my-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4  gap-16 px-12  bg-[#F7F8FA]">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2  gap-16 px-12  bg-[#F7F8FA]">
           <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
