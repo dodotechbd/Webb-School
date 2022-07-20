@@ -1,11 +1,11 @@
 import React from "react";
 const JobCourse = () => {
   return (
-    <div className="mb-16">
-      <h1 className="text-center mt-10 font-bold text-3xl">
+    <div className="my-16">
+      <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
         Job Exam Preparation
       </h1>
-      <h2 className="text-xl text-center text-gray-500">
+      <h2 className="lg:text-xl text-md my-5 text-center text-gray-500">
         Which job are you preparing for?
       </h2>
 

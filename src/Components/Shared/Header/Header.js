@@ -2,8 +2,18 @@ import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import wslogo from "../../../Assets/wslogo.png";
 import "./Header.css";
+// import component ?
+import Drawer from "react-modern-drawer";
+
+//import styles ?
+import "react-modern-drawer/dist/index.css";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = React.useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+
   //assigning location variable
   const location = useLocation();
 
@@ -32,65 +42,55 @@ const Header = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-200 fixed top-0 w-full z-50 lg:px-10">
+    <div class="navbar bg-base-100 shadow-lg fixed top-0 w-full z-50 lg:px-10">
       <div class="navbar-start">
-        <div class="dropdown">
-          <label tabindex="0" class="btn btn-ghost lg:hidden">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </label>
-          <ul
-            tabindex="0"
-            class=" font-bold menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
-          >
-            {manuItems}
-          </ul>
-        </div>
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
+          <div>
+            <ul tabindex="0" class="p-2 bg-base-100 ">
+                <Link to="/">
+                  <img className="w-36 mt-2 mb-1 mx-auto" src={wslogo} alt=""></img>
+                </Link>
+                <hr />
+              <li className="my-2 text-lg text-center">
+                <Link to="courses">Courses</Link>
+              </li>
+              <hr />
+              <li className="my-2 text-lg text-center">
+                <Link to="bookstore">Book Store</Link>
+              </li>
+              <hr />
+              <li className="my-2 text-lg text-center">
+                <Link to="jobs">Jobs</Link>
+              </li>
+              <hr />
+              <li className="my-2 text-lg text-center">
+                <Link to="blogs">Blog</Link>
+              </li>
+              <hr />
+              <li className="my-2 text-lg text-center">
+                <Link to="login">Login</Link>
+              </li>
+            </ul>
+          </div>
+        </Drawer>
         <Link to="/">
-          <img width="140px" src={wslogo} alt=""></img>
+          <div>
+          <img className="w-36" src={wslogo} alt=""></img>
+          </div>
         </Link>
       </div>
-      <div class="navbar-center mr-56">
+      <div class="navbar-center lg:mr-56">
         <ul class="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
       </div>
-      <div class="navbar-end hidden">
-        <div tabindex="0" class=" dropdown dropdown-end">
-          <div className="flex">
-            <label class="btn btn-ghost btn-circle avatar">
-              <div class="w-7 rounded-full">
-                <img src="https://ms-muhammadshafi.web.app/static/media/shafi.cdca5fda4d7f428839c0.jpg" />
-              </div>
-            </label>
-          </div>
-          <ul
+      <div class="navbar-end lg:hidden">
+        <div class="dropdown">
+          <label
+            onClick={toggleDrawer}
             tabindex="0"
-            class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+            class="mx-4 text-2xl lg:hidden"
           >
-            <li>
-              <a class="justify-between">
-                Profile
-                <span class="badge">New</span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
-          </ul>
+            <i class="fa-solid fa-bars"></i>
+          </label>
         </div>
       </div>
     </div>
