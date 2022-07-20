@@ -19,7 +19,7 @@ const JobCourse = () => {
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-center font-semibold">jobs</h2>
+              <h2 class="text-2xl text-center font-semibold">Bank Job</h2>
 
               <div class="card-actions justify-center">
                 <div className="text-center mt-4 font-bold text-xl text-primary border-t-2 w-full border-gray pt-2">See Details</div>
@@ -34,7 +34,7 @@ const JobCourse = () => {
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-center font-semibold">jobs</h2>
+              <h2 class="text-2xl text-center font-semibold">Developer job</h2>
 
               <div class="card-actions justify-center">
                 <div className="text-center mt-4 font-bold text-xl text-primary border-t-2 w-full border-gray pt-2">See Details</div>
@@ -49,7 +49,7 @@ const JobCourse = () => {
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-center font-semibold">jobs</h2>
+              <h2 class="text-2xl text-center font-semibold">Corporate job</h2>
 
               <div class="card-actions justify-center">
                 <div className="text-center mt-4 font-bold text-xl text-primary border-t-2 w-full border-gray pt-2">See Details</div>
@@ -64,7 +64,7 @@ const JobCourse = () => {
               />
             </figure>
             <div class="card-body">
-              <h2 class="text-2xl text-center font-semibold">Jobs</h2>
+              <h2 class="text-2xl text-center font-semibold">Self Skill Develop</h2>
 
               <div class="card-actions justify-center">
                 <div className="text-center mt-4 font-bold text-xl text-primary border-t-2 w-full border-gray pt-2">See Details</div>
