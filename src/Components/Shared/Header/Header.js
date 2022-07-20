@@ -32,7 +32,7 @@ const Header = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-200 navbar fixed top-0 w-full z-50">
+    <div class="navbar bg-base-200 navbar fixed top-0 w-full z-50 lg:px-10">
       <div class="navbar-start">
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
@@ -64,30 +64,6 @@ const Header = () => {
       </div>
       <div class="navbar-center mr-56">
         <ul class="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
-        <div className="dropdown lg:hidden">
-          <label tabIndex="0" className="btn glass text-white">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M4 6h16M4 12h8m-8 6h16"
-              />
-            </svg>
-          </label>
-          <ul
-            tabIndex="0"
-            className="menu text-white dropdown-content mt-3 p-2 shadow bg-neutral rounded-box w-52 right-0 bg-opacity-90 backdrop-filter backdrop-blur-lg"
-          >
-            {manuItems}
-          </ul>
-        </div>
       </div>
       <div class="navbar-end hidden">
         <div tabindex="0" class=" dropdown dropdown-end">
