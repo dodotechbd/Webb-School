@@ -74,8 +74,8 @@ const Navigation = () => {
           </div>
         </a>
       </div>
-      <div className="grid grid-cols-2 lg:grid-cols-3">
-        <div class="card w-96 bg-base-100">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="avatar mx-auto my-6">
               <div class="w-18 rounded-full">
@@ -88,7 +88,7 @@ const Navigation = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100">
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="avatar mx-auto my-6">
               <div class="w-18 rounded-full">
@@ -101,7 +101,7 @@ const Navigation = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100">
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="avatar mx-auto my-6">
               <div class="w-18 rounded-full">
@@ -114,7 +114,7 @@ const Navigation = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100">
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="avatar mx-auto my-6">
               <div class="w-18 rounded-full">
@@ -127,7 +127,7 @@ const Navigation = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100">
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="avatar mx-auto my-6">
               <div class="w-18 rounded-full">
@@ -140,7 +140,7 @@ const Navigation = () => {
             </p>
           </div>
         </div>
-        <div class="card w-96 bg-base-100">
+        <div class="card bg-base-100">
           <div class="card-body">
             <div class="avatar mx-auto my-6">
               <div class="w-18 rounded-full">
