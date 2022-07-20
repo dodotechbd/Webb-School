@@ -8,10 +8,10 @@ const Review = () => {
     return (
         <div className='px-12 py-12'>
             <h2 className='text-center text-red-600 font-bold text-2xl mb-5'>Our Acchievement</h2>
-            <div class="hero min-h-scree bg-slate-200">
+            <div class="hero min-h-scree bg-base-100">
                 <div class="hero-content flex-col lg:flex-row">
                     <img src={student} alt />
-                    <div className='card bg-slate-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-10'>
+                    <div className='card bg-base-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-10'>
                         <div class="card-body">
                             <h2 class="card-title"></h2>
                             <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
