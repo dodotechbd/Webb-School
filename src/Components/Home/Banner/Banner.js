@@ -16,7 +16,7 @@ import { Pagination, Navigation } from "swiper";
 const Banner = () => {
   return (
     <div>
-      <div className="px-12 py-12 bg-neutral">
+      <div className="px-12 py-12 bg-neutral pt-20">
         <h1 className="font-bold text-4xl text-white text-center
         my-4">Special Discount!</h1>
         <p className="text-xl hidden lg:block text-white text-center
@@ -36,22 +36,27 @@ const Banner = () => {
             "@0.00": {
               slidesPerView: 1,
               spaceBetween: 10,
+              slidesPerGroup: 1,
             },
             "@0.75": {
               slidesPerView: 2,
               spaceBetween: 20,
+              slidesPerGroup: 2,
             },
             "@1.00": {
               slidesPerView: 3,
               spaceBetween: 40,
+              slidesPerGroup: 3,
             },
             "@1.25": {
               slidesPerView: 4,
               spaceBetween: 40,
+              slidesPerGroup: 4,
             },
             "@1.50": {
               slidesPerView: 5,
               spaceBetween: 50,
+              slidesPerGroup: 5,
             },
           }}
           modules={[Pagination, Navigation]}

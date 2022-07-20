@@ -1,12 +1,12 @@
 import React from "react";
-import logo from '../../Assets/image/logo.png'
+import logo from '../../Assets/wslogo.png'
 
 const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
         <div>
-            <footer class="footer p-10 bg-base-300 text-base-content">
+            <footer class="footer p-10 bg-base-200 text-base-content">
                 <div>
                     <img className="mx-auto lg:mx-0" width="180" viewBox="0 0 24 24" src={logo} alt="" />
                     <p className="font-bold text-xl text-center">
@@ -78,7 +78,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer class="footer footer-center p-4 bg-base-200 text-base-content">
+            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
                 <div>
                     <p>2022 - {year} Copyright © Webb School. All rights reserved.</p>
                 </div>
