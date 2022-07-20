@@ -1,5 +1,5 @@
 import React from "react";
-import logo from '../../Assets/wslogo.png'
+import logo from '../../Assets/image/logo.png';
 
 const Footer = () => {
     const today = new Date();
