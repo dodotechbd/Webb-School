@@ -46,22 +46,31 @@ const Header = () => {
       <div class="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
-            <ul tabindex="0" class="font-bold mt-3 p-2 bg-base-100 rounded-box">
+            <ul tabindex="0" class="p-2 bg-base-100 rounded-box">
+                <Link to="/">
+                  <img className="w-36 mt-2 mb-1 mx-auto" src={wslogo} alt=""></img>
+                </Link>
+                <hr />
               <li className="my-2 text-lg text-center">
                 <Link to="courses">Courses</Link>
-              </li><hr />
+              </li>
+              <hr />
               <li className="my-2 text-lg text-center">
                 <Link to="bookstore">Book Store</Link>
-              </li><hr />
+              </li>
+              <hr />
               <li className="my-2 text-lg text-center">
                 <Link to="jobs">Jobs</Link>
-              </li><hr />
+              </li>
+              <hr />
               <li className="my-2 text-lg text-center">
                 <Link to="blogs">Blog</Link>
-              </li><hr />
+              </li>
+              <hr />
               <li className="my-2 text-lg text-center">
                 <Link to="login">Login</Link>
-              </li><hr />
+              </li>
+              <hr />
             </ul>
           </div>
         </Drawer>
@@ -73,7 +82,7 @@ const Header = () => {
         <ul class="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
       </div>
       <div class="navbar-end lg:hidden">
-      <div class="dropdown">
+        <div class="dropdown">
           <label
             onClick={toggleDrawer}
             tabindex="0"
