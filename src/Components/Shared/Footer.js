@@ -45,12 +45,10 @@ const Footer = () => {
                     <div class="grid grid-flow-col gap-4">
 
 
-                        <a className="text-2xl" href="https://web.facebook.com/rashelmahomudf/"><i class="fa-brands fa-facebook"></i></a>
-                        <a className="text-2xl" href="https://www.instagram.com/rashel_mahomud/"><i class="fa-brands fa-instagram"></i></a>
-                        <a className="text-2xl" href="https://www.linkedin.com/in/rashelmahomud/"><i class="fa-brands fa-linkedin"></i></a>
-                        <a className="text-2xl" href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"><i class="fa-brands fa-youtube"></i></a>
-
-
+                        <a target="_blank" className="text-2xl" href="https://web.facebook.com/rashelmahomudf/"><i class="fa-brands fa-facebook"></i></a>
+                        <a target="_blank" className="text-2xl" href="https://www.instagram.com/rashel_mahomud/"><i class="fa-brands fa-instagram"></i></a>
+                        <a target="_blank" className="text-2xl" href="https://www.linkedin.com/in/rashelmahomud/"><i class="fa-brands fa-linkedin"></i></a>
+                        <a target="_blank" className="text-2xl" href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"><i class="fa-brands fa-youtube"></i></a>
 
                     </div>
                 </div>
