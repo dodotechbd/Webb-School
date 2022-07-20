@@ -5,14 +5,12 @@ const AdmissionCard = ({ admission }) => {
   console.log(name);
   return (
     <div>
-      <a href={link} target="blank" class="group mx-4 rounded h-fit min-w-fit card card-side bg-base-200 transform transition duration-500 hover:scale-110 hover:shadow-xl">
+      <a href={link} target="blank" class="group mx-4 rounded h-20 lg:h-fit min-w-fit card card-side bg-base-200 transform transition duration-500 hover:scale-110 hover:shadow-xl">
         <figure>
-          <img className="w-48 h-full object-cover" src={img} alt="Movie" />
+          <img className="lg:w-48 w-28 h-20  lg:h-full object-cover" src={img} alt="Movie" />
         </figure>
         <div class="card-body">
-          <h2 class="text-lg font-bold">{name}</h2>
-          <div class="card-actions justify-end">
-          </div>
+          <h2 class="text-sm lg:text-lg font-bold lg:-mt-0 -mt-3">{name}</h2>
         </div>
       </a>
     </div>
