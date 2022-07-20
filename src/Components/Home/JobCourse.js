@@ -2,15 +2,15 @@ import React from "react";
 
 const JobCourse = () => {
   return (
-    <div className="my-16">
-      <h1 className="text-center text-2xl font-bold text-3xl">
+    <div className="mb-16">
+      <h1 className="text-center mt-10 font-bold text-3xl">
         Job Exam Preparation
       </h1>
       <h2 className="text-xl text-center text-gray-500">
         Which job are you preparing for?
       </h2>
 
-      <div className="my-12">
+      <div className="my-10">
         <div className="grid grid-cols-1 lg:grid-cols-4  gap-16 px-12  bg-[#F7F8FA]">
           <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
