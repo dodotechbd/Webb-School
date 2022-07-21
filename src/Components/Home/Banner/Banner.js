@@ -26,7 +26,7 @@ import { Pagination, Navigation } from "swiper";
 const Banner = () => {
   return (
     <div>
-      <div className="px-12 py-12 pt-20 banner">
+      <div className="px-12 pt-20 banner">
         <h1 className="font-bold text-4xl text-white text-center
         my-4 ">Special Discount!</h1>
         <p className="text-xl hidden lg:block text-white text-center
