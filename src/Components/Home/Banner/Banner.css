@@ -64,3 +64,6 @@ body {
   display: none;
 }
 
+.banner{
+  background-image: url(../../../Assets/banner/vdo.gif);
+}

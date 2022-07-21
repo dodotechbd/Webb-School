@@ -5,14 +5,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import "./Reviews.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
-
+import { EffectCoverflow, Pagination } from "swiper";
 
 const Reviews = () => {
   const [courses, setCourses] = useState([]);
@@ -26,28 +25,35 @@ const Reviews = () => {
       <p className="text-center text-xl">
         Our students and their parents love us!
       </p>
-
-      <div className="grid  sm:grid-cols-2 lg:grid-cols-3 gap-12">
-        <Swiper
-          slidesPerView={3}
-          spaceBetween={30}
-          slidesPerGroup={3}
-          loop={true}
-          loopFillGroupWithBlank={true}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={true}
-          modules={[Pagination, Navigation]}
-          className="mySwiper"
-        >
+      <Swiper
+        effect={"coverflow"}
+        grabCursor={true}
+        centeredSlides={true}
+        slidesPerView={3}
+        coverflowEffect={{
+          rotate: 50,
+          stretch: 0,
+          depth: 100,
+          modifier: 1,
+          slideShadows: true,
+        }}
+        loop={true}
+        autoplay={{
+          delay: 1500,
+          disableOnInteraction: false,
+        }}
+        pagination={true}
+        modules={[EffectCoverflow, Pagination]}
+        className="mySwiper"
+      >
+        <div className="grid  sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {courses.map((course) => (
             <SwiperSlide>
               <ReviewCard key={course.id} course={course}></ReviewCard>
             </SwiperSlide>
           ))}
-        </Swiper>
-      </div>
+        </div>
+      </Swiper>
     </div>
   );
 };

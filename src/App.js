@@ -7,7 +7,7 @@ import Header from "./Components/Shared/Header/Header";
 
 function App() {
   return (
-    <div data-theme="mytheme">
+    <div data-theme="mytheme" className="mt-16">
 <Header></Header>
 
       <Routes>
