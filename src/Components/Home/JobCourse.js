@@ -10,15 +10,15 @@ const JobCourse = () => {
       </h2>
 
       <div id="job" className="my-10">
-        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2  gap-16 px-12  bg-[#F7F8FA]">
-          <a href="#" class="card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
+        <div className="grid grid-cols-1 lg:grid-cols-4 md:grid-cols-2  gap-16 px-12 ">
+          <a href="#" class=" card card-compact w-72 h-72 bg-base-100 hover:shadow-xl border border-2  transform transition duration-500 hover:scale-110">
             <figure>
               <img
                 src="https://i.postimg.cc/8zh9KJp3/Bank-Job.png"
                 alt="Shoes"
               />
             </figure>
-            <div class="card-body">
+            <div class="card-body ">
               <h2 class="text-2xl text-center font-semibold">Bank Job</h2>
 
               <div class="card-actions justify-center">

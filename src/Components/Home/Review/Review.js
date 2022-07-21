@@ -9,7 +9,7 @@ const Review = () => {
     return (
         <div>
             <h2 className='lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center'>Our Acchievement</h2>
-            <div class="hero min-h-scree bg-base-100 lg:my-10">
+            <div class="hero min-h-scree bg-base-100 lg:my-10  ">
                 <div class="hero-content flex-col lg:flex-row">
                     <img className='hidden lg:block' src={student} alt />
                     <div className='card lg:mx-32 bg-base-100 grid lg:gap-14 grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>

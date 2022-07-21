@@ -9,7 +9,7 @@ import Header from '../Shared/Header/Header';
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
       <Header></Header>
       <Banner></Banner>
       <Navigation></Navigation>
