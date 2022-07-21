@@ -5,8 +5,8 @@ const Footer = () => {
     const today = new Date();
     const year = today.getFullYear();
     return (
-        <div>
-            <footer class="footer p-10 bg-base-200 text-base-content">
+        <div >
+            <footer class="footer p-10 bg-base-200 text-base-content bg-[#A1EAFB]">
                 <div>
                     <img className="mx-auto lg:mx-0" width="180" viewBox="0 0 24 24" src={logo} alt="" />
                     <p className="font-bold text-xl text-center">
@@ -53,7 +53,7 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-            <footer class="footer footer-center p-4 bg-base-300 text-base-content">
+            <footer class="footer footer-center p-4 bg-base-300 text-base-content text-white bg-[#1C1124]">
                 <div>
                     <p>2022 - {year} Copyright © Webb School. All rights reserved.</p>
                 </div>

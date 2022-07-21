@@ -3,7 +3,7 @@ import React from 'react';
 const Course = ({ course }) => {
     const { id, name, img, description, price } = course;
     return (
-        <div>
+        <div className=''> 
             <a href='#' class="card w-100 bg-base-100 border border-2 h-full transform transition duration-500 hover:scale-110 hover:shadow-xl">
                 <figure>
                     <img src={img} alt="Shoes" />
