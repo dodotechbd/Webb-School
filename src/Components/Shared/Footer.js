@@ -5,9 +5,9 @@ const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <div>
+    <div className="bg-base-200">
       <footer class="footer p-10 bg-base-200 text-base-content">
-        <div>
+        <div className="md:w-60">
           <img
             className="mx-auto lg:mx-0"
             width="180"
@@ -18,11 +18,13 @@ const Footer = () => {
           <p className="font-bold text-xl text-center">
             Create your free account and start learning
           </p>
-          <a href="#">
-            <button class="btn btn-primary text-white btn-sm lg:mx-0 mx-24">Join Now</button>
+          <a href="">
+            <button class="btn text-white btn-sm lg:mx-0 mx-24 md:mx-16">
+              Join Now
+            </button>
           </a>
         </div>
-        <div className="grid grid-cols-2 gap-32 mx-auto lg:mx-0">
+        <div className="grid grid-cols-2 lg:gap-24 md:gap-12 gap-24 lg:mx-0">
           <div>
             <p class="text-xl font-bold text-black mb-2">Services</p>
             <a class="link link-hover block">Book Store</a>
@@ -49,31 +51,31 @@ const Footer = () => {
           <p class="text-md">
             <span className="font-bold">Email:</span> support@webbschool.com
           </p>
-          <div class="grid grid-flow-col gap-4">
+          <div class="hidden lg:inline md:inline">
             <a
               target="_blank"
-              className="text-2xl"
+              className="text-2xl mr-4"
               href="https://web.facebook.com/rashelmahomudf/"
             >
               <i class="fa-brands fa-facebook"></i>
             </a>
             <a
               target="_blank"
-              className="text-2xl"
+              className="text-2xl mr-4"
               href="https://www.instagram.com/rashel_mahomud/"
             >
               <i class="fa-brands fa-instagram"></i>
             </a>
             <a
               target="_blank"
-              className="text-2xl"
+              className="text-2xl mr-4"
               href="https://www.linkedin.com/in/rashelmahomud/"
             >
               <i class="fa-brands fa-linkedin"></i>
             </a>
             <a
               target="_blank"
-              className="text-2xl"
+              className="text-2xl mr-4"
               href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
             >
               <i class="fa-brands fa-youtube"></i>
@@ -81,9 +83,41 @@ const Footer = () => {
           </div>
         </div>
       </footer>
-      <footer class="footer footer-center p-4 text-white bg-black">
+      <footer className="footer footer-center my-2 lg:hidden md:hidden">
+        <div class="grid grid-flow-col gap-4 mx-auto">
+          <a
+            target="_blank"
+            className="text-2xl"
+            href="https://web.facebook.com/rashelmahomudf/"
+          >
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+          <a
+            target="_blank"
+            className="text-2xl"
+            href="https://www.instagram.com/rashel_mahomud/"
+          >
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a
+            target="_blank"
+            className="text-2xl"
+            href="https://www.linkedin.com/in/rashelmahomud/"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+          <a
+            target="_blank"
+            className="text-2xl"
+            href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
+          >
+            <i class="fa-brands fa-youtube"></i>
+          </a>
+        </div>
+      </footer>
+      <footer class="footer footer-center p-4 text-white bg-black text-center">
         <div>
-          <p>2022 - {year} Copyright © Webb School. All rights reserved.</p>
+          <p>2022 - {year} Copyright © Webb School.<br />All rights reserved.</p>
         </div>
       </footer>
     </div>

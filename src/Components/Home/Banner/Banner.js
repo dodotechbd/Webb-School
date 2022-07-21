@@ -47,22 +47,22 @@ const Banner = () => {
               spaceBetween: 10,
               slidesPerGroup: 1,
             },
-            "@0.75": {
+            "@0.25": {
               slidesPerView: 2,
               spaceBetween: 20,
               slidesPerGroup: 2,
             },
-            "@1.00": {
+            "@0.75": {
               slidesPerView: 3,
               spaceBetween: 40,
               slidesPerGroup: 3,
             },
-            "@1.25": {
+            "@1.00": {
               slidesPerView: 4,
               spaceBetween: 40,
               slidesPerGroup: 4,
             },
-            "@1.50": {
+            "@1.25": {
               slidesPerView: 5,
               spaceBetween: 50,
               slidesPerGroup: 5,
