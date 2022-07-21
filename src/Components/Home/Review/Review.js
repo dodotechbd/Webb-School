@@ -8,51 +8,51 @@ import './Review.css'
 const Review = () => {
     return (
         <div>
-            <h2 className='lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center'>Our Acchievement</h2>
-            <div class="hero min-h-scree bg-base-100 lg:my-10">
+            <h2 className='text-center text-black-600 font-bold text-3xl'>Our Acchievement</h2>
+            <div class="hero bg-base-100">
                 <div class="hero-content flex-col lg:flex-row">
-                    <img className='hidden lg:block' src={student} alt />
-                    <div className='card lg:mx-32 bg-base-100 grid lg:gap-14 grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>
-                        <div class="card-body p-0">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                    <img className='lg:block hidden' src={student} alt />
+                    <div className='card bg-base-100 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>
+                        <div class="card-body">
+                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
                                 <div className="teacher">
-                                    <img className='lg:w-18' src={image1} alt="" />
-                                    <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>250+</h1>
-                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Teachers</h1>
+                                    <img src={image1} alt="" />
+                                    <div>
+                                        <h1 className='ml-5 text-black-600 font-bold text-2xl mt-2'> 500 + </h1>
+                                        <h1 className='ml-5 text-black-600 font-bold text-2xl'> Teachers</h1>
                                     </div>
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body p-0">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div class="card-body">
+                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
                                 <div className="student">
-                                    <img className='lg:w-18' src={image2} alt="" />
-                                    <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
-                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Students </h1>
+                                    <img src={image2} alt="" />
+                                    <div>
+                                        <h1 className='ml-5 text-black-600 font-bold text-2xl mt-2'>90,00,000 + </h1>
+                                        <h1 className='ml-5 text-black-600 font-bold text-2xl'> Students </h1>
                                     </div>
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body p-0">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div class="card-body">
+                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
                                 <div className="teacher">
-                                    <img className='lg:w-18' src={image4} alt="" />
-                                    <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
-                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Users </h1>
+                                    <img src={image4} alt="" />
+                                    <div>
+                                        <h1 className='ml-5 text-red-black font-bold text-2xl mt-2'>32,00,000 + </h1>
+                                        <h1 className='ml-5 text-red-black font-bold text-2xl'>App Users </h1>
                                     </div>
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body p-0">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div class="card-body">
+                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
                                 <div className="teacher">
-                                    <img className='lg:w-18' src={image3} alt="" />
-                                    <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>5K+</h1>
-                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Video </h1>
+                                    <img src={image3} alt="" />
+                                    <div>
+                                        <h1 className='ml-5 text-black-600 font-bold text-2xl mt-2'>18,000 +</h1>
+                                        <h1 className='ml-5 text-black-600 font-bold text-2xl'>Video </h1>
                                     </div>
                                 </div>
                             </section>

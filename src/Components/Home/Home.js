@@ -5,6 +5,7 @@ import Banner from "./Banner/Banner";
 import JobCourse from "./JobCourse";
 import Navigation from "./Navigation";
 import Review from './Review/Review'
+import Reviews from "./Reviews/Reviews";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
       <Courses></Courses>
       <Admission></Admission>
       <JobCourse></JobCourse>
+      <Reviews></Reviews>
       <Review></Review>
     </div>
   );

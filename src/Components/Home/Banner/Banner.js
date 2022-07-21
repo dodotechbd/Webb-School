@@ -1,7 +1,17 @@
 import React, { useRef, useState } from "react";
+import img1 from "../../../Assets/banner/21.png";
+import img2 from "../../../Assets/banner/22.png";
+import img3 from "../../../Assets/banner/233.png";
+import img4 from "../../../Assets/banner/24.png";
+import img5 from "../../../Assets/banner/25.png";
+import img6 from "../../../Assets/banner/26.png";
+import img7 from "../../../Assets/banner/27.png";
+import img8 from "../../../Assets/banner/28.png";
+import img9 from "../../../Assets/banner/29.png";
+import img10 from "../../../Assets/banner/30.png";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from 'swiper';
+import SwiperCore, { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
@@ -17,10 +27,19 @@ const Banner = () => {
   return (
     <div>
       <div className="px-12 py-12 bg-neutral pt-20">
-        <h1 className="font-bold text-4xl text-white text-center
-        my-4">Special Discount!</h1>
-        <p className="text-xl hidden lg:block text-white text-center
-        mb-12">On the occasion of Eid, various courses of Webb School can be done more cost-effectively throughout the month of July!</p>
+        <h1
+          className="font-bold text-4xl text-white text-center
+        my-4"
+        >
+          Special Discount!
+        </h1>
+        <p
+          className="text-xl hidden lg:block text-white text-center
+        mb-12"
+        >
+          On the occasion of Eid, various courses of Webb School can be done
+          more cost-effectively throughout the month of July!
+        </p>
         <Swiper
           slidesPerView={5}
           spaceBetween={30}
@@ -29,8 +48,8 @@ const Banner = () => {
           loopFillGroupWithBlank={true}
           autoplay={{
             delay: 1500,
-            disableOnInteraction: false
-        }}
+            disableOnInteraction: false,
+          }}
           navigation={true}
           breakpoints={{
             "@0.00": {
@@ -63,69 +82,40 @@ const Banner = () => {
           className="mySwiper"
         >
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/NamazShikkha.jpg"
-              alt=""
-            />
+            <img src={img1} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/FacebookMarketing.jpg"
-              alt=""
-            />
+            <img src={img2} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/BankJobs.jpg"
-              alt=""
-            />
+            <img src={img3} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/HSC23.jpg"
-              alt=""
-            />
+            <img src={img4} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/MSBundle.jpg"
-              alt=""
-            />
+            <img src={img5} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/VideoMaking.jpg"
-              alt=""
-            />
+            <img src={img6} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="http://cdn.10minuteschool.com/md/images/GBSE.jpg"
-              alt=""
-            />
+            <img src={img7} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/GBF.jpg"
-              alt=""
-            />
+            <img src={img8} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/KidsEnglish.jpg"
-              alt=""
-            />
+            <img src={img9} alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img
-              src="https://cdn.10minuteschool.com/md/images/DEDF.jpg"
-              alt=""
-            />
+            <img src={img10} alt="" />
           </SwiperSlide>
         </Swiper>
       </div>
     </div>
   );
-};SwiperCore.use([Autoplay])
+};
+SwiperCore.use([Autoplay]);
 
 export default Banner;
