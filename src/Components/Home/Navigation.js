@@ -8,7 +8,7 @@ const Navigation = () => {
         <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
           We have everything you <br /> need to learn anything
         </h1>
-        <p className="lg:text-xl text-md my-5 text-center text-gray-500">
+        <p className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
           Choose your topic from our vast library to get started
         </p>
       </div>
