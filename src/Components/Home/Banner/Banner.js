@@ -1,14 +1,4 @@
 import React, { useRef, useState } from "react";
-import img1 from "../../../Assets/banner/21.png";
-import img2 from "../../../Assets/banner/22.png";
-import img3 from "../../../Assets/banner/233.png";
-import img4 from "../../../Assets/banner/24.png";
-import img5 from "../../../Assets/banner/25.png";
-import img6 from "../../../Assets/banner/26.png";
-import img7 from "../../../Assets/banner/27.png";
-import img8 from "../../../Assets/banner/28.png";
-import img9 from "../../../Assets/banner/29.png";
-import img10 from "../../../Assets/banner/30.png";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
@@ -26,11 +16,20 @@ import { Pagination, Navigation } from "swiper";
 const Banner = () => {
   return (
     <div>
-      <div className="px-12 pt-20 banner">
-        <h1 className="font-bold text-4xl text-white text-center
-        my-4 ">Special Discount!</h1>
-        <p className="text-xl hidden lg:block text-white text-center
-        mb-12">On the occasion of Eid, various courses of Webb School can be done more cost-effectively throughout the month of July!</p>
+      <div className="px-12 py-12 banner">
+        <h1
+          className="font-bold text-4xl text-white text-center
+        my-4 "
+        >
+          Special Discount!
+        </h1>
+        <p
+          className="text-xl hidden lg:block text-white text-center
+        mb-12"
+        >
+          On the occasion of Eid, various courses of Webb School can be done
+          more cost-effectively throughout the month of July!
+        </p>
         <Swiper
           slidesPerView={5}
           spaceBetween={30}
@@ -73,34 +72,34 @@ const Banner = () => {
           className="mySwiper"
         >
           <SwiperSlide className="card">
-            <img src={img1} alt="" />
+            <img src="https://i.postimg.cc/15mtNtxx/21.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img2} alt="" />
+            <img src="https://i.postimg.cc/HLcjsPqV/22.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img3} alt="" />
+            <img src="https://i.postimg.cc/T3SYSJKG/233.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img4} alt="" />
+            <img src="https://i.postimg.cc/MHxG5ZvQ/24.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img5} alt="" />
+            <img src="https://i.postimg.cc/mg6t4G6v/25.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img6} alt="" />
+            <img src="https://i.postimg.cc/PfzJxDRz/26.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img7} alt="" />
+            <img src="https://i.postimg.cc/26n6nL8Y/27.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img8} alt="" />
+            <img src="https://i.postimg.cc/X7svKb3r/28.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img9} alt="" />
+            <img src="https://i.postimg.cc/3NBxcMvb/29.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card">
-            <img src={img10} alt="" />
+            <img src="https://i.postimg.cc/JztzP24P/30.png" alt="" />
           </SwiperSlide>
         </Swiper>
       </div>

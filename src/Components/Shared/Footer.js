@@ -18,8 +18,8 @@ const Footer = () => {
           <p className="font-bold text-xl text-center">
             Create your free account and start learning
           </p>
-          <a href="">
-            <button class="btn text-white btn-sm lg-mx-0 mx-24">Join Now</button>
+          <a href="#">
+            <button class="btn btn-primary text-white btn-sm lg:mx-0 mx-24">Join Now</button>
           </a>
         </div>
         <div className="grid grid-cols-2 gap-32 mx-auto lg:mx-0">
