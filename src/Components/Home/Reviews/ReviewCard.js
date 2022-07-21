@@ -4,12 +4,12 @@ const ReviewCard = ({ course }) => {
   const { name, img, description, address } = course;
   return (
     <div>
-      <div class="card w-96 bg-base-100 border">
+      <div class="card w-11/12 h-72 mx-auto bg-base-100 border border-primary">
         <div class="card-body p-7">
           <div className="flex mb-4">
             <div class="avatar">
-              <div class="w-12 rounded-full">
-                <img src={img} />
+              <div class="w-12 h-12 rounded-full">
+                <img className="" src={img} />
               </div>
             </div>
             <div className="ml-4">
