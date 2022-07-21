@@ -21,9 +21,9 @@ const Reviews = () => {
       .then((data) => setCourses(data));
   });
   return (
-    <div className="mx-10">
-      <p className="text-center text-2xl my-12">
-        Our students and their parents love us!
+    <div className="lg:mx-4 mb-10">
+      <p className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center mb-12 uppercase">
+        Our students reviews!
       </p>
       <Swiper
         slidesPerView={3}
@@ -35,7 +35,6 @@ const Reviews = () => {
           delay: 1500,
           disableOnInteraction: false,
         }}
-        pagination={true}
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
@@ -43,13 +42,23 @@ const Reviews = () => {
             slidesPerGroup: 1,
           },
           "@0.25": {
+            slidesPerView: 1,
+            spaceBetween: 5,
+            slidesPerGroup: 1,
+          },
+          "@0.60": {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 5,
+            slidesPerGroup: 2,
+          },
+          "@0.75": {
+            slidesPerView: 2,
+            spaceBetween: 5,
             slidesPerGroup: 2,
           },
           "@1.00": {
             slidesPerView: 2,
-            spaceBetween: 30,
+            spaceBetween: 5,
             slidesPerGroup: 2,
           },
           "@1.25": {

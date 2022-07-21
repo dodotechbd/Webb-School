@@ -15,10 +15,10 @@ import { Pagination, Navigation } from "swiper";
 const JobCourse = () => {
   return (
     <div className="my-16" id="job">
-      <h1 className="lg:text-3xl md:text-2xl text-xl texemibold text-center">
+      <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
         Job Exam Preparation
       </h1>
-      <h2 className="lg:text-xl text-md my-5 text-center text-gray-500">
+      <h2 className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
         Which job are you preparing for?
       </h2>
 
@@ -88,9 +88,7 @@ const JobCourse = () => {
             <img src="https://i.postimg.cc/P5WfW5Bf/job-2.png" alt="Shoes" />
           </figure>
           <div class="card-body">
-            <h2 class="text-2xl text-center">
-              Self Skill Develop
-            </h2>
+            <h2 class="text-2xl text-center">Self Skill Develop</h2>
 
             <div class="card-actions justify-center">
               <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
@@ -102,7 +100,13 @@ const JobCourse = () => {
       </div>
       <div className="lg:hidden md:hidden">
         <Swiper
-          slidesPerView={'auto'}
+          slidesPerView={"auto"}
+          loop={true}
+          loopFillGroupWithBlank={true}
+          autoplay={{
+            delay: 1500,
+            disableOnInteraction: false,
+          }}
           breakpoints={{
             "@0.00": {
               slidesPerView: 1,
@@ -156,8 +160,8 @@ const JobCourse = () => {
                 </div>
               </div>
             </a>
-            </SwiperSlide>
-            <SwiperSlide>
+          </SwiperSlide>
+          <SwiperSlide>
             <a
               href="#"
               class="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
@@ -169,9 +173,7 @@ const JobCourse = () => {
                 />
               </figure>
               <div class="card-body">
-                <h2 class="text-2xl text-center">
-                  Developer Job
-                </h2>
+                <h2 class="text-2xl text-center">Developer Job</h2>
 
                 <div class="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
@@ -179,8 +181,9 @@ const JobCourse = () => {
                   </div>
                 </div>
               </div>
-            </a></SwiperSlide>
-            <SwiperSlide>
+            </a>
+          </SwiperSlide>
+          <SwiperSlide>
             <a
               href="#"
               class="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
@@ -192,9 +195,7 @@ const JobCourse = () => {
                 />
               </figure>
               <div class="card-body">
-                <h2 class="text-2xl text-center">
-                  Corporate Job
-                </h2>
+                <h2 class="text-2xl text-center">Corporate Job</h2>
 
                 <div class="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
@@ -202,8 +203,9 @@ const JobCourse = () => {
                   </div>
                 </div>
               </div>
-            </a></SwiperSlide>
-            <SwiperSlide>
+            </a>
+          </SwiperSlide>
+          <SwiperSlide>
             <a
               href="#"
               class="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
@@ -215,9 +217,7 @@ const JobCourse = () => {
                 />
               </figure>
               <div class="card-body">
-                <h2 class="text-2xl text-center">
-                  Self Skill Develop
-                </h2>
+                <h2 class="text-2xl text-center">Self Skill Develop</h2>
 
                 <div class="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">

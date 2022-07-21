@@ -4,7 +4,7 @@ const ReviewCard = ({ course }) => {
   const { name, img, description, address } = course;
   return (
     <div>
-      <div class="card w-11/12 h-72 mx-auto bg-base-100 border border-primary">
+      <div class="card w-11/12 lg:w-96 md:w-96 h-72 mx-auto bg-base-100 border border-primary">
         <div class="card-body p-7">
           <div className="flex mb-4">
             <div class="avatar">
