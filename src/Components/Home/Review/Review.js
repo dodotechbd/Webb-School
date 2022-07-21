@@ -11,8 +11,8 @@ const Review = () => {
             <h2 className='text-center text-black-600 font-bold text-3xl'>Our Acchievement</h2>
             <div class="hero min-h-scree bg-base-100">
                 <div class="hero-content flex-col lg:flex-row">
-                    <img src={student} alt />
-                    <div className='card bg-base-100 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>
+                    <img className='lg:block hidden' src={student} alt />
+                    <div className='card bg-base-100 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>
                         <div class="card-body">
                             <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
                                 <div className="teacher">
