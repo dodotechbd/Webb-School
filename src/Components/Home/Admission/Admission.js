@@ -15,7 +15,7 @@ const Admission = () => {
         Prepare for your dream university
       </p>
       </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 lg:mx-8 mb-10">
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 lg:mx-8 mb-10 ">
         {admission.map((admission) => (
           <AdmissionCard
             key={admission._id}
@@ -24,7 +24,7 @@ const Admission = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <button class="btn btn-wide btn-primary text-white">
+        <button class="btn btn-wide btn-primary text-white ">
           Explore All Programs
         </button>
       </div>

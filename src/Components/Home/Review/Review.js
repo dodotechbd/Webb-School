@@ -8,8 +8,13 @@ import './Review.css'
 const Review = () => {
     return (
         <div>
+<<<<<<< HEAD
             <h2 className='text-center text-black-600 font-bold text-3xl'>Our Acchievement</h2>
             <div class="hero bg-base-100">
+=======
+            <h2 className='lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center'>Our Acchievement</h2>
+            <div class="hero min-h-scree bg-base-100 lg:my-10  ">
+>>>>>>> 164a645312cb764c6ad2a05a2d4815fe367d1055
                 <div class="hero-content flex-col lg:flex-row">
                     <img className='lg:block hidden' src={student} alt />
                     <div className='card bg-base-100 grid grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-5'>

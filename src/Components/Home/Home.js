@@ -5,11 +5,16 @@ import Banner from "./Banner/Banner";
 import JobCourse from "./JobCourse";
 import Navigation from "./Navigation";
 import Review from './Review/Review'
+<<<<<<< HEAD
 import Reviews from "./Reviews/Reviews";
+=======
+import Header from '../Shared/Header/Header';
+>>>>>>> 164a645312cb764c6ad2a05a2d4815fe367d1055
 
 const Home = () => {
   return (
-    <div>
+    <div className="">
+      <Header></Header>
       <Banner></Banner>
       <Navigation></Navigation>
       <Courses></Courses>

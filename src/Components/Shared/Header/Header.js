@@ -42,7 +42,7 @@ const Header = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-100 shadow-lg fixed top-0 w-full z-50 lg:px-10">
+    <div class="navbar bg-base-100 shadow-lg fixed top-0 w-full z-50 lg:px-10 font-bold bg-[#A1EAFB]">
       <div class="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
           <div>

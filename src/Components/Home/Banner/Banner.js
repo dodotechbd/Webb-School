@@ -26,6 +26,7 @@ import { Pagination, Navigation } from "swiper";
 const Banner = () => {
   return (
     <div>
+<<<<<<< HEAD
       <div className="px-12 py-12 bg-neutral pt-20">
         <h1
           className="font-bold text-4xl text-white text-center
@@ -40,6 +41,13 @@ const Banner = () => {
           On the occasion of Eid, various courses of Webb School can be done
           more cost-effectively throughout the month of July!
         </p>
+=======
+      <div className="px-12 py-12 bg-neutral pt-20 bg-[#3EC1D3] ">
+        <h1 className="font-bold text-4xl text-white text-center
+        my-4 ">Special Discount!</h1>
+        <p className="text-xl hidden lg:block text-white text-center
+        mb-12">On the occasion of Eid, various courses of Webb School can be done more cost-effectively throughout the month of July!</p>
+>>>>>>> 164a645312cb764c6ad2a05a2d4815fe367d1055
         <Swiper
           slidesPerView={5}
           spaceBetween={30}
