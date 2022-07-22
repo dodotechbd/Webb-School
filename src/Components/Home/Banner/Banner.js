@@ -5,20 +5,20 @@ import SwiperCore, { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-import "swiper/css/navigation";
 
 import "./Banner.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { EffectCoverflow, Pagination } from "swiper";
 
 const Banner = () => {
   return (
     <div>
-      <div className="px-12 py-12 banner">
+      <div className="px-12 lg:pt-6 lg:pb-12 pb-5 pt-2 banner">
         <h1
-          className="font-bold text-4xl text-white text-center
+          className="font-bold lg:text-4xl md:text-3xl text-2xl text-white text-center
         my-4 "
         >
           Special Discount!
@@ -31,44 +31,49 @@ const Banner = () => {
           more cost-effectively throughout the month of July!
         </p>
         <Swiper
-          slidesPerView={5}
-          spaceBetween={30}
-          slidesPerGroup={5}
+          effect={"coverflow"}
+          grabCursor={true}
+          centeredSlides={true}
+          slidesPerView={3}
+          coverflowEffect={{
+            rotate: 0,
+            stretch: 80,
+            depth: 200,
+            modifier: 1,
+            slideShadows: false,
+          }}
           loop={true}
-          loopFillGroupWithBlank={true}
           autoplay={{
             delay: 1500,
             disableOnInteraction: false,
           }}
-          navigation={true}
           breakpoints={{
             "@0.00": {
               slidesPerView: 1,
               spaceBetween: 10,
-              slidesPerGroup: 1,
             },
             "@0.25": {
               slidesPerView: 2,
               spaceBetween: 20,
-              slidesPerGroup: 2,
             },
             "@0.75": {
               slidesPerView: 3,
               spaceBetween: 40,
-              slidesPerGroup: 3,
             },
             "@1.00": {
-              slidesPerView: 4,
-              spaceBetween: 40,
-              slidesPerGroup: 4,
+              slidesPerView: 3,
+              spaceBetween: 30,
             },
             "@1.25": {
-              slidesPerView: 5,
-              spaceBetween: 50,
-              slidesPerGroup: 5,
+              slidesPerView: 3,
+              spaceBetween: 30,
+            },
+            "@1.75": {
+              slidesPerView: 4,
+              spaceBetween: 30,
             },
           }}
-          modules={[Pagination, Navigation]}
+          modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
           <SwiperSlide className="card">
@@ -105,7 +110,6 @@ const Banner = () => {
       </div>
     </div>
   );
-};
-SwiperCore.use([Autoplay]);
+};SwiperCore.use([Autoplay]);
 
 export default Banner;

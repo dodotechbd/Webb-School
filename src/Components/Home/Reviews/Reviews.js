@@ -30,6 +30,7 @@ const Reviews = () => {
         spaceBetween={30}
         slidesPerGroup={3}
         loop={true}
+        pagination={true}
         loopFillGroupWithBlank={true}
         autoplay={{
           delay: 1500,
