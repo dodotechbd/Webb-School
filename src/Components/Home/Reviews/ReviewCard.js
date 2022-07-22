@@ -19,7 +19,7 @@ const ReviewCard = ({ course }) => {
           </div>
           <p>{description}</p>
           <div className="card-actions justify-end">
-          <i class="text-5xl text-blue-500 fa-solid fa-quote-right"></i>
+          <i class="text-5xl text-[#4C52C4] fa-solid fa-quote-right"></i>
           </div>
         </div>
       </div>

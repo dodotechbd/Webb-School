@@ -10,7 +10,7 @@ const AdmissionCard = ({ admission }) => {
           <img className="lg:w-48 w-28 h-20  lg:h-full object-cover" src={img} alt="Movie" />
         </figure>
         <div class="card-body">
-          <h2 class="text-sm lg:text-lg lg:-mt-0 -mt-3">{name}</h2>
+          <h2 class="text-sm lg:text-lg font-semibold text-gray-700 lg:-mt-0 -mt-3">{name}</h2>
         </div>
       </a>
     </div>
