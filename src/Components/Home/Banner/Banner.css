@@ -46,7 +46,7 @@ body {
   object-fit: cover;
 }
 .swiper-button-next {
-  background-image: url(https://www.svgrepo.com/show/44058/right-arrow.svg);
+  background-image: url(https://www.svgrepo.com/show/38281/right-arrow.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -55,7 +55,7 @@ body {
   display: none;
 }
 .swiper-button-prev {
-  background-image: url(https://www.svgrepo.com/show/83076/left-arrow.svg);
+  background-image: url(https://www.svgrepo.com/show/6776/left-arrow.svg);
   background-repeat: no-repeat;
   background-size: 100% auto;
   background-position: center;
@@ -64,3 +64,12 @@ body {
   display: none;
 }
 
+.banner{
+  background-image: url(https://cutewallpaper.org/21/background-gif-html/15-CSS-Animated-Backgrounds-Pintire.gif);
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #4C52C4 !important;
+  width: 1%;
+  height: 10px;
+}

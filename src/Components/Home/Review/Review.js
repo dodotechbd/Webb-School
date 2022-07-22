@@ -1,54 +1,60 @@
 import React from 'react';
-import image1 from '../../../teacher.jpg'
-import image2 from '../../../Student.jpg'
-import image3 from '../../../Vedio.jpg'
-import image4 from '../../../ratting.png'
+import image1 from '../../../T1.png'
+import image2 from '../../../s1.png'
+import image3 from '../../../v1.png'
+import image4 from '../../../ap.png'
 import student from '../../../St.webp'
+import './Review.css'
 const Review = () => {
     return (
-        <div className='px-12 py-12'>
-            <h2 className='text-center text-red-600 font-bold text-2xl mb-5'>Our Acchievement</h2>
-            <div class="hero min-h-scree bg-slate-200">
+        <div>
+            <h2 className='lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center mt-12 uppercase'>Our Achivement <br /><progress class="progress w-56 progress-primary"></progress></h2>
+            
+            <div class="hero min-h-scree bg-base-100">
                 <div class="hero-content flex-col lg:flex-row">
-                    <img src={student} alt />
-                    <div className='card bg-slate-200 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 mb-10'>
-                        <div class="card-body">
-                            <h2 class="card-title"></h2>
-                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
-                                <div class="">
-                                    <img src={image1} alt="" />
-                                    <br />
-                                    <h1 className='text-red-600 font-bold text-xl'>More than 400 teachers</h1>
+                    <img className='hidden lg:block' src={student} alt />
+                    <div className='card lg:mx-32 bg-base-100 grid grid-cols-2 lg:gap-14 gap-6 md:grid-cols-4 lg:grid-cols-2 mb-5'>
+                        <div class="card-body p-0 mx-auto">
+                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                                <div className="teacher">
+                                    <img className='lg:w-18' src={image1} alt="" />
+                                    <div className='lg:ml-4 ml-2'>
+                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>250+</h1>
+                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Teachers</h1>
+                                    </div>
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body">
-                            <h2 class="card-title"></h2>
-                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
-                                <div class="">
-                                    <img src={image2} alt="" />
-                                    <br />
-                                    <h1 className='text-red-600 font-bold text-xl'>More than 93 lack students</h1>
+                        <div class="card-body p-0 mx-auto">
+                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                                <div className="student">
+                                    <img className='lg:w-18' src={image2} alt="" />
+                                    <div className='lg:ml-4 ml-2'>
+                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
+                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Students </h1>
+                                    </div>
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body">
-                            <h2 class="card-title"></h2>
-                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
-                                <div class="">
-                                    <img src={image3} alt="" />
-                                    <br />
-                                    <h1 className='text-red-600 font-bold text-xl'>More than 18 thousend vedio</h1>
+                        <div class="card-body p-0 mx-auto">
+                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                                <div className="teacher">
+                                    <img className='lg:w-18' src={image4} alt="" />
+                                    <div className='lg:ml-4 ml-2'>
+                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
+                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Users </h1>
+                                    </div>
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body">
-                            <h2 class="card-title"></h2>
-                            <section class="hero container max-w-screen-lg mx-auto text-center pb-10">
-                                <div class="">
-                                    <img src={image4} alt="" />
-                                    <br />
-                                    <h1 className='text-red-600 font-bold text-xl'>More than 4 star rating</h1>
+                        <div class="card-body p-0 mx-auto">
+                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                                <div className="teacher">
+                                    <img className='lg:w-18' src={image3} alt="" />
+                                    <div className='lg:ml-4 ml-2'>
+                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>5K+</h1>
+                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Video </h1>
+                                    </div>
                                 </div>
                             </section>
                         </div>
