@@ -1,5 +1,6 @@
 import React from "react";
 import logo from "../../Assets/wslogo.png";
+import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
   const today = new Date();
@@ -9,7 +10,7 @@ const Footer = () => {
       <footer class="footer p-10 bg-base-200 text-base-content">
         <div className="md:w-60">
           <img
-            className="mx-auto lg:mx-0"
+            className="mx-auto lg:mx-auto"
             width="180"
             viewBox="0 0 24 24"
             src={logo}
@@ -19,7 +20,7 @@ const Footer = () => {
             Create your free account and start learning
           </p>
           <a href="">
-            <button class="btn text-white btn-sm lg:mx-0 mx-24 md:mx-16">
+            <button class="btn text-white btn-sm lg:ml-16 mx-24 md:mx-16">
               Join Now
             </button>
           </a>
@@ -36,8 +37,8 @@ const Footer = () => {
             <p class="text-xl font-bold text-black mb-2">Company</p>
             <a class="link link-hover block">About us</a>
             <a class="link link-hover block">Blogs</a>
-            <a class="link link-hover block">Career</a>
             <a class="link link-hover block">Privacy policy</a>
+            <Link  to={'developer'}>Developer</Link>
           </div>
         </div>
         <div className="">
