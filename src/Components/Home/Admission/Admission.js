@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 import useAdmission from "../../../Hooks/useAdmission";
 import AdmissionCard from "./AdmissionCard";
 
@@ -7,7 +7,7 @@ const Admission = () => {
 
   return (
     <div id="admission" className="" >
-      <div className="mb-10">
+      <div className="mb-10 mt-8">
       <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
         Admission Preparation
       </h1>
@@ -24,9 +24,9 @@ const Admission = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <button class="btn btn-wide btn-primary text-white ">
+        <Link to={'admission'} class="btn btn-wide btn-primary text-white ">
           Explore All Programs
-        </button>
+        </Link>
       </div>
     </div>
   );
