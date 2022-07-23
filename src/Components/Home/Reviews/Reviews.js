@@ -30,46 +30,43 @@ const Reviews = () => {
         spaceBetween={30}
         slidesPerGroup={3}
         loop={true}
-        pagination={true}
-        loopFillGroupWithBlank={true}
-        autoplay={{
-          delay: 1500,
-          disableOnInteraction: false,
+        pagination={{
+          el: '.my-custom-pagination-div',
+          clickable: true,
         }}
+        loopFillGroupWithBlank={true}
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
-            spaceBetween: 10,
             slidesPerGroup: 1,
           },
           "@0.25": {
             slidesPerView: 1,
-            spaceBetween: 5,
             slidesPerGroup: 1,
           },
           "@0.60": {
             slidesPerView: 2,
-            spaceBetween: 5,
+            spaceBetween: 1,
             slidesPerGroup: 2,
           },
           "@0.75": {
             slidesPerView: 2,
-            spaceBetween: 5,
+            spaceBetween: 1,
             slidesPerGroup: 2,
           },
           "@1.00": {
             slidesPerView: 2,
-            spaceBetween: 5,
+            spaceBetween: 2,
             slidesPerGroup: 2,
           },
           "@1.25": {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 1,
             slidesPerGroup: 3,
           },
           "@1.50": {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 1,
             slidesPerGroup: 3,
           },
         }}
@@ -84,6 +81,7 @@ const Reviews = () => {
           ))}
         </div>
       </Swiper>
+      <div class="my-custom-pagination-div text-center mt-10" />
     </div>
   );
 };
