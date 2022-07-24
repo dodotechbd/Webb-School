@@ -39,7 +39,7 @@ const Header = () => {
       <li className={splitLocation[1] === "blogs" ? "active" : ""}>
         <Link to="blogs">Blog</Link>
       </li>
-      <li>
+      <li className={splitLocation[1] === "login" ? "active" : ""}>
         <Link to="login">Login</Link>
       </li>
     </>
@@ -75,7 +75,7 @@ const Header = () => {
               </li>
               <hr />
               <li className="my-2 text-lg text-center">
-                <Link to="login">Login</Link>
+                <Link to="Login">Login</Link>
               </li>
             </ul>
           </div>
