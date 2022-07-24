@@ -7,6 +7,7 @@ import Navigation from "./Navigation";
 import Review from './Review/Review'
 import Reviews from "./Reviews/Reviews";
 import Header from '../Shared/Header/Header';
+import JobCourses from "./JobCourses/JobCourses";
 
 const Home = () => {
   return (
@@ -15,7 +16,7 @@ const Home = () => {
       <Banner></Banner>
       <Navigation></Navigation>
       <Admission></Admission>
-      <JobCourse></JobCourse>
+      <JobCourses></JobCourses>
       <Courses></Courses>
       <Reviews></Reviews>
       <Review></Review>

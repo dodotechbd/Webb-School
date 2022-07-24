@@ -4,7 +4,7 @@ const useJobCourses = () => {
     const [jobcourses, setJobcourses] = useState([]);
 
     useEffect(() => {
-        fetch('https://mshafims.github.io/admission/admission.json')
+        fetch('job.json')
             .then(res => res.json())
             .then(data => setJobcourses(data));
     }, [])
