@@ -1,7 +1,8 @@
+
 import React from 'react';
 
-const BookStore = ({bookstore}) => {
-    const { id, name, img, description, price } = bookstore;
+const AcadamicBook = ({acadamicbook}) => {
+    const { id, name, img, description, price } = acadamicbook;
     return (
         <div className=' bg-slate-200 rounded-lg'> 
             <a href='#' className=" w-100 h-full">
@@ -22,4 +23,4 @@ const BookStore = ({bookstore}) => {
     );
 };
 
-export default BookStore;
+export default AcadamicBook;
