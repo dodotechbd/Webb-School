@@ -5,6 +5,7 @@ import Banner from "./Banner/Banner";
 import JobCourse from "./JobCourse";
 import Navigation from "./Navigation";
 import Review from './Review/Review'
+import Reviews from "./Reviews/Reviews";
 import Header from '../Shared/Header/Header';
 
 const Home = () => {
@@ -13,9 +14,10 @@ const Home = () => {
       <Header></Header>
       <Banner></Banner>
       <Navigation></Navigation>
-      <Courses></Courses>
       <Admission></Admission>
       <JobCourse></JobCourse>
+      <Courses></Courses>
+      <Reviews></Reviews>
       <Review></Review>
     </div>
   );

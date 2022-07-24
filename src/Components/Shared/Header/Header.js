@@ -30,6 +30,9 @@ const Header = () => {
       <li className={splitLocation[1] === "bookstore" ? "active" : ""}>
         <Link to="bookstore">Book Store</Link>
       </li>
+      <li className={splitLocation[1] === "admission" ? "active" : ""}>
+        <Link to="admission">Admission</Link>
+      </li>
       <li className={splitLocation[1] === "jobs" ? "active" : ""}>
         <Link to="jobs">Jobs</Link>
       </li>
@@ -42,7 +45,7 @@ const Header = () => {
     </>
   );
   return (
-    <div class="navbar bg-base-100 shadow-lg fixed top-0 w-full z-50 lg:px-10 font-bold bg-[#A1EAFB]">
+    <div class="navbar shadow-lg fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
       <div class="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
           <div>
@@ -57,6 +60,10 @@ const Header = () => {
               <hr />
               <li className="my-2 text-lg text-center">
                 <Link to="bookstore">Book Store</Link>
+              </li>
+              <hr />
+              <li className="my-2 text-lg text-center">
+                <Link to="admission">Admission</Link>
               </li>
               <hr />
               <li className="my-2 text-lg text-center">
