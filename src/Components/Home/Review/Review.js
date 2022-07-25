@@ -8,7 +8,7 @@ import './Review.css'
 const Review = () => {
     return (
         <div>
-            <h2 className='text-center text-black-600 font-bold text-3xl'>Our Acchievement</h2>
+            <h2 className='text-center text-black-600 font-bold text-3xl'>Our Acchievement <br /><progress className="progress w-56 progress-primary"></progress></h2>
             <div class="hero min-h-scree bg-base-100">
                 <div class="hero-content flex-col lg:flex-row">
                     <img className='lg:block hidden' src={student} alt />
