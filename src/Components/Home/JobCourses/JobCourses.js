@@ -51,6 +51,10 @@ const JobCourses = () => {
             spaceBetween: -20,
           },
           "@1.50": {
+            slidesPerView: 4,
+            spaceBetween: -20,
+          },
+          "@1.75": {
             slidesPerView: 5,
             spaceBetween: -10,
           },
