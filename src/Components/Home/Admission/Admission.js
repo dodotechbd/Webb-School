@@ -16,7 +16,7 @@ const Admission = () => {
       </p>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 lg:mx-8 mb-10 ">
-        {admission.map((admission) => (
+        {admission.slice(0, 4).map((admission) => (
           <AdmissionCard
             key={admission._id}
             admission={admission}
@@ -24,7 +24,7 @@ const Admission = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Link to={'admission'} class="btn btn-wide btn-primary text-white ">
+        <Link to={'admission'} className="btn btn-wide btn-primary text-white ">
           Explore All Programs
         </Link>
       </div>

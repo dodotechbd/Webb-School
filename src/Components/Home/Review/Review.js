@@ -8,14 +8,14 @@ import './Review.css'
 const Review = () => {
     return (
         <div>
-            <h2 className='lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center mt-12 uppercase'>Our Achivement <br /><progress class="progress w-56 progress-primary"></progress></h2>
+            <h2 className='lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center mt-12 uppercase'>Our Achivement <br /><progress className="progress w-56 progress-primary"></progress></h2>
             
-            <div class="hero min-h-scree bg-base-100">
-                <div class="hero-content flex-col lg:flex-row">
+            <div className="hero min-h-scree bg-base-100">
+                <div className="hero-content flex-col lg:flex-row">
                     <img className='hidden lg:block' src={student} alt />
                     <div className='card lg:mx-32 bg-base-100 grid grid-cols-2 lg:gap-14 gap-6 md:grid-cols-4 lg:grid-cols-2 mb-5'>
-                        <div class="card-body p-0 mx-auto">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div className="card-body p-0 mx-auto">
+                            <section className="hero container max-w-screen-lg mx-auto text-center">
                                 <div className="teacher">
                                     <img className='lg:w-18' src={image1} alt="" />
                                     <div className='lg:ml-4 ml-2'>
@@ -25,8 +25,8 @@ const Review = () => {
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body p-0 mx-auto">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div className="card-body p-0 mx-auto">
+                            <section className="hero container max-w-screen-lg mx-auto text-center">
                                 <div className="student">
                                     <img className='lg:w-18' src={image2} alt="" />
                                     <div className='lg:ml-4 ml-2'>
@@ -36,8 +36,8 @@ const Review = () => {
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body p-0 mx-auto">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div className="card-body p-0 mx-auto">
+                            <section className="hero container max-w-screen-lg mx-auto text-center">
                                 <div className="teacher">
                                     <img className='lg:w-18' src={image4} alt="" />
                                     <div className='lg:ml-4 ml-2'>
@@ -47,8 +47,8 @@ const Review = () => {
                                 </div>
                             </section>
                         </div>
-                        <div class="card-body p-0 mx-auto">
-                            <section class="hero container max-w-screen-lg mx-auto text-center">
+                        <div className="card-body p-0 mx-auto">
+                            <section className="hero container max-w-screen-lg mx-auto text-center">
                                 <div className="teacher">
                                     <img className='lg:w-18' src={image3} alt="" />
                                     <div className='lg:ml-4 ml-2'>

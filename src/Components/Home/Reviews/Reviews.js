@@ -81,7 +81,7 @@ const Reviews = () => {
           ))}
         </div>
       </Swiper>
-      <div class="my-custom-pagination-div text-center mt-10" />
+      <div className="my-custom-pagination-div text-center mt-10" />
     </div>
   );
 };
