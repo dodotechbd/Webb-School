@@ -1,0 +1,32 @@
+[
+  {
+    "_id": "1",
+    "name": "Bank Job",
+    "link": "https://10minuteschool.com/",
+    "img": "https://i.postimg.cc/8zh9KJp3/Bank-Job.png"
+  },
+  {
+    "_id": "2",
+    "name": "Developer Job",
+    "link": "https://10minuteschool.com/",
+    "img": "https://i.postimg.cc/vZfT0z6s/Bank-Job-3.png"
+  },
+  {
+    "_id": "3",
+    "name": "Corporate Job",
+    "link": "https://10minuteschool.com/",
+    "img": "https://i.postimg.cc/tJnpYq3j/Bank-Job-4.png"
+  },
+  {
+    "_id": "4",
+    "name": "Freelancer Job",
+    "link": "https://10minuteschool.com/",
+    "img": "https://i.postimg.cc/P5WfW5Bf/job-2.png"
+  },
+  {
+    "_id": "5",
+    "name": "Freelancer Job",
+    "link": "https://10minuteschool.com/",
+    "img": "https://i.postimg.cc/P5WfW5Bf/job-2.png"
+  }
+]

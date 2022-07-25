@@ -8,8 +8,8 @@ const AcadamicBook = ({acadamicbook}) => {
                 <figure  className="mx-12 pt-10">
                     <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
                 </figure>
-                <div class="card-body">
-                    <h2 class="card-title">
+                <div className="card-body">
+                    <h2 className="card-title">
                         <p className='text-2xl font-bold'>{name}</p>
                         <div className="badge badge-primary text-white">Top</div>
                     </h2>
