@@ -14,7 +14,7 @@ import "../Banner/Banner.css";
 import { Pagination } from "swiper";
 
 const JobCourses = () => {
-  const [jobCourse, setJobCourse] = useJobCourses();
+  const [jobCourse] = useJobCourses();
   return (
     <div className="my-16" id="job">
       <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
