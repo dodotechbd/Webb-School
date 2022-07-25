@@ -1,12 +1,12 @@
 import React from 'react';
 
-const Course = ({ course }) => {
-    const { id, name, img, description, price } = course;
+const AcadamicBook = ({acadamicbook}) => {
+    const { id, name, img, description, price } = acadamicbook;
     return (
-        <div className=''> 
-            <a href='#' className="card w-100 bg-base-100 border border-gray-300 h-full transform transition duration-500 hover:scale-110 hover:shadow-xl">
-                <figure>
-                    <img src={img} alt="Shoes" />
+        <div className=' bg-slate-200 rounded-lg'> 
+            <a href='#' className=" w-100 h-full">
+                <figure  className="mx-12 pt-10">
+                    <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">
@@ -15,11 +15,11 @@ const Course = ({ course }) => {
                     </h2>
                     <p className='text-xl'>{description}</p>
                     <p className='text-2xl font-bold border-b-2 pb-2'>${price}</p>
-                    <div className="mt-4 text-center text-xl text-primary ">Enroll Course</div>
+            
                 </div>
             </a>
         </div>
     );
 };
 
-export default Course;
+export default AcadamicBook;
