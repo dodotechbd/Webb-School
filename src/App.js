@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import BookStore from "./Components/BookStore/BookStore";
 import Courses from "./Components/Course/Courses";
 import Developer from "./Components/Developer";
@@ -15,6 +16,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route path="/courses" element={<Courses></Courses>}></Route>
+        <Route path="/admission" element={<AllAdmission></AllAdmission>}></Route>
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         
