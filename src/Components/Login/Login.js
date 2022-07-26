@@ -44,6 +44,10 @@ let singInError
   }
 
   return (
+    <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
+      <div className='hidden sm:block'>
+            <img className='w-full h-full object-cover' src='https://i.postimg.cc/Xqx4Q2kL/drbbb-4x.webp' alt="" />
+        </div>
     <div className='flex h-screen justify-center items-center bg-[#E5E5E5]'>
     <div className="card w-96 bg-base-100 shadow-xl  bg-[#D9D4E7]">
         <div className="card-body">
@@ -109,6 +113,7 @@ let singInError
            
         </div>
     </div>
+</div>
 </div>
   );
 };
