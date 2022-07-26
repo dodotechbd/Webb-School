@@ -1,0 +1,58 @@
+[
+    {
+        "id": 1,
+        "name": "Spoken English...",
+        "description": "Muhammod Shafi ",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/GBSE.jpg",
+        "price": "90"
+    },
+    {
+        "id": 2,
+        "name": "communication hacks....",
+        "description": "Shakhwath Hossian",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/Communication%20Hacks%20Offline%20Front%20Cover.jpg",
+        "price": "70"
+    },
+    {
+        "id": 3,
+        "name": "Vocabolary....",
+        "description": "Tasmia Esika",
+        "img": "https://10ms-cloudfront.s3.ap-southeast-1.amazonaws.com/images/store/sqr-img/%28Compressed%29%20%20Shobar%20Jonno%20Vocabulary%20-%20467x721px%20Ratio%20Cover-1.jpg",
+        "price": "110"
+    },
+    {
+        "id": 4,
+        "name": "Student Hacks....",
+        "description": "Rashal Mhamud Raj",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/Front%20Cover%20Student%20Hacks%202020.jpg",
+        "price": "110"
+    },
+    {
+        "id":5 ,
+        "name": "Income at home....",
+        "description": "Amortha kumar shill",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/%28Compressed%29%20467x721px%20Ratio%20Cover.jpg",
+        "price": "87"
+    },
+    {
+        "id":6 ,
+        "name": "graphics Digine....",
+        "description": "Abul kalam ajad",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/Graphic-Design-Er-Ashol-Funda---Asif-Hossain----Book-Cover---Front-1.jpg",
+        "price": "110"
+    },
+    {
+        "id":7 ,
+        "name": "Mobile Photography....",
+        "description": "Tasmia Esika",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/mobile-photography.jpg",
+        "price": "110"
+    },
+    {
+        "id":8 ,
+        "name": "Smart Carear....",
+        "description": "Robart Bruse",
+        "img": "https://d1yreyj8btzg0t.cloudfront.net/images/store/sqr-img/Smart-Career.jpg",
+        "price": "110"
+    }
+]
