@@ -1,12 +1,12 @@
 import React from 'react';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link } from 'react-router-dom';
-import Loading from '../Loading/Loading';
+import { Link, useNavigate } from 'react-router-dom';
+import Loading from '../Shared/Loading/Loading'
 
 
-const SingUp = () => {
+const SignUp = () => {
     const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
   
@@ -16,24 +16,32 @@ const SingUp = () => {
         loading,
         error,
       ] = useCreateUserWithEmailAndPassword(auth);
+
+      const [updateProfile, updating, upError] = useUpdateProfile(auth);
+
+      const navigate = useNavigate()
+
   
   let singInError
   
-    if( loading || gLoading){
+    if( loading || gLoading || updating){
       return <Loading></Loading>
     }
   
-    if(error || gError){
-      singInError =<p>{error?.message || gError?.message}</p>
+    if(error || gError || upError){
+      singInError =<p>{error?.message || gError?.message || upError?.message}</p>
     }
   
-    if (user || gUser) {
+    if (user || gUser ) {
       console.log(gUser)
     }
   
-    const onSubmit = data => {
+    const onSubmit = async data => {
       console.log(data)
-      createUserWithEmailAndPassword(data.email,data.password)
+      await createUserWithEmailAndPassword(data.email,data.password)
+      await updateProfile({ displayName: data.name });
+      console.log('done')
+      navigate("/")
     }
     return (
         <div className='flex h-screen justify-center items-center bg-[#E5E5E5]'>
@@ -127,4 +135,4 @@ const SingUp = () => {
     );
 };
 
-export default SingUp;
+export default SignUp;

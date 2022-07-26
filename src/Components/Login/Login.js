@@ -3,7 +3,7 @@ import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
-import Loading from '../Loading/Loading';
+import Loading from '../Shared/Loading/Loading';
 
 
 
@@ -96,7 +96,7 @@ let singInError
              {singInError}
                 <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
             </form>
-            <p className='text- text-black text-bold'>New to Webb School? <Link to="/SingUp" className=' text-light text-primary'>Create New Account</Link></p>
+            <p className='text- text-black text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
             <div className="divider">OR</div>
 
             <button onClick={() => signInWithGoogle()} className="btn btn-outline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">Continue with Google</button>

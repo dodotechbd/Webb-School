@@ -7,8 +7,19 @@ import Drawer from "react-modern-drawer";
 
 //import styles ?
 import "react-modern-drawer/dist/index.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
+ 
+  const [user, loading, error] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth)
+  }
+
+
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -40,7 +51,9 @@ const Header = () => {
         <Link to="blogs">Blog</Link>
       </li>
       <li className={splitLocation[1] === "login" ? "active" : ""}>
-        <Link to="login">Login</Link>
+       { user ? <li className={splitLocation[1] === "blogs" ? "active" : ""}>
+        <Link to="login" onClick={logout}>Sign Out</Link>
+      </li> : <Link to="login">Login</Link>}
       </li>
     </>
   );
