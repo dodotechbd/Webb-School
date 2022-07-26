@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
+import Blogs from "./Components/Blogs/Blogs";
 import BookStore from "./Components/BookStore/BookStore";
 import Courses from "./Components/Course/Courses";
 import Developer from "./Components/Developer";
@@ -23,6 +24,7 @@ function App() {
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
     
         
       </Routes>
