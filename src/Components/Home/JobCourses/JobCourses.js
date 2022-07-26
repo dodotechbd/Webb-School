@@ -14,7 +14,7 @@ import "../Banner/Banner.css";
 import { Pagination } from "swiper";
 
 const JobCourses = () => {
-  const [jobCourse, setJobCourse] = useJobCourses();
+  const [jobCourse] = useJobCourses();
   return (
     <div className="my-16" id="job">
       <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
@@ -51,6 +51,14 @@ const JobCourses = () => {
             spaceBetween: -20,
           },
           "@1.50": {
+            slidesPerView: 4,
+            spaceBetween: -20,
+          },
+          "@1.75": {
+            slidesPerView: 4,
+            spaceBetween: -10,
+          },
+          "@2.00": {
             slidesPerView: 5,
             spaceBetween: -10,
           },
@@ -66,7 +74,7 @@ const JobCourses = () => {
       </Swiper>
       </div>
     </div>
-    );
+  );
 };
 
 export default JobCourses;

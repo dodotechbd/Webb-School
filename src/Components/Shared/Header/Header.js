@@ -58,11 +58,11 @@ const Header = () => {
     </>
   );
   return (
-    <div class="navbar shadow-lg fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
-      <div class="navbar-start">
+    <div className="navbar shadow-lg fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
+      <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
           <div>
-            <ul tabindex="0" class="p-2 bg-base-100 ">
+            <ul tabindex="0" className="p-2 bg-base-100 ">
                 <Link to="/">
                   <img className="w-36 mt-2 mb-1 mx-auto" src={wslogo} alt=""></img>
                 </Link>
@@ -101,17 +101,17 @@ const Header = () => {
           </div>
         </Link>
       </div>
-      <div class="navbar-center lg:mr-56">
-        <ul class="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
+      <div className="navbar-center lg:mr-56">
+        <ul className="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
       </div>
-      <div class="navbar-end lg:hidden">
-        <div class="dropdown">
+      <div className="navbar-end lg:hidden">
+        <div className="dropdown">
           <label
             onClick={toggleDrawer}
             tabindex="0"
-            class="mx-4 text-2xl lg:hidden"
+            className="mx-4 text-2xl lg:hidden"
           >
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </label>
         </div>
       </div>
