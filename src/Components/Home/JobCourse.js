@@ -25,15 +25,15 @@ const JobCourse = () => {
       <div className="my-10 grid grid-cols-0 md:grid-cols-2 lg:grid-cols-4">
         <a
           href="#"
-          class=" card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+          className=" card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
         >
           <figure>
             <img src="https://i.postimg.cc/8zh9KJp3/Bank-Job.png" alt="Shoes" />
           </figure>
-          <div class="card-body ">
-            <h2 class="text-2xl text-center">Bank Job</h2>
+          <div className="card-body ">
+            <h2 className="text-2xl text-center">Bank Job</h2>
 
-            <div class="card-actions justify-center">
+            <div className="card-actions justify-center">
               <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                 See Details
               </div>
@@ -42,7 +42,7 @@ const JobCourse = () => {
         </a>
         <a
           href="#"
-          class="card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+          className="card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
         >
           <figure>
             <img
@@ -50,10 +50,10 @@ const JobCourse = () => {
               alt="Shoes"
             />
           </figure>
-          <div class="card-body">
-            <h2 class="text-2xl text-center">Developer Job</h2>
+          <div className="card-body">
+            <h2 className="text-2xl text-center">Developer Job</h2>
 
-            <div class="card-actions justify-center">
+            <div className="card-actions justify-center">
               <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                 See Details
               </div>
@@ -62,7 +62,7 @@ const JobCourse = () => {
         </a>
         <a
           href="#"
-          class="card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+          className="card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
         >
           <figure>
             <img
@@ -70,10 +70,10 @@ const JobCourse = () => {
               alt="Shoes"
             />
           </figure>
-          <div class="card-body">
-            <h2 class="text-2xl text-center">Corporate Job</h2>
+          <div className="card-body">
+            <h2 className="text-2xl text-center">Corporate Job</h2>
 
-            <div class="card-actions justify-center">
+            <div className="card-actions justify-center">
               <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                 See Details
               </div>
@@ -82,15 +82,15 @@ const JobCourse = () => {
         </a>
         <a
           href="#"
-          class="card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+          className="card card-compact hidden lg:block md:block w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
         >
           <figure>
             <img src="https://i.postimg.cc/P5WfW5Bf/job-2.png" alt="Shoes" />
           </figure>
-          <div class="card-body">
-            <h2 class="text-2xl text-center">Self Skill Develop</h2>
+          <div className="card-body">
+            <h2 className="text-2xl text-center">Self Skill Develop</h2>
 
-            <div class="card-actions justify-center">
+            <div className="card-actions justify-center">
               <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                 See Details
               </div>
@@ -134,15 +134,13 @@ const JobCourse = () => {
               slidesPerGroup: 0,
             },
           }}
-          loop={true}
-          loopFillGroupWithBlank={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
         >
           <SwiperSlide>
             <a
               href="#"
-              class=" card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+              className=" card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
             >
               <figure>
                 <img
@@ -150,10 +148,10 @@ const JobCourse = () => {
                   alt="Shoes"
                 />
               </figure>
-              <div class="card-body ">
-                <h2 class="text-2xl text-center">Bank Job</h2>
+              <div className="card-body ">
+                <h2 className="text-2xl text-center">Bank Job</h2>
 
-                <div class="card-actions justify-center">
+                <div className="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t w-full border-gray pt-3">
                     See Details
                   </div>
@@ -164,7 +162,7 @@ const JobCourse = () => {
           <SwiperSlide>
             <a
               href="#"
-              class="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+              className="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
             >
               <figure>
                 <img
@@ -172,10 +170,10 @@ const JobCourse = () => {
                   alt="Shoes"
                 />
               </figure>
-              <div class="card-body">
-                <h2 class="text-2xl text-center">Developer Job</h2>
+              <div className="card-body">
+                <h2 className="text-2xl text-center">Developer Job</h2>
 
-                <div class="card-actions justify-center">
+                <div className="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                     See Details
                   </div>
@@ -186,7 +184,7 @@ const JobCourse = () => {
           <SwiperSlide>
             <a
               href="#"
-              class="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+              className="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
             >
               <figure>
                 <img
@@ -194,10 +192,10 @@ const JobCourse = () => {
                   alt="Shoes"
                 />
               </figure>
-              <div class="card-body">
-                <h2 class="text-2xl text-center">Corporate Job</h2>
+              <div className="card-body">
+                <h2 className="text-2xl text-center">Corporate Job</h2>
 
-                <div class="card-actions justify-center">
+                <div className="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                     See Details
                   </div>
@@ -208,7 +206,7 @@ const JobCourse = () => {
           <SwiperSlide>
             <a
               href="#"
-              class="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
+              className="card card-compact w-72 mb-10 mx-auto bg-base-100 hover:shadow-xl border border-gray-300  transform transition duration-500 hover:scale-110"
             >
               <figure>
                 <img
@@ -216,10 +214,10 @@ const JobCourse = () => {
                   alt="Shoes"
                 />
               </figure>
-              <div class="card-body">
-                <h2 class="text-2xl text-center">Self Skill Develop</h2>
+              <div className="card-body">
+                <h2 className="text-2xl text-center">Self Skill Develop</h2>
 
-                <div class="card-actions justify-center">
+                <div className="card-actions justify-center">
                   <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
                     See Details
                   </div>
