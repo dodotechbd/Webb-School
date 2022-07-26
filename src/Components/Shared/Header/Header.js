@@ -52,7 +52,7 @@ const Header = () => {
       </li>
       <li className={splitLocation[1] === "login" ? "active" : ""}>
        { user ? <li className={splitLocation[1] === "blogs" ? "active" : ""}>
-        <Link to="login" onClick={logout}>Sign Out</Link>
+        <button className={splitLocation[1] === "login" ? "active" : ""} onClick={logout}>logout</button>
       </li> : <Link to="login">Login</Link>}
       </li>
     </>
@@ -88,7 +88,9 @@ const Header = () => {
               </li>
               <hr />
               <li className="my-2 text-lg text-center">
-                <Link to="Login">Login</Link>
+                {user? <li className="my-2 text-lg text-center">
+                <Link to="blogs">Logout</Link>
+              </li> : <Link to="Login">Login</Link>}
               </li>
             </ul>
           </div>
