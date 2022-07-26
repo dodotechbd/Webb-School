@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "name": "Digital Marketing",
+        "img": "https://kolkatadigitalmarketinginstitute.com/wp-content/uploads/2021/06/Digital-Marketing-.jpg",
+        "price": "120"
+    },
+    {
+        "id": 2,
+        "name": "Freelancing",
+        "img": "https://www.erozgaar.pitb.gov.pk/system/files/styles/juicebox_medium/private/Mistakes-to-avoid-when-hiring-freelancers%20%281%29_0.jpg?itok=HJjvViKi",
+        "price": "140"
+    },
+    {
+        "id": 3,
+        "name": "Abode Editing",
+        "img": "https://coursevania.com/wp-content/uploads/2021/05/4060610_17f8.jpg",
+        "price": "150"
+    },
+    {
+        "id": 4,
+        "name": "Abode Editing",
+        "img": "https://coursevania.com/wp-content/uploads/2021/05/4060610_17f8.jpg",
+        "price": "150"
+    }
+]

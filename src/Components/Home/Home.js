@@ -7,6 +7,7 @@ import Review from './Review/Review'
 import Reviews from "./Reviews/Reviews";
 import Header from '../Shared/Header/Header';
 import JobCourses from "./JobCourses/JobCourses";
+import CoursesTabs from "./CoursesTabs";
 
 const Home = () => {
   return (
@@ -14,9 +15,10 @@ const Home = () => {
       <Header></Header>
       <Banner></Banner>
       <Navigation></Navigation>
+      <Courses></Courses>
       <Admission></Admission>
       <JobCourses></JobCourses>
-      <Courses></Courses>
+      <CoursesTabs></CoursesTabs>
       <Reviews></Reviews>
       <Review></Review>
     </div>
