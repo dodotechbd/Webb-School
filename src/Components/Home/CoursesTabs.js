@@ -22,7 +22,7 @@ const CoursesTabs = () => {
       <div>
         <Tabs className="mx-10">
           <TabList>
-            <Tab>Special Crash Courses</Tab>
+            <Tab>Language Learning</Tab>
             <Tab>Jobs Requirments</Tab>
           </TabList>
 
