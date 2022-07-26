@@ -1,49 +1,67 @@
 import React from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link } from 'react-router-dom';
 import Loading from '../Loading/Loading';
 
 
-
-
-const Login = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
-  const { register, formState: { errors }, handleSubmit } = useForm();
-
-  const [
-    signInWithEmailAndPassword,
-    user,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
-
-let singInError
-
-  if( loading || gLoading){
-    return <Loading></Loading>
-  }
-
-  if(error || gError){
-    singInError =<p>{error?.message || gError?.message}</p>
-  }
-
-  if (user || gUser) {
-    console.log(gUser)
-  }
-
-  const onSubmit = data => {
-    console.log(data)
-    signInWithEmailAndPassword(data.email,data.password)
-  }
-
-  return (
-    <div className='flex h-screen justify-center items-center bg-[#E5E5E5]'>
+const SingUp = () => {
+    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
+    const { register, formState: { errors }, handleSubmit } = useForm();
+  
+    const [
+        createUserWithEmailAndPassword,
+        user,
+        loading,
+        error,
+      ] = useCreateUserWithEmailAndPassword(auth);
+  
+  let singInError
+  
+    if( loading || gLoading){
+      return <Loading></Loading>
+    }
+  
+    if(error || gError){
+      singInError =<p>{error?.message || gError?.message}</p>
+    }
+  
+    if (user || gUser) {
+      console.log(gUser)
+    }
+  
+    const onSubmit = data => {
+      console.log(data)
+      createUserWithEmailAndPassword(data.email,data.password)
+    }
+    return (
+        <div className='flex h-screen justify-center items-center bg-[#E5E5E5]'>
     <div className="card w-96 bg-base-100 shadow-xl  bg-[#D9D4E7]">
         <div className="card-body">
-            <h2 className="text-center text-2xl font-bold">Login</h2>
+            <h2 className="text-center text-2xl font-bold">Sing Up</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
+            <div className="form-control w-full max-w-xs">
+                    <label className="label">
+                        <span className="label-text">Name</span>
+                    </label>
+                    <input
+                        type="text"
+                        placeholder="Name"
+                        className="input input-bordered w-full max-w-xs"
+                        {...register("name", {
+                            required: {
+                                value: true,
+                                message: "Name is require"
+                            },
+                           
+                        })} />
+                    <label className="label">
+                        {errors.name?.type === 'required' && <span className="label-text-alt text-red-700">{errors.name.message}</span>}
+                        
+
+                    </label>
+                </div>
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Email</span>
@@ -68,6 +86,7 @@ let singInError
 
                     </label>
                 </div>
+                
                 <div className="form-control w-full max-w-xs">
                     <label className="label">
                         <span className="label-text">Password</span>
@@ -94,19 +113,18 @@ let singInError
                 </div>
                  
              {singInError}
-                <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                <input className='btn w-full max-w-xs text-white' type="submit" value="SingUp" />
             </form>
-            <p className='text- text-black text-bold'>New to Webb School? <Link to="/SingUp" className=' text-light text-primary'>Create New Account</Link></p>
+            <p className='text- text-black text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please LogIn</Link></p>
             <div className="divider">OR</div>
 
-            <button onClick={() => signInWithGoogle()} className="btn btn-outline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">Continue with Google</button>
+            <button  onClick={() => signInWithGoogle()} className="btn btn-outline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">Continue with Google</button>
 
            
         </div>
     </div>
 </div>
-  );
+    );
 };
 
-export default Login;
-
+export default SingUp;

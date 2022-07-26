@@ -5,6 +5,7 @@ import Courses from "./Components/Course/Courses";
 import Developer from "./Components/Developer";
 import Home from "./Components/Home/Home";
 import Login from "./Components/Login/Login";
+import SingUp from "./Components/Login/SingUp";
 import Footer from "./Components/Shared/Footer";
 import Header from "./Components/Shared/Header/Header";
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
+        <Route path="/SingUp" element={<SingUp></SingUp>}></Route>
     
         
       </Routes>
