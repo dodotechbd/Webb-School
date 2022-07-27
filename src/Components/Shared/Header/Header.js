@@ -7,8 +7,19 @@ import Drawer from "react-modern-drawer";
 
 //import styles ?
 import "react-modern-drawer/dist/index.css";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { signOut } from "firebase/auth";
 
 const Header = () => {
+ 
+  const [user, loading, error] = useAuthState(auth);
+
+  const logout = () => {
+    signOut(auth)
+  }
+
+
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -40,14 +51,16 @@ const Header = () => {
         <Link to="blogs">Blog</Link>
       </li>
       <li className={splitLocation[1] === "login" ? "active" : ""}>
-        <Link to="login">Login</Link>
+       { user ? <li className={splitLocation[1] === "blogs" ? "active" : ""}>
+        <button className={splitLocation[1] === "login" ? "active" : ""} onClick={logout}>logout</button>
+      </li> : <Link to="login">Login</Link>}
       </li>
     </>
   );
   return (
-    <div className="navbar shadow-lg fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
+    <div className="navbar border-b fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
       <div className="navbar-start">
-        <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="TOP">
           <div>
             <ul tabindex="0" className="p-2 bg-base-100 ">
                 <Link to="/">
@@ -75,7 +88,9 @@ const Header = () => {
               </li>
               <hr />
               <li className="my-2 text-lg text-center">
-                <Link to="Login">Login</Link>
+                {user? <li className="my-2 text-lg text-center">
+                <Link to="blogs">Logout</Link>
+              </li> : <Link to="Login">Login</Link>}
               </li>
             </ul>
           </div>
