@@ -4,7 +4,7 @@ const useAdmission = () => {
     const [admission, setAdmission] = useState([]);
 
     useEffect(() => {
-        fetch('https://mshafims.github.io/admission/admission.json')
+        fetch('admission.json')
             .then(res => res.json())
             .then(data => setAdmission(data));
     }, [])
