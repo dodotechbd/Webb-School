@@ -41,18 +41,18 @@ const Blogs = () => {
                         <p>Know Your all CSS3 Q and A</p>
                         <div class="card-actions justify-end">
 
-                            <label for="my-modal-5">...Show</label>
+                            <label for="my-modal-raj">...Show</label>
 
-                            <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+                            <input type="checkbox" id="my-modal-raj" class="modal-toggle" />
                             <div class="modal">
                                 <div class="modal-box w-11/12 max-w-5xl">
-                                    <h3 class="font-bold text-lg">Why will you use Meta tags?</h3>
-                                    <p class="py-4">Meta data is a basically used header tag between and using work page description, author of the document, keywords, and viewport settings.  tag important its don't show website its work all documents showing system her compare keywords read search engines.</p>
+                                    <h3 class="font-bold text-lg">What is CSS?</h3>
+                                    <p class="py-4">Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
 
                                     <h3 class="font-bold text-lg">What are the differences between html4 and html5?  </h3>
                                     <p class="py-4">Html-5 is a Basically html-4 update version and some differences between. Html-5 in remove tag.</p>
                                     <div class="modal-action">
-                                        <label for="my-modal-5" class="btn">X</label>
+                                        <label for="my-modal-raj" class="btn">X</label>
                                     </div>
                                 </div>
                             </div>
