@@ -6,6 +6,7 @@ const AcadamicDetail = () => {
     return (
         <div>
             <h2 className='p-32 text-4xl font-bold'>welcome our detals: {acadamicbookId}</h2>
+   
         </div>
     );
 };

@@ -3,7 +3,7 @@ import "./App.css";
 import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import AllCourses from "./Components/AllCourses/AllCourses";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
-import AcadamicDetail from "./Components/BookStore/AcadamicDetails/AcadamicDetail";
+import AcadamicBook from "./Components/BookStore/AcadamicBook/AcadamicBook";
 import BookStore from "./Components/BookStore/BookStore";
 import Developer from "./Components/Developer";
 import Home from "./Components/Home/Home";
@@ -19,7 +19,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/acadamicbook/:acadamicbookId" element={<AcadamicDetail></AcadamicDetail>}></Route>
+        <Route path="/acadamicbook/:acadamicbookId" element={<AcadamicBook></AcadamicBook>}></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route path="/admission" element={<AllAdmission></AllAdmission>}></Route>
         <Route path="/jobs" element={<AllJobCourse></AllJobCourse>}></Route>

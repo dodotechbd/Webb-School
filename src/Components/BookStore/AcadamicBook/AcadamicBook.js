@@ -1,7 +1,7 @@
 import React from 'react';
 import{useNavigate} from 'react-router-dom'
 
-const AcadamicBook = ({ acadamicbook }) => {
+const AcadamicBook = ({acadamicbook}) => {
     const { id, name, img, description, price } = acadamicbook;
     const navigate = useNavigate();
     const navigateToAcadamicDetail =id =>{
