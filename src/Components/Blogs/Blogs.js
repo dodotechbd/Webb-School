@@ -72,6 +72,8 @@ const Blogs = () => {
                             <input type="checkbox" id="my-modal" class="modal-toggle" />
                             <div class="modal">
                                 <div class="modal-box w-11/12 max-w-5xl">
+                                    <h3 class="font-bold text-lg">What is JavaScript?</h3>
+                                    <p class="py-4">JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.</p>
                                     <h3 class="font-bold text-lg">What is JavaScript used for?</h3>
                                     <p class="py-4">Meta data is a basically used header tag between and using work page description, author of the document, keywords, and viewport settings.  tag important its don't show website its work all documents showing system her compare keywords read search engines.</p>
 
