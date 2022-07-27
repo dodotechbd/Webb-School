@@ -49,8 +49,9 @@ const Blogs = () => {
                                     <h3 class="font-bold text-lg">What is CSS?</h3>
                                     <p class="py-4">Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
 
-                                    <h3 class="font-bold text-lg">What are the differences between html4 and html5?  </h3>
-                                    <p class="py-4">Html-5 is a Basically html-4 update version and some differences between. Html-5 in remove tag.</p>
+                                    <h3 class="font-bold text-lg">What is CSS? And How Does It Relate to HMTL?
+                                    </h3>
+                                    <p class="py-4">While Hypertext Markup Language (HTML) is used to structure a web document (defining things like headlines and paragraphs, and allowing you to embed images, video, and other media), Cascading Style Sheet language comes through and specifies your document’s style — page layouts, colors, and fonts (shoutout to font-family and font-style!) are all determined with CSS syntax, meaning that CSS is one important language for you to master in terms of styling your web pages!.</p>
                                     <div class="modal-action">
                                         <label for="my-modal-raj" class="btn">X</label>
                                     </div>
