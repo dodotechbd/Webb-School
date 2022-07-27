@@ -4,6 +4,7 @@ import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import AllCourses from "./Components/AllCourses/AllCourses";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
 import AcadamicBook from "./Components/BookStore/AcadamicBook/AcadamicBook";
+import Blogs from "./Components/Blogs/Blogs";
 import BookStore from "./Components/BookStore/BookStore";
 import Developer from "./Components/Developer";
 import Home from "./Components/Home/Home";
@@ -11,6 +12,7 @@ import Login from "./Components/Login/Login";
 import SignUp from "./Components/Login/SingUp";
 import Footer from "./Components/Shared/Footer";
 import Header from "./Components/Shared/Header/Header";
+import NoteFound from "./Components/WrongRoute/NoteFound";
 
 function App() {
   return (
@@ -26,8 +28,11 @@ function App() {
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
-    
+
+
+        <Route path="*" element={<NoteFound></NoteFound>}></Route>
         
       </Routes>
       <Footer></Footer>
