@@ -45,9 +45,9 @@ const Header = () => {
     </>
   );
   return (
-    <div className="navbar shadow-lg fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
+    <div className="navbar border-b fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
       <div className="navbar-start">
-        <Drawer open={isOpen} onClose={toggleDrawer} direction="top">
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="TOP">
           <div>
             <ul tabindex="0" className="p-2 bg-base-100 ">
                 <Link to="/">
