@@ -12,7 +12,7 @@ const Admission = () => {
         Admission Preparation
       </h1>
       <p className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
-        Prepare for your dream university
+        Prepare for your dreams university
       </p>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 lg:mx-8 mb-10 ">
