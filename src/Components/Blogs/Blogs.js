@@ -58,7 +58,7 @@ const Blogs = () => {
                             </div>
                         </div>
                     </div>
-                </div>  
+                </div>
 
                 <div class="card w-96 bg-base-100 shadow-xl image-full">
                     <figure><img src={js} alt="Shoes" /></figure>
@@ -75,9 +75,11 @@ const Blogs = () => {
                                     <h3 class="font-bold text-lg">What is JavaScript?</h3>
                                     <p class="py-4">JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.</p>
                                     <h3 class="font-bold text-lg">What is JavaScript used for?</h3>
-                                    <p class="py-4">Meta data is a basically used header tag between and using work page description, author of the document, keywords, and viewport settings.  tag important its don't show website its work all documents showing system her compare keywords read search engines.</p>
+                                    <p class="py-4">JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user. Common examples of JavaScript that you might use every day include the search box on Amazon, a news recap video embedded on The New York Times, or refreshing your Twitter feed.
 
-                                    
+                                        Incorporating JavaScript improves the user experience of the web page by converting it from a static page into an interactive one. To recap, JavaScript adds behavior to web pages..</p>
+
+
                                     <div class="modal-action">
                                         <label for="my-modal" class="btn">X</label>
                                     </div>
