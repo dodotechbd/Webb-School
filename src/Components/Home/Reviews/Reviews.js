@@ -76,7 +76,7 @@ const Reviews = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {courses.map((course) => (
             <SwiperSlide>
-              <ReviewCard key={course.id} course={course}></ReviewCard>
+              <ReviewCard key={course._id} course={course}></ReviewCard>
             </SwiperSlide>
           ))}
         </div>
