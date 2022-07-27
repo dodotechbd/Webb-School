@@ -103,12 +103,15 @@ let singInError
                 </div>
                  
              {singInError}
-                <input className='btn w-full max-w-xs text-white' type="submit" value="Login" />
+                <input className='btn w-full max-w-xs inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out' type="submit" value="Login" />
             </form>
             <p className='text- text-black text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
             <div className="divider">OR</div>
 
-            <button onClick={() => signInWithGoogle()} className="btn btn-outline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">Continue with Google</button>
+            
+                <button onClick={() => signInWithGoogle()} class=" bg-purple-800 text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700  w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200  hover:border-slate-400  hover:shadow transition duration-150 rounded shadow-lg">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""/> <span>Login with Google</span>
+            </button>
 
            
         </div>
