@@ -1,11 +1,9 @@
 import React from 'react';
-import{useNavigate} from 'react-router-dom'
 
-const AcadamicBook = ({acadamicbook}) => {
+const AcadamicBook = ({ acadamicbook }) => {
     const { id, name, img, description, price } = acadamicbook;
-    const navigate = useNavigate();
     const navigateToAcadamicDetail =id =>{
-    navigate(`/acadamicbook/${id}`);
+
     }
     return (
         <div className=' bg-slate-200 rounded-lg position relative h-full'>
@@ -25,7 +23,7 @@ const AcadamicBook = ({acadamicbook}) => {
                 </div>
                
             </div>
-            <button onClick={() => navigateToAcadamicDetail(id)} class=" btn-block  position absolute bottom-0  bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2">Detalis</button>
+            <button onClick={() =>navigateToAcadamicDetail(id)} class=" btn-block  position absolute bottom-0  bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2">Detalis</button>
         </div>
 
     );
