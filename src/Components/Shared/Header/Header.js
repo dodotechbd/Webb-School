@@ -49,6 +49,9 @@ const Header = () => {
       <li className={splitLocation[1] === "blogs" ? "active" : ""}>
         <Link to="blogs">Blog</Link>
       </li>
+      <li className={splitLocation[1] === "admin" ? "active" : ""}>
+        <Link to="admin">Admin</Link>
+      </li>
     </>
   );
   return (
@@ -81,6 +84,10 @@ const Header = () => {
                 <Link to="blogs">Blog</Link>
               </li>
               <hr />
+              <li className="my-2 text-lg">
+                <Link to="admin">Admin</Link>
+              </li>
+              <hr />
               <li>
                 {user ? (
                   <div>
@@ -97,17 +104,22 @@ const Header = () => {
                     </div>
                     <hr />
                     <li className="my-2 text-md ml-5">
-                      <a class="justify-between">
-                        Profile
+                      <a>
+                      <i class="mr-3 fa-solid fa-user"></i>Profile
                       </a>
                     </li>
                     <hr />
                     <li className="my-2 text-md ml-5">
-                      <a>Settings</a>
+                    <a><i class="mr-3 fa-solid fa-bolt"></i>My Courses</a>
                     </li>
                     <hr />
                     <li className="my-2 text-md ml-5">
-                      <a onClick={logout}>Logout</a>
+                    <a><i class="mr-3 fa-solid fa-chart-line"></i>Dashboard</a>
+                    </li>
+                    <hr />
+                    <li className="my-2 text-md ml-5">
+                      <a onClick={logout}>
+                      <i class="mr-3 fa-solid fa-right-from-bracket"></i>Logout</a>
                     </li>
                     <hr />
                   </div>
@@ -129,7 +141,7 @@ const Header = () => {
           </div>
         </Link>
       </div>
-      <div className="navbar-center lg:mr-56">
+      <div className="navbar-center lg:mr-36">
         <ul className="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
       </div>
       <div className="navbar-end hidden lg:block">
@@ -154,16 +166,18 @@ const Header = () => {
               class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-md w-52"
             >
               <li>
-                <a class="justify-between">
-                  Profile
-                  <span class="badge">New</span>
+                <a>
+                <i class="fa-solid fa-user"></i>Profile
                 </a>
               </li>
               <li>
-                <a>Settings</a>
+                <a><i class="fa-solid fa-bolt"></i>My Courses</a>
               </li>
               <li>
-                <a onClick={logout}>Logout</a>
+                <a><i class="fa-solid fa-chart-line"></i>Dashboard</a>
+              </li>
+              <li>
+                <a onClick={logout}><i class="fa-solid fa-right-from-bracket"></i>Logout</a>
               </li>
             </ul>
           </div>
