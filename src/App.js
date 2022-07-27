@@ -3,7 +3,6 @@ import "./App.css";
 import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import AllCourses from "./Components/AllCourses/AllCourses";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
-import AcadamicBook from "./Components/BookStore/AcadamicBook/AcadamicBook";
 import Blogs from "./Components/Blogs/Blogs";
 import BookStore from "./Components/BookStore/BookStore";
 import Developer from "./Components/Developer";
@@ -21,7 +20,6 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/acadamicbook/:acadamicbookId" element={<AcadamicBook></AcadamicBook>}></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route path="/admission" element={<AllAdmission></AllAdmission>}></Route>
         <Route path="/jobs" element={<AllJobCourse></AllJobCourse>}></Route>
@@ -30,7 +28,6 @@ function App() {
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
-
 
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
         
