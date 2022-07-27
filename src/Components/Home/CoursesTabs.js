@@ -1,14 +1,14 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import useJobCourses from "../../Hooks/useJobCourse";
 import useLanguage from "../../Hooks/useLanguage";
-import useSkills from "../../Hooks/useSkills";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import "./CoursesTab.css";
 
 const CoursesTabs = () => {
   const [language] = useLanguage();
-  const [skills] = useSkills();
+  const [jobcourses] = useJobCourses();
   return (
     <div className="hidden lg:block md:block">
       <div className="mb-10 mt-8">
@@ -30,7 +30,7 @@ const CoursesTabs = () => {
             <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
               {language.slice(0, 4).map((allcard) => (
                 <AllCourseCard
-                  key={allcard.id}
+                  key={allcard._id}
                   allcard={allcard}
                 ></AllCourseCard>
               ))}
@@ -38,9 +38,9 @@ const CoursesTabs = () => {
           </TabPanel>
           <TabPanel>
             <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
-              {skills.slice(0, 4).map((allcard) => (
+              {jobcourses.slice(0, 4).map((allcard) => (
                 <AllCourseCard
-                  key={allcard.id}
+                  key={allcard._id}
                   allcard={allcard}
                 ></AllCourseCard>
               ))}

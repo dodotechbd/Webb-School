@@ -14,7 +14,7 @@ const SkillBooks = () => {
                 <div className='grid  sm:grid-cols-2 md:grid-cols-3  lg:grid-cols-4 gap-6  '>
                     {
                        skillbooks.map(skillbook => <SkillBook
-                        key={skillbook.id}
+                        key={skillbook._id}
                         skillbook={skillbook}
                         ></SkillBook>)
                     }

@@ -34,7 +34,6 @@ const Banner = () => {
           effect={"coverflow"}
           grabCursor={true}
           centeredSlides={true}
-          slidesPerView={3}
           coverflowEffect={{
             rotate: 0,
             stretch: 80,
@@ -48,24 +47,20 @@ const Banner = () => {
             disableOnInteraction: false,
           }}
           breakpoints={{
-            "@0.00": {
-              slidesPerView: 1,
-              spaceBetween: 10,
-            },
             "@0.25": {
-              slidesPerView: 2,
-              spaceBetween: 20,
+              slidesPerView: 3,
+              spaceBetween: -80,
             },
             "@0.75": {
               slidesPerView: 3,
-              spaceBetween: 40,
+              spaceBetween: 20,
             },
             "@1.00": {
               slidesPerView: 3,
               spaceBetween: 30,
             },
             "@1.25": {
-              slidesPerView: 3,
+              slidesPerView: 4,
               spaceBetween: 30,
             },
             "@1.75": {
