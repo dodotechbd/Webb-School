@@ -7,18 +7,17 @@ import Drawer from "react-modern-drawer";
 
 //import styles ?
 import "react-modern-drawer/dist/index.css";
+
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 
 const Header = () => {
- 
   const [user, loading, error] = useAuthState(auth);
 
   const logout = () => {
-    signOut(auth)
-  }
-
+    signOut(auth);
+  };
 
   const [isOpen, setIsOpen] = React.useState(false);
   const toggleDrawer = () => {
@@ -50,59 +49,135 @@ const Header = () => {
       <li className={splitLocation[1] === "blogs" ? "active" : ""}>
         <Link to="blogs">Blog</Link>
       </li>
-      <li className={splitLocation[1] === "login" ? "active" : ""}>
-       { user ? <li className={splitLocation[1] === "blogs" ? "active" : ""}>
-        <button className={splitLocation[1] === "login" ? "active" : ""} onClick={logout}>logout</button>
-      </li> : <Link to="login">Login</Link>}
-      </li>
     </>
   );
   return (
     <div className="navbar border-b fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
       <div className="navbar-start">
-        <Drawer open={isOpen} onClose={toggleDrawer} direction="TOP">
+        <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
-            <ul tabindex="0" className="p-2 bg-base-100 ">
-                <Link to="/">
-                  <img className="w-36 mt-2 mb-1 mx-auto" src={wslogo} alt=""></img>
-                </Link>
-                <hr />
-              <li className="my-2 text-lg text-center">
+            <ul tabindex="0" className="p-2 bg-base-100">
+              <Link to="/">
+                <img className="w-36 mt-2 mb-1" src={wslogo} alt=""></img>
+              </Link>
+              <hr />
+              <li className="my-2 text-lg">
                 <Link to="courses">Courses</Link>
               </li>
               <hr />
-              <li className="my-2 text-lg text-center">
+              <li className="my-2 text-lg">
                 <Link to="bookstore">Book Store</Link>
               </li>
               <hr />
-              <li className="my-2 text-lg text-center">
+              <li className="my-2 text-lg">
                 <Link to="admission">Admission</Link>
               </li>
               <hr />
-              <li className="my-2 text-lg text-center">
+              <li className="my-2 text-lg">
                 <Link to="jobs">Jobs</Link>
               </li>
               <hr />
-              <li className="my-2 text-lg text-center">
+              <li className="my-2 text-lg">
                 <Link to="blogs">Blog</Link>
               </li>
               <hr />
-              <li className="my-2 text-lg text-center">
-                {user? <li className="my-2 text-lg text-center">
-                <Link to="blogs">Logout</Link>
-              </li> : <Link to="Login">Login</Link>}
+              <li>
+                {user ? (
+                  <div>
+                    <div className="flex flex-nowrap items-center cursor-pointer">
+                      <label class="avatar">
+                        <div class="w-7 mr-2 my-2 rounded-full border border-gray-200">
+                          <img src={user?.photoURL} />
+                        </div>
+                      </label>
+                      <p className="whitespace-nowrap">
+                        {user?.displayName}
+                        <i class="ml-2 fa-solid fa-angle-down"></i>
+                      </p>
+                    </div>
+                    <hr />
+                    <li className="my-2 text-md ml-5">
+                      <a class="justify-between">
+                        Profile
+                      </a>
+                    </li>
+                    <hr />
+                    <li className="my-2 text-md ml-5">
+                      <a>Settings</a>
+                    </li>
+                    <hr />
+                    <li className="my-2 text-md ml-5">
+                      <a onClick={logout}>Logout</a>
+                    </li>
+                    <hr />
+                  </div>
+                ) : (
+                  <div>
+                    <li className="my-2 btn-primary btn-sm btn rounded-md text-white">
+                    <Link to="Login">Login</Link>
+                  </li>
+                  <hr />
+                  </div>
+                )}
               </li>
             </ul>
           </div>
         </Drawer>
         <Link to="/">
           <div>
-          <img className="w-36" src={wslogo} alt=""></img>
+            <img className="w-36" src={wslogo} alt=""></img>
           </div>
         </Link>
       </div>
       <div className="navbar-center lg:mr-56">
         <ul className="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
+      </div>
+      <div className="navbar-end hidden lg:block">
+        {user ? (
+          <div class="dropdown dropdown-end">
+            <div
+              tabindex="0"
+              className="flex flex-nowrap items-center cursor-pointer"
+            >
+              <label class="avatar">
+                <div class="w-7 mr-2 rounded-full border border-gray-200">
+                  <img src={user?.photoURL} />
+                </div>
+              </label>
+              <p className="whitespace-nowrap">
+                {user?.displayName}
+                <i class="ml-2 fa-solid fa-angle-down"></i>
+              </p>
+            </div>
+            <ul
+              tabindex="0"
+              class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-md w-52"
+            >
+              <li>
+                <a class="justify-between">
+                  Profile
+                  <span class="badge">New</span>
+                </a>
+              </li>
+              <li>
+                <a>Settings</a>
+              </li>
+              <li>
+                <a onClick={logout}>Logout</a>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <div className="flex">
+            <a className="btn-primary btn-sm btn rounded-md text-white">
+              <Link to="Login">Login</Link>
+            </a>
+            <div class="divider lg:divider-horizontal"></div>
+            <a className="btn-primary btn-sm btn rounded-md text-white">
+              <Link to="SignUp">Register</Link>
+            </a>
+          </div>
+        )}
       </div>
       <div className="navbar-end lg:hidden">
         <div className="dropdown">
