@@ -1,9 +1,12 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllCourseCard = ({ allcard }) => {
   
+  const { _id } = allcard;
+  
   return (
-    <a href="#">
+    <Link to={`/course/${_id}`}>
       <div
         class="mx-auto card card-compact w-72 bg-base-100 border rounded-md
        hover:-translate-y-3 border-gray-300  transform transition duration-300"
@@ -13,10 +16,10 @@ const AllCourseCard = ({ allcard }) => {
         </figure>
         <div class="">
           <div className="px-2 pt-1 flex justify-between">
-          <p className="text-md font-sans text-gray-500 hover:text-black">
-            {allcard?.instructor}
-          </p>
-          {allcard?.badge ? (<div class="badge badge-secondary">{allcard?.badge}</div>):(<></>)}
+            <p className="text-md font-sans text-gray-500 hover:text-black">
+              {allcard?.instructor}
+            </p>
+            {allcard?.badge ? (<div class="badge badge-secondary">{allcard?.badge}</div>) : (<></>)}
           </div>
           <h2 class="px-2 py-1 text-xl hover:text-blue-900">
             {allcard?.name.slice(0, 24)}
@@ -27,7 +30,7 @@ const AllCourseCard = ({ allcard }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
