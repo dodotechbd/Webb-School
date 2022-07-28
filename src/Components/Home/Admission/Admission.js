@@ -6,12 +6,12 @@ const Admission = () => {
   const [admission, setAdmission] = useAdmission();
 
   return (
-    <div id="admission" className="" >
-      <div className="mb-10 mt-8">
-      <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
+    <div id="admission" className="bg-[#F7F8FA] py-16" >
+      <div className="mb-10">
+      <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-center">
         Admission Preparation
       </h1>
-      <p className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
+      <p className="lg:text-xl text-md mb-5 mt-2 text-center text-indigo-400">
         Prepare for your dreams university
       </p>
       </div>
