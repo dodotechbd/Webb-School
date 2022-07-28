@@ -33,7 +33,7 @@ const Admin = () => {
           </div>
         </div>
         <div class="flex-1">
-          <a class="lg:ml-4 text-white normal-case text-xl">Admin Panel</a>
+          <Link to={'/admin'} class="btn btn-ghost text-white text-xl">Admin Panel</Link>
         </div>
         <div class="flex-none">
           <button class="btn btn-square btn-ghost">
@@ -68,7 +68,13 @@ const Admin = () => {
               <Link to={"/admin/post"}><i class="fa-solid fa-folder-plus"></i>Post Courses</Link>
             </li>
             <li className={splitLocation[2] === "live" ? "active" : ""}>
-              <Link to={"/admin/live"}><i class="fa-solid fa-video"></i>Post Live Class</Link>
+              <Link to={"/admin/live"}><i class="fa-solid fa-video"></i>Post Live Classes</Link>
+            </li>
+            <li className={splitLocation[2] === "users" ? "active" : ""}>
+              <Link to={"/admin/users"}><i class="fa-solid fa-users"></i>Users</Link>
+            </li>
+            <li className={splitLocation[2] === "payments" ? "active" : ""}>
+              <Link to={"/admin/payments"}><i class="fa-solid fa-credit-card"></i>Payments</Link>
             </li>
           </ul>
         </div>
