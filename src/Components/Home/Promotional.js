@@ -11,7 +11,7 @@ const Promotional = () => {
       <div class="hero">
         <div class="hero-content flex-col lg:flex-row-reverse">
         <div
-              class="hero h-80 w-screen rounded-xl"
+              class="hero h-80 lg:w-screen rounded-xl"
               style={{ backgroundImage: `url(${vdo})` }}
             >
               <div class=""></div>
@@ -21,7 +21,7 @@ const Promotional = () => {
             </label>
               </div>
             </div>
-          <div className="w-10/12">
+          <div className="lg:w-10/12 text-center lg:text-start">
             <h1 class="text-4xl font-bold font-mono">
               We are simply one click away!
             </h1>
