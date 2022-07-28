@@ -8,6 +8,7 @@ import Reviews from "./Reviews/Reviews";
 import Header from '../Shared/Header/Header';
 import JobCourses from "./JobCourses/JobCourses";
 import CoursesTabs from "./CoursesTabs";
+import Promotional from "./Promotional";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Admission></Admission>
       <JobCourses></JobCourses>
       <CoursesTabs></CoursesTabs>
+      <Promotional></Promotional>
       <Reviews></Reviews>
       <Review></Review>
     </div>

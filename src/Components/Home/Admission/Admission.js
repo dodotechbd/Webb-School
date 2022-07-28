@@ -8,7 +8,7 @@ const Admission = () => {
   return (
     <div id="admission" className="" >
       <div className="mb-10 mt-8">
-      <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
+      <h1 className="lg:text-3xl md:text-3xl text-3xl text-black font-semibold text-center">
         Admission Preparation
       </h1>
       <p className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
