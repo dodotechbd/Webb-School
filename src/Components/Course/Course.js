@@ -3,10 +3,11 @@ import React from 'react';
 const Course = ({ course }) => {
     const { id, name, img, description, price } = course;
     return (
-        <div className=''> 
+        <div className=''>
             <a href='#' className="card w-100 bg-base-100 border border-gray-300 h-full transform transition duration-500 hover:scale-110 hover:shadow-xl">
                 <figure>
-                    <img src={img} alt="Shoes" />
+                    <img data-aos="flip-left"
+                        data-aos-duration="3000" src={img} alt="Shoes" />
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">
