@@ -4,7 +4,7 @@ const useLanguage = () => {
     const [language, setLanguage] = useState([]);
 
     useEffect(() => {
-        fetch('language.json')
+        fetch(`/language.json`)
             .then(res => res.json())
             .then(data => setLanguage(data));
     }, [])

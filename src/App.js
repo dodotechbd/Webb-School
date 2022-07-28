@@ -9,6 +9,7 @@ import Post from "./Components/Admin/Post";
 import Users from "./Components/Admin/Users";
 import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import AllCourses from "./Components/AllCourses/AllCourses";
+import AllCourseView from "./Components/AllCourses/AllCourseView";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
 import Blogs from "./Components/Blogs/Blogs";
 import BookStore from "./Components/BookStore/BookStore";
@@ -45,6 +46,7 @@ function App() {
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>
+        <Route path="/course/:id" element={<AllCourseView></AllCourseView>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
 
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
