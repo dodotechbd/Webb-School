@@ -22,9 +22,9 @@ const Home = () => {
       <Admission></Admission>
       <JobCourses></JobCourses>
       <CoursesTabs></CoursesTabs>
-      <Promotional></Promotional>
       <Reviews></Reviews>
       <Review></Review>
+      <Promotional></Promotional>
     </div>
   );
 };
