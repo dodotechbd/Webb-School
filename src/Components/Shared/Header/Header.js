@@ -163,7 +163,7 @@ const Header = () => {
             </div>
             <ul
               tabindex="0"
-              class="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-md w-52"
+              class="mt-4 p-1 menu menu-compact dropdown-content bg-base-100 rounded-md w-48 border"
             >
               <li>
                 <a>
