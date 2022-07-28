@@ -12,6 +12,8 @@ import AllCourses from "./Components/AllCourses/AllCourses";
 import AllCourseView from "./Components/AllCourses/AllCourseView";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
 import Blogs from "./Components/Blogs/Blogs";
+import AcadamicDetail from "./Components/BookStore/AcadamicDetails/AcadamicDetail";
+import SkillDetail from "./Components/BookStore/SkillDetail/SkillDetail";
 import BookStore from "./Components/BookStore/BookStore";
 import Developer from "./Components/Developer";
 import Home from "./Components/Home/Home";
@@ -28,6 +30,8 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
+        <Route path="/acadamicbook/:acadamicbookId" element={<AcadamicDetail></AcadamicDetail>} ></Route>
+        <Route path="/skillbook/:skillbookId" element={<SkillDetail></SkillDetail>} ></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route
           path="/admission"
