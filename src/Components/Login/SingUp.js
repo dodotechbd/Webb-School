@@ -2,7 +2,7 @@ import React from 'react';
 import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading'
 
 
@@ -19,10 +19,13 @@ const SignUp = () => {
 
       const [updateProfile, updating, upError] = useUpdateProfile(auth);
 
-      const navigate = useNavigate()
+      let navigate = useNavigate()
 
   
   let singInError
+
+  let location = useLocation();
+ 
   
     if( loading || gLoading || updating){
       return <Loading></Loading>
@@ -34,6 +37,7 @@ const SignUp = () => {
   
     if (user || gUser ) {
       console.log(gUser)
+      return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
     }
   
     const onSubmit = async data => {
@@ -51,7 +55,7 @@ const SignUp = () => {
         <div className='flex h-screen justify-center items-center bg-[#E5E5E5]'>
     <div className="card w-96 bg-base-100 shadow-xl  bg-[#D9D4E7]">
         <div className="card-body">
-            <h2 className="text-center text-2xl font-bold">Sing Up</h2>
+            <h2 className="text-center text-2xl font-bold">Register</h2>
             <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
                     <label className="label">
@@ -125,12 +129,15 @@ const SignUp = () => {
                 </div>
                  
              {singInError}
-                <input className='btn w-full max-w-xs text-white' type="submit" value="SingUp" />
+             <input className='btn w-full max-w-xs inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out' type="submit" value="Register" />
             </form>
-            <p className='text- text-black text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please LogIn</Link></p>
+            <p className='text- text-black text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please Login</Link></p>
             <div className="divider">OR</div>
 
-            <button  onClick={() => signInWithGoogle()} className="btn btn-outline focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">Continue with Google</button>
+            <button onClick={() => signInWithGoogle()} class=" bg-purple-800 text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700  w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200  hover:border-slate-400  hover:shadow transition duration-150 rounded shadow-lg">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""/> <span>Login with Google</span>
+            </button>
+
 
            
         </div>

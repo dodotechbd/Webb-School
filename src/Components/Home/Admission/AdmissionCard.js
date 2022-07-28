@@ -1,7 +1,7 @@
 import React from "react";
 
 const AdmissionCard = ({ admission }) => {
-  const { name, img, link } = admission;
+  const { name, img, link, instructor } = admission;
   console.log(name);
   return (
     <div className=" rounded-lg" data-aos="fade-up-right"
@@ -10,8 +10,9 @@ const AdmissionCard = ({ admission }) => {
         <figure>
           <img className="lg:w-48 w-28 h-20  lg:h-full object-cover" src={img} alt="Movie" />
         </figure>
-        <div className="card-body">
-          <h2 className="text-sm lg:text-lg font-semibold text-gray-700 lg:-mt-0 -mt-3">{name}</h2>
+        <div className="card-body px-5 py-8">
+          <h2 className="text-sm lg:text-xl -mt-5 md:-mt-4 lg:mt-0">{name}</h2>
+          <h2 className="text-xs lg:text-md text-gray-500 -mt-2 lg:mt-0">{instructor}</h2>
         </div>
       </a>
     </div>

@@ -4,16 +4,16 @@ import React from 'react';
 const SkillBook = ({skillbook}) => {
     const { id, name, img, description, price } = skillbook;
     return (
-        <div className=' bg-slate-200 rounded-lg position relative'  > 
+        <div className=' bg-slate-200 rounded-lg position relative w-auto'  > 
           
-                <figure  className="mx-12 pt-10">
+                <figure  className="px-12 pt-4">
                     <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
                 </figure>
-                <div class="card-body  mb-7">
-                    <h2 class="card-title">
-                        <p className='text-2xl font-bold'>{name}</p>
-                        <div className="badge badge-primary text-white">Top</div>
-                    </h2>
+                <div class="card-body  pt-0">
+                    <h1 class="card-title pt-2">
+                        <p className='text-xl font-bold'>{name}</p>
+                       
+                    </h1>
                     <p className='text-xl'>{description}</p>
                     <p className='text-2xl font-bold border-b-2 pb-2'>${price}</p>
                    
