@@ -27,7 +27,7 @@ const Users = () => {
                   </div>
                   <div>
                     <div class="font-bold">Rashel Mahomud</div>
-                    <div class="text-sm opacity-50">Bandladesh</div>
+                    <div class="text-sm opacity-50">Bangladesh</div>
                   </div>
                 </div>
               </td>
@@ -61,7 +61,7 @@ const Users = () => {
                   </div>
                   <div>
                     <div class="font-bold">Tasmia Ishika</div>
-                    <div class="text-sm opacity-50">Bandladesh</div>
+                    <div class="text-sm opacity-50">Bangladesh</div>
                   </div>
                 </div>
               </td>
@@ -93,7 +93,7 @@ const Users = () => {
                   </div>
                   <div>
                     <div class="font-bold">Amit Sharma</div>
-                    <div class="text-sm opacity-50">Bandladesh</div>
+                    <div class="text-sm opacity-50">Bangladesh</div>
                   </div>
                 </div>
               </td>
@@ -127,7 +127,7 @@ const Users = () => {
                   </div>
                   <div>
                     <div class="font-bold">Shakhawath Hossain</div>
-                    <div class="text-sm opacity-50">Bandladesh</div>
+                    <div class="text-sm opacity-50">Bangladesh</div>
                   </div>
                 </div>
               </td>
@@ -161,7 +161,7 @@ const Users = () => {
                   </div>
                   <div>
                     <div class="font-bold">Md Badsha</div>
-                    <div class="text-sm opacity-50">Bandladesh</div>
+                    <div class="text-sm opacity-50">Bangladesh</div>
                   </div>
                 </div>
               </td>
@@ -195,7 +195,7 @@ const Users = () => {
                   </div>
                   <div>
                     <div class="font-bold">Muhammad Shafi</div>
-                    <div class="text-sm opacity-50">Bandladesh</div>
+                    <div class="text-sm opacity-50">Bangladesh</div>
                   </div>
                 </div>
               </td>

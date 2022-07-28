@@ -17,13 +17,13 @@ const JobCourses = () => {
   const [jobCourse] = useJobCourses();
   return (
     <div className="my-16" id="job">
-      <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
+      <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-center">
         Job Exam Preparation
       </h1>
-      <h2 className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
+      <h2 className="lg:text-xl text-md mt-2 text-center text-indigo-400">
         Which job are you preparing for?
       </h2>
-      <div className="my-10 mx-auto">
+      <div className="mt-3 mx-auto">
       <Swiper
         slidesPerView={4}
         spaceBetween={-25}

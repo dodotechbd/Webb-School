@@ -21,8 +21,8 @@ const Reviews = () => {
       .then((data) => setCourses(data));
   });
   return (
-    <div className="lg:mx-4 mb-10">
-      <p className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center mb-12 uppercase">
+    <div className="lg:mx-4 my-16">
+      <p className="lg:text-3xl md:text-2xl text-xl font-semibold text-center mb-8 uppercase">
         Our students reviews!
       </p>
       <Swiper

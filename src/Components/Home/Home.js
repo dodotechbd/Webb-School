@@ -8,17 +8,21 @@ import Reviews from "./Reviews/Reviews";
 import Header from '../Shared/Header/Header';
 import JobCourses from "./JobCourses/JobCourses";
 import CoursesTabs from "./CoursesTabs";
+import Hero from "./Hero/Hero";
+import Promotional from "./Promotional";
 
 const Home = () => {
   return (
     <div className="">
+      <Hero></Hero>
       <Header></Header>
-      <Banner></Banner>
       <Navigation></Navigation>
+      <Banner></Banner>
       <Courses></Courses>
       <Admission></Admission>
       <JobCourses></JobCourses>
       <CoursesTabs></CoursesTabs>
+      <Promotional></Promotional>
       <Reviews></Reviews>
       <Review></Review>
     </div>
