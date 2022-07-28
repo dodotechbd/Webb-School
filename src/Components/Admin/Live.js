@@ -12,18 +12,6 @@ const Live = () => {
             <div class="card-body">
               <div class="form-control">
                 <label class="label">
-                  <span class="label-text">Category</span>
-                </label>
-                <select class="select select-bordered w-full max-w-xs">
-                  <option>
-                    Language Learning
-                  </option>
-                  <option>Job Requirments</option>
-                  <option>Admission Preparation</option>
-                </select>
-              </div>
-              <div class="form-control">
-                <label class="label">
                   <span class="label-text">Name</span>
                 </label>
                 <input
