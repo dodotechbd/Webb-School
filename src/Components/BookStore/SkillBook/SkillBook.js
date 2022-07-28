@@ -1,8 +1,13 @@
 
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SkillBook = ({skillbook}) => {
-    const { id, name, img, description, price } = skillbook;
+    const { _id, name, img, description, price } = skillbook;
+    const navigate = useNavigate();
+    const navigateToAcadamicDetail = id=>{
+     navigate(`/skillbook/${_id}`)
+     }
     return (
         <div className=' bg-slate-200 rounded-lg position relative w-auto'  > 
           
@@ -18,7 +23,7 @@ const SkillBook = ({skillbook}) => {
                     <p className='text-2xl font-bold border-b-2 pb-2'>${price}</p>
                    
                 </div>
-                <button class=" btn-block position absolute bottom-0   bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2">Detalis</button>
+                <button  onClick={()=>navigateToAcadamicDetail(_id)} class=" btn-block position absolute bottom-0   bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2">Detalis</button>
         </div>
     );
 };
