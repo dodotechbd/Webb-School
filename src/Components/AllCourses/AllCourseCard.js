@@ -1,9 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const AllCourseCard = ({ allcard }) => {
+  const { _id } = allcard;
   
   return (
-    <a href="#">
+    <Link to={`/course/${_id}`}>
       <div
         class="mx-auto card card-compact w-72 bg-base-100 border rounded-md
        hover:-translate-y-3 border-gray-300  transform transition duration-300"
@@ -27,7 +29,7 @@ const AllCourseCard = ({ allcard }) => {
           </div>
         </div>
       </div>
-    </a>
+    </Link>
   );
 };
 
