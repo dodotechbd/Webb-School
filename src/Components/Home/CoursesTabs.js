@@ -7,6 +7,7 @@ import useLanguage from "../../Hooks/useLanguage";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import "./CoursesTab.css";
 
+
 const CoursesTabs = () => {
   const [language] = useLanguage();
   const [jobcourses] = useJobCourses();

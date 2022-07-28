@@ -21,14 +21,13 @@ const Banner = () => {
           className="font-bold lg:text-4xl md:text-3xl text-2xl text-blue-500 text-center
         my-4 "
         >
-          Special Discount!
+          Discounts On Our Exclusives!
         </h1>
         <p
           className="text-xl hidden lg:block text-gray-600 text-center
         mb-12"
         >
-          On the occasion of Eid, various courses of Webb School can be done
-          more cost-effectively throughout the month of July!
+          Various courses on across site wide can be done more cost-effectively throughout the month of July on the occasion of Eid-Al-Adha!
         </p>
         <Swiper
           effect={"coverflow"}
