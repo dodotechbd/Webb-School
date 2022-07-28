@@ -51,9 +51,9 @@ const Header = () => {
         <Link to="blogs">Blog</Link>
       </li>
       <li className={splitLocation[1] === "login" ? "active" : ""}>
-       { user ? <li className={splitLocation[1] === "blogs" ? "active" : ""}>
+       { user ? 
         <button className={splitLocation[1] === "login" ? "active" : ""} onClick={logout}>logout</button>
-      </li> : <Link to="login">Login</Link>}
+      : <Link to="login">Login</Link>}
       </li>
     </>
   );
@@ -104,7 +104,7 @@ const Header = () => {
       <div className="navbar-center lg:mr-56">
         <ul className="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
       </div>
-      <div className="navbar-end lg:hidden">
+      <div className="navbar-end  lg:hidden">
         <div className="dropdown">
           <label
             onClick={toggleDrawer}
