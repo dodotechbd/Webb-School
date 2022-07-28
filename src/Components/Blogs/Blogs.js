@@ -19,7 +19,7 @@ const Blogs = () => {
 
                             <input type="checkbox" id="my-modal-5" class="modal-toggle" />
                             <div class="modal">
-                                <div class="modal-box w-11/12 max-w-5xl">
+                                <div class="modal-box w-11/12 max-w-5xl text-black">
                                     <h3 class="font-bold text-lg">Why will you use Meta tag?</h3>
                                     <p class="py-4">Meta data is a basically used header tag between and using work page description, author of the document, keywords, and viewport settings.  tag important its don't show website its work all documents showing system her compare keywords read search engines.</p>
 
@@ -44,7 +44,7 @@ const Blogs = () => {
                             <label for="my-modal-raj">...Show</label>
 
                             <input type="checkbox" id="my-modal-raj" class="modal-toggle" />
-                            <div class="modal">
+                            <div class="modal text-black">
                                 <div class="modal-box w-11/12 max-w-5xl">
                                     <h3 class="font-bold text-lg">What is CSS?</h3>
                                     <p class="py-4">Cascading Style Sheets is a style sheet language used for describing the presentation of a document written in a markup language such as HTML or XML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.</p>
@@ -71,7 +71,7 @@ const Blogs = () => {
                             <label for="my-modal">...Shows</label>
 
                             <input type="checkbox" id="my-modal" class="modal-toggle" />
-                            <div class="modal">
+                            <div class="modal text-black">
                                 <div class="modal-box w-11/12 max-w-5xl">
                                     <h3 class="font-bold text-lg">What is JavaScript?</h3>
                                     <p class="py-4">JavaScript, often abbreviated JS, is a programming language that is one of the core technologies of the World Wide Web, alongside HTML and CSS. As of 2022, 98% of websites use JavaScript on the client side for web page behavior, often incorporating third-party libraries.</p>

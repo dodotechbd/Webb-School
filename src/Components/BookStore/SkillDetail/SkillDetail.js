@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-const AcadamicDetail = () => {
-    const {acadamicbookId} =useParams();
+const SkillDetail = () => {
+    const {skillbookId} =useParams();
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch("/AcadamicBooks.json")
+        fetch("/SkillBooks.json")
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
 
-    const newService = service.filter(s => s._id == acadamicbookId)
+    const newService = service.filter(s => s._id == skillbookId)
     //   console.log(newService[0]);
     return (
         <div>
@@ -35,4 +35,4 @@ const AcadamicDetail = () => {
     );
 };
 
-export default AcadamicDetail;
+export default SkillDetail;
