@@ -47,17 +47,17 @@ let singInError
 
   return (
     <div >
-            <div class="flex items-center min-h-screen p-4 bg-primary lg:justify-center">
+            <div class="flex items-center min-h-screen p-4  lg:justify-center">
       <div
         class="flex flex-col overflow-hidden bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md drop-shadow-2xl"
       >
         <div
-          class="p-4 py-6 text-white  bg-[#0093AB] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
+          class="p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
         >
           <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="" />
         </div>
         <div class="p-5 bg-white md:flex-1">
-          <h3 class="my-4 text-3xl font-bold text-gray-700 text-center text-[#006778]">Login</h3>
+          <h3 class="my-4 text-3xl font-bold text-primary text-center ">Login</h3>
           <form  onSubmit={handleSubmit(onSubmit)} action="#" class="flex flex-col space-y-5">
             <div class="flex flex-col space-y-1">
               <label for="email" class="text-sm font-semibold text-gray-900">Email</label>
@@ -84,7 +84,7 @@ let singInError
             <div class="flex flex-col space-y-1">
               <div class="flex items-center justify-between">
                 <label for="password" class="text-sm font-semibold text-gray-900">Password</label>
-                <a href="#" class="text-sm text-blue-600 hover:underline focus:text-blue-800">Forgot Password?</a>
+                <a href="#" class="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</a>
               </div>
               <input
                         type="password"
@@ -118,11 +118,11 @@ let singInError
             {singInError}
               <button
                 type="submit"
-                class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-[#0093AB] rounded-md shadow  hover:bg-[#006778] focus:outline-none focus:ring-blue-200 focus:ring-4"
+                class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
               >
                 Log in
               </button>
-              <p className='text- text-black text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-blue-600'>Create New Account</Link></p>
+              <p className='text- text-black text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
             </div>
             <div class="flex flex-col space-y-5">
               <span class="flex items-center justify-center space-x-2">
@@ -131,7 +131,7 @@ let singInError
                 <span class="h-px bg-gray-400 w-14"></span>
               </span>
               <div class="flex flex-col space-y-4">
-              <button onClick={() => signInWithGoogle()} class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-blue-500 rounded-md group hover:bg-[#0093AB] hover:text-white focus:outline-none">
+              <button onClick={() => signInWithGoogle()} class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none">
                 <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""/> <span>Login with Google</span>
             </button>
                 
