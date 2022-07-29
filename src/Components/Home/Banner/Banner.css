@@ -64,9 +64,9 @@ body {
   display: none;
 }
 
-.banner{
-  background-image: url(https://cutewallpaper.org/21/background-gif-html/15-CSS-Animated-Backgrounds-Pintire.gif);
-}
+/* .banner{
+  background-image: url(../../../Assets/bannerbg.svg);
+} */
 
 .swiper-pagination-bullet-active {
   background-color: #4C52C4 !important;

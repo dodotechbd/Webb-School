@@ -1,16 +1,16 @@
 import React from "react";
 const Navigation = () => {
   return (
-    <div className="lg:mx-10 mx-3">
-      <div className="my-10">
-        <h1 className="lg:lg:text-2xl md:text-xl text-md md:lg:text-2xl text-md text-xl text-black font-semibold text-center">
-          We have everything you <br /> need to learn anything
+    <div className="lg:mx-10 mx-3 my-16">
+      <div className="">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
+          Discover Your Future With Us
         </h1>
-        <p className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
+        <p className="lg:text-2xl md:text-xl text-lg mt-6 mb-12 text-center font-sub">
           Choose your topic from our vast library to get started
         </p>
       </div>
-      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 bg-gray-100 px-3 py-3 rounded-xl">
+      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 bg-[#F7F8FA] px-3 py-3 rounded-xl">
         <a
           href="#store"
           className="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
