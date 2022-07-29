@@ -56,7 +56,7 @@ const SignUp = () => {
         <div
           class="p-4 py-6 text-white  bg-[#0093AB] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
         >
-          <img className=' ' src='https://i.postimg.cc/Hx1D3BKV/casual-life-3d-boy-studying-remotely-with-tutor.png' alt="" />
+          <img className=' ' src='https://i.postimg.cc/MpZtxwyx/casual-life-3d-girl-and-boy-in-the-worker-jumpsuits-looking-at-tablet.png' alt="" />
         </div>
         <div class="p-5 bg-white md:flex-1">
           <h3 class="my-4 text-3xl font-bold text-[#006778] text-center ">Account Register</h3>

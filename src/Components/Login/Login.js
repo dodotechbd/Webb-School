@@ -8,6 +8,7 @@ import Loading from '../Shared/Loading/Loading';
 
 
 
+
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
