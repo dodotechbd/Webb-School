@@ -33,7 +33,7 @@ const Promotional = () => {
       <input type="checkbox" id="my-modal-5" class="modal-toggle" />
       <div class="modal">
         <div class="modal-box max-w-2xl bg-base-300">
-          <video width="700" loop="true" autoplay="autoplay" controls>
+          <video width="700" controls>
             <source src={video} type="video/mp4" />
           </video>
           <div class="modal-action">
