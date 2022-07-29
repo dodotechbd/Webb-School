@@ -2,6 +2,15 @@
 module.exports = {
   content: ["./src/**/*.{html,js}"],
   theme: {
+    fontFamily: {
+      'sans': ['Qwigley'],
+      'serif': ['ui-serif', 'Georgia'],
+      'mono': ['Francois One'],
+      'header': ['Ubuntu'],
+      'sub': ['Josefin Sans'],
+      'display': ['Oswald'],
+      'body': ['"Open Sans"'],
+    },
     extend: {},
     keyframes: {
       wiggle: {
