@@ -4,14 +4,10 @@ import vdo from "../../Assets/vdo.jpg";
 const Promotional = () => {
   return (
     <div className="my-16">
-      <h1 className="text-3xl font-bold text-center ">Why Choose Us? </h1>
-      <p className="lg:text-xl text-md mb-5 mt-2 text-center text-indigo-400">
-        We want to contribute so that learning can be hassle free!!
-      </p>
       <div class="hero">
         <div class="hero-content flex-col lg:flex-row-reverse">
         <div
-              class="hero h-80 rounded-xl"
+              class="hero h-48 md:h-72 lg:h-80 rounded-xl"
               style={{ backgroundImage: `url(${vdo})` }}
             >
               <div class=""></div>
