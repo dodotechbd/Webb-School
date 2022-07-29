@@ -15,10 +15,10 @@ const CoursesTabs = () => {
   return (
     <div className="hidden py-16 lg:block md:block bg-[#F7F8FA]">
       <div className="">
-        <h1 className="lg:text-3xl md:text-2xl text-xl font-semibold text-center">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Skill Development Courses
         </h1>
-        <p className="lg:text-xl text-md mt-2 text-center text-indigo-400">
+        <p className="lg:text-2xl md:text-xl text-lg mt-6 mb-12 text-center font-sub">
           Which skill will you develop today?
         </p>
       </div>

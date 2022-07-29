@@ -18,15 +18,15 @@ const Promotional = () => {
               </div>
             </div>
           <div className="lg:w-10/12 text-center lg:text-start">
-            <h1 class="text-4xl font-bold">
+            <h1 class="lg:text-4xl md:text-3xl text-2xl font-sub">
               We are simply one click away!
             </h1>
-            <p class="py-6 m-2 font-mono text-lg">
+            <p class="py-6 m-2 font-sub text-lg">
               We are making sure each learner get best knowledge they deserve.
               We provide easiest formula, notes and guidelines to ensure best
               education. Enroll yours now.
             </p>
-            <button class="btn btn-primary btn-sm text-white">Join Us</button>
+            <button class="btn btn-primary btn-sm font-thin text-white">Join Us</button>
           </div>
         </div>
       </div>

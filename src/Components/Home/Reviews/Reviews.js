@@ -22,7 +22,7 @@ const Reviews = () => {
   });
   return (
     <div className="lg:mx-4 my-16">
-      <p className="lg:text-3xl md:text-2xl text-xl font-semibold text-center mb-8 uppercase">
+      <p className="lg:text-4xl md:text-3xl mb-16 mt-8 text-2xl uppercase font-sub font-bold text-center">
         Our students reviews!
       </p>
       <Swiper

@@ -3,10 +3,10 @@ const Navigation = () => {
   return (
     <div className="lg:mx-10 mx-3 my-16">
       <div className="">
-        <h1 className="lg:text-3xl md:text-xl text-md font-semibold text-center">
-          We Have Everything You <br /> Need To Learn Anything
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
+          Discover Your Future With Us
         </h1>
-        <p className="lg:text-xl text-md mb-5 mt-2 text-center text-indigo-400">
+        <p className="lg:text-2xl md:text-xl text-lg mt-6 mb-12 text-center font-sub">
           Choose your topic from our vast library to get started
         </p>
       </div>
