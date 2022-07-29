@@ -64,9 +64,9 @@ body {
   display: none;
 }
 
-.banner{
+/* .banner{
   background-image: url(../../../Assets/bannerbg.svg);
-}
+} */
 
 .swiper-pagination-bullet-active {
   background-color: #4C52C4 !important;

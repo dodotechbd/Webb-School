@@ -16,7 +16,7 @@ import { EffectCoverflow, Pagination } from "swiper";
 const Banner = () => {
   return (
     <div>
-      <div className="px-12 lg:py-10 lg:pb-24 py-10 pt-2 banner">
+      <div className="px-12 lg:py-10 lg:pb-24 py-10 pt-2 banner bg-[#F7F8FA]">
         <h1
           className="font-bold lg:text-4xl md:text-3xl text-2xl text-blue-500 text-center
         my-4 "
