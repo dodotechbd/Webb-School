@@ -8,7 +8,7 @@ import './Review.css'
 const Review = () => {
     return (
         <div className='bg-[#F7F8FA] py-16'>
-            <h2 className='lg:text-3xl md:text-2xl text-xl font-semibold text-center uppercase'>Our Achivement</h2>
+            <h2 className='lg:text-4xl md:text-3xl text-2xl uppercase font-sub font-bold text-center'>Our Achivement</h2>
             
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">

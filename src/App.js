@@ -25,7 +25,7 @@ import NoteFound from "./Components/WrongRoute/NoteFound";
 
 function App() {
   return (
-    <div data-theme="mytheme" className="mt-16">
+    <div data-theme="mytheme" className="mt-16 font-header">
       <Header></Header>
 
       <Routes>
