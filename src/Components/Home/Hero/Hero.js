@@ -4,7 +4,7 @@ import "./Hero.css";
 const Hero = () => {
   return (
     <div>
-      <div class="hero zero md:py-36 lg:py-40 py-32">
+      <div class="hero zero md:py-48 lg:py-44 lg:min-h-full md:min-h-full min-h-screen">
         <div class="hero-content text-center">
           <div class="max-w-md">
             <h1 class="text-7xl text-[#F04A7D] font-mono drop-shadow-lg">Webb</h1>
