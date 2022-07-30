@@ -12,7 +12,6 @@ import "./Banner.css";
 
 // import required modules
 import { EffectCoverflow, Pagination } from "swiper";
-import ChatBot from "../ChatBot/ChatBot";
 
 const Banner = () => {
   return (
@@ -101,7 +100,6 @@ const Banner = () => {
           </SwiperSlide>
         </Swiper>
       </div>
-      <ChatBot></ChatBot>
     </div>
   );
 };SwiperCore.use([Autoplay]);

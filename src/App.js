@@ -1,5 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
+
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
 import Live from "./Components/Admin/Live";
@@ -56,6 +58,13 @@ function App() {
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <Footer></Footer>
+      <MessengerCustomerChat
+    pageId="101878912628102
+    "
+    appId="3150275291906230
+    "
+    htmlRef="<REF_STRING>"
+  />
     </div>
   );
 }
