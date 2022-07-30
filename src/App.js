@@ -22,11 +22,30 @@ import SignUp from "./Components/Login/SingUp";
 import Footer from "./Components/Shared/Footer";
 import Header from "./Components/Shared/Header/Header";
 import NoteFound from "./Components/WrongRoute/NoteFound";
+import { useEffect, useState } from "react";
 
 function App() {
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
   return (
     <div data-theme="mytheme" className="mt-16 font-header">
+      {loading ? (
+        <div id="preloader">
+          <div id="loader"></div>
+        </div>
+      ) : (
+        
       <Header></Header>
+      ) }
+
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
