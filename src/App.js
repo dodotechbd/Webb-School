@@ -59,9 +59,9 @@ function App() {
       </Routes>
       <Footer></Footer>
       <MessengerCustomerChat
-    pageId="101878912628102
+    pageId="<PAGE_ID>
     "
-    appId="3150275291906230
+    appId="<APP_ID>
     "
     htmlRef="<REF_STRING>"
   />
