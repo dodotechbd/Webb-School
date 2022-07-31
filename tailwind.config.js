@@ -27,7 +27,7 @@ module.exports = {
   daisyui: {
     themes: [
       {
-        mytheme: {
+        my_theme: {
           primary: "#494FC1",
           secondary: "#F04A7D",
           accent: "#37cdbe",
@@ -36,7 +36,7 @@ module.exports = {
         },
       },
       "light",
-      "cupcake",
+      "dracula",
     ],
   },
 }

@@ -6,7 +6,6 @@ import Banner from "./Banner/Banner";
 import Navigation from "./Navigation";
 import Review from './Review/Review'
 import Reviews from "./Reviews/Reviews";
-import Header from '../Shared/Header/Header';
 import JobCourses from "./JobCourses/JobCourses";
 import CoursesTabs from "./CoursesTabs";
 import Hero from "./Hero/Hero";
@@ -14,9 +13,8 @@ import Promotional from "./Promotional";
 
 const Home = () => {
   return (
-    <div className="">
+    <div>
       <Hero></Hero>
-      <Header></Header>
       <Navigation></Navigation>
       <Banner></Banner>
       <Courses></Courses>
