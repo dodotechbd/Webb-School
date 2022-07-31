@@ -1,13 +1,28 @@
-import React from 'react';
-import useAdmission from '../../Hooks/useAdmission';
-import AllCourseCard from '../AllCourses/AllCourseCard';
+import React, { useEffect, useState } from "react";
+import useAdmission from "../../Hooks/useAdmission";
+import AllCourseCard from "../AllCourses/AllCourseCard";
+import Loader from "../Shared/Loading/Loader";
 
 const AllAdmission = () => {
-    const [admission, setAdmission] = useAdmission();
-    return (
-        <div id="admission" className="" >
+  const [admission, setAdmission] = useAdmission();
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
+
+  return (
+    <div id="admission" className="">
       <div className="lg:mx-8 mx-4 pt-10">
-      <h1 className="text-3xl pb-5 text-black">Prepare For The Admission</h1>
+        <h1 className="text-3xl pb-5 text-black">Prepare For The Admission</h1>
         <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
           {admission.slice(0, 4).map((allcard) => (
             <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
@@ -15,7 +30,7 @@ const AllAdmission = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default AllAdmission;

@@ -1,13 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useLanguage from "../../Hooks/useLanguage";
 import useJobCourse from "../../Hooks/useJobCourse";
 import useAdmission from "../../Hooks/useAdmission";
 import AllCourseCard from "./AllCourseCard";
+import Loader from "../Shared/Loading/Loader";
 
 const AllCourses = () => {
   const [language] = useLanguage();
   const [jobcourses] = useJobCourse();
   const [admission] = useAdmission();
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  if( loading ){
+    return <Loader></Loader>
+  }
+
   return (
     <div className="courses">
       <div className="lg:mx-8 mx-4 pt-10">
