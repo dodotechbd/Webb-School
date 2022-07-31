@@ -78,11 +78,8 @@ function App() {
       </Routes>
       <Footer></Footer>
       <MessengerCustomerChat
-    pageId="101878912628102
-    "
-    appId="3150275291906230
-    "
-    htmlRef="<REF_STRING>"
+    pageId="process.env.REACT_APP_PAGE_ID"appId="process.env.REACT_APP_APP_ID
+   
   />
     </div>
   );
