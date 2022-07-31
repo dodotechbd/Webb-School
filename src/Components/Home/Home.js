@@ -1,4 +1,5 @@
 import React from "react";
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 import Courses from "../Course/Courses";
 import Admission from "./Admission/Admission";
 import Banner from "./Banner/Banner";
@@ -25,6 +26,10 @@ const Home = () => {
       <Reviews></Reviews>
       <Review></Review>
       <Promotional></Promotional>
+      {/* messenger chat */}
+      <MessengerCustomerChat
+    pageId="101878912628102"appId="3150275291906230"
+  />
     </div>
   );
 };
