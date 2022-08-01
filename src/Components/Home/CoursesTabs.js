@@ -24,7 +24,7 @@ const CoursesTabs = () => {
       </div>
       <div>
         <Tabs className="mx-10 my-8 bg-base-200">
-          <TabList>
+          <TabList className='border-b border-neutral'>
             <Tab>Language Learning</Tab>
             <Tab>Jobs Requirments</Tab>
             <Tab>Admission Preparation</Tab>
