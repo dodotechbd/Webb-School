@@ -1,21 +1,24 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const Blog = ({ blog }) => {
-    const { name, title, description, address, img } = blog;
+    const { _id,name, title, description, address, img } = blog;
+
+    const navigate = useNavigate();
+
+    const handelBlogs = (id) => {
+        navigate(`/blogdetails/${_id}`)
+
+    }
+
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <figure><img src={img} alt="Shoes" /></figure>
+            <div class="card w-96 bg-base-100 shadow-xl hover:bg-slate-500 hover:text-white transform transition duration-500 hover:scale-105">
+                <figure> <img onClick={() => handelBlogs(_id)} src={img} alt="Shoes" /></figure>
                 <div class="card-body">
-                    <h2 class="card-title">
-                        Shoes!
-                        <div class="badge badge-secondary">NEW</div>
-                    </h2>
-                    <p>If a dog chews shoes whose shoes does he choose?</p>
-                    <div class="card-actions justify-end">
-                        <div class="badge badge-outline">Fashion</div>
-                        <div class="badge badge-outline">Products</div>
-                    </div>
+                    <h2 class="card-title">{title}</h2>
+                    <p>{description} </p>
+                 
                 </div>
             </div>
         </div>

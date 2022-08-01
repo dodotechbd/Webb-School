@@ -24,6 +24,7 @@ import Footer from "./Components/Shared/Footer";
 import Header from "./Components/Shared/Header/Header";
 import NoteFound from "./Components/WrongRoute/NoteFound";
 import { useEffect, useState } from "react";
+import BlogDetails from "./Components/Blogs/BlogDetails";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -71,6 +72,7 @@ function App() {
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/blogdetails/:detailsId" element={<BlogDetails></BlogDetails>}></Route>
         <Route path="/admin" element={<Admin></Admin>}>
           <Route path="/admin" element={<Admins></Admins>}></Route>
           <Route path="/admin/manage" element={<Manage></Manage>}></Route>
