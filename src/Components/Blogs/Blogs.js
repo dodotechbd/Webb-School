@@ -91,6 +91,9 @@ const Blogs = () => {
                 </div>
 
             </div>
+            <div>
+                <h2 className='text-3xl text-center'>Add your idea for this website</h2>
+            </div>
 
         </div>
     );
