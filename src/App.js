@@ -45,7 +45,7 @@ function App() {
   };
 
   return (
-    <div data-theme={theme && "dracula"} className="mt-16 font-header">
+    <div data-theme={theme && "night"} className="pt-16 font-header">
       {loading ? (
         <div id="preloader">
           <div id="loader"></div>

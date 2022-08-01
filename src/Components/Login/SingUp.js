@@ -135,7 +135,7 @@ const SignUp = () => {
               >
                 Register
               </button>
-              <p className='text- text-black text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please Login</Link></p>
+              <p className='text-  text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please Login</Link></p>
             </div>
             <div class="flex flex-col space-y-5">
               <span class="flex items-center justify-center space-x-2">

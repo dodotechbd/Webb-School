@@ -123,7 +123,7 @@ let singInError
               >
                 Log in
               </button>
-              <p className='text- text-black text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
+              <p className='text-  text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
             </div>
             <div class="flex flex-col space-y-5">
               <span class="flex items-center justify-center space-x-2">
