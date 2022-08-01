@@ -13,7 +13,7 @@ const CoursesTabs = () => {
   const [jobcourses] = useJobCourses();
   const [admission] = useAdmission();
   return (
-    <div className="hidden py-16 lg:block md:block bg-base-200">
+    <div className="hidden py-16 lg:block md:block bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Skill Development Courses
@@ -23,7 +23,7 @@ const CoursesTabs = () => {
         </p>
       </div>
       <div>
-        <Tabs className="mx-10 my-8 bg-base-200">
+        <Tabs className="mx-10 my-8 bg-gradient-to-r from-base-300 to-base-200">
           <TabList className='border-b border-neutral'>
             <Tab>Language Learning</Tab>
             <Tab>Jobs Requirments</Tab>

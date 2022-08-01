@@ -7,7 +7,7 @@ import student from '../../../Assets/ACHIVE.png';
 import './Review.css'
 const Review = () => {
     return (
-        <div className='bg-base-200 py-16'>
+        <div className='py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral'>
             <h2 className='lg:text-4xl md:text-3xl text-2xl uppercase font-sub font-bold text-center'>Our Achivement</h2>
             
             <div className="hero">
