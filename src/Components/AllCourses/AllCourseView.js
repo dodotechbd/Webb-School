@@ -13,8 +13,8 @@ const AllCourseView = () => {
   console.log(courseData);
   return (
     <div className="hero bg-base-100 my-10">
-      <div className="hero-content gap-10 flex-col-reverse lg:flex-row-reverse">
-        <div class="card lg:w-1/3 bg-[#354795] shadow-xl text-white">
+      <div className="hero-content gap-10 flex-col-reverse lg:flex-row-reverse items-start">
+        <div class="card lg:w-1/3 bg-[#354795] lg:sticky lg:top-20 shadow-xl text-white">
           <div class="card-body">
             <h2 class="text-2xl pb-2">
               Everything that is included in this course
@@ -83,14 +83,39 @@ const AllCourseView = () => {
             a id nisi.
           </p>
           <div className="h-80 border-4 rounded-lg border-neutral w-full">
-          <ReactPlayer
-            width={'100%'}
-            height={'100%'}
-            controls
-            light={true}
-            url={"https://www.youtube.com/watch?v=fuAsjgOp-6U"}
-            playing
-          />
+            <ReactPlayer
+              width={"100%"}
+              height={"100%"}
+              controls
+              light={true}
+              url={"https://www.youtube.com/watch?v=fuAsjgOp-6U"}
+              playing
+            />
+          </div>
+          <h1 className="text-2xl mt-4 mb-1">Instructor:</h1>
+          <div className="w-full border border-neutral rounded-md mb-4 grid lg:grid-cols-2 md:grid-cols-2">
+            <div className="p-3 flex items-center gap-3">
+              <div class="avatar">
+                <div class="w-16 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" />
+                </div>
+              </div>
+              <div>
+                <p className="text-lg">{courseData?.instructor}</p>
+                <p>Ctg, Bangladesh</p>
+              </div>
+            </div>
+            <div className="p-3 flex items-center gap-3">
+              <div class="avatar">
+                <div class="w-16 rounded-full">
+                  <img src="https://placeimg.com/192/192/people" />
+                </div>
+              </div>
+              <div>
+                <p className="text-lg">{courseData?.instructor}</p>
+                <p>Ctg, Bangladesh</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
