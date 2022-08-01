@@ -20,10 +20,7 @@ const AcadamicBook = ({ acadamicbook }) => {
                     <p className=''>{description}</p>
                     
                     <p className=' font-bold pb-4'>${price}</p>
-                    
-
                 </div>
-               
             </div>
             <button onClick={()=>navigateToAcadamicDetail(_id)} class=" btn-block  position absolute bottom-0  bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2  hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456] ">Detalis</button>
         </div>
