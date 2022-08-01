@@ -14,7 +14,7 @@ const Blogs = () => {
             <div>
                 <h1 className='text-4xl text-center my-10'>Our site Blogs</h1>
             </div>
-            <div>
+            <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1'>
                 {
                     blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
                 }
