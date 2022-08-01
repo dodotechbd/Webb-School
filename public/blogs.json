@@ -2,6 +2,7 @@
     {
         "_id": 18,
         "name": "Rashel Mahomud",
+        "title": "Best Way to learn code",
         "description": "Learn efficient ways to  organize product on facebook platform.",
         "img": "https://i.ibb.co/DGgRjmB/MISSION-2022-2.jpg",
         "address": "Chittagong, Bangladesh"
@@ -10,6 +11,7 @@
     {
         "_id": 16,
         "name": "Md Badsha",
+        "title": "Best practice for writing code comments",
         "description": "If adobe photoshop and illustration excites you, you are in right place!! Work with thousand clients everyday just from your home.",
         "img": "https://i.ibb.co/ZfJ3XZz/MISSION-2022-1.jpg",
         "address": "Dhaka, Bangladesh"
@@ -17,6 +19,7 @@
     {
         "_id": 15,
         "name": "Muhammad Shafi",
+        "title": "Why JavaScript Is Still So Important for Web Development?",
         "description": "If adobe photoshop and illustration excites you, you are in right place!! Work with thousand clients everyday just from your home.",
         "img": "https://i.ibb.co/3zVsd1D/MISSION-2022.jpg",
         "address": "Chittagong, Bangladesh"
