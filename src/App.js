@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
 import Live from "./Components/Admin/Live";
@@ -84,6 +85,7 @@ function App() {
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <Footer></Footer>
+      
     </div>
   );
 }
