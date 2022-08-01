@@ -4,11 +4,11 @@ import Blog from './Blog';
 const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
 
-    useEffect(() =>{
+    useEffect(() => {
         fetch('blogs.json')
-        .then(res => res.json())
-        .then(data => setBlogs(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setBlogs(data))
+    }, [])
     return (
         <div>
             <div>
