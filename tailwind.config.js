@@ -49,7 +49,7 @@ module.exports = {
         },
       },
       "light",
-      "night",
+      "dracula",
     ],
   },
 }

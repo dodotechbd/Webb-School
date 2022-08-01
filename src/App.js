@@ -48,7 +48,7 @@ function App() {
   return (
     <div data-theme={theme && "my_dark"} className="pt-16 font-header">
       {loading ? (
-        <div id="preloader">
+        <div className="bg-base-100" id="preloader">
           <div id="loader"></div>
         </div>
       ) : (
