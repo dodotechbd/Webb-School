@@ -33,10 +33,12 @@ module.exports = {
           accent: "#37cdbe",
           neutral: "#1a161f",
           "base-100": "#ffffff",
+          "base-200": "#F7F8FA",
+          "base-300": "#f1f5f9",
         },
       },
       "light",
-      "dracula",
+      "night",
     ],
   },
 }
