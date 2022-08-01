@@ -48,23 +48,26 @@ const SignUp = () => {
       navigate("/")
     }
     return (
-        <div className='grid grid-cols-1 sm:grid-cols-2 h-screen w-full'>
-        <div className='hidden sm:block'>
-              <img className='w-full h-full object-cover' src='https://i.postimg.cc/Xqx4Q2kL/drbbb-4x.webp' alt="" />
-          </div>
-        <div className='flex h-screen justify-center items-center bg-[#E5E5E5]'>
-    <div className="card w-96 bg-base-100 shadow-xl  bg-[#D9D4E7]">
-        <div className="card-body">
-            <h2 className="text-center text-2xl font-bold">Register</h2>
-            <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Name</span>
-                    </label>
+        <div >
+            <div class="flex items-center min-h-screen p-4 lg:justify-center">
+      <div
+        class="flex flex-col overflow-hidden mx-auto bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md drop-shadow-2xl"
+      >
+        <div
+          class= " hidden p-4 py-6 text-white bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
+        >
+          <img className='' src='https://i.postimg.cc/MpZtxwyx/casual-life-3d-girl-and-boy-in-the-worker-jumpsuits-looking-at-tablet.pngss' alt="" />
+        </div>
+        <div class="p-5 bg-white md:flex-1">
+          <h3 class="my-4 text-3xl font-bold text-primary text-center ">Account Register</h3>
+          <form  onSubmit={handleSubmit(onSubmit)} action="#" class="flex flex-col space-y-5">
+            <div class="flex flex-col space-y-1">
+            <label for="name" class="text-sm font-semibold text-gray-900">Name</label>
+            
                     <input
                         type="text"
                         placeholder="Name"
-                        className="input input-bordered w-full max-w-xs"
+                        className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                         {...register("name", {
                             required: {
                                 value: true,
@@ -77,15 +80,11 @@ const SignUp = () => {
                         
 
                     </label>
-                </div>
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Email</span>
-                    </label>
-                    <input
+              <label for="email" class="text-sm font-semibold text-gray-900">Email</label>
+              <input
                         type="email"
                         placeholder="Email"
-                        className="input input-bordered w-full max-w-xs"
+                        className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                         {...register("email", {
                             required: {
                                 value: true,
@@ -101,16 +100,16 @@ const SignUp = () => {
                         {errors.email?.type === 'pattern' && <span className="label-text-alt text-red-700">{errors.email.message}</span>}
 
                     </label>
-                </div>
-                
-                <div className="form-control w-full max-w-xs">
-                    <label className="label">
-                        <span className="label-text">Password</span>
-                    </label>
-                    <input
+            </div>
+            <div class="flex flex-col space-y-1">
+              <div class="flex items-center justify-between">
+                <label for="password" class="text-sm font-semibold text-gray-900">Password</label>
+               
+              </div>
+              <input
                         type="password"
                         placeholder="Password"
-                        className="input input-bordered w-full max-w-xs"
+                        className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                         {...register("password", {
                             required: {
                                 value: true,
@@ -126,24 +125,36 @@ const SignUp = () => {
                         {errors.password?.type === 'minLength' && <span className="label-text-alt text-red-700">{errors.password.message}</span>}
 
                     </label>
-                </div>
-                 
-             {singInError}
-             <input className='btn w-full max-w-xs inline-block px-6 py-2.5 bg-purple-800 text-white font-medium text-xs leading-tight uppercase rounded shadow-lg hover:bg-purple-700 hover:shadow-lg focus:bg-purple-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out' type="submit" value="Register" />
-            </form>
-            <p className='text- text-black text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please Login</Link></p>
-            <div className="divider">OR</div>
-
-            <button onClick={() => signInWithGoogle()} class=" bg-purple-800 text-white focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700  w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200  hover:border-slate-400  hover:shadow transition duration-150 rounded shadow-lg">
+            </div>
+            
+            <div>
+            {singInError}
+              <button
+                type="submit"
+                class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
+              >
+                Register
+              </button>
+              <p className='text-  text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please Login</Link></p>
+            </div>
+            <div class="flex flex-col space-y-5">
+              <span class="flex items-center justify-center space-x-2">
+                <span class="h-px bg-gray-400 w-14"></span>
+                <span class="font-normal text-gray-500">or login with</span>
+                <span class="h-px bg-gray-400 w-14"></span>
+              </span>
+              <div class="flex flex-col space-y-4">
+              <button onClick={() => signInWithGoogle()} class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none">
                 <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""/> <span>Login with Google</span>
             </button>
-
-
-           
+                
+              </div>
+            </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
-</div>
+        </div>
     );
 };
 

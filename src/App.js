@@ -1,5 +1,6 @@
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
+
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
 import Live from "./Components/Admin/Live";
@@ -22,11 +23,39 @@ import SignUp from "./Components/Login/SingUp";
 import Footer from "./Components/Shared/Footer";
 import Header from "./Components/Shared/Header/Header";
 import NoteFound from "./Components/WrongRoute/NoteFound";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [theme, setTheme] = useState(false);
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 2000);
+  }, []);
+
+  useEffect(() => {
+    setTheme(JSON.parse(window.localStorage.getItem("theme")));
+  }, []);
+  const handleThemeChange = () => {
+    setTheme(!theme);
+    window.localStorage.setItem("theme", !theme);
+  };
+
   return (
-    <div data-theme="mytheme" className="mt-16">
-      <Header></Header>
+    <div data-theme={theme && "my_dark"} className="pt-16 font-header">
+      {loading ? (
+        <div id="preloader">
+          <div id="loader"></div>
+        </div>
+      ) : (
+        
+      <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
+      ) }
+
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -56,6 +85,7 @@ function App() {
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <Footer></Footer>
+      
     </div>
   );
 }

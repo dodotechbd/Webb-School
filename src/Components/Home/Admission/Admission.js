@@ -5,13 +5,12 @@ import AdmissionCard from "./AdmissionCard";
 const Admission = () => {
   const [admission, setAdmission] = useAdmission();
 
-  return (
-    <div id="admission" className="" >
-      <div className="mb-10 mt-8">
-        <h1 data-aos="flip-right" data-aos-duration="2000" className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center">
+  return (<div id="admission" className="bg-base-200 py-16" >
+      <div className="">
+        <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Admission Preparation
         </h1>
-        <p className="lg:text-xl text-md mb-5 mt-2 text-center text-gray-500">
+        <p className="lg:text-2xl md:text-xl text-lg mt-6 mb-12 text-center font-sub">
           Prepare for your dreams university
         </p>
       </div>
