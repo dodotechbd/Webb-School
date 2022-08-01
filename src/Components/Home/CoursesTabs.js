@@ -13,7 +13,7 @@ const CoursesTabs = () => {
   const [jobcourses] = useJobCourses();
   const [admission] = useAdmission();
   return (
-    <div className="hidden py-16 lg:block md:block bg-[#F7F8FA]">
+    <div className="hidden py-16 lg:block md:block bg-base-200">
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Skill Development Courses
@@ -23,14 +23,14 @@ const CoursesTabs = () => {
         </p>
       </div>
       <div>
-        <Tabs className="mx-10 my-8 bg-[#F7F8FA]">
+        <Tabs className="mx-10 my-8 bg-base-200">
           <TabList>
             <Tab>Language Learning</Tab>
             <Tab>Jobs Requirments</Tab>
             <Tab>Admission Preparation</Tab>
           </TabList>
 
-          <TabPanel className="mt-5 bg-[#F7F8FA]">
+          <TabPanel className="mt-5 bg-base-200">
             <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
               {language.slice(0, 4).map((allcard) => (
                 <AllCourseCard

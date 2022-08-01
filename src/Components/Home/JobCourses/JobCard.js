@@ -9,7 +9,7 @@ const JobCard = ({jobCourse}) => {
         <div>
              <a
           href="#"
-          className=" card card-compact rounded-lg w-72 my-8 bg-base-100 hover:shadow-xl border hover:-translate-y-5 border-gray-300  transform transition duration-300 mx-auto"
+          className="card card-compact rounded-lg w-72 my-8 bg-base-100 hover:shadow-xl border hover:-translate-y-5 border-gray-300  transform transition duration-300 mx-auto"
         >
           <figure>
             <img src={img} alt="Shoes" />

@@ -16,7 +16,7 @@ const AllCourseCard = ({ allcard }) => {
         </figure>
         <div class="">
           <div className="px-2 pt-1 flex justify-between">
-            <p className="text-md font-sans text-gray-500 hover:text-black">
+            <p className="text-md font-sans text-gray-500 hover:">
               {allcard?.instructor}
             </p>
             {allcard?.badge ? (<div class="badge badge-secondary">{allcard?.badge}</div>) : (<></>)}

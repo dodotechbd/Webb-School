@@ -6,7 +6,7 @@ const Course = ({ course }) => {
     <div className="mb-8">
       <a
         href="#"
-        className="card w-100 bg-base-100 border h-full transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]"
+        className="card w-100 bg-base-100 border h-full transform transition duration-500 hover:scale-105 hover:shadow-xl hover:bg-[#0B3456] hover:text-white"
       >
         <figure>
           <img src={img} alt="Shoes" />

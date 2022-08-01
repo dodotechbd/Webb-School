@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/wslogo.png";
+import logo from "../../Assets/wslogo.svg";
 import { Link, useLocation } from "react-router-dom";
 
 const Footer = () => {
@@ -9,32 +9,32 @@ const Footer = () => {
     <div className="bg-base-200">
       <footer className="footer p-10 bg-base-200 text-base-content">
         <div className="md:w-60">
-          <img
-            className="mx-auto lg:mx-auto"
-            width="180"
-            viewBox="0 0 24 24"
-            src={logo}
-            alt=""
-          />
-          <p className="font-bold text-xl text-center">
+        <div className="flex items-center">
+              <img className="w-12" src={logo} alt="" />
+              <div className="ml-1 text-lg font-header font-bold">
+                <p>Webb</p>
+                <p className="-mt-2">School</p>
+              </div>
+          </div>
+          <p className="font-bold text-xl">
             Create your free account and start learning
           </p>
-          <a href="">
-            <button className="btn text-white btn-sm lg:ml-16 mx-24 md:mx-16">
+          <Link to={'signup'}>
+            <button className="btn btn-primary font-thin text-white btn-sm">
               Join Now
             </button>
-          </a>
+          </Link>
         </div>
         <div className="grid grid-cols-2 lg:gap-24 md:gap-12 gap-24 lg:mx-0">
           <div>
-            <p className="text-xl font-bold text-black mb-2">Services</p>
+            <p className="text-xl font-bold  mb-2">Services</p>
             <a className="link link-hover block">Book Store</a>
             <a className="link link-hover block">Courses</a>
             <a className="link link-hover block">Admission Help</a>
             <a className="link link-hover block">Job Preparation</a>
           </div>
           <div>
-            <p className="text-xl font-bold text-black mb-2">Company</p>
+            <p className="text-xl font-bold  mb-2">Company</p>
             <a className="link link-hover block">About us</a>
             <a className="link link-hover block">Blogs</a>
             <a className="link link-hover block">Privacy policy</a>
@@ -42,7 +42,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="">
-          <span className="text-xl font-bold text-black">Keep up with us at</span>
+          <span className="text-xl font-bold ">Keep up with us at</span>
           <p className="text-md">
             <span className="font-bold">Contact:</span> 00000 (8AM - 11PM)
           </p>
