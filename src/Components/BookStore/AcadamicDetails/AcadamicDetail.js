@@ -15,11 +15,10 @@ const AcadamicDetail = () => {
     return (
         <div>
             <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Detalis</h1>
-        <div className=' grid gap-6 lg:grid-cols-2 py-12  px-6 md:grid-cols-2 sm:grid-cols-2 '>
+        <div className=' grid gap-6 lg:grid-cols-2 py-12  px-12 md:grid-cols-2 sm:grid-cols-2 '>
  
-        <div className='grid gap-6 align-middle  sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 '>
-        <figure><img className=' h-72 w-96' src={newService[0]?.img2} alt="Shoes" /></figure>
-        <figure><img className='h-72 w-96' src={newService[0]?.img3} alt="Shoes" /></figure>  
+        <div className='grid justify-items-center   sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 '>
+        <figure><img className=' h-72 w-96 ' src={newService[0]?.img} alt="books" /></figure>
         </div>
         <div className=''>
             <h1 className='text-2xl pragraph-color pb-1 font-bold'>Books Name: <span className='text-2xl text-primary font-bold'>{newService[0]?.name}</span></h1>

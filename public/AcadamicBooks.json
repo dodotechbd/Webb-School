@@ -1,7 +1,7 @@
 [
     {
         "_id": 1,
-        "name": "HSC Physics 1st Paper...",
+        "name": "IELTS 11 ACADAMIC",
         "pages":"772",
         "format":"PDF",
         "description": "Muhammod Shafi ",
@@ -14,7 +14,7 @@
     },
     {
         "_id": 2,
-        "name": "HSC Chemistry 1st Paper....",
+        "name": "PTE  ACADAMIC",
         "pages":"772",
         "format":"PDF",
         "description": "Shakhwath Hossian",
@@ -26,7 +26,7 @@
     },
     {
         "_id": 3,
-        "name": "HSC Chemistry 2nd....",
+        "name": "ACADAMIC ENGLISH GRAMMAR",
         "pages":"772",
         "format":"PDF",
         "description": "Tasmia Esika",
@@ -38,7 +38,7 @@
     },
     {
         "_id": 4,
-        "name": "HSC Biology 1st....",
+        "name": "ACADAMIC ENGLISH",
         "pages":"772",
         "format":"PDF",
         "description": "Rashal Mhamud Raj",
@@ -52,7 +52,7 @@
     },
     {
         "_id":5 ,
-        "name": "SSC Biology 2nd....",
+        "name": "MCQ BOSTER",
         "pages":"772",
         "format":"PDF",
         "description": "Amortha kumar shill",
@@ -64,7 +64,7 @@
     },
     {
         "_id":6 ,
-        "name": "HSC Higher Math 2nd....",
+        "name": "STARGIC MANAGEMENT",
         "pages":"772",
         "format":"PDF",
         "description": "Abul kalam ajad",
@@ -76,7 +76,7 @@
     },
     {
         "_id":7 ,
-        "name": "HSC Chemistry 2nd....",
+        "name": "ENGLISH WRITTING",
         "pages":"772",
         "format":"PDF",
         "description": "Tasmia Esika",
@@ -88,7 +88,7 @@
     },
     {
         "_id":8 ,
-        "name": "JSC Math....",
+        "name": "IIM INDORE",
         "pages":"772",
         "format":"PDF",
         "description": "Robart Bruse",
