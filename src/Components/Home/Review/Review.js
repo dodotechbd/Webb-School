@@ -7,7 +7,7 @@ import student from '../../../Assets/ACHIVE.png';
 import './Review.css'
 const Review = () => {
     return (
-        <div className='bg-[#F7F8FA] py-16'>
+        <div className='bg-base-200 py-16'>
             <h2 className='lg:text-4xl md:text-3xl text-2xl uppercase font-sub font-bold text-center'>Our Achivement</h2>
             
             <div className="hero">
@@ -19,7 +19,7 @@ const Review = () => {
                                 <div className="teacher">
                                     <img className='lg:w-18' src={image1} alt="" />
                                     <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>250+</h1>
+                                        <h1 className='-600 text-lg lg:text-4xl mt-2'>250+</h1>
                                         <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Teachers</h1>
                                     </div>
                                 </div>
@@ -30,7 +30,7 @@ const Review = () => {
                                 <div className="student">
                                     <img className='lg:w-18' src={image2} alt="" />
                                     <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
+                                        <h1 className='-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
                                         <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Students </h1>
                                     </div>
                                 </div>
@@ -41,7 +41,7 @@ const Review = () => {
                                 <div className="teacher">
                                     <img className='lg:w-18' src={image4} alt="" />
                                     <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
+                                        <h1 className='-600 text-lg lg:text-4xl mt-2'>1.5M+</h1>
                                         <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Users </h1>
                                     </div>
                                 </div>
@@ -52,7 +52,7 @@ const Review = () => {
                                 <div className="teacher">
                                     <img className='lg:w-18' src={image3} alt="" />
                                     <div className='lg:ml-4 ml-2'>
-                                        <h1 className='text-black-600 text-lg lg:text-4xl mt-2'>5K+</h1>
+                                        <h1 className='-600 text-lg lg:text-4xl mt-2'>5K+</h1>
                                         <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Video </h1>
                                     </div>
                                 </div>

@@ -16,7 +16,7 @@ import { Pagination } from "swiper";
 const JobCourses = () => {
   const [jobCourse] = useJobCourses();
   return (
-    <div className="mt-12" id="job">
+    <div className="mt-12 bg-base-100" id="job">
       <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
         Job Exam Preparation
       </h1>

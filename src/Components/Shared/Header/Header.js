@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
-import wslogo from "../../../Assets/wslogo.png";
+import wslogo from "../../../Assets/wslogo.svg";
 import "./Header.css";
 // import component ?
 import Drawer from "react-modern-drawer";
@@ -55,13 +55,19 @@ const Header = ({ handleThemeChange, theme }) => {
     </>
   );
   return (
-    <div className="navbar border-b fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg">
+    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-300">
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
             <ul tabindex="0" className="p-2 bg-base-100">
               <Link to="/">
-                <img className="w-36 mt-2 mb-1" src={wslogo} alt=""></img>
+              <div className="flex items-center">
+              <img className="w-8" src={wslogo} alt="" />
+              <div className="ml-1 text-md font-header font-bold">
+                <p>Webb</p>
+                <p className="-mt-2">School</p>
+              </div>
+          </div>
               </Link>
               <hr />
               <li className="my-2 text-lg">
@@ -142,18 +148,22 @@ const Header = ({ handleThemeChange, theme }) => {
           </div>
         </Drawer>
         <Link to="/">
-          <div>
-            <img className="w-36" src={wslogo} alt=""></img>
+          <div className="flex items-center">
+              <img className="w-8" src={wslogo} alt="" />
+              <div className="ml-1 text-md font-header font-bold">
+                <p>Webb</p>
+                <p className="-mt-2">School</p>
+              </div>
           </div>
         </Link>
       </div>
-      <div className="navbar-center lg:mr-36">
-        <ul className="hidden space-x-5 lg:flex mr-10 text-lg">{manuItems}</ul>
+      <div className="navbar-center">
+        <ul className="hidden space-x-5 lg:flex text-lg">{manuItems}</ul>
       </div>
       <div className="navbar-end hidden lg:flex">
           <button
             onClick={handleThemeChange}
-            className="rounded-full lg:mx-2 font-bold pr-2"
+            className="rounded-full lg:mx-2 font-bold pr-5"
           >
             {theme ? (
               <svg
