@@ -92,7 +92,7 @@ const Blogs = () => {
 
             </div>
             <div>
-                <h2 className='text-3xl text-center my-10'>Add your idea for this website</h2>
+                <h2 className='text-3xl text-center my-10'>Added your Idea for this website</h2>
                 <div>
                     
                 </div>
