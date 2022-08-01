@@ -9,16 +9,16 @@ const JobCard = ({jobCourse}) => {
         <div>
              <a
           href="#"
-          className="card card-compact rounded-lg w-72 my-8 bg-base-100 hover:shadow-xl border hover:-translate-y-5 border-gray-300  transform transition duration-300 mx-auto"
+          className="card card-compact rounded-lg w-72 my-8 bg-base-100 hover:shadow-xl border hover:-translate-y-5 border-neutral  transform transition duration-300 mx-auto"
         >
           <figure>
             <img src={img} alt="Shoes" />
           </figure>
-          <div className="card-body ">
-            <h2 className="text-2xl text-center">{name}</h2>
+          <div>
+            <h2 className="text-2xl text-center p-5">{name}</h2>
 
             <div className="card-actions justify-center">
-              <div className="text-center mt-4 text-lg uppercase text-primary border-t-2 w-full border-gray pt-3">
+              <div className="text-center text-lg uppercase text-primary border-t w-full border-neutral p-2">
                 See Details
               </div>
             </div>
