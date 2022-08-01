@@ -15,11 +15,11 @@ const AcadamicBook = ({ acadamicbook }) => {
             <div class="card-body   ">
                 <div className="card-body p-0 text-[#0B3456] ">
                     <h1 className="card-title ">
-                        <p className='text-xl font-bold'>{name}</p>
+                        <p className=' font-bold'>{name}</p>
                     </h1>
-                    <p className='text-xl'>{description}</p>
+                    <p className=''>{description}</p>
                     
-                    <p className='text-2xl font-bold pb-4'>${price}</p>
+                    <p className=' font-bold pb-4'>${price}</p>
                     
 
                 </div>
