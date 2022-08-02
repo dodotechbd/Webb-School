@@ -17,8 +17,8 @@ const BlogDetails = () => {
     return (
         <div className='lg:mx-20 my-20'>
 
-            <h1 className='text-2xl mt-20 font-bold'>{newBlogs[0]?.title}</h1> <br />
-            <div className='flex'> 
+            <h1 className='text-2xl mt-20 font-bold m-2'>{newBlogs[0]?.title}</h1> <br />
+            <div className='flex'>
                 <i class="fa-solid fa-user-astronaut mx-2 text-secondary"></i>
                 <h1 className='text-sm '>{newBlogs[0]?.name}</h1>
             </div>
@@ -33,11 +33,13 @@ const BlogDetails = () => {
                 <div class="hero-content flex-col lg:flex-row">
 
                     <img className='w-6/12' src={newBlogs[0]?.img} />
-                    <div>
+                    <div className='m-2'>
                         <h1 class="text-3xl font-bold">{newBlogs[0]?.title2}</h1>
                         <p class="py-6">{newBlogs[0]?.add}</p>
-                        <h1 class="text-3xl font-bold">{newBlogs[0]?.title3}</h1>
+                        <h1 class="text-2xl font-bold">{newBlogs[0]?.title3}</h1>
                         <p class="py-6">{newBlogs[0]?.add1}</p>
+                        <h1 class="text-2xl font-bold">{newBlogs[0]?.title4}</h1>
+                        <p class="py-6">{newBlogs[0]?.add2}</p>
                     </div>
                 </div>
             </div>
