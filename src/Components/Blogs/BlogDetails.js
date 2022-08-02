@@ -50,8 +50,8 @@ const BlogDetails = () => {
                 <div class="card w-96 bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title">Recent Posts</h2>
-                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='#'>Best Way to learn code and empliment this</a></p>
-                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='#'>Best practice for writing code comments</a></p>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='http://localhost:3000/blogdetails/18'>Best Way to learn code and empliment this</a></p>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='http://localhost:3000/blogdetails/16'>Best practice for writing code comments</a></p>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='http://localhost:3000/blogdetails/15'>Why JavaScript Is Still So Important for Web Development?</a></p>
 
                     </div>
