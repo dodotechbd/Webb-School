@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useAdmission from "../../Hooks/useAdmission";
-import vdo from "../../Assets/vdo.jpg";
-import video from "../../Assets/video/promotion.mp4";
 import ReactPlayer from "react-player";
 import useJobCourses from "../../Hooks/useJobCourse";
 import useLanguage from "../../Hooks/useLanguage";
