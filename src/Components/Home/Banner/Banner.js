@@ -16,16 +16,14 @@ import { EffectCoverflow, Pagination } from "swiper";
 const Banner = () => {
   return (
     <div>
-      <div className="px-12 lg:pt-6 lg:pb-12 pb-5 pt-2 banner">
+      <div className="px-12 lg:py-10 lg:pb-24 py-10 pt-2 banner bg-base-200">
         <h1
-          className="font-bold lg:text-4xl md:text-3xl text-2xl text-white text-center
-        my-4 "
+          className="lg:text-4xl md:text-3xl text-2xl lg:mb-0 my-6 font-header font-bold text-center"
         >
           Discounts On Our Exclusives!
         </h1>
         <p
-          className="text-xl hidden lg:block text-white text-center
-        mb-12"
+          className="lg:text-2xl md:text-xl text-lg mt-6 mb-12 text-center font-sub hidden lg:block"
         >
           Various courses on across site wide can be done more cost-effectively throughout the month of July on the occasion of Eid-Al-Adha!
         </p>
