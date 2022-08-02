@@ -16,8 +16,10 @@
         "description": "If you want to learn code, you have lots of resources. You can read books, or watch tutorials on YouTube or other platforms. No shortage of resources. But there are very few resources about best practices for writing code comments. It’s hard to measure the quality of good comments.",
         "img": "https://i.ibb.co/ZfJ3XZz/MISSION-2022-1.jpg",
         "address": "Dhaka, Bangladesh",
-        "title2": "What is PHP?",
-        "add": "Why use JavaScript over other programming languages? Aside from the unlimited possibilities, there are many reasons for web developers to use JavaScript over other programming languages: JavaScript is the only programming language native to the web browser. JavaScript is the most popular language"
+        "title2": "What is JavaScript?",
+        "add": "Why use JavaScript over other programming languages? Aside from the unlimited possibilities, there are many reasons for web developers to use JavaScript over other programming languages: JavaScript is the only programming language native to the web browser. JavaScript is the most popular language",
+        "title3": "Learning JavaScript is easy",
+        "add1": "Arguably, JavaScript is one of the easiest programming languages to learn, so it serves as a great first language for anyone brand new to coding. Even the most complex lines of JavaScript code can be written one by one, in fragments. It can also be tested in the web browser at the same time."
     },
     {
         "_id": 15,

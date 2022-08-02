@@ -36,6 +36,8 @@ const BlogDetails = () => {
                     <div>
                         <h1 class="text-3xl font-bold">{newBlogs[0]?.title2}</h1>
                         <p class="py-6">{newBlogs[0]?.add}</p>
+                        <h1 class="text-3xl font-bold">{newBlogs[0]?.title3}</h1>
+                        <p class="py-6">{newBlogs[0]?.add1}</p>
                     </div>
                 </div>
             </div>
