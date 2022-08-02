@@ -18,15 +18,7 @@ const BlogDetails = () => {
         <div className='lg:mx-20 my-20'>
 
             <h1 className='text-2xl mt-20 font-bold'>{newBlogs[0]?.title}</h1> <br />
-            <div>
-                <i class="fa-solid fa-user-alien"></i>
-                <h1 className='text-sm '>{newBlogs[0]?.name}</h1>
-            </div>
-
-            <div>
-                <i class="fa-solid fa-house-user"></i>
-                <h1 className='text-sm'>{newBlogs[0]?.address}</h1>
-            </div>
+         
 
             <div class="">
 
