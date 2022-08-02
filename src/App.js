@@ -26,6 +26,7 @@ import NoteFound from "./Components/WrongRoute/NoteFound";
 import { useEffect, useState } from "react";
 
 function App() {
+  const [theme, setTheme] = useState(false);
 
   const [loading, setLoading] = useState(false);
 
@@ -36,15 +37,23 @@ function App() {
     }, 2000);
   }, []);
 
+  useEffect(() => {
+    setTheme(JSON.parse(window.localStorage.getItem("theme")));
+  }, []);
+  const handleThemeChange = () => {
+    setTheme(!theme);
+    window.localStorage.setItem("theme", !theme);
+  };
+
   return (
-    <div data-theme="mytheme" className="mt-16 font-header">
+    <div data-theme={theme && "my_dark"} className="pt-16 font-header">
       {loading ? (
         <div id="preloader">
           <div id="loader"></div>
         </div>
       ) : (
         
-      <Header></Header>
+      <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
       ) }
 
 

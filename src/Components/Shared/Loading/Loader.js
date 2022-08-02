@@ -1,20 +1,19 @@
 import React from "react";
-import "./Loader.css";
 
 const Loader = () => {
   return (
     <div className="lg:mx-8 mx-4 pt-10">
       <div className="pb-5">
-        <div class="h-8 bg-gray-200 rounded-md w-48 mb-4"></div>
+        <div class="h-8 bg-neutral rounded-md w-48 mb-4"></div>
       </div>
       <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
         <div
           role="status"
-          class="mx-auto card card-compact w-72 rounded-md border border-gray-300 shadow animate-pulse"
+          class="mx-auto card card-compact w-72 rounded-md border border-neutral animate-pulse"
         >
-          <div class="flex justify-center items-center h-44 w-full bg-gray-300">
+          <div class="flex justify-center items-center h-44 w-full bg-neutral">
             <svg
-              class="w-12 h-12 text-gray-200"
+              class="w-12 h-12 text-slate-400"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"
@@ -24,24 +23,24 @@ const Loader = () => {
             </svg>
           </div>
           <div className="px-2 py-1 flex justify-between">
-            <div class="h-2 mt-1 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-12"></div>
+            <div class="h-2 mt-1 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-12"></div>
           </div>
           <div className="px-2 pt-3">
-            <div class="h-4 bg-gray-200 rounded-md w-48 mb-4"></div>
+            <div class="h-4 bg-neutral rounded-md w-48 mb-4"></div>
           </div>
-          <div className="border-t p-2 flex justify-between">
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
+          <div className="border-t border-neutral p-2 flex justify-between">
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
           </div>
         </div>
         <div
           role="status"
-          class="mx-auto card card-compact w-72 rounded-md border border-gray-300 shadow animate-pulse"
+          class="mx-auto card card-compact w-72 rounded-md border border-neutral animate-pulse"
         >
-          <div class="flex justify-center items-center h-44 w-full bg-gray-300">
+          <div class="flex justify-center items-center h-44 w-full bg-neutral">
             <svg
-              class="w-12 h-12 text-gray-200"
+              class="w-12 h-12 text-slate-400"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"
@@ -51,24 +50,24 @@ const Loader = () => {
             </svg>
           </div>
           <div className="px-2 py-1 flex justify-between">
-            <div class="h-2 mt-1 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-12"></div>
+            <div class="h-2 mt-1 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-12"></div>
           </div>
           <div className="px-2 pt-3">
-            <div class="h-4 bg-gray-200 rounded-md w-48 mb-4"></div>
+            <div class="h-4 bg-neutral rounded-md w-48 mb-4"></div>
           </div>
-          <div className="border-t p-2 flex justify-between">
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
+          <div className="border-t border-neutral p-2 flex justify-between">
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
           </div>
         </div>
         <div
           role="status"
-          class="mx-auto card card-compact w-72 rounded-md border border-gray-300 shadow animate-pulse"
+          class="mx-auto card card-compact w-72 rounded-md border border-neutral animate-pulse"
         >
-          <div class="flex justify-center items-center h-44 w-full bg-gray-300">
+          <div class="flex justify-center items-center h-44 w-full bg-neutral">
             <svg
-              class="w-12 h-12 text-gray-200"
+              class="w-12 h-12 text-slate-400"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"
@@ -78,24 +77,24 @@ const Loader = () => {
             </svg>
           </div>
           <div className="px-2 py-1 flex justify-between">
-            <div class="h-2 mt-1 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-12"></div>
+            <div class="h-2 mt-1 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-12"></div>
           </div>
           <div className="px-2 pt-3">
-            <div class="h-4 bg-gray-200 rounded-md w-48 mb-4"></div>
+            <div class="h-4 bg-neutral rounded-md w-48 mb-4"></div>
           </div>
-          <div className="border-t p-2 flex justify-between">
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
+          <div className="border-t border-neutral p-2 flex justify-between">
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
           </div>
         </div>
         <div
           role="status"
-          class="mx-auto card card-compact w-72 rounded-md border border-gray-300 shadow animate-pulse"
+          class="mx-auto card card-compact w-72 rounded-md border border-neutral animate-pulse"
         >
-          <div class="flex justify-center items-center h-44 w-full bg-gray-300">
+          <div class="flex justify-center items-center h-44 w-full bg-neutral">
             <svg
-              class="w-12 h-12 text-gray-200"
+              class="w-12 h-12 text-slate-400"
               xmlns="http://www.w3.org/2000/svg"
               aria-hidden="true"
               fill="currentColor"
@@ -105,15 +104,15 @@ const Loader = () => {
             </svg>
           </div>
           <div className="px-2 py-1 flex justify-between">
-            <div class="h-2 mt-1 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-12"></div>
+            <div class="h-2 mt-1 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-12"></div>
           </div>
           <div className="px-2 pt-3">
-            <div class="h-4 bg-gray-200 rounded-md w-48 mb-4"></div>
+            <div class="h-4 bg-neutral rounded-md w-48 mb-4"></div>
           </div>
-          <div className="border-t p-2 flex justify-between">
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
-            <div class="h-4 bg-gray-200 rounded-md w-20"></div>
+          <div className="border-t border-neutral p-2 flex justify-between">
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
+            <div class="h-4 bg-neutral rounded-md w-20"></div>
           </div>
         </div>
       </div>

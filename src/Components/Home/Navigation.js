@@ -10,10 +10,10 @@ const Navigation = () => {
           Choose your topic from our vast library to get started
         </p>
       </div>
-      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 bg-[#F7F8FA] px-3 py-3 rounded-xl">
+      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 bg-base-200 px-3 py-3 rounded-xl">
         <a
           href="#store"
-          className="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
+          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -26,7 +26,7 @@ const Navigation = () => {
         </a>
         <a
           href="#admission"
-          className="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
+          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -39,7 +39,7 @@ const Navigation = () => {
         </a>
         <a
           href="#job"
-          className="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
+          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -52,7 +52,7 @@ const Navigation = () => {
         </a>
         <a
           href="#courses"
-          className="hover:border hover:border-primary border border-white hover:text-primary text-lg bg-base-100 rounded-xl text-black"
+          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">

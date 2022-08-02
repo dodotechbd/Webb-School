@@ -4,7 +4,7 @@ const ReviewCard = ({ course }) => {
   const { name, img, description, address } = course;
   return (
     <div>
-      <div className="card w-11/12 lg:w-96 md:w-96 mx-auto bg-slate-100">
+      <div className="card w-11/12 lg:w-96 md:w-96 mx-auto bg-base-300 border border-neutral">
         <div className="card-body p-7">
           <div className="flex mb-4">
             <div className="avatar">
@@ -17,7 +17,7 @@ const ReviewCard = ({ course }) => {
               <p className="text-gray-500 text-sm text-left">{address}</p>
             </div>
           </div>
-          <p className="card-body rounded-lg border border-gray-300 border-l-primary border-l-4 p-4 bg-base-100 text-left">
+          <p className="card-body rounded-lg border border-neutral border-l-primary border-l-4 p-4 bg-base-100 text-left">
             {description}
           </p>
               <div className="rating rating-md mt-3 mx-auto">
