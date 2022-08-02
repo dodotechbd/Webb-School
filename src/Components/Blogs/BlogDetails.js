@@ -47,8 +47,25 @@ const BlogDetails = () => {
 
             </div>
             <div>
-                <h1>Arguably, JavaScript is one of the easiest programming languages to learn, so it serves as a great first language for anyone brand new to coding. Even the most complex lines of JavaScript code can be written one by one, in fragments. It can also be tested in the web browser at the same time.
-</h1>
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Recent Posts</h2>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='#'>Best Way to learn code and empliment this</a></p>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='#'>Best practice for writing code comments</a></p>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='http://localhost:3000/blogdetails/15'>Why JavaScript Is Still So Important for Web Development?</a></p>
+
+                    </div>
+                </div>
+
+                <div class="card w-96 bg-base-100 shadow-xl mt-2">
+                    <div class="card-body">
+                        <h2 class="card-title">Categories</h2>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogs'>Tips and Tricks</a></p>
+                       
+
+                    </div>
+                </div>
+
             </div>
         </div>
     );
