@@ -17,7 +17,7 @@ const SkillBook = ({skillbook}) => {
                 <div class="card-body  px-2">
                 <div className="card-body p-0 text-[#0B3456] ">
                     <h1 class="card-title pt-2">
-                        <p className='text-xl font-bold'>{name}</p>
+                        <p className='text-xl font-bold uppercase'>{name}</p>
                        
                     </h1>
                     <p className=''>{description}</p>
