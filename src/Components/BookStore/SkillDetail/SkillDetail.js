@@ -20,22 +20,6 @@ const SkillDetail = () => {
 
                 <div className='grid  justify-items-center  align-middle  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 '>
 
-
-                    <div class="avatar ">
-                        <div class="w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                        <div>
-                            <img src="https://placeimg.com/192/192/people"alt="writers" />
-                            <h1>this is block</h1></div>
-                        </div>
-                        <div class="w-12 h-12 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                            <img src="https://placeimg.com/192/192/people" alt ="writers" />
-                            <h1>this is block</h1>
-                        </div>
-                    </div>
-
-
-
-
                     <p className='font-bold'>Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant. Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant</p>
 
 
