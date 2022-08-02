@@ -27,9 +27,11 @@ const AcadamicDetail = () => {
             <p className='pragraph-color text-xl font-semibold '> Format: {newService[0]?.format}</p>
             <h3 className='font-semibold  pragraph-color'>{newService[0]?.details}</h3>
             <h3 className='font-bold text-2xl  pragraph-color'>Price $:  {newService[0]?.price}</h3>
-
+            <button  class=" btn px-4  bg-slate-600 mt-4  text-center  font-bold rounded-b-lg p   hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Enaroll</button>
         </div>
+        
     </div>
+    
     </div>
     );
 };
