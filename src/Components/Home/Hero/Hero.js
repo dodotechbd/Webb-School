@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 const Hero = () => {
   return (
     <div>
-      <div class="zero hero lg:py-36 md:py-10 py-10 bg-base-100">
+      <div class="zero hero -mt-12 lg:py-40 md:py-10 py-10 bg-base-100 border-b border-neutral">
         <div class="hero-content flex-col-reverse lg:flex-row-reverse">
         <img className="lg:w-7/12" src={hero} />
           <div className="w-10/12">
