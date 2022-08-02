@@ -27,6 +27,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.4",
     "react-tabs": "^5.1.0",
+    "reactjs-video-playlist-player": "^1.1.1",
     "swiper": "^8.3.1",
     "web-vitals": "^2.1.4"
   },

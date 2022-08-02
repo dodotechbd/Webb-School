@@ -1,31 +1,91 @@
 [
     {
         "_id": "9",
+        "uname": "english-for-career-development",
         "name": "English for Career Development",
         "badge": "TOP",
         "instructor": "Brian McManus",
+        "link": "Introduction",
         "img": "https://static.vecteezy.com/system/resources/thumbnails/003/266/872/small/career-business-work-concept-with-business-goals-team-free-vector.jpg",
+        "list": "career",
+        "file": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ],
         "price": "2000"
     },
     {
         "_id": "10",
+        "uname": "improve-english-communcation-skills",
         "name": "Improve English Communication Skills",
         "instructor": "Gerry Landers",
+        "link": "Introduction",
         "img": "https://camonk.com/s/store/courses/61cab6ff0cf2acaec8c0be66/cover.jpg?v=2",
+        "list": "communcation",
+        "file": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ],
         "price": "1500"
     },
     {
         "_id": "11",
+        "uname": "chinese-for-beginners",
         "name": "Chinese for Beginners",
         "instructor": "Xiaoyu Liu",
+        "link": "Introduction",
         "img": "https://media.istockphoto.com/vectors/design-concept-of-word-chinese-website-banner-vector-id1297556594?k=20&m=1297556594&s=612x612&w=0&h=78bhkNkXsgjCW8z8tHrKHEwrIogK2DvnqVOgNCIs0oY=",
+        "list": "chinese",
+        "file": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ],
         "price": "950"
     },
     {
         "_id": 12,
+        "uname": "grammar-and-punctuation",
         "name": "Grammar and Punctuation",
         "instructor": "Tamy Chapman",
+        "link": "Introduction",
         "img": "https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/52/ab/t2-e-379-spelling-punctuation-and-grammar-display-banner_ver_1.jpg",
+        "list": "grammar",
+        "file": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ],
         "price": "950"
     }
 ]

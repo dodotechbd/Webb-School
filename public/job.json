@@ -1,36 +1,92 @@
 [
   {
     "_id": "5",
+    "uname": "bank-job",
     "name": "Bank Job",
-    "link": "https://10minuteschool.com/",
+    "link": "Introduction",
     "img": "https://i.postimg.cc/8zh9KJp3/Bank-Job.png",
     "badge": "TOP",
     "instructor": "Muhammad Shafi",
+    "list": "bank",
+    "file": [
+      {
+        "id": "4",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "id": "5",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "price": "850"
   },
   {
     "_id": "6",
+    "uname": "developer-job",
     "name": "Developer Job",
-    "link": "https://10minuteschool.com/",
+    "link": "Introduction",
     "img": "https://i.postimg.cc/vZfT0z6s/Bank-Job-3.png",
     "badge": "TOP",
     "instructor": "Shakhawath Hossain Shatu",
+    "list": "developer",
+    "file": [
+      {
+        "id": "4",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "id": "5",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "price": "850"
   },
   {
     "_id": "7",
+    "uname": "corporate-job",
     "name": "Corporate Job",
-    "link": "https://10minuteschool.com/",
+    "link": "Introduction",
     "img": "https://i.postimg.cc/tJnpYq3j/Bank-Job-4.png",
     "instructor": "Md Badsha",
+    "list": "corporate",
+    "file": [
+      {
+        "id": "4",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "id": "5",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "price": "850"
   },
   {
     "_id": "8",
+    "uname": "freelancer-job",
     "name": "Freelancer Job",
-    "link": "https://10minuteschool.com/",
+    "link": "Introduction",
     "img": "https://i.postimg.cc/P5WfW5Bf/job-2.png",
     "instructor": "Rashel Mahmud Raj",
+    "list": "freelancer",
+    "file": [
+      {
+        "id": "4",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "id": "5",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "price": "850"
   }
 ]

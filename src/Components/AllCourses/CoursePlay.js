@@ -1,0 +1,41 @@
+import React from "react";
+import { Link, Outlet, useParams } from "react-router-dom";
+import useAdmission from "../../Hooks/useAdmission";
+import useJobCourses from "../../Hooks/useJobCourse";
+import useLanguage from "../../Hooks/useLanguage";
+import CourseLink from "./CourseLink";
+
+
+const CoursePlay = () => {
+  const { uname } = useParams();
+  const [language] = useLanguage([]);
+  const [jobcourses] = useJobCourses([]);
+  const [admission] = useAdmission([]);
+
+  const courseData = admission.find((allcard) => allcard.uname === uname)
+  || language.find((allcard) => allcard.uname === uname) || jobcourses.find((allcard) => allcard.uname === uname);
+  const coursePlay = courseData?.file;
+  return (
+    <div>
+      <div class="hero bg-base-200 py-8">
+        <div class="hero-content w-screen gap-10 flex-col-reverse lg:flex-row-reverse items-start">
+          <div class="card rounded-md lg:w-1/3 w-full bg-base-300 border border-neutral">
+            <div class="card-body">
+            {
+              courseData?.file.map(course => <CourseLink
+                key={course.id}
+                course={course}
+                ></CourseLink>)
+            }
+            </div>
+          </div>
+          <div className="lg:w-7/12 w-full">
+            <Outlet></Outlet>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default CoursePlay;
