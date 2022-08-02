@@ -17,13 +17,13 @@ const AcadamicBook = ({ acadamicbook }) => {
             <div class="card-body px-2  ">
                 <div className="card-body p-0 text-[#0B3456] ">
                     <h1 className="card-title">
-                        <p className=' font-bold'>{name}</p>
+                        <p className=' font-bold p-0'>{name}</p>
                     </h1>
                     <p className=''>{description}</p>
                     <p className=' font-bold pb-4'>${price}</p>
                 </div>
             </div>
-            <button onClick={()=>navigateToAcadamicDetail(_id)} class=" btn-block  position absolute bottom-0  bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2  hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456] ">Detalis</button>
+            <button onClick={()=>navigateToAcadamicDetail(_id)} class=" btn-block  position absolute bottom-0 bg-indigo-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2  hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456] ">Detalis</button>
         </div>
     );
 };
