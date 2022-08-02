@@ -16,7 +16,7 @@ const AcadamicBook = ({ acadamicbook }) => {
 
             <div class="card-body px-2  ">
                 <div className="card-body p-0 text-[#0B3456] ">
-                    <h1 className="card-title ">
+                    <h1 className="card-title">
                         <p className=' font-bold'>{name}</p>
                     </h1>
                     <p className=''>{description}</p>
