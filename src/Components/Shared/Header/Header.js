@@ -59,45 +59,38 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
-            <ul tabindex="0" className="p-2 bg-base-100">
+            <ul tabindex="0" className="bg-base-100 h-screen">
               <Link to="/">
-              <div className="flex items-center">
-              <img className="w-8" src={wslogo} alt="" />
-              <div className="ml-1 text-md font-header font-bold">
+              <div className="flex items-center p-2 border-b border-neutral w-full">
+              <img className="w-12 ml-3" src={wslogo} alt="" />
+              <div className="ml-1 text-lg font-sub font-bold">
                 <p>Webb</p>
                 <p className="-mt-2">School</p>
               </div>
           </div>
               </Link>
-              <hr />
-              <li className="my-2 text-lg">
+              <li className="py-2 text-lg border-b border-neutral w-full">
                 <Link to="courses">Courses</Link>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
+              <li className="py-2 text-lg border-b border-neutral w-full">
                 <Link to="bookstore">Book Store</Link>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
+              <li className="py-2 text-lg border-b border-neutral w-full">
                 <Link to="admission">Admission</Link>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
+              <li className="py-2 text-lg border-b border-neutral w-full">
                 <Link to="jobs">Jobs</Link>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
+              <li className="py-2 text-lg border-b border-neutral w-full">
                 <Link to="blogs">Blog</Link>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
+              <li className="py-2 text-lg border-b border-neutral w-full">
                 <Link to="admin/manage">Admin</Link>
               </li>
-              <hr />
               <li>
                 {user ? (
                   <div>
-                    <div className="flex flex-nowrap items-center cursor-pointer">
+                    <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">
                       <label class="avatar">
                         <div class="w-7 mr-2 my-2 rounded-full border border-gray-200">
                           <img src={user?.photoURL} />
@@ -108,39 +101,33 @@ const Header = ({ handleThemeChange, theme }) => {
                         <i class="ml-2 fa-solid fa-angle-down"></i>
                       </p>
                     </div>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
+                    <li className="py-2 text-md pl-5 border-b border-neutral w-full">
                       <a>
                         <i class="mr-3 fa-solid fa-user"></i>Profile
                       </a>
                     </li>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
+                    <li className="py-2 text-md pl-5 border-b border-neutral w-full">
                       <a>
                         <i class="mr-3 fa-solid fa-bolt"></i>My Courses
                       </a>
                     </li>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
+                    <li className="py-2 text-md pl-5 border-b border-neutral w-full">
                       <a>
                         <i class="mr-3 fa-solid fa-chart-line"></i>Dashboard
                       </a>
                     </li>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
+                    <li className="py-2 text-md pl-5 border-b border-neutral w-full">
                       <a onClick={logout}>
                         <i class="mr-3 fa-solid fa-right-from-bracket"></i>
                         Logout
                       </a>
                     </li>
-                    <hr />
                   </div>
                 ) : (
                   <div>
-                    <li className="my-2 btn-primary btn-sm btn rounded-md text-white">
+                    <li className="my-2 btn-info btn-sm btn rounded-md text-white">
                       <Link to="Login">Login</Link>
                     </li>
-                    <hr />
                   </div>
                 )}
               </li>
@@ -163,11 +150,11 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-end hidden lg:flex">
           <button
             onClick={handleThemeChange}
-            className="rounded-full lg:mx-2 font-bold pr-5"
+            className="rounded-full lg:mx-2 pr-5"
           >
             {theme ? (
               <svg
-                className="swap-on fill-current w-5 h-5"
+                className="swap-on fill-yellow-200 w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -175,7 +162,7 @@ const Header = ({ handleThemeChange, theme }) => {
               </svg>
             ) : (
               <svg
-                className="swap-off fill-current w-5 h-5"
+                className="swap-off fill-gray-500 w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -227,7 +214,7 @@ const Header = ({ handleThemeChange, theme }) => {
           </div>
         ) : (
           <div className="flex">
-            <a className="btn-primary btn-sm btn rounded-md text-white">
+            <a className="btn-info btn-sm btn rounded-md text-white">
               <Link to="Login">Login</Link>
             </a>
             <div class="divider lg:divider-horizontal"></div>

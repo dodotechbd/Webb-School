@@ -132,7 +132,7 @@ let singInError
                 <span class="h-px bg-gray-400 w-14"></span>
               </span>
               <div class="flex flex-col space-y-4">
-              <button onClick={() => signInWithGoogle()} class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none">
+              <button onClick={() => signInWithGoogle()} class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black">
                 <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt=""/> <span>Login with Google</span>
             </button>
                 

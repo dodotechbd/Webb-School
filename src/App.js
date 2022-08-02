@@ -24,6 +24,8 @@ import Footer from "./Components/Shared/Footer";
 import Header from "./Components/Shared/Header/Header";
 import NoteFound from "./Components/WrongRoute/NoteFound";
 import { useEffect, useState } from "react";
+import CoursePlay from "./Components/AllCourses/CoursePlay";
+import CourseVideo from "./Components/AllCourses/CourseVideo";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -48,19 +50,26 @@ function App() {
   return (
     <div data-theme={theme && "my_dark"} className="pt-16 font-header">
       {loading ? (
-        <div className="bg-gradient-to-r from-base-300 to-base-200" id="preloader">
+        <div
+          className="bg-gradient-to-r from-base-300 to-base-200"
+          id="preloader"
+        >
           <div id="loader"></div>
         </div>
       ) : (
-        
-      <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
-      ) }
-
+        <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
+      )}
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
-        <Route path="/acadamicbook/:acadamicbookId" element={<AcadamicDetail></AcadamicDetail>} ></Route>
-        <Route path="/skillbook/:skillbookId" element={<SkillDetail></SkillDetail>} ></Route>
+        <Route
+          path="/acadamicbook/:acadamicbookId"
+          element={<AcadamicDetail></AcadamicDetail>}
+        ></Route>
+        <Route
+          path="/skillbook/:skillbookId"
+          element={<SkillDetail></SkillDetail>}
+        ></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route
           path="/admission"
@@ -79,13 +88,21 @@ function App() {
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>
-        <Route path="/course/:id" element={<AllCourseView></AllCourseView>}></Route>
+        <Route
+          path="/course/:uname"
+          element={<AllCourseView></AllCourseView>}
+        ></Route>
+        <Route
+          path="/course/:uname/:list"
+          element={<CoursePlay></CoursePlay>}
+        >
+          <Route path="/course/:uname/:list/:fileName" element={<CourseVideo></CourseVideo>}></Route>
+        </Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
 
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <Footer></Footer>
-      
     </div>
   );
 }
