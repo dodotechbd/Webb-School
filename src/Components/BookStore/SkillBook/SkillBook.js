@@ -14,7 +14,7 @@ const SkillBook = ({skillbook}) => {
                 <figure  className="px-12 pt-4">
                     <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
                 </figure>
-                <div class="card-body  pt-0">
+                <div class="card-body  px-2 p-0 text-[#0B3456]">
                     <h1 class="card-title pt-2">
                         <p className='text-xl font-bold'>{name}</p>
                        
