@@ -9,7 +9,7 @@ const SkillBook = ({skillbook}) => {
      navigate(`/skillbook/${_id}`)
      }
     return (
-        <div className=' bg-slate-200 rounded-lg position relative w-auto'  > 
+        <div className=' bg-slate-200 rounded-lg position relative w-auto p-0 border-2 border-slate-300'  > 
           
                 <figure  className="px-12 pt-4">
                     <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
