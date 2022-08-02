@@ -55,7 +55,7 @@ const Header = ({ handleThemeChange, theme }) => {
     </>
   );
   return (
-    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-300">
+    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
@@ -149,7 +149,7 @@ const Header = ({ handleThemeChange, theme }) => {
         </Drawer>
         <Link to="/">
           <div className="flex items-center">
-              <img className="w-8" src={wslogo} alt="" />
+              <img className="w-10 ml-3" src={wslogo} alt="" />
               <div className="ml-1 text-md font-header font-bold">
                 <p>Webb</p>
                 <p className="-mt-2">School</p>
