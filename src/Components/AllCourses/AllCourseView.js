@@ -19,8 +19,8 @@ const AllCourseView = () => {
   
   return (
     <div className="hero bg-base-100 my-10">
-      <div className="flex justify-center gap-10 flex-col-reverse lg:flex-row-reverse items-start">
-        <div class="card lg:w-1/3 bg-[#354795] lg:sticky lg:top-20 shadow-xl text-white">
+      <div className="flex justify-center mx-3 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
+        <div class="card lg:w-1/3 md:w-2/3 bg-[#354795] lg:sticky lg:top-20 md:sticky md:top-20 shadow-xl text-white">
           <div class="card-body">
             <h2 class="text-2xl pb-2">
               Everything that is included in this course
@@ -65,12 +65,12 @@ const AllCourseView = () => {
             </Link>
           </div>
         </div>
-        <div className="lg:w-6/12">
+        <div className="lg:w-6/12 md:w-full">
           <h1 class="text-4xl font-bold text-warning">{courseData?.name}</h1>
           <p class="py-3 text-lg">
             {courseData?.desc}
           </p>
-          <div className="h-80 border-4 rounded-lg border-neutral w-full">
+          <div className="lg:h-80 h-48 md:h-96 border-4 rounded-lg border-neutral w-full">
             <ReactPlayer
               width={"100%"}
               height={"100%"}
