@@ -30,7 +30,7 @@ const AcadamicDetail = () => {
                                 </div>
                             </div>
                             <div className='ml-2.5'>
-                                <h2 class="card-title">New movie is released!</h2>
+                                <h2 class="card-title">{newService[0]?.Writer}</h2>
                                 <p>Click the button to watch on Jetflix app.</p>
 
                             </div>
@@ -42,7 +42,7 @@ const AcadamicDetail = () => {
                                 </div>
                             </div>
                             <div className='ml-2.5'>
-                                <h2 class="card-title">New movie is released!</h2>
+                                <h2 class="card-title">{newService[0]?.Writer1}</h2>
                                 <p>Click the button to watch on Jetflix app.</p>
 
                             </div>
@@ -54,7 +54,7 @@ const AcadamicDetail = () => {
                                 </div>
                             </div>
                             <div className='ml-2.5'>
-                                <h2 class="card-title">Pages: {newService[0]?.pages}</h2>
+                                <h2 class="card-title">{newService[0]?.Writer2}</h2>
                                 <p>Click the button to watch on Jetflix app.</p>
 
                             </div>
@@ -66,7 +66,7 @@ const AcadamicDetail = () => {
                                 </div>
                             </div>
                             <div className='ml-2.5'>
-                                <h2 class="card-title">New movie is released!</h2>
+                                <h2 class="card-title">{newService[0]?.Writer3}</h2>
                                 <p>Click the button to watch on Jetflix app.</p>
 
                             </div>
