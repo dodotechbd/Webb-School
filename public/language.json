@@ -1,14 +1,29 @@
 [
-    {
-        "_id": "9",
-        "uname": "english-for-career-development",
-        "name": "English for Career Development",
-        "badge": "TOP",
-        "instructor": "Brian McManus",
-        "link": "Introduction",
-        "img": "https://static.vecteezy.com/system/resources/thumbnails/003/266/872/small/career-business-work-concept-with-business-goals-team-free-vector.jpg",
-        "list": "career",
-        "file": [
+  {
+    "_id": "9",
+    "uname": "english-for-career-development",
+    "name": "English for Career Development",
+    "badge": "TOP",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
+    "link": "Introduction",
+    "img": "https://static.vecteezy.com/system/resources/thumbnails/003/266/872/small/career-business-work-concept-with-business-goals-team-free-vector.jpg",
+    "list": "career",
+    "file": [
+      {
+        "title": "First Video",
+        "details": [
           {
             "id": "4",
             "fileName": "Introduction",
@@ -19,18 +34,11 @@
             "fileName": "next",
             "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
           }
-        ],
-        "price": "2000"
-    },
-    {
-        "_id": "10",
-        "uname": "improve-english-communcation-skills",
-        "name": "Improve English Communication Skills",
-        "instructor": "Gerry Landers",
-        "link": "Introduction",
-        "img": "https://camonk.com/s/store/courses/61cab6ff0cf2acaec8c0be66/cover.jpg?v=2",
-        "list": "communcation",
-        "file": [
+        ]
+      },
+      {
+        "title": "Second Video",
+        "details": [
           {
             "id": "4",
             "fileName": "Introduction",
@@ -41,18 +49,35 @@
             "fileName": "next",
             "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
           }
-        ],
-        "price": "1500"
-    },
-    {
-        "_id": "11",
-        "uname": "chinese-for-beginners",
-        "name": "Chinese for Beginners",
-        "instructor": "Xiaoyu Liu",
-        "link": "Introduction",
-        "img": "https://media.istockphoto.com/vectors/design-concept-of-word-chinese-website-banner-vector-id1297556594?k=20&m=1297556594&s=612x612&w=0&h=78bhkNkXsgjCW8z8tHrKHEwrIogK2DvnqVOgNCIs0oY=",
-        "list": "chinese",
-        "file": [
+        ]
+      }
+    ],
+    "price": "2000"
+  },
+  {
+    "_id": "10",
+    "uname": "improve-english-communcation-skills",
+    "name": "Improve English Communication Skills",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
+    "link": "Introduction",
+    "img": "https://camonk.com/s/store/courses/61cab6ff0cf2acaec8c0be66/cover.jpg?v=2",
+    "list": "communcation",
+    "file": [
+      {
+        "title": "First Video",
+        "details": [
           {
             "id": "4",
             "fileName": "Introduction",
@@ -63,18 +88,11 @@
             "fileName": "next",
             "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
           }
-        ],
-        "price": "950"
-    },
-    {
-        "_id": 12,
-        "uname": "grammar-and-punctuation",
-        "name": "Grammar and Punctuation",
-        "instructor": "Tamy Chapman",
-        "link": "Introduction",
-        "img": "https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/52/ab/t2-e-379-spelling-punctuation-and-grammar-display-banner_ver_1.jpg",
-        "list": "grammar",
-        "file": [
+        ]
+      },
+      {
+        "title": "Second Video",
+        "details": [
           {
             "id": "4",
             "fileName": "Introduction",
@@ -85,7 +103,117 @@
             "fileName": "next",
             "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
           }
-        ],
-        "price": "950"
-    }
+        ]
+      }
+    ],
+    "price": "1500"
+  },
+  {
+    "_id": "11",
+    "uname": "chinese-for-beginners",
+    "name": "Chinese for Beginners",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
+    "link": "Introduction",
+    "img": "https://media.istockphoto.com/vectors/design-concept-of-word-chinese-website-banner-vector-id1297556594?k=20&m=1297556594&s=612x612&w=0&h=78bhkNkXsgjCW8z8tHrKHEwrIogK2DvnqVOgNCIs0oY=",
+    "list": "chinese",
+    "file": [
+      {
+        "title": "First Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
+      },
+      {
+        "title": "Second Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
+      }
+    ],
+    "price": "950"
+  },
+  {
+    "_id": 12,
+    "uname": "grammar-and-punctuation",
+    "name": "Grammar and Punctuation",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
+    "link": "Introduction",
+    "img": "https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/52/ab/t2-e-379-spelling-punctuation-and-grammar-display-banner_ver_1.jpg",
+    "list": "grammar",
+    "file": [
+      {
+        "title": "First Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
+      },
+      {
+        "title": "Second Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
+      }
+    ],
+    "price": "950"
+  }
 ]

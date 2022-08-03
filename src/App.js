@@ -48,7 +48,7 @@ function App() {
   };
 
   return (
-    <div data-theme={theme && "my_dark"} className="pt-16 font-header">
+    <div data-theme={theme && "my_dark"} className="pt-16 font-header min-h-screen">
       {loading ? (
         <div
           className="bg-gradient-to-r from-base-300 to-base-200"

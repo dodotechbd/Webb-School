@@ -6,8 +6,8 @@ const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <div className="bg-base-200">
-      <footer className="footer p-10 bg-base-200 text-base-content">
+    <div className="bg-base-300 border-t border-neutral">
+      <footer className="footer p-10 text-base-content">
         <div className="md:w-60">
         <div className="flex items-center">
               <img className="w-12" src={logo} alt="" />
@@ -52,36 +52,6 @@ const Footer = () => {
           <p className="text-md">
             <span className="font-bold">Email:</span> support@webbschool.com
           </p>
-          <div className="hidden lg:inline md:inline">
-            <a
-              target="_blank"
-              className="text-2xl mr-4"
-              href="https://web.facebook.com/rashelmahomudf/"
-            >
-              <i className="fa-brands fa-facebook"></i>
-            </a>
-            <a
-              target="_blank"
-              className="text-2xl mr-4"
-              href="https://www.instagram.com/rashel_mahomud/"
-            >
-              <i className="fa-brands fa-instagram"></i>
-            </a>
-            <a
-              target="_blank"
-              className="text-2xl mr-4"
-              href="https://www.linkedin.com/in/rashelmahomud/"
-            >
-              <i className="fa-brands fa-linkedin"></i>
-            </a>
-            <a
-              target="_blank"
-              className="text-2xl mr-4"
-              href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
-            >
-              <i className="fa-brands fa-youtube"></i>
-            </a>
-          </div>
         </div>
       </footer>
       <footer className="footer footer-center my-2 lg:hidden md:hidden">
@@ -116,10 +86,40 @@ const Footer = () => {
           </a>
         </div>
       </footer>
-      <footer className="footer footer-center p-4 text-white bg-black text-center">
+      <footer className="footer footer-center p-4 border-t border-neutral flex justify-between">
         <div>
-          <p>2022 - {year} Copyright © Webb School.<br />All rights reserved.</p>
+          <p>2022 - {year} Copyright © Webb School. All rights reserved</p>
         </div>
+        <div className="hidden lg:inline md:inline">
+            <a
+              target="_blank"
+              className="text-2xl mr-4"
+              href="https://web.facebook.com/rashelmahomudf/"
+            >
+              <i className="fa-brands fa-facebook"></i>
+            </a>
+            <a
+              target="_blank"
+              className="text-2xl mr-4"
+              href="https://www.instagram.com/rashel_mahomud/"
+            >
+              <i className="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              target="_blank"
+              className="text-2xl mr-4"
+              href="https://www.linkedin.com/in/rashelmahomud/"
+            >
+              <i className="fa-brands fa-linkedin"></i>
+            </a>
+            <a
+              target="_blank"
+              className="text-2xl mr-4"
+              href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
+            >
+              <i className="fa-brands fa-youtube"></i>
+            </a>
+          </div>
       </footer>
     </div>
   );
