@@ -1,11 +1,13 @@
 [
     {
       "id": "4",
+      "name": "Introduction",
       "fileName": "Introduction",
       "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
     },
     {
       "id": "5",
+      "name": "Next",
       "fileName": "next",
       "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
     }
