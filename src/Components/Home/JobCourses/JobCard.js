@@ -1,14 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 
 const JobCard = ({jobCourse}) => {
-    const { name, img } = jobCourse;
+    const { name, img, uname } = jobCourse;
 
     return (
         <div>
-             <a
-          href="#"
+             <Link
+          to={`/course/${uname}`}
           className="card card-compact rounded-lg w-72 my-8 bg-base-100 hover:shadow-xl border hover:-translate-y-5 border-neutral  transform transition duration-300 mx-auto"
         >
           <figure>
@@ -23,7 +24,7 @@ const JobCard = ({jobCourse}) => {
               </div>
             </div>
           </div>
-        </a>
+        </Link>
 
        
         </div>

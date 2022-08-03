@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const AdmissionCard = ({ admission }) => {
   const { name, img, link, instructor } = admission;
   console.log(name);
-  const { _id } = admission;
+  const { uname } = admission;
 
   return (
     <div className="rounded-lg mx-4">
-      <Link to={`/course/${_id}`} className="group rounded h-20 lg:h-fit min-w-fit card card-side bg-base-300 transform transition duration-500 hover:scale-110 hover:shadow-xl">
+      <Link to={`/course/${uname}`} className="group rounded h-20 lg:h-fit min-w-fit card card-side bg-base-300 transform transition duration-500 hover:scale-110 hover:shadow-xl">
         <figure>
           <img className="lg:w-48 w-28 h-20  lg:h-32 object-cover" src={img} alt="Movie" />
         </figure>
