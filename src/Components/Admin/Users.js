@@ -39,12 +39,12 @@ const Users = () => {
                 </span>
               </td>
               <td>
-                <button class="btn btn-success text-white btn-xs">
+                <button class="btn btn-primary btn-xs">
                   Make Admin
                 </button>
               </td>
               <th>
-                <button class="btn text-white btn-xs">Remove</button>
+                <button class="btn btn-error text-white btn-xs">Remove</button>
               </th>
             </tr>
 
@@ -71,12 +71,12 @@ const Users = () => {
                 <span class="badge badge-ghost badge-sm">Tax Accountant</span>
               </td>
               <td>
-                <button class="btn btn-success text-white btn-xs">
+                <button class="btn btn-primary btn-xs">
                   Make Admin
                 </button>
               </td>
               <th>
-                <button class="btn text-white btn-xs">Remove</button>
+                <button class="btn btn-error text-white btn-xs">Remove</button>
               </th>
             </tr>
 
@@ -105,12 +105,12 @@ const Users = () => {
                 </span>
               </td>
               <td>
-                <button class="btn btn-success text-white btn-xs">
+                <button class="btn btn-primary btn-xs">
                   Make Admin
                 </button>
               </td>
               <th>
-                <button class="btn text-white btn-xs">Remove</button>
+                <button class="btn btn-error text-white btn-xs">Remove</button>
               </th>
             </tr>
 
@@ -139,12 +139,12 @@ const Users = () => {
                 </span>
               </td>
               <td>
-                <button class="btn btn-success text-white btn-xs">
+                <button class="btn btn-primary btn-xs">
                   Make Admin
                 </button>
               </td>
               <th>
-                <button class="btn text-white btn-xs">Remove</button>
+                <button class="btn btn-error text-white btn-xs">Remove</button>
               </th>
             </tr>
 
@@ -173,12 +173,12 @@ const Users = () => {
                 </span>
               </td>
               <td>
-                <button class="btn btn-success text-white btn-xs">
+                <button class="btn btn-primary btn-xs">
                   Make Admin
                 </button>
               </td>
               <th>
-                <button class="btn text-white btn-xs">Remove</button>
+                <button class="btn btn-error text-white btn-xs">Remove</button>
               </th>
             </tr>
 
@@ -207,12 +207,12 @@ const Users = () => {
                 </span>
               </td>
               <td>
-                <button class="btn btn-success text-white btn-xs">
+                <button class="btn btn-primary btn-xs">
                   Make Admin
                 </button>
               </td>
               <th>
-                <button class="btn text-white btn-xs">Remove</button>
+                <button class="btn btn-error text-white btn-xs">Remove</button>
               </th>
             </tr>
           </tbody>

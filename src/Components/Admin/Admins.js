@@ -3,7 +3,7 @@ import React from "react";
 const Admins = () => {
   return (
     <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 mx-7 my-7">
-    <div class="card w-full bg-indigo-100 shadow-xl">
+    <div class="card w-full bg-base-300 hover:shadow-primary hover:shadow-lg">
       <figure class="pt-6">
         <div class="avatar">
           <div class="w-24 mask mask-squircle">
@@ -16,7 +16,7 @@ const Admins = () => {
         <p>Chattogram, Bangladesh</p>
       </div>
     </div>
-    <div class="card w-full bg-indigo-100 shadow-xl">
+    <div class="card w-full bg-base-300 hover:shadow-primary hover:shadow-lg">
       <figure class="pt-6">
         <div class="avatar">
           <div class="w-24 mask mask-squircle">
@@ -29,7 +29,7 @@ const Admins = () => {
         <p>Chattogram, Bangladesh</p>
       </div>
     </div>
-      <div class="card w-full bg-indigo-100 shadow-xl">
+      <div class="card w-full bg-base-300 hover:shadow-primary hover:shadow-lg">
         <figure class="pt-6">
           <div class="avatar">
             <div class="w-24 mask mask-squircle">
@@ -42,7 +42,7 @@ const Admins = () => {
           <p>Chattogram, Bangladesh</p>
         </div>
       </div>
-      <div class="card w-full bg-indigo-100 shadow-xl">
+      <div class="card w-full bg-base-300 hover:shadow-primary hover:shadow-lg">
         <figure class="pt-6">
           <div class="avatar">
             <div class="w-24 mask mask-squircle">
@@ -55,7 +55,7 @@ const Admins = () => {
           <p>Dhaka, Bangladesh</p>
         </div>
       </div>
-      <div class="card w-full bg-indigo-100 shadow-xl">
+      <div class="card w-full bg-base-300 hover:shadow-primary hover:shadow-lg">
         <figure class="pt-6">
           <div class="avatar">
             <div class="w-24 mask mask-squircle">
@@ -68,7 +68,7 @@ const Admins = () => {
           <p>Dhaka, Bangladesh</p>
         </div>
       </div>
-      <div class="card w-full bg-indigo-100 shadow-xl">
+      <div class="card w-full bg-base-300 hover:shadow-primary hover:shadow-lg">
         <figure class="pt-6">
           <div class="avatar">
             <div class="w-24 mask mask-squircle">

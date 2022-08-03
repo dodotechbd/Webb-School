@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, Outlet, useParams } from "react-router-dom";
+import { Outlet, useParams } from "react-router-dom";
 import useAdmission from "../../Hooks/useAdmission";
 import useJobCourses from "../../Hooks/useJobCourse";
 import useLanguage from "../../Hooks/useLanguage";
@@ -14,7 +14,6 @@ const CoursePlay = () => {
 
   const courseData = admission.find((allcard) => allcard.uname === uname)
   || language.find((allcard) => allcard.uname === uname) || jobcourses.find((allcard) => allcard.uname === uname);
-  const coursePlay = courseData?.file;
   return (
     <div>
       <div class="hero bg-base-200 py-8">

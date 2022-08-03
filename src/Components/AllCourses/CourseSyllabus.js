@@ -17,14 +17,14 @@ const CourseSyllabus = ({ course }) => {
   return (
     <>
       <div
-        tabindex="0"
+        tabIndex="0"
         class="collapse collapse-arrow border-b border-neutral px-2"
       >
         <input type="checkbox" />
         <div class="collapse-title text-lg font-medium">{course?.title}</div>
         <ul className="menu collapse-content gap-1">
-          {course.details.map ((detail) => 
-          <li>
+          {course.details.map ((detail) =>
+          <li key={detail.id}>
           <p
             className="border border-neutral"
           >
