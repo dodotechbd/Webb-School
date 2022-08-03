@@ -6,18 +6,50 @@
     "link": "Introduction",
     "img": "https://i.postimg.cc/8zh9KJp3/Bank-Job.png",
     "badge": "TOP",
-    "instructor": "Muhammad Shafi",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "bank",
     "file": [
       {
-        "id": "4",
-        "fileName": "Introduction",
-        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+        "title": "First Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       },
       {
-        "id": "5",
-        "fileName": "next",
-        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+        "title": "Second Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       }
     ],
     "price": "850"
@@ -29,18 +61,50 @@
     "link": "Introduction",
     "img": "https://i.postimg.cc/vZfT0z6s/Bank-Job-3.png",
     "badge": "TOP",
-    "instructor": "Shakhawath Hossain Shatu",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "developer",
     "file": [
       {
-        "id": "4",
-        "fileName": "Introduction",
-        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+        "title": "First Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       },
       {
-        "id": "5",
-        "fileName": "next",
-        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+        "title": "Second Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       }
     ],
     "price": "850"
@@ -51,18 +115,50 @@
     "name": "Corporate Job",
     "link": "Introduction",
     "img": "https://i.postimg.cc/tJnpYq3j/Bank-Job-4.png",
-    "instructor": "Md Badsha",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "corporate",
     "file": [
       {
-        "id": "4",
-        "fileName": "Introduction",
-        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+        "title": "First Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       },
       {
-        "id": "5",
-        "fileName": "next",
-        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+        "title": "Second Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       }
     ],
     "price": "850"
@@ -73,18 +169,50 @@
     "name": "Freelancer Job",
     "link": "Introduction",
     "img": "https://i.postimg.cc/P5WfW5Bf/job-2.png",
-    "instructor": "Rashel Mahmud Raj",
+    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
+    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
+    "topica": "Provident cupiditate",
+    "topicb": "Provident cupiditate",
+    "topicc": "Provident cupiditate",
+    "topicd": "Provident cupiditate",
+    "instructor": "Programming Hero",
+    "instructorb": "Programming Hero",
+    "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
+    "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "freelancer",
     "file": [
       {
-        "id": "4",
-        "fileName": "Introduction",
-        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+        "title": "First Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       },
       {
-        "id": "5",
-        "fileName": "next",
-        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+        "title": "Second Video",
+        "details": [
+          {
+            "id": "4",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+          },
+          {
+            "id": "5",
+            "fileName": "next",
+            "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+          }
+        ]
       }
     ],
     "price": "850"

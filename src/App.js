@@ -26,6 +26,7 @@ import NoteFound from "./Components/WrongRoute/NoteFound";
 import { useEffect, useState } from "react";
 import CoursePlay from "./Components/AllCourses/CoursePlay";
 import CourseVideo from "./Components/AllCourses/CourseVideo";
+import Profile from "./Components/Shared/Header/Profile";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -48,7 +49,7 @@ function App() {
   };
 
   return (
-    <div data-theme={theme && "my_dark"} className="pt-16 font-header">
+    <div data-theme={theme && "my_dark"} className="pt-16 font-header min-h-screen">
       {loading ? (
         <div
           className="bg-gradient-to-r from-base-300 to-base-200"
@@ -99,7 +100,7 @@ function App() {
           <Route path="/course/:uname/:list/:fileName" element={<CourseVideo></CourseVideo>}></Route>
         </Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
-
+        <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <Footer></Footer>
