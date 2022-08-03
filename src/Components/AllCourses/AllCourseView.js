@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import useAdmission from "../../Hooks/useAdmission";
-import vdo from "../../Assets/vdo.jpg";
-import video from "../../Assets/video/promotion.mp4";
 import ReactPlayer from "react-player";
+import useJobCourses from "../../Hooks/useJobCourse";
+import useLanguage from "../../Hooks/useLanguage";
 
 const AllCourseView = () => {
-  const { id } = useParams();
+  const { uname } = useParams();
+  const [language] = useLanguage([]);
+  const [jobcourses] = useJobCourses([]);
   const [admission] = useAdmission([]);
 
-  const courseData = admission.find((allcard) => allcard._id === id);
-  console.log(courseData);
+  const courseData = admission.find((allcard) => allcard.uname === uname)
+  || language.find((allcard) => allcard.uname === uname) || jobcourses.find((allcard) => allcard.uname === uname);
+  
   return (
     <div className="hero bg-base-100 my-10">
       <div className="hero-content gap-10 flex-col-reverse lg:flex-row-reverse items-start">
@@ -60,7 +63,7 @@ const AllCourseView = () => {
                 2 Years of Access
               </p>
             </div>
-            <div class="flex text-lg font-bold bg-[#495CA9] my-6 p-4 rounded-xl justify-between">
+            <div class="flex text-lg font-bold bg-[#495CA9] p-4 my-4 rounded-xl justify-between">
               <div>
                 <p>Course Price</p>
               </div>
@@ -68,15 +71,15 @@ const AllCourseView = () => {
                 <p className="text-2xl">৳{courseData?.price}</p>
               </div>
             </div>
-            <div>
-              <button className="p-4 text-lg font-bold rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
+            <Link to={`/course/${uname}/${courseData?.list}/${courseData?.link}`}>
+              <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
                 Buy Course
               </button>
-            </div>
+            </Link>
           </div>
         </div>
         <div className="lg:w-6/12">
-          <h1 class="text-4xl font-bold">{courseData?.name}</h1>
+          <h1 class="text-4xl font-bold text-warning">{courseData?.name}</h1>
           <p class="py-3 text-lg">
             Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
             excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
@@ -92,7 +95,7 @@ const AllCourseView = () => {
               playing
             />
           </div>
-          <h1 className="text-2xl mt-4 mb-1">Instructor:</h1>
+          <h1 className="text-2xl mt-10 mb-1">Instructor:</h1>
           <div className="w-full border border-neutral rounded-md mb-4 grid lg:grid-cols-2 md:grid-cols-2">
             <div className="p-3 flex items-center gap-3">
               <div class="avatar">
@@ -114,6 +117,176 @@ const AllCourseView = () => {
               <div>
                 <p className="text-lg">{courseData?.instructor}</p>
                 <p>Ctg, Bangladesh</p>
+              </div>
+            </div>
+          </div>
+          <h1 className="text-2xl mt-10 mb-1">
+            What will you learn from this course
+          </h1>
+          <div className="w-full border border-neutral rounded-md">
+            <div className="border-b border-neutral px-5 py-6">
+              <p className="text-lg">
+                <i class="fa-solid text-success fa-check mr-4"></i>Provident
+                cupiditate voluptatem et in.{" "}
+              </p>
+              <p className="text-lg">
+                <i class="fa-solid text-success fa-check mr-4"></i>Provident
+                cupiditate voluptatem et in.{" "}
+              </p>
+              <p className="text-lg">
+                <i class="fa-solid text-success fa-check mr-4"></i>Provident
+                cupiditate voluptatem et in.{" "}
+              </p>
+              <p className="text-lg">
+                <i class="fa-solid text-success fa-check mr-4"></i>Provident
+                cupiditate voluptatem et in.{" "}
+              </p>
+            </div>
+            <div className="px-5 py-6">
+              <p className="text-lg font-bold mb-2">About this course</p>
+              <p className="text-lg mb-3">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                blanditiis recusandae asperiores molestias esse minima quam
+                placeat animi, aperiam officia adipisci pariatur laboriosam eum
+                facilis.
+              </p>
+              <p className="text-lg mb-3">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                blanditiis recusandae asperiores molestias esse minima quam
+                placeat animi, aperiam officia adipisci pariatur laboriosam eum
+                facilis.
+              </p>
+              <p className="text-lg mb-3">
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo,
+                blanditiis recusandae asperiores molestias esse minima quam
+                placeat animi, aperiam officia adipisci pariatur laboriosam eum
+                facilis.
+              </p>
+            </div>
+          </div>
+          <h1 className="text-2xl mt-10 mb-1">Course Syllabus</h1>
+          <div className="w-full border border-neutral rounded-md">
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border-b border-neutral bg-base-100 mx-2"
+            >
+              <input type="checkbox" class="peer" /> 
+              <div class="collapse-title text-xl font-medium">
+                Focus me to see content
+              </div>
+              <div class="collapse-content ml-4">
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow border-b border-neutral bg-base-100 mx-2"
+            >
+              <input type="checkbox" class="peer" /> 
+              <div class="collapse-title text-xl font-medium">
+                Focus me to see content
+              </div>
+              <div class="collapse-content ml-4">
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+              </div>
+            </div>
+            <div
+              tabindex="0"
+              class="collapse collapse-arrow bg-base-100 mx-2"
+            >
+              <input type="checkbox" class="peer" /> 
+              <div class="collapse-title text-xl font-medium">
+                Focus me to see content
+              </div>
+              <div class="collapse-content ml-4">
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-play mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
+                <p className="text-lg">
+                <i class="fa-solid fa-file-circle-check mr-2 pb-3"></i>Lorem ipsum dolor sit amet.
+                </p>
               </div>
             </div>
           </div>
