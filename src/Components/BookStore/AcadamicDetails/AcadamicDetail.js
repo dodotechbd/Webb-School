@@ -20,15 +20,13 @@ const AcadamicDetail = () => {
 
                 <div className='grid  justify-items-center  align-middle  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 '>
                     <h1 className='text-xl font-bold pt-6 pb-4 text-primary '><i class="fa-solid fa-pen-clip pr-2"></i> Writers</h1>
-
-
                     {/* writers and some text */}
                     <div class="px-2 grid gap-6 grid-cols-2  bg-base-100 shadow-xl">
 
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people" />
+                                    <img className='' src="https://placeimg.com/192/192/people" alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
@@ -40,7 +38,7 @@ const AcadamicDetail = () => {
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people" />
+                                    <img className='' src="https://placeimg.com/192/192/people"alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
@@ -52,7 +50,7 @@ const AcadamicDetail = () => {
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people" />
+                                    <img className='' src="https://placeimg.com/192/192/people"alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
@@ -64,7 +62,7 @@ const AcadamicDetail = () => {
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people" />
+                                    <img className='' src="https://placeimg.com/192/192/people"alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
