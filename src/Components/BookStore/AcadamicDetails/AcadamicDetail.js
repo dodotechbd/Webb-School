@@ -26,20 +26,7 @@ const AcadamicDetail = () => {
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people" alt='writers pic' />
-                                </div>
-                            </div>
-                            <div className='ml-2.5'>
-                                <h2 class="card-title">{newService[0]?.Writer}</h2>
-                                <p>Web Application Developer</p>
-                                <p>Dhaka,Bangladesh</p>
-
-                            </div>
-                        </div>
-                        <div class="flex items-stretch ">
-                            <div class="avatar">
-                                <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people"alt='writers pic' />
+                                    <img src={newService[0]?.img1} alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
@@ -51,20 +38,19 @@ const AcadamicDetail = () => {
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people"alt='writers pic' />
+                                    <img src={newService[0]?.img2} alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
                                 <h2 class="card-title">{newService[0]?.Writer2}</h2>
                                 <p>Web Application Developer</p>
                                 <p>Dhaka,Bangladesh</p>
-
                             </div>
                         </div>
                         <div class="flex items-stretch ">
                             <div class="avatar">
                                 <div class="w-12 h-12 rounded-full">
-                                    <img className='' src="https://placeimg.com/192/192/people"alt='writers pic' />
+                                    <img src={newService[0]?.img3} alt='writers pic' />
                                 </div>
                             </div>
                             <div className='ml-2.5'>
@@ -74,17 +60,22 @@ const AcadamicDetail = () => {
 
                             </div>
                         </div>
+                        <div class="flex items-stretch ">
+                            <div class="avatar">
+                                <div class="w-12 h-12 rounded-full">
+                                    <img src={newService[0]?.img4} alt='writers pic' />
+                                </div>
+                            </div>
+                            <div className='ml-2.5'>
+                                <h2 class="card-title">{newService[0]?.Writer4}</h2>
+                                <p>Web Application Developer</p>
+                                <p>Dhaka,Bangladesh</p>
+
+                            </div>
+                        </div>
                     </div>
-
-
-
-
-
-
-
                     <p className='font-bold text-xl pt-12'> A few words about the book</p>
                     <p className='font-bold pt-8'>Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant. Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant</p>
-
 
                 </div>
                 {/* books information card */}
@@ -96,7 +87,6 @@ const AcadamicDetail = () => {
                             <figure><img className='  w-80' src={newService[0]?.img} alt="Shoes" /></figure>
                         </div>
                         <div >
-
                             <p className='text-lg p-4'> <i class="fa-solid fa-file   pr-4  text-[#efad1e]"></i> Pages: {newService[0]?.pages}</p>
                             <p className='text-lg p-4'> <i class="fa-solid fa-file   pr-4  text-[#efad1e]"></i> File Size: {newService[0]?.file}</p>
                             <p className=' text-lg p-4'> <i class="fa-solid fa-file   pr-4  text-[#efad1e]"></i> Interactive: {newService[0]?.interactive}</p>
