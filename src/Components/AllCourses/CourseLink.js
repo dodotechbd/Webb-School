@@ -32,7 +32,7 @@ const CourseLink = ({ course }) => {
             className="border border-neutral"
           >
             <p className="text-md">
-              <i class="fa-solid fa-play mr-2"></i>
+              <i class="fa-solid fa-circle-play mr-2"></i>
               {detail?.fileName}
             </p>
           </NavLink>

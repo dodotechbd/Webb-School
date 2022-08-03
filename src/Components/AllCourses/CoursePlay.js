@@ -18,8 +18,8 @@ const CoursePlay = () => {
   return (
     <div>
       <div class="hero bg-base-200 py-8">
-        <div class="hero-content w-screen gap-10 flex-col-reverse lg:flex-row-reverse items-start">
-          <div class="card rounded-md lg:w-1/3 w-full bg-base-300 border border-neutral">
+        <div class="hero-content w-full gap-10 flex-col-reverse lg:flex-row-reverse items-start">
+          <div class="card rounded-md lg:w-96 w-full bg-base-300 border border-neutral">
             <div class="card-body p-0">
               <p className="text-lg p-3 border-b border-neutral">Course Lesson</p>
             {
