@@ -19,7 +19,7 @@ const AllCourseView = () => {
   
   return (
     <div className="hero bg-base-100 my-10">
-      <div className="hero-content gap-10 flex-col-reverse lg:flex-row-reverse items-start">
+      <div className="flex justify-center gap-10 flex-col-reverse lg:flex-row-reverse items-start">
         <div class="card lg:w-1/3 bg-[#354795] lg:sticky lg:top-20 shadow-xl text-white">
           <div class="card-body">
             <h2 class="text-2xl pb-2">
