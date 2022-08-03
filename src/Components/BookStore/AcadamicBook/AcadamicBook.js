@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-
 const AcadamicBook = ({ acadamicbook }) => {
     const { _id, name, img, description, price } = acadamicbook;
      const navigate = useNavigate();
@@ -8,13 +7,10 @@ const AcadamicBook = ({ acadamicbook }) => {
      navigate(`/acadamicbook/${_id}`)
      }
     return (
-        // bg-slate-200 border-2 border-slate-300
         <div className=' bg-base-100 rounded-lg position relative p-0 border border-neutral'>
             <figure className="px-12 pt-4 ">
                 <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
             </figure>
-
-
             <div class="card-body px-2  ">
                 <div className="card-body p-0 mx-2">
                     <h1 className="card-title">

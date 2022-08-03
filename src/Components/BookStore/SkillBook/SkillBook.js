@@ -10,7 +10,6 @@ const SkillBook = ({skillbook}) => {
      }
     return (
         <div className=' bg-base-100 rounded-lg position relative p-0 border border-neutral'  > 
-          
                 <figure  className="px-12 pt-4">
                     <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
                 </figure>
@@ -18,7 +17,6 @@ const SkillBook = ({skillbook}) => {
                 <div className="card-body p-0 ] ">
                     <h1 class="card-title pt-2">
                         <p className='text-xl font-bold uppercase'>{name}</p>
-                       
                     </h1>
                     <p className=''>{description}</p>
                     <p className='font-bold pb-4'>${price}</p>
@@ -28,5 +26,4 @@ const SkillBook = ({skillbook}) => {
         </div>
     );
 };
-
 export default SkillBook;
