@@ -16,34 +16,62 @@ const AcadamicDetail = () => {
         <div>
             <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Detalis</h1>
             <h1 className='text-2xl px-6  font-bold'>Books Name: <span className='text-2xl text-primary font-bold'>{newService[0]?.name}</span></h1>
-            <div className=' grid gap-6 lg:grid-cols-2 py-12  px-6 md:grid-cols-2 sm:grid-cols-2 '>
+            <div className=' grid gap-10 lg:grid-cols-2 py-12  px-6 md:grid-cols-2 sm:grid-cols-2 '>
 
                 <div className='grid  justify-items-center  align-middle  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 '>
+                    <h1 className='text-xl font-bold pt-6 pb-4 text-primary '><i class="fa-solid fa-pen-clip pr-2"></i> Writers</h1>
 
 
-                    {/* Weriter */}
+                    {/* writers and some text */}
+                    <div class="px-2 grid gap-6 grid-cols-2  bg-base-100 shadow-xl">
 
-                    <div class="card card-side bg-base-100 shadow-xl">
-
-                        <div class="card-body">
+                        <div class="flex items-stretch ">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
+                                <div class="w-12 h-12 rounded-full">
+                                    <img className='' src="https://placeimg.com/192/192/people" />
                                 </div>
                             </div>
-                            <h2 class="card-title">New movie is released!</h2>
-                            <p>Click the button to watch on Jetflix app.</p>
+                            <div className='ml-2.5'>
+                                <h2 class="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
 
+                            </div>
                         </div>
-                        <div class="card-body">
+                        <div class="flex items-stretch ">
                             <div class="avatar">
-                                <div class="w-24 rounded-full">
-                                    <img src="https://placeimg.com/192/192/people" />
+                                <div class="w-12 h-12 rounded-full">
+                                    <img className='' src="https://placeimg.com/192/192/people" />
                                 </div>
                             </div>
-                            <h2 class="card-title">New movie is released!</h2>
-                            <p>Click the button to watch on Jetflix app.</p>
+                            <div className='ml-2.5'>
+                                <h2 class="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
 
+                            </div>
+                        </div>
+                        <div class="flex items-stretch ">
+                            <div class="avatar">
+                                <div class="w-12 h-12 rounded-full">
+                                    <img className='' src="https://placeimg.com/192/192/people" />
+                                </div>
+                            </div>
+                            <div className='ml-2.5'>
+                                <h2 class="card-title">Pages: {newService[0]?.pages}</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+
+                            </div>
+                        </div>
+                        <div class="flex items-stretch ">
+                            <div class="avatar">
+                                <div class="w-12 h-12 rounded-full">
+                                    <img className='' src="https://placeimg.com/192/192/people" />
+                                </div>
+                            </div>
+                            <div className='ml-2.5'>
+                                <h2 class="card-title">New movie is released!</h2>
+                                <p>Click the button to watch on Jetflix app.</p>
+
+                            </div>
                         </div>
                     </div>
 
@@ -53,11 +81,12 @@ const AcadamicDetail = () => {
 
 
 
-
-                    <p className='font-bold'>Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant. Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant</p>
+                    <p className='font-bold text-xl pt-12'> A few words about the book</p>
+                    <p className='font-bold pt-8'>Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant. Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant</p>
 
 
                 </div>
+                {/* books information card */}
                 <div className='  w-4/5  shadow-xl border-2 p-5 rounded-lg'>
 
                     <div className=' grid gap-6 justify-around  pt-11 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2'>
