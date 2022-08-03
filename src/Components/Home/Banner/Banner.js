@@ -45,8 +45,8 @@ const Banner = () => {
           }}
           breakpoints={{
             "@0.25": {
-              slidesPerView: 3,
-              spaceBetween: -80,
+              slidesPerView: 2,
+              spaceBetween: -100,
             },
             "@0.75": {
               slidesPerView: 3,
