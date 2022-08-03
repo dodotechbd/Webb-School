@@ -6,7 +6,7 @@ li a{
 }
 li a:hover {
     color: #ffffff;
-    background-color: #494FC1;
+    background-color: #2f425c;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 5px;
@@ -14,7 +14,7 @@ li a:hover {
 
 .active a {
     color: #ffffff;
-    background-color: #494FC1;
+    background-color: #2f425c;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 8px;
@@ -24,7 +24,7 @@ li a:hover {
 
 .active a:hover {
     color: #ffffff;
-    background-color: #494FC1;
+    background-color: #2f425c;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 8px;

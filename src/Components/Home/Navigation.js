@@ -1,7 +1,8 @@
 import React from "react";
+import './Banner/Banner.css'
 const Navigation = () => {
   return (
-    <div className="lg:mx-10 mx-3 my-16">
+    <div className="lg:px-10 px-3 py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Discover Your Future With Us
@@ -10,10 +11,10 @@ const Navigation = () => {
           Choose your topic from our vast library to get started
         </p>
       </div>
-      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 bg-base-200 px-3 py-3 rounded-xl">
+      <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 px-3 py-3 rounded-xl">
         <a
           href="#store"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -26,7 +27,7 @@ const Navigation = () => {
         </a>
         <a
           href="#admission"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -39,7 +40,7 @@ const Navigation = () => {
         </a>
         <a
           href="#job"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -52,7 +53,7 @@ const Navigation = () => {
         </a>
         <a
           href="#courses"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -64,15 +65,15 @@ const Navigation = () => {
           </div>
         </a>
       </div>
-      <div className="hidden flex flex-col w-full lg:flex-row mt-14 mb-8">
-      <h1 className="text-3xl font-bold lg:mx-8">
+      <div className="flex flex-col w-full lg:flex-row mt-14 mb-8">
+      <h1 className="text-3xl font-bold lg:mx-8 mx-4">
           Webb School is the great platform for distance learning.
         </h1>
         <div className="lg:divider divide-primary lg:divider-horizontal"></div>
-        <p className="text-lg mt-4">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>
+        <p className="text-lg mt-4 hidden lg:block md:block">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>
       </div>
       <div className="grid grid-cols-2 lg:gap-5 md:grid-cols-4 lg:grid-cols-5 lg:mx-8 my-8">
-        <div className="card bg-base-100 transform transition duration-500 hover:scale-110">
+        <div className="card transform transition duration-500 hover:scale-110">
           <div className="card-body p-0 mt-9">
             <div className="avatar mx-auto lg:my-3 mb-3">
               <div className="w-18 rounded bg-[#D65B40] shadow-[#D65B40] shadow-lg">
@@ -84,7 +85,7 @@ const Navigation = () => {
             </h2>
           </div>
         </div>
-        <div className="card bg-base-100 transform transition duration-500 hover:scale-110">
+        <div className="card transform transition duration-500 hover:scale-110">
           <div className="card-body p-0 mt-9">
             <div className="avatar mx-auto lg:my-3 mb-3">
               <div className="w-18 rounded bg-[#59D7FC] shadow-[#59D7FC] shadow-lg">
@@ -96,7 +97,7 @@ const Navigation = () => {
             </h2>
           </div>
         </div>
-        <div className="card bg-base-100 transform transition duration-500 hover:scale-110">
+        <div className="card transform transition duration-500 hover:scale-110">
           <div className="card-body p-0 mt-9">
             <div className="avatar mx-auto lg:my-3 mb-3">
               <div className="w-18 rounded bg-[#8070FE] shadow-[#8070FE] shadow-lg">
@@ -108,7 +109,7 @@ const Navigation = () => {
             </h2>
           </div>
         </div>
-        <div className="card bg-base-100 transform transition duration-500 hover:scale-110 md:col-span-3/2">
+        <div className="card transform transition duration-500 hover:scale-110 md:col-span-3/2">
           <div className="card-body p-0 mt-9">
             <div className="avatar mx-auto lg:my-3 mb-3">
               <div className="w-18 rounded bg-[#00AAA0] shadow-[#00AAA0] shadow-lg">
@@ -120,7 +121,7 @@ const Navigation = () => {
             </h2>
           </div>
         </div>
-        <div className="card bg-base-100 transform transition duration-500 hover:scale-110 col-span-2 lg:col-span-1 md:col-start-2 md:col-end-4">
+        <div className="card transform transition duration-500 hover:scale-110 col-span-2 lg:col-span-1 md:col-start-2 md:col-end-4">
           <div className="card-body p-0 mt-9">
             <div className="avatar mx-auto lg:my-3 mb-3">
               <div className="w-18 rounded bg-[#77E13C] shadow-[#77E13C] shadow-lg">
