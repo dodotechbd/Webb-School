@@ -192,7 +192,7 @@ const Header = ({ handleThemeChange, theme }) => {
             >
               <li>
                 <a>
-                  <i class="fa-solid fa-user"></i>Profile
+                  <i class="fa-solid fa-user"></i><Link to="profile">Profile</Link>
                 </a>
               </li>
               <li>

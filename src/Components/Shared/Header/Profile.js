@@ -124,32 +124,32 @@ const Profile = () => {
                                         <label class="label">
                                             <span class="label-text">Address</span>
                                         </label>
-                                        <input type="text" placeholder="Brown" class="input input-bordered" />
+                                        <input type="text" placeholder="92, Lawrence View Streets" class="input input-bordered" />
                                     </div>
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="label-text">City</span>
                                         </label>
-                                        <input type="text" placeholder="Brown" class="input input-bordered" />
+                                        <input type="text" placeholder="New York" class="input input-bordered" />
                                     </div>
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="label-text">Country</span>
                                         </label>
-                                        <input type="text" placeholder="Brown" class="input input-bordered" />
+                                        <input type="text" placeholder="Bangladesh" class="input input-bordered" />
                                     </div>
                                     <div class="form-control">
                                         <label class="label">
                                             <span class="label-text">Institute</span>
                                         </label>
-                                        <input type="text" placeholder="Brown" class="input input-bordered" />
+                                        <input type="text" placeholder="College / University" class="input input-bordered" />
                                     </div>
                                 </div>
                                 <div class="form-control m-5 mt-[-25px]">
                                     <label class="label">
                                         <span class="label-text">About Me</span>
                                     </label>
-                                    <textarea class="textarea textarea-primary" placeholder="Update about your personality"></textarea>
+                                    <textarea class="textarea textarea-primary" placeholder="Tell us about yourself"></textarea>
                                 </div>
                             </div>
                         </div>
