@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import useVideo from "../../Hooks/useVideo";
+import ReactPlayer from "react-player";
 
 const CourseVideo = () => {
   const { fileName } = useParams();
@@ -10,14 +11,14 @@ const CourseVideo = () => {
   return (
     <div>
       <div className="lg:h-96 h-48 md:h-96 w-full">
-        <iframe
-          className="rounded-sm"
-          width={"100%"}
-          height={"100%"}
-          src={courseData?.vurl}
-          frameborder="0"
-          allowfullscreen
-        ></iframe>
+      <ReactPlayer
+              width={"100%"}
+              height={"100%"}
+              controls
+              light={true}
+              url={courseData?.vurl}
+              playing
+            />
       </div>
       <h1 className="text-3xl my-4">{courseData?.name}</h1>
       <label
