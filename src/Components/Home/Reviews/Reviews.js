@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "../Banner/Banner.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination } from "swiper";
 const Reviews = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
