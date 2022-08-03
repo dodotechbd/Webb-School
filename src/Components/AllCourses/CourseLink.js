@@ -33,7 +33,7 @@ const CourseLink = ({ course }) => {
           >
             <p className="text-md">
               <i class="fa-solid fa-circle-play mr-2"></i>
-              {detail?.fileName}
+              {detail?.name}
             </p>
           </NavLink>
         </li>
