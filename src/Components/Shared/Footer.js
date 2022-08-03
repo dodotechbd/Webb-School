@@ -20,7 +20,7 @@ const Footer = () => {
             Create your free account and start learning
           </p>
           <Link to={'signup'}>
-            <button className="btn btn-primary font-thin text-white btn-sm">
+            <button className="btn btn-accent font-thin text-white btn-sm">
               Join Now
             </button>
           </Link>

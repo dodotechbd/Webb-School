@@ -19,7 +19,7 @@ const CourseLink = ({ course }) => {
   return (
     <>
       <div
-        tabindex="0"
+        tabIndex="0"
         class="collapse collapse-arrow border-b border-neutral mx-4"
       >
         <input type="checkbox"/>

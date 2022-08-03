@@ -28,9 +28,9 @@ const Promotional = () => {
               We provide easiest formula, notes and guidelines to ensure best
               education. Enroll yours now.
             </p>
-            <button class="btn btn-primary btn-sm font-thin text-white">
+            <a href="https://web.facebook.com/groups/programmingherocommunity" target={'_blank'} class="btn btn-accent btn-sm font-thin text-white">
               Join Us
-            </button>
+            </a>
           </div>
         </div>
       </div>
