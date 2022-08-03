@@ -52,7 +52,7 @@ const Header = ({ handleThemeChange, theme }) => {
       <li className={splitLocation[1] === "admin" ? "active" : ""}>
         <Link to="admin/manage">Admin</Link>
       </li>
-    </>
+    </> 
   );
   return (
     <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
@@ -103,7 +103,7 @@ const Header = ({ handleThemeChange, theme }) => {
                     </div>
                     <li className="py-2 text-md pl-5 border-b border-neutral w-full">
                       <a>
-                        <i class="mr-3 fa-solid fa-user"></i>Profile
+                        <i class="mr-3 fa-solid fa-user"></i><Link to="profile">Profile</Link>
                       </a>
                     </li>
                     <li className="py-2 text-md pl-5 border-b border-neutral w-full">
