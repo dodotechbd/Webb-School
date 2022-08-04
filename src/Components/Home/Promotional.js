@@ -3,7 +3,7 @@ import video from "../../Assets/video/promotion.mp4";
 import vdo from "../../Assets/vdo.jpg";
 const Promotional = () => {
   return (
-    <div className="my-16">
+    <div className="my-16 bg-base-100">
       <div class="hero">
         <div class="hero-content flex-col lg:flex-row-reverse">
           <div

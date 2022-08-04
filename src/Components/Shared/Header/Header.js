@@ -53,15 +53,15 @@ const Header = ({ handleThemeChange, theme }) => {
           <div>
             <ul tabIndex="0" className="bg-base-100 h-screen">
               <Link to="/">
-              <div className="flex items-center p-2 border-b border-neutral w-full">
-              <img className="w-12 ml-3" src={wslogo} alt="" />
-              <div className="ml-1 text-lg font-sub font-bold">
+              <div className="flex items-center p-2 w-full">
+              <img className="w-11 ml-3" src={wslogo} alt="" />
+              <div className="ml-1 text-md font-sub font-bold">
                 <p>Webb</p>
                 <p className="-mt-2">School</p>
               </div>
           </div>
               </Link>
-              <ul className="menu">
+              <ul className="menu menu-compact">
               <li>
                 <NavLink to="/">Home</NavLink>
               </li>
@@ -123,9 +123,12 @@ const Header = ({ handleThemeChange, theme }) => {
                     </ul>
                   </div>
                 ) : (
-                  <div>
+                  <div className="border-t border-neutral">
                     <li>
-                      <Link className="my-2 btn-info btn-sm btn rounded-md text-white" to="Login">Login</Link>
+                      <Link className="mt-3 mx-3 w-56 btn-info btn-sm btn rounded-full text-white hover:rounded-full font-thin" to="Login">Login</Link>
+                    </li>
+                    <li>
+                      <Link className="bg-[#494FC1] hover:bg-[#4a4e94] my-3 mx-3 w-56 hover:rounded-full btn-sm btn rounded-full text-white font-thin" to="Signup">Register</Link>
                     </li>
                   </div>
                 )}
@@ -144,7 +147,7 @@ const Header = ({ handleThemeChange, theme }) => {
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
-        <ul className="menu menu-horizontal p-0 gap-3 uppercase">{manuItems}</ul>
+        <ul className="menu menu-horizontal menu-compact p-0 gap-3 uppercase">{manuItems}</ul>
       </div>
       <div className="navbar-end hidden lg:flex">
           <button
@@ -187,7 +190,7 @@ const Header = ({ handleThemeChange, theme }) => {
             </div>
             <ul
               tabIndex="0"
-              class="mt-4 menu bg-base-100 w-48 dropdown-content border border-neutral"
+              class="mt-4 menu menu-compact bg-base-100 w-48 dropdown-content border border-neutral"
             >
             <li>
               <NavLink to={'profile'}>
@@ -214,11 +217,11 @@ const Header = ({ handleThemeChange, theme }) => {
           </div>
         ) : (
           <div className="flex">
-            <a className="btn-accent btn-sm btn rounded-md text-white">
+            <a className="btn-accent btn-sm btn rounded-md text-white font-thin">
               <Link to="Login">Login</Link>
             </a>
             <div class="divider lg:divider-horizontal"></div>
-            <a className="bg-[#494FC1] hover:bg-[#4a4e94] btn-sm btn rounded-md text-white">
+            <a className="bg-[#494FC1] hover:bg-[#4a4e94] btn-sm btn rounded-md text-white font-thin">
               <Link to="SignUp">Register</Link>
             </a>
           </div>
