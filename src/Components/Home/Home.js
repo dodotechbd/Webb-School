@@ -10,6 +10,8 @@ import JobCourses from "./JobCourses/JobCourses";
 import CoursesTabs from "./CoursesTabs";
 import Hero from "./Hero/Hero";
 import Promotional from "./Promotional";
+import FooterTwo from "../Shared/FooterTwo";
+import Question from "./Question/Question";
 
 const Home = () => {
   return (
@@ -24,6 +26,9 @@ const Home = () => {
       <Reviews></Reviews>
       <Review></Review>
       <Promotional></Promotional>
+      <Question></Question>
+      <FooterTwo></FooterTwo>
+      
       {/* messenger chat */}
       <MessengerCustomerChat
     pageId="101878912628102"appId="3150275291906230"
