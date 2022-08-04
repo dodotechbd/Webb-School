@@ -65,9 +65,9 @@ const Navigation = () => {
           </div>
         </a>
       </div>
-      <div className="flex flex-col w-full lg:flex-row mt-14 mb-8">
-      <h1 className="text-3xl font-bold lg:mx-8 mx-4">
-          Webb School is the great platform for distance learning.
+      <div className="flex flex-col w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
+      <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">
+          <span className="text-info">Webb School</span> is the great platform for distance learning.
         </h1>
         <div className="lg:divider divide-primary lg:divider-horizontal"></div>
         <p className="text-lg mt-4 hidden lg:block md:block">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>

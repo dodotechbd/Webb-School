@@ -5,7 +5,7 @@ const FooterTwo = () => {
     <div className="bg-base-200 border-t border-neutral">
       <section>
         <div class="container py-16 mx-auto">
-          <div class="flex flex-wrap -m-4 pl-10 ">
+          <div class="flex flex-wrap pl-10 ">
             <div class="p-4  lg:w-1/4 sm:w-1/2 w-full ">
               <h2 class="tracking-widest mb-4 text-lg font-bold sm:text-left ">
                 Language Learning
