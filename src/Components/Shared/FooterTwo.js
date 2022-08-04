@@ -12,7 +12,7 @@ const FooterTwo = () => {
     <div class="flex flex-wrap -m-4 pl-10 ">
       <div class="p-4  lg:w-1/4 sm:w-1/2 w-full ">
         <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left ">Language Learning</h2>
-        <nav class="flex flex-col text-start sm:items-start sm:text-left  items-center -mb-1 space-y-2.5 ">
+        <nav class="flex flex-col  sm:items-start text-left  items-center -mb-1 space-y-2.5 ">
           
           <a>
             <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
@@ -80,8 +80,8 @@ const FooterTwo = () => {
       </div>
       <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
         <h2 class="font-medium title-font tracking-widest text-gray-900 mb-4 text-sm text-center sm:text-left">Prepare For The Admission
-</h2>
-        <nav class="flex flex-col sm:items-start sm:text-left text-center items-center -mb-1 space-y-2.5">
+          </h2>
+        <nav class="flex flex-col sm:items-start sm:text-left  items-center -mb-1 space-y-2.5">
           
           <a>
             <span class="bg-indigo-100 text-indigo-500 w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
