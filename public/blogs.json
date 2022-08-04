@@ -42,8 +42,8 @@
     {
         "_id": 15,
         "name": "Muhammad Shafi",
-        "title": "Why JavaScript Is Still So Important for Web Development?",
-        "description": "Choosing the right technology partner is the first step in making a successful website. Lots of technologies and methods have been devised in the past few years to develop websites but PHP has emerged as the topmost technology for this.",
+        "title": "What Is MongoDB and How Does It Work?",
+        "description": "MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented.",
         "img": "https://i.ibb.co/DDNPmG5/MISSION-2022-2.png",
         "address": "Chittagong, Bangladesh",
         "title2": "Excellent Thinking For.",
