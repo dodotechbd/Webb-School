@@ -13,8 +13,8 @@ const Blog = ({ blog }) => {
 
     return (
         <div>
-            <div class="card w-11/12 mx-auto mb-10 lg:w-96 bg-base-100 shadow-xl hover:bg-slate-500 hover:text-white transform transition duration-500 hover:scale-105">
-                <figure> <img className='' onClick={() => handelBlogs(_id)} src={img} alt="Shoes" /></figure>
+            <div class="card w-11/12 mx-auto mb-10 lg:w-96 bg-base-100 border border-neutral hover:bg-slate-500 hover:text-white transform transition duration-500 hover:scale-105">
+                <figure> <img onClick={() => handelBlogs(_id)} src={img} alt="Shoes" /></figure>
                 <div class="card-body">
                     <h2 class="card-title">{title}</h2>
                     <p>{description} </p>
