@@ -30,9 +30,11 @@ const JobCourses = () => {
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
+            spaceBetween: -80,
           },
           "@0.25": {
             slidesPerView: 1,
+            spaceBetween: -70,
           },
           "@0.60": {
             slidesPerView: 2,
