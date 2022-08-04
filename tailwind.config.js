@@ -36,7 +36,7 @@ module.exports = {
           warning: "#0F172A",
           "base-100": "#ffffff",
           "base-200": "#F7F8FA",
-          "base-300": "#c5c7c9",
+          "base-300": "#ededed",
         },
       },
       {

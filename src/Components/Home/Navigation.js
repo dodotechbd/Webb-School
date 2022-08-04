@@ -2,7 +2,7 @@ import React from "react";
 import './Banner/Banner.css'
 const Navigation = () => {
   return (
-    <div className="lg:px-10 px-3 py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
+    <div className="lg:px-10 px-3 py-16 bg-base-100 border-b border-neutral">
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Discover Your Future With Us

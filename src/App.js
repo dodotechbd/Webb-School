@@ -28,6 +28,8 @@ import BlogDetails from "./Components/Blogs/BlogDetails";
 import CoursePlay from "./Components/AllCourses/CoursePlay";
 import CourseVideo from "./Components/AllCourses/CourseVideo";
 import Profile from "./Components/Shared/Header/Profile";
+import MyCourses from "./Components/AllCourses/MyCourses";
+import FooterTwo from "./Components/Shared/FooterTwo";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -103,8 +105,10 @@ function App() {
         </Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
+      <FooterTwo></FooterTwo>
       <Footer></Footer>
     </div>
   );

@@ -1,12 +1,11 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
-const AllCourseCard = ({ allcard }) => {
-  
-  const { uname } = allcard;
-  
-  return (
-    <Link to={`/course/${uname}`}>
+const MyCourseCard = ({ allcard }) => {
+
+    const cardIndex = allcard.file[0].details[0].fileName;
+    return (
+        <Link to={`/course/${allcard?.uname}/${allcard?.list}/${cardIndex}`}>
       <div
         class="mx-auto mt-3 card card-compact w-72 bg-base-100 border rounded-md
        hover:-translate-y-3 border-neutral  transform transition duration-300"
@@ -31,7 +30,7 @@ const AllCourseCard = ({ allcard }) => {
         </div>
       </div>
     </Link>
-  );
+    );
 };
 
-export default AllCourseCard;
+export default MyCourseCard;
