@@ -86,7 +86,7 @@ const Instructor = () => {
             alt="Person"
           />
           <div className="flex flex-col items-center">
-            <p className="text-lg font-bold">Sophie Denmo</p>
+            <p className="text-lg font-bold">Sophie Dene</p>
             <p className="text-sm text-gray-800">Designer UI/UX Instructor</p>
           </div>
         </div>
