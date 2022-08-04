@@ -3,7 +3,7 @@ import image1 from '../../../Assets/icon/T1.png';
 import image2 from '../../../Assets/icon/s1.png';
 import image3 from '../../../Assets/icon/v1.png';
 import image4 from '../../../Assets/icon/ap.png';
-import student from '../../../Assets/ACHIVE.png';
+import student from '../../../Assets/ACHIVE.svg';
 import './Review.css'
 const Review = () => {
     return (
