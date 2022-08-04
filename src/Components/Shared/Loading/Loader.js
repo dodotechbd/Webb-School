@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader = () => {
   return (
-    <div className="lg:mx-8 mx-4 pt-10">
+    <div className="lg:mx-8 mx-4 pt-10 lg:mb-40">
       <div className="pb-5">
         <div class="h-8 bg-neutral rounded-md w-48 mb-4"></div>
       </div>

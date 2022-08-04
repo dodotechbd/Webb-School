@@ -36,12 +36,12 @@ module.exports = {
           warning: "#0F172A",
           "base-100": "#ffffff",
           "base-200": "#F7F8FA",
-          "base-300": "#f1f5f9",
+          "base-300": "#ededed",
         },
       },
       {
         my_dark: {
-          primary: "#494FC1",
+          primary: "#3ABFF8",
           secondary: "#F04A7D",
           accent: "#0284C7",
           info: "#0284C7",
@@ -49,7 +49,7 @@ module.exports = {
           warning: "#E2E8F0",
           "base-100": "#0F172A",
           "base-200": "#0E1527",
-          "base-300": "#0E1528",
+          "base-300": "#161f35",
         },
       },
       "light",

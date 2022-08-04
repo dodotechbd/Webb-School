@@ -8,7 +8,7 @@ const Live = () => {
           <div class="text-center my-10">
             <h1 class="text-3xl font-bold">Post Live Class <i class="fa-solid fa-video text-error"></i></h1>
           </div>
-          <div class="card flex-shrink-0 w-80 md:w-96 lg:w-96 max-w-sm shadow-2xl bg-red-100">
+          <div class="card flex-shrink-0 w-80 md:w-96 lg:w-96 max-w-sm shadow-2xl bg-base-200 border border-neutral">
             <div class="card-body">
               <div class="form-control">
                 <label class="label">
@@ -17,7 +17,7 @@ const Live = () => {
                 <input
                   type="text"
                   placeholder="name"
-                  class="input input-bordered"
+                  class="input input-neutral bg-base-300"
                 />
               </div>
               <div class="form-control">
@@ -27,7 +27,7 @@ const Live = () => {
                 <input
                   type="text"
                   placeholder="Link"
-                  class="input input-bordered"
+                  class="input input-neutral bg-base-300"
                 />
               </div>
               <div class="form-control mt-6">
