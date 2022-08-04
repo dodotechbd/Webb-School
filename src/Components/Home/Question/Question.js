@@ -5,10 +5,10 @@ const Question = () => {
         <div>
            
 <div>
-      <section class="text-gray-700">
+      <section class="">
         <div class="container px-5 py-24 mx-auto">
           <div class="text-center mb-20">
-            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font text-gray-900 mb-4">
+            <h1 class="sm:text-3xl text-2xl font-medium text-center title-font mb-4">
               Frequently Asked Question
             </h1>
             <p class="text-base leading-relaxed xl:w-2/4 lg:w-3/4 mx-auto">
@@ -19,7 +19,7 @@ const Question = () => {
           <div class="flex flex-wrap lg:w-auto sm:mx-auto sm:mb-2 -mx-2">
             <div class="w-full lg:w-1/2 px-4 py-2">
               <details class="mb-4">
-                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                <summary class="font-semibold bg-base-300 rounded-md py-2 px-4">
                   How Long Will The Course Last ?
                 </summary>
 
@@ -28,7 +28,7 @@ const Question = () => {
                 </span>
               </details>
               <details class="mb-4">
-                <summary class="font-semibold bg-gray-200 rounded-md py-2 px-4">
+                <summary class="font-semibol bg-base-300 rounded-md py-2 px-4">
                   How can i buy this course?
                 </summary>
 
@@ -37,7 +37,7 @@ const Question = () => {
                 </span>
               </details>
               <details class="mb-4">
-                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                <summary class="font-semibold bg-base-300 rounded-md py-2 px-4">
                   Who is this course for?
                 </summary>
 
@@ -48,7 +48,7 @@ const Question = () => {
             </div>
             <div class="w-full lg:w-1/2 px-4 py-2">
               <details class="mb-4">
-                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                <summary class="font-semibold bg-base-300 rounded-md py-2 px-4">
                   Who are the instructors of the courses?
                 </summary>
 
@@ -57,7 +57,7 @@ const Question = () => {
                 </span>
               </details>
               <details class="mb-4">
-                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                <summary class="font-semibold bg-base-300 rounded-md py-2 px-4">
                   How much support can be found in this course?
                 </summary>
 
@@ -66,7 +66,7 @@ const Question = () => {
                 </span>
               </details>
               <details class="mb-4">
-                <summary class="font-semibold  bg-gray-200 rounded-md py-2 px-4">
+                <summary class="font-semibold bg-base-300 rounded-md py-2 px-4">
                   How can I communicate with you?
                 </summary>
 
