@@ -21,8 +21,8 @@ const Reviews = () => {
       .then((data) => setCourses(data));
   });
   return (
-    <div className="lg:mx-4 mb-10">
-      <p className="lg:text-3xl md:text-2xl text-xl text-black font-semibold text-center mb-12 uppercase">
+    <div className="lg:px-4 py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
+      <p className="lg:text-4xl md:text-3xl mb-16 mt-8 text-2xl uppercase font-sub font-bold text-center">
         Our students reviews!
       </p>
       <Swiper
@@ -76,7 +76,7 @@ const Reviews = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
           {courses.map((course) => (
             <SwiperSlide>
-              <ReviewCard key={course.id} course={course}></ReviewCard>
+              <ReviewCard key={course._id} course={course}></ReviewCard>
             </SwiperSlide>
           ))}
         </div>

@@ -1,24 +1,33 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
-const AcadamicBook = ({acadamicbook}) => {
-    const { id, name, img, description, price } = acadamicbook;
+const AcadamicBook = ({ acadamicbook }) => {
+    const { _id, name, img, description, price } = acadamicbook;
+     const navigate = useNavigate();
+    const navigateToAcadamicDetail = id=>{
+     navigate(`/acadamicbook/${_id}`)
+     }
     return (
-        <div className=' bg-slate-200 rounded-lg'> 
-            <a href='#' className=" w-100 h-full">
-                <figure  className="mx-12 pt-10">
-                    <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
-                </figure>
-                <div className="card-body">
-                    <h2 className="card-title">
-                        <p className='text-2xl font-bold'>{name}</p>
-                        <div className="badge badge-primary text-white">Top</div>
-                    </h2>
+        <div className=' bg-slate-200 rounded-lg position relative h-full'>
+            <figure className="px-12 pt-4">
+                <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
+            </figure>
+            <div class="card-body pt-0  ">
+                <div className="card-body p-4">
+                    <h1 className="card-title ">
+                        <p className='text-xl font-bold'>{name}</p>
+                    </h1>
                     <p className='text-xl'>{description}</p>
-                    <p className='text-2xl font-bold border-b-2 pb-2'>${price}</p>
-            
+                    
+                    <p className='text-2xl font-bold '>${price}</p>
+                    
+
                 </div>
-            </a>
+               
+            </div>
+            <button onClick={()=>navigateToAcadamicDetail(_id)} class=" btn-block  position absolute bottom-0  bg-slate-400 mt-4  text-center text-xl font-bold rounded-b-lg py-2">Detalis</button>
         </div>
+
     );
 };
 

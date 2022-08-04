@@ -1,20 +1,32 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import useJobCourses from "../../Hooks/useJobCourse";
-import JobCard from "../Home/JobCourses/JobCard";
+import AllCourseCard from "../AllCourses/AllCourseCard";
+import Loader from "../Shared/Loading/Loader";
 
 const AllJobCourse = () => {
-    const [jobCourse, setJobCourse] = useJobCourses();
+    const [jobcourses] = useJobCourses();
+
+    const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  if( loading ){
+    return <Loader></Loader>
+  }
+
   return (
-    <div className="px-4">
-      <div className="lg:py-8 py-4">
-        <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold lg:mx-8">
-          All Programs
-        </h1>
-      </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 mx-auto lg:mx-8 mb-10 ">
-      {jobCourse.map((jobCourse) => (
-          <JobCard key={jobCourse._id} jobCourse={jobCourse}></JobCard>
-        ))}
+    <div className="px-4"><div className="lg:mx-8 mx-4 pt-10">
+      <h1 className="text-3xl pb-5 ">Job Recruitment</h1>
+        <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
+          {jobcourses.slice(0, 4).map((allcard) => (
+            <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
+          ))}
+        </div>
       </div>
     </div>
   );

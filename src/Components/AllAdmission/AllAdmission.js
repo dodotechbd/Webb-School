@@ -1,26 +1,36 @@
-import React from 'react';
-import useAdmission from '../../Hooks/useAdmission';
-import AdmissionCard from '../Home/Admission/AdmissionCard';
+import React, { useEffect, useState } from "react";
+import useAdmission from "../../Hooks/useAdmission";
+import AllCourseCard from "../AllCourses/AllCourseCard";
+import Loader from "../Shared/Loading/Loader";
 
 const AllAdmission = () => {
-    const [admission, setAdmission] = useAdmission();
-    return (
-        <div id="admission" className="" >
-      <div className="lg:py-8 px-4 py-4">
-      <h1 className="lg:text-3xl md:text-2xl text-xl text-black font-semibold lg:mx-8">
-        All Programs
-      </h1>
-      </div>
-      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 lg:mx-8 mb-10 ">
-        {admission.map((admission) => (
-          <AdmissionCard
-            key={admission._id}
-            admission={admission}
-          ></AdmissionCard>
-        ))}
+  const [admission, setAdmission] = useAdmission();
+
+  const [loading, setLoading] = useState(false);
+
+  useEffect(() => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+  }, []);
+
+  if (loading) {
+    return <Loader></Loader>;
+  }
+
+  return (
+    <div id="admission" className="">
+      <div className="lg:mx-8 mx-4 pt-10">
+        <h1 className="text-3xl pb-5 ">Prepare For The Admission</h1>
+        <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
+          {admission.slice(0, 4).map((allcard) => (
+            <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
+          ))}
+        </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default AllAdmission;
