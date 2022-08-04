@@ -21,12 +21,12 @@ const AllCourseCard = ({ allcard }) => {
             </p>
             {allcard?.badge ? (<div class="badge badge-secondary">{allcard?.badge}</div>) : (<></>)}
           </div>
-          <h2 class="px-2 py-1 text-xl hover:text-blue-900">
+          <h2 class="px-2 py-1 text-xl hover:text-info">
             {allcard?.name.slice(0, 24)}
           </h2>
           <div className="flex justify-between border-t border-neutral p-2 text-lg font-bold">
             <p>৳ {allcard?.price}</p>
-            <p className="text-success">Buy Now</p>
+            <p className="text-accent">Buy Now</p>
           </div>
         </div>
       </div>

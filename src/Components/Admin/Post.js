@@ -8,13 +8,13 @@ const Post = () => {
           <div class="text-center my-10">
             <h1 class="text-3xl font-bold">Post New Course <i class="fa-solid fa-folder-plus text-primary"></i></h1>
           </div>
-          <div class="card flex-shrink-0 w-80 md:w-96 lg:w-96 max-w-sm shadow-2xl bg-slate-100">
+          <div class="card flex-shrink-0 w-80 md:w-96 lg:w-96 max-w-sm shadow-2xl bg-base-200 border border-neutral">
             <div class="card-body">
               <div class="form-control">
                 <label class="label">
                   <span class="label-text">Category</span>
                 </label>
-                <select class="select select-bordered w-full max-w-xs">
+                <select class="select select-neutral bg-base-300 w-full font-thin max-w-xs">
                   <option>
                     Language Learning
                   </option>
@@ -29,7 +29,7 @@ const Post = () => {
                 <input
                   type="text"
                   placeholder="name"
-                  class="input input-bordered"
+                  class="input input-neutral bg-base-300"
                 />
               </div>
               <div class="form-control">
@@ -39,7 +39,7 @@ const Post = () => {
                 <input
                   type="text"
                   placeholder="Link"
-                  class="input input-bordered"
+                  class="input input-neutral bg-base-300"
                 />
               </div>
               <div class="form-control mt-6">
