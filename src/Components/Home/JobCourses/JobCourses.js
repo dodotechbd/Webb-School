@@ -16,7 +16,7 @@ import { Pagination } from "swiper";
 const JobCourses = () => {
   const [jobCourse] = useJobCourses();
   return (
-    <div className="pt-12 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral" id="job">
+    <div className="pt-12 bg-base-100 border-b border-neutral" id="job">
       <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
         Job Exam Preparation
       </h1>
@@ -30,9 +30,11 @@ const JobCourses = () => {
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
+            spaceBetween: -80,
           },
           "@0.25": {
             slidesPerView: 1,
+            spaceBetween: -70,
           },
           "@0.60": {
             slidesPerView: 2,

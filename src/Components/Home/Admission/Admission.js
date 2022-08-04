@@ -5,7 +5,7 @@ import AdmissionCard from "./AdmissionCard";
 const Admission = () => {
   const [admission, setAdmission] = useAdmission();
 
-  return (<div id="admission" className=" bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral py-16" >
+  return (<div id="admission" className="bg-base-100 border-b border-neutral py-16" >
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Admission Preparation

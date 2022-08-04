@@ -19,9 +19,9 @@ const Review = () => {
         }
     }, []);
     return (
-        <div className='py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral'>
+        <div className='py-16 bg-base-100 border-b border-neutral'>
             <h2 className='lg:text-4xl md:text-3xl text-2xl uppercase font-sub font-bold text-center'>Our Achievement</h2>
-
+            
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
                     <img className='hidden lg:block h-96' src={student} alt />
