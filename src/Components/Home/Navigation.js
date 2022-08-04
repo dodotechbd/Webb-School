@@ -2,7 +2,7 @@ import React from "react";
 import './Banner/Banner.css'
 const Navigation = () => {
   return (
-    <div className="lg:px-10 px-3 py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
+    <div className="lg:px-10 px-3 py-16 bg-base-100 border-b border-neutral">
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Discover Your Future With Us
@@ -14,7 +14,7 @@ const Navigation = () => {
       <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 px-3 py-3 rounded-xl">
         <a
           href="#store"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -27,7 +27,7 @@ const Navigation = () => {
         </a>
         <a
           href="#admission"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -40,7 +40,7 @@ const Navigation = () => {
         </a>
         <a
           href="#job"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -53,7 +53,7 @@ const Navigation = () => {
         </a>
         <a
           href="#courses"
-          className="hover:border hover:border-primary hover:text-primary text-lg bg-base-100 rounded-xl "
+          className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
           <div className="">
@@ -66,11 +66,11 @@ const Navigation = () => {
         </a>
       </div>
       <div className="flex flex-col w-full lg:flex-row mt-14 mb-8">
-      <h1 className="text-3xl font-bold lg:mx-8">
+      <h1 className="text-3xl font-bold lg:mx-8 mx-4">
           Webb School is the great platform for distance learning.
         </h1>
         <div className="lg:divider divide-primary lg:divider-horizontal"></div>
-        <p className="text-lg mt-4">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>
+        <p className="text-lg mt-4 hidden lg:block md:block">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>
       </div>
       <div className="grid grid-cols-2 lg:gap-5 md:grid-cols-4 lg:grid-cols-5 lg:mx-8 my-8">
         <div className="card transform transition duration-500 hover:scale-110">

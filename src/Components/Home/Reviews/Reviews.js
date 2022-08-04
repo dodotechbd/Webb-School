@@ -12,7 +12,7 @@ import "swiper/css/navigation";
 import "../Banner/Banner.css";
 
 // import required modules
-import { Pagination, Navigation } from "swiper";
+import { Pagination } from "swiper";
 const Reviews = () => {
   const [courses, setCourses] = useState([]);
   useEffect(() => {
@@ -21,7 +21,7 @@ const Reviews = () => {
       .then((data) => setCourses(data));
   });
   return (
-    <div className="lg:px-4 py-16 bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
+    <div className="lg:px-4 py-16 bg-base-100 border-b border-neutral">
       <p className="lg:text-4xl md:text-3xl mb-16 mt-8 text-2xl uppercase font-sub font-bold text-center">
         Our students reviews!
       </p>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 import wslogo from "../../../Assets/wslogo.svg";
 import "./Header.css";
 // import component ?
@@ -24,80 +24,70 @@ const Header = ({ handleThemeChange, theme }) => {
     setIsOpen((prevState) => !prevState);
   };
 
-  //assigning location variable
-  const location = useLocation();
-
-  //destructuring pathname from location
-  const { pathname } = location;
-
-  //Javascript split method to get the name of the path in array
-  const splitLocation = pathname.split("/");
   const manuItems = (
     <>
-      <li className={splitLocation[1] === "courses" ? "active" : ""}>
-        <Link to="courses">Courses</Link>
+      <li>
+        <NavLink to="courses">Courses</NavLink>
       </li>
-      <li className={splitLocation[1] === "bookstore" ? "active" : ""}>
-        <Link to="bookstore">Book Store</Link>
+      <li>
+        <NavLink to="bookstore">Book Store</NavLink>
       </li>
-      <li className={splitLocation[1] === "admission" ? "active" : ""}>
-        <Link to="admission">Admission</Link>
+      <li>
+        <NavLink to="admission">Admission</NavLink>
       </li>
-      <li className={splitLocation[1] === "jobs" ? "active" : ""}>
-        <Link to="jobs">Jobs</Link>
+      <li>
+        <NavLink to="jobs">Jobs</NavLink>
       </li>
-      <li className={splitLocation[1] === "blogs" ? "active" : ""}>
-        <Link to="blogs">Blog</Link>
+      <li>
+        <NavLink to="blogs">Blog</NavLink>
       </li>
-      <li className={splitLocation[1] === "admin" ? "active" : ""}>
-        <Link to="admin/manage">Admin</Link>
+      <li>
+        <NavLink to="admin/manage">Admin</NavLink>
       </li>
-    </>
+    </> 
   );
   return (
-    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-100 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
+    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
-            <ul tabindex="0" className="p-2 bg-base-100">
+            <ul tabIndex="0" className="bg-base-100 h-screen">
               <Link to="/">
-              <div className="flex items-center">
-              <img className="w-8" src={wslogo} alt="" />
-              <div className="ml-1 text-md font-header font-bold">
+              <div className="flex items-center p-2 w-full">
+              <img className="w-11 ml-3" src={wslogo} alt="" />
+              <div className="ml-1 text-md font-sub font-bold">
                 <p>Webb</p>
                 <p className="-mt-2">School</p>
               </div>
           </div>
               </Link>
-              <hr />
-              <li className="my-2 text-lg">
-                <Link to="courses">Courses</Link>
+              <ul className="menu menu-compact">
+              <li>
+                <NavLink to="/">Home</NavLink>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
-                <Link to="bookstore">Book Store</Link>
+              <li>
+                <NavLink to="courses">Courses</NavLink>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
-                <Link to="admission">Admission</Link>
+              <li>
+                <NavLink to="bookstore">Book Store</NavLink>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
-                <Link to="jobs">Jobs</Link>
+              <li>
+                <NavLink to="admission">Admission</NavLink>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
-                <Link to="blogs">Blog</Link>
+              <li>
+                <NavLink to="jobs">Jobs</NavLink>
               </li>
-              <hr />
-              <li className="my-2 text-lg">
-                <Link to="admin/manage">Admin</Link>
+              <li>
+                <NavLink to="blogs">Blog</NavLink>
               </li>
-              <hr />
+              <li>
+                <NavLink to="admin/manage">Admin</NavLink>
+              </li>
+              </ul>
               <li>
                 {user ? (
                   <div>
-                    <div className="flex flex-nowrap items-center cursor-pointer">
+                    <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">
                       <label class="avatar">
                         <div class="w-7 mr-2 my-2 rounded-full border border-gray-200">
                           <img src={user?.photoURL} />
@@ -108,39 +98,38 @@ const Header = ({ handleThemeChange, theme }) => {
                         <i class="ml-2 fa-solid fa-angle-down"></i>
                       </p>
                     </div>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
-                      <a>
-                        <i class="mr-3 fa-solid fa-user"></i>Profile
-                      </a>
+                    <ul className="menu menu-compact">
+                    <li>
+                      <NavLink to={'profile'}>
+                        <i class="ml-4 fa-solid fa-user"/>Profile
+                      </NavLink>
                     </li>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
-                      <a>
-                        <i class="mr-3 fa-solid fa-bolt"></i>My Courses
-                      </a>
+                    <li>
+                      <NavLink to={'mycourse'}>
+                        <i class="ml-4 fa-solid fa-bolt"></i>My Courses
+                      </NavLink>
                     </li>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
-                      <a>
-                        <i class="mr-3 fa-solid fa-chart-line"></i>Dashboard
-                      </a>
+                    <li>
+                      <NavLink to={'dashboard'}>
+                        <i class="ml-4 fa-solid fa-chart-line"></i>Dashboard
+                      </NavLink>
                     </li>
-                    <hr />
-                    <li className="my-2 text-md ml-5">
+                    <li>
                       <a onClick={logout}>
-                        <i class="mr-3 fa-solid fa-right-from-bracket"></i>
+                        <i class="ml-4 fa-solid fa-right-from-bracket"></i>
                         Logout
                       </a>
                     </li>
-                    <hr />
+                    </ul>
                   </div>
                 ) : (
-                  <div>
-                    <li className="my-2 btn-primary btn-sm btn rounded-md text-white">
-                      <Link to="Login">Login</Link>
+                  <div className="border-t border-neutral">
+                    <li>
+                      <Link className="mt-3 mx-3 w-56 btn-info btn-sm btn rounded-full text-white hover:rounded-full font-thin" to="Login">Login</Link>
                     </li>
-                    <hr />
+                    <li>
+                      <Link className="bg-[#494FC1] hover:bg-[#4a4e94] my-3 mx-3 w-56 hover:rounded-full btn-sm btn rounded-full text-white font-thin" to="Signup">Register</Link>
+                    </li>
                   </div>
                 )}
               </li>
@@ -157,17 +146,17 @@ const Header = ({ handleThemeChange, theme }) => {
           </div>
         </Link>
       </div>
-      <div className="navbar-center">
-        <ul className="hidden space-x-5 lg:flex text-lg">{manuItems}</ul>
+      <div className="navbar-center hidden lg:flex">
+        <ul className="menu menu-horizontal menu-compact p-0 gap-3 uppercase">{manuItems}</ul>
       </div>
       <div className="navbar-end hidden lg:flex">
           <button
             onClick={handleThemeChange}
-            className="rounded-full lg:mx-2 font-bold pr-5"
+            className="rounded-full lg:mx-2 pr-5"
           >
             {theme ? (
               <svg
-                className="swap-on fill-current w-5 h-5"
+                className="swap-on fill-yellow-200 w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -175,7 +164,7 @@ const Header = ({ handleThemeChange, theme }) => {
               </svg>
             ) : (
               <svg
-                className="swap-off fill-current w-5 h-5"
+                className="swap-off fill-gray-500 w-5 h-5"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
               >
@@ -186,7 +175,7 @@ const Header = ({ handleThemeChange, theme }) => {
         {user ? (
           <div class="dropdown dropdown-end">
             <div
-              tabindex="0"
+              tabIndex="0"
               className="flex flex-nowrap items-center cursor-pointer"
             >
               <label class="avatar">
@@ -200,38 +189,39 @@ const Header = ({ handleThemeChange, theme }) => {
               </p>
             </div>
             <ul
-              tabindex="0"
-              class="mt-4 p-1 menu menu-compact dropdown-content bg-base-100 rounded-md w-48 border"
+              tabIndex="0"
+              class="mt-4 menu menu-compact bg-base-100 w-48 dropdown-content border border-neutral"
             >
-              <li>
-                <a>
-                  <i class="fa-solid fa-user"></i>Profile
-                </a>
-              </li>
-              <li>
-                <a>
-                  <i class="fa-solid fa-bolt"></i>My Courses
-                </a>
-              </li>
-              <li>
-                <a>
-                  <i class="fa-solid fa-chart-line"></i>Dashboard
-                </a>
-              </li>
-              <li>
-                <a onClick={logout}>
-                  <i class="fa-solid fa-right-from-bracket"></i>Logout
-                </a>
-              </li>
+            <li>
+              <NavLink to={'profile'}>
+                <i class="ml-4 fa-solid fa-user"/>Profile
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={'mycourse'}>
+                <i class="ml-4 fa-solid fa-bolt"></i>My Courses
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={'dashboard'}>
+                <i class="ml-4 fa-solid fa-chart-line"></i>Dashboard
+              </NavLink>
+            </li>
+            <li className="bordered">
+              <a onClick={logout}>
+                <i class="ml-4 fa-solid fa-right-from-bracket"></i>
+                Logout
+              </a>
+            </li>
             </ul>
           </div>
         ) : (
           <div className="flex">
-            <a className="btn-primary btn-sm btn rounded-md text-white">
+            <a className="btn-accent btn-sm btn rounded-md text-white font-thin">
               <Link to="Login">Login</Link>
             </a>
             <div class="divider lg:divider-horizontal"></div>
-            <a className="btn-primary btn-sm btn rounded-md text-white">
+            <a className="bg-[#494FC1] hover:bg-[#4a4e94] btn-sm btn rounded-md text-white font-thin">
               <Link to="SignUp">Register</Link>
             </a>
           </div>
@@ -263,7 +253,7 @@ const Header = ({ handleThemeChange, theme }) => {
         <div className="dropdown">
           <label
             onClick={toggleDrawer}
-            tabindex="0"
+            tabIndex="0"
             className="mx-4 text-2xl lg:hidden"
           >
             <i className="fa-solid fa-bars"></i>

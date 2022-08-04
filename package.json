@@ -16,6 +16,7 @@
     "daisyui": "^2.19.0",
     "firebase": "^9.9.1",
     "react": "^18.2.0",
+    "react-countup": "^6.3.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.0.3",
     "react-hook-form": "^7.33.1",
@@ -27,6 +28,7 @@
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.4",
     "react-tabs": "^5.1.0",
+    "reactjs-video-playlist-player": "^1.1.1",
     "swiper": "^8.3.1",
     "web-vitals": "^2.1.4"
   },
@@ -60,3 +62,4 @@
     "tailwindcss": "^3.1.6"
   }
 }
+
