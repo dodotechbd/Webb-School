@@ -31,7 +31,7 @@
         "_id": 15,
         "name": "Muhammad Shafi",
         "title": "Why JavaScript Is Still So Important for Web Development?",
-        "description": "Choosing the right technology partner is the first step in making a successful website. Lots of technologies and methods have been devised in the past few years to develop websites but PHP has emerged as the topmost technology for this.",
+        "description": "Choosing the right technology partner is the first step in making a successful website. Lots of technologies and methods have been devised in the past few years to develop websites but PHP has emerged as the topmost technology for this. This is a best for codeing",
         "img": "https://i.ibb.co/3zVsd1D/MISSION-2022.jpg",
         "address": "Chittagong, Bangladesh",
         "title2": "Excellent Thinking For.",
@@ -40,7 +40,7 @@
         "add1": "JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user. Common examples of JavaScript that you might use every day include the search box on Amazon, a news recap video embedded on The New York Times, or refreshing your Twitter feed.Incorporating JavaScript improves the user experience of the web page by converting it from a static page into an interactive one. To recap, JavaScript adds behavior to web pages."
     },
     {
-        "_id": 15,
+        "_id": 77,
         "name": "Muhammad Shafi",
         "title": "What Is MongoDB and How Does It Work?",
         "description": "MongoDB is an open source NoSQL database management program. NoSQL is used as an alternative to traditional relational databases. NoSQL databases are quite useful for working with large sets of distributed data. MongoDB is a tool that can manage document-oriented.",
@@ -52,7 +52,7 @@
         "add1": "JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user. Common examples of JavaScript that you might use every day include the search box on Amazon, a news recap video embedded on The New York Times, or refreshing your Twitter feed.Incorporating JavaScript improves the user experience of the web page by converting it from a static page into an interactive one. To recap, JavaScript adds behavior to web pages."
     },
     {
-        "_id": 15,
+        "_id": 9,
         "name": "Muhammad Shafi",
         "title": "why importent learning react ja and Easy?",
         "description": "React saves you time and money on development because it's component-based. You can break down an interface into reusable components that allow you to build dynamic user interfaces. This taps into the current thinking behind 'Design Systems.",
@@ -64,10 +64,10 @@
         "add1": "JavaScript is a text-based programming language used both on the client-side and server-side that allows you to make web pages interactive. Where HTML and CSS are languages that give structure and style to web pages, JavaScript gives web pages interactive elements that engage a user. Common examples of JavaScript that you might use every day include the search box on Amazon, a news recap video embedded on The New York Times, or refreshing your Twitter feed.Incorporating JavaScript improves the user experience of the web page by converting it from a static page into an interactive one. To recap, JavaScript adds behavior to web pages."
     },
     {
-        "_id": 15,
+        "_id": 11,
         "name": "Muhammad Shafi",
         "title": "Why Excellent Node.js for BackEnd site.?",
-        "description": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser, which was designed to build scalable network applications.",
+        "description": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on the V8 engine and executes JavaScript code outside a web browser, which was designed to build scalable network applications. This is a best for code",
         "img": "https://i.ibb.co/HXcSjZL/MISSION-2022.png",
         "address": "Chittagong, Bangladesh",
         "title2": "Excellent Thinking For.",
