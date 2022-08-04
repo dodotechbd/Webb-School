@@ -3,16 +3,11 @@ import image1 from '../../../Assets/icon/T1.png';
 import image2 from '../../../Assets/icon/s1.png';
 import image3 from '../../../Assets/icon/v1.png';
 import image4 from '../../../Assets/icon/ap.png';
-<<<<<<< HEAD
 import student from '../../../Assets/ACHIVE.svg';
-import './Review.css'
-=======
-import student from '../../../Assets/ACHIVE.png';
 import './Review.css';
 import CountUp from 'react-countup';
 
 
->>>>>>> 88805ea49b12de5347998c7fe3ded2d5172da89d
 const Review = () => {
     const [counter, setCounter] = useState(0);
     useEffect(() => {
