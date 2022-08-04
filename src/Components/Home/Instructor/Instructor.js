@@ -12,7 +12,7 @@ const Instructor = () => {
         Teaching is the one profession that creates all other professions..
         </p>
       </div>
-      <div className="grid gap-10 mx-auto lg:max-w-screen-lg sm:grid-cols-2 lg:grid-cols-4">
+      <div className="grid grid-cols-2 gap-10 mx-auto md:grid-cols-3 lg:max-w-screen-lg  lg:grid-cols-4">
         <div className="flex flex-col items-center">
           <img
             className="object-cover w-20 h-20 mb-2 rounded-full shadow"
@@ -76,7 +76,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Andrew Larkin</p>
-            <p className="text-sm text-gray-800">University Admission Trainer</p>
+            <p className="text-sm text-gray-800 text-center">University Admission Trainer</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -87,7 +87,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Sophie Dene</p>
-            <p className="text-sm text-gray-800">Designer UI/UX Instructor</p>
+            <p className="text-sm text-gray-800 text-center">Designer UI/UX Instructor</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -97,8 +97,8 @@ const Instructor = () => {
             alt="Person"
           />
           <div className="flex flex-col items-center">
-            <p className="text-lg font-bold">Benedict Caro</p>
-            <p className="text-sm text-gray-800">Web Development Instructor</p>
+            <p className="text-lg font-bold ">Benedict Caro</p>
+            <p className="text-sm text-gray-800 text-center">Web Development Instructor</p>
           </div>
         </div>
       </div>
