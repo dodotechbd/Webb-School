@@ -5,10 +5,10 @@ const Instructor = () => {
         <div>
              <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="mx-auto mb-10 lg:max-w-xl sm:text-center">
-        <p className="inline-block px-3 py-px mb-4 font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400 text-3xl">
+        <p className="inline-block px-3 py-px mb-4 font-semibold tracking-wider uppercase rounded-full bg-teal-accent-400 text-3xl">
           Our Instructors
         </p>
-        <p className="text-base text-gray-700 md:text-lg">
+        <p className="text-base md:text-lg">
         Teaching is the one profession that creates all other professions..
         </p>
       </div>
@@ -21,7 +21,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Oliver Aguilerra</p>
-            <p className="text-sm text-gray-800">Product Manager</p>
+            <p className="text-sm">Product Manager</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -32,7 +32,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Marta Clermont</p>
-            <p className="text-sm text-gray-800">Graphic Designer</p>
+            <p className="text-sm">Graphic Designer</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -43,7 +43,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Anthony Geek</p>
-            <p className="text-sm text-gray-800">English Teacher</p>
+            <p className="text-sm">English Teacher</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -54,7 +54,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Alice Melbourne</p>
-            <p className="text-sm text-gray-800">Freelancer Expert</p>
+            <p className="text-sm">Freelancer Expert</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -65,7 +65,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Amit Sharma</p>
-            <p className="text-sm text-gray-800">Bad boy</p>
+            <p className="text-sm">Bad boy</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -76,7 +76,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Andrew Larkin</p>
-            <p className="text-sm text-gray-800 text-center">University Admission Trainer</p>
+            <p className="text-sm text-center">University Admission Trainer</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -87,7 +87,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold">Sophie Dene</p>
-            <p className="text-sm text-gray-800 text-center">Designer UI/UX Instructor</p>
+            <p className="text-sm text-center">Designer UI/UX Instructor</p>
           </div>
         </div>
         <div className="flex flex-col items-center">
@@ -98,7 +98,7 @@ const Instructor = () => {
           />
           <div className="flex flex-col items-center">
             <p className="text-lg font-bold ">Benedict Caro</p>
-            <p className="text-sm text-gray-800 text-center">Web Development Instructor</p>
+            <p className="text-sm text-center">Web Development Instructor</p>
           </div>
         </div>
       </div>

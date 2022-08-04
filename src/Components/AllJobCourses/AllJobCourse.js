@@ -20,7 +20,7 @@ const AllJobCourse = () => {
   }
 
   return (
-    <div className="px-4 lg:mb-40">
+    <div className="px-4">
       <div className="lg:mx-8 mx-4 pt-10">
         <h1 className="text-3xl pb-5 ">Job Recruitment</h1>
         <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
