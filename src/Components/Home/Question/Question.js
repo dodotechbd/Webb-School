@@ -28,7 +28,7 @@ const Question = () => {
                 </span>
               </details>
               <details class="mb-4">
-                <summary class="font-semibol bg-base-300 rounded-md py-2 px-4">
+                <summary class="font-semibold bg-base-300 rounded-md py-2 px-4">
                   How can i buy this course?
                 </summary>
 

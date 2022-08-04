@@ -67,7 +67,7 @@ const SignUp = () => {
                     <input
                         type="text"
                         placeholder="Name"
-                        className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                        className="px-4 py-2 transition duration-300 border  text-black border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                         {...register("name", {
                             required: {
                                 value: true,
@@ -84,7 +84,7 @@ const SignUp = () => {
               <input
                         type="email"
                         placeholder="Email"
-                        className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                        className="px-4 py-2 transition duration-300 border  text-black border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                         {...register("email", {
                             required: {
                                 value: true,
@@ -109,7 +109,7 @@ const SignUp = () => {
               <input
                         type="password"
                         placeholder="Password"
-                        className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                        className="px-4 py-2 transition duration-300 border  text-black border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                         {...register("password", {
                             required: {
                                 value: true,
