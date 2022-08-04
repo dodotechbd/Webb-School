@@ -31,7 +31,7 @@ const BlogDetails = () => {
 
                 <div class="">
 
-                    <div class=" flex-col lg:flex-row ">
+                    <div class=" flex-col lg:flex-row w-11/12 mx-auto">
 
                         <img className='my-3' src={newBlogs[0]?.img} />
                         <div className='m-2'>
@@ -47,7 +47,7 @@ const BlogDetails = () => {
 
             </div>
             <div>
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="card w-11/12 lg:w-96 bg-base-100 shadow-xl">
                     <div class="card-body">
                         <h2 class="card-title">Recent Posts</h2>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='http://localhost:3000/blogdetails/18'>Best Way to learn code and empliment this</a></p>
@@ -57,7 +57,7 @@ const BlogDetails = () => {
                     </div>
                 </div>
 
-                <div class="card w-96 bg-base-100 shadow-xl mt-2">
+                <div class="card w-11/12 lg:w-96 bg-base-100 shadow-xl mt-2">
                     <div class="card-body">
                         <h2 class="card-title">Categories</h2>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogs'>Tips and Tricks</a></p>
