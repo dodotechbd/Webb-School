@@ -85,8 +85,9 @@ const Footer = () => {
             <i className="fa-brands fa-youtube"></i>
           </a>
         </div>
+        
       </footer>
-      <footer className="footer footer-center p-4 border-t border-neutral flex justify-between">
+      <footer className="footer footer-center justify-center bg-black text-white p-4 border-t border-neutral flex ">
         <div>
           <p>2022 - {year} Copyright © Webb School. All rights reserved</p>
         </div>
@@ -120,7 +121,12 @@ const Footer = () => {
               <i className="fa-brands fa-youtube"></i>
             </a>
           </div>
+          
+
+          
       </footer>
+
+      
     </div>
   );
 };
