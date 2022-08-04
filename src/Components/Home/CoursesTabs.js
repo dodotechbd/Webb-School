@@ -13,7 +13,7 @@ const CoursesTabs = () => {
   const [jobcourses] = useJobCourses();
   const [admission] = useAdmission();
   return (
-    <div className="hidden py-16 lg:block md:block bg-gradient-to-r from-base-300 to-base-200 border-b border-neutral">
+    <div className="py-16 md:block bg-base-100 border-b border-neutral">
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
           Skill Development Courses
@@ -23,15 +23,15 @@ const CoursesTabs = () => {
         </p>
       </div>
       <div>
-        <Tabs className="mx-10 my-8 bg-gradient-to-r from-base-300 to-base-200">
-          <TabList className='border-b border-neutral'>
+        <Tabs className="mx-10 my-8 bg-base-100">
+          <TabList className='overflow-x-auto lg:overflow-hidden whitespace-nowrap border-b border-neutral flex'>
             <Tab>Language Learning</Tab>
             <Tab>Jobs Requirments</Tab>
             <Tab>Admission Preparation</Tab>
           </TabList>
 
-          <TabPanel className="mt-5 bg-base-200">
-            <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
+          <TabPanel className="mt-5 bg-base-100">
+            <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
               {language.slice(0, 4).map((allcard) => (
                 <AllCourseCard
                   key={allcard._id}
@@ -41,7 +41,7 @@ const CoursesTabs = () => {
             </div>
           </TabPanel>
           <TabPanel>
-            <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
+            <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
               {jobcourses.slice(0, 4).map((allcard) => (
                 <AllCourseCard
                   key={allcard._id}
@@ -51,7 +51,7 @@ const CoursesTabs = () => {
             </div>
           </TabPanel>
           <TabPanel>
-          <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
+          <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
           {admission.slice(0, 4).map((allcard) => (
             <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
           ))}

@@ -8,7 +8,7 @@ const AllCourseCard = ({ allcard }) => {
   return (
     <Link to={`/course/${uname}`}>
       <div
-        class="mx-auto card card-compact w-72 bg-base-100 border rounded-md
+        class="mx-auto mt-3 card card-compact w-72 bg-base-100 border rounded-md
        hover:-translate-y-3 border-neutral  transform transition duration-300"
       >
         <figure>
