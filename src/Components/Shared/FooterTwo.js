@@ -7,7 +7,7 @@ const FooterTwo = () => {
         <div class="container py-16 mx-auto">
           <div class="flex flex-wrap pl-10 ">
             <div class="p-4  lg:w-1/4 sm:w-1/2 w-full ">
-              <h2 class="tracking-widest mb-4 text-lg font-bold sm:text-left ">
+              <h2 class="tracking-widest mb-4 text-lg sm:text-left ">
                 Language Learning
               </h2>
               <nav class="flex flex-col  items-start -mb-1 space-y-2.5 ">
@@ -78,7 +78,7 @@ const FooterTwo = () => {
               </nav>
             </div>
             <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-              <h2 class="tracking-widest mb-4 text-lg font-bold sm:text-left">
+              <h2 class="tracking-widest mb-4 text-lg sm:text-left">
                 Job Recruitment
               </h2>
               <nav class="flex flex-col text-cestarttems-center -mb-1 space-y-2.5">
@@ -149,7 +149,7 @@ const FooterTwo = () => {
               </nav>
             </div>
             <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-              <h2 class="tracking-widest mb-4 text-lg font-bold sm:text-left">
+              <h2 class="tracking-widest mb-4 text-lg sm:text-left">
                 Prepare For The Admission
               </h2>
               <nav class="flex flex-col text-cestarttems-center -mb-1 space-y-2.5">
@@ -220,7 +220,7 @@ const FooterTwo = () => {
               </nav>
             </div>
             <div class="p-4 lg:w-1/4 sm:w-1/2 w-full">
-              <h2 class="tracking-widest mb-4 text-lg font-bold sm:text-left">
+              <h2 class="tracking-widest mb-4 text-lg sm:text-left">
                 Coming Soon
               </h2>
               <nav class="flex flex-col text-cestarttems-center -mb-1 space-y-2.5">
