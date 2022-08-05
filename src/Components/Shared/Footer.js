@@ -54,7 +54,7 @@ const Footer = () => {
           <Link to={"coming"} className="link link-hover block">
             Privacy policy
           </Link>
-          <Link to={"developer"}>Developer</Link>
+          <Link to={"developer"} className="link link-hover block">Developer</Link>
         </div>
         {/* for mobile */}
         <div className="lg:hidden md:hidden flex mx-auto gap-10">
@@ -84,7 +84,9 @@ const Footer = () => {
             <Link to={"coming"} className="link link-hover block">
               Privacy policy
             </Link>
-            <Link to={"developer"}>Developer</Link>
+            <Link to={"developer"} className="link link-hover block">
+              Developer
+            </Link>
           </div>
         </div>
         <div className="lg:block md:block hidden">
