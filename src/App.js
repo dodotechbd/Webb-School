@@ -33,6 +33,7 @@ import FooterTwo from "./Components/Shared/FooterTwo";
 import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
+import PreLoader from "./Components/Shared/Loading/PreLoader";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -64,7 +65,7 @@ function App() {
           className="bg-gradient-to-r from-base-300 to-base-200"
           id="preloader"
         >
-          <div id="loader"></div>
+          <PreLoader></PreLoader>
         </div>
       ) : (
         <Header handleThemeChange={handleThemeChange} theme={theme}></Header>

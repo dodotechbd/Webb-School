@@ -137,7 +137,7 @@ const AllCourseView = () => {
             </div>
           </div>
           <h1 className="text-2xl mt-10 mb-1">Course Syllabus</h1>
-          <div class="card rounded-md w-full bg-base-300 border border-neutral">
+          <div class="card rounded-md w-full border border-neutral">
             <div class="card-body">
             {
               courseData?.file.map(course => <CourseSyllabus
