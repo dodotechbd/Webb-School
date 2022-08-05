@@ -14,8 +14,8 @@ const AllCourseView = () => {
 
   const courseData = admission.find((allcard) => allcard.uname === uname)
   || language.find((allcard) => allcard.uname === uname) || jobcourses.find((allcard) => allcard.uname === uname);
-  const courseIndex = courseData?.file[0].details[0].fileName;
-  console.log(courseIndex);
+  // const courseIndex = courseData?.file[0].details[0].fileName;
+  // console.log(courseIndex);
   
   return (
     <div className="hero bg-base-100 my-10">
@@ -58,7 +58,7 @@ const AllCourseView = () => {
                 <p className="text-2xl">৳{courseData?.price}</p>
               </div>
             </div>
-            <Link to={`/course/${uname}/${courseData?.list}/${courseIndex}`}>
+            <Link to={`/checkout/${uname}`}>
               <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
                 Buy Course
               </button>
