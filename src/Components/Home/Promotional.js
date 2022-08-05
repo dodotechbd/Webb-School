@@ -1,5 +1,4 @@
 import React from "react";
-import video from "../../Assets/video/promotion.mp4";
 import vdo from "../../Assets/vdo.jpg";
 const Promotional = () => {
   return (

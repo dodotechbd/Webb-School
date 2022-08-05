@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import img from '../../Assets/underconstruction.svg'
+import img from '../../Assets/underconstruction.png'
 
 const UnderConstruction = () => {
     return (
