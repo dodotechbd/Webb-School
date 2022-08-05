@@ -14,6 +14,14 @@ const Developer = () => {
         Tasmia Islam <br /> Shakhawth Hossain Shatu <br /> MD Badsha <br />{" "}
         Muhammad Shafi <br /> Rashel Mahomud <br /> Amortha Kumar Shill
       </p>
+      <div className="text-2xl font-bold text-center mt-8">
+      <p className="text-primary">primary</p>
+      <p className="text-secondary">secondary</p>
+      <p className="text-accent">accent</p>
+      <p className="text-info">info</p>
+      <p className="text-neutral">neutral</p>
+      <p className="text-warning">warning</p>
+      </div>
     </div>
   );
 };

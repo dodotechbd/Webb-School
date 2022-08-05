@@ -32,6 +32,7 @@ import MyCourses from "./Components/AllCourses/MyCourses";
 import FooterTwo from "./Components/Shared/FooterTwo";
 import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
+import Checkout from "./Components/AllCourses/Checkout";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -54,7 +55,10 @@ function App() {
   };
 
   return (
-    <div data-theme={theme && "my_dark"} className="pt-16 font-header min-h-screen">
+    <div
+      data-theme={theme && "my_dark"}
+      className="pt-16 font-header min-h-screen"
+    >
       {loading ? (
         <div
           className="bg-gradient-to-r from-base-300 to-base-200"
@@ -86,7 +90,11 @@ function App() {
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/blogdetails/:detailsId" element={<BlogDetails></BlogDetails>}></Route>
+        <Route
+          path="/blogdetails/:detailsId"
+          element={<BlogDetails></BlogDetails>}
+        ></Route>
+        {/* admim */}
         <Route path="/admin" element={<Admin></Admin>}>
           <Route path="/admin" element={<Admins></Admins>}></Route>
           <Route path="/admin/manage" element={<Manage></Manage>}></Route>
@@ -95,19 +103,21 @@ function App() {
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>
+        {/* courses  */}
         <Route
           path="/course/:uname"
           element={<AllCourseView></AllCourseView>}
         ></Route>
-        <Route
-          path="/course/:uname/:list"
-          element={<CoursePlay></CoursePlay>}
-        >
-          <Route path="/course/:uname/:list/:fileName" element={<CourseVideo></CourseVideo>}></Route>
+        <Route path="/course/:uname/:list" element={<CoursePlay></CoursePlay>}>
+          <Route
+            path="/course/:uname/:list/:fileName"
+            element={<CourseVideo></CourseVideo>}
+          ></Route>
         </Route>
+        <Route path="/checkout/:uname" element={<Checkout></Checkout>}></Route>
+        <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
-        <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route path="/coming" element={<UnderConstruction></UnderConstruction>}></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
