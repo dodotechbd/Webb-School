@@ -18,7 +18,7 @@ const BlogDetails = () => {
         <div className='grid lg:grid-cols-3 grid-cols-1 lg:px-20 my-2 lg:my-20'>
             <div className='lg:mx-20  col-span-2'>
 
-                <h1 className='text-2xl mt-20 font-bold m-2'>{newBlogs[0]?.title}</h1> <br />
+                <h1 className='text-2xl font-bold m-2'>{newBlogs[0]?.title}</h1> <br />
                 <div className='flex'>
                     <i class="fa-solid fa-user-astronaut mx-2 text-secondary"></i>
                     <h1 className='text-sm '>{newBlogs[0]?.name}</h1>
