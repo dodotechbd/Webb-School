@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, NavLink, useLocation } from "react-router-dom";
-import wslogo from "../../../Assets/wslogo.svg";
+import wslogo from "../../../Assets/wslogo.png";
 import "./Header.css";
 // import component ?
 import Drawer from "react-modern-drawer";
@@ -54,8 +54,8 @@ const Header = ({ handleThemeChange, theme }) => {
             <ul tabIndex="0" className="bg-base-100 h-screen">
               <Link to="/">
                 <div className="flex items-center p-2 w-full">
-                  <img className="w-11 ml-3" src={wslogo} alt="" />
-                  <div className="ml-1 text-md font-sub font-bold">
+                  <img className="w-9 ml-3" src={wslogo} alt="" />
+                  <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
                   </div>
@@ -88,41 +88,41 @@ const Header = ({ handleThemeChange, theme }) => {
                 {user ? (
                   <div>
                     <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">
-                      <label class="avatar">
-                        <div class="w-7 mr-2 my-2 rounded-full border border-gray-200">
+                      <label className="avatar">
+                        <div className="w-7 mr-2 my-2 rounded-full border border-gray-200">
                           <img src={user?.photoURL} />
                         </div>
                       </label>
                       <p className="whitespace-nowrap">
                         {user?.displayName}
-                        <i class="ml-2 fa-solid fa-angle-down"></i>
+                        <i className="ml-2 fa-solid fa-angle-down"></i>
                       </p>
                     </div>
                     <ul className="menu menu-compact">
                       <li>
                         <NavLink to={"profile"}>
-                          <i class="ml-4 fa-solid fa-user" />
+                          <i className="ml-4 fa-solid fa-user" />
                           Profile
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to={"mycourse"}>
-                          <i class="ml-4 fa-solid fa-bolt"></i>My Courses
+                          <i className="ml-4 fa-solid fa-bolt"></i>My Courses
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to={"dashboard"}>
-                          <i class="ml-4 fa-solid fa-chart-line"></i>Dashboard
+                          <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to={"coming"}>
-                          <i class="ml-4 fa-solid fa-clock"></i>Payment History
+                          <i className="ml-4 fa-solid fa-clock"></i>Payment History
                         </NavLink>
                       </li>
                       <li>
                         <a onClick={logout}>
-                          <i class="ml-4 fa-solid fa-right-from-bracket"></i>
+                          <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                           Logout
                         </a>
                       </li>
@@ -154,7 +154,7 @@ const Header = ({ handleThemeChange, theme }) => {
         </Drawer>
         <Link to="/">
           <div className="flex items-center">
-            <img className="w-10 ml-3" src={wslogo} alt="" />
+            <img className="w-9 ml-3" src={wslogo} alt="" />
             <div className="ml-1 text-md font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>
@@ -191,49 +191,49 @@ const Header = ({ handleThemeChange, theme }) => {
           )}
         </button>
         {user ? (
-          <div class="dropdown dropdown-end">
+          <div className="dropdown dropdown-end">
             <div
               tabIndex="0"
               className="flex flex-nowrap items-center cursor-pointer"
             >
-              <label class="avatar">
-                <div class="w-7 mr-2 rounded-full border border-gray-200">
+              <label className="avatar">
+                <div className="w-7 mr-2 rounded-full border border-gray-200">
                   <img src={user?.photoURL} />
                 </div>
               </label>
               <p className="whitespace-nowrap">
                 {user?.displayName}
-                <i class="ml-2 fa-solid fa-angle-down"></i>
+                <i className="ml-2 fa-solid fa-angle-down"></i>
               </p>
             </div>
             <ul
               tabIndex="0"
-              class="mt-4 menu menu-compact bg-base-100 w-48 dropdown-content border border-neutral"
+              className="mt-4 menu menu-compact bg-base-100 w-48 dropdown-content border border-neutral"
             >
               <li>
                 <NavLink to={"profile"}>
-                  <i class="ml-4 fa-solid fa-user" />
+                  <i className="ml-4 fa-solid fa-user" />
                   Profile
                 </NavLink>
               </li>
               <li>
                 <NavLink to={"mycourse"}>
-                  <i class="ml-4 fa-solid fa-bolt"></i>My Courses
+                  <i className="ml-4 fa-solid fa-bolt"></i>My Courses
                 </NavLink>
               </li>
               <li>
                 <NavLink to={"dashboard"}>
-                  <i class="ml-4 fa-solid fa-chart-line"></i>Dashboard
+                  <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
                 </NavLink>
               </li>
               <li>
                 <NavLink to={"coming"}>
-                  <i class="ml-4 fa-solid fa-clock"></i>Payment History
+                  <i className="ml-4 fa-solid fa-clock"></i>Payment History
                 </NavLink>
               </li>
               <li>
                 <a onClick={logout}>
-                  <i class="ml-4 fa-solid fa-right-from-bracket"></i>
+                  <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                   Logout
                 </a>
               </li>
@@ -244,7 +244,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <a className="btn-accent btn-sm btn rounded-md text-white font-thin">
               <Link to="Login">Login</Link>
             </a>
-            <div class="divider lg:divider-horizontal"></div>
+            <div className="divider lg:divider-horizontal"></div>
             <a className="bg-[#494FC1] hover:bg-[#4a4e94] btn-sm btn rounded-md text-white font-thin">
               <Link to="SignUp">Register</Link>
             </a>

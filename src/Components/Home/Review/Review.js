@@ -3,7 +3,6 @@ import image1 from '../../../Assets/icon/T1.png';
 import image2 from '../../../Assets/icon/s1.png';
 import image3 from '../../../Assets/icon/v1.png';
 import image4 from '../../../Assets/icon/ap.png';
-import student from '../../../Assets/ACHIVE.svg';
 import './Review.css';
 import CountUp from 'react-countup';
 
@@ -24,7 +23,7 @@ const Review = () => {
             
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
-                    <img className='hidden lg:block h-96' src={student} alt />
+                    <img className='hidden lg:block h-96' src='https://raw.githubusercontent.com/MShafiMS/admission/eeb6c9456e6bec86eeddaf072a43cd089f371637/ACHIVE.svg' alt />
                     <div className='card lg:mx-32 grid grid-cols-2 lg:gap-14 gap-6 md:grid-cols-4 lg:grid-cols-2 mb-5'>
                         <div className="card-body p-0 mx-auto">
                             <section className="hero container max-w-screen-lg mx-auto text-center">

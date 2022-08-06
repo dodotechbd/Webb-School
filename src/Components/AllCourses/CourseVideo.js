@@ -23,17 +23,17 @@ const CourseVideo = () => {
       <h1 className="text-3xl my-4">{courseData?.name}</h1>
       <label
         for="my-modal-3"
-        class="text-error underline cursor-pointer text-xl modal-button"
+        className="text-error underline cursor-pointer text-xl modal-button"
       >
-        <i class="fa-solid fa-triangle-exclamation mr-3"></i>Copyright warning
+        <i className="fa-solid fa-triangle-exclamation mr-3"></i>Copyright warning
       </label>
 
-      <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-      <div class="modal text-error">
-        <div class="modal-box relative">
+      <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+      <div className="modal text-error">
+        <div className="modal-box relative">
           <label
             for="my-modal-3"
-            class="btn btn-sm btn-error btn-circle absolute right-2 top-2"
+            className="btn btn-sm btn-error btn-circle absolute right-2 top-2"
           >
             ✕
           </label>

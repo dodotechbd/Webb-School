@@ -13,16 +13,16 @@ const SkillBook = ({skillbook}) => {
                 <figure  className="px-12 pt-4">
                     <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
                 </figure>
-                <div class="card-body  px-2">
+                <div className="card-body  px-2">
                 <div className="card-body p-0 ] ">
-                    <h1 class="card-title pt-2">
+                    <h1 className="card-title pt-2">
                         <p className='text-xl font-bold uppercase'>{name}</p>
                     </h1>
                     <p className=''>{description}</p>
                     <p className='font-bold pb-4'>${price}</p>
                     </div>
                 </div>
-                <button  onClick={()=>navigateToAcadamicDetail(_id)} class="btn-block btn btn-primary text-white  rounded-none  position absolute bottom-0 mt-4  text-center text-xl font-bold rounded-b-lg py-2 normal-case">Detalis</button>
+                <button  onClick={()=>navigateToAcadamicDetail(_id)} className="btn-block btn btn-primary text-white  rounded-none  position absolute bottom-0 mt-4  text-center text-xl font-bold rounded-b-lg py-2 normal-case">Detalis</button>
         </div>
     );
 };

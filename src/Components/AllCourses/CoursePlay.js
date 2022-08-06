@@ -16,10 +16,10 @@ const CoursePlay = () => {
   || language.find((allcard) => allcard.uname === uname) || jobcourses.find((allcard) => allcard.uname === uname);
   return (
     <div>
-      <div class="hero bg-base-200 py-8">
-        <div class="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse items-start">
-          <div class="card rounded-md lg:w-96 w-full bg-base-300 border border-neutral">
-            <div class="card-body p-0">
+      <div className="hero bg-base-200 py-8">
+        <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse items-start">
+          <div className="card rounded-md lg:w-96 w-full bg-base-300 border border-neutral">
+            <div className="card-body p-0">
               <p className="text-lg p-3 border-b border-neutral">Course Lesson</p>
             {
               courseData?.file.map(course => <CourseLink
