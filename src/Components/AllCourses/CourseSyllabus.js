@@ -18,10 +18,10 @@ const CourseSyllabus = ({ course }) => {
     <>
       <div
         tabIndex="0"
-        class="collapse collapse-arrow border-b border-neutral px-2"
+        className="collapse collapse-arrow border-b border-neutral px-2"
       >
         <input type="checkbox" />
-        <div class="collapse-title text-lg font-medium">{course?.title}</div>
+        <div className="collapse-title text-lg font-medium">{course?.title}</div>
         <ul className="menu collapse-content gap-1">
           {course.details.map ((detail) =>
           <li key={detail.id}>
@@ -29,7 +29,7 @@ const CourseSyllabus = ({ course }) => {
             className="border border-neutral"
           >
             <p className="text-md">
-              <i class="fa-solid fa-play mr-2"></i>
+              <i className="fa-solid fa-play mr-2"></i>
               {detail?.fileName}
             </p>
           </p>

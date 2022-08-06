@@ -4,13 +4,13 @@ import img from '../../Assets/underconstruction.png'
 
 const UnderConstruction = () => {
     return (
-        <div class="text-gray-300 hero min-h-screen bg-gradient-to-l from-[#6B26D8] to-[#0F1729]">
-      <div class="hero-content flex-col justify-between lg:flex-row-reverse">
-        <img src={img} class="rounded-lg max-w-xl" />
+        <div className="text-gray-300 hero min-h-screen bg-gradient-to-l from-[#6B26D8] to-[#0F1729]">
+      <div className="hero-content flex-col justify-between lg:flex-row-reverse">
+        <img src={img} className="rounded-lg max-w-xl" />
         <div className="uppercase whitespace-nowrap text-center lg:text-left">
-          <h1 class="py-4 lg:text-5xl md:text-5xl text-4xl font-sub">Page is</h1>
-          <h1 class="lg:text-5xl md:text-4xl font-header text-3xl font-bold">Under Construction</h1>
-          <p class="text-lg py-6">
+          <h1 className="py-4 lg:text-5xl md:text-5xl text-4xl font-sub">Page is</h1>
+          <h1 className="lg:text-5xl md:text-4xl font-header text-3xl font-bold">Under Construction</h1>
+          <p className="text-lg py-6">
           
           </p>
           <Link
