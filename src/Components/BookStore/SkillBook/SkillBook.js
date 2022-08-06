@@ -1,29 +1,38 @@
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-
-const SkillBook = ({skillbook}) => {
-    const { _id, name, img, description, price } = skillbook;
-    const navigate = useNavigate();
-    const navigateToAcadamicDetail = id=>{
-     navigate(`/skillbook/${_id}`)
-     }
-    return (
-        <div className=' bg-base-100 rounded-lg position relative p-0 border border-neutral'  > 
-                <figure  className="px-12 pt-4">
-                    <img className='w-48   rounded-lg text-center px-' src={img} alt="Books" />
-                </figure>
-                <div className="card-body  px-2">
-                <div className="card-body p-0 ] ">
-                    <h1 className="card-title pt-2">
-                        <p className='text-xl font-bold uppercase'>{name}</p>
-                    </h1>
-                    <p className=''>{description}</p>
-                    <p className='font-bold pb-4'>${price}</p>
-                    </div>
-                </div>
-                <button  onClick={()=>navigateToAcadamicDetail(_id)} className="btn-block btn btn-primary text-white  rounded-none  position absolute bottom-0 mt-4  text-center text-xl font-bold rounded-b-lg py-2 normal-case">Detalis</button>
+const SkillBook = ({ skillbook }) => {
+  const { _id, name, img, description, price } = skillbook;
+  const navigate = useNavigate();
+  const navigateToAcadamicDetail = (id) => {
+    navigate(`/skillbook/${_id}`);
+  };
+  return (
+    <div
+      onClick={() => navigateToAcadamicDetail(_id)}
+      className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4"
+    >
+      <figure>
+        <img
+          className="mx-auto mt-4 w-48 rounded-lg text-center"
+          src={img}
+          alt="Books"
+        />
+      </figure>
+      <div className="card-body p-0">
+        <div className="card-body p-4">
+          <h1>
+            {name.length >= 18 ? (
+              <p className="text-xl font-bold">{name.slice(0, 18)}...</p>
+            ) : (
+              <p className="text-xl font-bold">{name}</p>
+            )}
+          </h1>
+          <p className="text-lg">{description}</p>
+          <p className="text-lg text-primary font-bold">৳{price}</p>
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 export default SkillBook;
