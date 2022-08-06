@@ -1,4 +1,5 @@
 import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import './Banner/Banner.css'
 const Navigation = () => {
   return (
@@ -12,7 +13,7 @@ const Navigation = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 px-3 py-3 rounded-xl">
-        <a
+        <AnchorLink
           href="#store"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -24,8 +25,8 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Book Store</span>
             </p>
           </div>
-        </a>
-        <a
+        </AnchorLink>
+        <AnchorLink
           href="#admission"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -37,8 +38,8 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Admission</span>
             </p>
           </div>
-        </a>
-        <a
+        </AnchorLink>
+        <AnchorLink
           href="#job"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -50,8 +51,8 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Job Exam</span>
             </p>
           </div>
-        </a>
-        <a
+        </AnchorLink>
+        <AnchorLink
           href="#courses"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -63,7 +64,7 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Courses</span>
             </p>
           </div>
-        </a>
+        </AnchorLink>
       </div>
       <div className="flex flex-col w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
       <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">

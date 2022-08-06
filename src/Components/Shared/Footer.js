@@ -6,7 +6,7 @@ const Footer = () => {
   const today = new Date();
   const year = today.getFullYear();
   return (
-    <div className="bg-base-300 border-t border-neutral">
+    <div className="bg-base-200 border-t border-neutral">
       <footer className="footer p-10 text-base-content">
         <div className="md:w-60">
           <Link to={"/"} className="flex items-center lg:mx-0 md:mx-0 mx-auto">

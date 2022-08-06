@@ -14,7 +14,7 @@ const Hero = () => {
             <p className="py-6 font-sans text-3xl drop-shadow-lg text-center lg:text-left">
             "If kids can be super engaged in video games, there’s a way for them to be super engaged in education as well."
             </p>
-            <div className="flex lg:mx-0 mx-auto items-center w-80 justify-between bg-gray-600 bg-opacity-40 backdrop-filter backdrop-blur-lg p-2 rounded-2xl">
+            <div className="flex lg:mx-0 mx-auto items-center w-80 justify-between bg-base-100 bg-opacity-20 backdrop-filter backdrop-blur-lg p-2 rounded-2xl">
               <p>Start Your Learning</p>
               <div className="flex">
               <i className="btn btn-accent btn-circle btn-sm text-white shadow-lg mr-2 fa-solid fa-arrow-right-long"></i>
