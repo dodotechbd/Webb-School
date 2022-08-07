@@ -9,6 +9,7 @@ import CountUp from 'react-countup';
 
 
 const Review = () => {
+    // React CountUp Add
     const [counter, setCounter] = useState(0);
     useEffect(() => {
         const interval = setInterval(() => {
