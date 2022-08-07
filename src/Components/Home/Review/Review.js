@@ -20,7 +20,7 @@ const Review = () => {
     }, []);
     return (
         <div className='py-16 bg-base-100 border-b border-neutral'>
-            <h2 className='lg:text-4xl md:text-3xl text-2xl uppercase font-sub font-bold text-center'>Our Achievement</h2>
+            <h2 className='lg:text-4xl md:text-3xl text-2xl font-sub font-bold text-center'>OUR ACHIEVEMENT</h2>
 
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row">
@@ -34,7 +34,7 @@ const Review = () => {
                                         <h1 className='-600 text-lg lg:text-4xl mt-2'>
                                             <CountUp
                                                 duration={5} start={0} end={350} />+</h1>
-                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'> Teachers</h1>
+                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Teachers</h1>
                                     </div>
                                 </div>
                             </section>
@@ -56,7 +56,7 @@ const Review = () => {
                                     <img className='lg:w-18' src={image4} alt="" />
                                     <div className='lg:ml-4 ml-2'>
                                         <h1 className='-600 text-lg lg:text-4xl mt-2'><CountUp start={0} end={2000} duration={5} />+</h1>
-                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Users </h1>
+                                        <h1 className='text-gray-500 lg:text-lg text-sm text-center'>Users</h1>
                                     </div>
                                 </div>
                             </section>
