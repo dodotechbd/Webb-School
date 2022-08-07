@@ -1,5 +1,4 @@
 import React from 'react';
-
 const Manage = () => {
     return (
         <div>
@@ -7,5 +6,4 @@ const Manage = () => {
         </div>
     );
 };
-
 export default Manage;

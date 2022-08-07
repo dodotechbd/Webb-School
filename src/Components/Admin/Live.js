@@ -1,8 +1,7 @@
 import React from 'react';
-
 const Live = () => {
-    return (
-        <div>
+  return (
+    <div>
       <div class="hero bg-base-100">
         <div class="">
           <div class="text-center my-10">
@@ -38,7 +37,6 @@ const Live = () => {
         </div>
       </div>
     </div>
-    );
+  );
 };
-
 export default Live;
