@@ -49,24 +49,24 @@ const Login = () => {
 
   return (
     <div >
-      <div class="flex items-center min-h-screen p-4  lg:justify-center">
+      <div className="flex items-center min-h-screen p-4  lg:justify-center">
         <div
-          class="flex flex-col overflow-hidden mx-auto bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md drop-shadow-2xl"
+          className="flex flex-col overflow-hidden mx-auto bg-white rounded-md shadow-lg max md:flex-row md:flex-1 lg:max-w-screen-md drop-shadow-2xl"
         >
           <div
-            class="hidden p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
+            className="hidden p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
           >
             <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="" />
           </div>
-          <div class="p-5 bg-white md:flex-1">
-            <h3 class="my-4 text-3xl font-bold text-primary text-center ">Login</h3>
-            <form onSubmit={handleSubmit(onSubmit)} action="#" class="flex flex-col space-y-5">
-              <div class="flex flex-col space-y-1">
-                <label for="email" class="text-sm font-semibold text-gray-900">Email</label>
+          <div className="p-5 bg-white md:flex-1">
+            <h3 className="my-4 text-3xl font-bold text-primary text-center ">Login</h3>
+            <form onSubmit={handleSubmit(onSubmit)} action="#" className="flex flex-col space-y-5">
+              <div className="flex flex-col space-y-1">
+                <label for="email" className="text-sm font-semibold text-gray-900">Email</label>
                 <input
                   type="email"
                   placeholder="Email"
-                  className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                  className="px-4 py-2 transition duration-300 border border-gray-300 text-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                   {...register("email", {
                     required: {
                       value: true,
@@ -83,15 +83,15 @@ const Login = () => {
 
                 </label>
               </div>
-              <div class="flex flex-col space-y-1">
-                <div class="flex items-center justify-between">
-                  <label for="password" class="text-sm font-semibold text-gray-900">Password</label>
-                  <a href="#" class="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</a>
+              <div className="flex flex-col space-y-1">
+                <div className="flex items-center justify-between">
+                  <label for="password" className="text-sm font-semibold text-gray-900">Password</label>
+                  <a href="#" className="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</a>
                 </div>
                 <input
                   type="password"
                   placeholder="Password"
-                  className="px-4 py-2 transition duration-300 border border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
+                  className="px-4 py-2 transition duration-300 border border-gray-300  text-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
                   {...register("password", {
                     required: {
                       value: true,
@@ -108,33 +108,33 @@ const Login = () => {
 
                 </label>
               </div>
-              <div class="flex items-center space-x-2">
+              <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
                   id="remember"
-                  class="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
+                  className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
                 />
-                <label for="remember" class="text-sm font-semibold text-gray-900">Remember me</label>
+                <label for="remember" className="text-sm font-semibold text-gray-900">Remember me</label>
               </div>
               <div>
                 {singInError}
                 <button
                   type="submit"
-                  class="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
+                  className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
                   Log in
                 </button>
                 <p className='text-  text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
               </div>
-              <div class="flex flex-col space-y-5">
-                <span class="flex items-center justify-center space-x-2">
-                  <span class="h-px bg-gray-400 w-14"></span>
-                  <span class="font-normal text-gray-500">or login with</span>
-                  <span class="h-px bg-gray-400 w-14"></span>
+              <div className="flex flex-col space-y-5">
+                <span className="flex items-center justify-center space-x-2">
+                  <span className="h-px bg-gray-400 w-14"></span>
+                  <span className="font-normal text-gray-500">or login with</span>
+                  <span className="h-px bg-gray-400 w-14"></span>
                 </span>
-                <div class="flex flex-col space-y-4">
-                  <button onClick={() => signInWithGoogle()} class="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black">
-                    <img src="https://www.svgrepo.com/show/355037/google.svg" class="w-6 h-6" alt="" /> <span>Login with Google</span>
+                <div className="flex flex-col space-y-4">
+                  <button onClick={() => signInWithGoogle()} className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black">
+                    <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="" /> <span>Login with Google</span>
                   </button>
 
                 </div>

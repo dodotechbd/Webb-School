@@ -14,11 +14,11 @@ const Course = ({ course }) => {
         <div className="card-body p-0">
           <p className="text-2xl px-7 pt-4 font-header">{name}</p>
           <div className="px-7 text-lg font-sub">
-          <p><i class="fa-solid fa-house-signal"></i> 400 live classes, with model tests</p>
-          <p><i class="fa-solid fa-circle-play"></i> Class duration: 8 months</p>
+          <p><i className="fa-solid fa-house-signal"></i> 400 live classes, with model tests</p>
+          <p><i className="fa-solid fa-circle-play"></i> Class duration: 8 months</p>
           </div>
           <p className="text-2xl font-sub px-7"><span className="text-xl line-through">৳1200 </span>৳{price}</p>
-          <button class="border-t border-neutral p-2 text-lg">
+          <button className="border-t border-neutral p-2 text-lg">
             Enroll Course
           </button>
         </div>
