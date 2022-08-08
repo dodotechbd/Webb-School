@@ -2,12 +2,9 @@ import React, { useEffect, useState } from "react";
 import useAdmission from "../../Hooks/useAdmission";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
-
 const AllAdmission = () => {
   const [admission, setAdmission] = useAdmission();
-
   const [loading, setLoading] = useState(false);
-
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {

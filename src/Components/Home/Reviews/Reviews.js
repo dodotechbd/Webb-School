@@ -27,15 +27,12 @@ const Reviews = () => {
       <Swiper
         slidesPerView={3}
         slidesPerGroup={1}
-        spaceBetween={30}
         centeredSlides= {true}
-        roundLengths= {true}
         loop={true}
         pagination={{
           el: '.my-custom-pagination-div',
           clickable: true,
         }}
-        loopFillGroupWithBlank={true}
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
@@ -58,10 +55,12 @@ const Reviews = () => {
           "@1.25": {
             slidesPerView: 3,
             spaceBetween: 1,
+            removeClippedSubviews: false,
           },
           "@1.50": {
             slidesPerView: 3,
             spaceBetween: 1,
+            removeClippedSubviews: false,
           },
         }}
         modules={[Pagination]}

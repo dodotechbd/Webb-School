@@ -1,18 +1,13 @@
 .swiper {
-  position: relative;
   width: 100%;
   height: 100%;
-}
-.swiper > .swiper-slide__content {
-  position: absolute;
-  top: 0;
 }
 
 .swiper-slide {
   text-align: center;
   font-size: 18px;
   transition: all 400ms linear;
-  transform: scale(1);
+
   /* Center slide text vertically */
   display: -webkit-box;
   display: -ms-flexbox;
