@@ -5,10 +5,10 @@ const Instructor = () => {
         <div>
              <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="mx-auto mb-10 lg:max-w-xl sm:text-center">
-        <p className="inline-block px-3 py-px mb-4 font-semibold tracking-wider uppercase rounded-full bg-teal-accent-400 text-3xl">
+        <p className="inline-block px-3 py-px mb-4  font-semibold tracking-wider uppercase rounded-full bg-teal-accent-400 text-3xl">
           Our Instructors
         </p>
-        <p className="text-base md:text-lg">
+        <p className="text-base md:text-lg ">
         Teaching is the one profession that creates all other professions..
         </p>
       </div>
@@ -100,6 +100,19 @@ const Instructor = () => {
             <p className="text-lg font-bold ">Benedict Caro</p>
             <p className="text-sm text-center">Web Development Instructor</p>
           </div>
+        </div>
+        <div className="hidden md:block lg:hidden">
+        <div className="  flex flex-col items-center">
+          <img
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
+            src="https://i.postimg.cc/qRHmzsv1/waist-up-portrait-handsome-serious-unshaven-male-keeps-hands-together-dressed-dark-blue-shirt-has-ta.jpg"
+            alt="Person"
+          />
+          <div className="flex flex-col items-center">
+            <p className="text-lg font-bold ">Jonny dep</p>
+            <p className="text-sm text-center">Social Marketing Manager</p>
+          </div>
+        </div>
         </div>
       </div>
     </div>
