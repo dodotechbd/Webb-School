@@ -49,7 +49,7 @@ module.exports = {
           warning: "#E2E8F0",
           "base-100": "#0f1729",
           "base-200": "#162032",
-          "base-300": "#1e293b",
+          "base-300": "#1E293B",
         },
       },
       "light",
