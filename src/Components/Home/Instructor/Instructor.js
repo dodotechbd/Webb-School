@@ -15,7 +15,7 @@ const Instructor = () => {
       <div className="grid grid-cols-2 gap-10 mx-auto md:grid-cols-3 lg:max-w-screen-lg  lg:grid-cols-4">
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
             alt="Person"
           />
@@ -26,7 +26,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt="Person"
           />
@@ -37,7 +37,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt="Person"
           />
@@ -48,7 +48,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/3747435/pexels-photo-3747435.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt="Person"
           />
@@ -59,7 +59,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/3785077/pexels-photo-3785077.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500"
             alt="Person"
           />
@@ -70,7 +70,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/3931603/pexels-photo-3931603.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt="Person"
           />
@@ -81,7 +81,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/774909/pexels-photo-774909.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260"
             alt="Person"
           />
@@ -92,7 +92,7 @@ const Instructor = () => {
         </div>
         <div className="flex flex-col items-center">
           <img
-            className="object-cover w-20 h-20 mb-2 rounded-full shadow"
+            className="object-cover w-20 h-20 mb-2 rounded-full shadow ring-2 hover:ring-4"
             src="https://images.pexels.com/photos/3931553/pexels-photo-3931553.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
             alt="Person"
           />
