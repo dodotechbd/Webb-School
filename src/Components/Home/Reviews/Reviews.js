@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import ReviewCard from "./ReviewCard";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { Autoplay } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import "../Banner/Banner.css";
+import "./Review.css";
 
 // import required modules
 import { Pagination } from "swiper";
@@ -27,53 +26,47 @@ const Reviews = () => {
       </p>
       <Swiper
         slidesPerView={3}
-        spaceBetween={30}
-        slidesPerGroup={3}
+        slidesPerGroup={1}
+        centeredSlides= {true}
         loop={true}
         pagination={{
           el: '.my-custom-pagination-div',
           clickable: true,
         }}
-        loopFillGroupWithBlank={true}
         breakpoints={{
           "@0.00": {
             slidesPerView: 1,
-            slidesPerGroup: 1,
           },
           "@0.25": {
             slidesPerView: 1,
-            slidesPerGroup: 1,
           },
           "@0.60": {
             slidesPerView: 2,
             spaceBetween: 1,
-            slidesPerGroup: 2,
           },
           "@0.75": {
             slidesPerView: 2,
             spaceBetween: 1,
-            slidesPerGroup: 2,
           },
           "@1.00": {
             slidesPerView: 2,
-            spaceBetween: 2,
-            slidesPerGroup: 2,
+            spaceBetween: 1,
           },
           "@1.25": {
             slidesPerView: 3,
             spaceBetween: 1,
-            slidesPerGroup: 3,
+            removeClippedSubviews: false,
           },
           "@1.50": {
             slidesPerView: 3,
             spaceBetween: 1,
-            slidesPerGroup: 3,
+            removeClippedSubviews: false,
           },
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-12">
+        <div className="mx-auto">
           {courses.map((course) => (
             <SwiperSlide>
               <ReviewCard key={course._id} course={course}></ReviewCard>
