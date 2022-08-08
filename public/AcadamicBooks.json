@@ -1,6 +1,5 @@
 [
     {
-        "_id": 1,
         "name": "IELTS 11 ACADAMIC",
         "pages":"772",
         "format":"PDF",
@@ -20,7 +19,6 @@
         "price": "90"
     },
     {
-        "_id": 2,
         "name": "PTE  ACADAMIC",
         "pages":"772",
         "format":"PDF",
@@ -40,7 +38,6 @@
         "price": "70"
     },
     {
-        "_id": 3,
         "name": "ACADAMIC ENGLISH GRAMMAR",
         "pages":"772",
         "format":"PDF",
@@ -60,7 +57,6 @@
         "price": "110"
     },
     {
-        "_id": 4,
         "name": "ACADAMIC ENGLISH",
         "pages":"772",
         "format":"PDF",
@@ -80,7 +76,6 @@
         "price": "110"
     },
     {
-        "_id":5 ,
         "name": "MCQ BOSTER",
         "pages":"772",
         "format":"PDF",
@@ -100,7 +95,6 @@
         "price": "87"
     },
     {
-        "_id":6 ,
         "name": "STARGIC MANAGEMENT",
         "pages":"772",
         "format":"PDF",
@@ -120,7 +114,6 @@
         "price": "110"
     },
     {
-        "_id":7 ,
         "name": "ENGLISH WRITTING",
         "pages":"772",
         "format":"PDF",
@@ -133,14 +126,13 @@
         "description": "Tasmia Esika",
         "details": "Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant. Improve grammar, word choice, and sentence structure in your writing. It's free! Grammarly Can Help You Write Polished, Effective Book Reports Every Time. Fix Punctuation Errors. Find and Add Sources Fast. Easily Improve Any Text. AI Writing Assistant. ",
         "img": "https://i.ibb.co/qjL1wfk/ab10.gif",
-        "img1":"",
+        "img1":"https://i.ibb.co/n65NtF5/Md-Badsa.png",
         "img2":"https://i.ibb.co/5xP8DHC/satu.jpg",
         "img3":"https://i.ibb.co/3Rdcq3X/safi.jpg",
         "img4":"https://i.ibb.co/L6TvvPb/Amit.jpg",
         "price": "110"
     },
     {
-        "_id":8 ,
         "name": "IIM INDORE",
         "pages":"772",
         "format":"PDF",
