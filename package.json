@@ -16,6 +16,8 @@
     "daisyui": "^2.19.0",
     "firebase": "^9.9.1",
     "react": "^18.2.0",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
+    "react-countup": "^6.3.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.0.3",
     "react-hook-form": "^7.33.1",
@@ -24,6 +26,7 @@
     "react-modern-drawer": "^1.1.2",
     "react-player": "^2.10.1",
     "react-router-dom": "^6.3.0",
+    "react-router-scroll-top": "^0.3.1",
     "react-scripts": "5.0.1",
     "react-spinners": "^0.13.4",
     "react-tabs": "^5.1.0",
@@ -61,4 +64,3 @@
     "tailwindcss": "^3.1.6"
   }
 }
-
