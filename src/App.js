@@ -34,6 +34,8 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
+import Books from "./Components/Admin/Books";
+import AddBlogs from "./Components/Admin/AddBlogs";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -98,9 +100,11 @@ function App() {
         {/* admim */}
         <Route path="/admin" element={<Admin></Admin>}>
           <Route path="/admin" element={<Admins></Admins>}></Route>
-          <Route path="/admin/manage" element={<Manage></Manage>}></Route>
+          <Route path="/admin/courses" element={<Manage></Manage>}></Route>
+          <Route path="/admin/books" element={<Books></Books>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/live" element={<Live></Live>}></Route>
+          <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>
