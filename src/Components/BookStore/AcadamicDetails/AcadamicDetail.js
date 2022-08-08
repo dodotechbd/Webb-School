@@ -5,7 +5,7 @@ const AcadamicDetail = () => {
     const { acadamicbookId } = useParams();
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch("/AcadamicBooks.json")
+        fetch("http://localhost:5000/AcadamicBook")
             .then(res => res.json())
             .then(data => setService(data))
     }, [])

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const AcadamicModal = () => {
+const AcadamicModal = ({book}) => {
     return (
         <div>
 
