@@ -4,7 +4,7 @@ const useAdmission = () => {
     const [admission, setAdmission] = useState([]);
 
     useEffect(() => {
-        fetch(`/admission.json`)
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`)
             .then(res => res.json())
             .then(data => setAdmission(data));
     }, [])

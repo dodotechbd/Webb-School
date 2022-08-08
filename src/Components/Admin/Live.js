@@ -3,10 +3,6 @@ const Live = () => {
   return (
     <div>
       <div class="hero bg-base-100">
-        <div class="">
-          <div class="text-center my-10">
-            <h1 class="text-3xl font-bold">Post Live Class <i class="fa-solid fa-video text-error"></i></h1>
-            <div>
               <div className="hero bg-base-100">
                 <div className="">
                   <div className="text-center my-10">
@@ -43,9 +39,6 @@ const Live = () => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
   );
 };
 export default Live;
