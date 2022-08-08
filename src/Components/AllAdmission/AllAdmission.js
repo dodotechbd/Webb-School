@@ -17,11 +17,11 @@ const AllAdmission = () => {
   }
 
   return (
-    <div id="admission">
+    <div>
       <div className="lg:mx-8 mx-4 pt-10">
         <h1 className="text-3xl pb-5 ">Prepare For The Admission</h1>
         <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
-          {admission.slice(0, 4).map((allcard) => (
+          {admission.map((allcard) => (
             <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
           ))}
         </div>

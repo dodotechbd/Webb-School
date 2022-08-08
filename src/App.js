@@ -120,7 +120,10 @@ function App() {
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
-        <Route path="/coming" element={<UnderConstruction></UnderConstruction>}></Route>
+        <Route
+          path="/coming"
+          element={<UnderConstruction></UnderConstruction>}
+        ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <FooterTwo></FooterTwo>
