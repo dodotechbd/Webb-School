@@ -4,7 +4,7 @@ const useJobCourses = () => {
     const [jobcourses, setJobcourses] = useState([]);
 
     useEffect(() => {
-        fetch(`/job.json`)
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/job`)
             .then(res => res.json())
             .then(data => setJobcourses(data));
     }, [])
