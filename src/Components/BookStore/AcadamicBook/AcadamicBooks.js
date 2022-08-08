@@ -5,7 +5,7 @@ import AcadamicBook from '../AcadamicBook/AcadamicBook';
 const AcadamicBooks = () => {
     const [acadamicbooks, setAcadamicBooks] = useState([]);
     useEffect(() => {
-        fetch("AcadamicBooks.json")
+        fetch("http://localhost:5000/AcadamicBook")
             .then(res => res.json())
             .then(data => setAcadamicBooks(data));
     })
