@@ -14,7 +14,7 @@ const AddBlogs = () => {
             <div>
                 <h1 className='text-2xl text-center my-10'>Add Your Blog</h1>
             </div>
-            <div>
+            <div className='text-center'>
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <input
@@ -31,8 +31,8 @@ const AddBlogs = () => {
                     <textarea
 
                         type="TextField"
-                        placeholder="blogs title"
-                        class="input input-bordered w-full max-w-xs"
+                        placeholder="blog Descriptions"
+                        class="input input-bordered w-full max-w-xs mt-3"
                         {...register("TextField", {
                             required: {
                                 value: true,
