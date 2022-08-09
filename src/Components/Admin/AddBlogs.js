@@ -41,8 +41,15 @@ const AddBlogs = () => {
                         })}
 
                     /> <br />
+                    <input
+                        placeholder='Img URL'
+                        className='input input-bordered w-full max-w-xs mt-3'
+                        type="text" {...register("img")}
 
-                    <input type="submit" className='btn' />
+                    /><br />
+
+
+                    <input type="submit" className='btn w-36 mt-3' />
 
                 </form>
             </div>
