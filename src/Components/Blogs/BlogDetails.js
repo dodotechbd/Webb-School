@@ -51,7 +51,7 @@ const BlogDetails = () => {
                     <div class="card-body">
                         <h2 class="card-title">Recent Post</h2>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/18'>Best Way to learn code and empliment this</a></p>
-                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/16'>Best practice for writing code comments</a></p>
+                        <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/16'>Best practice for writing code comment</a></p>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/15'>Why JavaScript Is Still So Important for Web Development?</a></p>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/77'>What Is MongoDB and How Does It Work?</a></p>
                         <p><i class="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/9'>why importent learning react ja and Easy?</a></p>
