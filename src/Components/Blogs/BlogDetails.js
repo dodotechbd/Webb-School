@@ -58,7 +58,7 @@ const BlogDetails = () => {
                         <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/11'>Why Excellent Node.js for BackEnd site.?</a></p>
                         <div className="card w-11/12 lg:w-96 bg-base-100 shadow-xl">
                             <div className="card-body">
-                                <h2 className="card-title">Recent Post</h2>
+                                <h2 className="card-title">RECENT POST</h2>
                                 <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/18'>Best Way to learn code and empliment this</a></p>
                                 <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/16'>Best practice for writing code comments</a></p>
                                 <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/15'>Why JavaScript Is Still So Important for Web Development?</a></p>
