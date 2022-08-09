@@ -5,10 +5,6 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
 
-
-
-
-
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
@@ -40,12 +36,13 @@ const Login = () => {
     navigate(from, { replace: true });
   }
 
-  const onSubmit = data => {
+  const onSubmit = async data => {
+    data.preventDefault();
     console.log(data)
-    signInWithEmailAndPassword(data.email, data.password)
+    await signInWithEmailAndPassword(data.email, data.password);
+    const { value } = await
+      console.log(value)
   }
-
-
 
   return (
     <div >
