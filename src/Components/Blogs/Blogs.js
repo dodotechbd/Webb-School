@@ -19,7 +19,7 @@ const Blogs = () => {
                     blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
                 }
             </div>
-            
+
         </div>
     );
 };
