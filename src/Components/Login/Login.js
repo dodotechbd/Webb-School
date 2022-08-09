@@ -46,11 +46,11 @@ const Login = () => {
   // console.log(value)
   // }
 
-  const onSubmit = async data => {
+  const onSubmit = data => {
     console.log(data)
-    await signInWithEmailAndPassword(data.email, data.password);
-    const { value } = await axios.post('http://localhost:5000/login', {})
-    console.log(value)
+    signInWithEmailAndPassword(data.email, data.password);
+    // const { value } = await axios.post('http://localhost:5000/login', {})
+    // console.log(value)
   }
 
   return (
