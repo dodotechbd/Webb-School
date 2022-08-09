@@ -3,7 +3,9 @@ import React from 'react';
 const AddBlogs = () => {
     return (
         <div>
-            blogs
+            <div>
+                <h1 className='text-2xl text-center my-10'>Add Your Blog</h1>
+            </div>
         </div>
     );
 };
