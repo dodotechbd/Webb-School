@@ -12,11 +12,10 @@ import Hero from "./Hero/Hero";
 import Promotional from "./Promotional";
 import Question from "./Question/Question";
 import Instructor from "./Instructor/Instructor";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 
 const Home = () => {
   return (
-    <div id="top">
+    <div>
       <Hero></Hero>
       <Navigation></Navigation>
       <Banner></Banner>
@@ -29,7 +28,7 @@ const Home = () => {
       <Promotional></Promotional>
       <Instructor></Instructor>
       <Question></Question>
-      <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-lg opacity-70'><i class="fa-solid fa-arrow-up-long"></i></AnchorLink>
+      
       {/* messenger chat */}
       <MessengerCustomerChat
         pageId="101878912628102" appId="3150275291906230"

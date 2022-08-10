@@ -3,7 +3,7 @@ import "./App.css";
 
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-import Live from "./Components/Admin/Live";
+import Live from "./Components/Admin/LivePost/Live";
 import Manage from "./Components/Admin/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
@@ -100,7 +100,7 @@ function App() {
           <Route path="/admin" element={<Admins></Admins>}></Route>
           <Route path="/admin/manage" element={<Manage></Manage>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
-          <Route path="/admin/live" element={<Live></Live>}></Route>
+          <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>

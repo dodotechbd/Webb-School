@@ -60,7 +60,7 @@ const Admin = () => {
               <NavLink to={"/admin/post"}><i className="fa-solid fa-folder-plus"></i>Post Courses</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
+              <NavLink to={"/admin/LivePost/Live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/users"}><i className="fa-solid fa-users"></i>Users</NavLink>
@@ -68,6 +68,7 @@ const Admin = () => {
             <li>
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
             </li>
+            
           </ul>
         </div>
       </div>

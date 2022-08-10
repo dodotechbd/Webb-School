@@ -36,7 +36,7 @@ const Login = () => {
   }
 
   if (user || gUser) {
-    console.log(user)
+    console.log(user,gUser)
     navigate(from, { replace: true });
   }
 
