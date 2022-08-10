@@ -5,7 +5,7 @@ const AcadamicDetail = () => {
     const { acadamicbookId } = useParams();
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch("http://localhost:5000/AcadamicBook")
+        fetch("https://rocky-escarpment-87440.herokuapp.com/AcadamicBook")
             .then(res => res.json())
             .then(data => setService(data))
     }, [])
