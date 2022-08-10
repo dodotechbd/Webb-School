@@ -9,6 +9,7 @@
     "@fortawesome/react-fontawesome": "^0.2.0",
     "@splidejs/react-splide": "^0.7.8",
     "@splidejs/splide-extension-auto-scroll": "^0.4.2",
+    "@sweetalert2/theme-borderless": "^5.0.11",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -34,6 +35,8 @@
     "react-spinners": "^0.13.4",
     "react-tabs": "^5.1.0",
     "reactjs-video-playlist-player": "^1.1.1",
+    "sweetalert": "^2.1.2",
+    "sweetalert2": "^11.4.26",
     "swiper": "^8.3.1",
     "web-vitals": "^2.1.4"
   },
