@@ -1,8 +1,8 @@
 import React from "react";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import axios from "axios";
 
-const LanguageCard = ({ allcard, deleteItem, refetch }) => {
+const AdmissionCard = ({ allcard, deleteItem, refetch }) => {
   const { _id } = allcard;
 
   const deleteItems = (id) => {
@@ -12,13 +12,13 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
       icon: "warning",
       className: "rounded-xl",
       buttons: ["Cancle", "Yes, delete it!"],
-      confirmButtonColor: '#000000',
+      confirmButtonColor: "#000000",
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
         (async () => {
           const { data } = await axios.delete(
-            `https://rocky-escarpment-87440.herokuapp.com/language/${id}`
+            `https://rocky-escarpment-87440.herokuapp.com/admission/${id}`
           );
           if (data.deletedCount > 0) {
             swal("The course has been successfully deleted", {
@@ -31,7 +31,7 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
         })();
       } else {
         swal("Action Canclled", {
-          icon: 'success',
+          icon: "success",
           className: "rounded-xl",
         });
       }
@@ -67,4 +67,4 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
   );
 };
 
-export default LanguageCard;
+export default AdmissionCard;

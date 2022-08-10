@@ -36,6 +36,9 @@ import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
 import Books from "./Components/Admin/Books";
 import AddBlogs from "./Components/Admin/AddBlogs";
+import Language from "./Components/Admin/Courses/Language";
+import Job from "./Components/Admin/Courses/Job";
+import Admission from "./Components/Admin/Courses/Admission";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -100,7 +103,20 @@ function App() {
         {/* admim */}
         <Route path="/admin" element={<Admin></Admin>}>
           <Route path="/admin" element={<Admins></Admins>}></Route>
-          <Route path="/admin/courses" element={<Manage></Manage>}></Route>
+          <Route path="/admin/courses" element={<Manage></Manage>}>
+            <Route
+              path="/admin/courses/language"
+              element={<Language></Language>}
+            ></Route>
+            <Route
+              path="/admin/courses/job"
+              element={<Job></Job>}
+            ></Route>
+            <Route
+              path="/admin/courses/admission"
+              element={<Admission></Admission>}
+            ></Route>
+          </Route>
           <Route path="/admin/books" element={<Books></Books>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/live" element={<Live></Live>}></Route>
