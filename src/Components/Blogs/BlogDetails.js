@@ -11,8 +11,6 @@ const BlogDetails = () => {
     }, [])
 
     const newBlogs = blogs.filter(blog => blog._id == detailsId)
-    console.log(newBlogs);
-
 
     return (
         <div className='grid lg:grid-cols-3 grid-cols-1 lg:px-20 my-2 lg:my-20'>
