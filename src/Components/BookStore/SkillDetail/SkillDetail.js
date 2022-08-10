@@ -5,7 +5,7 @@ const SkillDetail = () => {
     const { skillbookId } = useParams();
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch("/SkillBooks.json")
+        fetch("https://rocky-escarpment-87440.herokuapp.com/SkillBooks")
             .then(res => res.json())
             .then(data => setService(data))
     }, [])

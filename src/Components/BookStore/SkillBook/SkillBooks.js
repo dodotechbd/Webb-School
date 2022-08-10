@@ -3,7 +3,7 @@ import SkillBook from '../SkillBook/SkillBook'
 const SkillBooks = () => {
     const [skillbooks, setSkillBooks] = useState([]);
     useEffect(() => {
-        fetch("SkillBooks.json")
+        fetch("https://rocky-escarpment-87440.herokuapp.com/SkillBooks")
             .then(res => res.json())
             .then(data => setSkillBooks(data));
     })
