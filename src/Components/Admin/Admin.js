@@ -57,13 +57,13 @@ const Admin = () => {
               <NavLink to={"/admin/courses"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/books"}><i class="fa-solid fa-book"></i>Manage Books</NavLink>
+              <NavLink to={"/admin/books"}><i className="fa-solid fa-book"></i>Manage Books</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/blogs"}><i class="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
+              <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/users"}><i className="fa-solid fa-users"></i>Users</NavLink>
