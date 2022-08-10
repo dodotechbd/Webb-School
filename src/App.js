@@ -4,7 +4,7 @@ import "./App.css";
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
 import Live from "./Components/Admin/Live";
-import Manage from "./Components/Admin/Manage";
+import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
 import Users from "./Components/Admin/Users";
