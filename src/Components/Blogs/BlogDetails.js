@@ -1,9 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import useBlogs from '../../Hooks/useBlogs';
 
 const BlogDetails = () => {
     const { detailsId } = useParams();
     const [blogs, setBlogs] = useState([]);
+
+    const [blog,setBlog] = useBlogs(detailsId); //hook codes this
+
     useEffect(() => {
         fetch("http://localhost:5000/blogs")
             .then(res => res.json())
