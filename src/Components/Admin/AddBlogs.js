@@ -6,6 +6,20 @@ const AddBlogs = () => {
 
     const onSubmit = data => {
 
+        const url = `http://localhost:3000/blogs`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-type': 'application/json'
+            },
+
+            body: JSON.stringify(data)
+        })
+            .then(res => res.json())
+            .then(data => {
+                alert("data", data)
+            })
+
         console.log(data);
     }
 
