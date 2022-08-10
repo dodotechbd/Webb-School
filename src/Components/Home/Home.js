@@ -29,7 +29,7 @@ const Home = () => {
       <Promotional></Promotional>
       <Instructor></Instructor>
       <Question></Question>
-      <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-lg opacity-70'><i class="fa-solid fa-arrow-up-long"></i></AnchorLink>
+      <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-lg opacity-70'><i className="fa-solid fa-arrow-up-long"></i></AnchorLink>
       {/* messenger chat */}
       <MessengerCustomerChat
         pageId="101878912628102" appId="3150275291906230"
