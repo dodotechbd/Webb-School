@@ -5,7 +5,7 @@ import LanguageCard from "./LanguageCard";
 
 const Language = () => {
     const [course, setCourse] = useState();
-  const { data: language, isLoading } = useQuery(["languageCourse"], () =>
+  const { data: language, isLoading, refetch } = useQuery(["languageManage"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
       res.json()
     )
@@ -20,7 +20,7 @@ const Language = () => {
         <h1 className="text-3xl pb-5 ">Language Learning</h1>
         <div className="grid sm:grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mb-10">
           {language?.map((allcard) => (
-            <LanguageCard deleteItem={deleteItem} key={allcard._id} allcard={allcard}></LanguageCard>
+            <LanguageCard deleteItem={deleteItem} key={allcard._id} allcard={allcard} refetch={refetch}></LanguageCard>
           ))}
         </div>
       </div>
