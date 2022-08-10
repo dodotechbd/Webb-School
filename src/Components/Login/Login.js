@@ -4,10 +4,7 @@ import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-fireba
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
-
-
-
-
+import axios from 'axios';
 
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
@@ -36,16 +33,25 @@ const Login = () => {
   }
 
   if (user || gUser) {
-    console.log(user)
+    console.log(user, gUser)
     navigate(from, { replace: true });
   }
 
+  // const handleSubmit = async event => {
+  //   event.preventDefault();
+  //   const email = emailRef.current.value;
+  //   const password = passwordRef.current.value;
+  //   await signInWithEmailAndPassword(email, password);
+  //const { value } = await axios.post('http://localhost:5000/login',{email})
+  // console.log(value)
+  // }
+
   const onSubmit = data => {
     console.log(data)
-    signInWithEmailAndPassword(data.email, data.password)
+    signInWithEmailAndPassword(data.email, data.password);
+    // const { value } = await axios.post('http://localhost:5000/login', {})
+    // console.log(value)
   }
-
-
 
   return (
     <div >
