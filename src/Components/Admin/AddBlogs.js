@@ -17,8 +17,6 @@ const AddBlogs = () => {
         })
             .then(res => res.json())
             .then(data => {
-                // window.alert('successfully Review add');
-                // window.location.reload();
                 console.log(data);
             })
 
