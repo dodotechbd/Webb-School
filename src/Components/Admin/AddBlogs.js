@@ -25,7 +25,7 @@ const AddBlogs = () => {
     return (
         <div>
             <div>
-                <h1 className='text-2xl text-center my-10'>Add Your Blog</h1>
+                <h1 className='text-2xl text-center my-10'>Add Your Blogs</h1>
             </div>
             <div className='text-center'>
                 <form onSubmit={handleSubmit(onSubmit)}>
