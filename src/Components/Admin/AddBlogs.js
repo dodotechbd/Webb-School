@@ -5,8 +5,8 @@ const AddBlogs = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-
-        const url = `http://localhost:3000/blogs`;
+        console.log("hello", data);
+        const url = `http://localhost:5000/blogs`;
         fetch(url, {
             method: 'POST',
             headers: {
@@ -17,10 +17,11 @@ const AddBlogs = () => {
         })
             .then(res => res.json())
             .then(data => {
-                alert("data", data)
+                // window.alert('successfully Review add');
+                // window.location.reload();
+                console.log(data);
             })
 
-        console.log(data);
     }
 
     return (
@@ -35,7 +36,7 @@ const AddBlogs = () => {
                         type="text"
                         placeholder="blogs title"
                         class="input input-bordered w-full max-w-xs"
-                        {...register("text", {
+                        {...register("title", {
                             required: {
                                 value: true,
                                 message: "blogs Is Required"
@@ -47,7 +48,7 @@ const AddBlogs = () => {
                         type="TextField"
                         placeholder="blog Descriptions"
                         class="input input-bordered w-full max-w-xs mt-3"
-                        {...register("TextField", {
+                        {...register("description", {
                             required: {
                                 value: true,
                                 message: "TextField Is Required"
