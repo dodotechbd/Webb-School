@@ -4,7 +4,7 @@ const useVideo = () => {
     const [video, setVideo] = useState([]);
 
     useEffect(() => {
-        fetch(`/video.json`)
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/videos`)
             .then(res => res.json())
             .then(data => setVideo(data));
     }, [])

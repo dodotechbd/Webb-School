@@ -5,7 +5,7 @@ import AcadamicBook from '../AcadamicBook/AcadamicBook';
 const AcadamicBooks = () => {
     const [acadamicbooks, setAcadamicBooks] = useState([]);
     useEffect(() => {
-        fetch("AcadamicBooks.json")
+        fetch("https://rocky-escarpment-87440.herokuapp.com/AcadamicBook")
             .then(res => res.json())
             .then(data => setAcadamicBooks(data));
     })

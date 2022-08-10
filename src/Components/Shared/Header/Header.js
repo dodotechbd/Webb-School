@@ -42,7 +42,7 @@ const Header = ({ handleThemeChange, theme }) => {
         <NavLink to="blogs">Blog</NavLink>
       </li>
       <li>
-        <NavLink to="admin/manage">Admin</NavLink>
+        <NavLink to="admin/courses">Admin</NavLink>
       </li>
     </>
   );
@@ -81,7 +81,7 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
                 <li>
-                  <NavLink to="admin/manage">Admin</NavLink>
+                  <NavLink to="admin/courses">Admin</NavLink>
                 </li>
               </ul>
               <li>
@@ -208,31 +208,31 @@ const Header = ({ handleThemeChange, theme }) => {
             </div>
             <ul
               tabIndex="0"
-              className="mt-4 menu menu-compact bg-base-100 w-48 dropdown-content border border-neutral"
+              className="mt-4 menu menu-compact w-48 dropdown-content rounded-xl bg-base-200"
             >
               <li>
-                <NavLink to={"profile"}>
+                <NavLink to={"profile"} className='hover:rounded-t-xl hover:rounded-none'>
                   <i className="ml-4 fa-solid fa-user" />
                   Profile
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"mycourse"}>
+                <NavLink to={"mycourse"} className='hover:rounded-none'>
                   <i className="ml-4 fa-solid fa-bolt"></i>My Courses
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"dashboard"}>
+                <NavLink to={"dashboard"} className='hover:rounded-none'>
                   <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"coming"}>
+                <NavLink to={"coming"} className='hover:rounded-none'>
                   <i className="ml-4 fa-solid fa-clock"></i>Payment History
                 </NavLink>
               </li>
               <li>
-                <a onClick={logout}>
+                <a onClick={logout} className='hover:rounded-b-xl hover:rounded-none'>
                   <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                   Logout
                 </a>

@@ -1,13 +1,17 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import useVideo from "../../Hooks/useVideo";
 import ReactPlayer from "react-player";
+import { useQuery } from "react-query";
 
 const CourseVideo = () => {
   const { fileName } = useParams();
-  const [video] = useVideo([]);
+  const { data: video } = useQuery(["videoLesson"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/videos`).then(
+      (res) => res.json()
+    )
+  );
 
-  const courseData = video.find((allcard) => allcard.fileName === fileName);
+  const courseData = video?.find((allcard) => allcard.fileName === fileName);
   return (
     <div>
       <div className="lg:h-96 h-48 md:h-96 w-full">

@@ -1,42 +1,42 @@
-li a{
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
+li a {
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
 }
 li a:hover {
-    color: #ffffff;
-    background-color: #2f425c;
-    padding-left: 15px;
-    padding-right: 15px;
-    border-radius: 5px;
+  color: #ffffff;
+  background-color: #2f425c;
+  padding-left: 15px;
+  padding-right: 15px;
+  border-radius: 5px;
 }
 
 .active a {
-    color: #ffffff;
-    background-color: #2f425c;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 5px;
+  color: #ffffff;
+  background-color: #2f425c;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
 }
 
 .active a:hover {
-    color: #ffffff;
-    background-color: #2f425c;
-    padding-left: 15px;
-    padding-right: 15px;
-    padding-top: 8px;
-    padding-bottom: 8px;
-    border-radius: 5px;
+  color: #ffffff;
+  background-color: #2f425c;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  border-radius: 5px;
 }
 
 nav {
-    z-index: 10
+  z-index: 10;
 }
 
 nav.scrolled {
-    @apply shadow-2xl;
-    border-bottom: 0px;
+  @apply shadow-2xl;
+  border-bottom: 0px;
 }

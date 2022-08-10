@@ -23,7 +23,7 @@ const Question = () => {
                   How Long Will The Course Last ?
                 </summary>
 
-                <p className='p-5 text-lg shadow-lg'>
+                <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                 It will Last for six months every courses.
                 </p>
               </details>
@@ -32,7 +32,7 @@ const Question = () => {
                   How can i buy this course?
                 </summary>
 
-                <p className='p-5 text-lg shadow-lg'>
+                <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                 You can buy our course in Bkash,Master Card,any Bank Card you use.
                 </p>
               </details>
@@ -41,7 +41,7 @@ const Question = () => {
                   Who is this course for?
                 </summary>
 
-                <p className='p-5 text-lg shadow-lg'>
+                <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                   These course are for those who want to do something in future and want to learn something.
                 </p>
               </details>
@@ -52,7 +52,7 @@ const Question = () => {
                   Who are the instructors of the courses?
                 </summary>
 
-                <p className='p-5 text-lg shadow-lg'>
+                <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                 Our instructors: Tasmia, Rashel, Badsha, Shakhawth, Shafi, Amortha.
                 </p>
               </details>
@@ -61,7 +61,7 @@ const Question = () => {
                   How much support can be found in this course?
                 </summary>
 
-                <p className='p-5 text-lg shadow-lg'>
+                <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                   Until the course is completed.
                 </p>
               </details>
@@ -70,7 +70,7 @@ const Question = () => {
                   How can I communicate with you?
                 </summary>
 
-                <p className='p-5 text-lg shadow-lg'>
+                <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                   You can communicate our Email address and our Phone numbers , you can massage our website Chat system.
                 </p>
               </details>
