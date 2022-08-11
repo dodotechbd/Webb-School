@@ -25,9 +25,9 @@ const AcademicBookss = () => {
     return (
         <div className='pb-12'>
             <div>
-                <h1 className='text-2xl text-center my-10'>Add Your Books</h1>
+                <h1 className='text-3xl font-bold text-blue-600 text-center my-10'>Add Your Books</h1>
             </div>
-            <div className='p-2 w-9/12 m-auto bg-base-100 shadow-xl pb-2'>
+            <div className='p-2 w-9/12 m-auto bg-base-200 shadow-xl pb-2'>
                 <form className='' onSubmit={handleSubmit(onSubmit)}>
                     <input
                         placeholder='Books Img URL' 
