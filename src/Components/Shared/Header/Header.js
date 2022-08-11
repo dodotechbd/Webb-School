@@ -25,30 +25,32 @@ const Header = ({ handleThemeChange, theme }) => {
   };
 
   const manuItems = (
+
     <>
-      <li>
-        <NavLink to="courses">Courses</NavLink>
-      </li>
-      <li>
-        <NavLink to="bookstore">Book Store</NavLink>
-      </li>
-      <li>
-        <NavLink to="admission">Admission</NavLink>
-      </li>
-      <li>
-        <NavLink to="jobs">Jobs</NavLink>
-      </li>
-      <li>
-        <NavLink to="blogs">Blog</NavLink>
-      </li>
-      <li>
+    <li>
+      <NavLink to="courses">Courses</NavLink>
+    </li>
+    <li>
+      <NavLink to="bookstore">Book Store</NavLink>
+    </li>
+    <li>
+      <NavLink to="admission">Admission</NavLink>
+    </li>
+    <li>
+      <NavLink to="jobs">Jobs</NavLink>
+    </li>
+    <li>
+      <NavLink to="blogs">Blog</NavLink>
+    </li>
+    <li>
+
         <NavLink to="LiveClass">Live Class</NavLink>
       </li>
-      <li>
-        <NavLink to="admin/manage">Admin</NavLink>
-        <NavLink to="admin/courses">Admin</NavLink>
-      </li>
-    </>
+    <li>
+      <NavLink to="admin/courses/language">Admin</NavLink>
+    </li>
+  </>
+   
   );
   return (
     <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
@@ -85,14 +87,16 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
                 <li>
-               <NavLink to="LiveClass">Live Class</NavLink>
+
+                  <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
                 <li>
-                  <NavLink to="admin/manage">Admin</NavLink>
-                  <NavLink to="admin/courses">Admin</NavLink>
+                  <NavLink to="admin/courses/language">Admin</NavLink>
                 </li>
+
               </ul>
               <li>
+
                 {user ? (
                   <div>
                     <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">

@@ -14,11 +14,10 @@ const LiveClass = () => {
             .then(data => setLives(data.slice(0, 1)))
     }, [])
 
-
     return (
-        <div>
+        <div className='flex h-screen justify-center items-center bg-primary'>
 
-            <div class="flex h-screen  flex-col items-center justify-center space-y-6 bg-gray-100 px-4 sm:flex-row sm:space-x-6 sm:space-y-0">
+            <div class="card  w-96 bg-base-100 shadow-xl">
 
                 {
                     Lives.map(live => <LiveClassCard
