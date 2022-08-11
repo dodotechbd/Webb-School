@@ -34,6 +34,7 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
+import LiveClass from "./Components/LIveClass/LiveClass";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -91,6 +92,7 @@ function App() {
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
         <Route
           path="/blogdetails/:detailsId"
           element={<BlogDetails></BlogDetails>}

@@ -1,39 +1,24 @@
 [
     {
       "_id": 1,
-      "name": "Special Course",
+      "name":[ "Special Course",
+      "Language Learning",
+      "Job Recruitment",
+      "prepare for the Admission"
+    
+    ],
       "slots": [
         "Digital Marketing",
         "Office Work",
-        "Abode Editing"
-        
-      ]
-    },
-    {
-      "_id": 2,
-      "name": "Language Learning",
-      "slots": [
+        "Abode Editing",
         "English Career Devel",
         "Chinese for Beginnners",
         "Grammar and Punctuation",
-        "Improve English Communic"
-        
-      ]
-    },
-    {
-      "_id": 3,
-      "name": "Job Recruitment",
-      "slots": [
+        "Improve English Communic",
         "Bank Job",
         "Freelancer Job",
         "Developer Job",
-        "Corporate Job"
-      ]
-    },
-    {
-      "_id": 4,
-      "name": "prepare for the Admission",
-      "slots": [
+        "Corporate Job",
         "Medical Admission Q.Sol",
         "University Admission Course",
         "University Admission Q.SOl",
@@ -41,6 +26,7 @@
         
       ]
     }
+    
   ]
  
   

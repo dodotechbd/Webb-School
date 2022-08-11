@@ -42,6 +42,9 @@ const Header = ({ handleThemeChange, theme }) => {
         <NavLink to="blogs">Blog</NavLink>
       </li>
       <li>
+        <NavLink to="LiveClass">Live Class</NavLink>
+      </li>
+      <li>
         <NavLink to="admin/manage">Admin</NavLink>
       </li>
     </>
@@ -79,6 +82,9 @@ const Header = ({ handleThemeChange, theme }) => {
                 </li>
                 <li>
                   <NavLink to="blogs">Blog</NavLink>
+                </li>
+                <li>
+               <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
                 <li>
                   <NavLink to="admin/manage">Admin</NavLink>
