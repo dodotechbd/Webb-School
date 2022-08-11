@@ -27,19 +27,25 @@ const AcademicBookss = () => {
           <div>
               <h1 className='text-2xl text-center my-10'>Add Your Books</h1>
           </div>
-          <div className='text-center'>
-              <form onSubmit={handleSubmit(onSubmit)}>
+          <div className='text-center '>
+              <form className='' onSubmit={handleSubmit(onSubmit)}>
+              <input
+                      placeholder='Img URL'
+                      className='input pl-6 bg-gray-100 me-4 w-full max-w-xs mt-3'
+                      type="text" {...register("img")}
 
+                  />
                   <input
                       type="text"
                       placeholder="Books title"
-                      class="input input-bordered w-full max-w-xs"
+                      class="input input-bordered  w-full max-w-xs"
                       {...register("title", {
                           required: {
                               value: true,
                               message: "title Is Required"
                           }
-                      })} /> <br />
+                      })} /> 
+                      <br></br>
 
                   <textarea
 
@@ -53,13 +59,8 @@ const AcademicBookss = () => {
                           }
                       })}
 
-                  /> <br />
-                  <input
-                      placeholder='Img URL'
-                      className='input input-bordered w-full max-w-xs mt-3'
-                      type="text" {...register("img")}
-
-                  /><br />
+                  /> 
+               
 
 
                   <input type="submit" className='btn w-36 mt-3' />
