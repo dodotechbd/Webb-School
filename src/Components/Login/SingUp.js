@@ -19,7 +19,7 @@ const SignUp = () => {
 
   const [updateProfile, updating, upError] = useUpdateProfile(auth);
 
-  //
+  // Token for JWT Verification
   const [token] = useToken(user || gUser);
   //
 
