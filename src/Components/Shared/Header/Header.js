@@ -17,6 +17,8 @@ const Header = ({ handleThemeChange, theme }) => {
 
   const logout = () => {
     signOut(auth);
+    //Token Remove
+    localStorage.removeItem('accessToken')
   };
 
   const [isOpen, setIsOpen] = React.useState(false);

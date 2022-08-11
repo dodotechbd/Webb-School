@@ -25,11 +25,9 @@ const SignUp = () => {
 
   let navigate = useNavigate()
 
-
   let singInError
 
   let location = useLocation();
-
 
   if (loading || gLoading || updating) {
     return <Loading></Loading>
@@ -40,7 +38,7 @@ const SignUp = () => {
   }
 
   if (token) {
-    console.log(gUser)
+    console.log(user,gUser)
     return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
   }
 

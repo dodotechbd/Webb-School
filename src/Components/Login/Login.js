@@ -1,11 +1,10 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
-import useToken from '../../Hooks/useToken';
-
+import useToken from '../../Hooks/useToken'
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
@@ -17,31 +16,41 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
-  let singInError
+  // Token for JWT Verification
+  const [token] = useToken(user || gUser);
+  //
+
+  let singInError;
 
   let navigate = useNavigate();
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  //Use Token for JWT Verification
-  const [token] = useToken(user || gUser);
+  useEffect(() => {
+    if (token) {
+      navigate(from, { replace: true });
+    }
+  }, [token, from, navigate]);
 
   if (loading || gLoading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
 
   if (error || gError) {
     singInError = <p>{error?.message || gError?.message}</p>
   }
 
-  if (token) {
-    navigate(from, { replace: true });
+  if (user || gUser) {
+    // navigate(from, { replace: true });
+    return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
   }
 
   const onSubmit = data => {
     console.log(data)
     signInWithEmailAndPassword(data.email, data.password)
+    navigate('/home')
   }
+
 
   return (
     <div >
