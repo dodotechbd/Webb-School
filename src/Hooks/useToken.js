@@ -15,9 +15,12 @@ const useToken = user => {
                 .then(res => res.json())
                 .then(data => {
                     console.log('Data inside Usetoken', data)
+                    const token = data.token;
+                    localStorage.setItem('Token', token)
+                    setToken(token);
                 })
         }
-    }, [user]);
+    }, [user, setToken]);
     return [token];
 }
 export default useToken;

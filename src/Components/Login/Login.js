@@ -23,8 +23,8 @@ const Login = () => {
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
+  //Use Token for JWT Verification
   const [token] = useToken(user || gUser);
-
 
   if (loading || gLoading) {
     return <Loading></Loading>
@@ -35,7 +35,6 @@ const Login = () => {
   }
 
   if (token) {
-    console.log(user || gUser)
     navigate(from, { replace: true });
   }
 
