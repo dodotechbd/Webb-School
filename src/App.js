@@ -39,6 +39,7 @@ import Language from "./Components/Admin/Courses/Language";
 import Job from "./Components/Admin/Courses/Job";
 import Admission from "./Components/Admin/Courses/Admission";
 import AcademicBookss from "./Components/Admin/AcademicBookss.js";
+import SkillBookss from "./Components/Admin/SkillBookss";
 
 
 function App() {
@@ -119,6 +120,7 @@ function App() {
             ></Route>
           </Route>
           <Route path="/admin/academicbookss" element={<AcademicBookss></AcademicBookss>}></Route>
+          <Route path="/admin/skillbookss" element={<SkillBookss></SkillBookss>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/live" element={<Live></Live>}></Route>
           <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
