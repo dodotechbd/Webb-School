@@ -34,11 +34,12 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
-import Books from "./Components/Admin/Books";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import Language from "./Components/Admin/Courses/Language";
 import Job from "./Components/Admin/Courses/Job";
 import Admission from "./Components/Admin/Courses/Admission";
+import AcademicBooks from "./Components/Admin/AcademicBooks";
+
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -117,7 +118,7 @@ function App() {
               element={<Admission></Admission>}
             ></Route>
           </Route>
-          <Route path="/admin/books" element={<Books></Books>}></Route>
+          <Route path="/admin/academicbooks" element={<AcademicBooks></AcademicBooks>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/live" element={<Live></Live>}></Route>
           <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
