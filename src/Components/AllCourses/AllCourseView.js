@@ -1,19 +1,28 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useParams } from "react-router-dom";
-import useAdmission from "../../Hooks/useAdmission";
 import ReactPlayer from "react-player";
-import useJobCourses from "../../Hooks/useJobCourse";
-import useLanguage from "../../Hooks/useLanguage";
+import { useQuery } from "react-query";
 import CourseSyllabus from "./CourseSyllabus";
 
 const AllCourseView = () => {
   const { uname } = useParams();
-  const [language] = useLanguage([]);
-  const [jobcourses] = useJobCourses([]);
-  const [admission] = useAdmission([]);
-
-  const courseData = admission.find((allcard) => allcard.uname === uname)
-  || language.find((allcard) => allcard.uname === uname) || jobcourses.find((allcard) => allcard.uname === uname);
+  const { data: language } = useQuery(["languageCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then(
+      (res) => res.json()
+    )
+  );
+  const { data: job } = useQuery(["jobCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then(
+      (res) => res.json()
+    )
+  );
+  const { data: admission } = useQuery(["admissionCourses"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
+      (res) => res.json()
+    )
+  );
+  const courseData = admission?.find((allcard) => allcard.uname === uname)
+  || language?.find((allcard) => allcard.uname === uname) || job?.find((allcard) => allcard.uname === uname);
   // const courseIndex = courseData?.file[0].details[0].fileName;
   // console.log(courseIndex);
   

@@ -3,8 +3,10 @@ import "./App.css";
 
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
+
 import Live from "./Components/Admin/LivePost/Live";
-import Manage from "./Components/Admin/Manage";
+
+import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
 import Users from "./Components/Admin/Users";
@@ -34,7 +36,13 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
+ 
 import LiveClass from "./Components/LIveClass/LiveClass";
+import Books from "./Components/Admin/Books";
+import AddBlogs from "./Components/Admin/AddBlogs";
+import Language from "./Components/Admin/Courses/Language";
+import Job from "./Components/Admin/Courses/Job";
+import Admission from "./Components/Admin/Courses/Admission";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -100,9 +108,25 @@ function App() {
         {/* admim */}
         <Route path="/admin" element={<Admin></Admin>}>
           <Route path="/admin" element={<Admins></Admins>}></Route>
-          <Route path="/admin/manage" element={<Manage></Manage>}></Route>
+          <Route path="/admin/courses" element={<Manage></Manage>}>
+            <Route
+              path="/admin/courses/language"
+              element={<Language></Language>}
+            ></Route>
+            <Route
+              path="/admin/courses/job"
+              element={<Job></Job>}
+            ></Route>
+            <Route
+              path="/admin/courses/admission"
+              element={<Admission></Admission>}
+            ></Route>
+          </Route>
+          <Route path="/admin/books" element={<Books></Books>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+
+          <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>

@@ -1,8 +1,11 @@
 import React from "react";
 import logo from "../../Assets/wslogo.png";
 import { Link, useLocation } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Footer = () => {
+  const [user, loading, error] = useAuthState(auth);
   const today = new Date();
   const year = today.getFullYear();
   return (
@@ -20,11 +23,19 @@ const Footer = () => {
             <p className="font-bold text-xl ">
               Create your free account and start learning
             </p>
-            <Link to={"signup"}>
-              <button className="btn mt-2 btn-accent font-thin text-white btn-sm">
-                Join Now
-              </button>
-            </Link>
+            {user ? (
+              <Link to={'courses'}>
+                <button className="btn mt-2 btn-accent font-thin text-white btn-sm">
+                  Enroll Now
+                </button>
+              </Link>
+            ) : (
+              <Link to={"signup"}>
+                <button className="btn mt-2 btn-accent font-thin text-white btn-sm">
+                  Join Now
+                </button>
+              </Link>
+            )}
           </div>
         </div>
 
@@ -54,7 +65,9 @@ const Footer = () => {
           <Link to={"coming"} className="link link-hover block">
             Privacy policy
           </Link>
-          <Link to={"developer"} className="link link-hover block">Developer</Link>
+          <Link to={"developer"} className="link link-hover block">
+            Developer
+          </Link>
         </div>
         {/* for mobile */}
         <div className="lg:hidden md:hidden flex mx-auto gap-10">

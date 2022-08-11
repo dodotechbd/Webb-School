@@ -7,14 +7,24 @@ import { useForm } from 'react-hook-form';
 const PostClass = ({ live }) => {
 
 
-    const { _id, name, slots } = live;
+    const { name, slots } = live;
 
 
     const { register, handleSubmit } = useForm();
     const onSubmit = data => {
         console.log(data)
 
-        fetch('http://localhost:5000/live')
+        fetch('http://localhost:5000/lives',{
+            method: 'post',
+            headers: {
+                'content-type':'application/json'
+            },
+            body:JSON.stringify(data)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
 
     return (
