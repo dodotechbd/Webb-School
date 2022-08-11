@@ -9,8 +9,8 @@ const AcadamicBook = ({ acadamicbook }) => {
   return (
     <div
       onClick={() => navigateToAcadamicDetail(_id)}
-      className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4"
-    >
+      className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4">
+
       <figure>
         <img
           className="mx-auto mt-4 w-48 rounded-lg text-center"
@@ -21,8 +21,11 @@ const AcadamicBook = ({ acadamicbook }) => {
       <div className="card-body p-0">
         <div className="card-body p-4">
           <h1>
-            {name.length >= 18 ? (
-              <p className="text-xl font-bold">{name.slice(0, 18)}...</p>
+            {name?.length >= 18 ? (
+              <p className="text-xl font-bold">{name.slice(0, 18)}...</p>,
+
+              <p className="text-xl font-bold">{name?.slice(0, 18)}...</p>
+
             ) : (
               <p className="text-xl font-bold">{name}</p>
             )}
