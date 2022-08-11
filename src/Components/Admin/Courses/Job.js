@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import JobCard from './JobCard';
+import Loading from '../../Shared/Loading/Loading';
 
 const Job = () => {
     const [course, setCourse] = useState();
@@ -10,6 +11,9 @@ const Job = () => {
       res.json()
     )
   );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   const deleteItem = (id) => {
     const remaining = job?.filter((item) => item._id !== id);
     setCourse(remaining);
@@ -25,7 +29,7 @@ const Job = () => {
           </div>
         </div>
         <div>
-          <Link className="btn btn-primary normal-case" to={"/admin/post"}>
+          <Link className="btn btn-primary normal-case" to={"/admin/addjob"}>
             <i className="fa-solid fa-folder-plus mr-2"></i>Add Job Course
           </Link>
         </div>
