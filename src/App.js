@@ -1,11 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route, } from "react-router-dom";
 import "./App.css";
-
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-
 import Live from "./Components/Admin/LivePost/Live";
-
 import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
@@ -36,17 +33,18 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
- 
 import LiveClass from "./Components/LIveClass/LiveClass";
-import Books from "./Components/Admin/Books";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import Language from "./Components/Admin/Courses/Language";
 import Job from "./Components/Admin/Courses/Job";
 import Admission from "./Components/Admin/Courses/Admission";
+import AcademicBookss from "./Components/Admin/AcademicBookss.js";
+import SkillBookss from "./Components/Admin/SkillBookss";
 import AddLanguage from "./Components/Admin/Courses/AddLanguage";
 import AddJob from "./Components/Admin/Courses/AddJob";
 import AddAdmission from "./Components/Admin/Courses/AddAdmission";
 import Reset from "./Components/Login/Reset";
+
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -127,10 +125,10 @@ function App() {
               element={<Admission></Admission>}
             ></Route>
           </Route>
-          <Route path="/admin/books" element={<Books></Books>}></Route>
+          <Route path="/admin/academicbookss" element={<AcademicBookss></AcademicBookss>}></Route>
+          <Route path="/admin/skillbookss" element={<SkillBookss></SkillBookss>}></Route>
           <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-
           <Route path="/admin/addlanguage" element={<AddLanguage></AddLanguage>}></Route>
           <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
           <Route path="/admin/addadmission" element={<AddAdmission></AddAdmission>}></Route>
