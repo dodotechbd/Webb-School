@@ -1,14 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
-import useToken from '../../Hooks/useToken'
+import useToken from '../../Hooks/useToken';
 const Login = () => {
   const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
-
   const [
     signInWithEmailAndPassword,
     user,
@@ -16,42 +15,30 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
-  // Token for JWT Verification
   const [token] = useToken(user || gUser);
-  //
 
-  let singInError;
-
-  let navigate = useNavigate();
-  let location = useLocation();
+  let signInError;
+  const navigate = useNavigate();
+  const location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (token) {
+    if (user || gUser) {
       navigate(from, { replace: true });
     }
-  }, [token, from, navigate]);
+  }, [user, gUser, from, navigate])
 
   if (loading || gLoading) {
-    return <Loading></Loading>;
+    return <Loading></Loading>
   }
 
   if (error || gError) {
-    singInError = <p>{error?.message || gError?.message}</p>
-  }
-
-  if (user || gUser) {
-    // navigate(from, { replace: true });
-    return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
+    signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
   }
 
   const onSubmit = data => {
-    console.log(data)
-    signInWithEmailAndPassword(data.email, data.password)
-    navigate('/home')
+    signInWithEmailAndPassword(data.email, data.password);
   }
-
-
   return (
     <div >
       <div className="flex items-center min-h-screen p-4  lg:justify-center">
@@ -122,7 +109,7 @@ const Login = () => {
                 <label for="remember" className="text-sm font-semibold text-gray-900">Remember me</label>
               </div>
               <div>
-                {singInError}
+                {/* {singInError} */}
                 <button
                   type="submit"
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
