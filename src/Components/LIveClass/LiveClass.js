@@ -15,7 +15,7 @@ const LiveClass = () => {
     }, [])
 
     return (
-        <div className='flex h-screen justify-center items-center bg-primary'>
+        <div className='flex h-screen justify-center items-center bg-[#711A75]'>
 
             <div class="card  w-96 bg-base-100 shadow-xl">
 
