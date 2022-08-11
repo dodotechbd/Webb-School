@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from "react-router-dom";
 import AdmissionCard from './AdmissionCard';
 import { useQuery } from "react-query";
+import Loading from '../../Shared/Loading/Loading';
 
 const Admission = () => {
     const [course, setCourse] = useState();
@@ -10,6 +11,9 @@ const Admission = () => {
       res.json()
     )
   );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   const deleteItem = (id) => {
     const remaining = admission?.filter((item) => item._id !== id);
     setCourse(remaining);
@@ -25,7 +29,7 @@ const Admission = () => {
           </div>
         </div>
         <div>
-          <Link className="btn btn-primary normal-case" to={"/admin/post"}>
+          <Link className="btn btn-primary normal-case" to={"/admin/addadmission"}>
             <i className="fa-solid fa-folder-plus mr-2"></i>Add Admission Course
           </Link>
         </div>

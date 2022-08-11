@@ -54,16 +54,22 @@ const Admin = () => {
           <label for="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content gap-3">
             <li>
-              <NavLink to={"/admin/courses"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
+              <NavLink to={"/admin/courses/language"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/books"}><i class="fa-solid fa-book"></i>Manage Books</NavLink>
+              <NavLink to={"/admin/academicbookss"}><i className="fa-solid fa-book"></i>Manage Academic Books</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
+              <NavLink to={"/admin/skillbookss"}><i className="fa-solid fa-book"></i>Manage Skill Books</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/blogs"}><i class="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
+              <NavLink to={"/admin/LivePost/Live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/post"}><i className="fa-solid fa-circle-play"></i>Post Course Video</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/users"}><i className="fa-solid fa-users"></i>Users</NavLink>
@@ -71,6 +77,7 @@ const Admin = () => {
             <li>
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
             </li>
+            
           </ul>
         </div>
       </div>

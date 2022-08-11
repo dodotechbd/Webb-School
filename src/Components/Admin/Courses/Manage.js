@@ -1,8 +1,5 @@
 import React from "react";
 import { NavLink, Outlet } from "react-router-dom";
-import Admission from "./Admission";
-import Job from "./Job";
-import Language from "./Language";
 const Courses = () => {
   return (
     <div className="text-center mt-4">
