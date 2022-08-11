@@ -66,6 +66,47 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
+                                 <input
+                        type="text"
+                        placeholder="pages"
+                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        {...register("pages", {
+                            required: {
+                                value: true,
+                                message: "price Is Required"
+                            }
+                        })} />
+                    <input
+                        type="text"
+                        placeholder="format"
+                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        {...register("format", {
+                            required: {
+                                value: true,
+                                message: "price Is Required"
+                            }
+                        })} />
+                    <input
+                        type="text"
+                        placeholder="file"
+                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        {...register("file", {
+                            required: {
+                                value: true,
+                                message: "price Is Required"
+                            }
+                        })} />
+                    <input
+                        type="text"
+                        placeholder="interactive"
+                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        {...register("interactive", {
+                            required: {
+                                value: true,
+                                message: "price Is Required"
+                            }
+                        })} />
+                        
                     <input
                         type="text"
                         placeholder="1.Writer name"
@@ -130,47 +171,7 @@ const AcademicBookss = () => {
                         type="text" {...register("img4")}
 
                     />
-                    <input
-                        type="text"
-                        placeholder="price"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
-                            required: {
-                                value: true,
-                                message: "price Is Required"
-                            }
-                        })} />
-                    <input
-                        type="text"
-                        placeholder="price"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
-                            required: {
-                                value: true,
-                                message: "price Is Required"
-                            }
-                        })} />
-                    <input
-                        type="text"
-                        placeholder="price"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
-                            required: {
-                                value: true,
-                                message: "price Is Required"
-                            }
-                        })} />
-                    <input
-                        type="text"
-                        placeholder="price"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
-                            required: {
-                                value: true,
-                                message: "price Is Required"
-                            }
-                        })} />
-                        
+           
 
                     {/* <textarea
 
