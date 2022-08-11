@@ -6,7 +6,7 @@ const AddBlogs = () => {
 
     const onSubmit = data => {
 
-        const url = `http://localhost:3000/blogs`;
+        const url = `https://rocky-escarpment-87440.herokuapp.com/blogs`;
         fetch(url, {
             method: 'POST',
             headers: {
