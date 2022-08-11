@@ -39,6 +39,9 @@ import AddBlogs from "./Components/Admin/AddBlogs";
 import Language from "./Components/Admin/Courses/Language";
 import Job from "./Components/Admin/Courses/Job";
 import Admission from "./Components/Admin/Courses/Admission";
+import AddLanguage from "./Components/Admin/Courses/AddLanguage";
+import AddJob from "./Components/Admin/Courses/AddJob";
+import AddAdmission from "./Components/Admin/Courses/AddAdmission";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -118,9 +121,12 @@ function App() {
             ></Route>
           </Route>
           <Route path="/admin/books" element={<Books></Books>}></Route>
-          <Route path="/admin/post" element={<Post></Post>}></Route>
+          <Route path="/admin/addlanguage" element={<AddLanguage></AddLanguage>}></Route>
+          <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
+          <Route path="/admin/addadmission" element={<AddAdmission></AddAdmission>}></Route>
           <Route path="/admin/live" element={<Live></Live>}></Route>
           <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
+          <Route path="/admin/post" element={<Post></Post>}></Route>
           <Route path="/admin/users" element={<Users></Users>}></Route>
           <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>
