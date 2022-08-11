@@ -42,6 +42,7 @@ import Admission from "./Components/Admin/Courses/Admission";
 import AddLanguage from "./Components/Admin/Courses/AddLanguage";
 import AddJob from "./Components/Admin/Courses/AddJob";
 import AddAdmission from "./Components/Admin/Courses/AddAdmission";
+import Reset from "./Components/Login/Reset";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -98,6 +99,7 @@ function App() {
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
+        <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route
           path="/blogdetails/:detailsId"
