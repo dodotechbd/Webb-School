@@ -39,10 +39,6 @@ const SignUp = () => {
     singInError = <p>{error?.message || gError?.message || upError?.message}</p>
   }
 
-  // if (token) {
-  //   return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
-  // }
-
   if (token) {
     console.log(gUser)
     return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
