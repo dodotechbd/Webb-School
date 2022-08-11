@@ -30,7 +30,7 @@ const AcademicBookss = () => {
             <div className='p-2 w-9/12 m-auto bg-base-100 shadow-xl pb-2'>
                 <form className='' onSubmit={handleSubmit(onSubmit)}>
                     <input
-                        placeholder='Img URL' 
+                        placeholder='Books Img URL' 
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img")}
 
@@ -68,44 +68,68 @@ const AcademicBookss = () => {
                         })} />
                     <input
                         type="text"
-                        placeholder="price"
+                        placeholder="1.Writer name"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
+                        {...register("Writer1", {
                             required: {
                                 value: true,
                                 message: "price Is Required"
                             }
                         })} />
+                         <input
+                        placeholder='1.writer Img URL' 
+                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        type="text" {...register("img1")}
+
+                    />
                     <input
                         type="text"
-                        placeholder="price"
+                        placeholder="2.Writer name"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
+                        {...register("Writer2", {
                             required: {
                                 value: true,
                                 message: "price Is Required"
                             }
                         })} />
+                         <input
+                        placeholder='2.writer Img URL' 
+                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        type="text" {...register("img2")}
+
+                    />
                     <input
                         type="text"
-                        placeholder="price"
+                        placeholder="3.Writer name"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
+                        {...register("Writer3", {
                             required: {
                                 value: true,
                                 message: "price Is Required"
                             }
                         })} />
+                         <input
+                        placeholder='3.writer Img URL' 
+                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        type="text" {...register("img3")}
+
+                    />
                     <input
                         type="text"
-                        placeholder="price"
+                        placeholder="4.Writer name"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
-                        {...register("price", {
+                        {...register("Writer4", {
                             required: {
                                 value: true,
                                 message: "price Is Required"
                             }
                         })} />
+                         <input
+                        placeholder='4.writer Img URL' 
+                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        type="text" {...register("img4")}
+
+                    />
                     <input
                         type="text"
                         placeholder="price"
