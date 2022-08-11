@@ -1,5 +1,5 @@
 import React from "react";
-import swal from 'sweetalert';
+import swal from "sweetalert";
 import axios from "axios";
 
 const LanguageCard = ({ allcard, deleteItem, refetch }) => {
@@ -12,7 +12,7 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
       icon: "warning",
       className: "rounded-xl",
       buttons: ["Cancle", "Yes, delete it!"],
-      confirmButtonColor: '#000000',
+      confirmButtonColor: "#000000",
       dangerMode: true,
     }).then((willDelete) => {
       if (willDelete) {
@@ -31,7 +31,7 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
         })();
       } else {
         swal("Action Canclled", {
-          icon: 'success',
+          icon: "success",
           className: "rounded-xl",
         });
       }
@@ -51,9 +51,13 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
             <></>
           )}
         </div>
-        <h2 className="py-1 text-md hover:text-info">
-          {allcard?.name.slice(0, 21)}
-        </h2>
+        {allcard?.name.length >= 20 ? (
+          <h2 className="text-left pl-1 py-1 text-md hover:text-info">
+            {allcard?.name.slice(0, 20)}...
+          </h2>
+        ) : (
+          <h2 className="text-left pl-1 py-1 text-md hover:text-info">{allcard?.name}</h2>
+        )}
         <div>
           <button
             onClick={() => deleteItems(_id)}

@@ -33,6 +33,8 @@ const Login = () => {
   }
 
   if (user || gUser) {
+    console.log(user,gUser)
+
     console.log(user, gUser)
     navigate(from, { replace: true });
   }
@@ -42,14 +44,14 @@ const Login = () => {
   //   const email = emailRef.current.value;
   //   const password = passwordRef.current.value;
   //   await signInWithEmailAndPassword(email, password);
-  //const { value } = await axios.post('http://localhost:5000/login',{email})
+  //const { value } = await axios.post('https://rocky-escarpment-87440.herokuapp.com/login',{email})
   // console.log(value)
   // }
 
   const onSubmit = data => {
     console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
-    // const { value } = await axios.post('http://localhost:5000/login', {})
+    // const { value } = await axios.post('https://rocky-escarpment-87440.herokuapp.com/login', {})
     // console.log(value)
   }
 
@@ -92,7 +94,7 @@ const Login = () => {
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label for="password" className="text-sm font-semibold text-gray-900">Password</label>
-                  <a href="#" className="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</a>
+                  <Link to={'/reset'} className="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</Link>
                 </div>
                 <input
                   type="password"
