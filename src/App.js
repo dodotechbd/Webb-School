@@ -3,7 +3,9 @@ import "./App.css";
 
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-import Live from "./Components/Admin/Live";
+
+import Live from "./Components/Admin/LivePost/Live";
+
 import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
@@ -34,6 +36,8 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
+ 
+import LiveClass from "./Components/LIveClass/LiveClass";
 import Books from "./Components/Admin/Books";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import Language from "./Components/Admin/Courses/Language";
@@ -99,6 +103,7 @@ function App() {
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
         <Route
           path="/blogdetails/:detailsId"
           element={<BlogDetails></BlogDetails>}
@@ -121,6 +126,9 @@ function App() {
             ></Route>
           </Route>
           <Route path="/admin/books" element={<Books></Books>}></Route>
+          <Route path="/admin/post" element={<Post></Post>}></Route>
+          <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+
           <Route path="/admin/addlanguage" element={<AddLanguage></AddLanguage>}></Route>
           <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
           <Route path="/admin/addadmission" element={<AddAdmission></AddAdmission>}></Route>
