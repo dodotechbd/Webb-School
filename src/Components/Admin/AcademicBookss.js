@@ -25,16 +25,30 @@ const AcademicBookss = () => {
     return (
         <div className='pb-12'>
             <div>
-                <h1 className='text-3xl font-bold text-blue-600 text-center my-10'>Add Your Books</h1>
+                <h1 className='text-3xl font-bold text-blue-600 text-center my-10'>Add yourn Academic Books</h1>
             </div>
-            <div className='p-2 w-9/12 m-auto bg-base-200 shadow-xl pb-2'>
+            <div className='p-2 w-9/12 m-auto bg-slate-100 shadow-2xl pb-2'>
                 <form className='' onSubmit={handleSubmit(onSubmit)}>
-                    <input
+
+
+
+
+                    <div className='grid grid-cols-2 justify-around'>
+                    <div>
+                 <label className="label">
+                    <span className="label-text">Link</span>
+                  </label>
+                 <input
                         placeholder='Books Img URL' 
-                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        className='input  bg-gray-200 w-full max-w-xs m-4'
                         type="text" {...register("img")}
 
                     />
+                 </div>
+                    <div>
+                    <label className="label">
+                    <span className="label-text">Link</span>
+                  </label>
                     <input
                         type="text"
                         placeholder="Books Name"
@@ -45,8 +59,19 @@ const AcademicBookss = () => {
                                 message: "name Is Required"
                             }
                         })} />
-                    <br></br>
-                    <input
+                    </div>
+                    </div>
+
+
+
+
+
+                   
+                   <div>
+                   <label className="label">
+                    <span className="label-text">Link</span>
+                  </label>
+                   <input
                         type="text"
                         placeholder="name of Proprietor"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -56,6 +81,7 @@ const AcademicBookss = () => {
                                 message: "Proprietor Is Required"
                             }
                         })} />
+                   </div>
                     <input
                         type="text"
                         placeholder="price"
@@ -66,7 +92,7 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                                 <input
+                    <input
                         type="text"
                         placeholder="pages"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -106,7 +132,7 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                        
+
                     <input
                         type="text"
                         placeholder="1.Writer name"
@@ -117,8 +143,8 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                         <input
-                        placeholder='1.writer Img URL' 
+                    <input
+                        placeholder='1.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img1")}
 
@@ -133,8 +159,8 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                         <input
-                        placeholder='2.writer Img URL' 
+                    <input
+                        placeholder='2.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img2")}
 
@@ -149,8 +175,8 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                         <input
-                        placeholder='3.writer Img URL' 
+                    <input
+                        placeholder='3.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img3")}
 
@@ -165,13 +191,13 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                         <input
-                        placeholder='4.writer Img URL' 
+                    <input
+                        placeholder='4.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img4")}
 
                     />
-           
+
 
                     {/* <textarea
 
