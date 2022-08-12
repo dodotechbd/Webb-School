@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import auth from '../../firebase.init';
-import { useCreateUserWithEmailAndPassword,  useSignInWithGoogle, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
-import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading'
+import axios from 'axios';
+import Social from './Social';
 
 
 const SignUp = () => {
-    const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
     const { register, formState: { errors }, handleSubmit } = useForm();
+    const [name, setName] = useState("");
   
     const [
         createUserWithEmailAndPassword,
@@ -20,32 +22,46 @@ const SignUp = () => {
       const [updateProfile, updating, upError] = useUpdateProfile(auth);
 
       let navigate = useNavigate()
+      let location = useLocation();
+      let from = location.state?.from?.pathname || "/";
 
   
   let singInError
+  useEffect(() => {
+    if (user) {
+      (async () => {
+        const { data } = await axios.put(`https://rocky-escarpment-87440.herokuapp.com/user`, {
+          name: name,
+          email: user?.user?.email,
+        });
+        if (data.token) {
+          localStorage.setItem("authorizationToken", data.token);
+        }
+      })();
 
-  let location = useLocation();
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate, updating, name]);
  
   
-    if( loading || gLoading || updating){
+    if( loading || updating){
       return <Loading></Loading>
     }
   
-    if(error || gError || upError){
-      singInError =<p>{error?.message || gError?.message || upError?.message}</p>
+    if(error || upError){
+      singInError =<p>{error?.message || upError?.message}</p>
     }
   
-    if (user || gUser ) {
-      console.log(gUser)
-      return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
-    }
+    // if (user || gUser ) {
+    //   console.log(gUser)
+    //   return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
+    // }
   
     const onSubmit = async data => {
-      console.log(data)
+      setName(data?.name);
       await createUserWithEmailAndPassword(data.email,data.password)
       await updateProfile({ displayName: data.name });
       console.log('done')
-      navigate("/")
     }
     return (
         <div >
@@ -143,12 +159,7 @@ const SignUp = () => {
                 <span className="font-normal text-gray-500">or login with</span>
                 <span className="h-px bg-gray-400 w-14"></span>
               </span>
-              <div className="flex flex-col space-y-4">
-              <button onClick={() => signInWithGoogle()} className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black">
-                <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt=""/> <span>Login with Google</span>
-            </button>
-                
-              </div>
+              <Social></Social>
             </div>
           </form>
         </div>

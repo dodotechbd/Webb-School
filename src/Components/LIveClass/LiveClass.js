@@ -9,7 +9,7 @@ const LiveClass = () => {
     // const [blog,setBlog] = useBlogs(detailsId);
 
     useEffect(() => {
-        fetch("http://localhost:5000/lives")
+        fetch("https://rocky-escarpment-87440.herokuapp.com/lives")
             .then(res => res.json())
             .then(data => setLives(data.slice(0, 1)))
     }, [])

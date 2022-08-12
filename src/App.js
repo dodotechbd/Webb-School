@@ -36,7 +36,7 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
- 
+
 import LiveClass from "./Components/LIveClass/LiveClass";
 import Books from "./Components/Admin/Books";
 import AddBlogs from "./Components/Admin/AddBlogs";
@@ -47,6 +47,8 @@ import AddLanguage from "./Components/Admin/Courses/AddLanguage";
 import AddJob from "./Components/Admin/Courses/AddJob";
 import AddAdmission from "./Components/Admin/Courses/AddAdmission";
 import Reset from "./Components/Login/Reset";
+import RequireAuth from "./Authentication/RequireAuth";
+import RequireAdmin from "./Authentication/RequireAdmin";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -104,41 +106,56 @@ function App() {
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
+        <Route element={<RequireAuth></RequireAuth>}>
+          <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
+          <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+          <Route
+            path="/checkout/:uname"
+            element={<Checkout></Checkout>}
+          ></Route>
+        </Route>
+
         <Route
           path="/blogdetails/:detailsId"
           element={<BlogDetails></BlogDetails>}
         ></Route>
         {/* admim */}
-        <Route path="/admin" element={<Admin></Admin>}>
-          <Route path="/admin" element={<Admins></Admins>}></Route>
-          <Route path="/admin/courses" element={<Manage></Manage>}>
+        <Route element={<RequireAdmin></RequireAdmin>}>
+          <Route path="/admin" element={<Admin></Admin>}>
+            <Route path="/admin" element={<Admins></Admins>}></Route>
+            <Route path="/admin/courses" element={<Manage></Manage>}>
+              <Route
+                path="/admin/courses/language"
+                element={<Language></Language>}
+              ></Route>
+              <Route path="/admin/courses/job" element={<Job></Job>}></Route>
+              <Route
+                path="/admin/courses/admission"
+                element={<Admission></Admission>}
+              ></Route>
+            </Route>
+            <Route path="/admin/books" element={<Books></Books>}></Route>
+            <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+
             <Route
-              path="/admin/courses/language"
-              element={<Language></Language>}
+              path="/admin/addlanguage"
+              element={<AddLanguage></AddLanguage>}
             ></Route>
+            <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
             <Route
-              path="/admin/courses/job"
-              element={<Job></Job>}
+              path="/admin/addadmission"
+              element={<AddAdmission></AddAdmission>}
             ></Route>
+            <Route path="/admin/live" element={<Live></Live>}></Route>
+            <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
+            <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/users" element={<Users></Users>}></Route>
             <Route
-              path="/admin/courses/admission"
-              element={<Admission></Admission>}
+              path="/admin/payments"
+              element={<Payments></Payments>}
             ></Route>
           </Route>
-          <Route path="/admin/books" element={<Books></Books>}></Route>
-          <Route path="/admin/post" element={<Post></Post>}></Route>
-          <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-
-          <Route path="/admin/addlanguage" element={<AddLanguage></AddLanguage>}></Route>
-          <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
-          <Route path="/admin/addadmission" element={<AddAdmission></AddAdmission>}></Route>
-          <Route path="/admin/live" element={<Live></Live>}></Route>
-          <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
-          <Route path="/admin/post" element={<Post></Post>}></Route>
-          <Route path="/admin/users" element={<Users></Users>}></Route>
-          <Route path="/admin/payments" element={<Payments></Payments>}></Route>
         </Route>
         {/* courses  */}
         <Route
@@ -151,7 +168,6 @@ function App() {
             element={<CourseVideo></CourseVideo>}
           ></Route>
         </Route>
-        <Route path="/checkout/:uname" element={<Checkout></Checkout>}></Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
