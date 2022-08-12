@@ -38,7 +38,6 @@ import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
 
 import LiveClass from "./Components/LIveClass/LiveClass";
-import Books from "./Components/Admin/Books";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import Language from "./Components/Admin/Courses/Language";
 import Job from "./Components/Admin/Courses/Job";
@@ -134,7 +133,6 @@ function App() {
                 element={<Admission></Admission>}
               ></Route>
             </Route>
-            <Route path="/admin/books" element={<Books></Books>}></Route>
             <Route path="/admin/post" element={<Post></Post>}></Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
 
