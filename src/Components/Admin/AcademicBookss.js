@@ -32,7 +32,7 @@ const AcademicBookss = () => {
                   <div className='grid grid-cols-2 justify-around'>
                     <div>
                  <label className="label">
-                    <span className="label-text">Link</span>
+                    <span className="label-text">books img</span>
                   </label>
                  <input
                         placeholder='Books Img URL' 
@@ -41,9 +41,7 @@ const AcademicBookss = () => {
                     />
                  </div>
                     <div>
-                    <label className="label">
-                    <span className="label-text">Link</span>
-                  </label>
+                   <p className='ml-6'>book Name</p>
                     <input
                         type="text"
                         placeholder="Books Name"
@@ -57,7 +55,7 @@ const AcademicBookss = () => {
                     </div>
                    <div>
                    <label className="label">
-                    <span className="label-text">Link</span>
+                    <span className="label-text">Proprietor name</span>
                   </label>
                    <input
                         type="text"
@@ -71,6 +69,9 @@ const AcademicBookss = () => {
                         })} />
                    </div>
                    <div>
+                   <label className="label">
+                    <span className="label-text">Book price</span>
+                  </label>
                    <input
                         type="text"
                         placeholder="price"
@@ -84,6 +85,9 @@ const AcademicBookss = () => {
                    </div>
                     
                <div>
+               <label className="label">
+                    <span className="label-text">Book total pages</span>
+                  </label>
                <input
                         type="text"
                         placeholder="pages"
@@ -96,6 +100,9 @@ const AcademicBookss = () => {
                         })} />
                </div>
                    <div>
+                   <label className="label">
+                    <span className="label-text"> Format Name</span>
+                  </label>
                    <input
                         type="text"
                         placeholder="format"
@@ -108,6 +115,9 @@ const AcademicBookss = () => {
                         })} />
                    </div>
                     <div>
+                    <label className="label">
+                    <span className="label-text">File Name</span>
+                  </label>
                     <input
                         type="text"
                         placeholder="file"
@@ -120,6 +130,9 @@ const AcademicBookss = () => {
                         })} />
                     </div>
                   <div>
+                  <label className="label">
+                    <span className="label-text">Book interactive</span>
+                  </label>
                   <input
                         type="text"
                         placeholder="interactive"
@@ -133,6 +146,9 @@ const AcademicBookss = () => {
                   </div>
 
                     <div>
+                    <label className="label">
+                    <span className="label-text">1.Book Writer</span>
+                  </label>
                     <input
                         type="text"
                         placeholder="1.Writer name"
