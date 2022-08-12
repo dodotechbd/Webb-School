@@ -1,5 +1,5 @@
 import React from 'react';
-import img from '../../Assets/video-chat-svgrepo-com.svg'
+import svg from '../../Assets/video-chat-svgrepo-com.svg'
 
 
 const LiveClassCard = ({ live }) => {
@@ -11,9 +11,12 @@ const LiveClassCard = ({ live }) => {
         <div>
             <div class="card w-96 bg-base-100 shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title pl-8">Live:<span className='text-green-700'> {slots}</span></h2>
+                    <h2 class="card-title pl-8">Live:<span className='text-green-700'>  {slots.length > 0 
+                    ?<span>{slots}</span>
+                    :<span className='text-red-500'>No live class running now</span>
+                      }</span></h2>
                     <img
-                        src={img}
+                        src={svg}
                         alt="triangle with all three sides equal"
                         class="mx-auto mt-8 h-16 w-16 text-green-400" viewBox="0 0 20 20" fill="currentColor" />
                     
