@@ -9,20 +9,20 @@ const Users = () => {
     data: users,
     isLoading,
     refetch,
-  } = useQuery(["ourUsers"], () => primaryAxios.get(`https://rocky-escarpment-87440.herokuapp.com/user`));
+  } = useQuery(["ourUsers"], () => primaryAxios.get(`/user`));
   if (isLoading) {
     return <Loading></Loading>;
   }
   return (
     <div>
       <div className="overflow-x-auto w-full">
-        <table className="table w-full">
+        <table className="table table-zebra w-full">
           <thead>
             <tr>
               <th>Index</th>
               <th>Name</th>
-              <th>Job</th>
-              <th>Make Admin</th>
+              <th>Role</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -35,14 +35,6 @@ const Users = () => {
               />
             ))}
           </tbody>
-          <tfoot>
-            <tr>
-            <th>Index</th>
-              <th>Name</th>
-              <th>Job</th>
-              <th>Make Admin</th>
-            </tr>
-          </tfoot>
         </table>
       </div>
     </div>
