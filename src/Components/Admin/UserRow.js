@@ -42,7 +42,7 @@ const UserRow = ({ user, refetch, index }) => {
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
               <img
-                src={`${image ? image : "https://i.ibb.co/T1D3tqN/images.png"}`}
+                src={`${image ? image : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"}`}
                 alt="Avatar Tailwind CSS Component"
               />
             </div>
