@@ -1,19 +1,22 @@
-import React from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
 import wslogo from "../../../Assets/wslogo.png";
 import "./Header.css";
-// import component ?
 import Drawer from "react-modern-drawer";
-
-//import styles ?
 import "react-modern-drawer/dist/index.css";
-
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
+import useRole from "../../../Hooks/useRole";
+import Loading from "../Loading/Loading";
 
 const Header = ({ handleThemeChange, theme }) => {
-  const [user, loading, error] = useAuthState(auth);
+  const [isOpen, setIsOpen] = useState(false);
+  const toggleDrawer = () => {
+    setIsOpen((prevState) => !prevState);
+  };
+  const [user, loading] = useAuthState(auth);
+  const [role, roleLoading, userName] = useRole();
 
   const logout = () => {
     signOut(auth);
@@ -21,38 +24,32 @@ const Header = ({ handleThemeChange, theme }) => {
     localStorage.removeItem('accessToken');
   };
 
-  const [isOpen, setIsOpen] = React.useState(false);
-  const toggleDrawer = () => {
-    setIsOpen((prevState) => !prevState);
-  };
-
   const manuItems = (
-
     <>
-    <li>
-      <NavLink to="courses">Courses</NavLink>
-    </li>
-    <li>
-      <NavLink to="bookstore">Book Store</NavLink>
-    </li>
-    <li>
-      <NavLink to="admission">Admission</NavLink>
-    </li>
-    <li>
-      <NavLink to="jobs">Jobs</NavLink>
-    </li>
-    <li>
-      <NavLink to="blogs">Blog</NavLink>
-    </li>
-    <li>
-
+      <li>
+        <NavLink to="courses">Courses</NavLink>
+      </li>
+      <li>
+        <NavLink to="bookstore">Book Store</NavLink>
+      </li>
+      <li>
+        <NavLink to="admission">Admission</NavLink>
+      </li>
+      <li>
+        <NavLink to="jobs">Jobs</NavLink>
+      </li>
+      <li>
+        <NavLink to="blogs">Blog</NavLink>
+      </li>
+      <li>
         <NavLink to="LiveClass">Live Class</NavLink>
       </li>
-    <li>
-      <NavLink to="admin/courses/language">Admin</NavLink>
-    </li>
-  </>
-   
+      {role === "admin" && (
+        <li>
+          <NavLink to="admin/courses/language">Admin</NavLink>
+        </li>
+      )}
+    </>
   );
   return (
     <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
@@ -89,26 +86,23 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
                 <li>
-
                   <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
                 <li>
                   <NavLink to="admin/courses/language">Admin</NavLink>
                 </li>
-
               </ul>
               <li>
-
                 {user ? (
                   <div>
                     <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">
                       <label className="avatar">
                         <div className="w-7 mr-2 my-2 rounded-full border border-gray-200">
-                          <img src={user?.photoURL} />
+                          <img src={`${user?.photoURL ? user?.photoURL : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"}`} />
                         </div>
                       </label>
                       <p className="whitespace-nowrap">
-                        {user?.displayName}
+                        {userName ? userName : "User"}
                         <i className="ml-2 fa-solid fa-angle-down"></i>
                       </p>
                     </div>
@@ -126,12 +120,14 @@ const Header = ({ handleThemeChange, theme }) => {
                       </li>
                       <li>
                         <NavLink to={"dashboard"}>
-                          <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
+                          <i className="ml-4 fa-solid fa-chart-line"></i>
+                          Dashboard
                         </NavLink>
                       </li>
                       <li>
                         <NavLink to={"coming"}>
-                          <i className="ml-4 fa-solid fa-clock"></i>Payment History
+                          <i className="ml-4 fa-solid fa-clock"></i>Payment
+                          History
                         </NavLink>
                       </li>
                       <li>
@@ -212,11 +208,11 @@ const Header = ({ handleThemeChange, theme }) => {
             >
               <label className="avatar">
                 <div className="w-7 mr-2 rounded-full border border-gray-200">
-                  <img src={user?.photoURL} />
+                <img src={`${user?.photoURL ? user?.photoURL : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"}`} />
                 </div>
               </label>
               <p className="whitespace-nowrap">
-                {user?.displayName}
+                {userName ? userName : "User"}
                 <i className="ml-2 fa-solid fa-angle-down"></i>
               </p>
             </div>
@@ -225,28 +221,34 @@ const Header = ({ handleThemeChange, theme }) => {
               className="mt-4 menu menu-compact w-48 dropdown-content rounded-xl bg-base-200"
             >
               <li>
-                <NavLink to={"profile"} className='hover:rounded-t-xl hover:rounded-none'>
+                <NavLink
+                  to={"profile"}
+                  className="hover:rounded-t-xl hover:rounded-none"
+                >
                   <i className="ml-4 fa-solid fa-user" />
                   Profile
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"mycourse"} className='hover:rounded-none'>
+                <NavLink to={"mycourse"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-bolt"></i>My Courses
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"dashboard"} className='hover:rounded-none'>
+                <NavLink to={"dashboard"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"coming"} className='hover:rounded-none'>
+                <NavLink to={"coming"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-clock"></i>Payment History
                 </NavLink>
               </li>
               <li>
-                <a onClick={logout} className='hover:rounded-b-xl hover:rounded-none'>
+                <a
+                  onClick={logout}
+                  className="hover:rounded-b-xl hover:rounded-none"
+                >
                   <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                   Logout
                 </a>

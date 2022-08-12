@@ -9,6 +9,7 @@ const AddLanguage = () => {
     register,
     control,
     handleSubmit,
+    getValues,
     reset,
     formState: { errors },
   } = useForm();
@@ -406,7 +407,7 @@ const AddLanguage = () => {
                         </label>
                         <NestedFieldArray
                           nestIndex={index}
-                          {...{ control, register, errors }}
+                          {...{ control, register, errors, getValues }}
                         ></NestedFieldArray>
                       </li>
                     );
