@@ -1,13 +1,15 @@
 import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
-import useToken from '../../Hooks/useToken';
+import axios from 'axios';
+import Social from './Social';
+
 const Login = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
+
   const [
     signInWithEmailAndPassword,
     user,
@@ -15,49 +17,42 @@ const Login = () => {
     error,
   ] = useSignInWithEmailAndPassword(auth);
 
-  const [token] = useToken(user || gUser);
+  let singInError
 
-  let signInError;
-  const navigate = useNavigate();
-  const location = useLocation();
+  let navigate = useNavigate();
+  let location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user || gUser) {
+    if (user) {
+      (async () => {
+        const { data } = await axios.put(`https://rocky-escarpment-87440.herokuapp.com/user`, {
+          name: user?.user?.displayName,
+          email: user?.user?.email,
+        });
+        if (data.token) {
+          localStorage.setItem("authorizationToken", data.token);
+        }
+      })();
+
       navigate(from, { replace: true });
     }
-  }, [user, gUser, from, navigate])
+  }, [user, from, navigate]);
 
-  if (loading || gLoading) {
+
+  if (loading) {
     return <Loading></Loading>
   }
 
-  if (error || gError) {
-    signInError = <p className='text-red-500'><small>{error?.message || gError?.message}</small></p>
+  if (error) {
+    singInError = <p>{error?.message}</p>
   }
 
-  if (user || gUser) {
-    console.log(user, gUser)
-
-    console.log(user, gUser)
-    navigate(from, { replace: true });
-  }
-
-  // const handleSubmit = async event => {
-  //   event.preventDefault();
-  //   const email = emailRef.current.value;
-  //   const password = passwordRef.current.value;
-  //   await signInWithEmailAndPassword(email, password);
-  //const { value } = await axios.post('https://rocky-escarpment-87440.herokuapp.com/login',{email})
-  // console.log(value)
-  // }
-
-  const onSubmit = data => {
+  const onSubmit = (data) => {
+    console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
-
-    // const { value } = await axios.post('https://rocky-escarpment-87440.herokuapp.com/login', {})
-    // console.log(value)
   }
+
   return (
     <div >
       <div className="flex items-center min-h-screen p-4  lg:justify-center">
@@ -128,7 +123,7 @@ const Login = () => {
                 <label for="remember" className="text-sm font-semibold text-gray-900">Remember me</label>
               </div>
               <div>
-                {/* {singInError} */}
+                {singInError}
                 <button
                   type="submit"
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
@@ -143,12 +138,7 @@ const Login = () => {
                   <span className="font-normal text-gray-500">or login with</span>
                   <span className="h-px bg-gray-400 w-14"></span>
                 </span>
-                <div className="flex flex-col space-y-4">
-                  <button onClick={() => signInWithGoogle()} className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black">
-                    <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="" /> <span>Login with Google</span>
-                  </button>
-
-                </div>
+                <Social></Social>
               </div>
             </form>
           </div>
