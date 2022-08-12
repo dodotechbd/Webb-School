@@ -9,9 +9,9 @@ const LiveClassCard = ({ live }) => {
 
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-96 bg-base-300 border border-neutral shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title pl-8">Live:<span className='text-green-700'> {slots}</span></h2>
+                    <h2 class="card-title pl-8">Live:<span className='text-primary'> {slots}</span></h2>
                     <img
                         src={img}
                         alt="triangle with all three sides equal"
@@ -24,7 +24,7 @@ const LiveClassCard = ({ live }) => {
                     </div>
                     <div class="card-actions justify-center">
                         <a href={Link} target="_blank">
-            <button className=" flex items-center w-60 justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-white bg-[#A25BF7]" >join</button>
+            <button className="btn btn-accent btn-wide">join</button>
         </a>
                     </div>
                 </div>

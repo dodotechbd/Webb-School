@@ -191,54 +191,49 @@ const Header = ({ handleThemeChange, theme }) => {
           className="rounded-full lg:mx-2 pr-5"
         >
           {theme ? (
-            <svg
-              className="swap-on fill-yellow-200 w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d="M5.64,17l-.71.71a1,1,0,0,0,0,1.41,1,1,0,0,0,1.41,0l.71-.71A1,1,0,0,0,5.64,17ZM5,12a1,1,0,0,0-1-1H3a1,1,0,0,0,0,2H4A1,1,0,0,0,5,12Zm7-7a1,1,0,0,0,1-1V3a1,1,0,0,0-2,0V4A1,1,0,0,0,12,5ZM5.64,7.05a1,1,0,0,0,.7.29,1,1,0,0,0,.71-.29,1,1,0,0,0,0-1.41l-.71-.71A1,1,0,0,0,4.93,6.34Zm12,.29a1,1,0,0,0,.7-.29l.71-.71a1,1,0,1,0-1.41-1.41L17,5.64a1,1,0,0,0,0,1.41A1,1,0,0,0,17.66,7.34ZM21,11H20a1,1,0,0,0,0,2h1a1,1,0,0,0,0-2Zm-9,8a1,1,0,0,0-1,1v1a1,1,0,0,0,2,0V20A1,1,0,0,0,12,19ZM18.36,17A1,1,0,0,0,17,18.36l.71.71a1,1,0,0,0,1.41,0,1,1,0,0,0,0-1.41ZM12,6.5A5.5,5.5,0,1,0,17.5,12,5.51,5.51,0,0,0,12,6.5Zm0,9A3.5,3.5,0,1,1,15.5,12,3.5,3.5,0,0,1,12,15.5Z" />
-            </svg>
+            <svg width="24" height="24" fill="none" aria-hidden="true" class="transform transition-transform scale-100 duration-300"><path d="M15 12a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path><path d="M12 4v1M18 6l-1 1M20 12h-1M18 18l-1-1M12 19v1M7 17l-1 1M5 12H4M7 7 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           ) : (
-            <svg
-              className="swap-off fill-gray-500 w-5 h-5"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 24 24"
-            >
-              <path d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
-            </svg>
+            <svg width="24" height="24" fill="none" aria-hidden="true" class="ml-3.5 transform transition-transform scale-100 duration-300"><path d="M18 15.63c-.977.52-1.945.481-3.13.481A6.981 6.981 0 0 1 7.89 9.13c0-1.185-.04-2.153.481-3.13C6.166 7.174 5 9.347 5 12.018A6.981 6.981 0 0 0 11.982 19c2.67 0 4.844-1.166 6.018-3.37ZM16 5c0 2.08-.96 4-3 4 2.04 0 3 .92 3 3 0-2.08.96-3 3-3-2.04 0-3-1.92-3-4Z" fill="currentColor" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
           )}
         </button>
         {user ? (
-          <div className="dropdown dropdown-end">
-            <div
-              tabIndex="0"
-              className="flex flex-nowrap items-center cursor-pointer"
-            >
-              <label className="avatar">
-                <div className="w-7 mr-2 rounded-full border border-gray-200">
-                  <img
-                    src={`${
-                      user?.photoURL
-                        ? user?.photoURL
-                        : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                    }`}
-                  />
-                </div>
-              </label>
-              <p className="whitespace-nowrap">
-                {userName ? userName : "User"}
-                <i className="ml-2 fa-solid fa-angle-down"></i>
-              </p>
-            </div>
+          <div class="dropdown dropdown-end">
+            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+              <div class="w-10 rounded-full">
+                <img
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                  }`}
+                />
+              </div>
+            </label>
             <ul
-              tabIndex="0"
-              className="mt-4 menu menu-compact w-48 dropdown-content rounded-xl bg-base-200"
+              tabindex="0"
+              class="mt-3 shadow menu menu-compact dropdown-content rounded-box w-52 bg-base-300"
             >
+              <div className="mx-auto mt-3">
+                <div class="avatar">
+                  <div class="w-20 rounded-full">
+                    <img
+                      src={`${
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                      }`}
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="border-b border-neutral">
+                <h1 className="text-lg text-center">
+                  {userName ? userName.slice(0, 14) : "User"}
+                </h1>
+                <p className="text-xs mb-2 text-center">Student</p>
+              </div>
               <li>
-                <NavLink
-                  to={"profile"}
-                  className="hover:rounded-t-xl hover:rounded-none"
-                >
+                <NavLink to={"profile"} className=" hover:rounded-none">
                   <i className="ml-4 fa-solid fa-user" />
                   Profile
                 </NavLink>
@@ -270,6 +265,66 @@ const Header = ({ handleThemeChange, theme }) => {
             </ul>
           </div>
         ) : (
+          // <div className="dropdown dropdown-end">
+          //   <div
+          //     tabIndex="0"
+          //     className="flex flex-nowrap items-center cursor-pointer"
+          //   >
+          //     <label className="avatar">
+          //       <div className="w-7 mr-2 rounded-full border border-gray-200">
+          //         <img
+          //           src={`${
+          //             user?.photoURL
+          //               ? user?.photoURL
+          //               : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+          //           }`}
+          //         />
+          //       </div>
+          //     </label>
+          //     <p className="whitespace-nowrap">
+          //       {userName ? userName : "User"}
+          //       <i className="ml-2 fa-solid fa-angle-down"></i>
+          //     </p>
+          //   </div>
+          //   <ul
+          //     tabIndex="0"
+          //     className="mt-4 menu menu-compact w-48 dropdown-content rounded-xl bg-base-300"
+          //   >
+          //     <li>
+          //       <NavLink
+          //         to={"profile"}
+          //         className="hover:rounded-t-xl hover:rounded-none"
+          //       >
+          //         <i className="ml-4 fa-solid fa-user" />
+          //         Profile
+          //       </NavLink>
+          //     </li>
+          //     <li>
+          //       <NavLink to={"mycourse"} className="hover:rounded-none">
+          //         <i className="ml-4 fa-solid fa-bolt"></i>My Courses
+          //       </NavLink>
+          //     </li>
+          //     <li>
+          //       <NavLink to={"dashboard"} className="hover:rounded-none">
+          //         <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
+          //       </NavLink>
+          //     </li>
+          //     <li>
+          //       <NavLink to={"coming"} className="hover:rounded-none">
+          //         <i className="ml-4 fa-solid fa-clock"></i>Payment History
+          //       </NavLink>
+          //     </li>
+          //     <li>
+          //       <a
+          //         onClick={logout}
+          //         className="hover:rounded-b-xl hover:rounded-none"
+          //       >
+          //         <i className="ml-4 fa-solid fa-right-from-bracket"></i>
+          //         Logout
+          //       </a>
+          //     </li>
+          //   </ul>
+          // </div>
           <div className="flex">
             <a className="btn-accent btn-sm btn rounded-md text-white font-thin">
               <Link to="Login">Login</Link>
