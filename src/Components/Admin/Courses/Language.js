@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 import LanguageCard from "./LanguageCard";
+import Loading from "../../Shared/Loading/Loading";
 
 const Language = () => {
     const [course, setCourse] = useState();
@@ -10,6 +11,9 @@ const Language = () => {
       res.json()
     )
   );
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   const deleteItem = (id) => {
     const remaining = language?.filter((item) => item._id !== id);
     setCourse(remaining);
@@ -25,7 +29,7 @@ const Language = () => {
         </div>
       </div>
       <div>
-        <Link className="btn btn-primary normal-case" to={"/admin/post"}>
+        <Link className="btn btn-primary normal-case" to={"/admin/addlanguage"}>
           <i className="fa-solid fa-folder-plus mr-2"></i>Add Language Course
         </Link>
       </div>

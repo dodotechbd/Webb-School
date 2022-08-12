@@ -1,13 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import auth from '../../firebase.init';
-import { useSignInWithEmailAndPassword, useSignInWithGoogle } from 'react-firebase-hooks/auth';
+import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Loading from '../Shared/Loading/Loading';
 import axios from 'axios';
+import Social from './Social';
 
 const Login = () => {
-  const [signInWithGoogle, gUser, gLoading, gError] = useSignInWithGoogle(auth);
   const { register, formState: { errors }, handleSubmit } = useForm();
 
   const [
@@ -23,34 +23,34 @@ const Login = () => {
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
+  useEffect(() => {
+    if (user) {
+      (async () => {
+        const { data } = await axios.put(`https://rocky-escarpment-87440.herokuapp.com/user`, {
+          name: user?.user?.displayName,
+          email: user?.user?.email,
+        });
+        if (data.token) {
+          localStorage.setItem("authorizationToken", data.token);
+        }
+      })();
 
-  if (loading || gLoading) {
+      navigate(from, { replace: true });
+    }
+  }, [user, from, navigate]);
+
+
+  if (loading) {
     return <Loading></Loading>
   }
 
-  if (error || gError) {
-    singInError = <p>{error?.message || gError?.message}</p>
+  if (error) {
+    singInError = <p>{error?.message}</p>
   }
 
-  if (user || gUser) {
-    console.log(user, gUser)
-    navigate(from, { replace: true });
-  }
-
-  // const handleSubmit = async event => {
-  //   event.preventDefault();
-  //   const email = emailRef.current.value;
-  //   const password = passwordRef.current.value;
-  //   await signInWithEmailAndPassword(email, password);
-  //const { value } = await axios.post('http://localhost:5000/login',{email})
-  // console.log(value)
-  // }
-
-  const onSubmit = data => {
+  const onSubmit = (data) => {
     console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
-    // const { value } = await axios.post('http://localhost:5000/login', {})
-    // console.log(value)
   }
 
   return (
@@ -92,7 +92,7 @@ const Login = () => {
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label for="password" className="text-sm font-semibold text-gray-900">Password</label>
-                  <a href="#" className="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</a>
+                  <Link to={'/reset'} className="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</Link>
                 </div>
                 <input
                   type="password"
@@ -138,12 +138,7 @@ const Login = () => {
                   <span className="font-normal text-gray-500">or login with</span>
                   <span className="h-px bg-gray-400 w-14"></span>
                 </span>
-                <div className="flex flex-col space-y-4">
-                  <button onClick={() => signInWithGoogle()} className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black">
-                    <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="" /> <span>Login with Google</span>
-                  </button>
-
-                </div>
+                <Social></Social>
               </div>
             </form>
           </div>
@@ -154,6 +149,3 @@ const Login = () => {
 };
 
 export default Login;
-
-
-

@@ -4,7 +4,7 @@ import { Link, NavLink, Outlet } from "react-router-dom";
 const Admin = () => {
   return (
     <div className="min-h-screen">
-      <div className="navbar bg-primary">
+      <div className="navbar bg-base-200 border-b border-neutral">
         <div className="flex-none lg:hidden">
           <div>
             <label for="my-drawer" className="btn btn-ghost drawer-button">
@@ -12,7 +12,7 @@ const Admin = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="inline-block w-5 h-5 stroke-base-100"
+                className="inline-block w-5 h-5"
               >
                 <path
                   stroke-linecap="round"
@@ -25,24 +25,7 @@ const Admin = () => {
           </div>
         </div>
         <div className="flex-1">
-          <Link to={'/admin'} className="btn btn-ghost text-base-100 font-thin text-xl">Admin Panel</Link>
-        </div>
-        <div className="flex-none">
-          <button className="btn btn-square btn-ghost">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              className="inline-block w-5 h-5 stroke-current"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M5 12h.01M12 12h.01M19 12h.01M6 12a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0zm7 0a1 1 0 11-2 0 1 1 0 012 0z"
-              ></path>
-            </svg>
-          </button>
+          <Link to={'/admin'} className="btn btn-ghost font-thin text-xl">Admin Panel</Link>
         </div>
       </div>
       <div className="drawer drawer-mobile">
@@ -52,15 +35,21 @@ const Admin = () => {
         </div>
         <div className="drawer-side">
           <label for="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu p-4 overflow-y-auto w-80 bg-base-200 text-base-content gap-3">
+          <ul className="menu p-3 overflow-y-auto w-72 border-r border-neutral bg-base-200 text-base-content gap-3">
             <li>
-              <NavLink to={"/admin/courses"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
+              <NavLink to={"/admin/courses/language"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/books"}><i className="fa-solid fa-book"></i>Manage Books</NavLink>
+              <NavLink to={"/admin/academicbookss"}><i className="fa-solid fa-book"></i>Manage Academic Books</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
+              <NavLink to={"/admin/skillbookss"}><i className="fa-solid fa-book"></i>Manage Skill Books</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/LivePost/Live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/post"}><i className="fa-solid fa-circle-play"></i>Post Course Video</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
@@ -71,6 +60,7 @@ const Admin = () => {
             <li>
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
             </li>
+            
           </ul>
         </div>
       </div>

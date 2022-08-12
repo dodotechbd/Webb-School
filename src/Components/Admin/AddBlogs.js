@@ -5,8 +5,9 @@ const AddBlogs = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
+
+        const url = `https://rocky-escarpment-87440.herokuapp.com/blogs`;
         console.log("hello", data);
-        const url = `http://localhost:5000/blogs`;
         fetch(url, {
             method: 'POST',
             headers: {
