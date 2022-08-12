@@ -67,7 +67,7 @@ const AddBlogs = () => {
 
                                 /> <br />
 
-                                <input type="submit" className='btn w-full mt-3 ' />
+                                <input type="submit" className='btn w-full mt-3 bg-blue-600 ' />
 
                             </form>
                         </div>
