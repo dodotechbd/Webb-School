@@ -29,11 +29,7 @@ const AcademicBookss = () => {
             </div>
             <div className='p-2 w-9/12 m-auto bg-slate-100 shadow-2xl pb-2'>
                 <form className='' onSubmit={handleSubmit(onSubmit)}>
-
-
-
-
-                    <div className='grid grid-cols-2 justify-around'>
+                  <div className='grid grid-cols-2 justify-around'>
                     <div>
                  <label className="label">
                     <span className="label-text">Link</span>
@@ -42,7 +38,6 @@ const AcademicBookss = () => {
                         placeholder='Books Img URL' 
                         className='input  bg-gray-200 w-full max-w-xs m-4'
                         type="text" {...register("img")}
-
                     />
                  </div>
                     <div>
@@ -60,13 +55,6 @@ const AcademicBookss = () => {
                             }
                         })} />
                     </div>
-                    </div>
-
-
-
-
-
-                   
                    <div>
                    <label className="label">
                     <span className="label-text">Link</span>
@@ -82,7 +70,8 @@ const AcademicBookss = () => {
                             }
                         })} />
                    </div>
-                    <input
+                   <div>
+                   <input
                         type="text"
                         placeholder="price"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -92,7 +81,10 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                    <input
+                   </div>
+                    
+               <div>
+               <input
                         type="text"
                         placeholder="pages"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -102,7 +94,9 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                    <input
+               </div>
+                   <div>
+                   <input
                         type="text"
                         placeholder="format"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -112,6 +106,8 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
+                   </div>
+                    <div>
                     <input
                         type="text"
                         placeholder="file"
@@ -122,7 +118,9 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                    <input
+                    </div>
+                  <div>
+                  <input
                         type="text"
                         placeholder="interactive"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -132,7 +130,9 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
+                  </div>
 
+                    <div>
                     <input
                         type="text"
                         placeholder="1.Writer name"
@@ -143,12 +143,16 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
+                    </div>
+                    <div>
                     <input
                         placeholder='1.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img1")}
 
                     />
+                    </div>
+                    <div>
                     <input
                         type="text"
                         placeholder="2.Writer name"
@@ -159,13 +163,18 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                    <input
+                    </div>
+
+                   <div>
+                   <input
                         placeholder='2.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img2")}
 
                     />
-                    <input
+                   </div>
+                   <div>
+                   <input
                         type="text"
                         placeholder="3.Writer name"
                         class="input    bg-gray-100 w-full max-w-xs m-4"
@@ -175,12 +184,15 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
+                   </div>
+                    <div>
                     <input
                         placeholder='3.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img3")}
-
                     />
+                    </div>
+                    <div>
                     <input
                         type="text"
                         placeholder="4.Writer name"
@@ -191,32 +203,18 @@ const AcademicBookss = () => {
                                 message: "price Is Required"
                             }
                         })} />
-                    <input
+                    </div>
+                   <div>
+                   <input
                         placeholder='4.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
                         type="text" {...register("img4")}
 
                     />
-
-
-                    {/* <textarea
-
-                      type="TextField"
-                      placeholder=" Descriptions"
-                      class="input input-bordered w-full max-w-xs mt-3"
-                      {...register("description", {
-                          required: {
-                              value: true,
-                              message: "TextField Is Required"
-                          }
-                      })}
-
-                  />  */}
-
-
-                    <br></br>
+                   </div>
+                   </div>
+                 <br></br>
                     <input type="submit" className='btn w-11/12 ml-4 text-white bg-[#0544f2] text-left hover:bg-blue-600' />
-
                 </form>
             </div>
 
