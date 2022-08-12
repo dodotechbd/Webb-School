@@ -21,7 +21,7 @@ const Header = ({ handleThemeChange, theme }) => {
   const logout = () => {
     signOut(auth);
     //Token Remove
-    localStorage.removeItem('accessToken');
+    localStorage.removeItem("accessToken");
   };
 
   const manuItems = (
@@ -88,9 +88,11 @@ const Header = ({ handleThemeChange, theme }) => {
                 <li>
                   <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
-                <li>
-                  <NavLink to="admin/courses/language">Admin</NavLink>
-                </li>
+                {role === "admin" && (
+                  <li>
+                    <NavLink to="admin/courses/language">Admin</NavLink>
+                  </li>
+                )}
               </ul>
               <li>
                 {user ? (
@@ -98,7 +100,13 @@ const Header = ({ handleThemeChange, theme }) => {
                     <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">
                       <label className="avatar">
                         <div className="w-7 mr-2 my-2 rounded-full border border-gray-200">
-                          <img src={`${user?.photoURL ? user?.photoURL : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"}`} />
+                          <img
+                            src={`${
+                              user?.photoURL
+                                ? user?.photoURL
+                                : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                            }`}
+                          />
                         </div>
                       </label>
                       <p className="whitespace-nowrap">
@@ -208,7 +216,13 @@ const Header = ({ handleThemeChange, theme }) => {
             >
               <label className="avatar">
                 <div className="w-7 mr-2 rounded-full border border-gray-200">
-                <img src={`${user?.photoURL ? user?.photoURL : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"}`} />
+                  <img
+                    src={`${
+                      user?.photoURL
+                        ? user?.photoURL
+                        : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                    }`}
+                  />
                 </div>
               </label>
               <p className="whitespace-nowrap">
