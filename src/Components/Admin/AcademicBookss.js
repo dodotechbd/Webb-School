@@ -199,6 +199,9 @@ const AcademicBookss = () => {
                     />
                    </div>
                    <div>
+                   <label className="label">
+                    <span className="label-text ml-4">3.Book Writer Name</span>
+                  </label>
                    <input
                         type="text"
                         placeholder="3.Writer name"
@@ -211,6 +214,9 @@ const AcademicBookss = () => {
                         })} />
                    </div>
                     <div>
+                    <label className="label">
+                    <span className="label-text ml-4">3.Book Writer img</span>
+                  </label>
                     <input
                         placeholder='3.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
@@ -218,6 +224,9 @@ const AcademicBookss = () => {
                     />
                     </div>
                     <div>
+                    <label className="label">
+                    <span className="label-text ml-4">4.Book Writer name</span>
+                  </label>
                     <input
                         type="text"
                         placeholder="4.Writer name"
@@ -230,6 +239,9 @@ const AcademicBookss = () => {
                         })} />
                     </div>
                    <div>
+                   <label className="label">
+                    <span className="label-text ml-4">4.Book Writer img</span>
+                  </label>
                    <input
                         placeholder='4.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
