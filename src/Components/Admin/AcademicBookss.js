@@ -147,12 +147,12 @@ const AcademicBookss = () => {
 
                     <div>
                     <label className="label">
-                    <span className="label-text">1.Book Writer</span>
+                    <span className="label-text ml-4">1.Book Writer Name</span>
                   </label>
                     <input
                         type="text"
                         placeholder="1.Writer name"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("Writer1", {
                             required: {
                                 value: true,
@@ -161,6 +161,9 @@ const AcademicBookss = () => {
                         })} />
                     </div>
                     <div>
+                    <label className="label">
+                    <span className="label-text ml-4">1.Book Writer img</span>
+                  </label>
                     <input
                         placeholder='1.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
@@ -169,6 +172,9 @@ const AcademicBookss = () => {
                     />
                     </div>
                     <div>
+                    <label className="label">
+                    <span className="label-text ml-4">2.Book Writer Name</span>
+                  </label>
                     <input
                         type="text"
                         placeholder="2.Writer name"
@@ -182,6 +188,9 @@ const AcademicBookss = () => {
                     </div>
 
                    <div>
+                   <label className="label">
+                    <span className="label-text ml-4">2.Book Writer img</span>
+                  </label>
                    <input
                         placeholder='2.writer Img URL'
                         className='input  bg-gray-100 w-full max-w-xs m-4'
