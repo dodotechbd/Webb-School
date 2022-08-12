@@ -6,7 +6,7 @@ const SkillBookss = () => {
 
     const onSubmit = data => {
         console.log("hello", data);
-        const url = `https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`;
+        const url = `https://rocky-escarpment-87440.herokuapp.com/SkillBooks`;
         fetch(url, {
             method: 'POST',
             headers: {
