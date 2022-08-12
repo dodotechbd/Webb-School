@@ -135,7 +135,7 @@ function App() {
                 element={<Admission></Admission>}
               ></Route>
             </Route>
-            <Route path="/admin/skillbookss" element={<AcademicBookss></AcademicBookss>}></Route>
+            <Route path="/admin/skillbookss" element={<SkillBookss></SkillBookss>}></Route>
             <Route path="/admin/academicbookss" element={<AcademicBookss></AcademicBookss>}></Route>
             <Route path="/admin/post" element={<Post></Post>}></Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
