@@ -32,7 +32,7 @@ const AcademicBookss = () => {
                   <div className='grid grid-cols-2 justify-around'>
                     <div>
                  <label className="label">
-                    <span className="label-text">books img</span>
+                    <span className="label-text ml-4">books img</span>
                   </label>
                  <input
                         placeholder='Books Img URL' 
@@ -41,11 +41,11 @@ const AcademicBookss = () => {
                     />
                  </div>
                     <div>
-                   <p className='ml-6'>book Name</p>
+                   <p className='ml-4'>book Name</p>
                     <input
                         type="text"
                         placeholder="Books Name"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("name", {
                             required: {
                                 value: true,
@@ -55,12 +55,12 @@ const AcademicBookss = () => {
                     </div>
                    <div>
                    <label className="label">
-                    <span className="label-text">Proprietor name</span>
+                    <span className="label-text ml-4">Proprietor name</span>
                   </label>
                    <input
                         type="text"
                         placeholder="name of Proprietor"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("description", {
                             required: {
                                 value: true,
@@ -70,12 +70,12 @@ const AcademicBookss = () => {
                    </div>
                    <div>
                    <label className="label">
-                    <span className="label-text">Book price</span>
+                    <span className="label-text ml-4">Book price</span>
                   </label>
                    <input
                         type="text"
                         placeholder="price"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("price", {
                             required: {
                                 value: true,
@@ -86,12 +86,12 @@ const AcademicBookss = () => {
                     
                <div>
                <label className="label">
-                    <span className="label-text">Book total pages</span>
+                    <span className="label-text ml-4">Book total pages</span>
                   </label>
                <input
                         type="text"
                         placeholder="pages"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("pages", {
                             required: {
                                 value: true,
@@ -101,12 +101,12 @@ const AcademicBookss = () => {
                </div>
                    <div>
                    <label className="label">
-                    <span className="label-text"> Format Name</span>
+                    <span className="label-text ml-4"> Format Name</span>
                   </label>
                    <input
                         type="text"
                         placeholder="format"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("format", {
                             required: {
                                 value: true,
@@ -116,12 +116,12 @@ const AcademicBookss = () => {
                    </div>
                     <div>
                     <label className="label">
-                    <span className="label-text">File Name</span>
+                    <span className="label-text ml-4">File Name</span>
                   </label>
                     <input
                         type="text"
                         placeholder="file"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("file", {
                             required: {
                                 value: true,
@@ -131,12 +131,12 @@ const AcademicBookss = () => {
                     </div>
                   <div>
                   <label className="label">
-                    <span className="label-text">Book interactive</span>
+                    <span className="label-text ml-4">Book interactive</span>
                   </label>
                   <input
                         type="text"
                         placeholder="interactive"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("interactive", {
                             required: {
                                 value: true,
@@ -166,7 +166,7 @@ const AcademicBookss = () => {
                   </label>
                     <input
                         placeholder='1.writer Img URL'
-                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        className='input  bg-gray-200 w-full max-w-xs m-4'
                         type="text" {...register("img1")}
 
                     />
@@ -178,7 +178,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="2.Writer name"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("Writer2", {
                             required: {
                                 value: true,
@@ -193,7 +193,7 @@ const AcademicBookss = () => {
                   </label>
                    <input
                         placeholder='2.writer Img URL'
-                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        className='input  bg-gray-200 w-full max-w-xs m-4'
                         type="text" {...register("img2")}
 
                     />
@@ -205,7 +205,7 @@ const AcademicBookss = () => {
                    <input
                         type="text"
                         placeholder="3.Writer name"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("Writer3", {
                             required: {
                                 value: true,
@@ -219,7 +219,7 @@ const AcademicBookss = () => {
                   </label>
                     <input
                         placeholder='3.writer Img URL'
-                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        className='input  bg-gray-200 w-full max-w-xs m-4'
                         type="text" {...register("img3")}
                     />
                     </div>
@@ -230,7 +230,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="4.Writer name"
-                        class="input    bg-gray-100 w-full max-w-xs m-4"
+                        class="input    bg-gray-200 w-full max-w-xs m-4"
                         {...register("Writer4", {
                             required: {
                                 value: true,
@@ -244,7 +244,7 @@ const AcademicBookss = () => {
                   </label>
                    <input
                         placeholder='4.writer Img URL'
-                        className='input  bg-gray-100 w-full max-w-xs m-4'
+                        className='input  bg-gray-200 w-full max-w-xs m-4'
                         type="text" {...register("img4")}
 
                     />
