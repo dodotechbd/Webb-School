@@ -9,27 +9,28 @@ const UserRow = ({ user, refetch, index }) => {
     const handleMakeAdmin = (id) => {
         setIsLoading(true);
         (async () => {
-          const { data } = await primaryAxios.put(`https://rocky-escarpment-87440.herokuapp.com/user-role?id=${id}`, {
+          const { data } = await primaryAxios.put(`/user-role?id=${id}`, {
             role: "admin",
           });
           if (data.success) {
+            Swal.fire(`${name} Is Now Admin`, {
+              icon: "success",
+              className: "rounded-xl",
+            });
             refetch();
-            const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-right',
-                iconColor: '#a5dc86',
-                customClass: {
-                  popup: 'colored-toast'
-                },
-                showConfirmButton: false,
-                timer: 1500,
-                timerProgressBar: true
-              })
-              await Toast.fire({
-                icon: 'success',
-                title: `${name} Is Now Admin`
-              })
-            setIsLoading(false);
+          }
+        })();
+      };
+      const handleDelete = (id) => {
+        setIsLoading(true);
+        (async () => {
+          const { data } = await primaryAxios.delete(`/user/${id}`);
+          if (data.deletedCount > 0) {
+            Swal.fire(`${name} Is Now Removed`, {
+              icon: "success",
+              className: "rounded-xl",
+            });
+            refetch();
           }
         })();
       };
@@ -49,17 +50,19 @@ const UserRow = ({ user, refetch, index }) => {
           </div>
           <div>
             <div className="font-bold">{name}</div>
-            <div className="text-sm opacity-50">Bangladesh</div>
+            <div className="text-sm opacity-50">{email}</div>
           </div>
         </div>
       </td>
       <td>
-        {email}
-      </td>
-      <td>
-        <button onClick={() => handleMakeAdmin(_id)} className={`btn btn-xs btn-outline btn-primary hover:text-white rounded-full ${
+      <button onClick={() => handleMakeAdmin(_id)} className={`btn btn-xs btn-outline btn-primary hover:text-white ${
             isLoading && "loading"
           }`} disabled={role}>Make Admin</button>
+      </td>
+      <td>
+        <button  onClick={() => handleDelete(_id)} className={`btn btn-xs btn-outline ${
+            isLoading && "loading"
+          }`}>Remove User</button>
       </td>
     </tr>
   );
