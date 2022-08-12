@@ -23,7 +23,7 @@ const SkillBookss = () => {
     return (
         <div className='pb-12'>
             <div>
-                <h1 className='text-3xl font-bold text-blue-600 text-center my-10'>Add your Academic Books</h1>
+                <h1 className='text-3xl font-bold text-blue-600 text-center my-10'>Add your Skill Development Books</h1>
             </div>
             <div className='p-2 w-9/12 m-auto bg-slate-100 shadow-2xl pb-2'>
                 <form className='' onSubmit={handleSubmit(onSubmit)}>
