@@ -1,6 +1,7 @@
 import React from "react";
 import swal from "sweetalert";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 const LanguageCard = ({ allcard, deleteItem, refetch }) => {
   const { _id } = allcard;
@@ -59,6 +60,11 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
           <h2 className="text-left pl-1 py-1 text-md hover:text-info">{allcard?.name}</h2>
         )}
         <div>
+          <Link to={`/course/${allcard?.uname}`}
+            className="btn btn-sm btn-block text-primary rounded-none btn-ghost border-t-neutral"
+          >
+            View Course
+          </Link>
           <button
             onClick={() => deleteItems(_id)}
             className="btn btn-block text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral"

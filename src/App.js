@@ -39,6 +39,8 @@ import PreLoader from "./Components/Shared/Loading/PreLoader";
 
 import LiveClass from "./Components/LIveClass/LiveClass";
 import AddBlogs from "./Components/Admin/AddBlogs";
+import AcademicBookss from "./Components/Admin/AcademicBookss";
+import SkillBookss from "./Components/Admin/SkillBookss";
 import Language from "./Components/Admin/Courses/Language";
 import Job from "./Components/Admin/Courses/Job";
 import Admission from "./Components/Admin/Courses/Admission";
@@ -133,6 +135,8 @@ function App() {
                 element={<Admission></Admission>}
               ></Route>
             </Route>
+            <Route path="/admin/skillbookss" element={<AcademicBookss></AcademicBookss>}></Route>
+            <Route path="/admin/academicbookss" element={<AcademicBookss></AcademicBookss>}></Route>
             <Route path="/admin/post" element={<Post></Post>}></Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
 
