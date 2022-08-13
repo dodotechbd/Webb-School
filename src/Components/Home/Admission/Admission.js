@@ -1,9 +1,13 @@
 import { Link } from "react-router-dom";
-import useAdmission from "../../../Hooks/useAdmission";
+import { useQuery } from "react-query";
 import AdmissionCard from "./AdmissionCard";
 
 const Admission = () => {
-  const [admission, setAdmission] = useAdmission();
+  const { data: admission } = useQuery(["admissionCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
+      (res) => res.json()
+    )
+  );
 
   return (<div id="admission" className="bg-base-100 border-b border-neutral py-16" >
       <div className="">
@@ -15,7 +19,7 @@ const Admission = () => {
         </p>
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-5 lg:mx-8 mb-10 ">
-        {admission.slice(0, 4).map((admission) => (
+        {admission?.slice(0, 4).map((admission) => (
           <AdmissionCard
             key={admission._id}
             admission={admission}

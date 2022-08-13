@@ -434,8 +434,8 @@ const AddAdmission = () => {
               </div>
             </label>
           </div>
-          {/* {errors?.name && <p className="text-error">{errors.name.message}</p>}
-          {errors?.img && <p className="text-error">{errors.img.message}</p>} */}
+          {errors?.name && <p className="text-error">{errors.name.message}</p>}
+          {errors?.img && <p className="text-error">{errors.img.message}</p>}
           <div className="form-control my-6">
             <button className="btn btn-primary text-white">Post</button>
           </div>
