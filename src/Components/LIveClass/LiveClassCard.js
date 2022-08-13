@@ -9,12 +9,11 @@ const LiveClassCard = ({ live }) => {
 
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
+            <div class="card w-96 bg-base-300 border border-neutral shadow-xl">
                 <div class="card-body">
-                    <h2 class="card-title pl-8">Live:<span className='text-green-700'>  {slots.length > 0 
-                    ?<span>{slots}</span>
-                    :<span className='text-red-500'>No live class running now</span>
-                      }</span></h2>
+
+                    <h2 class="card-title pl-8">Name:<span className='text-primary'> {slots}</span></h2>
+
                     <img
                         src={svg}
                         alt="triangle with all three sides equal"
@@ -22,13 +21,13 @@ const LiveClassCard = ({ live }) => {
                     
                     <div className='flex gap-5 justify-center '>
                         
-                        <span class="mt-2 text-center  font-bold text-black">Time:<span className='text-[#FF0000]'>{Date}</span></span>
-                        <span class="mt-2 text-center  font-bold text-black">Time:<span className='text-[#FF0000]'>{time}</span></span>
+                        <span class="mt-2 text-center  font-bold text-black" className='text-primary' >Date :<span className='text-[#FF0000] font-semibold ' >{Date}</span></span>
+                        <span class="mt-2 text-center  font-bold text-black" className='text-primary'>Time :<span className='text-[#FF0000] font-semibold'>{time}</span></span>
                     </div>
                     <div class="card-actions justify-center">
                         <a href={Link} target="_blank">
-            <button className=" flex items-center w-60 justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-primary rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-white bg-[#A25BF7]" >join</button>
-        </a>
+                     <button disabled={Link.length === 0} className="btn btn-accent btn-wide">join</button>
+                      </a>
                     </div>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React from 'react';
 import useLives from '../../../Hooks/UseLIve';
+import LiveTable from './LiveTable';
 import PostClass from './PostClass';
 
 
@@ -10,7 +11,8 @@ const Live = () => {
     return (
         <div>
             <div className="hero bg-base-100">
-                <div className="">
+
+                <div className="flex">
                     <div className="text-center my-10">
                         <h1 className="text-3xl font-bold">Post Live Class   <i className="fa-solid fa-video text-error"></i></h1>
                     </div>
@@ -22,6 +24,9 @@ const Live = () => {
                             ></PostClass>)
                         }
                     
+                    </div>
+                    <div>
+<LiveTable></LiveTable>
                     </div>
                 </div>
             </div>
