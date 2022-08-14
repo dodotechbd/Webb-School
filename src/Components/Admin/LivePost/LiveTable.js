@@ -1,13 +1,42 @@
-import React from 'react';
-import {useQuery} from 'react-query'
+import React, { useState } from 'react';
+import swal from 'sweetalert';
 
-const LiveTable = () => {
-    const {data:live,isloading} = useQuery('live',() => fetch('http://localhost:5000/lives').then(res=>res.json()))
+
+const LiveTable = ({users,index , refetch}) => {
+    const {slots, Date , Link, _id} = users
+    const [isLoading, setIsLoading] = useState(null);
+
+   
+   const handleDelete = (id) =>{
+    setIsLoading(true); 
+    fetch(`http://localhost:5000/lives/${id}`,{
+        method: 'DELETE'
+    })
+    .then(res=> res.json())
+    .then(data =>{
+        console.log(data)
+        if(data.success){
+            swal.fire(`${slots} Class deleted`, {
+              icon: "success",
+              className: "rounded-xl",
+            });
+            refetch();
+          }
+
+    })()
+   }
+
     return (
-        <div>
-            <h1>{live.length}</h1>
-        </div>
-    );
+        <tr>
+        <th>{index + 1}</th>
+        <td>{slots}</td>
+        <td>{Date}</td>
+       
+        <td><button onClick={() => handleDelete(_id)}   className={`btn btn-xs btn-outline btn-primary hover:text-white ${
+            isLoading && "loading"
+          }`}>Delete</button></td>
+      </tr>
+    )
 };
 
 export default LiveTable;
