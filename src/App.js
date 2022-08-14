@@ -50,6 +50,7 @@ import AddAdmission from "./Components/Admin/Courses/AddAdmission";
 import Reset from "./Components/Login/Reset";
 import RequireAuth from "./Authentication/RequireAuth";
 import RequireAdmin from "./Authentication/RequireAdmin";
+import Test from "./Components/Test/Test";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -180,6 +181,7 @@ function App() {
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
+      {/* <Test></Test> */}
       <FooterTwo></FooterTwo>
       <Footer></Footer>
     </div>

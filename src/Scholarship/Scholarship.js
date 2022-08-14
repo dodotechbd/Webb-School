@@ -1,6 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import './Scholarship.css'
+import CountUp from 'react-countup';
 const Scholarship = () => {
+
+    // React CountUp Add
+    const [counter, setCounter] = useState(0);
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCounter((counter) => counter + 1);
+        }, 100000);
+        return () => {
+            clearInterval(interval);
+        }
+    }, []);
     return (
         <div >
             <hr />
@@ -8,13 +20,20 @@ const Scholarship = () => {
                 <div class="card-body">
                     <div>
                         <div className='text'>
-                            <h1 className='title-2 mt-10'>কোর্সে ভালো করলে এককালীন <span>১০০০০০</span> টাকা শিক্ষাবৃওির সুযোগ !!!
+                            <h1 className='title-2 mt-10'>কোর্সে ভালো করলে এককালীন <span> <CountUp
+                                duration={25} start={0} end={100000} /></span> টাকা শিক্ষাবৃওির সুযোগ !!!
                                 <i class="fa-solid fa-sack-dollar dollar"></i>
                                 <i class="fa-solid fa-sack-dollar dollar"></i>
                                 <i class="fa-solid fa-sack-dollar dollar"></i>
                             </h1>
                             <p className='normal-text mt-5'>
-                                যারা কোর্সের বিভিন্ন কুইজ, এসাইনমেন্ট ও পরীক্ষায় ভাল রেসাল্ট করবেন এবং সামগ্রিকভাবে কমপক্ষে ৮0% মার্কস পাবেন, তাদের কে নির্বাচিত করে আমরা একটি বিশেষ পরিক্ষার আয়োজন করব। তারপর সেখান থেকে প্রথম <span>৩</span> জনকে ক্রমানুসারে <span>৫০০০০</span> টাকা, <span>৭০০০০</span> টাকা এবং <span>১০০০০০</span> টাকা এককালীন শিক্ষাবৃওি প্রদান করব। জব রেকোমেন্ডেশন লেটার লিখে দিবো। এই কোর্স কাউকে চাকরির নিশ্চয়তা দিতে পারবেনা কারণ কোন কোর্সই সেটা পারেনা। তবে পরিশ্রমী এবং নিবেদিতপ্রাণ লার্নারদের সঠিক গাইডলাইন অবশ্যই নিশ্চিত করবে এবং চাকরির ইন্টারভিউতে যেন তারা আত্মবিশ্বাস এর সাথে ভাল করতে
+                                যারা কোর্সের বিভিন্ন কুইজ, এসাইনমেন্ট ও পরীক্ষায় ভাল রেসাল্ট করবেন এবং সামগ্রিকভাবে কমপক্ষে <span> <CountUp
+                                    duration={25} start={0} end={80} /> % </span> মার্কস পাবেন, তাদের কে নির্বাচিত করে আমরা একটি বিশেষ পরিক্ষার আয়োজন করব। তারপর সেখান থেকে প্রথম <span> <CountUp
+                                        duration={15} start={0} end={3} /></span> জনকে ক্রমানুসারে <span><CountUp
+                                            duration={25} start={0} end={50000} /></span> টাকা, <span>
+                                    <CountUp
+                                        duration={25} start={0} end={70000} /></span> টাকা এবং <span> <CountUp
+                                            duration={25} start={0} end={100000} /></span> টাকা এককালীন শিক্ষাবৃওি প্রদান করব। জব রেকোমেন্ডেশন লেটার লিখে দিবো। এই কোর্স কাউকে চাকরির নিশ্চয়তা দিতে পারবেনা কারণ কোন কোর্সই সেটা পারেনা। তবে পরিশ্রমী এবং নিবেদিতপ্রাণ লার্নারদের সঠিক গাইডলাইন অবশ্যই নিশ্চিত করবে এবং চাকরির ইন্টারভিউতে যেন তারা আত্মবিশ্বাস এর সাথে ভাল করতে
                                 সহযোগিতা করবে।
                             </p>
                             <div className='avatar'>
