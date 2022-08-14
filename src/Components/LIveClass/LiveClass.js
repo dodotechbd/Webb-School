@@ -6,7 +6,6 @@ const LiveClass = () => {
 
     const [Lives, setLives] = useState([]);
 
-    // const [blog,setBlog] = useBlogs(detailsId);
 
     useEffect(() => {
         fetch("https://rocky-escarpment-87440.herokuapp.com/lives")
@@ -15,7 +14,11 @@ const LiveClass = () => {
     }, [])
 
     return (
+
+        <div className='flex h-screen justify-center items-center '>
+
         <div className='flex h-screen justify-center items-center'>
+
 
             <div class="card  w-96 shadow-xl">
 
@@ -27,9 +30,11 @@ const LiveClass = () => {
 
             </div>
         </div>
+        </div>
     );
 };
 
 export default LiveClass;
+
 
 
