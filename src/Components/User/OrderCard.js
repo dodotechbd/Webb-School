@@ -45,7 +45,12 @@ const OrderCard = ({ order, index, refetch }) => {
         <p>Transaction ID: {transactionId ? transactionId : "Unpaid"}</p>
         <p>Price: ৳{price}</p>
         <p>Payment Status: {status}</p>
-        <div className="lg:flex md:flex justify-between">
+        {transactionId ? (
+          <button className="btn btn-wide btn-sm font-thin normal-case bg-green-500 hover:bg-green-400 text-white">
+          Paid
+        </button>
+        ):(
+          <div className="lg:flex md:flex justify-between">
           <div className="flex-col mb-2 lg:mb-0 md:mb-0">
             Pay Now:
             <Link to={`/checkout/bkash/${uname}`} className="mx-3 btn btn-sm font-thin normal-case bg-[#CD1E63] hover:bg-[#B81D56] text-white">
@@ -59,6 +64,7 @@ const OrderCard = ({ order, index, refetch }) => {
               Cancel Order
             </button>
         </div>
+        )}
       </div>
     </div>
   );
