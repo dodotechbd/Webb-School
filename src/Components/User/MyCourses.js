@@ -12,9 +12,9 @@ const MyCourses = () => {
     data: myCourse,
     isLoading,
     refetch,
-  } = useQuery(["myCourse"], () =>
-    primaryAxios.get(`/mycourse?email=${user?.email}`)
-  );
+  } = useQuery(["myCourses", user?.email], () =>
+  primaryAxios.get(`/mycourse?email=${user?.email}`)
+);
   console.log(myCourse?.data);
   if (isLoading) {
     return <Loader></Loader>;

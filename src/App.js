@@ -49,6 +49,7 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
+import Test from "./Components/Test/Test";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -188,6 +189,7 @@ function App() {
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
+      {/* <Test></Test> */}
       <FooterTwo></FooterTwo>
       <Footer></Footer>
     </div>
