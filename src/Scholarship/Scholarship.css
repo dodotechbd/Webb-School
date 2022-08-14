@@ -17,11 +17,6 @@
     justify-content: center;
 }
 
-.small {
-    width: 150px;
-    height: 150px;
-}
-
 .success {
     text-align: center;
     color: crimson;
