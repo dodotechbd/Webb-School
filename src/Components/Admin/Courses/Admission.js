@@ -20,7 +20,7 @@ const Admission = () => {
   };
     return (
         <div className="text-center">
-        <div className="lg:mx-8 mx-4 pt-10">
+        <div className="lg:mx-8 mx-4 mt-4">
           <h1 className="text-3xl pb-5 ">Admission Learning</h1>
           <div className="grid sm:grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4 mb-10">
             {admission?.map((allcard) => (

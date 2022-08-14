@@ -1,8 +1,13 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import useRole from "../../Hooks/useRole";
 
 const Checkout = () => {
+  const [user, loading] = useAuthState(auth);
+  const [role, roleLoading, userName] = useRole();
   const { uname } = useParams();
   const { data: language } = useQuery(["languageCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then(
@@ -24,7 +29,7 @@ const Checkout = () => {
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
   return (
-    <div className="hero bg-base-200 py-8">
+    <div className="hero bg-base-100 py-8">
       <div className="flex justify-between w-full flex-col md:flex-row lg:flex-row items-start">
         <div className="text-center lg:text-left mx-auto">
           <p className="text-xl mb-4 font-bold">
@@ -41,7 +46,7 @@ const Checkout = () => {
               <p className="font-bold mt-4 text-2xl">৳ {courseData?.price}</p>
             </div>
           </div>
-          <div className="card flex-shrink-0 w-full mt-8 border border-neutral bg-base-100">
+          <div className="card flex-shrink-0 w-full mt-8 border border-neutral bg-base-300">
             <div className="card-body">
               <h1 className="text-2xl font-bold text-warning">Billing Info</h1>
               <div className="lg:flex gap-8">
@@ -51,21 +56,22 @@ const Checkout = () => {
                   </label>
                   <input
                     type="text"
-                    placeholder="Olive Yew"
-                    className="input input-bordered"
+                    value={userName}
+                    disabled
+                    className="input input-bordered bg-base-200"
                   />
                 </div>
-                <div className="form-control w-full">
-                  <label className="label">
-                    <span className="label-text">Address</span>
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="1 Creek Ave.
-                    Orange, NJ 07050"
-                    className="input input-bordered"
-                  />
-                </div>
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Email</span>
+                </label>
+                <input
+                  value={user?.email}
+                  disabled
+                  placeholder="info@site.com"
+                  className="input input-bordered bg-base-200"
+                />
+              </div>
               </div>
               <div className="lg:flex gap-8">
               <div className="form-control w-full">
@@ -75,24 +81,25 @@ const Checkout = () => {
                 <input
                   type="tel"
                   placeholder="123-456-789"
-                  className="input input-bordered"
+                  className="input input-bordered bg-base-200"
                 />
               </div>
-              <div className="form-control w-full">
-                <label className="label">
-                  <span className="label-text">Email</span>
-                </label>
-                <input
-                  type="email"
-                  placeholder="info@site.com"
-                  className="input input-bordered"
-                />
-              </div>
+                <div className="form-control w-full">
+                  <label className="label">
+                    <span className="label-text">Address</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="1 Creek Ave.
+                    Orange, NJ 07050"
+                    className="input input-bordered bg-base-200"
+                  />
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="card flex-shrink-0 lg:w-5/12 md:w-5/12 w-11/12 mx-auto mt-4 border border-neutral bg-base-100">
+        <div className="card flex-shrink-0 lg:w-5/12 md:w-5/12 w-11/12 mx-auto mt-4 border border-neutral bg-base-300">
           <div className="card-body">
             <h3 className="mb-5 text-xl font-bold text-center">
               Select payment method
@@ -109,7 +116,7 @@ const Checkout = () => {
                 />
                 <label
                   for="hosting-small"
-                  className="inline-flex justify-center items-center p-5 w-full rounded-lg border-2 border-neutral cursor-pointer peer-checked:text-[#0284C5] peer-checked:bg-base-300 peer-checked:border-[#0284C5] hover:text-primary hover:bg-base-300 hover:border-primary"
+                  className="inline-flex justify-center items-center p-5 w-full rounded-lg border-2 border-neutral cursor-pointer peer-checked:text-[#0284C5] peer-checked:bg-base-100 peer-checked:border-[#0284C5] hover:text-primary hover:bg-base-300 bg-base-200 hover:border-primary"
                 >
                   {/* <img src={bkash} className='w-16 h-12' alt="" /> */}
 
@@ -128,7 +135,7 @@ const Checkout = () => {
                 />
                 <label
                   for="hosting-big"
-                  className="inline-flex justify-center items-center p-5 w-full rounded-lg border-2 border-neutral cursor-pointer peer-checked:text-[#0284C5] peer-checked:bg-base-300 peer-checked:border-[#0284C5] hover:text-primary hover:bg-base-300 hover:border-primary mt-5"
+                  className="inline-flex justify-center items-center p-5 w-full rounded-lg border-2 border-neutral cursor-pointer peer-checked:text-[#0284C5] peer-checked:bg-base-100 peer-checked:border-[#0284C5] hover:text-primary hover:bg-base-300 bg-base-200 hover:border-primary mt-5"
                 >
                   {/* <img src={stripe} className='w-16 h-12 mr-3' alt="" /> */}
                   <div className="block">
