@@ -1,3 +1,32 @@
 .dollar {
     color: gold;
 }
+
+.title-2 {
+    font-size: xx-large;
+    font-weight: 1000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-style: oblique;
+    text-decoration-line: underline;
+    text-decoration-color: crimson;
+}
+
+.avatar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.small {
+    width: 150px;
+    height: 150px;
+}
+
+.success {
+    text-align: center;
+    color: crimson;
+    font-size: xx-large;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: lighter;
+    font-style: italic;
+}
