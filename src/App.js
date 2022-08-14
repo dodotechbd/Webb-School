@@ -1,11 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-
 import Live from "./Components/Admin/LivePost/Live";
-
 import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
@@ -36,7 +33,6 @@ import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
-
 import LiveClass from "./Components/LIveClass/LiveClass";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import AcademicBookss from "./Components/Admin/AcademicBookss";
@@ -53,7 +49,6 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
-
 function App() {
   const [theme, setTheme] = useState(false);
 
