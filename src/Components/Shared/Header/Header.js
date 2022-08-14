@@ -132,7 +132,7 @@ const Header = ({ handleThemeChange, theme }) => {
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to={"coming"}>
+                        <NavLink to={"/orders"}>
                           <i className="ml-4 fa-solid fa-clock"></i>Payment
                           History
                         </NavLink>
@@ -248,7 +248,7 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"coming"} className="hover:rounded-none">
+                <NavLink to={"/orders"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-clock"></i>Payment History
                 </NavLink>
               </li>

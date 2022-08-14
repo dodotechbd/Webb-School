@@ -1,11 +1,8 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-
 import Live from "./Components/Admin/LivePost/Live";
-
 import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
@@ -29,14 +26,13 @@ import { useEffect, useState } from "react";
 import BlogDetails from "./Components/Blogs/BlogDetails";
 import CoursePlay from "./Components/AllCourses/CoursePlay";
 import CourseVideo from "./Components/AllCourses/CourseVideo";
-import Profile from "./Components/Shared/Header/Profile";
-import MyCourses from "./Components/AllCourses/MyCourses";
+import Profile from "./Components/User/Profile";
+import MyCourses from "./Components/User/MyCourses";
 import FooterTwo from "./Components/Shared/FooterTwo";
 import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
-
 import LiveClass from "./Components/LIveClass/LiveClass";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import AcademicBookss from "./Components/Admin/AcademicBookss";
@@ -50,9 +46,9 @@ import AddAdmission from "./Components/Admin/Courses/AddAdmission";
 import Reset from "./Components/Login/Reset";
 import RequireAuth from "./Authentication/RequireAuth";
 import RequireAdmin from "./Authentication/RequireAdmin";
-import Support from "./Support/Support";
-import Scholarship from "./Scholarship/Scholarship";
-
+import Stripe from "./Components/Payments/Stripe";
+import Order from "./Components/User/Order";
+import Bkash from "./Components/Payments/Bkash";
 function App() {
   const [theme, setTheme] = useState(false);
 
@@ -112,6 +108,9 @@ function App() {
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+          <Route path="/checkout/stripe/:uname" element={<Stripe></Stripe>}></Route>
+          <Route path="/checkout/bkash/:uname" element={<Bkash></Bkash>}></Route>
+          <Route path="/orders" element={<Order></Order>}></Route>
           <Route
             path="/checkout/:uname"
             element={<Checkout></Checkout>}
@@ -137,8 +136,14 @@ function App() {
                 element={<Admission></Admission>}
               ></Route>
             </Route>
-            <Route path="/admin/skillbookss" element={<SkillBookss></SkillBookss>}></Route>
-            <Route path="/admin/academicbookss" element={<AcademicBookss></AcademicBookss>}></Route>
+            <Route
+              path="/admin/skillbookss"
+              element={<SkillBookss></SkillBookss>}
+            ></Route>
+            <Route
+              path="/admin/academicbookss"
+              element={<AcademicBookss></AcademicBookss>}
+            ></Route>
             <Route path="/admin/post" element={<Post></Post>}></Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
 
@@ -182,8 +187,6 @@ function App() {
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
-      <Support></Support>
-      <Scholarship></Scholarship>
       <FooterTwo></FooterTwo>
       <Footer></Footer>
     </div>
