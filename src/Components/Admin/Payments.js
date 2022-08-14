@@ -1,5 +1,18 @@
 import React from "react";
+import { useQuery } from "react-query";
+import primaryAxios from "../../Api/primaryAxios";
+import Loading from "../Shared/Loading/Loading";
+import PaymentsCard from "./PaymentsCard";
 const Payments = () => {
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery(["all-orders"], () => primaryAxios.get(`/all-order`));
+
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div>
       <div className="overflow-x-auto">
@@ -12,21 +25,14 @@ const Payments = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>Ganderton</td>
-              <td>pecialist@gmail.com</td>
-              <td>Unpaid</td>
-            </tr>
-            <tr>
-              <td>Hart Hagerty</td>
-              <td>echnician@gmail.com</td>
-              <td>Unpaid</td>
-            </tr>
-            <tr>
-              <td>Brice Swyre</td>
-              <td>ccountant@gmail.com</td>
-              <td>Unpaid</td>
-            </tr>
+          {orders?.data?.map((order, index) => (
+              <PaymentsCard
+                key={order._id}
+                index={index}
+                order={order}
+                refetch={refetch}
+              ></PaymentsCard>
+            ))}
           </tbody>
         </table>
       </div>

@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import useBlogs from '../../Hooks/useBlogs';
 
 const BlogDetails = () => {
     const { detailsId } = useParams();

@@ -65,7 +65,7 @@ const Login = () => {
             <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="" />
           </div>
           <div className="p-5 bg-white md:flex-1">
-            <h3 className="my-4 text-3xl font-bold text-primary text-center ">Login</h3>
+            <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Login</h3>
             <form onSubmit={handleSubmit(onSubmit)} action="#" className="flex flex-col space-y-5">
               <div className="flex flex-col space-y-1">
                 <label for="email" className="text-sm font-semibold text-gray-900">Email</label>
@@ -92,7 +92,7 @@ const Login = () => {
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
                   <label for="password" className="text-sm font-semibold text-gray-900">Password</label>
-                  <Link to={'/reset'} className="text-sm text-primary hover:underline focus:text-blue-800">Forgot Password?</Link>
+                  <Link to={'/reset'} className="text-sm text-[#A25BF7] hover:underline focus:text-blue-800">Forgot Password?</Link>
                 </div>
                 <input
                   type="password"
@@ -117,7 +117,7 @@ const Login = () => {
               <div className="flex items-center space-x-2">
                 <input
                   type="checkbox"
-                  id="remember"
+                  id="red-checkbox"
                   className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
                 />
                 <label for="remember" className="text-sm font-semibold text-gray-900">Remember me</label>
@@ -130,7 +130,7 @@ const Login = () => {
                 >
                   Log in
                 </button>
-                <p className='text-  text-bold'>New to Webb School? <Link to="/SignUp" className=' text-light text-primary'>Create New Account</Link></p>
+                <p className='text-gray-500'>New to Webb School? <Link to="/SignUp" className=' text-light text-[#A25BF7]'>Create New Account</Link></p>
               </div>
               <div className="flex flex-col space-y-5">
                 <span className="flex items-center justify-center space-x-2">

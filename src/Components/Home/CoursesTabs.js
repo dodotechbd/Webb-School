@@ -1,17 +1,26 @@
 import React from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
-import useAdmission from "../../Hooks/useAdmission";
-import useJobCourses from "../../Hooks/useJobCourse";
-import useLanguage from "../../Hooks/useLanguage";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import "./CoursesTab.css";
-
+import { useQuery } from "react-query";
 
 const CoursesTabs = () => {
-  const [language] = useLanguage();
-  const [jobcourses] = useJobCourses();
-  const [admission] = useAdmission();
+  const { data: language } = useQuery(["languageCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: job } = useQuery(["jobCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: admission } = useQuery(["admissionCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
+      (res) => res.json()
+    )
+  );
   return (
     <div className="py-16 md:block bg-base-100 border-b border-neutral">
       <div className="">
@@ -24,7 +33,7 @@ const CoursesTabs = () => {
       </div>
       <div>
         <Tabs className="mx-10 my-8 bg-base-100">
-          <TabList className='overflow-x-auto lg:overflow-hidden whitespace-nowrap border-b border-neutral flex'>
+          <TabList className="overflow-x-auto lg:overflow-hidden whitespace-nowrap border-b border-neutral flex">
             <Tab>Language Learning</Tab>
             <Tab>Jobs Requirments</Tab>
             <Tab>Admission Preparation</Tab>
@@ -32,7 +41,7 @@ const CoursesTabs = () => {
 
           <TabPanel className="mt-5 bg-base-100">
             <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
-              {language.slice(0, 4).map((allcard) => (
+              {language?.slice(0, 4).map((allcard) => (
                 <AllCourseCard
                   key={allcard._id}
                   allcard={allcard}
@@ -42,7 +51,7 @@ const CoursesTabs = () => {
           </TabPanel>
           <TabPanel>
             <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
-              {jobcourses.slice(0, 4).map((allcard) => (
+              {job?.slice(0, 4).map((allcard) => (
                 <AllCourseCard
                   key={allcard._id}
                   allcard={allcard}
@@ -51,11 +60,14 @@ const CoursesTabs = () => {
             </div>
           </TabPanel>
           <TabPanel>
-          <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
-          {admission.slice(0, 4).map((allcard) => (
-            <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
-          ))}
-        </div>
+            <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
+              {admission?.slice(0, 4).map((allcard) => (
+                <AllCourseCard
+                  key={allcard._id}
+                  allcard={allcard}
+                ></AllCourseCard>
+              ))}
+            </div>
           </TabPanel>
         </Tabs>
       </div>

@@ -75,7 +75,7 @@ const SignUp = () => {
           <img className='' src='https://i.postimg.cc/MpZtxwyx/casual-life-3d-girl-and-boy-in-the-worker-jumpsuits-looking-at-tablet.pngss' alt="" />
         </div>
         <div className="p-5 bg-white md:flex-1">
-          <h3 className="my-4 text-3xl font-bold text-primary text-center ">Account Register</h3>
+          <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Account Register</h3>
           <form  onSubmit={handleSubmit(onSubmit)} action="#" className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
             <label for="name" className="text-sm font-semibold text-gray-900">Name</label>
@@ -151,7 +151,7 @@ const SignUp = () => {
               >
                 Register
               </button>
-              <p className='text-  text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-primary'>Please Login</Link></p>
+              <p className='text-gray-500 text-bold'>Already have an account? <Link to="/LogIn" className=' text-light text-[#A25BF7]'>Please Login</Link></p>
             </div>
             <div className="flex flex-col space-y-5">
               <span className="flex items-center justify-center space-x-2">

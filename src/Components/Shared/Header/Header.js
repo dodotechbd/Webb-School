@@ -8,7 +8,6 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import useRole from "../../../Hooks/useRole";
-import Loading from "../Loading/Loading";
 
 const Header = ({ handleThemeChange, theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -139,7 +138,7 @@ const Header = ({ handleThemeChange, theme }) => {
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to={"coming"}>
+                        <NavLink to={"/orders"}>
                           <i className="ml-4 fa-solid fa-clock"></i>Payment
                           History
                         </NavLink>
@@ -205,7 +204,7 @@ const Header = ({ handleThemeChange, theme }) => {
         {user ? (
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-              <div class="w-10 rounded-full">
+              <div class="w-9 rounded-full">
                 <img
                   src={`${
                     user?.photoURL
@@ -217,7 +216,7 @@ const Header = ({ handleThemeChange, theme }) => {
             </label>
             <ul
               tabindex="0"
-              class="mt-3 shadow menu menu-compact dropdown-content rounded-box w-52 bg-base-300"
+              class="mt-3 shadow menu menu-compact dropdown-content rounded-md w-56 bg-base-100 text-warning"
             >
               <div className="mx-auto mt-3">
                 <div class="avatar">
@@ -255,14 +254,14 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
-                <NavLink to={"coming"} className="hover:rounded-none">
+                <NavLink to={"/orders"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-clock"></i>Payment History
                 </NavLink>
               </li>
               <li>
                 <a
                   onClick={logout}
-                  className="hover:rounded-b-xl hover:rounded-none"
+                  className="hover:rounded-b-md hover:rounded-none text-red-500"
                 >
                   <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                   Logout

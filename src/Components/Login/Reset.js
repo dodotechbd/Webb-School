@@ -4,6 +4,7 @@ import { useForm } from 'react-hook-form';
 import auth from '../../firebase.init';
 import reset from '../../Assets/reset.svg';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const Reset = () => {
     const [sendPasswordResetEmail, sending, resetError] =
@@ -104,7 +105,7 @@ const Reset = () => {
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Forgot your password ?</h3>
-            <p className='text-center text-gray-600 mb-6'>To reset your password, enter the email address that you used to set up your account. We'll send you a link to help you get back into your account.</p>
+            <p className='text-center text-gray-500 mb-6'>To reset your password, enter the email address that you used to set up your account. We'll send you a link to help you get back into your account.</p>
             <div className="flex flex-col space-y-5">
             <div className="form-control w-full">
             <label className="input-group w-full">
@@ -130,6 +131,7 @@ const Reset = () => {
             {errors?.email && <p className="error">{errors.email.message}</p>}
           </div>
           <button onClick={handleResetPassword} className='btn border-[#A25BF7] hover:border-[#A25BF7] text-white bg-gradient-to-r from-[#4828A9] to-[#A25BF7]'>Send</button>
+          <Link to={'/login'} className='link link-hover text-center text-[#A25BF7]'>back to login</Link>
             </div>
           </div>
         </div>
