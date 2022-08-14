@@ -60,9 +60,13 @@ const UserRow = ({ user, refetch, index }) => {
           }`} disabled={role}>Make Admin</button>
       </td>
       <td>
-        <button  onClick={() => handleDelete(_id)} className={`btn btn-xs btn-outline ${
+        {(email === 'shahedali734@gmail.com') || (email === 'shakhawathh55@gmail.com') || (email === 'rashelmahmudraj1998@gmail.com') || (email === 'amitsharma1998k@gmail.com') ? (
+          <button className='btn btn-xs btn-secondary btn-outline'>Master Admin</button>
+        ) :(
+          <button  onClick={() => handleDelete(_id)} className={`btn btn-xs btn-outline ${
             isLoading && "loading"
           }`}>Remove User</button>
+        )}
       </td>
     </tr>
   );

@@ -17,6 +17,7 @@ const PaymentsCard = ({ order, index, refetch }) => {
     <tr>
       <td>{productName}</td>
       <td>{userEmail}</td>
+      <td>{transactionId}</td>
       <td>{status}</td>
     </tr>
   );

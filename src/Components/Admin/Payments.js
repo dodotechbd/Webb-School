@@ -21,6 +21,7 @@ const Payments = () => {
             <tr>
               <th>Name</th>
               <th>Email</th>
+              <th>Transaction ID</th>
               <th>Status</th>
             </tr>
           </thead>
