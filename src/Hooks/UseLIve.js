@@ -4,7 +4,7 @@ const useLives = () => {
     const [Lives, setLives] = useState([]);
 
     useEffect(() => {
-        fetch(`/Live.json`)
+        fetch(`http://localhost:5000/liveData`)
             .then(res => res.json())
             .then(data => setLives(data));
     }, [])

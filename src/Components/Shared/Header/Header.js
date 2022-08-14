@@ -87,6 +87,12 @@ const Header = ({ handleThemeChange, theme }) => {
                 <li>
                   <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
+
+                <div className="modal-action mt-3">
+            <label for="my-modal-5" className="btn btn-primary btn-sm text-white">
+              Close
+            </label>
+          </div>
                 {role === "admin" && (
                   <li>
                     <NavLink to="admin/courses/language">Admin</NavLink>

@@ -68,6 +68,7 @@ const PostClass = ({ live }) => {
                     </div>
                     <div className='flex gap-3'>
                         <div className="form-control w-full max-w-xs">
+                            
                             <label className="label">
                                 <span className="label-text">Date</span>
                             </label>

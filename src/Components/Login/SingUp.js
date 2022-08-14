@@ -30,7 +30,7 @@ const SignUp = () => {
   useEffect(() => {
     if (user) {
       (async () => {
-        const { data } = await axios.put(`https://rocky-escarpment-87440.herokuapp.com/user`, {
+        const { data } = await axios.put(`http://localhost:5000/user`, {
           name: name,
           email: user?.user?.email,
         });
