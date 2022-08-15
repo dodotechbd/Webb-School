@@ -2,27 +2,22 @@ import React from "react";
 import { Outlet, useParams } from "react-router-dom";
 import CourseLink from "./CourseLink";
 import { useQuery } from "react-query";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import primaryAxios from "../../Api/primaryAxios";
 
 
 const CoursePlay = () => {
   const { uname } = useParams();
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then(
-      (res) => res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then(
-      (res) => res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
-  const courseData = admission?.find((allcard) => allcard.uname === uname)
-  || language?.find((allcard) => allcard.uname === uname) || job?.find((allcard) => allcard.uname === uname);
+  const [user, loading] = useAuthState(auth);
+  const {
+    data: myCourse,
+    isLoading,
+    refetch,
+  } = useQuery(["myCourses", user?.email], () =>
+  primaryAxios.get(`/mycourse?email=${user?.email}`)
+);
+  const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
   return (
     <div>
       <div className="hero bg-base-100 py-8">

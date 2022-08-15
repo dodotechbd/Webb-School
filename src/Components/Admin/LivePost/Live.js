@@ -10,7 +10,7 @@ const Live = () => {
     const [Lives] = useLives();
 
     const { data: allData, isLoading, refetch } = useQuery(["lives"], () =>
-        fetch(`http://localhost:5000/lives`).then(
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/lives`).then(
             (res) => res.json()
 
         )
