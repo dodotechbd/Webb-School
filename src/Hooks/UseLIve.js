@@ -4,7 +4,7 @@ const useLives = () => {
     const [Lives, setLives] = useState([]);
 
     useEffect(() => {
-        fetch(`/Live.json`)
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/liveData`)
             .then(res => res.json())
             .then(data => setLives(data));
     }, [])

@@ -1,5 +1,5 @@
 import React from "react";
-import useJobCourses from "../../../Hooks/useJobCourse";
+import { useQuery } from "react-query";
 import JobCard from "./JobCard";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -14,7 +14,11 @@ import "../Banner/Banner.css";
 import { Pagination } from "swiper";
 
 const JobCourses = () => {
-  const [jobCourse] = useJobCourses();
+  const { data: job } = useQuery(["jobCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+      res.json()
+    )
+  );
   return (
     <div className="pt-12 bg-base-100 border-b border-neutral" id="job">
       <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
@@ -68,7 +72,7 @@ const JobCourses = () => {
         modules={[Pagination]}
         className="mySwiper"
       >
-        {jobCourse.map((jobCourse) => (
+        {job?.map((jobCourse) => (
           <SwiperSlide>
           <JobCard key={jobCourse._id} jobCourse={jobCourse}></JobCard>
           </SwiperSlide>
