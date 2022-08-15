@@ -100,11 +100,10 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${
-                              user?.photoURL
-                                ? user?.photoURL
-                                : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                            }`}
+                            src={`${user?.photoURL
+                              ? user?.photoURL
+                              : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                              }`}
                           />
                         </div>
                       </label>
@@ -184,11 +183,21 @@ const Header = ({ handleThemeChange, theme }) => {
           {manuItems}
         </ul>
       </div>
+
+      <div className="">
+        <i class="fa-solid fa-bell absolute"></i>
+
+        <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 mb-3 ml-2 flex justify-center ">0</span>
+
+      </div>
+
+
       <div className="navbar-end hidden lg:flex">
         <button
           onClick={handleThemeChange}
           className="rounded-full lg:mx-2 pr-5"
         >
+
           {theme ? (
             <svg
               aria-hidden="true"
@@ -217,16 +226,16 @@ const Header = ({ handleThemeChange, theme }) => {
             </svg>
           )}
         </button>
+
         {user ? (
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
               <div class="w-9 rounded-full">
                 <img
-                  src={`${
-                    user?.photoURL
-                      ? user?.photoURL
-                      : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                  }`}
+                  src={`${user?.photoURL
+                    ? user?.photoURL
+                    : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                    }`}
                 />
               </div>
             </label>
@@ -238,11 +247,10 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div class="avatar">
                   <div class="w-20 rounded-full">
                     <img
-                      src={`${
-                        user?.photoURL
-                          ? user?.photoURL
-                          : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                      }`}
+                      src={`${user?.photoURL
+                        ? user?.photoURL
+                        : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                        }`}
                     />
                   </div>
                 </div>
