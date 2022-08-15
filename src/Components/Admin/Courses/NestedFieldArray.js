@@ -17,13 +17,19 @@ const NestedFieldArray = ({ nestIndex, control, register, errors }) => {
               <label className="input-group my-2">
               <input
                 type="text"
-                {...register(`file[${nestIndex}].details[${k}].name`)}
+                {...register(`file[${nestIndex}].details[${k}].name`) && register(`videos[${nestIndex}].name`)}
                 placeholder="Introduction"
                 className="input input-bordered bg-base-300 w-full"
               />
               <input
                 type="text"
-                {...register(`file[${nestIndex}].details[${k}].fileName`)}
+                {...register(`file[${nestIndex}].details[${k}].fileName`) && register(`videos[${nestIndex}].fileName`)}
+                placeholder="Introduction"
+                className="input input-bordered bg-base-300 w-full"
+              />
+              <input
+                type="text"
+                {...register(`file[${nestIndex}].details[${k}].vurl`) && register(`videos[${nestIndex}].vurl`)}
                 placeholder="Introduction"
                 className="input input-bordered bg-base-300 w-full"
               />

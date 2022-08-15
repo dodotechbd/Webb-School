@@ -22,6 +22,18 @@
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "bank",
+    "videos": [
+      {
+        "name": "Introduction",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Next",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "file": [
       {
         "title": "First Video",
@@ -79,6 +91,18 @@
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "developer",
+    "videos": [
+      {
+        "name": "Introduction",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Next",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "file": [
       {
         "title": "First Video",
@@ -135,6 +159,18 @@
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "corporate",
+    "videos": [
+      {
+        "name": "Introduction",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Next",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "file": [
       {
         "title": "First Video",
@@ -191,6 +227,18 @@
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "introvdo": "https://www.youtube.com/embed/DznA-oe4wJk",
     "list": "freelancer",
+    "videos": [
+      {
+        "name": "Introduction",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Next",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "file": [
       {
         "title": "First Video",
