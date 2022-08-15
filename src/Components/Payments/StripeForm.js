@@ -107,7 +107,11 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         userName: user?.displayName,
         userEmail: user?.email,
         order: "paid",
-        course: courseData,
+        file: courseData?.file,
+        list: courseData?.list,
+        img: courseData?.img,
+        name: courseData?.name,
+        uname: courseData?.uname,
       };
       const { data } = await primaryAxios.put(`/order`, payment) && primaryAxios.post(`/mycourse?email=${user?.email}`, placedOrder);
       

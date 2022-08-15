@@ -9,7 +9,7 @@ const LiveTable = ({users,index , refetch}) => {
    
    const handleDelete = (id) =>{
     setIsLoading(true); 
-    fetch(`http://localhost:5000/lives/${id}`,{
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/lives/${id}`,{
         method: 'DELETE'
     })
     .then(res=> res.json())

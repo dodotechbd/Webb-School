@@ -21,6 +21,33 @@
     "link": "Introduction",
     "img": "https://static.vecteezy.com/system/resources/thumbnails/003/266/872/small/career-business-work-concept-with-business-goals-team-free-vector.jpg",
     "list": "career",
+    "videos": [
+      {
+        "name": "Intro to Eng. for Career Development",
+        "fileName": "Intro-to-Eng.-for-Career-Development",
+        "vurl": "https://www.youtube.com/embed/WuMD6Tjispk"
+      },
+      {
+        "name": "Overview Of career Development",
+        "fileName": "Overview-Of-career-Development",
+        "vurl": "https://www.youtube.com/embed/DRbhTPEDRbA"
+      },
+      {
+        "name": "Job Search Overview",
+        "fileName": "Job-Search-Overview",
+        "vurl": "https://www.youtube.com/embed/f7JkA9JJQJo"
+      },
+      {
+        "name": "Identifying Your Skills",
+        "fileName": "Identifying-Your-Skills",
+        "vurl": "https://www.youtube.com/embed/tsTGf-8tD6k"
+      },
+      {
+        "name": "Language Focus Vocabulary",
+        "fileName": "Language-Focus-Vocabulary",
+        "vurl": "https://www.youtube.com/embed/GFhyS-xpfZk"
+      }
+    ],
     "file": [
       {
         "title": "Lesson 01",
@@ -76,6 +103,23 @@
     "link": "Introduction",
     "img": "https://camonk.com/s/store/courses/61cab6ff0cf2acaec8c0be66/cover.jpg?v=2",
     "list": "communcation",
+    "videos": [
+      {
+        "name": "Basics of Communication Skills",
+        "fileName": "Basics-of-Communication-Skills",
+        "vurl": "https://www.youtube.com/embed/Pcp2qmtsYs0"
+      },
+      {
+        "name": "What, Why, How, When, Where, Who",
+        "fileName": "What-Why-How-When-Where-Who",
+        "vurl": "https://www.youtube.com/embed/msu87bseovE"
+      },
+      {
+        "name": "How To Make Simple Sentences",
+        "fileName": "How-To-Make-Simple-Sentences",
+        "vurl": "https://www.youtube.com/embed/IX-_ddJimzI"
+      }
+    ],
     "file": [
       {
         "title": "Lesson 01",
@@ -123,13 +167,26 @@
     "link": "Introduction",
     "img": "https://media.istockphoto.com/vectors/design-concept-of-word-chinese-website-banner-vector-id1297556594?k=20&m=1297556594&s=612x612&w=0&h=78bhkNkXsgjCW8z8tHrKHEwrIogK2DvnqVOgNCIs0oY=",
     "list": "chinese",
+    "videos": [
+      {
+        "name": "Introduction",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Next",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "file": [
       {
         "title": "First Video",
         "details": [
           {
-            "name": "Intro to Eng. for Career Development",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
             "name": "Next",
@@ -141,8 +198,9 @@
         "title": "Second Video",
         "details": [
           {
-            "name": "Intro to Eng. for Career Development",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
             "name": "Next",
@@ -174,13 +232,26 @@
     "link": "Introduction",
     "img": "https://images.twinkl.co.uk/tw1n/image/private/t_630/image_repo/52/ab/t2-e-379-spelling-punctuation-and-grammar-display-banner_ver_1.jpg",
     "list": "grammar",
+    "videos": [
+      {
+        "name": "Introduction",
+        "fileName": "Introduction",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Next",
+        "fileName": "next",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      }
+    ],
     "file": [
       {
         "title": "First Video",
         "details": [
           {
-            "name": "Intro to Eng. for Career Development",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
             "name": "Next",
@@ -192,8 +263,9 @@
         "title": "Second Video",
         "details": [
           {
-            "name": "Intro to Eng. for Career Development",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
             "name": "Next",
