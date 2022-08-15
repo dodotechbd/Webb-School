@@ -21,8 +21,8 @@ const Live = () => {
 
     return (
         <div className='flex flex-wrap gap-5 lg:flex-nowrap'>
-            <div className="hero px-2 bg-base-100">
-                <div>
+            <div className="hero px-2 bg-base-10 pt-6 ">
+                <div className='drop-shadow-2xl ring ring-blue-500 ring-offset-2 ring-offset-blue-100 rounded-2xl '>
                     <div className="text-center my-10">
                         <h1 className="text-3xl font-bold">Post Live Class   <i className="fa-solid fa-video text-error"></i></h1>
                     </div>

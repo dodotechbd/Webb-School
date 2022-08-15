@@ -15,7 +15,7 @@ const LiveTable = ({users,index , refetch}) => {
     .then(res=> res.json())
     .then(data =>{
         console.log(data)
-        if(data.success){
+        if(data.deleteCount){
             swal.fire(`${slots} Class deleted`, {
               icon: "success",
               className: "rounded-xl",
