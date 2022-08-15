@@ -4,7 +4,7 @@ const useLanguage = () => {
     const [language, setLanguage] = useState([]);
 
     useEffect(() => {
-        fetch(`/language.json`)
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/language`)
             .then(res => res.json())
             .then(data => setLanguage(data));
     }, [])

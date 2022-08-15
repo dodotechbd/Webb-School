@@ -1,4 +1,5 @@
 import React from "react";
+import AnchorLink from "react-anchor-link-smooth-scroll";
 import './Banner/Banner.css'
 const Navigation = () => {
   return (
@@ -12,7 +13,7 @@ const Navigation = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 px-3 py-3 rounded-xl">
-        <a
+        <AnchorLink
           href="#store"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -24,8 +25,8 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Book Store</span>
             </p>
           </div>
-        </a>
-        <a
+        </AnchorLink>
+        <AnchorLink
           href="#admission"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -37,8 +38,8 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Admission</span>
             </p>
           </div>
-        </a>
-        <a
+        </AnchorLink>
+        <AnchorLink
           href="#job"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
@@ -50,12 +51,12 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Job Exam</span>
             </p>
           </div>
-        </a>
-        <a
+        </AnchorLink>
+        <AnchorLink
           href="#courses"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
-          {" "}
+          {" "} 
           <div className="">
             {" "}
             <p className="justify-center text-center lg:flex md:flex py-6 lg:py-0">
@@ -63,11 +64,11 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Courses</span>
             </p>
           </div>
-        </a>
+        </AnchorLink>
       </div>
-      <div className="flex flex-col w-full lg:flex-row mt-14 mb-8">
-      <h1 className="text-3xl font-bold lg:mx-8 mx-4">
-          Webb School is the great platform for distance learning.
+      <div className="flex flex-col w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
+      <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">
+          <span className="text-info">Webb School</span> is the great platform for distance learning.
         </h1>
         <div className="lg:divider divide-primary lg:divider-horizontal"></div>
         <p className="text-lg mt-4 hidden lg:block md:block">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>

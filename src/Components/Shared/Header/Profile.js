@@ -14,7 +14,7 @@ const Profile = () => {
                     <div className="max-w-md">
                         <h1 className="text-left text-5xl font-bold">Hello, {user?.displayName}</h1>
                         <p className="mt-2 font-serif text-lg">This is your profile page. You can see the progress you've made with your work and manage your projects or assigned tasks</p>
-                        <a href="#!" class="btn btn-info text-xl">Edit profile</a>
+                        <a href="#!" class="btn btn-info text">Edit profile</a>
                     </div>
                 </div>
             </div>

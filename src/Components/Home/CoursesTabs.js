@@ -38,7 +38,7 @@ const CoursesTabs = () => {
                   allcard={allcard}
                 ></AllCourseCard>
               ))}
-            </div>
+            </div> 
           </TabPanel>
           <TabPanel>
             <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">

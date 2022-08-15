@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css";
+import "swiper/css"; 
 import "swiper/css/pagination";
 
 import "../Banner/Banner.css";
