@@ -184,6 +184,7 @@ const Header = ({ handleThemeChange, theme }) => {
         </ul>
       </div>
 
+{/* notifications add here  */}
       <div className="">
         <i class="fa-solid fa-bell absolute"></i>
 
