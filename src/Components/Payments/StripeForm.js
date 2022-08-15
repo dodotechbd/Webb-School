@@ -95,7 +95,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
             className: "rounded-3xl",
           }
         ).then((value) => {
-          navigate("/orders");
+          navigate("/mycourse");
         });
       }
       const payment = {
@@ -112,6 +112,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         img: courseData?.img,
         name: courseData?.name,
         uname: courseData?.uname,
+        videos: courseData?.videos,
       };
       const { data } = await primaryAxios.put(`/order`, payment) && primaryAxios.post(`/mycourse?email=${user?.email}`, placedOrder);
       

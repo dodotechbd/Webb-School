@@ -5,7 +5,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import swal from "sweetalert";
 import primaryAxios from "../../Api/primaryAxios";
 
 const Checkout = () => {
@@ -57,7 +57,16 @@ const Checkout = () => {
           placedOrder
         );
         if(data.success){
-          navigate(`/checkout/stripe/${courseData?.uname}`);
+          swal(
+            "Order Successful",
+            'Please Pay Now',
+            "success",
+            {
+              className: "rounded-3xl",
+            }
+          ).then((value) => {
+            navigate("/orders");
+          });
           reset();
         }
       }
