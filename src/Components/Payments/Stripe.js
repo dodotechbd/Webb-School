@@ -6,16 +6,25 @@ import Loading from "../Shared/Loading/Loading";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import StripeForm from "./StripeForm";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
 
 const Stripe = () => {
   const stripePromise = loadStripe(
     "pk_test_51LWltUCPn2JHPi081EFxPygcOJOvtghmISJBIxeobWbHIH1BT7TgPBEQoF6YZ75OqiFMJVXZEbfBGwefP5I2InKr005L3Un3xL"
   );
+  
+  const [user] = useAuthState(auth);
   const { uname } = useParams();
-  const { data, isLoading } = useQuery(["orders", uname], () =>
-    primaryAxios.get(`/order/${uname}`)
+  const {
+    data: orders,
+    isLoading,
+    refetch,
+  } = useQuery(["orders", user?.email], () =>
+    primaryAxios.get(`/order?email=${user?.email}`)
   );
-
+  const courseData = orders?.data?.find((allcard) => allcard.uname === uname);
+  console.log(courseData);
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -30,7 +39,7 @@ const Stripe = () => {
                 <span className='w-32 bg-base-100'>Name</span>
               <input
                 type="text"
-                value={data.data.userName}
+                value={courseData?.userName}
                 class="input input-bordered input-lg w-full"
                 disabled
               />
@@ -41,7 +50,7 @@ const Stripe = () => {
                 <span className='w-32 bg-base-100'>Email</span>
               <input
                 type="text"
-                value={data.data.userEmail}
+                value={courseData?.userEmail}
                 class="input input-bordered input-lg w-full"
                 disabled
               />
@@ -52,7 +61,7 @@ const Stripe = () => {
                 <span className='w-32 bg-base-100'>Course</span>
               <input
                 type="text"
-                value={data.data.productName}
+                value={courseData?.productName}
                 class="input input-bordered input-lg w-full"
                 disabled
               />
@@ -63,7 +72,7 @@ const Stripe = () => {
                 <span className='w-32 bg-base-100'>Price</span>
               <input
                 type="text"
-                value={data.data.price}
+                value={courseData?.price}
                 class="input input-bordered input-lg w-full"
                 disabled
               />
@@ -74,7 +83,7 @@ const Stripe = () => {
                 <span className='w-32 bg-base-100'>Address</span>
               <input
                 type="text"
-                value={data.data.address}
+                value={courseData?.address}
                 class="input input-bordered input-lg w-full"
                 disabled
               />
@@ -85,8 +94,8 @@ const Stripe = () => {
         <div class="card flex-shrink-0 w-11/12 shadow-2xl bg-base-100">
         <Elements stripe={stripePromise}>
           <StripeForm
-            totalAmount={data.data.price}
-            orderInfo={data.data}
+            totalAmount={courseData?.price}
+            orderInfo={courseData}
           ></StripeForm>
         </Elements>
         </div>
