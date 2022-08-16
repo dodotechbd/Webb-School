@@ -212,7 +212,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         type="submit"
         disabled={!stripe || !elements || !clientSecret}
       >
-        Pay ${totalAmount}
+        Pay ৳{totalAmount}
       </button>
     </form>
   );
