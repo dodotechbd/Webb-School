@@ -192,7 +192,7 @@ const Header = ({ handleThemeChange, theme }) => {
 
                     <i class="fa-solid fa-bell absolute"></i>
                     {
-                        user ? (<span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 mb-3 ml-2 flex justify-center ">2</span>
+                        user ? (<span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 mb-3 ml-2 flex justify-center ">1</span>
                         ) : ("")
                     }
 
