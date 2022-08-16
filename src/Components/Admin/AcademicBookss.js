@@ -5,7 +5,6 @@ const AcademicBookss = () => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
-        console.log("hello", data);
         const url = `https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`;
         fetch(url, {
             method: 'POST',

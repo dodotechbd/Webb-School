@@ -423,14 +423,6 @@ const AddLanguage = () => {
                   >
                     <i class="fa-solid fa-plus mr-2"></i>Add Module
                   </button>
-
-                  <button
-                    type="button"
-                    onClick={() => reset()}
-                    className="btn btn-sm btn-outline btn-primary"
-                  >
-                    reset
-                  </button>
                 </section>
               </div>
             </label>

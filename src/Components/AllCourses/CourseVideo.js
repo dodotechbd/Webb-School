@@ -2,29 +2,41 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../firebase.init";
+import primaryAxios from "../../Api/primaryAxios";
 
 const CourseVideo = () => {
   const { fileName } = useParams();
-  const { data: video } = useQuery(["videoLesson"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/videos`).then(
-      (res) => res.json()
-    )
-  );
+  const { video } = useParams();
+  const [user, loading] = useAuthState(auth);
+  const {
+    data: myCourse,
+    isLoading,
+    refetch,
+  } = useQuery(["myCourse", user?.email], () =>
+  primaryAxios.get(`/mycourse?email=${user?.email}`)
+);
 
-  const courseData = video?.find((allcard) => allcard.fileName === fileName);
+  const courseData = myCourse?.data?.find((allcard) => allcard.video === video);
+
+  const videoData = courseData?.videos.find((allcard) => allcard.fileName === fileName);
+  console.log(videoData)
   return (
     <div>
       <div className="lg:h-96 h-48 md:h-96 w-full">
-      <ReactPlayer
-              width={"100%"}
-              height={"100%"}
-              controls
-              light={true}
-              url={courseData?.vurl}
-              playing
-            />
+      {videoData?.vurl ? (
+        <ReactPlayer
+        width={"100%"}
+        height={"100%"}
+        controls
+        light={true}
+        url={videoData?.vurl}
+        playing
+      />
+      ):(<img className="h-full w-full" src="https://videohive.img.customer.envatousercontent.com/files/236563111/Error%20590x332.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=20c22574bed9e1fb11d37a55ccd6735f" alt="error"/>)}
       </div>
-      <h1 className="text-3xl my-4">{courseData?.name}</h1>
+      <h1 className="text-3xl my-4">{videoData?.name}</h1>
       <label
         for="my-modal-3"
         className="text-error underline cursor-pointer text-xl modal-button"
