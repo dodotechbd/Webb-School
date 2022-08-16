@@ -29,8 +29,8 @@ const Home = () => {
       <Review></Review>
       <Promotional></Promotional>
       <Instructor></Instructor>
-      <Question></Question>
       <Support></Support>
+      <Question></Question>
       <Test></Test>
       <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-lg opacity-70'><i className="fa-solid fa-arrow-up-long"></i></AnchorLink>
       {/* messenger chat */}
