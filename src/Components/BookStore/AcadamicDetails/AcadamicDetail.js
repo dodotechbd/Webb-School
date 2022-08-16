@@ -94,20 +94,19 @@ const AcadamicDetail = () => {
                             <h3 className=' text-lg p-4'><i className="fa-solid fa-hand-holding-dollar pr-4 text-[#efad1e]"></i> Price $:  {newService[0]?.price}</h3>
                         </div>
                     </div>
-                    <button className=" btn-block   bg-indigo-400 mt-4  text-center  font-bold py-2   hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</button>
-
-                    <label for="my-modal" class="btn modal-button">open modal</label>
-
-                <input type="checkbox" id="my-modal" class="modal-toggle" />
+                
+                    <label for="my-modal-3" class="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</label>
+            
+                <input type="checkbox" id="my-modal-3" class="modal-toggle" />
                 <div class="modal">
-                    <div class="modal-box">
-                        <h3 class="font-bold text-lg">Congratulations random Internet user!</h3>
+                    <div class="modal-box relative">
+                        <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <h3 class="text-lg font-bold">Congratulations random Internet user!</h3>
                         <p class="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
-                        <div class="modal-action">
-                            <label for="my-modal" class="btn">Yay!</label>
-                        </div>
                     </div>
                 </div>
+
+
             </div>
 
         </div>
