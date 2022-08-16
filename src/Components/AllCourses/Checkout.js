@@ -37,7 +37,7 @@ const Checkout = () => {
   return (
     <div className="hero bg-base-100 py-8">
       <div className="flex justify-between w-full flex-col md:flex-row lg:flex-row items-start">
-        <div className="text-center w-11/12 lg:w-7/12 lg:text-left mx-auto">
+        <div className="text-center w-11/12 lg:w-7/12 md:w-6/12 lg:text-left mx-auto">
           <p className="text-2xl mb-4 font-bold">
             The course you are purchasing:
           </p>
