@@ -199,7 +199,9 @@ const Header = ({ handleThemeChange, theme }) => {
                 </label>
                 <div tabindex="0" class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content">
                     <div class="card-body">
-                     
+                        <h3 class="card-title">WelCome!</h3>
+                        <p className='font-bold'>{user?.displayName}</p>
+                        <p>Thank you for Visiting This Website.</p>
                     </div>
                 </div>
             </div>
