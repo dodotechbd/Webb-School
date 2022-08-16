@@ -3,8 +3,8 @@ import { signOut } from "firebase/auth";
 import auth from "../firebase.init";
 
 const primaryAxios = axios.create({
-  baseURL: "http://localhost:5000/",
-  // http://localhost:5000/
+  baseURL: "https://rocky-escarpment-87440.herokuapp.com/",
+  // https://rocky-escarpment-87440.herokuapp.com/
   // https://rocky-escarpment-87440.herokuapp.com/
 });
 
