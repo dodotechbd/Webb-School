@@ -41,46 +41,50 @@ const Checkout = () => {
           <p className="text-2xl mb-4 font-bold">
             The course you are purchasing:
           </p>
-          <div className="p-8  bg-base-300 rounded-2xl">
+          <div className="p-6 bg-base-300 border-[0.5px] border-neutral rounded-2xl">
             <div className="lg:flex">
-            <img
-              src={courseData?.img}
-              className="lg:h-80 w-full rounded-lg"
-              alt=""
-            />
-            <div className="card-body lg:block hidden w-full">
-              <div className=" gap-3">
-                <p>
-                  <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>120H
-                  Videos
-                </p>
-                <p>
-                  <i className="fa-solid fa-users pr-2 text-[#efad1e]"></i>758
-                  Students
-                </p>
-                <p>
-                  <i className="fa-solid fa-headset pr-2 text-[#efad1e]"></i>Mentor
-                  Support
-                </p>
-                <p>
-                  <i className="fa-solid fa-circle-question pr-2 text-[#efad1e]"></i>
-                  Quizzes
-                </p>
-                <p>
-                  <i className="fa-solid fa-certificate pr-2 text-[#efad1e]"></i>
-                  Certificate
-                </p>
-                <p>
-                  <i className="fa-solid fa-clock pr-2 text-[#efad1e]"></i>6 Month
-                </p>
+              <img
+                src={courseData?.img}
+                className="lg:h-72 w-full rounded-lg"
+                alt=""
+              />
+              <div className="card-body lg:block hidden w-full">
+                <div className="grid grid-cols-2 gap-3">
+                  <p>
+                    <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>
+                    120H Videos
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-users pr-2 text-[#efad1e]"></i>758
+                    Students
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-headset pr-2 text-[#efad1e]"></i>
+                    Support
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-circle-question pr-2 text-[#efad1e]"></i>
+                    Quizzes
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-certificate pr-2 text-[#efad1e]"></i>
+                    Certificate
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-clock pr-2 text-[#efad1e]"></i>6
+                    Month
+                  </p>
+                  <p className="font-bold mt-4 text-2xl text-accent rounded-md bg-base-100 p-3 col-span-2">
+                Pay: ৳{courseData?.price}
+              </p>
+                </div>
               </div>
-            </div>
             </div>
             <div className="text-left">
               <p className="text-2xl font-bold mt-3 ">{courseData?.name}</p>
               <span>#{courseData?.topica}</span>
               <span>#{courseData?.topicb}</span>
-              <p className="font-bold mt-4 text-2xl text-info rounded-md bg-base-100 p-3">
+              <p className="font-bold lg:hidden mt-4 text-2xl text-info rounded-md bg-base-100 p-3 col-span-2">
                 Pay: ৳{courseData?.price}
               </p>
             </div>
