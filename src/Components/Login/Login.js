@@ -124,12 +124,14 @@ const Login = () => {
               </div>
               <div>
                 {singInError}
+
                 <button
                   type="submit"
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
                   Log in
                 </button>
+                
                 <p className='text-gray-500'>New to Webb School? <Link to="/SignUp" className=' text-light text-[#A25BF7]'>Create New Account</Link></p>
               </div>
               <div className="flex flex-col space-y-5">
