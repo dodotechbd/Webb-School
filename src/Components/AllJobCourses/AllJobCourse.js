@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import useJobCourses from "../../Hooks/useJobCourse";
+import React from "react";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
 import { useQuery } from "react-query";

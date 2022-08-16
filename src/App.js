@@ -1,10 +1,9 @@
-import { Routes, Route, Link } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import "./App.css";
-
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-import Live from "./Components/Admin/Live";
-import Manage from "./Components/Admin/Manage";
+import Live from "./Components/Admin/LivePost/Live";
+import Manage from "./Components/Admin/Courses/Manage";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
 import Users from "./Components/Admin/Users";
@@ -27,15 +26,30 @@ import { useEffect, useState } from "react";
 import BlogDetails from "./Components/Blogs/BlogDetails";
 import CoursePlay from "./Components/AllCourses/CoursePlay";
 import CourseVideo from "./Components/AllCourses/CourseVideo";
-import Profile from "./Components/Shared/Header/Profile";
-import MyCourses from "./Components/AllCourses/MyCourses";
+import Profile from "./Components/User/Profile";
+import MyCourses from "./Components/User/MyCourses";
 import FooterTwo from "./Components/Shared/FooterTwo";
 import Dashboard from "./Components/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
-import Books from "./Components/Admin/Books";
+import LiveClass from "./Components/LIveClass/LiveClass";
 import AddBlogs from "./Components/Admin/AddBlogs";
+import AcademicBookss from "./Components/Admin/AcademicBookss";
+import SkillBookss from "./Components/Admin/SkillBookss";
+import Language from "./Components/Admin/Courses/Language";
+import Job from "./Components/Admin/Courses/Job";
+import Admission from "./Components/Admin/Courses/Admission";
+import AddLanguage from "./Components/Admin/Courses/AddLanguage";
+import AddJob from "./Components/Admin/Courses/AddJob";
+import AddAdmission from "./Components/Admin/Courses/AddAdmission";
+import Reset from "./Components/Login/Reset";
+import RequireAuth from "./Authentication/RequireAuth";
+import RequireAdmin from "./Authentication/RequireAdmin";
+import Stripe from "./Components/Payments/Stripe";
+import Order from "./Components/User/Order";
+import Bkash from "./Components/Payments/Bkash";
+import Test from "./Components/Test/Test";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -92,21 +106,69 @@ function App() {
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+        <Route path="/reset" element={<Reset></Reset>}></Route>
+        <Route element={<RequireAuth></RequireAuth>}>
+          <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
+          <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+          <Route path="/checkout/stripe/:uname" element={<Stripe></Stripe>}></Route>
+          <Route path="/checkout/bkash/:uname" element={<Bkash></Bkash>}></Route>
+          <Route path="/orders" element={<Order></Order>}></Route>
+          <Route
+            path="/checkout/:uname"
+            element={<Checkout></Checkout>}
+          ></Route>
+        </Route>
+
         <Route
           path="/blogdetails/:detailsId"
           element={<BlogDetails></BlogDetails>}
         ></Route>
         {/* admim */}
-        <Route path="/admin" element={<Admin></Admin>}>
-          <Route path="/admin" element={<Admins></Admins>}></Route>
-          <Route path="/admin/courses" element={<Manage></Manage>}></Route>
-          <Route path="/admin/books" element={<Books></Books>}></Route>
-          <Route path="/admin/post" element={<Post></Post>}></Route>
-          <Route path="/admin/live" element={<Live></Live>}></Route>
-          <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
-           <Route path="/admin/users" element={<Users></Users>}></Route> 
-          <Route path="/admin/payments" element={<Payments></Payments>}></Route>
+
+        <Route element={<RequireAdmin></RequireAdmin>}>
+          <Route path="/admin" element={<Admin></Admin>}>
+            <Route path="/admin" element={<Admins></Admins>}></Route>
+            <Route path="/admin/courses" element={<Manage></Manage>}>
+              <Route
+                path="/admin/courses/language"
+                element={<Language></Language>}
+              ></Route>
+              <Route path="/admin/courses/job" element={<Job></Job>}></Route>
+              <Route
+                path="/admin/courses/admission"
+                element={<Admission></Admission>}
+              ></Route>
+            </Route>
+            <Route
+              path="/admin/skillbookss"
+              element={<SkillBookss></SkillBookss>}
+            ></Route>
+            <Route
+              path="/admin/academicbookss"
+              element={<AcademicBookss></AcademicBookss>}
+            ></Route>
+            <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+
+            <Route
+              path="/admin/addlanguage"
+              element={<AddLanguage></AddLanguage>}
+            ></Route>
+            <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
+            <Route
+              path="/admin/addadmission"
+              element={<AddAdmission></AddAdmission>}
+            ></Route>
+            <Route path="/admin/live" element={<Live></Live>}></Route>
+            <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
+            <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/users" element={<Users></Users>}></Route>
+            <Route
+              path="/admin/payments"
+              element={<Payments></Payments>}
+            ></Route>
+          </Route>
+
         </Route>
         {/* courses  */}
         <Route
@@ -119,7 +181,6 @@ function App() {
             element={<CourseVideo></CourseVideo>}
           ></Route>
         </Route>
-        <Route path="/checkout/:uname" element={<Checkout></Checkout>}></Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/profile" element={<Profile></Profile>}></Route>
@@ -130,6 +191,7 @@ function App() {
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
+      {/* <Test></Test> */}
       <FooterTwo></FooterTwo>
       <Footer></Footer>
     </div>

@@ -7,7 +7,7 @@ import auth from "../../../firebase.init";
 const Hero = () => {
   const [user, loading, error] = useAuthState(auth);
   return (
-    <div>
+    <div id="top">
       <div className="zero hero -mt-12 pt-12 min-h-screen bg-base-100 border-b border-neutral">
         <div className="hero-content p-0 flex-col-reverse lg:flex-row-reverse">
           <img

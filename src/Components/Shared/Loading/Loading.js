@@ -3,7 +3,7 @@ import React from "react";
 const Loading = () => {
   return (
     <div>
-      <div className="h-screen">
+      <div className="pt-20">
         <div id="loader"></div>
       </div>
     </div>

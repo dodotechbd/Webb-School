@@ -5,7 +5,7 @@ const Blogs = () => {
     const [blogs, setBlogs] = useState([]);
 
     useEffect(() => {
-        fetch('blogs.json')
+        fetch('https://rocky-escarpment-87440.herokuapp.com/blogs')
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
@@ -19,7 +19,7 @@ const Blogs = () => {
                     blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
                 }
             </div>
-            
+
         </div>
     );
 };

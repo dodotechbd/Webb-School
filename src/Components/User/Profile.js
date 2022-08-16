@@ -1,7 +1,7 @@
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import img from '../../../Assets/image/blur img2.jpg'
-import auth from '../../../firebase.init';
+import img from '../../Assets/image/blur img2.jpg'
+import auth from '../../firebase.init';
 import './Profile.css';
 const Profile = () => {
     const [user] = useAuthState(auth);

@@ -4,15 +4,17 @@ import { useParams } from 'react-router-dom';
 const BlogDetails = () => {
     const { detailsId } = useParams();
     const [blogs, setBlogs] = useState([]);
+
+    // const [blog,setBlog] = useBlogs(detailsId);
+
     useEffect(() => {
-        fetch("/blogs.json")
+        fetch("https://rocky-escarpment-87440.herokuapp.com/blogs")
             .then(res => res.json())
             .then(data => setBlogs(data))
     }, [])
 
-    const newBlogs = blogs.filter(blog => blog._id == detailsId)
-    console.log(newBlogs);
 
+    const newBlogs = blogs.filter(blog => blog._id == detailsId)
 
     return (
         <div className='grid lg:grid-cols-3 grid-cols-1 lg:px-20 my-2 lg:my-20'>
@@ -51,26 +53,28 @@ const BlogDetails = () => {
                     <div className="card-body">
                         <h2 className="card-title">Recent Post</h2>
                         <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/18'>Best Way to learn code and empliment this</a></p>
-                        <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/16'>Best practice for writing code comments</a></p>
+                        <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/16'>Best practice for writing code comment</a></p>
                         <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/15'>Why JavaScript Is Still So Important for Web Development?</a></p>
                         <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/77'>What Is MongoDB and How Does It Work?</a></p>
                         <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/9'>why importent learning react ja and Easy?</a></p>
                         <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogdetails/11'>Why Excellent Node.js for BackEnd site.?</a></p>
+                        <div className="card w-11/12 lg:w-96 bg-base-100 shadow-xl">
+                        </div>
+
+                        <div className="card w-11/12 lg:w-96 bg-base-100 shadow-xl mt-2">
+                            <div className="card-body">
+                                <h2 className="card-title">Categories</h2>
+                                <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogs'>Tips and Tricks</a></p>
+
+
+                            </div>
+                        </div>
 
                     </div>
                 </div>
-
-                <div className="card w-11/12 lg:w-96 bg-base-100 shadow-xl mt-2">
-                    <div className="card-body">
-                        <h2 className="card-title">Categories</h2>
-                        <p><i className="fa-solid fa-circle-arrow-right text-primary"></i> <a href='https://webb-school.vercel.app/blogs'>Tips and Tricks</a></p>
-                       
-
-                    </div>
-                </div>
-
             </div>
         </div>
+
     );
 };
 

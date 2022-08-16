@@ -147,14 +147,16 @@ const AllCourseView = () => {
           </div>
           <h1 className="text-2xl mt-10 mb-1">Course Syllabus</h1>
           <div className="card rounded-md w-full border border-neutral">
-            <div className="card-body">
-            {
-              courseData?.file.map(course => <CourseSyllabus
-                key={course.id}
-                course={course}
-                ></CourseSyllabus>)
-            }
-            </div>
+            {courseData?.file ? (
+              <div className="card-body">
+              {
+                courseData?.file.map(course => <CourseSyllabus
+                  key={course.id}
+                  course={course}
+                  ></CourseSyllabus>)
+              }
+              </div>
+            ):(<div>Coming Soon</div>)}
           </div>
         </div>
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 const Live = () => {
   return (
     <div>
-      <div class="hero bg-base-100">
+      <div className="hero bg-base-100">
               <div className="hero bg-base-100">
                 <div className="">
                   <div className="text-center my-10">

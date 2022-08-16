@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Books = () => {
+const Bkash = () => {
     return (
         <div>
-            books
+            please pay with bkash
         </div>
     );
 };
 
-export default Books;
+export default Bkash;
