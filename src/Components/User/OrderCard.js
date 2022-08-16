@@ -44,27 +44,9 @@ const OrderCard = ({ order, index, refetch }) => {
         <h2 class="card-title">{productName}</h2>
         <p>Transaction ID: {transactionId ? transactionId : "Unpaid"}</p>
         <p>Price: ৳{price}</p>
-        <p>Payment Status: {status}</p>
-        {transactionId ? (
-          <button className="btn btn-wide btn-sm font-thin normal-case bg-green-500 hover:bg-green-400 text-white">
-          Paid
-        </button>
-        ):(
-          <div className="lg:flex md:flex justify-between">
-          <div className="flex-col mb-2 lg:mb-0 md:mb-0">
-            Pay Now:
-            <Link to={`/checkout/bkash/${uname}`} className="mx-3 btn btn-sm font-thin normal-case bg-[#CD1E63] hover:bg-[#B81D56] text-white">
-              bKash
-            </Link>
-            <Link to={`/checkout/stripe/${uname}`} className="btn btn-sm font-thin normal-case bg-[#5C4DC1] hover:bg-[#607DE2] text-white">
-              stripe
-            </Link>
-          </div>
-          <button onClick={() => handleCancelOrder(_id)} className="btn btn-sm font-thin normal-case bg-[#ca2c34] hover:bg-[#FE6464] text-white">
-              Cancel Order
-            </button>
-        </div>
-        )}
+        <p>Payment Status: <button className="uppercase font-thin text-green-500">
+          {status}
+        </button></p>
       </div>
     </div>
   );

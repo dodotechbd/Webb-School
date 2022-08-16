@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import { CardElement, useStripe, useElements } from "@stripe/react-stripe-js";
+import {
+  CardElement,
+  useStripe,
+  useElements,
+  CardNumberElement,
+  CardExpiryElement,
+  CardCvcElement,
+} from "@stripe/react-stripe-js";
 import primaryAxios from "../../Api/primaryAxios";
 import swal from "sweetalert";
 import { useQuery } from "react-query";
@@ -52,12 +59,11 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
     event.preventDefault();
     setIsPaying(true);
 
-
     if (elements == null) {
       return;
     }
 
-    const card = elements.getElement(CardElement);
+    const card = elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement);
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
@@ -75,8 +81,8 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         payment_method: {
           card: card,
           billing_details: {
-            name: orderInfo.userName,
-            email: orderInfo.userEmail,
+            name: user?.displayName,
+            email: user?.email,
           },
         },
       });
@@ -101,9 +107,17 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
       const payment = {
         orderId: orderInfo._id,
         transactionId: paymentIntent.id,
+        userName: user?.displayName,
+        userEmail: user?.email,
+        productName: courseData?.name,
+        productId: courseData?._id,
+        price: courseData?.price,
+        status: "paid",
+        productImage: courseData?.img,
+        uname: courseData?.uname,
       };
 
-    const placedOrder = {
+      const shippedOrder = {
         userName: user?.displayName,
         userEmail: user?.email,
         order: "paid",
@@ -112,54 +126,94 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         img: courseData?.img,
         name: courseData?.name,
         uname: courseData?.uname,
+        videos: courseData?.videos,
       };
-      const { data } = await primaryAxios.put(`/order`, payment) && primaryAxios.post(`/mycourse?email=${user?.email}`, placedOrder);
-      
+      const { data } =
+        (await primaryAxios.post(`/order?email=${user?.email}`, payment)) &&
+        primaryAxios.post(`/mycourse?email=${user?.email}`, shippedOrder);
+
       if (data) {
         setIsPaying(false);
       }
     }
   };
+
   return (
-    <form className="w-full p-7 rounded-lg" onSubmit={handleSubmit}>
-      <CardElement
-        options={{
-          style: {
-            base: {
-              fontSize: "20px",
-              color: "#424770",
-              "::placeholder": {
-                color: "#aab7c4",
+    <form className="w-full bg-base-200 p-5" onSubmit={handleSubmit}>
+      <div className="my-3">
+        <label className="text-lg">Card Number</label>
+        <CardNumberElement
+          className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
+          options={{
+            style: {
+              base: {
+                fontSize: "20px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
               },
             },
-            invalid: {
-              color: "#9e2146",
+          }}
+        ></CardNumberElement>
+      </div>
+      <div className="flex gap-4">
+      <div className="mb-3 w-full">
+        <label className="text-lg">Expiration Date</label>
+        <CardExpiryElement
+          className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
+          options={{
+            style: {
+              base: {
+                fontSize: "20px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
+              },
             },
-          },
-        }}
-      />
+          }}
+        ></CardExpiryElement>
+      </div>
+      <div className="mb-3 w-full">
+        <label className="text-lg">CVC</label>
+        <CardCvcElement
+          className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
+          options={{
+            style: {
+              base: {
+                fontSize: "20px",
+                color: "#424770",
+                "::placeholder": {
+                  color: "#aab7c4",
+                },
+              },
+              invalid: {
+                color: "#9e2146",
+              },
+            },
+          }}
+        ></CardCvcElement>
+      </div>
+      </div>
       {paymentError && (
         <p className="mt-5 -mb-5 text-red-600 text-center">{paymentError}</p>
       )}
-      <div className="flex justify-between mt-6 items-center">
-        <span className="flex-1 flex items-center">
-          <span className="text-sm lg:text-md font-semibold uppercase ">
-            Total Amount :
-          </span>
-          <span className="text-lg lg:text-2xl font-bold text-primary">
-            ${totalAmount}
-          </span>
-        </span>
-        <button
-          className={`btn btn-md w-1/2 bg-primary text-white uppercase py-1.5 rounded-2xl ${
-            isPaying && "loading"
-          }`}
-          type="submit"
-          disabled={!stripe || !elements || !clientSecret}
-        >
-          Pay
-        </button>
-      </div>
+      <button
+        className={`btn btn-md w-full btn-primary uppercase mt-6 rounded-lg ${
+          isPaying && "loading"
+        }`}
+        type="submit"
+        disabled={!stripe || !elements || !clientSecret}
+      >
+        Pay ৳{totalAmount}
+      </button>
     </form>
   );
 };

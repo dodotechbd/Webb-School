@@ -10,7 +10,7 @@ import "swiper/css/pagination";
 
 import "./Banner.css";
 
-// import required modules
+// import required module
 import { EffectCoverflow, Pagination } from "swiper";
 
 const Banner = () => {
