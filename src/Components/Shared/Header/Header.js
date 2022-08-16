@@ -201,7 +201,7 @@ const Header = ({ handleThemeChange, theme }) => {
                     <div class="card-body">
                         <h3 class="card-title">WelCome!</h3>
                         <p className='font-bold'>{user?.displayName}</p>
-                        <p>Thank you for Visiting This Website.</p>
+                        <p>Thank you for Visiting This Websites.</p>
                     </div>
                 </div>
             </div>
