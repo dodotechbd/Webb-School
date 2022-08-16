@@ -1,9 +1,8 @@
 import React from 'react';
-import './Support.css';
+// import './Support.css';
 const Support = () => {
     return (
         <div >
-            //Horigental line
             <hr />
             <div class="card lg:card-side bg-base-100 shadow-xl ml-10 mr-10">
                 <figure><img src="https://www.seqrite.com/skin/frontend/default/seqrite_v1/images/support-img.png" alt="" /></figure>
