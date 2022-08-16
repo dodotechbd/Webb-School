@@ -63,7 +63,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
       return;
     }
 
-    const card = elements.getElement(CardElement);
+    const card = elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement);
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
