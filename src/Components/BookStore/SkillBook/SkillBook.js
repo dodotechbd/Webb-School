@@ -29,7 +29,7 @@ const SkillBook = ({ skillbook }) => {
 
             ) : (
               <p className="text-xl font-bold">{name}</p>
-            )}
+            )} 
           </h1>
           <p className="text-lg">{description}</p>
           <p className="text-lg text-primary font-bold">৳{price}</p>
