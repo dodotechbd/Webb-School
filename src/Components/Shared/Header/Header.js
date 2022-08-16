@@ -185,12 +185,24 @@ const Header = ({ handleThemeChange, theme }) => {
       </div>
 
 {/* notifications add here  */}
-      <div className="cursor-grab	">
-        <i class="fa-solid fa-bell absolute"></i>
+        {/* notifications add  */}
 
-        <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 mb-3 ml-2 flex justify-center ">1</span>
+            <div class="dropdown">
+                <label tabindex="0" class="btn m-1">
 
-      </div>
+                    <i class="fa-solid fa-bell absolute"></i>
+                    {
+                        user ? (<span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 mb-3 ml-2 flex justify-center ">2</span>
+                        ) : ("")
+                    }
+
+                </label>
+                <div tabindex="0" class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content">
+                    <div class="card-body">
+                     
+                    </div>
+                </div>
+            </div>
 
 
       <div className="navbar-end hidden lg:flex">
