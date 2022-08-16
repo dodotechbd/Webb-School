@@ -100,10 +100,11 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${user?.photoURL
-                              ? user?.photoURL
-                              : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                              }`}
+                            src={`${
+                              user?.photoURL
+                                ? user?.photoURL
+                                : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                            }`}
                           />
                         </div>
                       </label>
@@ -184,35 +185,33 @@ const Header = ({ handleThemeChange, theme }) => {
         </ul>
       </div>
 
-{/* notifications add here  */}
-        {/* notifications add  */}
-
-            <div class="dropdown">
-                <label tabindex="0" class="btn m-1">
-
-                    <i class="fa-solid fa-bell absolute"></i>
-                    {
-                        user ? (<span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 mb-3 ml-2 flex justify-center ">1</span>
-                        ) : ("")
-                    }
-
-                </label>
-                <div tabindex="0" class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content">
-                    <div class="card-body">
-                        <h3 class="card-title">WelCome!</h3>
-                        <p className='font-bold'>{user?.displayName}</p>
-                        <p>Thank you for Visiting This Websites.</p>
-                    </div>
-                </div>
-            </div>
-
-
       <div className="navbar-end hidden lg:flex">
+        <div class="dropdown">
+          <button tabindex="0" className='pr-5'>
+            <p><i class="fa-solid fa-bell absolute"></i></p>
+            {user ? (
+              <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
+                1
+              </span>
+            ) : (
+              ""
+            )}
+          </button>
+          <div
+            tabindex="0"
+            class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
+          >
+            <div class="card-body">
+              <h3 class="card-title">WelCome!</h3>
+              <p className="font-bold">{user?.displayName}</p>
+              <p>Thank you for Visiting This Websites.</p>
+            </div>
+          </div>
+        </div>
         <button
           onClick={handleThemeChange}
           className="rounded-full lg:mx-2 pr-5"
         >
-
           {theme ? (
             <svg
               aria-hidden="true"
@@ -247,10 +246,11 @@ const Header = ({ handleThemeChange, theme }) => {
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
               <div class="w-9 rounded-full">
                 <img
-                  src={`${user?.photoURL
-                    ? user?.photoURL
-                    : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                    }`}
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                  }`}
                 />
               </div>
             </label>
@@ -262,10 +262,11 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div class="avatar">
                   <div class="w-20 rounded-full">
                     <img
-                      src={`${user?.photoURL
-                        ? user?.photoURL
-                        : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                        }`}
+                      src={`${
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                      }`}
                     />
                   </div>
                 </div>
@@ -381,6 +382,28 @@ const Header = ({ handleThemeChange, theme }) => {
         )}
       </div>
       <div className="navbar-end lg:hidden flex">
+      <div class="dropdown">
+          <button tabindex="0" className='pr-5'>
+            <p><i class="fa-solid fa-bell absolute"></i></p>
+            {user ? (
+              <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
+                1
+              </span>
+            ) : (
+              ""
+            )}
+          </button>
+          <div
+            tabindex="0"
+            class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
+          >
+            <div class="card-body">
+              <h3 class="card-title">WelCome!</h3>
+              <p className="font-bold">{user?.displayName}</p>
+              <p>Thank you for Visiting This Websites.</p>
+            </div>
+          </div>
+        </div>
         <button
           onClick={handleThemeChange}
           className="rounded-full lg:mx-2 font-bold pr-2"
