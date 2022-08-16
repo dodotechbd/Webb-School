@@ -126,7 +126,9 @@ const AcadamicDetail = () => {
                                         class="input input-bordered w-full max-w-xs my-2"{...register("book")} />
 
 
-                               
+                                    <input type="text" placeholder="Phone Number"
+                                        class="input input-bordered w-full max-w-xs my-2"{...register("number")} />
+
 
                                 </div>
 
