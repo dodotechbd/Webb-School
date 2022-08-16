@@ -125,6 +125,8 @@ const AcadamicDetail = () => {
                                     <input type="text" value={user.displayName} placeholder="Type here"
                                         class="input input-bordered w-full max-w-xs my-2"{...register("book")} />
 
+                                    <input type="text" value={user.email} placeholder="Type here"
+                                        class="input input-bordered w-full max-w-xs"{...register("email")} />
 
                                     <input type="text" placeholder="Phone Number"
                                         class="input input-bordered w-full max-w-xs my-2"{...register("number")} />
