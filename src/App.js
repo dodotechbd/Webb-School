@@ -110,7 +110,7 @@ function App() {
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-          <Route path="/checkout/stripe/:uname" element={<Stripe></Stripe>}></Route>
+          <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route path="/checkout/bkash/:uname" element={<Bkash></Bkash>}></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route
