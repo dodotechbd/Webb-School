@@ -1,12 +1,36 @@
-import React from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
+import React, { useState } from "react";
 import { Link, Outlet } from "react-router-dom";
-import { NavHashLink } from 'react-router-hash-link';
 import auth from "../../firebase.init";
+import useRole from "../../Hooks/useRole";
+import Loading from "../Shared/Loading/Loading";
+import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
+import primaryAxios from "../../Api/primaryAxios";
+import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
+import { NavHashLink } from 'react-router-hash-link';
 import "./Profile.css";
 const Profile = () => {
-  const [user] = useAuthState(auth);
-  console.log(user);
+  const [{ email }] = useAuthState(auth);
+  const [isEdit, setIsEdit] = useState(null);
+  const [role, roleLoading] = useRole();
+  const [updateProfile, updating, error] = useUpdateProfile(auth);
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const {
+    data: user,
+    isLoading,
+    refetch,
+  } = useQuery(["userProfile", email], () =>
+    primaryAxios.get(`/user-role?email=${email}`)
+  );
+  if (roleLoading || isLoading || updating) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="mb-10">
       <div
@@ -19,7 +43,7 @@ const Profile = () => {
         <div className="bg-opacity-60"></div>
         <div className="text-left lg:pt-32 lg:pb-60 px-4 pt-20 pb-52">
         <h1 className="text-left text-5xl font-bold">
-              Hello, {user?.displayName}
+              Hello, {user?.data?.name ? user?.data?.name : "- - -"}
             </h1>
             <p className="mt-2 font-serif text-lg">
               This is your profile page. You can see the progress you've made
@@ -37,7 +61,11 @@ const Profile = () => {
               <div className="items-center form-control">
                 <div>
                   <a href="#">
-                    <img src={user?.photoURL} className=" rounded-full m-4" />
+                    <img src={`${
+                  user?.data?.image
+                    ? user?.data?.image
+                    : "https://i.ibb.co/T1D3tqN/images.png"
+                }`} className=" rounded-full m-4" />
                   </a>
                 </div>
                 <div className="stats form-control">
@@ -66,7 +94,7 @@ const Profile = () => {
               <div className="form-control">
                 <label className="label">
                   <span className="label-text text-4xl font-bold font-serif">
-                    {user?.displayName}
+                  {user?.data?.name ? user?.data?.name : "- - -"}
                   </span>
                 </label>
                 <label className="label">
@@ -76,7 +104,7 @@ const Profile = () => {
                 </label>
                 <label className="label">
                   <span className="label-text font-serif ">
-                    Contact Me : {user?.email}
+                    Contact Me : {user?.data?.email ? user?.data?.email : "- - -"}
                   </span>
                 </label>
                 <label>
