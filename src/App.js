@@ -50,7 +50,8 @@ import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
 import Test from "./Components/Test/Test";
-import AudioBook from "./Components/AudioBook/AudioBook";
+import AudioBooks from "./Components/AudioBook/AudioBooks";
+import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -98,6 +99,8 @@ function App() {
           path="/skillbook/:skillbookId"
           element={<SkillDetail></SkillDetail>}
         ></Route>
+        <Route path="/audiobook/:audiobookId"
+          element={<AudioBookDetails></AudioBookDetails>}></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route
           path="/admission"
@@ -106,7 +109,7 @@ function App() {
         <Route path="/jobs" element={<AllJobCourse></AllJobCourse>}></Route>
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
-        <Route path="/audiobook" element={<AudioBook></AudioBook>}></Route>
+        <Route path="/audiobook" element={<AudioBooks></AudioBooks>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>

@@ -2,27 +2,52 @@
     {
       "_id": "1",
       "name": "Sherlock Holmes",
-      "img": "https://i.ibb.co/mzhcdb3/images.jpg"
+      "img": "https://i.ibb.co/mzhcdb3/images.jpg",
+      "speaker": "Arthur Conan Doyle",
+      "time":"60 minutes",
+      "format":"mp3",
+      "file": "23 MB",
+      "price": "200"
     },
     {
       "_id": "2",
       "name": "Harry Potter",
-      "img": "https://i.ibb.co/YcDp3F4/images.jpg"
+      "img": "https://i.ibb.co/FB4CxxK/images.jpg",
+      "speaker": "J.K Rowling",
+      "time":"60 minutes",
+      "format":"mp3",
+      "file": "23 MB",
+      "price": "180"
     },
     {
       "_id": "3",
-      "name": "JS Learning",
-      "img": "https://i.ibb.co/pJLRzhs/download.png"
+      "name": "JavaScript Learning",
+      "img": "https://i.ibb.co/TkNBs4S/images.jpg",
+      "speaker": "Jhankar Mahbub",
+      "time":"60 minutes",
+      "format":"mp3",
+      "file": "23 MB",
+      "price": "250"
     },
     {
       "_id": "4",
       "name": "The Sandman",
-      "img": "https://i.ibb.co/XDm8wLY/download.jpg"
+      "img": "https://i.ibb.co/XDm8wLY/download.jpg",
+      "speaker": "George R.R. Martin",
+      "time":"60 minutes",
+      "format":"mp3",
+      "file": "23 MB",
+      "price": "350"
     },
     {
       "_id": "5",
       "name": "Learn in Python Way",
-      "img": "https://i.ibb.co/XV3Wh4k/Beginner-Tips-Guide-To-Start-Learning-Python-In-Easy-Way.jpg"
+      "img": "https://i.ibb.co/KxXRTZp/download.jpg",
+      "speaker": "Jhankar Mahbub",
+      "time":"60 minutes",
+      "format":"mp3",
+      "file": "23 MB",
+      "price": "300"
     }
   ]
   
