@@ -24,7 +24,7 @@ const Live = () => {
             <div className="hero px-2 bg-base-10 pt-6 ">
                 <div className='drop-shadow-2xl ring ring-blue-500 ring-offset-2 ring-offset-blue-100 rounded-2xl '>
                     <div className="text-center my-10">
-                        <h1 className="text-3xl font-bold">Post Live Class {Lives.length}<i className="fa-solid fa-video text-error"></i></h1>
+                        <h1 className="text-3xl font-bold">Post Live Class<i className="fa-solid fa-video text-error"></i></h1>
                     </div>
                     <div className="card flex-shrink-0 w-80 md:w-96 lg:w-96 max-w-sm shadow-2xl bg-base-200 border border-neutral">
                         {

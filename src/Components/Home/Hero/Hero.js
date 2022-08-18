@@ -57,19 +57,19 @@ const Hero = () => {
               <span className="font-bold text-gold-500">The last time off enrollment see below : </span>
 
               <div class="mt-2 grid grid-flow-col gap-5 text-center auto-cols-max">
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <div class="flex flex-col p-2 bg-transparent rounded-box text-neutral-content">
                   <p id="days">00</p>
                   <span>Days</span>
                 </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <div class="flex flex-col p-2 bg-transparent rounded-box text-neutral-content">
                   <p id="hours">00</p>
                   <span>Hours</span>
                 </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <div class="flex flex-col p-2 bg-transparent rounded-box text-neutral-content">
                   <p id='minutes'>00</p>
                   <span>Minutes</span>
                 </div>
-                <div class="flex flex-col p-2 bg-neutral rounded-box text-neutral-content">
+                <div class="flex flex-col p-2  bg-transparent rounded-box text-neutral-content">
                   <p id='seconds'>00</p>
                   <span>Seconds</span>
                 </div>
