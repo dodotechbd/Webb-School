@@ -20,10 +20,10 @@ const AcadamicDetail = () => {
 
     const onSubmit = data => {
         console.log(data)
-    };
-    
+    }
     const newService = service.filter(s => s._id == acadamicbookId)
     //   console.log(newService[0]);
+    
     return (
         <div>
             <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Details</h1>
@@ -127,10 +127,7 @@ const AcadamicDetail = () => {
 
                                     <input type="text" placeholder="Phone Number"
                                         class="input input-bordered w-full max-w-xs my-2"{...register("number")} />
-
-
                                 </div>
-
 
                                 <button class="btn btn-outline btn-secondary"><input type="submit" /></button>
 
