@@ -13,7 +13,6 @@ const AudioBookDetails = () => {
             .then(res => res.json())
             .then(data => setDetails(data))
     }, []) 
-
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
