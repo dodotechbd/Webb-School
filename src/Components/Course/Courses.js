@@ -4,9 +4,9 @@ import Course from "../Course/Course";
 const Courses = () => {
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch("special.json")
+        fetch("special.json") 
             .then(res => res.json())
-            .then(data => setCourses(data));
+            .then(data => setCourses(data)); 
     })
     return (
         <div>

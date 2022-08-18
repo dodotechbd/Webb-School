@@ -49,7 +49,12 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
+// import Test from "./Components/Test/Test";
 import Test from "./Components/Test/Test";
+
+import AudioBooks from "./Components/AudioBook/AudioBooks";
+import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
+
 import PaidCourse from "./Components/User/PaidCourse";
 import UpdateProfile from "./Components/User/UpdateProfile";
 
@@ -99,6 +104,8 @@ function App() {
           path="/skillbook/:skillbookId"
           element={<SkillDetail></SkillDetail>}
         ></Route>
+        <Route path='/audiobook/:audiobookId'
+          element={<AudioBookDetails></AudioBookDetails>}></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route
           path="/admission"
@@ -107,6 +114,7 @@ function App() {
         <Route path="/jobs" element={<AllJobCourse></AllJobCourse>}></Route>
         <Route path="/developer" element={<Developer></Developer>}></Route>
         <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
+        <Route path="/audiobook" element={<AudioBooks></AudioBooks>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
@@ -126,6 +134,7 @@ function App() {
           element={<BlogDetails></BlogDetails>}
         ></Route>
         {/* admim */}
+
         <Route element={<RequireAdmin></RequireAdmin>}>
           <Route path="/admin" element={<Admin></Admin>}>
             <Route path="/admin" element={<Admins></Admins>}></Route>
@@ -169,6 +178,7 @@ function App() {
               element={<Payments></Payments>}
             ></Route>
           </Route>
+
         </Route>
         {/* courses  */}
         <Route

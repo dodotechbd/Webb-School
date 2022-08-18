@@ -56,7 +56,7 @@ const Navigation = () => {
           href="#courses"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
-          {" "}
+          {" "} 
           <div className="">
             {" "}
             <p className="justify-center text-center lg:flex md:flex py-6 lg:py-0">

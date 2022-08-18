@@ -5,7 +5,7 @@ const AcadamicBook = ({ acadamicbook }) => {
   const navigate = useNavigate();
   const navigateToAcadamicDetail = (id) => {
     navigate(`/acadamicbook/${_id}`);
-  };
+  }; 
   return (
     <div
       onClick={() => navigateToAcadamicDetail(_id)}

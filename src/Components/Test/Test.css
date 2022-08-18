@@ -1,3 +1,61 @@
-span {
-    --value: 15;
-}
+ .container-1 {
+     width: 100vw;
+     height: 100vh;
+     background-image: url(https://www.pcclean.io/wp-content/gallery/grassland-hd-wallpapers/background-wallpaper-hd-1080p_5651427.jpg);
+     background-position: center;
+     background-size: cover;
+     padding: 0 8%;
+     position: relative;
+
+ }
+
+ .content {
+     top: 50%;
+     position: absolute;
+     transform: rotateY(-50%);
+     color: #fff;
+ }
+
+ .content h1 {
+     font-size: xx-large;
+     font-weight: 800;
+ }
+
+ .content h1 span {
+     color: brown;
+ }
+
+ .launch-time {
+     display: flex;
+
+ }
+
+ .launch-time div {
+     flex-basis: 100px;
+
+ }
+
+ .launch-time div p {
+     font-size: x-large;
+     margin-bottom: -10px;
+ }
+
+ .rocket {
+     width: 250px;
+     position: absolute;
+     right: 10%;
+     bottom: -5;
+     animation: rocket 5s linear infinite;
+ }
+
+ @keyframes rocket {
+     0% {
+         bottom: 0;
+         opacity: 0;
+     }
+
+     100% {
+         bottom: 115%;
+         opacity: 1;
+     }
+ }
