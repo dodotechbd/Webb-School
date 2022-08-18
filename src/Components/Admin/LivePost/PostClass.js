@@ -14,7 +14,7 @@ const PostClass = ({ live }) => {
     const onSubmit = data => {
         console.log(data)
 
-        fetch('https://rocky-escarpment-87440.herokuapp.com/lives',{
+        fetch('http://localhost:5000/lives',{
             method: 'post',
             headers: {
                 'content-type':'application/json'
