@@ -14,20 +14,19 @@ const AcadamicDetail = () => {
         fetch("https://rocky-escarpment-87440.herokuapp.com/AcadamicBook")
             .then(res => res.json())
             .then(data => setService(data))
-    }, [])
+    }, []) 
 
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
         console.log(data)
-
-    };
-
+    }
     const newService = service.filter(s => s._id == acadamicbookId)
     //   console.log(newService[0]);
+    
     return (
         <div>
-            <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Detalis</h1>
+            <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Details</h1>
             <h1 className='text-2xl px-6  font-bold'>Books Name: <span className='text-2xl text-primary font-bold'>{newService[0]?.name}</span></h1>
             <div className=' grid gap-10 lg:grid-cols-2 py-12  px-6 md:grid-cols-2 sm:grid-cols-2 '>
 

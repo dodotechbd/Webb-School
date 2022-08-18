@@ -1,7 +1,7 @@
 import React from 'react';
 
 const AcadamicModal = ({book}) => {
-    return (
+    return ( 
         <div>
 
             <input type="checkbox" id="acadamic-modal" className="modal-toggle" />

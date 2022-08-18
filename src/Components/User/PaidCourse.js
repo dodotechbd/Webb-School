@@ -21,10 +21,11 @@ const PaidCourse = () => {
   }
   return (
     <div className="card p-6 shadow-2xl h-full bg-base-100">
+    <h1 className="text-2xl mb-3">Courses</h1>
       <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 mb-10">
         {myCourse?.data?.map((allcard) => (
           <Link to={'/mycourse'} data-tip={allcard?.name} className="tooltip tooltip-bottom" key={allcard._id} allcard={allcard}>
-            <div class="card w-52 bg-base-200 border border-neutral">
+            <div class="card w-52 mx-auto bg-base-200 border border-neutral">
               <figure class="px-6 pt-6">
                 <img
                   src={allcard?.img}
