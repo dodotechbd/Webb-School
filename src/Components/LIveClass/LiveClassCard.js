@@ -22,7 +22,7 @@ const LiveClassCard = ({ live }) => {
                     <div className='flex gap-5 justify-center '>
                         
                         <span class="mt-2 text-center  font-bold text-black" className='text-primary' >Date :<span className='text-[#FF0000] font-semibold ' >{Date}</span></span>
-                        <span class="mt-2 text-center  font-bold text-black" className='text-primary'>Time :<span className='text-[#FF0000] font-semibold'>{time}</span></span>
+                        <span class="mt-2 text-center  font-bold text-black" className='text-primary'>Time :<span className='text-[#FF0000] font-semibold'>{time} </span></span>
                     </div>
                     <div class="card-actions justify-center">
                         <a href={Link} target="_blank">
