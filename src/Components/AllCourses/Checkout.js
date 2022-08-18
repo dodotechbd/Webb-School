@@ -5,8 +5,9 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
 import { useForm } from "react-hook-form";
-import axios from "axios";
+import swal from "sweetalert";
 import primaryAxios from "../../Api/primaryAxios";
+import Stripe from "../Payments/Stripe";
 
 const Checkout = () => {
   const [user, loading] = useAuthState(auth);
@@ -31,184 +32,69 @@ const Checkout = () => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
-    const navigate = useNavigate();
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm();
-  const onSubmit = (data) => {
-    const placedOrder = {
-      ...data,
-      userName: user?.displayName,
-      userEmail: user?.email,
-      productName: courseData?.name,
-      productId: courseData?._id,
-      price: courseData?.price,
-      status: "Pending",
-      productImage: courseData?.img,
-      uname: courseData?.uname,
-    };
-    (async () => {
-      if(data?.method === 'stripe'){
-        const { data } = await primaryAxios.post(
-          `/order?email=${user?.email}`,
-          placedOrder
-        );
-        if(data.success){
-          navigate(`/checkout/stripe/${courseData?.uname}`);
-          reset();
-        }
-      }
-      if(data?.method === 'bkash'){
-        const { data } = await primaryAxios.post(
-          `/order?email=${user?.email}`,
-          placedOrder
-        );
-        if(data.success){
-          navigate(`/checkout/bkash/${courseData?.uname}`);
-          reset();
-        }
-      }
-    })();
-  };
+  const navigate = useNavigate();
+
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="hero bg-base-100 py-8">
+    <div className="hero bg-base-100 py-8">
       <div className="flex justify-between w-full flex-col md:flex-row lg:flex-row items-start">
-        <div className="text-center lg:text-left mx-auto">
-          <p className="text-xl mb-4 font-bold">
-            The course you are purchasing
+        <div className="text-center w-11/12 lg:w-7/12 md:w-6/12 lg:text-left mx-auto">
+          <p className="text-2xl mb-4 font-bold">
+            The course you are purchasing:
           </p>
-          <div className="lg:flex gap-5">
-            <img
-              src={courseData?.img}
-              className="h-44 w-80 rounded-lg"
-              alt=""
-            />
-            <div className="text-xl text-left">
-              <p>{courseData?.name}</p>
-              <p className="font-bold mt-4 text-2xl">৳ {courseData?.price}</p>
+          <div className="p-6 bg-base-300 border-[0.5px] border-neutral rounded-2xl">
+            <div className="lg:flex">
+              <img
+                src={courseData?.img}
+                className="lg:h-72 w-full rounded-lg"
+                alt=""
+              />
+              <div className="card-body lg:block hidden w-full">
+                <div className="grid grid-cols-2 gap-3">
+                  <p>
+                    <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>
+                    120H Videos
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-users pr-2 text-[#efad1e]"></i>758
+                    Students
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-headset pr-2 text-[#efad1e]"></i>
+                    Support
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-circle-question pr-2 text-[#efad1e]"></i>
+                    Quizzes
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-certificate pr-2 text-[#efad1e]"></i>
+                    Certificate
+                  </p>
+                  <p>
+                    <i className="fa-solid fa-clock pr-2 text-[#efad1e]"></i>6
+                    Month
+                  </p>
+                  <p className="font-bold mt-4 text-2xl text-accent rounded-md bg-base-100 p-3 col-span-2">
+                Pay: ৳{courseData?.price}
+              </p>
+                </div>
+              </div>
             </div>
-          </div>
-          <div className="card flex-shrink-0 w-full mt-8 border border-neutral bg-base-300">
-            <div className="card-body">
-              <h1 className="text-2xl font-bold text-warning">Billing Info</h1>
-              <div className="lg:flex gap-8">
-                <div className="form-control w-full">
-                  <label className="label">
-                    <span className="label-text">Full Name</span>
-                  </label>
-                  <input
-                    type="text"
-                    value={userName}
-                    disabled
-                    className="input input-bordered bg-base-200"
-                  />
-                </div>
-                <div className="form-control w-full">
-                  <label className="label">
-                    <span className="label-text">Email</span>
-                  </label>
-                  <input
-                    value={user?.email}
-                    disabled
-                    placeholder="info@site.com"
-                    className="input input-bordered bg-base-200"
-                  />
-                </div>
-              </div>
-              <div className="lg:flex gap-8">
-                <div className="form-control w-full">
-                  <label className="label">
-                    <span className="label-text">Phone</span>
-                  </label>
-                  <input
-                    {...register("phone")}
-                    type="tel"
-                    placeholder="123-456-789"
-                    className="input input-bordered bg-base-200"
-                    required
-                  />
-                </div>
-                <div className="form-control w-full">
-                  <label className="label">
-                    <span className="label-text">Address</span>
-                  </label>
-                  <input
-                    {...register("address")}
-                    type="text"
-                    placeholder="1 Creek Ave.
-                    Orange, NJ 07050"
-                    className="input input-bordered bg-base-200"
-                    required
-                  />
-                </div>
-              </div>
+            <div className="text-left">
+              <p className="text-2xl font-bold mt-3 ">{courseData?.name}</p>
+              <span>#{courseData?.topica}</span>
+              <span>#{courseData?.topicb}</span>
+              <p className="font-bold lg:hidden mt-4 text-2xl text-info rounded-md bg-base-100 p-3 col-span-2">
+                Pay: ৳{courseData?.price}
+              </p>
             </div>
           </div>
         </div>
-        <div className="card flex-shrink-0 lg:w-5/12 md:w-5/12 w-11/12 mx-auto    mt-4 border border-neutral bg-base-300">
-          <div className="card-body">
-            <h3 className="mb-5 text-xl font-bold text-center">
-              Select payment method
-            </h3>
-            <ul className="gap-6 w-full">
-              <li>
-                <input
-                    {...register('method', { required: true })}
-                    type="radio"
-                    name="method"
-                    value="bkash"
-                    className="hidden peer"
-                    id="bkash"
-                    required      
-                  />
-                <label
-                  for="bkash"
-                  className="inline-flex justify-center items-center p-5 w-full rounded-lg border-2 border-neutral cursor-pointer peer-checked:text-[#0284C5] peer-checked:bg-base-100 peer-checked:border-[#0284C5] hover:text-primary hover:bg-base-300 bg-base-200 hover:border-primary"
-                >
-                  {/* <img src={bkash} className='w-16 h-12' alt="" /> */}
-
-                  <div className="block">
-                    <div className="w-full text-xl font-semibold">bKash</div>
-                  </div>
-                </label>
-              </li>
-              <li>
-                <input
-                    {...register('method', { required: true })}
-                    type="radio"
-                    name="method"
-                    value="stripe"
-                    className="hidden peer"
-                    id="stripe"
-                    required      
-                  />
-                <label
-                  for="stripe"
-                  className="inline-flex justify-center items-center p-5 w-full rounded-lg border-2 border-neutral cursor-pointer peer-checked:text-[#0284C5] peer-checked:bg-base-100 peer-checked:border-[#0284C5] hover:text-primary hover:bg-base-300 bg-base-200 hover:border-primary mt-5"
-                >
-                  {/* <img src={stripe} className='w-16 h-12 mr-3' alt="" /> */}
-                  <div className="block">
-                    <div className="w-full text-xl font-semibold">stripe</div>
-                  </div>
-                </label>
-              </li>
-            </ul>
-            <div className=" text-center">
-              <p className="text-lg my-4">
-                <i className="fa-solid fa-circle-check text-[#0284C5]"></i>{" "}
-                Fully secure payment guarantee
-              </p>
-              <button type="submit" className="btn btn-wide hover:bg-secondary bg-[#0284C5] text-white">
-                Buy Now
-              </button>
-            </div>
-          </div>
+        <div className="card flex-shrink-0 lg:w-4/12 md:w-5/12 w-11/12 mx-auto    mt-4 border border-neutral bg-base-300">
+          <Stripe courseData={courseData}></Stripe>
         </div>
       </div>
-    </form>
+    </div>
   );
 };
 

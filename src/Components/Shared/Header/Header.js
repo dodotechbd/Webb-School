@@ -51,7 +51,7 @@ const Header = ({ handleThemeChange, theme }) => {
     </>
   );
   return (
-    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b border-neutral">
+    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
@@ -184,7 +184,30 @@ const Header = ({ handleThemeChange, theme }) => {
           {manuItems}
         </ul>
       </div>
+
       <div className="navbar-end hidden lg:flex">
+        <div class="dropdown">
+          <button tabindex="0" className='pr-5'>
+            <p><i class="fa-solid fa-bell absolute"></i></p>
+            {user ? (
+              <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
+                1
+              </span>
+            ) : (
+              ""
+            )}
+          </button>
+          <div
+            tabindex="0"
+            class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
+          >
+            <div class="card-body">
+              <h3 class="card-title">WelCome!</h3>
+              <p className="font-bold">{user?.displayName}</p>
+              <p>Thank you for Visiting This Websites.</p>
+            </div>
+          </div>
+        </div>
         <button
           onClick={handleThemeChange}
           className="rounded-full lg:mx-2 pr-5"
@@ -217,6 +240,7 @@ const Header = ({ handleThemeChange, theme }) => {
             </svg>
           )}
         </button>
+
         {user ? (
           <div class="dropdown dropdown-end">
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
@@ -358,6 +382,28 @@ const Header = ({ handleThemeChange, theme }) => {
         )}
       </div>
       <div className="navbar-end lg:hidden flex">
+      <div class="dropdown">
+          <button tabindex="0" className='pr-5'>
+            <p><i class="fa-solid fa-bell absolute"></i></p>
+            {user ? (
+              <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
+                1
+              </span>
+            ) : (
+              ""
+            )}
+          </button>
+          <div
+            tabindex="0"
+            class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
+          >
+            <div class="card-body">
+              <h3 class="card-title">WelCome!</h3>
+              <p className="font-bold">{user?.displayName}</p>
+              <p>Thank you for Visiting This Websites.</p>
+            </div>
+          </div>
+        </div>
         <button
           onClick={handleThemeChange}
           className="rounded-full lg:mx-2 font-bold pr-2"

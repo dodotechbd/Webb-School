@@ -50,6 +50,9 @@ import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
 // import Test from "./Components/Test/Test";
+import Test from "./Components/Test/Test";
+import PaidCourse from "./Components/User/PaidCourse";
+import UpdateProfile from "./Components/User/UpdateProfile";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -110,7 +113,7 @@ function App() {
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-          <Route path="/checkout/stripe/:uname" element={<Stripe></Stripe>}></Route>
+          <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route path="/checkout/bkash/:uname" element={<Bkash></Bkash>}></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route
@@ -181,7 +184,10 @@ function App() {
         </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
-        <Route path="/profile" element={<Profile></Profile>}></Route>
+        <Route path="/profile" element={<Profile></Profile>}>
+          <Route path="/profile" element={<PaidCourse></PaidCourse>}></Route>
+          <Route path="/profile/update" element={<UpdateProfile></UpdateProfile>}></Route>
+        </Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route
           path="/coming"
