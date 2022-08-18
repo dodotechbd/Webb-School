@@ -49,6 +49,7 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
+// import Test from "./Components/Test/Test";
 import Test from "./Components/Test/Test";
 import PaidCourse from "./Components/User/PaidCourse";
 import UpdateProfile from "./Components/User/UpdateProfile";

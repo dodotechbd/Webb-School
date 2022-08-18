@@ -1,0 +1,35 @@
+.title-1 {
+    font-size: xx-large;
+    text-decoration: underline red;
+}
+
+.highlight {
+    font-size: xx-large;
+    font-weight: bolder;
+    color: chocolate;
+}
+
+.normal-text {
+    font-size: large;
+}
+
+.icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.call {
+    font-size: xx-large;
+    color: darkgreen;
+}
+
+.facebook {
+    font-size: xx-large;
+    color: dodgerblue;
+}
+
+.email {
+    font-size: xx-large;
+    color: gold;
+}
