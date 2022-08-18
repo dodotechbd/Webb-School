@@ -18,7 +18,7 @@ const Review = () => {
             clearInterval(interval);
         }
     }, []);
-    return (
+    return ( 
         <div className='py-16 bg-base-100 border-b border-neutral'>
             <h2 className='lg:text-4xl md:text-3xl text-2xl font-sub font-bold text-center'>OUR ACHIEVEMENT</h2>
 

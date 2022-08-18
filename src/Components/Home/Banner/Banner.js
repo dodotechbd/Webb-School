@@ -7,7 +7,7 @@ import SwiperCore, { Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
-
+ 
 import "./Banner.css";
 
 // import required module

@@ -39,7 +39,7 @@ const Question = () => {
               <details className="mb-4">
                 <summary className="font-thin bg-base-300 rounded-md py-4 text-xl shadow-lg px-4">
                   Who is this course for?
-                </summary>
+                </summary> 
 
                 <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
                   These course are for those who want to do something in future and want to learn something.
@@ -53,7 +53,7 @@ const Question = () => {
                 </summary>
 
                 <p className='p-5 text-lg shadow-lg bg-base-200 rounded-b-lg'>
-                Our instructors: Tasmia, Rashel, Badsha, Shakhawth, Shafi, Amortha.
+                Our instructors: Tasmia, Rashel, Badsha, Shakhawath, Shafi, Amortha.
                 </p>
               </details>
               <details className="mb-4">

@@ -9,7 +9,7 @@ const BookStore = () => {
                 <AcadamicBooks></AcadamicBooks>
                 <SkillBooks></SkillBooks>
             </div>
-           
+            
          
     );
 };

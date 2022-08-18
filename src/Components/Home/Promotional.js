@@ -1,7 +1,7 @@
 import React from "react";
 import vdo from "../../Assets/vdo.jpg";
 const Promotional = () => {
-  return (
+  return ( 
     <div className="my-16 bg-base-100">
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">

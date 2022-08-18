@@ -58,7 +58,7 @@ const Reviews = () => {
             removeClippedSubviews: false,
           },
           "@1.50": {
-            slidesPerView: 3,
+            slidesPerView: 3, 
             spaceBetween: 1,
             removeClippedSubviews: false,
           },
