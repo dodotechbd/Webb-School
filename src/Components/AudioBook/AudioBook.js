@@ -4,8 +4,8 @@ import { useNavigate } from 'react-router-dom';
 const AudioBook = ({audiobook}) => {
     const { _id, name, img, speaker, price} = audiobook;
     const navigate = useNavigate();
-    const navigateToAudioBookDetail = (id) => {
-        navigate(`/audiobook/${_id}`);
+    const navigateToAudioBookDetail = id => {
+        navigate(`/audiobook/${id}`);
       }; 
     return (
         <div

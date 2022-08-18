@@ -36,8 +36,7 @@ const AllCourseView = () => {
             </h2>
             <div className="grid grid-cols-2 gap-3">
               <p>
-                <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>120H
-                Videos
+                <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>{courseData?.videos.length} Videos
               </p>
               <p>
                 <i className="fa-solid fa-users pr-2 text-[#efad1e]"></i>758

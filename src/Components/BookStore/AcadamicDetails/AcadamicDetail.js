@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "../../../firebase.init";
+import { useForm } from 'react-hook-form';
 
 const AcadamicDetail = () => {
+
+    const [user, loading] = useAuthState(auth);
+
     const { acadamicbookId } = useParams();
     const [service, setService] = useState([]);
     useEffect(() => {
@@ -10,6 +16,12 @@ const AcadamicDetail = () => {
             .then(data => setService(data))
     }, []) 
 
+    const { register, handleSubmit } = useForm();
+
+    const onSubmit = data => {
+        console.log(data)
+    };
+    
     const newService = service.filter(s => s._id == acadamicbookId)
     //   console.log(newService[0]);
     return (
@@ -94,10 +106,43 @@ const AcadamicDetail = () => {
                             <h3 className=' text-lg p-4'><i className="fa-solid fa-hand-holding-dollar pr-4 text-[#efad1e]"></i> Price $:  {newService[0]?.price}</h3>
                         </div>
                     </div>
-                    <button className=" btn-block   bg-indigo-400 mt-4  text-center  font-bold py-2   hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</button>
+
+                    <label for="my-modal-3" class="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</label>
+
+                    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
+                    <div class="modal">
+                        <div class="modal-box relative">
+                            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                            <h3 class="text-lg font-bold">BOOK: {newService[0]?.name}</h3>
+                            <form onSubmit={handleSubmit(onSubmit)}>
+
+
+                                <div class="form-control w-full max-w-xs">
+
+                                    <input type="text" value={user.displayName} placeholder="Type here"
+                                        class="input input-bordered w-full max-w-xs my-2"{...register("book")} />
+
+                                    <input type="text" value={user.email} placeholder="Type here"
+                                        class="input input-bordered w-full max-w-xs"{...register("email")} />
+
+                                    <input type="text" placeholder="Phone Number"
+                                        class="input input-bordered w-full max-w-xs my-2"{...register("number")} />
+
+
+                                </div>
+
+
+                                <button class="btn btn-outline btn-secondary"><input type="submit" /></button>
+
+                            </form>
+                        </div>
+                    </div>
+
+
                 </div>
+
             </div>
-        </div>
+        </div >
     );
 };
 
