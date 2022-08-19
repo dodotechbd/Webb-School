@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import wslogo from "../../../Assets/wslogo.png";
 import "./Header.css";
-
+import { useQuery } from "react-query";
 import Drawer from "react-modern-drawer";
 
 import "react-modern-drawer/dist/index.css";
@@ -10,6 +10,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import useRole from "../../../Hooks/useRole";
+import Messages from "../../Messages/Messages";
+import primaryAxios from "../../../Api/primaryAxios";
 
 const Header = ({ handleThemeChange, theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -24,6 +26,12 @@ const Header = ({ handleThemeChange, theme }) => {
     //Token Remove
     localStorage.removeItem("accessToken");
   };
+
+  const {
+    data: message,
+    isLoading,
+    refetch,
+  } = useQuery(["message"], () => primaryAxios.get(`/message`));
 
   const manuItems = (
     <>
@@ -193,28 +201,29 @@ const Header = ({ handleThemeChange, theme }) => {
       </div>
 
       <div className="navbar-end hidden lg:flex">
-        <div class="dropdown">
-          <button tabindex="0" className='pr-5'>
-            <p><i class="fa-solid fa-bell absolute"></i></p>
-            {user ? (
-              <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
-                1
-              </span>
-            ) : (
-              ""
-            )}
-          </button>
-          <div
-            tabindex="0"
-            class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
-          >
-            <div class="card-body">
-              <h3 class="card-title">WelCome!</h3>
-              <p className="font-bold">{user?.displayName}</p>
-              <p>Thank you for Visiting This Websites.</p>
+        {user ? (
+          <div class="dropdown dropdown-end">
+            <button tabindex="0" className="pr-6">
+              <p>
+                <i class="fa-solid fa-bell"></i>
+                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
+                  
+                </span>
+              </p>
+            </button>
+            <div
+              tabindex="0"
+              class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
+            >
+              <div class="card-body p-1">
+                <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <Messages></Messages>
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
         <button
           onClick={handleThemeChange}
           className="rounded-full lg:mx-2 pr-5"
@@ -387,31 +396,32 @@ const Header = ({ handleThemeChange, theme }) => {
         )}
       </div>
       <div className="navbar-end lg:hidden flex">
-      <div class="dropdown">
-          <button tabindex="0" className='pr-5'>
-            <p><i class="fa-solid fa-bell absolute"></i></p>
-            {user ? (
-              <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
-                1
-              </span>
-            ) : (
-              ""
-            )}
-          </button>
-          <div
-            tabindex="0"
-            class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
-          >
-            <div class="card-body">
-              <h3 class="card-title">WelCome!</h3>
-              <p className="font-bold">{user?.displayName}</p>
-              <p>Thank you for Visiting This Websites.</p>
+      {user ? (
+          <div class="dropdown dropdown-end">
+            <button tabindex="0" className="pr-3">
+              <p>
+                <i class="fa-solid fa-bell"></i>
+                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[6 px] bottom-[13px] justify-center text-white">
+                  
+                </span>
+              </p>
+            </button>
+            <div
+              tabindex="0"
+              class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 -mr-14"
+            >
+              <div class="card-body p-1">
+                <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <Messages></Messages>
+              </div>
             </div>
           </div>
-        </div>
+        ) : (
+          ""
+        )}
         <button
           onClick={handleThemeChange}
-          className="rounded-full lg:mx-2 font-bold pr-2"
+          className="rounded-full lg:mx-2 font-bold px-2"
         >
           {theme ? (
             <svg

@@ -35,8 +35,8 @@ const Profile = () => {
     <div className="mb-10">
       <div
         className="hero"
-        style={{
-          backgroundImage: `url(${user?.data?.coverPhoto ? user?.data?.coverPhoto : "- - -"})`,
+        style={{  
+          backgroundImage: `url(${user?.data?.coverPhoto ? user?.data?.coverPhoto : "https://scontent.fdac3-1.fna.fbcdn.net/v/t39.30808-6/297318585_104370822378911_5462931076151560878_n.jpg?stp=dst-jpg_s960x960&_nc_cat=102&ccb=1-7&_nc_sid=e3f864&_nc_eui2=AeGtew9Ojn9YHUABv1EpA7EsdpAI8qeMsCF2kAjyp4ywIWw2Njuwb-Au3CBMLOtJ76x-xBM7GaR2Gdy2s1r2M9OW&_nc_ohc=Pk8WLiHh34IAX9CXpsE&_nc_zt=23&_nc_ht=scontent.fdac3-1.fna&oh=00_AT_Y1bI4d43hmff2WP5-8RTqIcRlD9N-R2NZuHCzpTqcQA&oe=630111D9"})`,
           backgroundPosition: 'center',
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat'
@@ -77,8 +77,8 @@ const Profile = () => {
                         ? user?.data?.image
                         : "https://i.ibb.co/T1D3tqN/images.png"
                       }`}
-                    className=" rounded-full m-2"
-                  />
+                      className="w-32 rounded-full m-2"
+                    />
                 </div>
                 <h1 className="text-2xl font-bold">{user?.data?.name ? user?.data?.name : "- - -"}{user?.data?.gender === 'Male' && (<i class="fa-solid fa-mars text-primary ml-2"></i>)}{user?.data?.gender === 'Female' && (<i class="fa-solid fa-venus text-secondary ml-2"></i>)}</h1>
                 <h1 className="text-sm opacity-60">{user?.data?.email ? user?.data?.email : "- - -"}</h1>
