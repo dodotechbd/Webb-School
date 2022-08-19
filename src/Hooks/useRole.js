@@ -17,9 +17,6 @@ const useRole = () => {
       if (data?.role) {
         setRole(data?.role);
         setRoleLoading(false);
-      } else {
-        setRole("");
-        setRoleLoading(false);
       }
       setUserName(data?.name);
     })();
