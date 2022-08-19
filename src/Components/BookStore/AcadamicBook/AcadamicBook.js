@@ -20,7 +20,7 @@ const AcadamicBook = ({ acadamicbook }) => {
       </figure>
       <div className="card-body p-0">
         <div className="card-body p-4">
-          <h1>
+          <h1> 
             {name?.length >= 18 ? (
               <p className="text-xl font-bold">{name.slice(0, 18)}...</p>,
 
