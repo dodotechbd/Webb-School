@@ -2,11 +2,6 @@
   background-image: url(https://raw.githubusercontent.com/MShafiMS/admission/eeb6c9456e6bec86eeddaf072a43cd089f371637/bannerbg.svg);
 }
 
-div span {
-  color: deepskyblue;
-  font-size: medium;
-}
-
 #days {
   font-size: larger;
   font: bolder;
