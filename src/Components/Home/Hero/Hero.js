@@ -7,14 +7,16 @@ import auth from "../../../firebase.init";
 const Hero = () => {
   const [user, loading, error] = useAuthState(auth);
 
-  //CountDown Timer Add 
+  //CountDown Timer Add
   var countDownDate = new Date("Aug 20,2022 00:00:00").getTime();
   var x = setInterval(function () {
     var now = new Date().getTime();
     var distance = countDownDate - now;
 
     var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var hours = Math.floor(
+      (distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
     var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
     var seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
@@ -54,41 +56,70 @@ const Hero = () => {
                 "If kids can be super engaged in video games, there’s a way for
                 them to be super engaged in education as well."
               </p>
-              <span className="font-bold text-info">The last time off enrollment see below : </span>
+              <span className="font-bold text-accent">
+                The last time off enrollment see below :{" "}
+              </span>
 
               <div class="mt-2 grid grid-flow-col gap-5 text-center auto-cols-max">
                 <div class="flex flex-col p-2 bg-base-300 bg-opacity-60 rounded-md text-neutral-content">
-                  <p id="days">00</p>
-                  <span>Days</span>
+                  <p className="text-secondary" id="days">
+                    00
+                  </p>
+                  <span className="text-accent">Days</span>
                 </div>
                 <div class="flex flex-col p-2 bg-base-300 bg-opacity-60 rounded-md text-neutral-content">
-                  <p id="hours">00</p>
-                  <span>Hours</span>
+                  <p className="text-secondary" id="hours">
+                    00
+                  </p>
+                  <span className="text-accent">Hours</span>
                 </div>
                 <div class="flex flex-col p-2 bg-base-300 bg-opacity-60 rounded-md text-neutral-content">
-                  <p id='minutes'>00</p>
-                  <span>Minutes</span>
+                  <p className="text-secondary" id="minutes">
+                    00
+                  </p>
+                  <span className="text-accent">Minutes</span>
                 </div>
                 <div class="flex flex-col p-2 bg-base-300 bg-opacity-60 rounded-md text-neutral-content">
-                  <p id='seconds'>00</p>
-                  <span>Seconds</span>
+                  <p className="text-secondary" id="seconds">
+                    00
+                  </p>
+                  <span className="text-accent">Seconds</span>
                 </div>
               </div>
               {/* Count Downn Timer End*/}
-              <p className="mt-2 font-bold text-red-500">Start Your Journey With Us</p>
-              <div className="flex mt-2">
-                <i className="btn btn-accent btn-circle btn-sm text-white shadow-lg mr-2 fa-solid fa-arrow-right-long"></i>
-                {user ? (
+              <div className="lg:flex items-center justify-between hidden lg:w-11/12 bg-base-300 p-2 px-3 rounded-l-md rounded-r-3xl mt-5 bg-opacity-60">
+                <p className="lg:block hidden">Start Your Journey With Us</p>
+                <div className="flex">
+                  <i className="btn btn-accent btn-circle btn-sm text-white shadow-lg mr-2 fa-solid fa-arrow-right-long"></i>
+                  {user ? (
+                    <Link
+                      to={"courses"}
+                      className="btn btn-accent font-thin rounded-2xl btn-sm text-white shadow-lg"
+                    >
+                      Enroll Now
+                    </Link>
+                  ) : (
+                    <Link
+                      to={"signup"}
+                      className="btn btn-accent font-thin rounded-2xl btn-sm text-white shadow-lg"
+                    >
+                      Enroll Now
+                    </Link>
+                  )}
+                </div>
+              </div>
+              <div className="mt-5 lg:hidden">
+              {user ? (
                   <Link
                     to={"courses"}
-                    className="btn btn-accent font-thin rounded-2xl btn-sm text-white shadow-lg"
+                    className="btn btn-accent font-thin rounded-md btn-sm text-white shadow-lg"
                   >
                     Enroll Now
                   </Link>
                 ) : (
                   <Link
                     to={"signup"}
-                    className="btn btn-accent font-thin rounded-2xl btn-sm text-white shadow-lg"
+                    className="btn btn-accent font-thin rounded-md btn-sm text-white shadow-lg"
                   >
                     Enroll Now
                   </Link>
@@ -98,8 +129,12 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <img src="https://www.freeiconspng.com/thumbs/rocket-png/red-rocket-png-5.png" className='rocket' alt="" />
-    </div >
+      <img
+        src="https://www.freeiconspng.com/thumbs/rocket-png/red-rocket-png-5.png"
+        className="rocket"
+        alt=""
+      />
+    </div>
   );
 };
 
