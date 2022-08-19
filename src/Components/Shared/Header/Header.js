@@ -394,23 +394,22 @@ const Header = ({ handleThemeChange, theme }) => {
       </div>
       <div className="navbar-end lg:hidden flex">
       {user ? (
-          <div class="dropdown">
-            <button tabindex="0" className="pr-5">
+          <div class="dropdown dropdown-end">
+            <button tabindex="0" className="pr-3">
               <p>
-                <i class="fa-solid fa-bell absolute"></i>
-                <span class="text-xs bg-red-600 rounded-full w-3 h-3 z-0 left-[12.5px] bottom-1 flex justify-center relative">
-                  1
+                <i class="fa-solid fa-bell"></i>
+                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[7.5px] bottom-[13px] justify-center text-white">
+                  
                 </span>
               </p>
             </button>
             <div
               tabindex="0"
-              class="dropdown-content card card-compact  p-2 shadow bg-primary text-primary-content"
+              class="dropdown-content  rounded-lg bg-base-100 border border-neutral mt-6 w-72 -mr-14"
             >
-              <div class="card-body">
-                <h3 class="card-title">WelCome!</h3>
-                <p className="font-bold">{user?.displayName}</p>
-                <p>Thank you for Visiting This Websites.</p>
+              <div class="card-body p-1">
+                <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <Messages></Messages>
               </div>
             </div>
           </div>
