@@ -118,7 +118,7 @@ const Header = ({ handleThemeChange, theme }) => {
                           <img
                             src={`${user?.photoURL
                                 ? user?.photoURL
-                                : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                                : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
                               }`}
                           />
                         </div>
@@ -264,7 +264,7 @@ const Header = ({ handleThemeChange, theme }) => {
                 <img
                   src={`${user?.photoURL
                       ? user?.photoURL
-                      : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                      : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
                     }`}
                 />
               </div>
@@ -279,7 +279,7 @@ const Header = ({ handleThemeChange, theme }) => {
                     <img
                       src={`${user?.photoURL
                           ? user?.photoURL
-                          : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+                          : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
                         }`}
                     />
                   </div>
@@ -335,7 +335,7 @@ const Header = ({ handleThemeChange, theme }) => {
           //           src={`${
           //             user?.photoURL
           //               ? user?.photoURL
-          //               : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
+          //               : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
           //           }`}
           //         />
           //       </div>
