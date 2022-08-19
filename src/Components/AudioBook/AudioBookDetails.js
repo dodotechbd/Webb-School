@@ -1,32 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../../firebase.init";
-import { useForm } from 'react-hook-form';
 
-const AcadamicDetail = () => {
-
-    const [user, loading] = useAuthState(auth);
-
-    const { acadamicbookId } = useParams();
+const AudioBookDetails = () => {
+    const { audiobookId } = useParams();
     const [service, setService] = useState([]);
     useEffect(() => {
-        fetch("https://rocky-escarpment-87440.herokuapp.com/AcadamicBook")
+        fetch("/audiobook.json")
             .then(res => res.json())
             .then(data => setService(data))
-    }, []) 
+    }, [])
 
-    const { register, handleSubmit } = useForm();
-
-    const onSubmit = data => {
-        console.log(data)
-    }
-    const newService = service.filter(s => s._id == acadamicbookId)
+    const newService = service.filter(s => s._id == audiobookId)
     //   console.log(newService[0]);
-    
     return (
         <div>
-            <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Details</h1>
+            <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Audio Book Details</h1>
             <h1 className='text-2xl px-6  font-bold'>Books Name: <span className='text-2xl text-primary font-bold'>{newService[0]?.name}</span></h1>
             <div className=' grid gap-10 lg:grid-cols-2 py-12  px-6 md:grid-cols-2 sm:grid-cols-2 '>
 
@@ -99,48 +87,19 @@ const AcadamicDetail = () => {
                             <figure><img className='  w-80' src={newService[0]?.img} alt="Shoes" /></figure>
                         </div>
                         <div >
-                            <p className='text-lg p-4'> <i className="fa-solid fa-file   pr-4  text-[#efad1e]"></i> Pages: {newService[0]?.pages}</p>
+                            
                             <p className='text-lg p-4'> <i className="fa-solid fa-file   pr-4  text-[#efad1e]"></i> File Size: {newService[0]?.file}</p>
-                            <p className=' text-lg p-4'> <i className="fa-solid fa-file   pr-4  text-[#efad1e]"></i> Interactive: {newService[0]?.interactive}</p>
+                            <p className=' text-lg p-4'> <i className="fa-solid fa-file   pr-4  text-[#efad1e]"></i> Time: {newService[0]?.time}</p>
                             <p className='text-lg p-4'><i className="fa-solid fa-file-pdf pr-4 text-[#efad1e]"></i>Format: {newService[0]?.format}</p>
                             <h3 className=' text-lg p-4'><i className="fa-solid fa-hand-holding-dollar pr-4 text-[#efad1e]"></i> Price $:  {newService[0]?.price}</h3>
                         </div>
                     </div>
-
-                    <label for="my-modal-3" class="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</label>
-
-                    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-                    <div class="modal">
-                        <div class="modal-box relative">
-                            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                            <h3 class="text-lg font-bold">BOOK: {newService[0]?.name}</h3>
-                            <form onSubmit={handleSubmit(onSubmit)}>
-
-
-                                <div class="form-control w-full max-w-xs">
-
-                                    <input type="text" value={user.displayName} placeholder="Type here"
-                                        class="input input-bordered w-full max-w-xs my-2"{...register("book")} />
-
-                                    <input type="text" value={user.email} placeholder="Type here"
-                                        class="input input-bordered w-full max-w-xs"{...register("email")} />
-
-                                    <input type="text" placeholder="Phone Number"
-                                        class="input input-bordered w-full max-w-xs my-2"{...register("number")} />
-                                </div>
-
-                                <button class="btn btn-outline btn-secondary"><input type="submit" /></button>
-
-                            </form>
-                        </div>
-                    </div>
-
-
+                 <button class="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</button>
                 </div>
-
             </div>
-        </div >
-    );
-};
 
-export default AcadamicDetail;
+        </div>
+    );
+}
+
+export default AudioBookDetails;

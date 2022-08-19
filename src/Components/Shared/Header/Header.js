@@ -4,6 +4,7 @@ import wslogo from "../../../Assets/wslogo.png";
 import "./Header.css";
 import { useQuery } from "react-query";
 import Drawer from "react-modern-drawer";
+
 import "react-modern-drawer/dist/index.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -41,11 +42,14 @@ const Header = ({ handleThemeChange, theme }) => {
         <NavLink to="bookstore">Book Store</NavLink>
       </li>
       <li>
+        <NavLink to="audiobook">AudioBook</NavLink>
+      </li>
+      {/* <li>
         <NavLink to="admission">Admission</NavLink>
       </li>
       <li>
         <NavLink to="jobs">Jobs</NavLink>
-      </li>
+      </li> */}
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
@@ -85,11 +89,14 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink to="bookstore">Book Store</NavLink>
                 </li>
                 <li>
+                  <NavLink to="audiobook">AudioBook</NavLink>
+                </li>
+                {/* <li>
                   <NavLink to="admission">Admission</NavLink>
                 </li>
                 <li>
                   <NavLink to="jobs">Jobs</NavLink>
-                </li>
+                </li> */}
                 <li>
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
@@ -109,11 +116,10 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${
-                              user?.photoURL
+                            src={`${user?.photoURL
                                 ? user?.photoURL
                                 : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                            }`}
+                              }`}
                           />
                         </div>
                       </label>
@@ -256,11 +262,10 @@ const Header = ({ handleThemeChange, theme }) => {
             <label tabindex="0" class="btn btn-ghost btn-circle avatar">
               <div class="w-9 rounded-full">
                 <img
-                  src={`${
-                    user?.photoURL
+                  src={`${user?.photoURL
                       ? user?.photoURL
                       : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                  }`}
+                    }`}
                 />
               </div>
             </label>
@@ -272,11 +277,10 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div class="avatar">
                   <div class="w-20 rounded-full">
                     <img
-                      src={`${
-                        user?.photoURL
+                      src={`${user?.photoURL
                           ? user?.photoURL
                           : "https://icon-library.com/images/user-profile-icon/user-profile-icon-12.jpg"
-                      }`}
+                        }`}
                     />
                   </div>
                 </div>

@@ -4,6 +4,7 @@ li a {
   padding-top: 8px;
   padding-bottom: 8px;
 }
+
 li a:hover {
   color: #ffffff;
   background-color: #2f425c;

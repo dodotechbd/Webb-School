@@ -62,26 +62,25 @@ const Profile = () => {
       <div className="lg:flex justify-between lg:mx-8">
         <div className=" lg:w-4/12 w-11/12 md:w-10/12 mx-auto mt-[-170px] mb-6">
           <div className="card shadow-2xl bg-base-100">
-          <NavHashLink
-            to={"/profile/update#profile"}
-          >
-          <p className="text-right pr-3 pt-2">
-            <i class="fa-solid fa-pen-to-square"></i>
-          </p>
-          </NavHashLink>
+            <NavHashLink
+              to={"/profile/update#profile"}
+            >
+              <p className="text-right pr-3 pt-2">
+                <i class="fa-solid fa-pen-to-square"></i>
+              </p>
+            </NavHashLink>
             <div>
               <div className="items-center form-control">
                 <div>
-                    <img
-                      src={`${
-                        user?.data?.image
-                          ? user?.data?.image
-                          : "https://i.ibb.co/T1D3tqN/images.png"
+                  <img
+                    src={`${user?.data?.image
+                        ? user?.data?.image
+                        : "https://i.ibb.co/T1D3tqN/images.png"
                       }`}
                       className="w-32 rounded-full m-2"
                     />
                 </div>
-                <h1 className="text-2xl font-bold">{user?.data?.name ? user?.data?.name : "- - -"}{user?.data?.gender === 'Male' && (<i class="fa-solid fa-mars text-primary ml-2"></i>) }{user?.data?.gender === 'Female' && (<i class="fa-solid fa-venus text-secondary ml-2"></i>) }</h1>
+                <h1 className="text-2xl font-bold">{user?.data?.name ? user?.data?.name : "- - -"}{user?.data?.gender === 'Male' && (<i class="fa-solid fa-mars text-primary ml-2"></i>)}{user?.data?.gender === 'Female' && (<i class="fa-solid fa-venus text-secondary ml-2"></i>)}</h1>
                 <h1 className="text-sm opacity-60">{user?.data?.email ? user?.data?.email : "- - -"}</h1>
                 <h1 className="text-lg">{user?.data?.profession ? user?.data?.profession : "- - -"}</h1>
                 <div className="stats form-control">
@@ -115,18 +114,18 @@ const Profile = () => {
                 <h1><i class="fa-solid text-yellow-600 fa-bookmark"></i></h1>
               </div>
               <div>
-              <h1>Contact No.</h1>
-              <h1>Address</h1>
-              <h1>Education</h1>
-              <h1>Reputation</h1>
-              <h1>Rank</h1>
+                <h1>Contact No.</h1>
+                <h1>Address</h1>
+                <h1>Education</h1>
+                <h1>Reputation</h1>
+                <h1>Rank</h1>
               </div>
               <div>
-              <h1 className="ml-8">{user?.data?.phone ? user?.data?.phone : "- - -"}</h1>
-              <h1 className="ml-8">{user?.data?.address ? user?.data?.address : "- - -"}</h1>
-              <h1 className="ml-8">{user?.data?.education ? user?.data?.education : "- - -"}</h1>
-              <h1 className="ml-8">2022</h1>
-              <h1 className="ml-8">User</h1>
+                <h1 className="ml-8">{user?.data?.phone ? user?.data?.phone : "- - -"}</h1>
+                <h1 className="ml-8">{user?.data?.address ? user?.data?.address : "- - -"}</h1>
+                <h1 className="ml-8">{user?.data?.education ? user?.data?.education : "- - -"}</h1>
+                <h1 className="ml-8">2022</h1>
+                <h1 className="ml-8">User</h1>
               </div>
             </div>
             <div className="card-body py-2 gap-0">
