@@ -12,7 +12,7 @@ const Admin = () => {
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
-                className="inline-block w-5 h-5"
+                className="inline-block w-5 h-5 stroke-current"
               >
                 <path
                   stroke-linecap="round"
@@ -59,6 +59,9 @@ const Admin = () => {
             </li>
             <li>
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/message"}><i class="fa-solid fa-paper-plane"></i>Send Message</NavLink>
             </li>
             
           </ul>
