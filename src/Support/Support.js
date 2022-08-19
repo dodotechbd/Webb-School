@@ -6,12 +6,12 @@ const Support = () => {
       <div class="hero-content flex-col lg:flex-row-reverse">
         <img src="https://www.seqrite.com/skin/frontend/default/seqrite_v1/images/support-img.png" />
         <div>
-          <h1 className="text-warning text-3xl font-bold mt-10 ml-8">
+          <h1 className="text-warning text-3xl font-bold mt-10">
             <span className="text-3xl text-info">Private support group</span>{" "}
             where we try to answer within{" "}
             <span className="text-3xl text-info">24 hours</span> of our students
           </h1>
-          <p className="normal-text mt-10 ml-10">
+          <p className="normal-text mt-10">
             For this course we have created a private Facebook group where
             course instructor <span>MD BADSHA</span> and 4-5 other web
             developers will directly answer your various questions. We promise
