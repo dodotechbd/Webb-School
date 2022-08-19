@@ -16,13 +16,13 @@ const MessageHistory = ({ message, refetch }) => {
         })();
       };
   return (
-    <div class="card hover:bg-base-200 rounded-none p-0">
-      <div class="card-body px-2 py-2 flex-row justify-between">
+    <div class="card hover:bg-base-100 bg-base-300 rounded-none p-0">
+      <div class="card-body px-2 py-2 flex-row justify-between items-center">
         <div>
-        <h2 class="card-title">{message?.title}</h2>
+        <h2 class="text-lg font-bold">{message?.title}</h2>
         <p>{message?.details}</p>
         </div>
-        <button onClick={() => handleDelete(message?._id)} className="btn btn-ghost text-red-500"><i class="fa-solid fa-trash"></i></button>
+        <button onClick={() => handleDelete(message?._id)} className="btn btn-sm bg-base-300 btn-ghost text-red-500"><i class="fa-solid fa-trash"></i></button>
       </div>
     </div>
   );

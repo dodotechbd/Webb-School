@@ -31,7 +31,6 @@ const Header = ({ handleThemeChange, theme }) => {
     isLoading,
     refetch,
   } = useQuery(["message"], () => primaryAxios.get(`/message`));
-  console.log(message?.data);
 
   const manuItems = (
     <>
@@ -201,14 +200,14 @@ const Header = ({ handleThemeChange, theme }) => {
             <button tabindex="0" className="pr-6">
               <p>
                 <i class="fa-solid fa-bell"></i>
-                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[7.5px] bottom-[13px] justify-center text-white">
+                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
                   
                 </span>
               </p>
             </button>
             <div
               tabindex="0"
-              class="dropdown-content  rounded-lg bg-base-100 border border-neutral mt-6 w-72 "
+              class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
             >
               <div class="card-body p-1">
                 <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
@@ -398,14 +397,14 @@ const Header = ({ handleThemeChange, theme }) => {
             <button tabindex="0" className="pr-3">
               <p>
                 <i class="fa-solid fa-bell"></i>
-                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[7.5px] bottom-[13px] justify-center text-white">
+                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[6 px] bottom-[13px] justify-center text-white">
                   
                 </span>
               </p>
             </button>
             <div
               tabindex="0"
-              class="dropdown-content  rounded-lg bg-base-100 border border-neutral mt-6 w-72 -mr-14"
+              class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 -mr-14"
             >
               <div class="card-body p-1">
                 <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
