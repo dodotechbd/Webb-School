@@ -216,7 +216,7 @@ const Header = ({ handleThemeChange, theme }) => {
               class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
             >
               <div class="card-body p-1">
-                <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <h3 class="text-xl px-3 pt-2">Notifications! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
                 <Messages></Messages>
               </div>
             </div>
@@ -411,7 +411,7 @@ const Header = ({ handleThemeChange, theme }) => {
               class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 -mr-14"
             >
               <div class="card-body p-1">
-                <h3 class="text-xl px-3 pt-2">Notice! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <h3 class="text-xl px-3 pt-2">Notifications! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
                 <Messages></Messages>
               </div>
             </div>
