@@ -75,7 +75,7 @@ const Profile = () => {
                   <img
                     src={`${user?.data?.image
                         ? user?.data?.image
-                        : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
+                        : "https://cdn3d.iconscout.com/3d/premium/thumb/profile-5590850-4652486.png"
                       }`}
                       className="w-32 h-32 rounded-full m-2"
                     />
