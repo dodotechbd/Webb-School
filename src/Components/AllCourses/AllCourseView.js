@@ -7,13 +7,13 @@ import CourseSyllabus from "./CourseSyllabus";
 const AllCourseView = () => {
   const { uname } = useParams();
   const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then(
-      (res) => res.json()
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
+      res.json()
     )
   );
   const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then(
-      (res) => res.json()
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+      res.json()
     )
   );
   const { data: admission } = useQuery(["admissionCourses"], () =>
@@ -21,11 +21,13 @@ const AllCourseView = () => {
       (res) => res.json()
     )
   );
-  const courseData = admission?.find((allcard) => allcard.uname === uname)
-  || language?.find((allcard) => allcard.uname === uname) || job?.find((allcard) => allcard.uname === uname);
+  const courseData =
+    admission?.find((allcard) => allcard.uname === uname) ||
+    language?.find((allcard) => allcard.uname === uname) ||
+    job?.find((allcard) => allcard.uname === uname);
   // const courseIndex = courseData?.file[0].details[0].fileName;
   // console.log(courseIndex);
-  
+
   return (
     <div className="hero bg-base-100 my-10">
       <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
@@ -36,15 +38,16 @@ const AllCourseView = () => {
             </h2>
             <div className="grid grid-cols-2 gap-3">
               <p>
-                <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>{courseData?.videos.length} Videos
+                <i className="fa-solid fa-video pr-2 text-[#efad1e]"></i>
+                {courseData?.videos.length} Videos
               </p>
               <p>
                 <i className="fa-solid fa-users pr-2 text-[#efad1e]"></i>758
                 Students
               </p>
               <p>
-                <i className="fa-solid fa-headset pr-2 text-[#efad1e]"></i>Mentor
-                Support
+                <i className="fa-solid fa-headset pr-2 text-[#efad1e]"></i>
+                Mentor Support
               </p>
               <p>
                 <i className="fa-solid fa-circle-question pr-2 text-[#efad1e]"></i>
@@ -63,7 +66,7 @@ const AllCourseView = () => {
                 <p>Course Price</p>
               </div>
               <div>
-                <p className="text-2xl">৳{courseData?.price}</p>
+                <p className="text-2xl">${courseData?.price}</p>
               </div>
             </div>
             <Link to={`/checkout/${uname}`}>
@@ -74,11 +77,11 @@ const AllCourseView = () => {
           </div>
         </div>
         <div className="lg:w-6/12 md:w-full">
-          <h1 className="text-4xl font-bold text-warning">{courseData?.name}</h1>
-          <p className="py-3 text-lg">
-            {courseData?.desc}
-          </p>
-          <div className="lg:h-80 h-48 md:h-96 border-4 rounded-lg border-neutral w-full">
+          <h1 className="text-4xl font-bold text-warning">
+            {courseData?.name}
+          </h1>
+          <p className="py-3 text-lg">{courseData?.desc}</p>
+          <div className="lg:h-80 h-48 md:h-96 w-full">
             <ReactPlayer
               width={"100%"}
               height={"100%"}
@@ -88,7 +91,7 @@ const AllCourseView = () => {
               playing
             />
           </div>
-          <h1 className="text-2xl mt-10 mb-1">Instructor:</h1>
+          <h1 className="text-2xl0 mb-1">Instructor:</h1>
           <div className="w-full border border-neutral rounded-md mb-4 grid lg:grid-cols-2 md:grid-cols-2">
             <div className="p-3 flex items-center gap-3">
               <div className="avatar">
@@ -113,49 +116,120 @@ const AllCourseView = () => {
               </div>
             </div>
           </div>
-          <h1 className="text-2xl mt-10 mb-1">
+          <h1 className="text-2xl0 mb-1">
             What will you learn from this course
           </h1>
           <div className="w-full border border-neutral rounded-md">
             <div className="border-b border-neutral px-5 py-6">
               <p className="text-lg">
-                <i className="fa-solid text-success fa-check mr-4"></i>{courseData?.topica}{" "}
+                <i className="fa-solid text-success fa-check mr-4"></i>
+                {courseData?.topica}{" "}
               </p>
               <p className="text-lg">
-                <i className="fa-solid text-success fa-check mr-4"></i>{courseData?.topicb}{" "}
+                <i className="fa-solid text-success fa-check mr-4"></i>
+                {courseData?.topicb}{" "}
               </p>
               <p className="text-lg">
-                <i className="fa-solid text-success fa-check mr-4"></i>{courseData?.topicc}{" "}
+                <i className="fa-solid text-success fa-check mr-4"></i>
+                {courseData?.topicc}{" "}
               </p>
               <p className="text-lg">
-                <i className="fa-solid text-success fa-check mr-4"></i>{courseData?.topicd}{" "}
+                <i className="fa-solid text-success fa-check mr-4"></i>
+                {courseData?.topicd}{" "}
               </p>
             </div>
             <div className="px-5 py-6">
               <p className="text-lg font-bold mb-2">About this course</p>
-              <p className="text-lg mb-3">
-                {courseData?.abouta}
-              </p>
-              <p className="text-lg mb-3">
-                {courseData?.aboutb}
-              </p>
-              <p className="text-lg mb-3">
-                {courseData?.aboutc}
-              </p>
+              <p className="text-lg mb-3">{courseData?.abouta}</p>
+              <p className="text-lg mb-3">{courseData?.aboutb}</p>
+              <p className="text-lg mb-3">{courseData?.aboutc}</p>
             </div>
           </div>
-          <h1 className="text-2xl mt-10 mb-1">Course Syllabus</h1>
+          <h1 className="text-2xl0 mb-1">Course Syllabus</h1>
           <div className="card rounded-md w-full border border-neutral">
             {courseData?.file ? (
               <div className="card-body">
-              {
-                courseData?.file.map(course => <CourseSyllabus
-                  key={course.id}
-                  course={course}
-                  ></CourseSyllabus>)
-              }
+                {courseData?.file.map((course) => (
+                  <CourseSyllabus
+                    key={course.id}
+                    course={course}
+                  ></CourseSyllabus>
+                ))}
               </div>
-            ):(<div>Coming Soon</div>)}
+            ) : (
+              <div>Coming Soon</div>
+            )}
+          </div>
+          <h1 className="text-2xl0 mb-1">Student Feedback</h1>
+          <div className="flex items-center gap-3">
+            <div className="text-center font-bold text-secondary">
+              <h1 className="text-7xl">5.0</h1>
+              <h1 className="text-yellow-400">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </h1>
+              <h1 className="whitespace-nowrap">Course Rating</h1>
+            </div>
+            <div className="w-full">
+              <div className="flex items-center">
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">5</span>
+                </h1>
+                <div class="mx-4 w-2/4 h-4 bg-base-300 rounded">
+                  <div class="h-4 bg-yellow-400 rounded w-[70%]"></div>
+                </div>
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">70%</span>
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">4</span>
+                </h1>
+                <div class="mx-4 w-2/4 h-4 bg-base-300 rounded">
+                  <div class="h-4 bg-yellow-400 rounded w-[17%]"></div>
+                </div>
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">17%</span>
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">3</span>
+                </h1>
+                <div class="mx-4 w-2/4 h-4 bg-base-300 rounded">
+                  <div class="h-4 bg-yellow-400 rounded w-[8%]"></div>
+                </div>
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">8%</span>
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">2</span>
+                </h1>
+                <div class="mx-4 w-2/4 h-4 bg-base-300 rounded">
+                  <div class="h-4 bg-yellow-400 rounded w-[3%]"></div>
+                </div>
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">4%</span>
+                </h1>
+              </div>
+              <div className="flex items-center">
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">1</span>
+                </h1>
+                <div class="mx-4 w-2/4 h-4 bg-base-300 rounded">
+                  <div class="h-4 bg-yellow-400 rounded w-[1%]"></div>
+                </div>
+                <h1 className="text-yellow-400">
+                  <span className="ml-2">1%</span>
+                </h1>
+              </div>
+            </div>
           </div>
         </div>
       </div>
