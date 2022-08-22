@@ -5,6 +5,7 @@ import { useQuery } from "react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import primaryAxios from "../../Api/primaryAxios";
+import Loading from "../Shared/Loading/Loading";
 
 const CourseVideo = () => {
   const { fileName } = useParams();
@@ -17,6 +18,9 @@ const CourseVideo = () => {
   } = useQuery(["myCourse", user?.email], () =>
   primaryAxios.get(`/mycourse?email=${user?.email}`)
 );
+  if(isLoading){
+    return <Loading></Loading>
+  }
 
   const courseData = myCourse?.data?.find((allcard) => allcard.video === video);
 
@@ -34,7 +38,10 @@ const CourseVideo = () => {
         url={videoData?.vurl}
         playing
       />
-      ):(<img className="h-full w-full" src="https://videohive.img.customer.envatousercontent.com/files/236563111/Error%20590x332.jpg?auto=compress%2Cformat&fit=crop&crop=top&max-h=8000&max-w=590&s=20c22574bed9e1fb11d37a55ccd6735f" alt="error"/>)}
+      ):(<div className="w-full h-full bg-base-300 rounded-2xl">
+        <img className="mx-auto lg:w-72 md:w-72 w-40" src="https://github.com/MShafiMS/admission/blob/gh-pages/output-onlinegiftools%20(1).gif?raw=true" alt="error"/>
+        <h1 className="text-xl text-center">The module is not cooked yet!</h1>
+      </div>)}
       </div>
       <h1 className="text-3xl my-4">{videoData?.name}</h1>
       <label
