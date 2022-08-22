@@ -27,7 +27,7 @@ const AddBlogs = (e) => {
     }
 
     return (
-// blogs site
+// blogs sites here
         <div>
 
             <div class="card lg:w-3/5 md:w-3/4 mx-auto w-80 bg-base-300 shadow-xl lg:m-10 m-5">
