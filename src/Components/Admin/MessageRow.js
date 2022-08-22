@@ -58,7 +58,7 @@ const MessageRow = ({ user, prefetch, index }) => {
                 src={`${
                   image
                     ? image
-                    : "https://im3.ezgif.com/tmp/ezgif-3-a85e333fe9.gif"
+                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                 }`}
                 alt="Avatar Tailwind CSS Component"
               />
