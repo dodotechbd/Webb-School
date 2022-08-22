@@ -39,7 +39,11 @@ const Chat = () => {
                     <div class="camera"></div>
                     <div class="display">
                         <div class="artboard artboard-demo phone-1 ">
-                            
+                            <div class="avatar online absolute top-10 ml-40">
+                                <div class="w-8 h-8 rounded-full top-10 ">
+                                    <img src={user?.photoURL} />
+                                </div>
+                            </div>
 
                         
 
