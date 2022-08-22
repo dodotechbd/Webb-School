@@ -66,7 +66,7 @@ const Profile = () => {
               to={"/profile/update#profile"}
             >
               <p className="text-right pr-3 pt-2">
-                <i class="fa-solid fa-pen-to-square"></i>
+                <i className="fa-solid fa-pen-to-square"></i>
               </p>
             </NavHashLink>
             <div>
@@ -80,7 +80,7 @@ const Profile = () => {
                       className="w-32 h-32 rounded-full m-2"
                     />
                 </div>
-                <h1 className="text-2xl font-bold">{user?.data?.name ? user?.data?.name : "- - -"}{user?.data?.gender === 'Male' && (<i class="fa-solid fa-mars text-primary ml-2"></i>)}{user?.data?.gender === 'Female' && (<i class="fa-solid fa-venus text-secondary ml-2"></i>)}</h1>
+                <h1 className="text-2xl font-bold">{user?.data?.name ? user?.data?.name : "- - -"}{user?.data?.gender === 'Male' && (<i className="fa-solid fa-mars text-primary ml-2"></i>)}{user?.data?.gender === 'Female' && (<i className="fa-solid fa-venus text-secondary ml-2"></i>)}</h1>
                 <h1 className="text-sm opacity-60">{user?.data?.email ? user?.data?.email : "- - -"}</h1>
                 <h1 className="text-lg">{user?.data?.profession ? user?.data?.profession : "- - -"}</h1>
                 <div className="stats form-control">
@@ -107,11 +107,11 @@ const Profile = () => {
             </div>
             <div className="card-body py-2 flex-row">
               <div>
-                <h1><i class="fa-solid fa-square-phone"></i></h1>
-                <h1><i class="fa-solid fa-location-dot"></i></h1>
-                <h1><i class="fa-solid fa-graduation-cap"></i></h1>
-                <h1><i class="fa-solid fa-heart text-red-500"></i></h1>
-                <h1><i class="fa-solid text-yellow-600 fa-bookmark"></i></h1>
+                <h1><i className="fa-solid fa-square-phone"></i></h1>
+                <h1><i className="fa-solid fa-location-dot"></i></h1>
+                <h1><i className="fa-solid fa-graduation-cap"></i></h1>
+                <h1><i className="fa-solid fa-heart text-red-500"></i></h1>
+                <h1><i className="fa-solid text-yellow-600 fa-bookmark"></i></h1>
               </div>
               <div>
                 <h1>Contact No.</h1>
@@ -129,13 +129,13 @@ const Profile = () => {
               </div>
             </div>
             <div className="card-body py-2 gap-0">
-              <h1><i class="fa-solid fa-user-tie mr-1 text-red-500"></i>About Me</h1>
+              <h1><i className="fa-solid fa-user-tie mr-1 text-red-500"></i>About Me</h1>
               <p>{user?.data?.bio ? user?.data?.bio : "- - -"}</p>
             </div>
             <div className="card-body flex-row gap-5 justify-center py-5 text-2xl">
-              <a href={user?.data?.facebookLink ? user?.data?.facebookLink : "- - -"} target='_blank'><i class="fa-brands fa-facebook"></i></a>
-              <a href={user?.data?.instaLink ? user?.data?.instaLink : "- - -"} target='_blank'><i class="fa-brands fa-instagram"></i></a>
-              <a href={user?.data?.linkedInLink ? user?.data?.linkedInLink : "- - -"} target='_blank'><i class="fa-brands fa-linkedin"></i></a>
+              <a href={user?.data?.facebookLink ? user?.data?.facebookLink : "- - -"} target='_blank'><i className="fa-brands fa-facebook"></i></a>
+              <a href={user?.data?.instaLink ? user?.data?.instaLink : "- - -"} target='_blank'><i className="fa-brands fa-instagram"></i></a>
+              <a href={user?.data?.linkedInLink ? user?.data?.linkedInLink : "- - -"} target='_blank'><i className="fa-brands fa-linkedin"></i></a>
             </div>
           </div>
         </div>

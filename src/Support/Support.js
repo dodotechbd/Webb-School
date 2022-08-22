@@ -3,7 +3,7 @@ import support from "../Assets/supports.svg";
 const Support = () => {
   return (
     <div className="py-12 border-t border-b border-neutral">
-      <div class="hero-content flex-col lg:flex-row-reverse">
+      <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={support} className="lg:w-6/12" />
         <div>
           <h1 className="text-warning text-3xl font-bold mt-10">

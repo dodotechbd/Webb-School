@@ -4,7 +4,7 @@ const Courses = () => {
   return (
     <div className="text-center">
       <div className="bg-base-200 shadow-lg">
-      <ul class="menu menu-horizontal bg-base-300 w-fit">
+      <ul className="menu menu-horizontal bg-base-300 w-fit">
         <li>
         <NavLink to={"/admin/courses/language"} className='hover:rounded-none'>Language</NavLink>
         </li>

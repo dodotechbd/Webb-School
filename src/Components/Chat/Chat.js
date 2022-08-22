@@ -35,12 +35,12 @@ const Chat = () => {
 
 
             <div className='text-center relative'>
-                <div class="mockup-phone">
-                    <div class="camera"></div>
-                    <div class="display">
-                        <div class="artboard artboard-demo phone-1 ">
-                            <div class="avatar online absolute top-10 ml-40">
-                                <div class="w-8 h-8 rounded-full top-10 ">
+                <div className="mockup-phone">
+                    <div className="camera"></div>
+                    <div className="display">
+                        <div className="artboard artboard-demo phone-1 ">
+                            <div className="avatar online absolute top-10 ml-40">
+                                <div className="w-8 h-8 rounded-full top-10 ">
                                     <img src={user?.photoURL} />
                                 </div>
                             </div>
@@ -71,7 +71,6 @@ const Chat = () => {
                     </div>
                 </div>
             </div>
-
 
         </div>
 

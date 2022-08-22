@@ -36,12 +36,12 @@ const OrderCard = ({ order, index, refetch }) => {
         });
       };
   return (
-    <div class="card card-side bg-base-200 rounded-lg border border-neutral">
+    <div className="card card-side bg-base-200 rounded-lg border border-neutral">
       <figure>
         <img className="lg:w-56 md:w-56 hidden lg:block md:block h-full" src={productImage} alt="Movie" />
       </figure>
-      <div class="card-body p-3">
-        <h2 class="card-title">{productName}</h2>
+      <div className="card-body p-3">
+        <h2 className="card-title">{productName}</h2>
         <p>Transaction ID: {transactionId ? transactionId : "Unpaid"}</p>
         <p>Price: ৳{price}</p>
         <p>Payment Status: <button className="uppercase font-thin text-green-500">

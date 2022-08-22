@@ -124,7 +124,7 @@ const UpdateProfile = () => {
           </label>
           <select
             {...register("gender")}
-            class="select select-bordered w-full font-thin"
+            className="select select-bordered w-full font-thin"
             defaultValue={user?.data?.gender ? user?.data?.gender : "Male"}
             placeholder="Gender"
           >

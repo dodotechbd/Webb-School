@@ -23,7 +23,7 @@ const LiveClass = () => {
         <div className='flex h-screen justify-center items-center '>
 
 
-            <div class="card  w-96 shadow-xl ">
+            <div className="card  w-96 shadow-xl ">
 
                 {
                     Lives.map(live => <LiveClassCard

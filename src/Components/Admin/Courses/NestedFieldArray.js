@@ -50,7 +50,7 @@ const NestedFieldArray = ({ nestIndex, control, register, errors }) => {
           onClick={() => append()}
           className='btn mt-3 mb-6 btn-sm btn-outline btn-primary'
         >
-          <i class="fa-solid fa-plus mr-2"></i>Add Lesson
+          <i className="fa-solid fa-plus mr-2"></i>Add Lesson
         </button>
       </div>
     </div>
