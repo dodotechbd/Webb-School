@@ -31,11 +31,11 @@ const CourseSyllabus = ({ course }) => {
       >
         <input type="checkbox" />
         <div className="collapse-title text-lg font-medium">{course?.title}</div>
-        <ul className="menu collapse-content gap-1">
+        <ul className="menu collapse-content">
           {course.details.map ((detail) =>
           <li key={detail.id}>
           <p
-            className="border border-neutral"
+            className="border-t border-neutral hover:rounded-none"
           >
             <p className="text-md">
               <i className="fa-solid fa-play mr-2"></i>

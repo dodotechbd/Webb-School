@@ -26,12 +26,12 @@ const CourseLink = ({ course }) => {
       >
         <input type="checkbox"/>
         <div className="collapse-title text-lg font-medium">{course?.title}</div>
-        <ul className="menu collapse-content gap-1">
+        <ul className="menu collapse-content">
           {course.details.map ((detail) => 
           <li>
           <NavLink
           to={`/course/${uname}/${courseData?.list}/${detail?.fileName}`}
-            className="border border-neutral"
+            className="border-t border-neutral hover:rounded-none"
           >
             <p className="text-md">
               <i className="fa-solid fa-circle-play mr-2"></i>
