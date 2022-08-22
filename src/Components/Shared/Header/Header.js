@@ -118,7 +118,7 @@ const Header = ({ handleThemeChange, theme }) => {
                           <img
                             src={`${user?.photoURL
                                 ? user?.photoURL
-                                : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
+                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                               }`}
                           />
                         </div>
@@ -206,7 +206,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <button tabindex="0" className="pr-6">
               <p>
                 <i class="fa-solid fa-bell"></i>
-                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
+                <span class="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
                   
                 </span>
               </p>
@@ -264,7 +264,7 @@ const Header = ({ handleThemeChange, theme }) => {
                 <img
                   src={`${user?.photoURL
                       ? user?.photoURL
-                      : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
+                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                     }`}
                 />
               </div>
@@ -279,7 +279,7 @@ const Header = ({ handleThemeChange, theme }) => {
                     <img
                       src={`${user?.photoURL
                           ? user?.photoURL
-                          : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
+                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                         }`}
                     />
                   </div>
@@ -335,7 +335,7 @@ const Header = ({ handleThemeChange, theme }) => {
           //           src={`${
           //             user?.photoURL
           //               ? user?.photoURL
-          //               : "https://im3.ezgif.com/tmp/ezgif-3-bf8e602d2d.gif"
+          //               : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
           //           }`}
           //         />
           //       </div>
@@ -401,7 +401,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <button tabindex="0" className="pr-3">
               <p>
                 <i class="fa-solid fa-bell"></i>
-                <span class="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-[10px] h-[10px] z-0 left-[6 px] bottom-[13px] justify-center text-white">
+                <span class="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
                   
                 </span>
               </p>

@@ -32,7 +32,7 @@ const Hero = () => {
                 {user ? (
                   <Link
                     to={"courses"}
-                    className="btn btn-accent font-thin rounded-2xl btn-sm text-white shadow-lg"
+                    className="btn btn-accent font-thin rounded-xl btn-sm text-white shadow-lg"
                   >
                     Enroll Now
                   </Link>
