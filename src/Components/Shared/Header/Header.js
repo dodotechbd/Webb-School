@@ -53,9 +53,9 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
-      <li>
+      {user ? <li>
         <NavLink to="chat">Chat</NavLink>
-      </li>
+      </li> : ("")}
       <li>
         <NavLink to="LiveClass">Live Class</NavLink>
       </li>
@@ -103,9 +103,12 @@ const Header = ({ handleThemeChange, theme }) => {
                 <li>
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
-                <li>
+
+                {user ? <li>
                   <NavLink to="chat">Chat</NavLink>
-                </li>
+                </li> : ("")}
+
+
                 <li>
                   <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
