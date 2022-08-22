@@ -50,7 +50,21 @@ const Chat = () => {
 
                             })}
 
-                       
+                            <form onSubmit={sentChat} className='text-center bottom-0 fixed bottom-0 absolute mb-5 mt-2'>
+
+                                <input
+                                    type="text"
+                                    placeholder="Type here"
+                                    name="chat"
+                                    value={message}
+                                    className="input input-bordered  "
+                                    onChange={(e) => {
+                                        setMessage(e.target.value);
+                                    }}
+                                />
+                                <button type='submit' className="btn btn-outline btn-accent ">sent</button>
+
+                            </form>
 
 
                         </div>
