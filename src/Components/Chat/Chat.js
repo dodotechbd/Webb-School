@@ -8,7 +8,10 @@ import { nanoid } from 'nanoid';
 
 
 const Chat = () => {
+    const [user, loading, error] = useAuthState(auth);
 
+    const [message, setMessage] = useState("");
+    const [chat, setChat] = useState([]);
 
 
     const sentChat = (e) => {
