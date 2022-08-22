@@ -54,6 +54,9 @@ const Header = ({ handleThemeChange, theme }) => {
         <NavLink to="blogs">Blog</NavLink>
       </li>
       <li>
+        <NavLink to="chat">Chat</NavLink>
+      </li>
+      <li>
         <NavLink to="LiveClass">Live Class</NavLink>
       </li>
       {role === "admin" && (
@@ -101,6 +104,9 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
                 <li>
+                  <NavLink to="chat">Chat</NavLink>
+                </li>
+                <li>
                   <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
                 {role === "admin" && (
@@ -117,8 +123,8 @@ const Header = ({ handleThemeChange, theme }) => {
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
                             src={`${user?.photoURL
-                                ? user?.photoURL
-                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                              ? user?.photoURL
+                              : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                               }`}
                           />
                         </div>
@@ -207,7 +213,7 @@ const Header = ({ handleThemeChange, theme }) => {
               <p>
                 <i class="fa-solid fa-bell"></i>
                 <span class="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
-                  
+
                 </span>
               </p>
             </button>
@@ -263,8 +269,8 @@ const Header = ({ handleThemeChange, theme }) => {
               <div class="w-9 rounded-full">
                 <img
                   src={`${user?.photoURL
-                      ? user?.photoURL
-                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                    ? user?.photoURL
+                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                     }`}
                 />
               </div>
@@ -278,8 +284,8 @@ const Header = ({ handleThemeChange, theme }) => {
                   <div class="w-20 rounded-full">
                     <img
                       src={`${user?.photoURL
-                          ? user?.photoURL
-                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                        ? user?.photoURL
+                        : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                         }`}
                     />
                   </div>
@@ -396,13 +402,13 @@ const Header = ({ handleThemeChange, theme }) => {
         )}
       </div>
       <div className="navbar-end lg:hidden flex">
-      {user ? (
+        {user ? (
           <div class="dropdown dropdown-end">
             <button tabindex="0" className="pr-3">
               <p>
                 <i class="fa-solid fa-bell"></i>
                 <span class="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
-                  
+
                 </span>
               </p>
             </button>
