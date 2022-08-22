@@ -45,7 +45,10 @@ const Chat = () => {
                                 </div>
                             </div>
 
-                        
+                            {chat.map((payload, index) => {
+                                return <p className='text-2xl scroll-auto' key={index}>{payload.message} <span className='font-bold bg-base-300 p-2 rounded'>user: {payload.userName}</span></p>;
+
+                            })}
 
                        
 
