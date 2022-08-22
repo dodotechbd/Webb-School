@@ -6,7 +6,7 @@ import { nanoid } from 'nanoid';
 
 
 const socket = io.connect("http://localhost:5000");
-const userName = nanoid(2);
+const userName = nanoid(1);
 
 const Chat = () => {
     const [user, loading, error] = useAuthState(auth);
@@ -31,6 +31,25 @@ const Chat = () => {
         <div>
 
 
+            <h1 className='my-5 text-center font-bold text-4xl'> COMMINUCATIONS YOUR FRINDS</h1>
+
+
+            <div className='text-center relative'>
+                <div class="mockup-phone">
+                    <div class="camera"></div>
+                    <div class="display">
+                        <div class="artboard artboard-demo phone-1 ">
+                            
+
+                        
+
+                       
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
