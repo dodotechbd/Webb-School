@@ -11,6 +11,12 @@ const Chat = () => {
 
 
 
+    const sentChat = (e) => {
+        e.preventDefault();
+        socket.emit("chat", { message, userName });
+        setMessage("");
+    };
+
     useEffect(() => {
         socket.on('chat', (payload) => {
             setChat([...chat, payload]);
