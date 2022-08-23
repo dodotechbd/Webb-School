@@ -15,8 +15,8 @@ import { EffectCoverflow, Pagination } from "swiper";
 
 const Banner = () => {
   return (
-    <div>
-      <div className="px-12 lg:py-10 lg:pb-16 py-10 pt-2 banner  bg-base-100 border-b border-neutral">
+    <div className=" banner">
+      <div className="px-12 lg:py-10 lg:pb-16 py-10 pt-2  bg-base-100 border-b border-neutral hero-overlay bg-opacity-50">
         <h1
           className="lg:text-4xl md:text-3xl text-2xl lg:mb-0 my-6 font-header font-bold text-center"
         >
@@ -68,34 +68,34 @@ const Banner = () => {
           modules={[EffectCoverflow, Pagination]}
           className="mySwiper"
         >
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/J0XQf9dR/18899221.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/MTd507f8/18899230.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/T1vbDhCX/18899243.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/252Pjhct/18899245.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/jSWtfc9y/Black-Friday-Instagram-Story-01.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/QNg9z8fH/Black-Friday-Instagram-Story-05.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/fy2QtSfH/Black-Friday-Instagram-Story-10.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/fRshrsgT/Black-Friday-Instagram-Story-14.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/dVPfV98W/Black-Friday-Instagram-Story-18.png" alt="" />
           </SwiperSlide>
-          <SwiperSlide className="card mb-3 shadow-lg">
+          <SwiperSlide className="card mb-8 shadow-xl">
             <img src="https://i.postimg.cc/RZCnxkW4/Black-Friday-Instagram-Story-20.png" alt="" />
           </SwiperSlide>
         </Swiper>
