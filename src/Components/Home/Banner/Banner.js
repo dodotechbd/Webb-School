@@ -69,34 +69,34 @@ const Banner = () => {
           className="mySwiper"
         >
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/15mtNtxx/21.png" alt="" />
+            <img src="https://i.postimg.cc/J0XQf9dR/18899221.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/HLcjsPqV/22.png" alt="" />
+            <img src="https://i.postimg.cc/MTd507f8/18899230.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/T3SYSJKG/233.png" alt="" />
+            <img src="https://i.postimg.cc/T1vbDhCX/18899243.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/MHxG5ZvQ/24.png" alt="" />
+            <img src="https://i.postimg.cc/252Pjhct/18899245.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/mg6t4G6v/25.png" alt="" />
+            <img src="https://i.postimg.cc/jSWtfc9y/Black-Friday-Instagram-Story-01.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/PfzJxDRz/26.png" alt="" />
+            <img src="https://i.postimg.cc/QNg9z8fH/Black-Friday-Instagram-Story-05.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/26n6nL8Y/27.png" alt="" />
+            <img src="https://i.postimg.cc/fy2QtSfH/Black-Friday-Instagram-Story-10.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/X7svKb3r/28.png" alt="" />
+            <img src="https://i.postimg.cc/fRshrsgT/Black-Friday-Instagram-Story-14.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/3NBxcMvb/29.png" alt="" />
+            <img src="https://i.postimg.cc/dVPfV98W/Black-Friday-Instagram-Story-18.png" alt="" />
           </SwiperSlide>
           <SwiperSlide className="card mb-3 shadow-lg">
-            <img src="https://i.postimg.cc/JztzP24P/30.png" alt="" />
+            <img src="https://i.postimg.cc/RZCnxkW4/Black-Friday-Instagram-Story-20.png" alt="" />
           </SwiperSlide>
         </Swiper>
       </div>
