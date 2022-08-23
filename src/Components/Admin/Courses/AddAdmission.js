@@ -365,7 +365,7 @@ const AddAdmission = () => {
             <label className="label">
               <span className="label-text">Course Price</span>
             </label>
-            <label class="input-group">
+            <label className="input-group">
               <input
                 type="text"
                 {...register("price", {
@@ -420,7 +420,7 @@ const AddAdmission = () => {
                     }}
                     className="btn btn-sm btn-outline mr-3 btn-primary"
                   >
-                    <i class="fa-solid fa-plus mr-2"></i>Add Module
+                    <i className="fa-solid fa-plus mr-2"></i>Add Module
                   </button>
 
                   <button

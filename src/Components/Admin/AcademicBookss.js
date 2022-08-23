@@ -44,7 +44,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="Books Name"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("name", {
                             required: {
                                 value: true,
@@ -59,7 +59,7 @@ const AcademicBookss = () => {
                    <input
                         type="text"
                         placeholder="name of Proprietor"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("description", {
                             required: {
                                 value: true,
@@ -74,7 +74,7 @@ const AcademicBookss = () => {
                    <input
                         type="text"
                         placeholder="price"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("price", {
                             required: {
                                 value: true,
@@ -90,7 +90,7 @@ const AcademicBookss = () => {
                <input
                         type="text"
                         placeholder="pages"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("pages", {
                             required: {
                                 value: true,
@@ -105,7 +105,7 @@ const AcademicBookss = () => {
                    <input
                         type="text"
                         placeholder="format"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("format", {
                             required: {
                                 value: true,
@@ -120,7 +120,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="file"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("file", {
                             required: {
                                 value: true,
@@ -135,7 +135,7 @@ const AcademicBookss = () => {
                   <input
                         type="text"
                         placeholder="interactive"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("interactive", {
                             required: {
                                 value: true,
@@ -150,7 +150,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="Writer name"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("Writer1", {
                             required: {
                                 value: true,
@@ -175,7 +175,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="Writer name"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("Writer2", {
                             required: {
                                 value: true,
@@ -201,7 +201,7 @@ const AcademicBookss = () => {
                    <input
                         type="text"
                         placeholder="Writer name"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("Writer3", {
                             required: {
                                 value: true,
@@ -226,7 +226,7 @@ const AcademicBookss = () => {
                     <input
                         type="text"
                         placeholder="Writer name"
-                        class="input    bg-base-300 w-full max-w-xs m-4"
+                        className="input    bg-base-300 w-full max-w-xs m-4"
                         {...register("Writer4", {
                             required: {
                                 value: true,
