@@ -1,6 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import './Banner/Banner.css'
+import "./Banner/Banner.css";
 const Navigation = () => {
   return (
     <div className="lg:px-10 px-3 py-16 bg-base-100 border-b border-neutral">
@@ -21,7 +21,8 @@ const Navigation = () => {
           <div className="">
             {" "}
             <p className="justify-center text-center lg:flex md:flex py-6 lg:py-0">
-              <i className="fa-solid fa-book-open text-4xl lg:pr-3 md:pr-3 lg:block md:block text-sky-500 lg:py-6 md:py-6"></i><br />
+              <i className="fa-solid fa-book-open text-4xl lg:pr-3 md:pr-3 lg:block md:block text-sky-500 lg:py-6 md:py-6"></i>
+              <br />
               <span className="lg:pt-7 md:pt-7">Book Store</span>
             </p>
           </div>
@@ -34,7 +35,8 @@ const Navigation = () => {
           <div className="">
             {" "}
             <p className="justify-center text-center lg:flex md:flex py-6 lg:py-0">
-            <i className="fa-solid fa-graduation-cap text-4xl lg:pr-3 md:pr-3 lg:block md:block text-green-500 lg:py-6 md:py-6"></i><br />
+              <i className="fa-solid fa-graduation-cap text-4xl lg:pr-3 md:pr-3 lg:block md:block text-green-500 lg:py-6 md:py-6"></i>
+              <br />
               <span className="lg:pt-7 md:pt-7">Admission</span>
             </p>
           </div>
@@ -47,7 +49,8 @@ const Navigation = () => {
           <div className="">
             {" "}
             <p className="justify-center text-center lg:flex md:flex py-6 lg:py-0">
-            <i className="fa-solid fa-briefcase text-4xl lg:pr-3 md:pr-3 lg:block md:block text-purple-500 lg:py-6 md:py-6"></i><br />
+              <i className="fa-solid fa-briefcase text-4xl lg:pr-3 md:pr-3 lg:block md:block text-purple-500 lg:py-6 md:py-6"></i>
+              <br />
               <span className="lg:pt-7 md:pt-7">Job Exam</span>
             </p>
           </div>
@@ -56,22 +59,27 @@ const Navigation = () => {
           href="#courses"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
-          {" "} 
+          {" "}
           <div className="">
             {" "}
             <p className="justify-center text-center lg:flex md:flex py-6 lg:py-0">
-            <i className="fa-solid fa-rocket text-4xl lg:pr-3 md:pr-3 lg:block md:block text-orange-500 lg:py-6 md:py-6"></i><br />
+              <i className="fa-solid fa-rocket text-4xl lg:pr-3 md:pr-3 lg:block md:block text-orange-500 lg:py-6 md:py-6"></i>
+              <br />
               <span className="lg:pt-7 md:pt-7">Courses</span>
             </p>
           </div>
         </AnchorLink>
       </div>
       <div className="flex flex-col w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
-      <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">
-          <span className="text-info">Webb School</span> is the great platform for distance learning.
+        <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">
+          <span className="text-info">Webb School</span> is the great platform
+          for distance learning.
         </h1>
         <div className="lg:divider divide-primary lg:divider-horizontal"></div>
-        <p className="text-lg mt-4 hidden lg:block md:block">Here is our amazing teaching method thad suits for you. Read our features and know the best.</p>
+        <p className="text-lg mt-4 hidden lg:block md:block">
+          Here is our amazing teaching method thad suits for you. Read our
+          features and know the best.
+        </p>
       </div>
       <div className="grid grid-cols-2 lg:gap-5 md:grid-cols-4 lg:grid-cols-5 lg:mx-8 my-8">
         <div className="card transform transition duration-500 hover:scale-110">
@@ -94,7 +102,7 @@ const Navigation = () => {
               </div>
             </div>
             <h2 className="text-md lg:text-lg text-center">
-            An Accredited School
+              An Accredited School
             </h2>
           </div>
         </div>
@@ -106,7 +114,7 @@ const Navigation = () => {
               </div>
             </div>
             <h2 className="text-md lg:text-lg text-center">
-            An Easy Payment Credit
+              An Easy Payment Credit
             </h2>
           </div>
         </div>
