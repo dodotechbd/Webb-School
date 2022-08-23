@@ -53,6 +53,9 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
+      {user ? <li>
+        <NavLink to="chat">Chat</NavLink>
+      </li> : ("")}
       <li>
         <NavLink to="LiveClass">Live Class</NavLink>
       </li>
@@ -100,6 +103,12 @@ const Header = ({ handleThemeChange, theme }) => {
                 <li>
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
+
+                {user ? <li>
+                  <NavLink to="chat">Chat</NavLink>
+                </li> : ("")}
+
+
                 <li>
                   <NavLink to="LiveClass">Live Class</NavLink>
                 </li>
@@ -117,8 +126,8 @@ const Header = ({ handleThemeChange, theme }) => {
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
                             src={`${user?.photoURL
-                                ? user?.photoURL
-                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                              ? user?.photoURL
+                              : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                               }`}
                           />
                         </div>
@@ -202,21 +211,21 @@ const Header = ({ handleThemeChange, theme }) => {
 
       <div className="navbar-end hidden lg:flex">
         {user ? (
-          <div class="dropdown dropdown-end">
+          <div className="dropdown dropdown-end">
             <button tabindex="0" className="pr-6">
               <p>
-                <i class="fa-solid fa-bell"></i>
-                <span class="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
-                  
+                <i className="fa-solid fa-bell"></i>
+                <span className="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
+
                 </span>
               </p>
             </button>
             <div
               tabindex="0"
-              class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
+              className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
             >
-              <div class="card-body p-1">
-                <h3 class="text-xl px-3 pt-2">Notifications! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+              <div className="card-body p-1">
+                <h3 className="text-xl px-3 pt-2">Notifications! <i className="text-yellow-500 fa-solid fa-bell"></i></h3>
                 <Messages></Messages>
               </div>
             </div>
@@ -232,7 +241,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <svg
               aria-hidden="true"
               id="theme-toggle-light-icon"
-              class="w-5 h-5"
+              className="w-5 h-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -247,7 +256,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <svg
               aria-hidden="true"
               id="theme-toggle-dark-icon"
-              class="w-5 h-5"
+              className="w-5 h-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -258,28 +267,28 @@ const Header = ({ handleThemeChange, theme }) => {
         </button>
 
         {user ? (
-          <div class="dropdown dropdown-end">
-            <label tabindex="0" class="btn btn-ghost btn-circle avatar">
-              <div class="w-9 rounded-full">
+          <div className="dropdown dropdown-end">
+            <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+              <div className="w-9 rounded-full">
                 <img
                   src={`${user?.photoURL
-                      ? user?.photoURL
-                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                    ? user?.photoURL
+                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                     }`}
                 />
               </div>
             </label>
             <ul
               tabindex="0"
-              class="mt-3 shadow menu menu-compact dropdown-content rounded-md w-56 bg-base-100 text-warning"
+              className="mt-3 shadow menu menu-compact dropdown-content rounded-md w-56 bg-base-100 text-warning"
             >
               <div className="mx-auto mt-3">
-                <div class="avatar">
-                  <div class="w-20 rounded-full">
+                <div className="avatar">
+                  <div className="w-20 rounded-full">
                     <img
                       src={`${user?.photoURL
-                          ? user?.photoURL
-                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                        ? user?.photoURL
+                        : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                         }`}
                     />
                   </div>
@@ -396,22 +405,22 @@ const Header = ({ handleThemeChange, theme }) => {
         )}
       </div>
       <div className="navbar-end lg:hidden flex">
-      {user ? (
-          <div class="dropdown dropdown-end">
+        {user ? (
+          <div className="dropdown dropdown-end">
             <button tabindex="0" className="pr-3">
               <p>
-                <i class="fa-solid fa-bell"></i>
-                <span class="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
-                  
+                <i className="fa-solid fa-bell"></i>
+                <span className="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
+
                 </span>
               </p>
             </button>
             <div
               tabindex="0"
-              class="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 -mr-14"
+              className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 -mr-14"
             >
-              <div class="card-body p-1">
-                <h3 class="text-xl px-3 pt-2">Notifications! <i class="text-yellow-500 fa-solid fa-bell"></i></h3>
+              <div className="card-body p-1">
+                <h3 className="text-xl px-3 pt-2">Notifications! <i className="text-yellow-500 fa-solid fa-bell"></i></h3>
                 <Messages></Messages>
               </div>
             </div>
@@ -427,7 +436,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <svg
               aria-hidden="true"
               id="theme-toggle-light-icon"
-              class="w-5 h-5"
+              className="w-5 h-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"
@@ -442,7 +451,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <svg
               aria-hidden="true"
               id="theme-toggle-dark-icon"
-              class="w-5 h-5"
+              className="w-5 h-5"
               fill="currentColor"
               viewBox="0 0 20 20"
               xmlns="http://www.w3.org/2000/svg"

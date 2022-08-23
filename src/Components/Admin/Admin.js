@@ -61,7 +61,7 @@ const Admin = () => {
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/message"}><i class="fa-solid fa-paper-plane"></i>Send Message</NavLink>
+              <NavLink to={"/admin/message"}><i className="fa-solid fa-paper-plane"></i>Send Message</NavLink>
             </li>
             
           </ul>
