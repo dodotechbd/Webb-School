@@ -9,7 +9,7 @@ const LiveClassCard = ({ live }) => {
 
     return (
         <div>
-            <div class="card w-96 bg-base-300 border border-neutral shadow-xl">
+            <div class="card w-96  border  ">
                 <div class="card-body">
 
                     <h2 class="card-title pl-8">Name:<span className='text-primary'> {slots}</span></h2>

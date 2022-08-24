@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LiveClassCard from './LiveClassCard';
 import Loader from '../Shared/Loading/Loader'
+import './Live.css'
 
 const LiveClass = () => {
 
@@ -23,7 +24,7 @@ const LiveClass = () => {
         <div className='flex h-screen justify-center items-center '>
 
 
-            <div class="card  w-96 shadow-xl ">
+            <div class=" cardGlass card  w-96  ">
 
                 {
                     Lives.map(live => <LiveClassCard
