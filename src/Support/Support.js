@@ -24,14 +24,14 @@ const Support = () => {
           </p>
           <div className="mt-5 text-xl text-start">
             <a className="mr-5" href="tel:+8801735776381">
-              <i className="fa-solid fa-phone"></i>
+              <i className="fa-solid fa-phone text-3xl text-green-600"></i>
             </a>
             <a className="mr-5" href="https://www.facebook.com/webbSchool">
-              <i className="fa-brands fa-facebook"></i>
+              <i className="fa-brands fa-facebook text-3xl text-blue-500"></i>
             </a>
             <a className="mr-5" href="Email:mission2023@gmail.com">
               {" "}
-              <i className="fa-solid fa-envelope"></i>
+              <i className="fa-solid fa-envelope text-3xl text-orange-500"></i>
             </a>
           </div>
         </div>
