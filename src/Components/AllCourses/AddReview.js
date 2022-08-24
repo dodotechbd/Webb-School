@@ -1,6 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
+import Rating from "react-rating";
+import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
+import { useQuery } from "react-query";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import { useParams } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
+import { useAuthState } from "react-firebase-hooks/auth";
+import Swal from "sweetalert2";
 
 const AddReview = () => {
+  const { uname } = useParams();
+  const [user, loading] = useAuthState(auth);
+  const [rating, setRating] = useState(0);
+  const {
+    data: myCourse,
+    isLoading,
+    refetch,
+  } = useQuery(["myCourses", user?.email], () =>
+    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  );
+  const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const onSubmit = (data) => {
+    const reviewData = {
+      ...data,
+      rating,
+      courseName: courseData?.uname,
+      reviewDate: new Date(),
+      author: {
+        name: auth?.currentUser?.displayName,
+        uid: auth?.currentUser?.uid,
+        photo: auth?.currentUser?.photoURL,
+      },
+    };
+    (async () => {
+      const { data } = await primaryAxios.post(`/reviews`, reviewData);
+      if (data.acknowledged) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-right",
+          iconColor: "white",
+          customClass: {
+            popup: "colored-toast",
+          },
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+        });
+        await Toast.fire({
+          icon: "success",
+          title: "Review Success",
+        });
+        reset();
+      }
+    })();
+  };
+  
   return (
     <div class="card bg-base-100">
       <label
@@ -16,44 +77,30 @@ const AddReview = () => {
           class="rounded-full w-28 bg-base-300"
         />
       </figure>
-      <div class="card-body items-center text-center p-4">
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        class="card-body items-center text-center p-4"
+      >
         <h2 class="text-xl">Rate this course</h2>
-        <div class="rating">
-          <input
-            type="radio"
-            name="rating-2"
-            class="mask mask-star-2 bg-orange-400"
-          />
-          <input
-            type="radio"
-            name="rating-2"
-            class="mask mask-star-2 bg-orange-400"
-            checked
-          />
-          <input
-            type="radio"
-            name="rating-2"
-            class="mask mask-star-2 bg-orange-400"
-          />
-          <input
-            type="radio"
-            name="rating-2"
-            class="mask mask-star-2 bg-orange-400"
-          />
-          <input
-            type="radio"
-            name="rating-2"
-            class="mask mask-star-2 bg-orange-400"
+        <div className="text-3xl text-[#FAAF00]">
+          <Rating
+            count={5}
+            onChange={setRating}
+            fractions={2}
+            emptySymbol={<ImStarEmpty/>}
+            fullSymbol={<ImStarFull/>}
           />
         </div>
         <textarea
+          {...register("review")}
           class="textarea my-3 textarea-primary w-full max-w-xs"
           placeholder="Write about this course"
+          required
         ></textarea>
-        <div class="card-actions">
-          <button class="px-8 py-2 rounded-md btn-primary">Submit</button>
-        </div>
-      </div>
+        <button type="submit" class="px-8 py-2 rounded-md btn-primary">
+          Submit
+        </button>
+      </form>
     </div>
   );
 };
