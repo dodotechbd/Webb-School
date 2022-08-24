@@ -45,7 +45,7 @@ const Checkout = () => {
             <div className="lg:flex">
               <img
                 src={courseData?.img}
-                className="lg:h-72 w-full rounded-lg"
+                className="lg:h-72 w-full lg:w-8/12 rounded-lg"
                 alt=""
               />
               <div className="card-body lg:block hidden w-full">
