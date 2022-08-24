@@ -2,7 +2,7 @@ import React from "react";
 
 const Instructor = () => {
   return (
-    <div className="border-t border-neutral">
+    <div>
       <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
         <div className="">
           <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
