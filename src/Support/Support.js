@@ -22,16 +22,16 @@ const Support = () => {
             problem is not solved or if you need to know any kind of
             information, you can call or email us on the number given below.
           </p>
-          <div className="mt-5 text-xl text-start">
+          <div className="mt-10 text-center">
             <a className="mr-5" href="tel:+8801735776381">
-              <i className="fa-solid fa-phone text-3xl text-green-600"></i>
+              <i className="fa-solid fa-phone text-4xl text-green-600"></i>
             </a>
             <a className="mr-5" href="https://www.facebook.com/webbSchool">
-              <i className="fa-brands fa-facebook text-3xl text-blue-500"></i>
+              <i className="fa-brands fa-facebook text-4xl text-blue-500"></i>
             </a>
             <a className="mr-5" href="Email:mission2023@gmail.com">
               {" "}
-              <i className="fa-solid fa-envelope text-3xl text-orange-500"></i>
+              <i className="fa-solid fa-envelope text-4xl text-orange-500"></i>
             </a>
           </div>
         </div>
