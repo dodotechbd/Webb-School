@@ -3,6 +3,7 @@ import AllCourseCard from "./AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
 import AllAdmission from "../AllAdmission/AllAdmission";
 import AllJobCourse from "../AllJobCourses/AllJobCourse";
+import Instructor from "../Home/Instructor/Instructor";
 import { useQuery } from "react-query";
 
 const AllCourses = () => {
@@ -27,6 +28,7 @@ const AllCourses = () => {
       </div>
       <AllJobCourse></AllJobCourse>
       <AllAdmission></AllAdmission>
+      <Instructor></Instructor>
     </div>
   );
 };
