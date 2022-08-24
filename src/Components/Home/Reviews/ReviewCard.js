@@ -1,11 +1,13 @@
 import React from "react";
+import Rating from "react-rating";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 
 const ReviewCard = ({ course }) => {
   const { name, img, description, address, tag } = course;
   return (
     <div> 
       <div className="card rounded-lg w-11/12 lg:w-96 md:w-96 mx-auto bg-base-300 border border-neutral mt-6 h-80">
-        <div className="card-body p-7">
+        <div className="card-body p-7 grid content-between">
           <div className="flex mb-4">
             <div className="avatar">
               <div className="w-12 h-12 rounded-full">
@@ -25,33 +27,13 @@ const ReviewCard = ({ course }) => {
             </p>
             <p className="text-left text-md font-sub opacity-80">{description}</p>
           </div>
-          <div className="rating rating-md mt-3">
-            <input
-              type="radio"
-              name="rating-1"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-1"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-1"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-1"
-              className="mask mask-star-2 bg-orange-400"
-            />
-            <input
-              type="radio"
-              name="rating-1"
-              className="mask mask-star-2 bg-orange-400"
-            />
-          </div>
+          <Rating
+                className="text-[#FAAF00] text-start"
+                initialRating={4.5}
+                readonly
+                emptySymbol={<ImStarEmpty />}
+                fullSymbol={<ImStarFull />}
+              />
         </div>
       </div>
     </div>

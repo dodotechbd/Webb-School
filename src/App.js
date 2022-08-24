@@ -58,7 +58,6 @@ import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 import PaidCourse from "./Components/User/PaidCourse";
 import UpdateProfile from "./Components/User/UpdateProfile";
 import Message from "./Components/Admin/Message";
-import Chat from "./Components/Chat/Chat";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -122,7 +121,7 @@ function App() {
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-          <Route path="/chat" element={<Chat></Chat>}></Route>
+          {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
             path="/checkout/bkash/:uname"

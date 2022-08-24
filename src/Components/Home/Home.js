@@ -11,7 +11,6 @@ import CoursesTabs from "./CoursesTabs";
 import Hero from "./Hero/Hero";
 import Promotional from "./Promotional";
 import Question from "./Question/Question";
-import Instructor from "./Instructor/Instructor";
 import Support from "../../Components/../Support/Support"
 import AnchorLink from "react-anchor-link-smooth-scroll";
 const Home = () => {
@@ -27,7 +26,6 @@ const Home = () => {
       <Reviews></Reviews>
       <Review></Review>
       <Promotional></Promotional>
-      <Instructor></Instructor>
       <Support></Support>
       <Question></Question>
       <AnchorLink href='#top' className='bg-blue-700 rounded-full px-2 fixed  z-50 bottom-4 right-4  text-lg  ring-2'><i className="fa-solid fa-arrow-up-long text-white "></i></AnchorLink>
