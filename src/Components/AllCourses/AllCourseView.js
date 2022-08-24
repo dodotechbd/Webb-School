@@ -224,7 +224,7 @@ const AllCourseView = () => {
               <div>Coming Soon</div>
             )}
           </div>
-          <h1 className="text-2xl mt-6 mb-2">Student Feedback</h1>
+          {/* <h1 className="text-2xl mt-6 mb-2">Student Feedback</h1>
           <div className="flex items-center gap-3">
             <div className="text-center font-bold ">
               <h1 className="text-7xl">5.0</h1>
@@ -294,11 +294,11 @@ const AllCourseView = () => {
                 </h1>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="lg:block md:block hidden">
             <h1 className="text-2xl mt-6 mb-2">Reviews</h1>
             <div className="flex flex-col gap-6">
-            {reviews?.data?.map((review) => (
+            {[...reviews?.data].reverse().map((review) => (
               <ReviewView
                 key={review._id}
                 review={review}
