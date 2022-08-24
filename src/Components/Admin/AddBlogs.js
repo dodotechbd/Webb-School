@@ -1,13 +1,12 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
 
-const AddBlogs = () => {
+const AddBlogs = (e) => {
     const { register, handleSubmit } = useForm();
 
     const onSubmit = data => {
 
         const url = `https://rocky-escarpment-87440.herokuapp.com/blogs`;
-        console.log("hello", data);
         fetch(url, {
             method: 'POST',
             headers: {
@@ -18,18 +17,22 @@ const AddBlogs = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+
+                window.alert('Add Blogs');
+                window.location.reload();
+                e.target.reset();
+                
             })
 
     }
 
     return (
-
+// blogs sites here
         <div>
 
-            <div class="card lg:w-3/5 md:w-3/4 mx-auto w-80 bg-base-300 shadow-xl lg:m-10 m-5">
-                <div class="card-body">
-                    <h2 class="card-title text-2xl text-center my-10">Add Your Blog</h2>
+            <div className="card lg:w-3/5 md:w-3/4 mx-auto w-80 bg-base-300 shadow-xl lg:m-10 m-5">
+                <div className="card-body">
+                    <h2 className="card-title text-2xl text-center my-10">Add Your Blog</h2> 
                     <div>
 
                         <div>
@@ -38,7 +41,7 @@ const AddBlogs = () => {
                                 <input
                                     type="text"
                                     placeholder="blogs title"
-                                    class="input input-bordered w-full"
+                                    className="input input-bordered w-full"
                                     {...register("title", {
                                         required: {
                                             value: true,
@@ -57,7 +60,7 @@ const AddBlogs = () => {
 
                                     type="TextField"
                                     placeholder="blog Descriptions"
-                                    class="input input-bordered w-full mt-3"
+                                    className="input input-bordered w-full mt-3"
                                     {...register("description", {
                                         required: {
                                             value: true,

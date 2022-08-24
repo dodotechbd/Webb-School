@@ -77,28 +77,28 @@ const MessageRow = ({ user, prefetch, index }) => {
         >
           Send Message
         </label>
-        <input type="checkbox" id={_id} class="modal-toggle" />
-        <div class="modal">
-          <div class="modal-box p-0">
+        <input type="checkbox" id={_id} className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box p-0">
             <div className="px-3 pt-3 pb-2 bg-primary flex justify-between">
               <p className="text-xl text-white">
-                <i class="fa-solid fa-paper-plane"></i> New Message
+                <i className="fa-solid fa-paper-plane"></i> New Message
               </p>
               <label
                 for={_id}
-                class="btn btn-sm btn-ghost text-white btn-square"
+                className="btn btn-sm btn-ghost text-white btn-square"
               >
                 ✕
               </label>
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
-              <div class="card-body px-6 py-3">
-                <h2 class="text-lg">
+              <div className="card-body px-6 py-3">
+                <h2 className="text-lg">
                   To <span className="ml-1 font-bold">{name}</span>
-                  <span class="ml-2 badge">{email}</span>
+                  <span className="ml-2 badge">{email}</span>
                 </h2>
-                <div class="form-control">
-                  <label class="input-group input-group-sm">
+                <div className="form-control">
+                  <label className="input-group input-group-sm">
                     <span className="bg-primary text-white uppercase">
                       Subject
                     </span>
@@ -106,21 +106,21 @@ const MessageRow = ({ user, prefetch, index }) => {
                       {...register(`title`)}
                       type="text"
                       placeholder="Subject here"
-                      class="input bg-base-300 input-sm w-full"
+                      className="input bg-base-300 input-sm w-full"
                     />
                   </label>
                 </div>
                 <textarea
                   {...register(`details`)}
-                  class="textarea textarea-bordered"
+                  className="textarea textarea-bordered"
                   placeholder="Type here..."
                 ></textarea>
-                <div class="card-actions justify-end">
+                <div className="card-actions justify-end">
                   <button
                     type="submit"
-                    class="btn font-thin btn-sm btn-primary"
+                    className="btn font-thin btn-sm btn-primary"
                   >
-                    <i class="fa-solid fa-paper-plane mr-1"></i>Send
+                    <i className="fa-solid fa-paper-plane mr-1"></i>Send
                   </button>
                 </div>
               </div>
@@ -136,25 +136,25 @@ const MessageRow = ({ user, prefetch, index }) => {
         >
           Message History
         </label>
-        <input type="checkbox" id={email} class="modal-toggle" />
-        <div class="modal">
-          <div class="modal-box p-0">
+        <input type="checkbox" id={email} className="modal-toggle" />
+        <div className="modal">
+          <div className="modal-box p-0">
             <div className="px-3 pt-3 pb-2 bg-primary flex justify-between">
               <p className="text-xl text-white">
-                <i class="fa-solid fa-paper-plane"></i> All Messages
+                <i className="fa-solid fa-paper-plane"></i> All Messages
               </p>
               <label
                 for={email}
-                class="btn btn-sm btn-ghost text-white btn-square"
+                className="btn btn-sm btn-ghost text-white btn-square"
               >
                 ✕
               </label>
             </div>
             <div>
-              <div class="card-body px-6 py-3">
-                <h2 class="text-lg">
+              <div className="card-body px-6 py-3">
+                <h2 className="text-lg">
                   <span className="ml-1 font-bold">{name}</span>
-                  <span class="ml-2 badge">{email}</span>
+                  <span className="ml-2 badge">{email}</span>
                 </h2>
                 <div>
                   {message?.data?.slice(0).reverse().map((message, index) => (

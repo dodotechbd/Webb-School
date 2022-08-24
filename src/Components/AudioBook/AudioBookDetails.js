@@ -86,7 +86,7 @@ const AudioBookDetails = () => {
 
                         </div>
                     </div>
-                    <button class="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</button>
+                    <button className="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</button>
                 </div>
             </div>
 

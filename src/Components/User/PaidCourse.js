@@ -25,18 +25,18 @@ const PaidCourse = () => {
       <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3 mb-10">
         {myCourse?.data?.map((allcard) => (
           <Link to={'/mycourse'} data-tip={allcard?.name} className="tooltip tooltip-bottom" key={allcard._id} allcard={allcard}>
-            <div class="card w-52 mx-auto bg-base-200 border border-neutral">
-              <figure class="px-6 pt-6">
+            <div className="card w-52 mx-auto bg-base-200 border border-neutral">
+              <figure className="px-6 pt-6">
                 <img
                   src={allcard?.img}
                   alt="Shoes"
-                  class="rounded-xl h-28"
+                  className="rounded-xl h-28"
                 />
               </figure>
-              <div class="card-body p-2 items-center text-center">
+              <div className="card-body p-2 items-center text-center">
                 <h2>{allcard?.name.slice(0,18)}...</h2>
                 <div className="flex gap-2 items-center">
-                <progress class="progress progress-primary w-36" value="10" max="100"></progress><h1>10%</h1>
+                <progress className="progress progress-primary w-36" value="10" max="100"></progress><h1>10%</h1>
                 </div>
               </div>
             </div>
