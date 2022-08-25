@@ -1,5 +1,5 @@
 import React from "react";
-import support from "../Assets/Support.jpg";
+import support from "../Assets/Support Session (1).png";
 const Support = () => {
   return (
     <div className="py-5 px-5 border-t border-b border-neutral">
