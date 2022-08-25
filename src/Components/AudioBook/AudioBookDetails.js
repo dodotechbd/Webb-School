@@ -130,11 +130,7 @@ const AudioBookDetails = () => {
                                 <p className="text-2xl text-green-400">${newDetails[0]?.price}</p>
                             </div>
                         </div>
-                        <Link to={`/bookcheckout/${audiobookId}`}>
-                            <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
-                                Buy Now
-                            </button>
-                        </Link>
+                        
                     </div>
                 </div>
             </div>
