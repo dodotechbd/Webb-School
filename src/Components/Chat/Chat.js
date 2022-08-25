@@ -4,9 +4,6 @@ import auth from '../../firebase.init';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 
-
-
-// const socket = io.connect("https://rocky-escarpment-87440.herokuapp.com");
 const socket = io.connect("http://localhost:5000");
 const userName = nanoid(1);
 
@@ -37,41 +34,48 @@ const Chat = () => {
 
 
             <div className='text-center relative'>
-                <div className="mockup-phone">
-                    <div className="camera"></div>
-                    <div className="display">
-                        <div className="artboard artboard-demo phone-1 ">
-                            <div className="avatar online absolute top-10 ml-40">
-                                <div className="w-8 h-8 rounded-full top-10 ">
-                                    <img src={user?.photoURL} />
-                                </div>
-                            </div>
 
-                            {chat.map((payload, index) => {
-                                return <p className='text-2xl scroll-auto' key={index}>{payload.message} <span className='font-bold bg-base-300 p-2 rounded'>user: {payload.userName}</span></p>;
-
-                            })}
-
-                            <form onSubmit={sentChat} className='text-center bottom-0 fixed bottom-0 absolute mb-5 mt-2'>
-
-                                <input
-                                    type="text"
-                                    placeholder="Type here"
-                                    name="chat"
-                                    value={message}
-                                    className="input input-bordered  "
-                                    onChange={(e) => {
-                                        setMessage(e.target.value);
-                                    }}
-                                />
-                                <button type='submit' className="btn btn-outline btn-accent ">sent</button>
-
-                            </form>
-
-
+                <div class="card w-96 bg-base-100 shadow-xl">
+                    <div class="card-body">
+                        <h2 class="card-title">Card title!</h2>
+                        <p>If a dog chews shoes whose shoes does he choose?</p>
+                        <div class="card-actions justify-end">
+                            <button class="btn btn-primary">Buy Now</button>
                         </div>
                     </div>
                 </div>
+
+                <div className="artboard artboard-demo phone-1 ">
+                    <div className="avatar online absolute top-10 ml-40">
+                        <div className="w-8 h-8 rounded-full top-10 ">
+                            <img src={user?.photoURL} />
+                        </div>
+                    </div>
+
+                    {chat.map((payload, index) => {
+                        return <p className='text-2xl scroll-auto' key={index}>{payload.message} <span className='font-bold bg-base-300 p-2 rounded'>user: {payload.userName}</span></p>;
+
+                    })}
+
+                    <form onSubmit={sentChat} className='text-center bottom-0 fixed bottom-0 absolute mb-5 mt-2'>
+
+                        <input
+                            type="text"
+                            placeholder="Type here"
+                            name="chat"
+                            value={message}
+                            className="input input-bordered  "
+                            onChange={(e) => {
+                                setMessage(e.target.value);
+                            }}
+                        />
+                        <button type='submit' className="btn btn-outline btn-accent ">sent</button>
+
+                    </form>
+
+
+                </div>
+
             </div>
 
         </div>
