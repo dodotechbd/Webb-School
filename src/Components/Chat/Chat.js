@@ -32,15 +32,11 @@ const Chat = () => {
 
             <h1 className='my-5 text-center font-bold text-4xl'> COMMINUCATIONS YOUR FRINDS</h1>
 
-            <div className='text-center relative'>
+            <div className='text-center relative my-20'>
 
-                <div class="card w-96 bg-base-100 shadow-xl">
+                <div class="card w-96 bg-base-300 shadow-xl text-center">
                     <div class="card-body">
-                        <div className="avatar online absolute top-10 ml-40">
-                            <div className="w-8 h-8 rounded-full top-10 ">
-                                <img src={user?.photoURL} />
-                            </div>
-                        </div>
+                      
                         {chat.map((payload, index) => {
                             return <p className='text-2xl scroll-auto' key={index}>{payload.message} <span className='font-bold bg-base-300 p-2 rounded'>user: {payload.userName}</span></p>;
 
@@ -53,7 +49,7 @@ const Chat = () => {
                                 placeholder="Type here"
                                 name="chat"
                                 value={message}
-                                className="input input-bordered  "
+                                className="input input-bordered my-5 "
                                 onChange={(e) => {
                                     setMessage(e.target.value);
                                 }}
