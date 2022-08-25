@@ -42,21 +42,11 @@ const AddReview = () => {
     (async () => {
       const { data } = await primaryAxios.post(`/reviews`, reviewData);
       if (data.acknowledged) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "white",
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1500,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "success",
-          title: "Review Success",
-        });
+        Swal.fire(
+          'Thank You!',
+          'For Your Feedback!',
+          'success'
+        )
         reset();
       }
     })();
