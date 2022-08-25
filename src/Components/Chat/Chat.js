@@ -31,10 +31,13 @@ const Chat = () => {
 
 
             <h1 className='my-5 text-center font-bold text-4xl'> COMMINUCATIONS YOUR FRINDS</h1>
+            {/* <div>
+                <img src={user.photoURL}  />
+            </div> */}
 
-            <div className='text-center relative my-20'>
+            <div className='grid justify-items-center relative my-20'>
 
-                <div class="card w-96 bg-base-300 shadow-xl text-center">
+                <div class="card lg:w-2/5 bg-base-300 shadow-xl text-center">
                     <div class="card-body">
 
                         {chat.map((payload, index) => {
@@ -47,17 +50,17 @@ const Chat = () => {
 
                     </div>
                 </div>
-                <div class="card w-96 bg-base-300 shadow-xl text-center my-3">
+                <div class="card lg:w-96 bg-base-300 shadow-xl text-center my-3">
                     <div class="card-body">
 
-                        <form onSubmit={sentChat} className='text-center bottom-0 fixed bottom-0 absolute mb-5 mt-2'>
+                        <form onSubmit={sentChat} className='text-center'>
 
                             <input
                                 type="text"
                                 placeholder="Type here"
                                 name="chat"
                                 value={message}
-                                className="input input-bordered my-5 "
+                                className="input input-bordered "
                                 onChange={(e) => {
                                     setMessage(e.target.value);
                                 }}
