@@ -12,7 +12,7 @@ const ReviewView = ({ review, refetch, courseData }) => {
   return (
     <div>
       {review?.courseName === courseData?.uname && (
-        <div className="flex">
+        <div className="flex mb-6">
           <div class="avatar">
             <div class="w-12 h-12 rounded-full">
               <img src={review?.author.photo} />
