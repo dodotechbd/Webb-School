@@ -26,12 +26,12 @@ const AudioBook = ({ audiobook }) => {
               <button className='mt-2' onClick={() => navigateToAudioBookDetail(_id)}><BsFillPlayCircleFill size={45} color='green'></BsFillPlayCircleFill></button>
             </div>
             <div className=''>
-              <div class="rating">
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" checked />
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
-                <input type="radio" name="rating-2" class="mask mask-star-2 bg-yellow-400" />
+              <div className="rating">
+                <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-400" checked />
+                <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-400" />
+                <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-400" />
               </div>
               {name?.length >= 18 ? (
 

@@ -25,10 +25,9 @@ const CourseVideo = () => {
   const courseData = myCourse?.data?.find((allcard) => allcard.video === video);
 
   const videoData = courseData?.videos.find((allcard) => allcard.fileName === fileName);
-  console.log(videoData)
   return (
     <div>
-      <div className="lg:h-96 h-48 md:h-96 w-full">
+      <div className="lg:h-96 h-48 md:h-96 w-full rounded-2xl border border-neutral">
       {videoData?.vurl ? (
         <ReactPlayer
         width={"100%"}

@@ -27,12 +27,12 @@ const AddBlogs = (e) => {
     }
 
     return (
-// blogs site
+// blogs sites here
         <div>
 
-            <div class="card lg:w-3/5 md:w-3/4 mx-auto w-80 bg-base-300 shadow-xl lg:m-10 m-5">
-                <div class="card-body">
-                    <h2 class="card-title text-2xl text-center my-10">Add Your Blog</h2> 
+            <div className="card lg:w-3/5 md:w-3/4 mx-auto w-80 bg-base-300 shadow-xl lg:m-10 m-5">
+                <div className="card-body">
+                    <h2 className="card-title text-2xl text-center my-10">Add Your Blog</h2> 
                     <div>
 
                         <div>
@@ -41,7 +41,7 @@ const AddBlogs = (e) => {
                                 <input
                                     type="text"
                                     placeholder="blogs title"
-                                    class="input input-bordered w-full"
+                                    className="input input-bordered w-full"
                                     {...register("title", {
                                         required: {
                                             value: true,
@@ -60,7 +60,7 @@ const AddBlogs = (e) => {
 
                                     type="TextField"
                                     placeholder="blog Descriptions"
-                                    class="input input-bordered w-full mt-3"
+                                    className="input input-bordered w-full mt-3"
                                     {...register("description", {
                                         required: {
                                             value: true,

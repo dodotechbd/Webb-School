@@ -26,8 +26,7 @@ const AcadamicDetail = () => {
     
     return (
         <div>
-            <h1 className='text-4xl text-center pt-6 text-primary font-bold'>Books Details</h1>
-            <h1 className='text-2xl px-6  font-bold'>Books Name: <span className='text-2xl text-primary font-bold'>{newService[0]?.name}</span></h1>
+            <h1 className='text-2xl px-6  pt-12 font-bold'><span className='text-2xl text-primary font-bold'>{newService[0]?.name}</span></h1>
             <div className=' grid gap-10 lg:grid-cols-2 py-12  px-6 md:grid-cols-2 sm:grid-cols-2 '>
 
                 <div className='grid  justify-items-center  align-middle  sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 '>
@@ -107,29 +106,29 @@ const AcadamicDetail = () => {
                         </div>
                     </div>
 
-                    <label for="my-modal-3" class="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</label>
+                    <label for="my-modal-3" className="btn modal-button btn-block bg-indigo-400 mt-4 text-center font-bold py-2 hover:shadow-xl hover:bg-[#0B3456] hover:text-white text-[#0B3456]">Buy Now</label>
 
-                    <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-                    <div class="modal">
-                        <div class="modal-box relative">
-                            <label for="my-modal-3" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                            <h3 class="text-lg font-bold">BOOK: {newService[0]?.name}</h3>
+                    <input type="checkbox" id="my-modal-3" className="modal-toggle" />
+                    <div className="modal">
+                        <div className="modal-box relative">
+                            <label for="my-modal-3" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                            <h3 className="text-lg font-bold">BOOK: {newService[0]?.name}</h3>
                             <form onSubmit={handleSubmit(onSubmit)}>
 
 
-                                <div class="form-control w-full max-w-xs">
+                                <div className="form-control w-full max-w-xs">
 
                                     <input type="text" value={user.displayName} placeholder="Type here"
-                                        class="input input-bordered w-full max-w-xs my-2"{...register("book")} />
+                                        className="input input-bordered w-full max-w-xs my-2"{...register("book")} />
 
                                     <input type="text" value={user.email} placeholder="Type here"
-                                        class="input input-bordered w-full max-w-xs"{...register("email")} />
+                                        className="input input-bordered w-full max-w-xs"{...register("email")} />
 
                                     <input type="text" placeholder="Phone Number"
-                                        class="input input-bordered w-full max-w-xs my-2"{...register("number")} />
+                                        className="input input-bordered w-full max-w-xs my-2"{...register("number")} />
                                 </div>
 
-                                <button class="btn btn-outline btn-secondary"><input type="submit" /></button>
+                                <button className="btn btn-outline btn-secondary"><input type="submit" /></button>
 
                             </form>
                         </div>
