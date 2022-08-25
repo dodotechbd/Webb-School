@@ -44,7 +44,7 @@ const AllCourseView = () => {
   return (
     <div className="hero bg-base-100 my-10">
       <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
-      <div className="lg:hidden md:hidden">
+        <div className="lg:hidden md:hidden">
           <h1 className="text-2xl mt-6 mb-2">Reviews</h1>
           <div className="flex flex-col gap-6">
             <div className="flex">
@@ -66,7 +66,7 @@ const AllCourseView = () => {
                 </h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sint, ipsa tempore optio deserunt aspernatur iusto, 
+                  Sint, ipsa tempore optio deserunt aspernatur iusto,
                 </p>
               </div>
             </div>
@@ -89,13 +89,13 @@ const AllCourseView = () => {
                 </h1>
                 <p>
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sint, ipsa tempore optio deserunt aspernatur iusto, 
+                  Sint, ipsa tempore optio deserunt aspernatur iusto,
                 </p>
               </div>
             </div>
           </div>
         </div>
-        <div className="card lg:w-1/3 md:w-2/3 bg-[#354795] lg:sticky lg:top-20 md:sticky md:top-20 shadow-xl text-white">
+        <div className="card lg:w-1/3 md:w-2/3 bg-[#354795] lg:sticky lg:top-24 md:sticky md:top-20 shadow-xl text-white">
           <div className="card-body">
             <h2 className="text-2xl pb-2">
               Everything that is included in this course
@@ -297,15 +297,15 @@ const AllCourseView = () => {
           </div> */}
           <div className="lg:block md:block hidden">
             <h1 className="text-2xl mt-6 mb-2">Reviews</h1>
-            <div className="flex flex-col gap-6">
-            {[...reviews?.data].reverse().map((review) => (
-              <ReviewView
-                key={review._id}
-                review={review}
-                refetch={refetch}
-                courseData={courseData}
-              ></ReviewView>
-            ))}
+            <div className="flex flex-col">
+              {[...reviews?.data].reverse().map((review) => (
+                <ReviewView
+                  key={review._id}
+                  review={review}
+                  refetch={refetch}
+                  courseData={courseData}
+                ></ReviewView>
+              ))}
             </div>
           </div>
         </div>

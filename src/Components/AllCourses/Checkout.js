@@ -1,17 +1,9 @@
 import React from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { useQuery } from "react-query";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import useRole from "../../Hooks/useRole";
-import { useForm } from "react-hook-form";
-import swal from "sweetalert";
-import primaryAxios from "../../Api/primaryAxios";
 import Stripe from "../Payments/Stripe";
 
 const Checkout = () => {
-  const [user, loading] = useAuthState(auth);
-  const [role, roleLoading, userName] = useRole();
   const { uname } = useParams();
   const { data: language } = useQuery(["languageCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
@@ -32,7 +24,6 @@ const Checkout = () => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
-  const navigate = useNavigate();
 
   return (
     <div className="hero bg-base-100 py-8">
