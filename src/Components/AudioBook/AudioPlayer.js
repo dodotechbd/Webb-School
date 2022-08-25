@@ -76,18 +76,19 @@ const AudioPlayer = () => {
                 {isPlaying ? <FaPause /> : <FaPlay className={styles.play} />}
             </button></span>
             <button className={styles.forwardBackward} onClick={forwardThirty}> <span className='ml-4'>30➡️</span></button>
+            <div className='inline-block align-bottom'>
+                <div className='flex ml-6 w-96'>
+                    {/* current time */}
+                    <div className={styles.currentTime}>{calculateTime(currentTime)}</div>
 
-            <div className='flex ml-7 w-96'>
-                {/* current time */}
-                <div className={styles.currentTime}>{calculateTime(currentTime)}</div>
+                    {/* progress bar */}
+                    <div className='ml-3 mr-3'>
+                        <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange} />
+                    </div>
 
-                {/* progress bar */}
-                <div className='ml-3 mr-3'>
-                    <input type="range" className={styles.progressBar} defaultValue="0" ref={progressBar} onChange={changeRange} />
+                    {/* duration */}
+                    <div className={styles.duration}>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
                 </div>
-
-                {/* duration */}
-                <div className={styles.duration}>{(duration && !isNaN(duration)) && calculateTime(duration)}</div>
             </div>
         </div>
     )
