@@ -36,11 +36,19 @@ const Chat = () => {
 
                 <div class="card w-96 bg-base-300 shadow-xl text-center">
                     <div class="card-body">
-                      
+
                         {chat.map((payload, index) => {
                             return <p className='text-2xl scroll-auto' key={index}>{payload.message} <span className='font-bold bg-base-300 p-2 rounded'>user: {payload.userName}</span></p>;
 
                         })}
+
+
+
+
+                    </div>
+                </div>
+                <div class="card w-96 bg-base-300 shadow-xl text-center my-3">
+                    <div class="card-body">
 
                         <form onSubmit={sentChat} className='text-center bottom-0 fixed bottom-0 absolute mb-5 mt-2'>
 
@@ -57,10 +65,9 @@ const Chat = () => {
                             <button type='submit' className="btn btn-outline btn-accent ">sent</button>
 
                         </form>
-
-
                     </div>
                 </div>
+
 
             </div>
 
