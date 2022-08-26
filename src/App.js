@@ -56,7 +56,7 @@ import UpdateProfile from "./Components/User/UpdateProfile";
 import Message from "./Components/Admin/Message";
 import BookDetail from "./Components/BookStore/BookDetail";
 import BookCheckout from "./Components/BookStore/BookCheckout";
-// import Chat from "./Components/Chat/Chat";
+import Chat from "./Components/Chat/Chat";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -187,6 +187,7 @@ function App() {
             <Route path="/admin/live" element={<Live></Live>}></Route>
             <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
             <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/chat" element={<Chat></Chat>}></Route>
             <Route path="/admin/users" element={<Users></Users>}></Route>
             <Route
               path="/admin/payments"
