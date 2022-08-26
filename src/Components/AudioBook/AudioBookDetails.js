@@ -15,41 +15,32 @@ const AudioBookDetails = () => {
   const newDetails = details.filter((s) => s._id == audiobookId);
   //   console.log(newService[0]);
   return (
-    <div>
+    <div className="mb-12">
       <h1 className="text-4xl text-center pt-6 text-sky-600 font-bold mb-8">
         Explore Top Rated Podcasts
       </h1>
 
-      <div className="flex lg:w-full w-11/12 gap-10  justify-center flex-col-reverse lg:flex-row md:flex-row items-start">
+      <div className="flex lg:w-full w-11/12 gap-10  justify-center flex-col lg:flex-row md:flex-row items-start mx-auto">
         <div className="lg:w-6/12 md:w-full">
-          {/* writers and some text */}
-          <div className="border border-neutral rounded-lg">
-            <div className="lg:flex gap-4 items-center">
-              <img
-                className="w-56 rounded-lg"
-                src={newDetails[0]?.img1}
-                alt=""
-              />
-              <h1 className="text-xl font-bold">
-                {" "}
-                <span className="text-2xl text-sky-600 font-bold">
-                  {newDetails[0]?.name} AudioBooks
-                </span>
-                <p className="text-xl font-bold">
-                  <i className="fa-solid fa-pen-clip pr-2"></i>Speaker{" "}
-                  <span className=" text-sky-600 ">
-                    {newDetails[0]?.speaker}
-                  </span>
-                </p>
-              </h1>
-            </div>
-
-            {/* audio */}
-            <div className="w-full my-8 mx-4">
-              <AudioPlayer></AudioPlayer>
-            </div>
+          <div className="lg:flex gap-4 items-center border border-neutral rounded-lg">
+            <img className="w-72 rounded-lg" src={newDetails[0]?.img1} alt="" />
+            <h1 className="text-xl font-bold">
+              {" "}
+              <span className="text-2xl text-sky-600 font-bold">
+                {newDetails[0]?.name} AudioBooks
+              </span>
+              <p className="text-xl font-bold">
+                <i className="fa-solid fa-pen-clip pr-2"></i>Speaker{" "}
+                <span className=" text-sky-600 ">{newDetails[0]?.speaker}</span>
+              </p>
+            </h1>
           </div>
-          <div className="border border-neutral rounded-lg px-4 py-3 mt-12">
+
+          {/* audio */}
+          <div className="w-full mx-auto my-8 p-4 border border-neutral rounded-lg">
+            <AudioPlayer></AudioPlayer>
+          </div>
+          <div className="border border-neutral rounded-lg px-4">
             <p className="font-bold text-2xl p-4"> About podcast</p>
             <p className="font-bold p-3">
               Improve grammar, word choice, and sentence structure in your
