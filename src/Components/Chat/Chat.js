@@ -44,6 +44,11 @@ const Chat = () => {
 
   
 
+    useEffect(() => {
+        socket.on('chat', (payload) => {
+            setChat([...chat, payload]);
+        });
+    });
 
     return (
         <div>
