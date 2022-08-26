@@ -9,7 +9,7 @@ const AudioBook = ({ audiobook }) => {
     navigate(`/audiobook/${id}`);
   };
   return (
-    <div
+    <div onClick={() => navigateToAudioBookDetail(_id)}
       className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4">
 
       <figure>
@@ -23,7 +23,7 @@ const AudioBook = ({ audiobook }) => {
         <div className="card-body p-4">
           <div className='flex gap-3'>
             <div>
-              <button className='mt-2' onClick={() => navigateToAudioBookDetail(_id)}><BsFillPlayCircleFill size={45} color='green'></BsFillPlayCircleFill></button>
+              <button className='mt-2'><BsFillPlayCircleFill size={45} color='green'></BsFillPlayCircleFill></button>
             </div>
             <div className=''>
               <div className="rating">
