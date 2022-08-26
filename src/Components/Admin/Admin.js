@@ -52,6 +52,9 @@ const Admin = () => {
               <NavLink to={"/admin/post"}><i className="fa-solid fa-circle-play"></i>Post Course Video</NavLink>
             </li>
             <li>
+              <NavLink to={"/admin/chat"}><i className="fa-solid fa-file-pen"></i>Chat</NavLink>
+            </li>
+            <li>
               <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
             </li>
             <li>
