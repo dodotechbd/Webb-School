@@ -21,7 +21,6 @@ const AudioBook = ({ audiobook }) => {
       </figure>
       <div className="card-body p-0">
         <div className="card-body p-4">
-
           <div className=' gap-3'>
             {name?.length >= 18 ? (
 
@@ -39,20 +38,7 @@ const AudioBook = ({ audiobook }) => {
               <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
               <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
             </div>
-            <div className='flex gap-3'>
-              <div className=''>
-                {name?.length >= 18 ? (
-
-                  <p className="text-xl font-bold">{name.slice(0, 18)}...</p>,
-
-                  <p className="text-xl font-bold">{name?.slice(0, 18)}...</p>
-
-                ) : (
-                  <p className="text-xl font-bold">{name}</p>
-                )}
-              </div>
-              <p className='font-serif text-xl'>New Deal at {deal} <span className='text-green-500 ml-2 font-serif text-2xl'>${price}</span></p>
-            </div>
+            <p className='font-serif text-xl'>New Deal at {deal} <span className='text-green-500 ml-2 font-serif text-2xl'>${price}</span></p>
           </div>
         </div>
       </div>
