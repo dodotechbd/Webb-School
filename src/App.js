@@ -185,6 +185,7 @@ function App() {
             <Route path="/admin/live" element={<Live></Live>}></Route>
             <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
             <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/chat" element={<Chat></Chat>}></Route>
             <Route path="/admin/users" element={<Users></Users>}></Route>
             <Route
               path="/admin/payments"

@@ -104,9 +104,9 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink to="blogs">Blog</NavLink>
                 </li>
 
-                {user ? <li>
+                {/* {user ? <li>
                   <NavLink to="chat">Chat</NavLink>
-                </li> : ("")}
+                </li> : ("")} */}
 
 
                 <li>

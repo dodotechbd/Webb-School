@@ -4,8 +4,9 @@ import auth from '../../firebase.init';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 
-const socket = io.connect("http://localhost:5000");
-const userName = nanoid(1);
+
+const socket = io.connect("https://rocky-escarpment-87440.herokuapp.com/");
+const userName = nanoid(4);
 
 const Chat = () => {
     const [user, loading, error] = useAuthState(auth);
