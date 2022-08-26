@@ -1,8 +1,4 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
-import primaryAxios from "../../Api/primaryAxios";
-import Loading from "../Shared/Loading/Loading";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import StripeForm from "./StripeForm";
@@ -16,19 +12,7 @@ const Stripe = ({ courseData }) => {
   );
   const [role] = useRole();
   const [user] = useAuthState(auth);
-  const { uname } = useParams();
-  const {
-    data: orders,
-    isLoading,
-    refetch,
-  } = useQuery(["orders", user?.email], () =>
-    primaryAxios.get(`/order?email=${user?.email}`)
-  );
-  const orderData = orders?.data?.find((allcard) => allcard.uname === uname);
-  console.log(orderData);
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
+  
   return (
     <div class="hero bg-base-300">
       <div class="hero-content flex-col">
