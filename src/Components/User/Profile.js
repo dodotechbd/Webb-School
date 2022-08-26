@@ -116,9 +116,9 @@ const Profile = () => {
               </div>
               <div>
                 <h1>Joined</h1>
+                <h1>Phone</h1>
                 <h1>Address</h1>
                 <h1>Education</h1>
-                <h1>Reputation</h1>
                 <h1>Rank</h1>
               </div>
               <div>
