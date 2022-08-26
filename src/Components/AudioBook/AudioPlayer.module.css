@@ -25,8 +25,8 @@
     background: var(--primary);
     border: none;
     border-radius: 50%;
-    width: 75px;
-    height: 75px;
+    width: 65px;
+    height:65px;
     font-size: 32px;
     color: var(--secondary);
     display: flex;
