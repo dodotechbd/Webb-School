@@ -42,7 +42,10 @@ const Chat = () => {
     // }, []);
 
 
-  
+    const sentChat = (e) => {
+        e.preventDefault();
+        
+    };
 
     useEffect(() => {
         socket.on('chat', (payload) => {
