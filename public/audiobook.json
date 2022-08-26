@@ -13,7 +13,8 @@
       "time":"60 minutes",
       "format":"mp3",
       "file": "23 MB",
-      "price": "200"
+      "price": "200",
+      "deal": "$̶8̶0̶0̶"
     },
     {
       "_id": "2",
@@ -29,7 +30,8 @@
       "time":"60 minutes",
       "format":"mp3",
       "file": "23 MB",
-      "price": "180"
+      "price": "450",
+      "deal": "$̶9̶5̶0̶"
     },
     {
       "_id": "3",
@@ -45,7 +47,8 @@
       "time":"60 minutes",
       "format":"mp3",
       "file": "23 MB",
-      "price": "250"
+      "price": "450",
+      "deal": "$̶1̶0̶0̶0̶"
     }, 
     {
       "_id": "4",
@@ -61,7 +64,8 @@
       "time":"60 minutes",
       "format":"mp3",
       "file": "23 MB",
-      "price": "350"
+      "price": "350",
+      "deal": "$̶7̶0̶0̶"
     },
     {
       "_id": "5",
@@ -77,7 +81,8 @@
       "time":"60 minutes",
       "format":"mp3",
       "file": "23 MB",
-      "price": "300"
+      "price": "300",
+      "deal": "$̶6̶0̶0̶"
     }
   ]
   

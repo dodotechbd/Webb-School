@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { BsFillPlayCircleFill } from 'react-icons/bs'
 
 const AudioBook = ({ audiobook }) => {
-  const { _id, name, img, price } = audiobook;
+  const { _id, name, img, price, deal } = audiobook;
   const navigate = useNavigate();
   const navigateToAudioBookDetail = id => {
     navigate(`/audiobook/${id}`);
@@ -38,7 +38,7 @@ const AudioBook = ({ audiobook }) => {
               <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
               <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
             </div>
-            <p className=''>New Deal at <span className='text-green-500'>${price}</span></p>
+            <p className='font-serif text-xl'>New Deal at {deal} <span className='text-green-500 ml-2 font-serif text-2xl'>${price}</span></p>
           </div>
         </div>
       </div>
