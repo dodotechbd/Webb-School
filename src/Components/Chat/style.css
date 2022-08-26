@@ -14,7 +14,13 @@
   
 
   
-
+  .head {
+    background: #2d3436;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    font-weight: 600;
+    color: #f5f5f5;
+  }
   
   .messages {
     height: 342px;
