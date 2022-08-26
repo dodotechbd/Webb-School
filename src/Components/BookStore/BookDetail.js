@@ -89,7 +89,7 @@ const BookDetail = () => {
               Text. AI Writing Assistant
             </p>
           </div>
-          <div>
+          {/* <div>
             <div>
               <h2 class="text-xl mt-3">Rate this book</h2>
               <div className="text-3xl my-2 text-[#FAAF00]">
@@ -110,7 +110,7 @@ const BookDetail = () => {
                 Submit
               </button>
             </div>
-          </div>
+          </div> */}
         </div>
         
         <div className="lg:w-1/3 md:w-2/3 w-full bg-[#354795] shadow-xl p-5 card text-white">
@@ -124,52 +124,52 @@ const BookDetail = () => {
                 />
               </figure>
             </div>
-            <div className="grid lg:grid-cols-1 grid-cols-2 gap-3">
-              <div className="flex items-center">
-                <p className="p-3 bg-[#495CA9] rounded-md mr-4">
-                  <i className="fa-solid fa-file-lines  text-green-400"></i>
-                </p>
-                <p>
-                  Pages <br />{" "}
-                  <span className="uppercase text-[#efad1e]">
-                    {newService?.pages}
-                  </span>
-                </p>
-              </div>
-              <div className="flex items-center">
-                <p className="p-3 bg-[#495CA9] rounded-md mr-4">
-                  <i className="fa-solid fa-database    text-red-400"></i>
-                </p>
-                <p>
-                  Size <br />{" "}
-                  <span className="uppercase text-[#efad1e]">
-                    {newService?.file}
-                  </span>
-                </p>
-              </div>
-              <div className="flex items-center">
-                <p className="p-3 bg-[#495CA9] rounded-md mr-4">
-                  <i className="fa-solid fa-dice-d6    text-pink-400"></i>
-                </p>
-                <p>
-                  Interactive <br />{" "}
-                  <span className="uppercase text-[#efad1e]">
-                    {newService?.interactive}
-                  </span>
-                </p>
-              </div>
-              <div className="flex items-center">
-                <p className="p-3 bg-[#495CA9] rounded-md mr-4">
-                  <i className="fa-solid fa-file-pdf text-purple-400"></i>
-                </p>
-                <p>
-                  Format <br />{" "}
-                  <span className="uppercase text-[#efad1e]">
-                    {newService?.format}
-                  </span>
-                </p>
-              </div>
-            </div>
+            <div className="gap-3">
+                  <div className="flex items-center">
+                    <p className="p-2 text-xl bg-green-300 bg-opacity-25 text-center rounded-md mr-4">
+                      <i className="fa-solid fa-file-lines  text-green-500"></i>
+                    </p>
+                    <p className="uppercase w-6/12 lg:w-full">
+                      Pages <br />{" "}
+                      <span className="uppercase text-[#efad1e]">
+                        {newService?.pages}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <p className="p-2 text-xl bg-red-300 bg-opacity-25 text-center rounded-md mr-4">
+                      <i className="fa-solid fa-database    text-red-500"></i>
+                    </p>
+                    <p className="uppercase w-6/12 lg:w-full">
+                      Size <br />{" "}
+                      <span className="uppercase text-[#efad1e]">
+                        {newService?.file}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <p className="p-2 text-xl bg-pink-300 bg-opacity-25 text-center rounded-md mr-4">
+                      <i className="fa-solid fa-dice-d6    text-pink-500"></i>
+                    </p>
+                    <p className="uppercase w-6/12 lg:w-full">
+                      Interactive <br />{" "}
+                      <span className="uppercase text-[#efad1e]">
+                        {newService?.interactive}
+                      </span>
+                    </p>
+                  </div>
+                  <div className="flex items-center">
+                    <p className="p-2 text-xl bg-yellow-300 bg-opacity-25 text-center rounded-md mr-4">
+                      <i className="fa-solid fa-file-pdf text-yellow-500"></i>
+                    </p>
+                    <p className="uppercase w-6/12 lg:w-full">
+                      Format <br />{" "}
+                      <span className="uppercase text-[#efad1e]">
+                        {newService?.format}
+                      </span>
+                    </p>
+                  </div>
+                </div>
           </div>
           <div className="px-2 pb-2">
             <div className="flex text-lg font-bold bg-[#495CA9] p-4 my-4 rounded-xl justify-between">
