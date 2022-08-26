@@ -29,7 +29,7 @@ const Social = () => {
   }, [user, from, navigate]);
 
   if (loading) {
-    return <div className="mx-auto" id="preloader"></div>;
+    return <div className="mx-auto" id="preloaders"></div>;
   }
   return (
     <div className="flex flex-col space-y-4">

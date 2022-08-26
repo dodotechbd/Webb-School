@@ -47,54 +47,16 @@ const AllCourseView = () => {
       <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
         <div className="lg:hidden md:hidden">
           <h1 className="text-2xl mt-6 mb-2">Reviews</h1>
-          <div className="flex flex-col gap-6">
-            <div className="flex">
-              <div class="avatar">
-                <div class="w-12 h-12 rounded-full">
-                  <img src="https://avatars.githubusercontent.com/u/81031854?v=4" />
-                </div>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-lg font-bold">Muhammad Shafi</h1>
-                <h1 className="text-yellow-400">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <span className="mx-2 text-gray-500">-</span>
-                  <span className="text-gray-500">a day ago</span>
-                </h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sint, ipsa tempore optio deserunt aspernatur iusto,
-                </p>
-              </div>
+            <div className="flex flex-col">
+              {[...reviews?.data].reverse().map((review) => (
+                <ReviewView
+                  key={review._id}
+                  review={review}
+                  refetch={refetch}
+                  courseData={courseData}
+                ></ReviewView>
+              ))}
             </div>
-            <div className="flex">
-              <div class="avatar">
-                <div class="w-12 h-12 rounded-full">
-                  <img src="https://avatars.githubusercontent.com/u/81031854?v=4" />
-                </div>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-lg font-bold">Muhammad Shafi</h1>
-                <h1 className="text-yellow-400">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <span className="mx-2 text-gray-500">-</span>
-                  <span className="text-gray-500">a day ago</span>
-                </h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sint, ipsa tempore optio deserunt aspernatur iusto,
-                </p>
-              </div>
-            </div>
-          </div>
         </div>
         <div className="card lg:w-1/3 md:w-2/3 bg-[#354795] lg:sticky lg:top-24 md:sticky md:top-20 shadow-xl text-white">
           <div className="card-body">
