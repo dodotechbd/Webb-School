@@ -17,7 +17,7 @@ const BookDetail = () => {
     fetch(`https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`).then(
       (res) => res.json()
     )
-  );
+  ); 
 
   const newService =
     skillbook?.find((s) => s._id === bookId) ||
@@ -38,7 +38,7 @@ const BookDetail = () => {
               <div className="ml-2.5">
                 <h2 className="text-xl">{newService?.Writer1}</h2>
                 <p>Dhaka,Bangladesh</p>
-              </div>
+              </div> 
             </div>
             <div className="flex items-stretch ">
               <div className="avatar">
@@ -112,6 +112,7 @@ const BookDetail = () => {
             </div>
           </div> */}
         </div>
+        
         <div className="lg:w-1/3 md:w-2/3 w-full bg-[#354795] shadow-xl p-5 card text-white">
           <div className="p-6 grid items-center gap-6 justify-around lg:grid-cols-2">
             <div>
