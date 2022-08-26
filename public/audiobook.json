@@ -1,5 +1,5 @@
 [
-    {
+    { 
       "_id": "1",
       "name": "Sherlock Holmes",
       "img": "https://i.ibb.co/mzhcdb3/images.jpg",
@@ -13,7 +13,8 @@
       "time":"60 minutes",
       "format":"mp3",
       "file": "23 MB",
-      "price": "200"
+      "price": "200",
+      "deal": "$̶8̶0̶0̶"
     },
     {
       "_id": "2",
@@ -21,15 +22,16 @@
       "img": "https://i.ibb.co/FB4CxxK/images.jpg",
       "img1": "https://i.ibb.co/THXJvMN/main-qimg-b61b48d5c58eb7cda357c65c0e77ffa1-lq.jpg",
       "speaker": "J.K Rowling",
-      "addedate": "15-05-2018",
-      "identify": "The Complete Sherlock Holmes All 4 Novels And 56 Short Stories",
-      "source": "Stories of Sherlock Holmes by Doyle.",
+      "addedate": "27-07-2012",
+      "identify": "J.K Rowling's best selling.",
+      "source": "Stories of The boy who lived.",
       "ratings": "4.6",
-      "listener": "4,568",
-      "time":"60 minutes",
+      "listener": "8,688",
+      "time":"190 minutes",
       "format":"mp3",
-      "file": "23 MB",
-      "price": "180"
+      "file": "60 MB",
+      "price": "450",
+      "deal": "$̶9̶5̶0̶"
     },
     {
       "_id": "3",
@@ -37,15 +39,16 @@
       "img": "https://i.ibb.co/KrhFPgD/681-6810582-javascript-logo-svg-hd-png-download.png",
       "img1": "https://i.ibb.co/rcC8C37/Difference-Between-Java-and-Java-Script-1024x576.jpg",
       "speaker": "Jhankar Mahbub",
-      "addedate": "15-05-2018",
-      "identify": "The Complete Sherlock Holmes All 4 Novels And 56 Short Stories",
-      "source": "Stories of Sherlock Holmes by Doyle.",
+      "addedate": "16-09-2021",
+      "identify": "Complete Js learning.",
+      "source": "Learn Js for skill.",
       "ratings": "5",
-      "listener": "4,568",
-      "time":"60 minutes",
+      "listener": "5,579",
+      "time":"90 minutes",
       "format":"mp3",
-      "file": "23 MB",
-      "price": "250"
+      "file": "50 MB",
+      "price": "450",
+      "deal": "$̶1̶0̶0̶0̶"
     }, 
     {
       "_id": "4",
@@ -53,15 +56,16 @@
       "img": "https://i.ibb.co/yhT7jST/60012216.jpg",
       "img1": "https://i.ibb.co/LJQc6TK/The-Sandman-Netflix-is-about-to-open-the-doors-to.jpg",
       "speaker": "George R.R. Martin",
-      "addedate": "15-05-2018",
-      "identify": "The Complete Sherlock Holmes All 4 Novels And 56 Short Stories",
-      "source": "Stories of Sherlock Holmes by Doyle.",
-      "ratings": "4.4",
-      "listener": "4,568",
-      "time":"60 minutes",
+      "addedate": "11-07-2022",
+      "identify": "The Complete Sandman Series from Netflix.",
+      "source": "Sandman & Fortunes.",
+      "ratings": "4.5",
+      "listener": "7,500",
+      "time":"220 minutes",
       "format":"mp3",
-      "file": "23 MB",
-      "price": "350"
+      "file": "90 MB",
+      "price": "400",
+      "deal": "$̶7̶0̶0̶"
     },
     {
       "_id": "5",
@@ -69,15 +73,16 @@
       "img": "https://i.ibb.co/KxXRTZp/download.jpg",
       "img1": "https://i.ibb.co/28xsntg/1-5a-Bww-S8f0-F7rb-B-8-FYNz-RA.jpg",
       "speaker": "Jhankar Mahbub",
-      "addedate": "15-05-2018",
-      "identify": "The Complete Sherlock Holmes All 4 Novels And 56 Short Stories",
-      "source": "Stories of Sherlock Holmes by Doyle.",
-      "ratings": "4",
-      "listener": "4,568",
-      "time":"60 minutes",
+      "addedate": "25-05-2021",
+      "identify": "Learn in Python way by JM.",
+      "source": "Python development.",
+      "ratings": "4.5",
+      "listener": "6,090",
+      "time":"250 minutes",
       "format":"mp3",
-      "file": "23 MB",
-      "price": "300"
+      "file": "100 MB",
+      "price": "350",
+      "deal": "$̶6̶0̶0̶"
     }
   ]
   

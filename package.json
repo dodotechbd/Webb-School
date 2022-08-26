@@ -28,6 +28,7 @@
     "react-datepicker": "^4.8.0",
     "react-dom": "^18.2.0",
     "react-firebase-hooks": "^5.0.3",
+    "react-h5-audio-player": "^3.8.4",
     "react-hook-form": "^7.33.1",
     "react-icons": "^4.4.0",
     "react-messenger-customer-chat": "^0.8.0",
