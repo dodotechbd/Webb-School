@@ -30,7 +30,13 @@ const Chat = () => {
     const messageEl = useRef(null);
     const [messages, setMessages] = useState([]);
 
- 
+    useEffect(() => {
+        if (messageEl) {
+            messageEl.current.addEventListener('DOMNodeInserted', event => {
+               
+            });
+        }
+    }, [])
 
     // useEffect(() => {
     //     const generateDummyMessage = () => {
