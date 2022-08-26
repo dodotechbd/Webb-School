@@ -1,8 +1,8 @@
 import React from "react";
-import support from "../Assets/supports.svg";
+import support from "../Assets/Support Session (1).png";
 const Support = () => {
   return (
-    <div className="py-12 border-t border-b border-neutral">
+    <div className="py-5 px-5 border-t border-b border-neutral">
       <div className="hero-content flex-col lg:flex-row-reverse">
         <img src={support} className="lg:w-6/12" />
         <div>
@@ -22,16 +22,19 @@ const Support = () => {
             problem is not solved or if you need to know any kind of
             information, you can call or email us on the number given below.
           </p>
-          <div className="mt-5 text-xl text-start">
+          <div className="mt-10 text-center">
             <a className="mr-5" href="tel:+8801735776381">
-              <i className="fa-solid fa-phone"></i>
+              <i className="fa-solid fa-phone text-4xl text-green-600"></i>
             </a>
             <a className="mr-5" href="https://www.facebook.com/webbSchool">
-              <i className="fa-brands fa-facebook"></i>
+              <i className="fa-brands fa-facebook text-4xl text-blue-500"></i>
             </a>
             <a className="mr-5" href="Email:mission2023@gmail.com">
               {" "}
-              <i className="fa-solid fa-envelope"></i>
+              <i className="fa-solid fa-envelope text-4xl text-orange-500"></i>
+            </a>
+            <a className="mr-5" href="https://www.linkedin.com/in/md-badsha-6a8668241/">
+              <i class="fa-brands fa-linkedin text-4xl text-blue-500"></i>
             </a>
           </div>
         </div>

@@ -12,8 +12,6 @@ import AllCourses from "./Components/AllCourses/AllCourses";
 import AllCourseView from "./Components/AllCourses/AllCourseView";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
 import Blogs from "./Components/Blogs/Blogs";
-import AcadamicDetail from "./Components/BookStore/AcadamicDetails/AcadamicDetail";
-import SkillDetail from "./Components/BookStore/SkillDetail/SkillDetail";
 import BookStore from "./Components/BookStore/BookStore";
 import Developer from "./Components/Developer";
 import Home from "./Components/Home/Home";
@@ -49,8 +47,6 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
-// import Test from "./Components/Test/Test";
-import Test from "./Components/Test/Test";
 
 import AudioBooks from "./Components/AudioBook/AudioBooks";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
@@ -58,6 +54,8 @@ import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 import PaidCourse from "./Components/User/PaidCourse";
 import UpdateProfile from "./Components/User/UpdateProfile";
 import Message from "./Components/Admin/Message";
+import BookDetail from "./Components/BookStore/BookDetail";
+import BookCheckout from "./Components/BookStore/BookCheckout";
 import Chat from "./Components/Chat/Chat";
 
 function App() {
@@ -99,12 +97,12 @@ function App() {
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
         <Route
-          path="/acadamicbook/:acadamicbookId"
-          element={<AcadamicDetail></AcadamicDetail>}
+          path="/acadamicbook/:bookId"
+          element={<BookDetail></BookDetail>}
         ></Route>
         <Route
-          path="/skillbook/:skillbookId"
-          element={<SkillDetail></SkillDetail>}
+          path="/skillbook/:bookId"
+          element={<BookDetail></BookDetail>}
         ></Route>
         <Route path='/audiobook/:audiobookId'
           element={<AudioBookDetails></AudioBookDetails>}></Route>
@@ -122,7 +120,7 @@ function App() {
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-          <Route path="/chat" element={<Chat></Chat>}></Route>
+          {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
             path="/checkout/bkash/:uname"
@@ -139,6 +137,10 @@ function App() {
           <Route
             path="/checkout/:uname"
             element={<Checkout></Checkout>}
+          ></Route>
+          <Route
+            path="/bookcheckout/:bookId"
+            element={<BookCheckout></BookCheckout>}
           ></Route>
         </Route>
 
@@ -215,7 +217,6 @@ function App() {
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
-      {/* <Test></Test> */}
       <FooterTwo></FooterTwo>
       <Footer></Footer>
     </div>

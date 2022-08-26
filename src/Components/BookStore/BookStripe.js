@@ -1,42 +1,27 @@
 import React from "react";
-import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
-import primaryAxios from "../../Api/primaryAxios";
-import Loading from "../Shared/Loading/Loading";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import StripeForm from "./StripeForm";
+import useRole from "../../Hooks/useRole";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import useRole from "../../Hooks/useRole";
+import BookStripeForm from "./BookStripeForm";
+import { useQuery } from "react-query";
+import primaryAxios from "../../Api/primaryAxios";
 
-const Stripe = ({ courseData }) => {
+const BookStripe = ({ bookData }) => {
   const stripePromise = loadStripe(
     "pk_test_51LWltUCPn2JHPi081EFxPygcOJOvtghmISJBIxeobWbHIH1BT7TgPBEQoF6YZ75OqiFMJVXZEbfBGwefP5I2InKr005L3Un3xL"
   );
   const [role] = useRole();
-  const { uname } = useParams();
   const [{ email }] = useAuthState(auth);
   const { data: user } = useQuery(["userProfile", email], () =>
     primaryAxios.get(`/user-role?email=${email}`)
   );
-  const {
-    data: orders,
-    isLoading,
-    refetch,
-  } = useQuery(["orders", user?.email], () =>
-    primaryAxios.get(`/order?email=${user?.email}`)
-  );
-  const orderData = orders?.data?.find((allcard) => allcard.uname === uname);
-  console.log(orderData);
-  if (isLoading) {
-    return <Loading></Loading>;
-  }
   return (
     <div class="hero bg-base-300">
       <div class="hero-content flex-col">
         <div class="card flex-shrink-0">
-          <div class="card-body lg:w-96 p-5">
+        <div class="card-body lg:w-96 p-5">
             <h1 className="text-xl font-mono uppercase border-b border-gray-500 pb-1 mb-2">
               <i class="fa-solid fa-circle-info"></i> Account Info
             </h1>
@@ -82,10 +67,10 @@ const Stripe = ({ courseData }) => {
         </h1>
         <div class="card rounded-lg flex-shrink-0 w-full border border-neutral bg-base-100">
           <Elements stripe={stripePromise}>
-            <StripeForm
-              totalAmount={courseData?.price}
-              orderInfo={courseData}
-            ></StripeForm>
+            <BookStripeForm
+              totalAmount={bookData?.price}
+              orderInfo={bookData}
+            ></BookStripeForm>
           </Elements>
         </div>
       </div>
@@ -93,4 +78,4 @@ const Stripe = ({ courseData }) => {
   );
 };
 
-export default Stripe;
+export default BookStripe;

@@ -107,6 +107,7 @@ const Profile = () => {
             </div>
             <div className="card-body py-2 flex-row">
               <div>
+                <h1><i className="fa-solid fa-clock"></i></h1>
                 <h1><i className="fa-solid fa-square-phone"></i></h1>
                 <h1><i className="fa-solid fa-location-dot"></i></h1>
                 <h1><i className="fa-solid fa-graduation-cap"></i></h1>
@@ -114,13 +115,14 @@ const Profile = () => {
                 <h1><i className="fa-solid text-yellow-600 fa-bookmark"></i></h1>
               </div>
               <div>
-                <h1>Contact No.</h1>
+                <h1>Joined</h1>
+                <h1>Phone</h1>
                 <h1>Address</h1>
                 <h1>Education</h1>
-                <h1>Reputation</h1>
                 <h1>Rank</h1>
               </div>
               <div>
+                <h1 className="ml-8">{user?.data?.joinDate ? user?.data?.joinDate : "- - -"}</h1>
                 <h1 className="ml-8">{user?.data?.phone ? user?.data?.phone : "- - -"}</h1>
                 <h1 className="ml-8">{user?.data?.address ? user?.data?.address : "- - -"}</h1>
                 <h1 className="ml-8">{user?.data?.education ? user?.data?.education : "- - -"}</h1>

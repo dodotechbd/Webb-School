@@ -4,7 +4,6 @@ import auth from '../../firebase.init';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 
-
 const socket = io.connect("https://rocky-escarpment-87440.herokuapp.com/");
 const userName = nanoid(4);
 
@@ -38,6 +37,7 @@ const Chat = () => {
 
             <div className='grid justify-items-center relative my-20'>
 
+
                 <div class="card lg:w-2/5 bg-base-300 shadow-xl text-center">
                     <div class="card-body">
 
@@ -45,9 +45,6 @@ const Chat = () => {
                             return <p className='text-2xl scroll-auto' key={index}>{payload.message} <span className='font-bold bg-base-300 p-2 rounded'>user: {payload.userName}</span></p>;
 
                         })}
-
-
-
 
                     </div>
                 </div>
@@ -77,7 +74,6 @@ const Chat = () => {
 
         </div>
 
-    );
+    )
 };
-
 export default Chat;
