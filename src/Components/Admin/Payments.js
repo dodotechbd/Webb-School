@@ -26,7 +26,7 @@ const Payments = () => {
             </tr>
           </thead>
           <tbody>
-          {orders?.data?.map((order, index) => (
+          {orders?.data?.slice(0).reverse().map((order, index) => (
               <PaymentsCard
                 key={order._id}
                 index={index}
