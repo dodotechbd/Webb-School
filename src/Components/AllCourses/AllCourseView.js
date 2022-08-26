@@ -28,6 +28,7 @@ const AllCourseView = () => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
+    console?.log(admission);
   // const courseIndex = courseData?.file[0].details[0].fileName;
   // console.log(courseIndex);
 

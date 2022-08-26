@@ -45,7 +45,7 @@ const Login = () => {
   }
 
   if (error) {
-    singInError = <p>{error?.message}</p>
+    singInError = <p className='text-error'>{error?.message}</p>
   }
 
   const onSubmit = (data) => {
