@@ -56,6 +56,7 @@ import UpdateProfile from "./Components/User/UpdateProfile";
 import Message from "./Components/Admin/Message";
 import BookDetail from "./Components/BookStore/BookDetail";
 import BookCheckout from "./Components/BookStore/BookCheckout";
+// import Chat from "./Components/Chat/Chat";
 
 function App() {
   const [theme, setTheme] = useState(false);
