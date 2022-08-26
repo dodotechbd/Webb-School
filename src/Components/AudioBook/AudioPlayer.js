@@ -62,62 +62,64 @@ const AudioPlayer = () => {
   };
 
   const backThirty = () => {
-    progressBar.current.value = Number(progressBar.current.value - 30);
+    progressBar.current.value = Number(progressBar.current.value - 5);
     changeRange();
   };
 
   const forwardThirty = () => {
-    progressBar.current.value = Number(progressBar.current.value + 30);
+    progressBar.current.value = Number(progressBar.current.value + 5);
     changeRange();
   };
 
   return (
-    <div className={styles.audioPlayer}>
+    <div>
+        <div>
       <audio
         ref={audioPlayer}
-        src="https://cdn.simplecast.com/audio/cae8b0eb-d9a9-480d-a652-0defcbe047f4/episodes/af52a99b-88c0-4638-b120-d46e142d06d3/audio/500344fb-2e2b-48af-be86-af6ac341a6da/default_tc.mp3"
+        src="https://drive.google.com/uc?export=download&id=1gpbeeCK4ZVTn5tlSpl4oD9Moq2f6Wa5w"
         preload="metadata"
       ></audio>
-      <div className="lg:flex gap-5 items-center justify-center">
-        <div className="flex gap-8 justify-center">
-          <button className={styles.forwardBackward} onClick={backThirty}>
-            <span>⬅️30</span>{" "}
-          </button>
-          <span>
-            <button onClick={togglePlayPause} className={styles.playPause}>
-              {isPlaying ? <FaPause /> : <FaPlay className={styles.play} />}
-            </button>
-          </span>
-          <button className={styles.forwardBackward} onClick={forwardThirty}>
-            {" "}
-            <span>30➡️</span>
-          </button>
-        </div>
-        <div className="inline-block align-bottom">
-          <div className="flex w-96 justify-center">
+      <div className="">
+      <div>
+          <div className="flex justify-center p-3 bg-base-300 ">
             {/* current time */}
-            <div className={styles.currentTime}>
+            <div>
               {calculateTime(currentTime)}
             </div>
 
             {/* progress bar */}
-            <div className="mx-3">
+            <div className="mx-3 w-full">
               <input
                 type="range"
-                className={styles.progressBar}
                 defaultValue="0"
+                className="w-full"
                 ref={progressBar}
                 onChange={changeRange}
               />
             </div>
 
             {/* duration */}
-            <div className={styles.duration}>
+            <div>
               {duration && !isNaN(duration) && calculateTime(duration)}
             </div>
           </div>
         </div>
+        <div className="flex gap-8 justify-center py-4">
+          <button onClick={backThirty}>
+            <span><i class="fa-solid fa-backward"></i></span>{" "}
+          </button>
+          <span>
+            <button onClick={togglePlayPause} className='pl-[13.5px] bg-[#005CC8] text-white btn-circle text-xl'>
+              {isPlaying ? <FaPause /> : <FaPlay />}
+            </button>
+          </span>
+          <button onClick={forwardThirty}>
+            {" "}
+            <span><i class="fa-solid fa-forward"></i></span>
+          </button>
+        </div>
       </div>
+    </div>
     </div>
   );
 };

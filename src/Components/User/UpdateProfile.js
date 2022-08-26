@@ -51,7 +51,6 @@ const UpdateProfile = () => {
     <form
       onSubmit={handleSubmit(onSubmit)}
       id="profile"
-      className="card shadow-2xl bg-base-100"
     >
       <div className="grid gap-x-7 grid-cols-2 ">
         <div>
@@ -79,6 +78,7 @@ const UpdateProfile = () => {
             })}
             defaultValue={user?.data?.name && user?.data?.name}
             placeholder="Stephen Brown"
+            required
             className="input input-bordered"
           />
         </div>
@@ -91,6 +91,7 @@ const UpdateProfile = () => {
             {...register("profession")}
             defaultValue={user?.data?.profession && user?.data?.profession}
             placeholder="Student"
+            required
             className="input input-bordered"
           />
         </div>
@@ -103,6 +104,7 @@ const UpdateProfile = () => {
             {...register("image")}
             defaultValue={user?.data?.image && user?.data?.image}
             placeholder="www.profile.photo.com"
+            required
             className="input input-bordered"
           />
         </div>
@@ -115,6 +117,7 @@ const UpdateProfile = () => {
             {...register("coverPhoto")}
             defaultValue={user?.data?.coverPhoto && user?.data?.coverPhoto}
             placeholder="www.cover.photo.com"
+            required
             className="input input-bordered"
           />
         </div>
@@ -127,6 +130,7 @@ const UpdateProfile = () => {
             className="select select-bordered w-full font-thin"
             defaultValue={user?.data?.gender ? user?.data?.gender : "Male"}
             placeholder="Gender"
+            required
           >
             <option value="Male">Male</option>
             <option value="Female">Female</option>
@@ -141,6 +145,7 @@ const UpdateProfile = () => {
             defaultValue={user?.data?.education && user?.data?.education}
             type="text"
             placeholder="Bachelor of Business Administration"
+            required
             className="input input-bordered"
           />
         </div>
@@ -158,6 +163,7 @@ const UpdateProfile = () => {
             defaultValue={user?.data?.address && user?.data?.address}
             type="text"
             placeholder="92, Lawrence View Streets"
+            required
             className="input input-bordered"
           />
         </div>
@@ -170,6 +176,7 @@ const UpdateProfile = () => {
             defaultValue={user?.data?.phone && user?.data?.phone}
             type="tel"
             placeholder="123-456-789"
+            required
             className="input input-bordered"
           />
         </div>
@@ -185,6 +192,7 @@ const UpdateProfile = () => {
             defaultValue={user?.data?.facebookLink && user?.data?.facebookLink}
             type="url"
             placeholder="www.facebook.com/id"
+            required
             className="input input-bordered"
           />
         </div>
@@ -197,6 +205,7 @@ const UpdateProfile = () => {
             {...register("instaLink")}
             defaultValue={user?.data?.instaLink && user?.data?.instaLink}
             placeholder="www.instagram.com/id"
+            required
             className="input input-bordered"
           />
         </div>
@@ -209,6 +218,7 @@ const UpdateProfile = () => {
             {...register("linkedInLink")}
             defaultValue={user?.data?.linkedInLink && user?.data?.linkedInLink}
             placeholder="www.linkedin.com/id"
+            required
             className="input input-bordered"
           />
         </div>
@@ -222,6 +232,7 @@ const UpdateProfile = () => {
         defaultValue={user?.data?.bio && user?.data?.bio}
           className="textarea textarea-bordered"
           placeholder="Tell us about yourself"
+          required
         ></textarea>
       </div>
       <div className="flex gap-4 justify-end mx-8 mb-5">
