@@ -9,7 +9,7 @@ const AllCourseCard = ({ allcard }) => {
     <Link to={`/course/${uname}`}>
       <div
         className="mx-auto mt-3 card card-compact w-72 bg-base-100 border rounded-md
-       hover:-translate-y-3 border-neutral  transform transition duration-300"
+       hover:-translate-y-3 border-neutral text-warning transform transition duration-300"
       >
         <figure>
           <img src={allcard?.img} alt="Shoes" className="h-44 w-full" />
@@ -21,7 +21,7 @@ const AllCourseCard = ({ allcard }) => {
             </p>
             {allcard?.badge ? (<div className="badge rounded-none font-bold text-base-100 badge-secondary">{allcard?.badge}</div>) : (<></>)}
           </div>
-          <h2 className="px-2 py-1 text-xl hover:text-info">
+          <h2 className="px-2 py-1 text-xl">
             {allcard?.name.slice(0, 24)}
           </h2>
           <div className="flex justify-between border-t border-neutral p-2 text-lg font-bold">

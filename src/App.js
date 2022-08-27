@@ -27,7 +27,7 @@ import CourseVideo from "./Components/AllCourses/CourseVideo";
 import Profile from "./Components/User/Profile";
 import MyCourses from "./Components/User/MyCourses";
 import FooterTwo from "./Components/Shared/FooterTwo";
-import Dashboard from "./Components/Dashboard";
+import Dashboard from "./Components/User/Dashboard";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
@@ -57,6 +57,7 @@ import Message from "./Components/Admin/Message";
 import BookDetail from "./Components/BookStore/BookDetail";
 import BookCheckout from "./Components/BookStore/BookCheckout";
 import Chat from "./Components/Chat/Chat";
+import MyBooks from "./Components/User/MyBooks";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -209,6 +210,7 @@ function App() {
           ></Route>
         </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
+        <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route
