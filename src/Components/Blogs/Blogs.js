@@ -1,14 +1,18 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import { useQuery } from "react-query";
+import Loader from "../Shared/Loading/Loading";
 import Blog from './Blog';
 
 const Blogs = () => {
-    const [blogs, setBlogs] = useState([]);
-
-    useEffect(() => {
-        fetch('https://rocky-escarpment-87440.herokuapp.com/blogs')
-            .then(res => res.json())
-            .then(data => setBlogs(data))
-    }, [])
+    
+    const { data: blogs, isLoading } = useQuery(["blogs"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/blogs`).then(
+      (res) => res.json()
+    )
+  );
+  if (isLoading) {
+    return <Loader></Loader>;
+  }
     return (
         <div >
             <div>
@@ -16,7 +20,7 @@ const Blogs = () => {
             </div>
             <div className='grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:mx-10 gap-5 my-10'>
                 {
-                    blogs.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
+                    blogs?.map(blog => <Blog key={blog._id} blog={blog}></Blog>)
                 }
             </div>
 
