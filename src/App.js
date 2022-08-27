@@ -32,6 +32,7 @@ import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import Checkout from "./Components/AllCourses/Checkout";
 import PreLoader from "./Components/Shared/Loading/PreLoader";
 import LiveClass from "./Components/LIveClass/LiveClass";
+import MyLiveClass from "./Components/User/LiveClass";
 import AddBlogs from "./Components/Admin/AddBlogs";
 import AcademicBookss from "./Components/Admin/AcademicBookss";
 import SkillBookss from "./Components/Admin/SkillBookss";
@@ -211,6 +212,7 @@ function App() {
         </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
+        <Route path="/liveclasses" element={<MyLiveClass></MyLiveClass>}></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route

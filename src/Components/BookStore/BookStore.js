@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Loader from "../Shared/Loading/Loader";
+import Loader from "../Shared/Loading/Loading";
 import AcadamicBook from "./AcadamicBook/AcadamicBook";
 import SkillBooks from "./SkillBooks";
 

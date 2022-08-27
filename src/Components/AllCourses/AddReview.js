@@ -55,7 +55,7 @@ const AddReview = () => {
   return (
     <div class="card bg-base-100">
       <label
-        for="my-modal-3"
+        for="my-modal-5"
         class="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
       >
         ✕
