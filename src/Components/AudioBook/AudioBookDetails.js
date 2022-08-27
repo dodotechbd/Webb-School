@@ -60,18 +60,7 @@ const AudioBookDetails = () => {
           </div>
           <div className="border border-neutral rounded-lg px-4">
             <p className="text-2xl p-4"> About podcast</p>
-            <p className="p-3">
-              Improve grammar, word choice, and sentence structure in your
-              writing. It's free! Grammarly Improve grammar, word choice, and
-              sentence structure in your writing. It's free! Grammarly Can Help
-              You Write Polished, Effective Book Reports Every Time. Fix
-              Punctuation Errors. Find and Add Sources Fast. Easily Improve Any
-              Text. AI Writing Assistant. Improve grammar, word choice, and
-              sentence structure in your writing. It's free! Grammarly Can Help
-              You Write Polished, Effective Book Reports Every Time. Fix
-              Punctuation Errors. Find and Add Sources Fast. Easily Improve Any
-              Text. AI Writing Assistant
-            </p>
+            <p className="p-3">{newDetails?.description}</p>
           </div>
           <div>
             <div>
