@@ -142,7 +142,7 @@ const Profile = () => {
           </div>
         </div>
         {/* new form */}
-        <div className=" mb-6 lg:w-7/12 w-11/12 mx-auto md:w-11/12 lg:mt-[-170px]">
+        <div className="card shadow-2xl bg-base-100 mb-6 lg:w-7/12 w-11/12 mx-auto md:w-11/12 lg:mt-[-170px]">
           <Outlet></Outlet>
         </div>
       </div>
