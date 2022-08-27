@@ -29,6 +29,17 @@ const Chat = () => {
     }, [])
 
 
+    const onSubmit = data => {
+        const url = `https://rocky-escarpment-87440.herokuapp.com/chat`;
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                
+            }
+        })
+   
+    }
+
     const sentChat = (e) => {
         e.preventDefault();
         socket.emit("chat", { message, userName });
