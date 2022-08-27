@@ -44,7 +44,7 @@ const AudioBookDetails = () => {
                   <div className="flex my-2 items-center gap-3">
                     <div className="avatar">
                       <div className="w-16 rounded-lg">
-                        <img src='https://scontent-frt3-2.xx.fbcdn.net/v/t1.6435-9/160623841_274437330713385_6140920492295108645_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=174925&_nc_eui2=AeFtQEaluUg74EGqXarKgTxpa7_DeKoPE9hrv8N4qg8T2CsARVqT57ySYDIfqcwwh0Kejys1flIHHxJtU526y84c&_nc_ohc=tn9Cx-S5wfkAX-xywgB&_nc_ht=scontent-frt3-2.xx&oh=00_AT9tBRiQ5zEenL7v1I0DnErFyWmctPU5qJeZHNncGXDMew&oe=632C99A4' />
+                      <img src={newDetails?.img2} alt="" />
                       </div>
                     </div>
                     <div>
@@ -60,18 +60,7 @@ const AudioBookDetails = () => {
           </div>
           <div className="border border-neutral rounded-lg px-4">
             <p className="text-2xl p-4"> About podcast</p>
-            <p className="p-3">
-              Improve grammar, word choice, and sentence structure in your
-              writing. It's free! Grammarly Improve grammar, word choice, and
-              sentence structure in your writing. It's free! Grammarly Can Help
-              You Write Polished, Effective Book Reports Every Time. Fix
-              Punctuation Errors. Find and Add Sources Fast. Easily Improve Any
-              Text. AI Writing Assistant. Improve grammar, word choice, and
-              sentence structure in your writing. It's free! Grammarly Can Help
-              You Write Polished, Effective Book Reports Every Time. Fix
-              Punctuation Errors. Find and Add Sources Fast. Easily Improve Any
-              Text. AI Writing Assistant
-            </p>
+            <p className="p-3">{newDetails?.description}</p>
           </div>
           <div>
             <div>
