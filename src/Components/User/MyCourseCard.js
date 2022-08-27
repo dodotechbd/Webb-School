@@ -6,23 +6,32 @@ const MyCourseCard = ({ allcard }) => {
   return (
     <Link to={`/course/${allcard?.uname}/${allcard?.list}/${cardIndex}`}>
       <div
-        className="mx-auto mt-3 card card-compact w-72 bg-base-100 border rounded-md
-       hover:-translate-y-3 border-neutral  transform transition duration-300"
+        className="mx-auto p-6 mt-3 lg:flex bg-base-200 shadow-lg rounded-2xl
+       hover:-translate-y-3 border-neutral  transform transition duration-300 text-warning"
       >
-        <figure>
-          <img src={allcard?.img} alt="Shoes" className="h-44 w-full" />
+        <figure className="">
+          <img
+            src={allcard?.img}
+            alt="Shoes"
+            className="h-36 rounded-xl w-80"
+          />
         </figure>
-        <div className="">
-          <h2 className="px-2 py-1 text-xl hover:text-info">
-            {allcard?.name?.slice(0, 24)}
-          </h2>
-          <progress
-            className="progress progress-primary w-full px-2"
-            value="10"
-            max="100"
-          ></progress>
-          <div className="border-t border-neutral p-2 text-lg font-bold">
-            <p className="text-accent text-center">Continue</p>
+        <div className="w-full content-between grid">
+          <h2 className="px-2 py-1 text-xl">{allcard?.name}</h2>
+          <div>
+            <div className="flex justify-between items-center gap-3">
+            <div class="w-full mx-2 bg-[#EBEDEF] rounded-full h-2.5">
+              <div
+                class="bg-[#3EC65D] h-2.5 rounded-full w-[45%]"
+              ></div>
+            </div>
+            <p>45%</p>
+            </div>
+            <div className="mx-2 mt-2 w-32 text-sm">
+              <p className="text-white p-[5px] h-8 rounded-full text-center btn-secondary">
+                Continue Course
+              </p>
+            </div>
           </div>
         </div>
       </div>

@@ -21,9 +21,14 @@ const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
 
-  const { data: messageData } = useQuery(["messagedata"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) => res.json())
+  const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
+      res.json()
+    )
   );
+  if (isLoading) {
+    return <div className="mx-auto" id="preloaders"></div>;
+  }
   const userMessageData = messageData?.filter(
     (allcard) => allcard.email === user?.email
   );
@@ -32,12 +37,6 @@ const Header = ({ handleThemeChange, theme }) => {
     //Token Remove
     localStorage.removeItem("accessToken");
   };
-
-  const {
-    data: message,
-    isLoading,
-    refetch,
-  } = useQuery(["message"], () => primaryAxios.get(`/message`));
 
   const manuItems = (
     <>
@@ -89,16 +88,24 @@ const Header = ({ handleThemeChange, theme }) => {
               </Link>
               <ul className="menu menu-compact">
                 <li>
-                  <NavLink className='hover:rounded-none' to="/">Home</NavLink>
+                  <NavLink className="hover:rounded-none" to="/">
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className='hover:rounded-none' to="courses">Courses</NavLink>
+                  <NavLink className="hover:rounded-none" to="courses">
+                    Courses
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className='hover:rounded-none' to="bookstore">Book Store</NavLink>
+                  <NavLink className="hover:rounded-none" to="bookstore">
+                    Book Store
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink className='hover:rounded-none' to="audiobook">AudioBook</NavLink>
+                  <NavLink className="hover:rounded-none" to="audiobook">
+                    AudioBook
+                  </NavLink>
                 </li>
                 {/* <li>
                   <NavLink className='hover:rounded-none' to="admission">Admission</NavLink>
@@ -107,7 +114,9 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink className='hover:rounded-none' to="jobs">Jobs</NavLink>
                 </li> */}
                 <li>
-                  <NavLink className='hover:rounded-none' to="blogs">Blog</NavLink>
+                  <NavLink className="hover:rounded-none" to="blogs">
+                    Blog
+                  </NavLink>
                 </li>
 
                 {/* {user ? <li>
@@ -115,11 +124,18 @@ const Header = ({ handleThemeChange, theme }) => {
                 </li> : ("")} */}
 
                 <li>
-                  <NavLink className='hover:rounded-none' to="LiveClass">Live Class</NavLink>
+                  <NavLink className="hover:rounded-none" to="LiveClass">
+                    Live Class
+                  </NavLink>
                 </li>
                 {role === "admin" && (
                   <li>
-                    <NavLink className='hover:rounded-none' to="admin/courses/language">Admin</NavLink>
+                    <NavLink
+                      className="hover:rounded-none"
+                      to="admin/courses/language"
+                    >
+                      Admin
+                    </NavLink>
                   </li>
                 )}
               </ul>
@@ -145,24 +161,32 @@ const Header = ({ handleThemeChange, theme }) => {
                     </div>
                     <ul className="menu menu-compact">
                       <li>
-                        <NavLink className='hover:rounded-none' to={"profile"}>
+                        <NavLink className="hover:rounded-none" to={"profile"}>
                           <i className="ml-4 fa-solid fa-user" />
                           Profile
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink className='hover:rounded-none' to={"mycourse"}>
+                        <NavLink className="hover:rounded-none" to={"mycourse"}>
                           <i className="ml-4 fa-solid fa-bolt"></i>My Courses
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink className='hover:rounded-none' to={"dashboard"}>
+                        <NavLink className="hover:rounded-none" to={"mybooks"}>
+                          <i className="ml-4 fa-solid fa-book"></i>My Books
+                        </NavLink>
+                      </li>
+                      <li>
+                        <NavLink
+                          className="hover:rounded-none"
+                          to={"dashboard"}
+                        >
                           <i className="ml-4 fa-solid fa-chart-line"></i>
                           Dashboard
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink className='hover:rounded-none' to={"/orders"}>
+                        <NavLink className="hover:rounded-none" to={"/orders"}>
                           <i className="ml-4 fa-solid fa-clock"></i>Payment
                           History
                         </NavLink>
@@ -324,6 +348,11 @@ const Header = ({ handleThemeChange, theme }) => {
               <li>
                 <NavLink to={"mycourse"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-bolt"></i>My Courses
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="hover:rounded-none" to={"mybooks"}>
+                  <i className="ml-4 fa-solid fa-book"></i>My Books
                 </NavLink>
               </li>
               <li>
