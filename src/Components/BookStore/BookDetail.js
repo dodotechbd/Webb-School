@@ -18,7 +18,6 @@ const BookDetail = () => {
       (res) => res.json()
     )
   ); 
-
   const newService =
     skillbook?.find((s) => s._id === bookId) ||
     academicbook?.find((s) => s._id === bookId);

@@ -26,9 +26,7 @@ const Header = ({ handleThemeChange, theme }) => {
       res.json()
     )
   );
-  if (isLoading) {
-    return <div className="mx-auto" id="preloaders"></div>;
-  }
+  
   const userMessageData = messageData?.filter(
     (allcard) => allcard.email === user?.email
   );
@@ -177,6 +175,11 @@ const Header = ({ handleThemeChange, theme }) => {
                         </NavLink>
                       </li>
                       <li>
+                        <NavLink className="hover:rounded-none" to={"liveclasses"}>
+                          <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                        </NavLink>
+                      </li>
+                      {/* <li>
                         <NavLink
                           className="hover:rounded-none"
                           to={"dashboard"}
@@ -184,7 +187,7 @@ const Header = ({ handleThemeChange, theme }) => {
                           <i className="ml-4 fa-solid fa-chart-line"></i>
                           Dashboard
                         </NavLink>
-                      </li>
+                      </li> */}
                       <li>
                         <NavLink className="hover:rounded-none" to={"/orders"}>
                           <i className="ml-4 fa-solid fa-clock"></i>Payment
@@ -356,10 +359,15 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
+                <NavLink className="hover:rounded-none" to={"liveclasses"}>
+                <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                </NavLink>
+              </li>
+              {/* <li>
                 <NavLink to={"dashboard"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to={"/orders"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-clock"></i>Payment History
