@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import primaryAxios from '../../../Api/primaryAxios';
 
-const JobTable = ({jobs,index , refetch}) => {
+const JobTable = ({jobs,index }) => {
     const { _id,uname } = jobs
 
     
@@ -29,8 +29,7 @@ const JobTable = ({jobs,index , refetch}) => {
                 title: "Success",
               });
               reset();
-              refetch()
-             
+            
             
         }
       })();
@@ -42,7 +41,7 @@ const JobTable = ({jobs,index , refetch}) => {
 
         <tr>
            
-            <td>{index + 9}</td>
+            <td>{index + 5}</td>
             <td>{uname}</td>
             <td>
         <label
@@ -67,9 +66,11 @@ const JobTable = ({jobs,index , refetch}) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-                
+              <p className=' text-info rounded-lg text-center pb-2'>
+                    
+                    <span className='uppercase  text-bold   '> {uname}</span> </p>
                 <div className="form-control">
-                  <label className="input-group input-group-sm">
+                  <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
                       Google Meet Link
                     </span>
@@ -83,7 +84,7 @@ const JobTable = ({jobs,index , refetch}) => {
                   </label>
                 </div>
                 <div className="form-control">
-                  <label className="input-group input-group-sm">
+                  <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
                       Subject
                     </span>
@@ -142,6 +143,7 @@ const JobTable = ({jobs,index , refetch}) => {
         </div>
       </td> 
      </tr>
+        
     );
 };
 

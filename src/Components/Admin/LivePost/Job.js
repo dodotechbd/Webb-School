@@ -14,8 +14,7 @@ const Job = () => {
     return (
         <div>
 
-<tbody>
-                    
+
             {
                 job.map((jobs, index) => <JobTable
                     key={jobs._id}
@@ -25,7 +24,7 @@ const Job = () => {
 
                 ></JobTable>)
             }
-</tbody>
+
         </div>
     );
 };

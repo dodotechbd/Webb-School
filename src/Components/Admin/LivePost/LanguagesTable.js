@@ -69,7 +69,9 @@ const LanguagesTable = ({ languages, index, refetch}) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-                
+              <p className=' text-info rounded-lg text-center pb-2'>
+                    
+                    <span className='uppercase  text-bold   '> {uname}</span> </p>
                 <div className="form-control">
                   <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
