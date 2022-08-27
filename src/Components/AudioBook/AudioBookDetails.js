@@ -14,6 +14,7 @@ const AudioBookDetails = () => {
   }, []);
 
   const newDetails = details.find((s) => s._id === audiobookId);
+  console.log(newDetails);
   //   console.log(newService);
   return (
     <div className="mb-12">
@@ -41,6 +42,7 @@ const AudioBookDetails = () => {
                   <span className="text-2xl text-white drop-shadow-lg">
                     {newDetails?.name} AudioBook
                   </span>
+                  
                   <div className="flex my-2 items-center gap-3">
                     <div className="avatar">
                       <div className="w-16 rounded-lg">
@@ -51,6 +53,7 @@ const AudioBookDetails = () => {
                       <p className="text-xl text-white">{newDetails?.speaker}</p>
                     </div>
                   </div>
+                  
                 </h1>
               </div>
             </div>
