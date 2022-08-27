@@ -45,7 +45,7 @@ const Chat = () => {
         <div>
             <h1 className='my-10 text-center font-bold text-4xl '> COMMINUCATIONS YOUR FRINDS</h1>
             <div className="chat">
-                <div className="head">ChatBot</div>
+                <div className="head">Group Chat</div>
 
                 <div className="messages" ref={messageEl}>
                     {chat.map((payload, index) => {
