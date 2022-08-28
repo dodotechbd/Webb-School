@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ bookData }) => {
+  const { audio } = bookData; 
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -73,7 +74,7 @@ const AudioPlayer = () => {
         <div>
       <audio
         ref={audioPlayer}
-        src="https://drive.google.com/uc?export=download&id=1gpbeeCK4ZVTn5tlSpl4oD9Moq2f6Wa5w"
+        src={audio}
         preload="metadata"
       ></audio>
       <div className="">
@@ -106,7 +107,7 @@ const AudioPlayer = () => {
             <span><i class="fa-solid fa-backward"></i></span>{" "}
           </button>
           <span>
-            <button onClick={togglePlayPause} className='pl-[13.5px] bg-[#005CC8] text-white btn-circle text-xl'>
+            <button onClick={togglePlayPause} className='pl-[14px] pt-[1px] bg-[#005CC8] text-white btn-circle text-xl'>
               {isPlaying ? <FaPause /> : <FaPlay />}
             </button>
           </span>

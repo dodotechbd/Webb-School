@@ -13,7 +13,7 @@ import Promotional from "./Promotional";
 import Question from "./Question/Question";
 import Support from "../../Components/../Support/Support"
 import AnchorLink from "react-anchor-link-smooth-scroll";
-
+import { BsArrowUp } from "react-icons/bs";
 const Home = () => {
 
   return (
@@ -27,7 +27,7 @@ const Home = () => {
       />
       <Navigation></Navigation>
       <Banner></Banner>
-      <Courses></Courses>
+      {/* <Courses></Courses> */}
       <Admission></Admission>
       <JobCourses></JobCourses>
       <CoursesTabs></CoursesTabs>
@@ -36,8 +36,13 @@ const Home = () => {
       <Promotional></Promotional>
       <Support></Support>
       <Question></Question>
-      <AnchorLink href='#top' className='bg-blue-700 rounded-full px-2 fixed  z-50 bottom-4 right-4  text-lg  ring-2'><i className="fa-solid fa-arrow-up-long text-white "></i></AnchorLink>
-      
+      <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-2xl'>
+        <BsArrowUp/>
+      </AnchorLink>
+      {/* messenger chat */}
+      <MessengerCustomerChat
+        pageId="101878912628102" appId="3150275291906230"
+      />
     </div>
     
   );
