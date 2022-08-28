@@ -100,7 +100,7 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
                     <input
                       {...register(`teacher`)}
                       type="text"
-                      placeholder="Teacher Name"
+                      placeholder="Teacher name"
                       className="input bg-base-300 input-sm w-full"
                       
                     />
