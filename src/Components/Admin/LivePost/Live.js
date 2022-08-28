@@ -27,9 +27,10 @@ const Live = () => {
                 <table className="table table-zebra w-full">
                     <thead>
                         <tr>
-                            <th>index</th>
+                            <th>No</th>
+                            <th>Image</th>
                             <th>Name</th>
-                            <th>action</th>
+                            <th>Button</th>
                         </tr>
                     </thead>
 

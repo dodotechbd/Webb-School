@@ -5,7 +5,7 @@ import primaryAxios from '../../../Api/primaryAxios';
 import Loading from '../../Shared/Loading/Loading';
 
 const AdmissionTable = ({index,admissions ,isLoading}) => {
-  const { _id,uname } = admissions
+  const { _id,uname ,img } = admissions
 
     
     const { register, handleSubmit, reset } = useForm();
@@ -46,6 +46,18 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
       <tr>
          
           <td>{index + 9}</td>
+          <td>
+        <div className="flex items-center space-x-3">
+          <div className="avatar">
+            <div className="mask mask-squircle w-12 h-12">
+              <img
+                src={img}
+                alt="Avatar Tailwind CSS Component"
+              />
+            </div>
+          </div>
+        </div>
+          </td>
           <td className='uppercase'>{uname}</td>
           <td>
       <label
@@ -70,9 +82,19 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
           </div>
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="card-body px-6 py-3">
-            <p className=' text-info rounded-lg text-center pb-2'>
-                  
-                  <span className='uppercase  text-bold   '> {uname}</span> </p>
+            <div className='flex'>
+                  <div className='px-1'>
+                    <div class="avatar ">
+                      <div class="w-16 mask mask-squircle ">
+                        <img src={img} alt="Tailwind-CSS-Avatar-component" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className='pt-5 w-full font-semibold'>
+                    <p className=' text-info rounded-lg text-center pb-2'>
+                      <span className='uppercase  text-bold   '> {uname}</span> </p>
+                  </div>
+                </div>
               <div className="form-control">
                 <label className="input-group input-group-sm pt-2">
                   <span className="bg-info text-white uppercase">
