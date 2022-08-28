@@ -83,7 +83,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
                 className="input bg-base-300 input-sm w-full"
                 placeholder="Google meet link"
                 type="link"
-                required
+                
               />
                 </label>
               </div>
@@ -97,7 +97,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
                     type="text"
                     placeholder="Subject here"
                     className="input bg-base-300 input-sm w-full"
-                    required
+                    
                   />
                 </label>
               </div>
