@@ -8,7 +8,7 @@ const SkillBook = ({ skillbook }) => {
       <div className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4">
         <figure>
           <img
-            className="mx-auto mt-4 w-48 rounded-lg text-center"
+            className="mx-auto mt-4  w-48 h-64  rounded-lg text-center"
             src={img}
             alt="Books"
           />
