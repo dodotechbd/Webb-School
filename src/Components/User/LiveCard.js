@@ -53,18 +53,18 @@ const LiveCard = ({ allcard }) => {
           <div>
           <p className="text-lg">  Instructor : <span>{courseData?.meetLink?.teacher}</span></p>
             
-            <div className="flex items-end gap-4 ">
+            <div className="flex items-end gap-5 ">
               <div>
               <p className="text-lg">Chapter : <span>{courseData?.meetLink?.title}</span></p>
               <p className="text-lg">Date : <span>{courseData?.meetLink?.date}</span></p>
                 <p className="text-lg"> Time : <span className="text-error">{courseData?.meetLink?.time}</span>(Sharp)</p>
               </div>
-              <div className="mt-2 text-sm j ">
+              <div className="mt-2 text-sm px-16  ">
                 {courseData?.meetLink?.MLink ? (
                   <a
                     href={courseData?.meetLink?.MLink}
                     target="blank"
-                    className="btn btn-sm bg-green-600  font-thin text-white   hover:bg-green-600" 
+                    className="btn btn-sm bg-green-600  font-thin text-white   hover:bg-green-600 " 
                   >
                     Join
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
