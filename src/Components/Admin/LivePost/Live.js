@@ -11,7 +11,7 @@ const Live = () => {
 
 
     const { data: language, refetch,isLoading } = useQuery(["languageCourse"], () =>
-        fetch(`http://localhost:5000/language`).then((res) =>
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
             res.json()
         )
     );

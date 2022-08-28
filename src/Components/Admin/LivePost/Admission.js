@@ -6,7 +6,7 @@ import AdmissionTable from './AdmissionTable';
 
 const Admission = () => {
     const { data: admission, refetch, isLoading } = useQuery(["admissionCourses"], () =>
-        fetch(`http://localhost:5000/admission`).then(
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
             (res) => res.json()
         )
     );

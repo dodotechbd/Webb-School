@@ -7,7 +7,7 @@ const useLives = () => {
 
     useEffect(() => {
         const { data: job } = useQuery(["jobCourse"], () =>
-        fetch(`http://localhost:5000/job`).then((res) =>
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
             res.json()
         )
     );
