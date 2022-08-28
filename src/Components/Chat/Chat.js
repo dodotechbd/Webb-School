@@ -29,19 +29,6 @@ const Chat = () => {
     }, [])
 
 
-    const onSubmit = data => {
-        
-        const url = `https://rocky-escarpment-87440.herokuapp.com/chat`;
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-type' : 'application/json'
-            },
-            body: JSON.stringify(data)
-        })
-   
-    }
-
     const sentChat = (e) => {
         e.preventDefault();
         socket.emit("chat", { message, userName });
@@ -54,10 +41,28 @@ const Chat = () => {
         });
     });
 
+    // const onSubmit = data => {
+    //     const url = `https://rocky-escarpment-87440.herokuapp.com/chat`;
+    //     fetch(url, {
+    //         method: 'POST',
+    //         headers: {
+    //             'Content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify(data)
+    //     })
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         window.alert('Continuing your Chat')
+    //         window.location.reload() 
+    //     })
+    // }
+
+
+
     return (
         <div>
-            <h1 className='my-10 text-center font-bold text-4xl '> COMMINUCATIONS YOUR FRINDS</h1>
-            <div className="chat">
+            <h1 className='my-10 text-center font-bold text-3xl '>Massage Your Frind</h1>
+            <div className="chat m-auto shadow ">
                 <div className="head">Group Chat</div>
 
                 <div className="messages" ref={messageEl}>
@@ -75,15 +80,16 @@ const Chat = () => {
                             placeholder="Type here"
                             name="chat"
                             value={message}
-                            className="input input-bordered "
+                            className="bg-base-100 "
                             onChange={(e) => {
                                 setMessage(e.target.value);
                             }}
                         />
-                        <i class="fa-solid fa-paper-plane text-2xl " type='submit'></i>
+                        
+                        <button><i type='submit' class="fa-solid fa-paper-plane text-3xl" ></i></button>
 
                     </form>
-                    
+
                 </div>
             </div>
 
