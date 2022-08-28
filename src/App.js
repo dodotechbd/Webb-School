@@ -62,6 +62,7 @@ import MyAudioBooks from "./Components/User/MyAudioBooks";
 import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import BookReview from "./Components/Admin/ManageReview/BookReview";
+import Special from "./Components/Admin/Courses/Special";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -159,14 +160,18 @@ function App() {
         <Route element={<RequireAdmin></RequireAdmin>}>
           <Route path="/admin" element={<Admin></Admin>}>
             <Route path="/admin" element={<Admins></Admins>}></Route>
-            <Route path="/admin/courses" element={<Manage></Manage>}>
+            <Route path="/admin/courses/manage" element={<Manage></Manage>}>
               <Route
-                path="/admin/courses/language"
+                path="/admin/courses/manage"
+                element={<Special></Special>}
+              ></Route>
+              <Route
+                path="/admin/courses/manage/language"
                 element={<Language></Language>}
               ></Route>
-              <Route path="/admin/courses/job" element={<Job></Job>}></Route>
+              <Route path="/admin/courses/manage/job" element={<Job></Job>}></Route>
               <Route
-                path="/admin/courses/admission"
+                path="/admin/courses/manage/admission"
                 element={<Admission></Admission>}
               ></Route>
             </Route>

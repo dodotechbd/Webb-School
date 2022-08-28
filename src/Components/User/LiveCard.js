@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
 const LiveCard = ({ allcard }) => {
@@ -23,7 +22,6 @@ const LiveCard = ({ allcard }) => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
-  console.log(courseData);
   return (
     <div
       className="mx-auto lg:flex bg-base-200 shadow-lg rounded-2xl
@@ -38,7 +36,7 @@ const LiveCard = ({ allcard }) => {
       </figure>
       <div className="w-full p-4 lg:pr-4 lg:pl-0 lg:pt-4 pt-0">
         <div className="text-right">
-          {courseData?.meetLink?.link ? (
+          {courseData?.meetLink?.MLink ? (
             <p className="bg-red-500 inline py-1 px-2 text-center rounded-lg text-sm text-white">
               <i class="fa-solid fa-circle text-xs"></i> Live
             </p>
@@ -51,16 +49,17 @@ const LiveCard = ({ allcard }) => {
         <div className="content-between grid">
           <h2 className="text-xl">{allcard?.name.slice(0, 30)}</h2>
           <div>
-            <p className="text-lg">Career Development</p>
+            <p className="text-lg">{courseData?.meetLink?.title}</p>
             <div className="flex items-end gap-4">
               <div>
-                <p className="">Rashel Mahmud</p>
-                <p className="text-error">09:00 PM (Sharp)</p>
+                <p className="opacity-80">{courseData?.meetLink?.teacher}</p>
+                <p className="text-error">{courseData?.meetLink?.date}</p>
+                <p className="text-error">{courseData?.meetLink?.time} (Sharp)</p>
               </div>
               <div className="mt-2 text-sm">
-                {courseData?.meetLink?.link ? (
+                {courseData?.meetLink?.MLink ? (
                   <a
-                    href={courseData?.meetLink?.link}
+                    href={courseData?.meetLink?.MLink}
                     target="blank"
                     className="btn btn-sm btn-info font-thin text-white"
                   >

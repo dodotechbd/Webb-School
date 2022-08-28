@@ -18,8 +18,42 @@ const CoursePlay = () => {
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
   const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
+  const { data: language } = useQuery(["languageCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: job } = useQuery(["jobCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: admission } = useQuery(["admissionCourses"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
+      (res) => res.json()
+    )
+  );
+  const allCourseData =
+    admission?.find((allcard) => allcard.uname === uname) ||
+    language?.find((allcard) => allcard.uname === uname) ||
+    job?.find((allcard) => allcard.uname === uname);
   return (
     <div>
+      {allCourseData?.meetLink?.MLink && (
+        <div className="hidden lg:flex fixed flex-col top-[20%] left-1 ">
+          <ul>
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-5px] duration-300 bg-red-500 rounded">
+              <a
+                className="flex justify-between items-center hover:bg-red-500 w-full text-white font-bold"
+                href={allCourseData?.meetLink?.MLink}
+                target='blank'
+              >
+                LIVE CLASS<i className="fa-solid fa-video"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
       <div className="hero bg-base-100 py-8">
         <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse items-start">
           <div className="card rounded-md lg:w-96 w-full bg-base-200 border border-neutral">
@@ -41,7 +75,7 @@ const CoursePlay = () => {
               <input type="checkbox" id="my-modal-5" class="modal-toggle" />
               <label for="my-modal-5" class="modal cursor-pointer">
                 <label class="modal-box relative p-0" for="">
-                <AddReview></AddReview>
+                  <AddReview></AddReview>
                 </label>
               </label>
             </div>
