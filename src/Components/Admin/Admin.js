@@ -52,7 +52,7 @@ const Admin = () => {
               <NavLink to={"/admin/reviews/course"}><i className="fa-solid fa-star-half-stroke"></i>Manage Reviews</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/chat"}><i className="fa-solid fa-file-pen"></i>Chat</NavLink>
+              <NavLink to={"/admin/chat"}><i class="fa-solid fa-comment-sms"></i>Chat</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
