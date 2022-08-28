@@ -57,6 +57,8 @@ import BookDetail from "./Components/BookStore/BookDetail";
 import BookCheckout from "./Components/BookStore/BookCheckout";
 import Chat from "./Components/Chat/Chat";
 import MyBooks from "./Components/User/MyBooks";
+import MyEbooks from "./Components/User/MyEbooks";
+import MyAudioBooks from "./Components/User/MyAudioBooks";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -210,6 +212,8 @@ function App() {
         </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
+        <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
+        <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
         <Route
           path="/liveclasses"
           element={<MyLiveClass></MyLiveClass>}
