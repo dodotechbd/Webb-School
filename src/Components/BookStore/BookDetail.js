@@ -60,7 +60,7 @@ const BookDetail = () => {
     isLoading,
     refetch,
   } = useQuery(["bookreviewsData"], () =>
-    fetch(`http://localhost:5000/bookreviews`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
   );
   const reviewData = bookreviews?.filter(
     (allcard) => allcard.courseName === bookId
@@ -71,7 +71,6 @@ const BookDetail = () => {
   if (isLoading) {
     return <Loading></Loading>;
   }
-  console.log(reviewData);
   return (
     <div className="hero bg-base-100 my-6">
       <div className="flex lg:w-full w-11/12 gap-10  justify-center flex-col-reverse lg:flex-row md:flex-row items-start">

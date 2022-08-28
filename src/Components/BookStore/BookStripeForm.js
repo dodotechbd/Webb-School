@@ -34,7 +34,7 @@ const BookStripeForm = ({ totalAmount, orderInfo }) => {
     )
   );
   const { data: audiobook } = useQuery(["audiobook"], () =>
-    fetch(`http://localhost:5000/audiobook`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
   );
 
   const bookData =

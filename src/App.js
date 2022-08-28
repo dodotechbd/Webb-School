@@ -59,6 +59,9 @@ import Chat from "./Components/Chat/Chat";
 import MyBooks from "./Components/User/MyBooks";
 import MyEbooks from "./Components/User/MyEbooks";
 import MyAudioBooks from "./Components/User/MyAudioBooks";
+import ManageReview from "./Components/Admin/ManageReview/ManageReview";
+import CourseReview from "./Components/Admin/ManageReview/CourseReview";
+import BookReview from "./Components/Admin/ManageReview/BookReview";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -175,7 +178,10 @@ function App() {
               path="/admin/academicbookss"
               element={<AcademicBookss></AcademicBookss>}
             ></Route>
-            <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/reviews" element={<ManageReview></ManageReview>}>
+              <Route path="/admin/reviews/course" element={<CourseReview></CourseReview>}></Route>
+              <Route path="/admin/reviews/book" element={<BookReview></BookReview>}></Route>
+            </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
 
             <Route

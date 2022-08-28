@@ -5,7 +5,7 @@ import Loader from "../Shared/Loading/Loading";
 
 const AudioBooks = () => {
   const { data: audiobook, isLoading } = useQuery(["audiobook"], () =>
-    fetch(`http://localhost:5000/audiobook`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loader></Loader>;

@@ -1,23 +1,65 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router-dom";
-import { AudioPlayer } from "./AudioPlayer";
 import Rating from "react-rating";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Loader from "../Shared/Loading/Loading";
 import { Link } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import auth from "../../firebase.init";
+import primaryAxios from "../../Api/primaryAxios";
+import Swal from "sweetalert2";
+import ReviewView from "../AllCourses/ReviewView";
 
 const AudioBookDetails = () => {
   const { bookId } = useParams();
+  // for Rating
+  const [rating, setRating] = useState(0);
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm();
+  const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
+  );
+  const reviewData = bookreviews?.filter(
+    (allcard) => allcard.courseName === bookId
+  );
+  const ratingData = reviewData?.map((allcard) => allcard.rating);
+  const totalRating = ratingData?.reduce((a, b) => a + b, 0);
+  const avgRating = totalRating / ratingData?.length;
+
+  const onSubmit = (data) => {
+    const reviewData = {
+      ...data,
+      rating,
+      courseName: newDetails?._id,
+      reviewDate: new Date(),
+      author: {
+        name: auth?.currentUser?.displayName,
+        uid: auth?.currentUser?.uid,
+        photo: auth?.currentUser?.photoURL,
+      },
+    };
+    (async () => {
+      const { data } = await primaryAxios.post(`/bookreviews`, reviewData);
+      if (data.acknowledged) {
+        Swal.fire("Thank You!", "For Your Feedback!", "success");
+        reset();
+        refetch();
+      }
+    })();
+  };
+  // end
   const { data: audiobook, isLoading } = useQuery(["audiobooks"], () =>
-    fetch(`http://localhost:5000/audiobook`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
   );
   if (isLoading) {
     return <Loader></Loader>;
   }
-
   const newDetails = audiobook.find((s) => s._id === bookId);
-  //   console.log(newService);
   return (
     <div className="mb-12">
       <h1 className="text-3xl text-center pt-6 font-bold mb-8">
@@ -59,34 +101,49 @@ const AudioBookDetails = () => {
                 </h1>
               </div>
             </div>
-            <div className="bg-base-200 rounded-b-2xl hidden">
-              <AudioPlayer newDetails={newDetails}></AudioPlayer>
-            </div>
           </div>
           <div className="border border-neutral rounded-lg px-4">
             <p className="text-2xl p-4"> About podcast</p>
             <p className="p-3">{newDetails?.description}</p>
           </div>
-          <div>
+          <div className="lg:block md:block hidden">
             <div>
-              <h2 class="text-xl mt-3">Rate this book</h2>
-              <div className="text-3xl my-2 text-[#FAAF00]">
-                <Rating
-                  count={5}
-                  //   onChange={"rating"}
-                  fractions={2}
-                  emptySymbol={<ImStarEmpty />}
-                  fullSymbol={<ImStarFull />}
-                />
-              </div>
-              <textarea
-                class="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
-                placeholder="Write about this book"
-                required
-              ></textarea>
-              <button type="submit" class="px-8 py-2 rounded-md btn-primary">
-                Submit
-              </button>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <h2 class="text-xl mt-3">Rate this book</h2>
+                <div className="text-3xl my-2 text-[#FAAF00]">
+                  <Rating
+                    count={5}
+                    onChange={setRating}
+                    fractions={2}
+                    emptySymbol={<ImStarEmpty />}
+                    fullSymbol={<ImStarFull />}
+                  />
+                </div>
+                <textarea
+                  {...register("review")}
+                  class="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
+                  placeholder="Write about this book"
+                  required
+                ></textarea>
+                <button type="submit" class="px-8 py-2 rounded-md btn-primary">
+                  Submit
+                </button>
+              </form>
+            </div>
+            <h1 className="text-2xl mt-6 mb-2">
+              Reviews({ratingData?.length})
+            </h1>
+            <div className="flex flex-col">
+              {reviewData
+                ?.slice(0)
+                .reverse()
+                .map((review) => (
+                  <ReviewView
+                    key={review._id}
+                    review={review}
+                    refetch={refetch}
+                  ></ReviewView>
+                ))}
             </div>
           </div>
         </div>
@@ -164,10 +221,16 @@ const AudioBookDetails = () => {
                   <i className="fa-solid fa-star text-yellow-400"></i>
                 </p>
                 <p>
-                  Average Ratings <br />{" "}
-                  <span className="uppercase text-[#efad1e]">
-                    {newDetails?.ratings}
-                  </span>
+                  Avg Ratings <br />{" "}
+                  {avgRating ? (
+                    <span className="uppercase text-[#efad1e]">
+                      {avgRating.toString().slice(0, 3)}
+                    </span>
+                  ) : (
+                    <span className="uppercase text-[#efad1e]">
+                      0
+                    </span>
+                  )}
                 </p>
               </div>
             </div>
