@@ -37,7 +37,7 @@ const Admin = () => {
           <label for="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-3 overflow-y-auto w-72 border-r border-neutral bg-base-200 text-base-content gap-3">
             <li>
-              <NavLink to={"/admin/courses/language"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
+              <NavLink to={"/admin/courses/manage"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/academicbookss"}><i className="fa-solid fa-book"></i>Manage Academic Books</NavLink>
