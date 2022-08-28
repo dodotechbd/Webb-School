@@ -46,7 +46,7 @@ const JobTable = ({jobs,index , isLoading}) => {
         <tr>
            
             <td>{index + 5}</td>
-            <td>{uname}</td>
+            <td className='uppercase'>{uname}</td>
             <td>
         <label
           for={_id}
