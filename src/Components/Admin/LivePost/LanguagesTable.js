@@ -8,7 +8,7 @@ import Loading from '../../Shared/Loading/Loading';
 
 const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
 
-  const { _id, uname, img } = languages
+  const { _id, uname, name, img } = languages
 
 
   const { register, handleSubmit, reset } = useForm();
@@ -62,7 +62,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
           </div>
         </div>
       </td>
-      <td className='uppercase'>{uname}</td>
+      <td className='uppercase'>{name}</td>
       <td>
         <label
           for={_id}
