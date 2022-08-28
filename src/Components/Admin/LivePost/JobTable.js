@@ -95,7 +95,7 @@ const JobTable = ({jobs,index , isLoading}) => {
                     <input
                       {...register(`teacher`)}
                       type="text"
-                      placeholder="Teacher Name"
+                      placeholder="Teacher name"
                       className="input bg-base-300 input-sm w-full"
                       
                     />
