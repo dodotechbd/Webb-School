@@ -26,7 +26,7 @@ const Home = () => {
       />
       <Navigation></Navigation>
       <Banner></Banner>
-      {/* <Courses></Courses> */}
+      <Courses></Courses>
       <Admission></Admission>
       <JobCourses></JobCourses>
       <CoursesTabs></CoursesTabs>

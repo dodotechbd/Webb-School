@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import { useQuery } from "react-query";
 
 const LiveCard = ({ allcard }) => {
@@ -23,13 +22,12 @@ const LiveCard = ({ allcard }) => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
-  console.log(courseData);
   return (
     <div
       className="mx-auto lg:flex bg-base-200 shadow-lg rounded-2xl
        hover:-translate-y-3 border-neutral  transform transition duration-300 text-warning h-full"
     >
-      <figure className="p-4 pt-9">
+      <figure className="p-4">
         <img
           src={allcard?.img}
           alt="Shoes"
@@ -37,10 +35,10 @@ const LiveCard = ({ allcard }) => {
         />
       </figure>
       <div className="w-full p-4 lg:pr-4 lg:pl-0 lg:pt-4 pt-0">
-        <div className="text-right ">
+        <div className="text-right">
           {courseData?.meetLink?.MLink ? (
             <p className="bg-red-500 inline py-1 px-2 text-center rounded-lg text-sm text-white">
-              <i class="fa-solid fa-circle text-xs "></i> Live
+              <i class="fa-solid fa-circle text-xs"></i> Live
             </p>
           ) : (
             <p className="bg-gray-500 inline py-1 px-2 text-center rounded-lg text-sm text-white">
@@ -48,23 +46,22 @@ const LiveCard = ({ allcard }) => {
             </p>
           )}
         </div>
-        <div className="content-between grid ">
+        <div className="content-between grid">
           <h2 className="text-xl">{allcard?.name.slice(0, 30)}</h2>
           <div>
-          <p className="text-lg">  Instructor : <span>{courseData?.meetLink?.teacher}</span></p>
-            
-            <div className="flex items-end gap-5 ">
+            <p className="text-lg text-info font-bold uppercase">{courseData?.meetLink?.title}</p>
+            <div className="flex items-end gap-4">
               <div>
-              <p className="text-lg">Chapter : <span>{courseData?.meetLink?.title}</span></p>
-              <p className="text-lg">Date : <span>{courseData?.meetLink?.date}</span></p>
-                <p className="text-lg"> Time : <span className="text-error">{courseData?.meetLink?.time}</span>(Sharp)</p>
+                <p className="opacity-80">{courseData?.meetLink?.teacher}</p>
+                <p className="text-error">{courseData?.meetLink?.date}</p>
+                <p className="text-error">{courseData?.meetLink?.time} (Sharp)</p>
               </div>
-              <div className="mt-2 text-sm px-16  ">
+              <div className="mt-2 text-sm">
                 {courseData?.meetLink?.MLink ? (
                   <a
                     href={courseData?.meetLink?.MLink}
                     target="blank"
-                    className="btn btn-sm bg-green-600  font-thin text-white   hover:bg-green-600 " 
+                    className="btn btn-sm btn-info font-thin text-white"
                   >
                     Join
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>

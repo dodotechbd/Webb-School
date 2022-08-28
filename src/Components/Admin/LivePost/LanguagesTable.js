@@ -1,25 +1,22 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import Swal from 'sweetalert2';
-import primaryAxios from '../../../Api/primaryAxios';
-import Loading from '../../Shared/Loading/Loading';
-
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import primaryAxios from "../../../Api/primaryAxios";
+import Loading from "../../Shared/Loading/Loading";
+import { GoPrimitiveDot } from "react-icons/go";
+import { MdDoNotDisturbOff } from "react-icons/md";
 
 const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
-
-  const { _id, uname, name, img } = languages
-
+  const { _id, name, img, uname } = languages;
+  const [loading, setLoading] = useState(null);
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (MLink) => {
-
     (async () => {
-      const { data } = await primaryAxios.put(`/language/${_id}`, MLink)
+      const { data } = await primaryAxios.put(`/language/${_id}`, MLink);
       if (isLoading) {
         return <Loading></Loading>;
-      }
-      else if (data) {
+      } else if (data) {
         const Toast = Swal.mixin({
           toast: true,
           position: "top-right",
@@ -37,32 +34,45 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
         });
         reset();
         refetch();
-
       }
-
     })();
-
-
-
-  }
+  };
+  const handleDelete = (id) => {
+    setLoading(true);
+    (async () => {
+      const { data } = await primaryAxios.put(`/language/${_id}`, {
+        meetLink: "",
+      });
+      if (data.success) {
+        Swal.fire(`${name} Live Class Stopped!`, {
+          icon: "success",
+          className: "rounded-xl",
+        });
+        refetch();
+      }
+    })();
+  };
   return (
-
     <tr>
-
       <td>{index + 1}</td>
+      <td className="uppercase">{name}</td>
       <td>
-        <div className="flex items-center space-x-3">
-          <div className="avatar">
-            <div className="mask mask-squircle w-12 h-12">
-              <img
-                src={img}
-                alt="Avatar Tailwind CSS Component"
-              />
-            </div>
-          </div>
-        </div>
+        {languages?.meetLink?.MLink ? (
+          <a
+            href={languages?.meetLink?.MLink}
+            target="blank"
+            className="btn text-base-100 font-thin pr-4 hover:bg-green-700 btn-xs bg-green-500"
+          >
+            <GoPrimitiveDot className="text-xl" />
+            Join
+          </a>
+        ) : (
+          <button className="btn text-base-100 font-thin pr-4 hover:bg-gray-500 btn-xs bg-gray-400">
+            <MdDoNotDisturbOff className="text-sm" />
+            Not Available
+          </button>
+        )}
       </td>
-      <td className='uppercase'>{name}</td>
       <td>
         <label
           for={_id}
@@ -75,8 +85,8 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
           <div className="modal-box p-0">
             <div className="px-3 pt-3 pb-2 bg-info flex justify-between">
               <p className="text-xl text-white">
-                <i className="fa-solid fa-paper-plane"></i> Post Your google meet link
-
+                <i className="fa-solid fa-paper-plane"></i> Post Your google
+                meet link
               </p>
               <label
                 for={_id}
@@ -87,20 +97,20 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-                <div className='flex'>
-                  <div className='px-1'>
+                <div className="flex">
+                  <div className="px-1">
                     <div class="avatar ">
                       <div class="w-16 mask mask-squircle ">
                         <img src={img} alt="Tailwind-CSS-Avatar-component" />
                       </div>
                     </div>
                   </div>
-                  <div className='pt-5 w-full font-semibold'>
-                    <p className=' text-info rounded-lg text-center pb-2'>
-                      <span className='uppercase  text-bold   '> {uname}</span> </p>
+                  <div className="pt-5 w-full font-semibold">
+                    <p className=" text-info rounded-lg text-center pb-2">
+                      <span className="uppercase  text-bold   "> {uname}</span>{" "}
+                    </p>
                   </div>
                 </div>
-
                 <div className="form-control">
                   <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
@@ -111,7 +121,6 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                       className="input bg-base-300 input-sm w-full"
                       placeholder="Google meet link"
                       type="link"
-
                     />
                   </label>
                 </div>
@@ -125,7 +134,6 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                       type="text"
                       placeholder="Teacher name"
                       className="input bg-base-300 input-sm w-full"
-
                     />
                   </label>
                 </div>
@@ -139,32 +147,30 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                       type="text"
                       placeholder="Subject here"
                       className="input bg-base-300 input-sm w-full"
-
                     />
                   </label>
                 </div>
-                <div className='flex justify-between   pt-2'>
+
+                <div className="flex justify-between   pt-2">
                   <div>
                     <label className="input-group input-group-sm ">
                       <span className="bg-info text-white uppercase ">
                         Time
                       </span>
                       <select
-                        className='rounded bg-base-300'
-                        {...register("time")}>
+                        className="rounded bg-base-300"
+                        {...register("time")}
+                      >
                         <option value=""></option>
                         <option value="04:00 PM">04:00 PM</option>
                         <option value="09:00 PM">09:00 PM</option>
                         <option value="10:00 PM">10:00 PM</option>
-
                       </select>
                     </label>
                   </div>
                   <div>
                     <label className="input-group input-group-sm">
-                      <span className="bg-info text-white uppercase">
-                        Date
-                      </span>
+                      <span className="bg-info text-white uppercase">Date</span>
                       <input
                         {...register(`date`)}
                         className="input input-bordered input-sm w-full  bg-base-300 max-w-xs"
@@ -178,9 +184,9 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                 <div className="card-actions justify-end pt-3">
                   <button
                     type="submit"
-                    className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600 "
+                    className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600"
                   >
-                    <i className="fa-solid fa-paper-plane mr-1 "></i>Post
+                    <i className="fa-solid fa-paper-plane mr-1"></i>Post
                   </button>
                 </div>
               </div>
@@ -189,10 +195,15 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
           </div>
         </div>
       </td>
+      <td>
+        <button
+          onClick={() => handleDelete(_id)}
+          className={`btn btn-xs btn-outline ${loading && "loading"}`}
+        >
+          Stop
+        </button>
+      </td>
     </tr>
-
-
-
   );
 };
 
