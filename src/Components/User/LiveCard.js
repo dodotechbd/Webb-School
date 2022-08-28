@@ -49,7 +49,7 @@ const LiveCard = ({ allcard }) => {
         <div className="content-between grid">
           <h2 className="text-xl">{allcard?.name.slice(0, 30)}</h2>
           <div>
-            <p className="text-lg">{courseData?.meetLink?.title}</p>
+            <p className="text-lg text-info font-bold uppercase">{courseData?.meetLink?.title}</p>
             <div className="flex items-end gap-4">
               <div>
                 <p className="opacity-80">{courseData?.meetLink?.teacher}</p>

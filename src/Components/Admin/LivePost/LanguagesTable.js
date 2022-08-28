@@ -7,7 +7,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { MdDoNotDisturbOff } from "react-icons/md";
 
 const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
-  const { _id, name } = languages;
+  const { _id, name, img, uname } = languages;
   const [loading, setLoading] = useState(null);
 
   const { register, handleSubmit, reset } = useForm();
@@ -97,9 +97,20 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-                <p className=" text-info rounded-lg text-center pb-2">
-                  <span className="uppercase  text-bold   "> {name}</span>{" "}
-                </p>
+                <div className="flex">
+                  <div className="px-1">
+                    <div class="avatar ">
+                      <div class="w-16 mask mask-squircle ">
+                        <img src={img} alt="Tailwind-CSS-Avatar-component" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-5 w-full font-semibold">
+                    <p className=" text-info rounded-lg text-center pb-2">
+                      <span className="uppercase  text-bold   "> {uname}</span>{" "}
+                    </p>
+                  </div>
+                </div>
                 <div className="form-control">
                   <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
@@ -110,6 +121,19 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                       className="input bg-base-300 input-sm w-full"
                       placeholder="Google meet link"
                       type="link"
+                    />
+                  </label>
+                </div>
+                <div className="form-control">
+                  <label className="input-group input-group-sm pt-2">
+                    <span className="bg-info text-white uppercase">
+                      Teacher
+                    </span>
+                    <input
+                      {...register(`teacher`)}
+                      type="text"
+                      placeholder="Teacher name"
+                      className="input bg-base-300 input-sm w-full"
                     />
                   </label>
                 </div>
@@ -137,10 +161,10 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                         className="rounded bg-base-300"
                         {...register("time")}
                       >
-                        <option value="4 PM">4 PM</option>
-                        <option value="9 PM">9 PM</option>
-                        <option value="10 PM">10 PM</option>
                         <option value=""></option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="09:00 PM">09:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
                       </select>
                     </label>
                   </div>
@@ -160,9 +184,9 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                 <div className="card-actions justify-end pt-3">
                   <button
                     type="submit"
-                    className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600 "
+                    className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600"
                   >
-                    <i className="fa-solid fa-paper-plane mr-1 "></i>Post
+                    <i className="fa-solid fa-paper-plane mr-1"></i>Post
                   </button>
                 </div>
               </div>

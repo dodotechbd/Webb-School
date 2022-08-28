@@ -7,7 +7,7 @@ import { GoPrimitiveDot } from "react-icons/go";
 import { MdDoNotDisturbOff } from "react-icons/md";
 
 const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
-  const { _id, name } = admissions;
+  const { _id, uname, img, name } = admissions;
   const [loading, setLoading] = useState(null);
 
   const { register, handleSubmit, reset } = useForm();
@@ -97,9 +97,20 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-                <p className=" text-info rounded-lg text-center pb-2">
-                  <span className="uppercase  text-bold   "> {name}</span>{" "}
-                </p>
+                <div className="flex">
+                  <div className="px-1">
+                    <div class="avatar ">
+                      <div class="w-16 mask mask-squircle ">
+                        <img src={img} alt="Tailwind-CSS-Avatar-component" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-5 w-full font-semibold">
+                    <p className=" text-info rounded-lg text-center pb-2">
+                      <span className="uppercase  text-bold   "> {uname}</span>{" "}
+                    </p>
+                  </div>
+                </div>
                 <div className="form-control">
                   <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
@@ -110,6 +121,19 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
                       className="input bg-base-300 input-sm w-full"
                       placeholder="Google meet link"
                       type="link"
+                    />
+                  </label>
+                </div>
+                <div className="form-control">
+                  <label className="input-group input-group-sm pt-2">
+                    <span className="bg-info text-white uppercase">
+                      Teacher
+                    </span>
+                    <input
+                      {...register(`teacher`)}
+                      type="text"
+                      placeholder="Teacher name"
+                      className="input bg-base-300 input-sm w-full"
                     />
                   </label>
                 </div>
@@ -137,10 +161,10 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
                         className="rounded bg-base-300"
                         {...register("time")}
                       >
-                        <option value="4 PM">4 PM</option>
-                        <option value="9 PM">9 PM</option>
-                        <option value="10 PM">10 PM</option>
                         <option value=""></option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="09:00 PM">09:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
                       </select>
                     </label>
                   </div>
@@ -172,14 +196,15 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
         </div>
       </td>
       <td>
-      <button  onClick={() => handleDelete(_id)} className={`btn btn-xs btn-outline ${
-            loading && "loading"
-          }`}>Stop</button>
+        <button
+          onClick={() => handleDelete(_id)}
+          className={`btn btn-xs btn-outline ${loading && "loading"}`}
+        >
+          Stop
+        </button>
       </td>
     </tr>
   );
 };
 
 export default AdmissionTable;
-
-// 62927935a2fdc60c011f1414
