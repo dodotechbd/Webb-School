@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import LiveClassCard from './LiveClassCard';
 import Loader from '../Shared/Loading/Loader'
+import './Live.css'
 
 const LiveClass = () => {
 
@@ -22,7 +23,7 @@ const LiveClass = () => {
 
         <div className='flex h-screen justify-center items-center '>
 
-
+            <div class=" cardGlass card  w-96  ">
             <div className="card  w-96 shadow-xl ">
 
                 {
@@ -32,6 +33,7 @@ const LiveClass = () => {
                 }
 
             </div>
+        </div>
         </div>
         </div>
     );
