@@ -62,7 +62,7 @@ const Chat = () => {
     return (
         <div>
             <h1 className='my-10 text-center font-bold text-3xl '>Massage Your Frind</h1>
-            <div className="chat m-auto shadow ">
+            <div className="chat m-auto ">
                 <div className="head">Group Chat</div>
 
                 <div className="messages" ref={messageEl}>

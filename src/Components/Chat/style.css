@@ -17,6 +17,7 @@
     width: 350px;
     height: 450px;
     border-radius: 4px;
+    box-shadow: 5px 5px 2px 2px gray;
     overflow: hidden;
     /* margin-left: 50px; */
   }
