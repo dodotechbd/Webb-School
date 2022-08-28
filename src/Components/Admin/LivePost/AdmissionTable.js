@@ -5,7 +5,7 @@ import primaryAxios from '../../../Api/primaryAxios';
 import Loading from '../../Shared/Loading/Loading';
 
 const AdmissionTable = ({index,admissions ,isLoading}) => {
-  const { _id,uname ,img } = admissions
+  const { _id,uname ,img ,name} = admissions
 
     
     const { register, handleSubmit, reset } = useForm();
@@ -58,7 +58,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
           </div>
         </div>
           </td>
-          <td className='uppercase'>{uname}</td>
+          <td className='uppercase'>{name}</td>
           <td>
       <label
         for={_id}

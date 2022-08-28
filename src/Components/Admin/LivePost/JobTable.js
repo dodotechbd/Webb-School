@@ -5,7 +5,7 @@ import primaryAxios from '../../../Api/primaryAxios';
 import Loading from '../../Shared/Loading/Loading';
 
 const JobTable = ({jobs,index , isLoading}) => {
-    const { _id,uname, img } = jobs
+    const { _id,uname, img ,name } = jobs
 
     
     const { register, handleSubmit, reset } = useForm();
@@ -58,7 +58,7 @@ const JobTable = ({jobs,index , isLoading}) => {
           </div>
         </div>
           </td>
-            <td className='uppercase'>{uname}</td>
+            <td className='uppercase'>{name}</td>
             <td>
         <label
           for={_id}
