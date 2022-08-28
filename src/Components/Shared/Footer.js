@@ -3,8 +3,6 @@ import logo from "../../Assets/wslogo.png";
 import { Link, useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import AnchorLink from "react-anchor-link-smooth-scroll";
-
 
 const Footer = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -70,7 +68,6 @@ const Footer = () => {
           <Link to={"developer"} className="link link-hover block">
             Developer
           </Link>
-          
         </div>
         {/* for mobile */}
         <div className="lg:hidden md:hidden flex mx-auto gap-10">
@@ -105,7 +102,6 @@ const Footer = () => {
             </Link>
           </div>
         </div>
-        
         <div className="lg:block md:block hidden">
           <span className="text-lg font-bold ">Keep up with us at</span>
           <p className="text-md">
@@ -117,7 +113,6 @@ const Footer = () => {
           <p className="text-md">
             <span className="font-bold">Email:</span> webbschool2023@gmail.com
           </p>
-          
           <div className="hidden lg:inline md:inline pt-2">
             <a
               target="_blank"
@@ -148,9 +143,7 @@ const Footer = () => {
               <i className="fa-brands fa-youtube"></i>
             </a>
           </div>
-          
         </div>
-        
       </footer>
       <footer className="footer footer-center mb-2 lg:hidden md:hidden">
         <div className="grid grid-flow-col gap-4 mx-auto">
@@ -182,9 +175,7 @@ const Footer = () => {
           >
             <i className="fa-brands fa-youtube"></i>
           </a>
-         
         </div>
-        
       </footer>
       <div className="border-t border-neutral lg:mx-10">
         <footer className="footer footer-center lg:py-4 lg:p-0 p-4">
