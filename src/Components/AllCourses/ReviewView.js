@@ -6,13 +6,12 @@ import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ru from "javascript-time-ago/locale/ru.json";
 
-const ReviewView = ({ review, refetch, courseData }) => {
-  TimeAgo.addDefaultLocale(en);
+const ReviewView = ({ review, refetch }) => {
+  TimeAgo.addLocale(en);
   TimeAgo.addLocale(ru);
   return (
     <div>
-      {review?.courseName === courseData?.uname && (
-        <div className="flex mb-6">
+      <div className="flex mb-6">
           <div class="avatar">
             <div class="w-12 h-12 rounded-full">
               <img src={review?.author.photo} />
@@ -36,7 +35,6 @@ const ReviewView = ({ review, refetch, courseData }) => {
             <p>{review?.review}</p>
           </div>
         </div>
-      )}
     </div>
   );
 };

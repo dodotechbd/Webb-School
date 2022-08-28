@@ -32,18 +32,18 @@ const CoursePlay = () => {
               ))}
               {/* modal button  */}
               <label
-                for="my-modal-3"
+                for="my-modal-5"
                 className="text-center py-2 text-white rounded-none btn-block btn-primary cursor-pointer mx-auto mt-3"
               >
                 Add a review
               </label>
               {/* modal box */}
-              <input type="checkbox" id="my-modal-3" class="modal-toggle" />
-              <div class="modal">
-                <div class="modal-box relative p-0">
-                  <AddReview></AddReview>
-                </div>
-              </div>
+              <input type="checkbox" id="my-modal-5" class="modal-toggle" />
+              <label for="my-modal-5" class="modal cursor-pointer">
+                <label class="modal-box relative p-0" for="">
+                <AddReview></AddReview>
+                </label>
+              </label>
             </div>
           </div>
           <div className="lg:w-7/12 w-full">

@@ -2,8 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import primaryAxios from '../../../Api/primaryAxios';
+import Loading from '../../Shared/Loading/Loading';
 
-const JobTable = ({jobs,index }) => {
+const JobTable = ({jobs,index , isLoading}) => {
     const { _id,uname } = jobs
 
     
@@ -12,7 +13,10 @@ const JobTable = ({jobs,index }) => {
 
       (async () => {
         const { data } = await primaryAxios.put(`/job/${_id}`,MLink)
-        if (data) {
+        if (isLoading) {
+            return <Loading></Loading>;
+          }
+      else  if (data) {
             const Toast = Swal.mixin({
                 toast: true,
                 position: "top-right",

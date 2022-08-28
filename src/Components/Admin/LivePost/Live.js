@@ -1,9 +1,8 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading/Loading';
 import Admission from './Admission';
-import AdmissionTable from './AdmissionTable';
 import Job from './Job';
-import JobTable from './JobTable';
 import LanguagesTable from './LanguagesTable';
 
 
@@ -12,24 +11,17 @@ const Live = () => {
 
 
 
-    const { data: language, refetch } = useQuery(["languageCourse"], () =>
+    const { data: language, refetch,isLoading } = useQuery(["languageCourse"], () =>
         fetch(`http://localhost:5000/language`).then((res) =>
             res.json()
         )
-
     );
-    const { data: job } = useQuery(["jobCourse"], () =>
-        fetch(`http://localhost:5000/job`).then((res) =>
-            res.json()
-        )
-    );
-    const { data: admission } = useQuery(["admissionCourses"], () =>
-        fetch(`http://localhost:5000/admission`).then(
-            (res) => res.json()
-        )
-    );
+    if (isLoading) {
+        return <Loading></Loading>;
+      }
 
-
+    
+   
 
 
     return (
@@ -54,31 +46,12 @@ const Live = () => {
                                 languages={languages}
                                 index={index}
                                 refetch={refetch}
+                                isLoading={isLoading}
                             ></LanguagesTable>)
                         }
-                        {
-                            job.map((jobs, index) => <JobTable
-                                key={jobs._id}
-                                jobs={jobs}
-                                index={index}
-
-
-                            ></JobTable>)
-                        }
-                        {
-                            admission.map((admissions, index) => <AdmissionTable
-                                key={admissions._id}
-                                admissions={admissions}
-                                index={index}
-                                refetch={refetch}
-                            ></AdmissionTable>)
-                        }
-
-
-
-
                     </tbody>
-
+                         <Job></Job>
+                         <Admission></Admission>
 
 
 

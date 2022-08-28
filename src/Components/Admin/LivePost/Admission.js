@@ -1,17 +1,20 @@
 import React from 'react';
 import { useQuery } from 'react-query';
+import Loading from '../../Shared/Loading/Loading';
 import AdmissionTable from './AdmissionTable';
 
 
 const Admission = () => {
-    const { data: admission, refetch } = useQuery(["admissionCourses"], () =>
+    const { data: admission, refetch, isLoading } = useQuery(["admissionCourses"], () =>
         fetch(`http://localhost:5000/admission`).then(
             (res) => res.json()
         )
     );
-
+    if (isLoading) {
+        return <Loading></Loading>;
+    }
     return (
-        <div>
+        <tbody>
 
 
             {
@@ -22,8 +25,7 @@ const Admission = () => {
                     refetch={refetch}
                 ></AdmissionTable>)
             }
-
-        </div>
+        </tbody>
     );
 };
 

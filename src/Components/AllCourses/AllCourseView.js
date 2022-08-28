@@ -3,9 +3,10 @@ import { Link, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
 import CourseSyllabus from "./CourseSyllabus";
-import primaryAxios from "../../Api/primaryAxios";
 import Loading from "../Shared/Loading/Loading";
 import ReviewView from "./ReviewView";
+import Rating from "react-rating";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 
 const AllCourseView = () => {
   const { uname } = useParams();
@@ -28,71 +29,40 @@ const AllCourseView = () => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
-  // const courseIndex = courseData?.file[0].details[0].fileName;
-  // console.log(courseIndex);
-
   const {
     data: reviews,
     isLoading,
     refetch,
-  } = useQuery(["reviews"], () => primaryAxios.get(`/reviews`));
-
+  } = useQuery(["reviewsData"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/reviews`).then((res) =>
+      res.json()
+    )
+  );
+  const reviewData = reviews?.filter((allcard) => allcard.courseName === uname);
+  const ratingData = reviewData?.map((allcard) => allcard.rating);
+  const totalRating = ratingData?.reduce((a, b) => a + b, 0)
+  const avgRating = totalRating / ratingData?.length;
+  // console.log(ratingData);
   if (isLoading) {
     return <Loading></Loading>;
   }
-
+  
   return (
     <div className="hero bg-base-100 my-10">
       <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
         <div className="lg:hidden md:hidden">
-          <h1 className="text-2xl mt-6 mb-2">Reviews</h1>
-          <div className="flex flex-col gap-6">
-            <div className="flex">
-              <div class="avatar">
-                <div class="w-12 h-12 rounded-full">
-                  <img src="https://avatars.githubusercontent.com/u/81031854?v=4" />
-                </div>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-lg font-bold">Muhammad Shafi</h1>
-                <h1 className="text-yellow-400">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <span className="mx-2 text-gray-500">-</span>
-                  <span className="text-gray-500">a day ago</span>
-                </h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sint, ipsa tempore optio deserunt aspernatur iusto,
-                </p>
-              </div>
-            </div>
-            <div className="flex">
-              <div class="avatar">
-                <div class="w-12 h-12 rounded-full">
-                  <img src="https://avatars.githubusercontent.com/u/81031854?v=4" />
-                </div>
-              </div>
-              <div className="ml-3">
-                <h1 className="text-lg font-bold">Muhammad Shafi</h1>
-                <h1 className="text-yellow-400">
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <i class="fa-solid fa-star"></i>
-                  <span className="mx-2 text-gray-500">-</span>
-                  <span className="text-gray-500">a day ago</span>
-                </h1>
-                <p>
-                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                  Sint, ipsa tempore optio deserunt aspernatur iusto,
-                </p>
-              </div>
-            </div>
+          <h1 className="text-2xl mt-6 mb-2">Reviews({ratingData?.length})</h1>
+          <div className="flex flex-col">
+            {reviewData
+              ?.slice(0)
+              .reverse()
+              .map((review) => (
+                <ReviewView
+                  key={review._id}
+                  review={review}
+                  refetch={refetch}
+                ></ReviewView>
+              ))}
           </div>
         </div>
         <div className="card lg:w-1/3 md:w-2/3 bg-[#354795] lg:sticky lg:top-24 md:sticky md:top-20 shadow-xl text-white">
@@ -144,7 +114,31 @@ const AllCourseView = () => {
           <h1 className="text-4xl font-bold text-warning">
             {courseData?.name}
           </h1>
-          <p className="py-3 text-lg">{courseData?.desc}</p>
+          <p className="pt-3 text-lg">{courseData?.desc}</p>
+          <div className="py-3">
+          {courseData?.badge ? (
+              <div className="badge rounded-none font-bold text-base-100 bg-info mr-2">
+                Bestseller
+              </div>
+            ) : (
+              <></>
+            )}
+            {avgRating ? (
+              <span className="mr-2 font-bold text-[#c48b07]">
+                {avgRating.toString().slice(0, 3)}
+              </span>
+            ) : (
+              <></>
+            )}
+          <Rating
+                className="text-[#FAAF00] mr-2"
+                initialRating={avgRating}
+                readonly
+                emptySymbol={<ImStarEmpty />}
+                fullSymbol={<ImStarFull />}
+              />
+              <span className="opacity-70">({ratingData?.length} ratings)</span>
+          </div>
           <div className="lg:h-80 h-48 md:h-96 w-full border border-neutral">
             <ReactPlayer
               width={"100%"}
@@ -296,16 +290,18 @@ const AllCourseView = () => {
             </div>
           </div> */}
           <div className="lg:block md:block hidden">
-            <h1 className="text-2xl mt-6 mb-2">Reviews</h1>
+            <h1 className="text-2xl mt-6 mb-2">Reviews({ratingData?.length})</h1>
             <div className="flex flex-col">
-              {[...reviews?.data].reverse().map((review) => (
-                <ReviewView
-                  key={review._id}
-                  review={review}
-                  refetch={refetch}
-                  courseData={courseData}
-                ></ReviewView>
-              ))}
+              {reviewData
+                ?.slice(0)
+                .reverse()
+                .map((review) => (
+                  <ReviewView
+                    key={review._id}
+                    review={review}
+                    refetch={refetch}
+                  ></ReviewView>
+                ))}
             </div>
           </div>
         </div>

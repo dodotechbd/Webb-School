@@ -2,8 +2,9 @@ import React from 'react';
 import { useForm } from 'react-hook-form';
 import Swal from 'sweetalert2';
 import primaryAxios from '../../../Api/primaryAxios';
+import Loading from '../../Shared/Loading/Loading';
 
-const AdmissionTable = ({index,admissions }) => {
+const AdmissionTable = ({index,admissions ,isLoading}) => {
   const { _id,uname } = admissions
 
     
@@ -12,7 +13,10 @@ const AdmissionTable = ({index,admissions }) => {
 
       (async () => {
         const { data } = await primaryAxios.put(`/admission/${_id}`,MLink)
-        if (data) {
+        if (isLoading) {
+          return <Loading></Loading>;
+        }
+       else if (data) {
           const Toast = Swal.mixin({
               toast: true,
               position: "top-right",

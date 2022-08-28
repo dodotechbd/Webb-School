@@ -18,7 +18,6 @@ const BookDetail = () => {
       (res) => res.json()
     )
   ); 
-
   const newService =
     skillbook?.find((s) => s._id === bookId) ||
     academicbook?.find((s) => s._id === bookId);
@@ -89,7 +88,7 @@ const BookDetail = () => {
               Text. AI Writing Assistant
             </p>
           </div>
-          {/* <div>
+          <div>
             <div>
               <h2 class="text-xl mt-3">Rate this book</h2>
               <div className="text-3xl my-2 text-[#FAAF00]">
@@ -110,7 +109,7 @@ const BookDetail = () => {
                 Submit
               </button>
             </div>
-          </div> */}
+          </div>
         </div>
         
         <div className="lg:w-1/3 md:w-2/3 w-full bg-[#354795] shadow-xl p-5 card text-white">

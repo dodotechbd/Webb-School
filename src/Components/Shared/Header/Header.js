@@ -4,7 +4,7 @@ import wslogo from "../../../Assets/wslogo.png";
 import "./Header.css";
 import { useQuery } from "react-query";
 import Drawer from "react-modern-drawer";
-
+import { FiBell } from "react-icons/fi";
 import "react-modern-drawer/dist/index.css";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
@@ -21,17 +21,20 @@ const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
 
+  const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
+      res.json()
+    )
+  );
+  
+  const userMessageData = messageData?.filter(
+    (allcard) => allcard.email === user?.email
+  );
   const logout = () => {
     signOut(auth);
     //Token Remove
     localStorage.removeItem("accessToken");
   };
-
-  const {
-    data: message,
-    isLoading,
-    refetch,
-  } = useQuery(["message"], () => primaryAxios.get(`/message`));
 
   const manuItems = (
     <>
@@ -71,7 +74,7 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
-            <ul tabIndex="0" className="bg-base-100 h-screen">
+            <ul tabIndex="0" className="bg-base-200 h-screen">
               <Link to="/">
                 <div className="flex items-center p-2 w-full">
                   <img className="w-9 ml-3" src={wslogo} alt="" />
@@ -83,38 +86,54 @@ const Header = ({ handleThemeChange, theme }) => {
               </Link>
               <ul className="menu menu-compact">
                 <li>
-                  <NavLink to="/">Home</NavLink>
+                  <NavLink className="hover:rounded-none" to="/">
+                    Home
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="courses">Courses</NavLink>
+                  <NavLink className="hover:rounded-none" to="courses">
+                    Courses
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="bookstore">Book Store</NavLink>
+                  <NavLink className="hover:rounded-none" to="bookstore">
+                    Book Store
+                  </NavLink>
                 </li>
                 <li>
-                  <NavLink to="audiobook">AudioBook</NavLink>
+                  <NavLink className="hover:rounded-none" to="audiobook">
+                    AudioBook
+                  </NavLink>
                 </li>
                 {/* <li>
-                  <NavLink to="admission">Admission</NavLink>
+                  <NavLink className='hover:rounded-none' to="admission">Admission</NavLink>
                 </li>
                 <li>
-                  <NavLink to="jobs">Jobs</NavLink>
+                  <NavLink className='hover:rounded-none' to="jobs">Jobs</NavLink>
                 </li> */}
                 <li>
-                  <NavLink to="blogs">Blog</NavLink>
+                  <NavLink className="hover:rounded-none" to="blogs">
+                    Blog
+                  </NavLink>
                 </li>
 
                 {/* {user ? <li>
-                  <NavLink to="chat">Chat</NavLink>
+                  <NavLink className='hover:rounded-none' to="chat">Chat</NavLink>
                 </li> : ("")} */}
 
-
                 <li>
-                  <NavLink to="LiveClass">Live Class</NavLink>
+                  <NavLink className="hover:rounded-none" to="LiveClass">
+                    Live Class
+                  </NavLink>
                 </li>
                 {role === "admin" && (
                   <li>
-                    <NavLink to="admin/courses/language">Admin</NavLink>
+                    <NavLink
+                      className="hover:rounded-none"
+                      to="admin/courses/language"
+                    >
+                      Admin
+                    </NavLink>
                   </li>
                 )}
               </ul>
@@ -125,10 +144,11 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${user?.photoURL
-                              ? user?.photoURL
-                              : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                              }`}
+                            src={`${
+                              user?.photoURL
+                                ? user?.photoURL
+                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                            }`}
                           />
                         </div>
                       </label>
@@ -139,30 +159,43 @@ const Header = ({ handleThemeChange, theme }) => {
                     </div>
                     <ul className="menu menu-compact">
                       <li>
-                        <NavLink to={"profile"}>
+                        <NavLink className="hover:rounded-none" to={"profile"}>
                           <i className="ml-4 fa-solid fa-user" />
                           Profile
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to={"mycourse"}>
+                        <NavLink className="hover:rounded-none" to={"mycourse"}>
                           <i className="ml-4 fa-solid fa-bolt"></i>My Courses
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to={"dashboard"}>
-                          <i className="ml-4 fa-solid fa-chart-line"></i>
-                          Dashboard
+                        <NavLink className="hover:rounded-none" to={"mybooks"}>
+                          <i className="ml-4 fa-solid fa-book"></i>My Books
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink to={"/orders"}>
+                        <NavLink className="hover:rounded-none" to={"liveclasses"}>
+                          <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                        </NavLink>
+                      </li>
+                      {/* <li>
+                        <NavLink
+                          className="hover:rounded-none"
+                          to={"dashboard"}
+                        >
+                          <i className="ml-4 fa-solid fa-chart-line"></i>
+                          Dashboard
+                        </NavLink>
+                      </li> */}
+                      <li>
+                        <NavLink className="hover:rounded-none" to={"/orders"}>
                           <i className="ml-4 fa-solid fa-clock"></i>Payment
                           History
                         </NavLink>
                       </li>
                       <li>
-                        <a onClick={logout}>
+                        <a className=" hover:rounded-none" onClick={logout}>
                           <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                           Logout
                         </a>
@@ -212,20 +245,27 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-end hidden lg:flex">
         {user ? (
           <div className="dropdown dropdown-end">
-            <button tabindex="0" className="pr-6">
-              <p>
-                <i className="fa-solid fa-bell"></i>
-                <span className="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
-
+            <button tabindex="0" className="pr-6 mt-3">
+              <div class="indicator">
+                <span class="indicator-item badge right-1 badge-xs w-[16px] h-[16px] bg-red-600 text-white">
+                  {userMessageData?.length > 9 ? (
+                    <span>9+</span>
+                  ) : (
+                    <span>{userMessageData?.length}</span>
+                  )}
                 </span>
-              </p>
+                <FiBell className="text-xl" />
+              </div>
             </button>
             <div
               tabindex="0"
               className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
             >
               <div className="card-body p-1">
-                <h3 className="text-xl px-3 pt-2">Notifications! <i className="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <h3 className="text-xl px-3 pt-2">
+                  Notifications!{" "}
+                  <i className="text-yellow-500 fa-solid fa-bell"></i>
+                </h3>
                 <Messages></Messages>
               </div>
             </div>
@@ -271,10 +311,11 @@ const Header = ({ handleThemeChange, theme }) => {
             <label tabindex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-9 rounded-full">
                 <img
-                  src={`${user?.photoURL
-                    ? user?.photoURL
-                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                    }`}
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                  }`}
                 />
               </div>
             </label>
@@ -286,10 +327,11 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div className="avatar">
                   <div className="w-20 rounded-full">
                     <img
-                      src={`${user?.photoURL
-                        ? user?.photoURL
-                        : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                        }`}
+                      src={`${
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                      }`}
                     />
                   </div>
                 </div>
@@ -312,10 +354,20 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
+                <NavLink className="hover:rounded-none" to={"mybooks"}>
+                  <i className="ml-4 fa-solid fa-book"></i>My Books
+                </NavLink>
+              </li>
+              <li>
+                <NavLink className="hover:rounded-none" to={"liveclasses"}>
+                <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                </NavLink>
+              </li>
+              {/* <li>
                 <NavLink to={"dashboard"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
                 </NavLink>
-              </li>
+              </li> */}
               <li>
                 <NavLink to={"/orders"} className="hover:rounded-none">
                   <i className="ml-4 fa-solid fa-clock"></i>Payment History
@@ -407,20 +459,25 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-end lg:hidden flex">
         {user ? (
           <div className="dropdown dropdown-end">
-            <button tabindex="0" className="pr-3">
+            <button tabindex="0" className="pr-3 mt-3">
               <p>
-                <i className="fa-solid fa-bell"></i>
-                <span className="inline-flex absolute text-xs text-left bg-primary rounded-full w-[10px] h-[10px] z-0 left-[6px] bottom-[13px] justify-center text-white">
-
+                <FiBell className="text-xl" />
+                <span className="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-3 h-3 z-0 left-[8px] bottom-[18px] justify-center text-white">
+                  <span className="text-xs -mt-[1.8px]">
+                    {userMessageData?.length}
+                  </span>
                 </span>
               </p>
             </button>
             <div
               tabindex="0"
-              className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 -mr-14"
+              className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72  -mr-14"
             >
               <div className="card-body p-1">
-                <h3 className="text-xl px-3 pt-2">Notifications! <i className="text-yellow-500 fa-solid fa-bell"></i></h3>
+                <h3 className="text-xl px-3 pt-2">
+                  Notifications!{" "}
+                  <i className="text-yellow-500 fa-solid fa-bell"></i>
+                </h3>
                 <Messages></Messages>
               </div>
             </div>

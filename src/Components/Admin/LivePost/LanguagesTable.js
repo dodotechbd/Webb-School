@@ -3,9 +3,10 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-toastify';
 import Swal from 'sweetalert2';
 import primaryAxios from '../../../Api/primaryAxios';
+import Loading from '../../Shared/Loading/Loading';
 
 
-const LanguagesTable = ({ languages, index, refetch}) => {
+const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
 
     const { _id,uname } = languages
 
@@ -15,7 +16,10 @@ const LanguagesTable = ({ languages, index, refetch}) => {
 
       (async () => {
         const { data } = await primaryAxios.put(`/language/${_id}`,MLink)
-        if (data) {
+        if (isLoading) {
+            return <Loading></Loading>;
+          }
+       else if (data) {
             const Toast = Swal.mixin({
                 toast: true,
                 position: "top-right",
@@ -33,8 +37,9 @@ const LanguagesTable = ({ languages, index, refetch}) => {
               });
               reset();
               refetch();
-            
+             
         }
+        
       })();
 
 
