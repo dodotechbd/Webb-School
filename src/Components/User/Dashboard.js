@@ -1,5 +1,5 @@
 import React from 'react';
-import UnderConstruction from './WrongRoute/UnderConstruction';
+import UnderConstruction from '../WrongRoute/UnderConstruction';
 
 const Dashboard = () => {
     return (

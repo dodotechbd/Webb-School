@@ -48,6 +48,7 @@ const Promotional = () => {
             <label for="my-modal-5" className="btn btn-primary btn-sm text-white">
               Close
             </label>
+            
           </div>
         </div>
       </div>

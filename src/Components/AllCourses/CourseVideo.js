@@ -16,51 +16,56 @@ const CourseVideo = () => {
     isLoading,
     refetch,
   } = useQuery(["myCourse", user?.email], () =>
-  primaryAxios.get(`/mycourse?email=${user?.email}`)
-);
-  if(isLoading){
-    return <Loading></Loading>
+    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  );
+  if (isLoading) {
+    return <Loading></Loading>;
   }
 
   const courseData = myCourse?.data?.find((allcard) => allcard.video === video);
 
-  const videoData = courseData?.videos.find((allcard) => allcard.fileName === fileName);
+  const videoData = courseData?.videos.find(
+    (allcard) => allcard.fileName === fileName
+  );
   return (
     <div>
-      <div className="lg:h-96 h-48 md:h-96 w-full rounded-2xl border border-neutral">
-      {videoData?.vurl ? (
-        <ReactPlayer
-        width={"100%"}
-        height={"100%"}
-        controls
-        light={true}
-        url={videoData?.vurl}
-        playing
-      />
-      ):(<div className="w-full h-full bg-base-300 rounded-2xl">
-        <img className="mx-auto lg:w-72 md:w-72 w-40" src="https://github.com/MShafiMS/admission/blob/gh-pages/output-onlinegiftools%20(1).gif?raw=true" alt="error"/>
-        <h1 className="text-xl text-center">The module is not cooked yet!</h1>
-      </div>)}
+      <div className="lg:h-96 h-48 md:h-96 w-full border border-neutral">
+        {videoData?.vurl ? (
+          
+          <ReactPlayer
+            width={"100%"}
+            height={"100%"}
+            controls
+            light={true}
+            url={videoData?.vurl}
+            playing
+          />
+        ) : (
+          <div className="w-full h-full bg-base-300">
+            <img
+              className="mx-auto lg:w-72 md:w-72 w-40"
+              src="https://github.com/MShafiMS/admission/blob/gh-pages/output-onlinegiftools%20(1).gif?raw=true"
+              alt="error"
+            />
+            <h1 className="text-xl text-center">
+              The module is not cooked yet!
+            </h1>
+          </div>
+        )}
       </div>
       <h1 className="text-3xl my-4">{videoData?.name}</h1>
       <label
         for="my-modal-3"
         className="text-error underline cursor-pointer text-xl modal-button"
       >
-        <i className="fa-solid fa-triangle-exclamation mr-3"></i>Copyright warning
+        <i className="fa-solid fa-triangle-exclamation mr-3"></i>Copyright
+        warning
       </label>
 
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-      <div className="modal text-error">
-        <div className="modal-box relative">
-          <label
-            for="my-modal-3"
-            className="btn btn-sm btn-error btn-circle absolute right-2 top-2"
-          >
-            ✕
-          </label>
+      <label for="my-modal-3" class="modal cursor-pointer">
+      <label className="modal-box relative max-w-4xl text-center bg-[#1E3964] text-[#DBC73D]" for="">
           <h1 className="text-3xl">Disclaimer for Webb School</h1>
-
           <p>
             If you require any more information or have any questions about our
             site's disclaimer, please feel free to contact us by email at
@@ -117,8 +122,8 @@ const CourseVideo = () => {
             Should we update, amend or make any changes to this document, those
             changes will be prominently posted here.
           </p>
-        </div>
-      </div>
+        </label>
+      </label>
     </div>
   );
 };

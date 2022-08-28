@@ -42,21 +42,11 @@ const AddReview = () => {
     (async () => {
       const { data } = await primaryAxios.post(`/reviews`, reviewData);
       if (data.acknowledged) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "white",
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1500,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "success",
-          title: "Review Success",
-        });
+        Swal.fire(
+          'Thank You!',
+          'For Your Feedback!',
+          'success'
+        )
         reset();
       }
     })();
@@ -65,7 +55,7 @@ const AddReview = () => {
   return (
     <div class="card bg-base-100">
       <label
-        for="my-modal-3"
+        for="my-modal-5"
         class="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
       >
         ✕
