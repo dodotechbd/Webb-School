@@ -147,10 +147,10 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
                   <select 
                   className='rounded bg-base-300'
                   {...register("time")}>    
-                <option value="4 PM">4 PM</option>
-                 <option value="9 PM">9 PM</option>
-                <option value="10 PM">10 PM</option>
-                <option value=""></option>
+                <option value="04:00 PM">04:00 PM</option>
+                        <option value="09:00 PM">09:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+                        <option value=""></option>
                  </select>
               </label>
               </div>

@@ -87,7 +87,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-              <div className='flex'>
+                <div className='flex'>
                   <div className='px-1'>
                     <div class="avatar ">
                       <div class="w-16 mask mask-squircle ">
@@ -143,8 +143,6 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                     />
                   </label>
                 </div>
-
-
                 <div className='flex justify-between   pt-2'>
                   <div>
                     <label className="input-group input-group-sm ">
@@ -154,10 +152,11 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                       <select
                         className='rounded bg-base-300'
                         {...register("time")}>
-                        <option value="4 PM">4 PM</option>
-                        <option value="9 PM">9 PM</option>
-                        <option value="10 PM">10 PM</option>
                         <option value=""></option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="09:00 PM">09:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+
                       </select>
                     </label>
                   </div>
