@@ -88,6 +88,20 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
                 </label>
               </div>
               <div className="form-control">
+                  <label className="input-group input-group-sm pt-2">
+                    <span className="bg-info text-white uppercase">
+                      Teacher
+                    </span>
+                    <input
+                      {...register(`teacher`)}
+                      type="text"
+                      placeholder="Teacher Name"
+                      className="input bg-base-300 input-sm w-full"
+                      
+                    />
+                  </label>
+                </div>
+              <div className="form-control">
                 <label className="input-group input-group-sm pt-2">
                   <span className="bg-info text-white uppercase">
                     Subject

@@ -10,9 +10,11 @@ const Admission = () => {
             (res) => res.json()
         )
     );
+
     if (isLoading) {
         return <Loading></Loading>;
     }
+    console.log(admission)
     return (
         <tbody>
 
