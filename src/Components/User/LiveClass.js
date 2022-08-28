@@ -1,13 +1,12 @@
 import React from "react";
 import Loader from "../Shared/Loading/Loading";
-import MyCourseCard from "./MyCourseCard";
 import { useQuery } from "react-query";
 import primaryAxios from "../../Api/primaryAxios";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-
-const MyCourses = () => {
-  const [user, loading] = useAuthState(auth);
+import LiveCard from "./LiveCard";
+const LiveClass = () => {
+    const [user, loading] = useAuthState(auth);
   const {
     data: myCourse,
     isLoading,
@@ -15,22 +14,22 @@ const MyCourses = () => {
   } = useQuery(["myCourses", user?.email], () =>
   primaryAxios.get(`/mycourse?email=${user?.email}`)
 );
+  console.log(myCourse?.data);
   if (isLoading) {
     return <Loader></Loader>;
   }
-
-  return (
-    <div id="admission" className="lg:mb-40">
+    return (
+        <div id="admission" className="lg:mb-40">
       <div className="lg:mx-8 mx-4 pt-10">
-        <h1 className="text-3xl pb-5 ">My Courses</h1>
+        <h1 className="text-3xl pb-5 ">Live Classes</h1>
         <div className="grid sm:grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 mb-10">
           {myCourse?.data?.map((allcard) => (
-            <MyCourseCard key={allcard._id} allcard={allcard}></MyCourseCard>
+            <LiveCard key={allcard._id} allcard={allcard}></LiveCard>
           ))}
         </div>
       </div>
     </div>
-  );
+    );
 };
 
-export default MyCourses;
+export default LiveClass;

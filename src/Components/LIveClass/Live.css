@@ -1,0 +1,37 @@
+.cardGlass{
+    backdrop-filter: blur(2px);
+
+    background-color: rgba(255, 255, 255, 0.1);
+    
+    border-radius: 29px;
+    
+    box-shadow: 0px 35px 68px 0px rgba(145, 192, 255, 0.5), inset 0px -11px 16px 0px rgba(145, 192, 255, 0.6), inset 0px 11px 28px 0px rgb(255, 255, 255);
+}
+.button{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #fff;
+    outline: 2px solid #3b82f6;
+    padding: 30px 60px;
+    position: relative;
+    overflow: hidden;
+    transition: color 1s;
+}
+.button:hover{
+    color: blueviolet;
+}
+.button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -50px;
+    height: 100%;
+    background-color: #3b82f6;
+    transform: skew(35deg);
+    z-index: -1;
+    transform: width 1s;
+}
+.button:hover::before{
+    width: 150%;
+}

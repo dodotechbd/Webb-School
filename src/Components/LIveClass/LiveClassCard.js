@@ -8,8 +8,10 @@ const LiveClassCard = ({ live }) => {
 
 
     return (
-        <div>
-            <div className="card w-96 bg-base-300 border border-neutral shadow-xl">
+
+            <div class="card w-96  border  ">
+                <div class="">
+            <div className="card w-96 ">
                 <div className="card-body">
 
                     <h2 className="card-title pl-8">Name:<span className='text-primary'> {slots}</span></h2>
@@ -32,6 +34,7 @@ const LiveClassCard = ({ live }) => {
                 </div>
             </div>
 
+        </div>
         </div>
     );
 };

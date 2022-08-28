@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect} from 'react';
+import { useQuery } from 'react-query';
+
 
 const useLives = () => {
-    const [Lives, setLives] = useState([]);
+    const [job, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch(`https://rocky-escarpment-87440.herokuapp.com/liveData`)
-            .then(res => res.json())
-            .then(data => setLives(data));
+        const { data: job } = useQuery(["jobCourse"], () =>
+        fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+            res.json()
+        )
+    );
     }, [])
 
     return [Lives, setLives];

@@ -40,7 +40,7 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
   return (
     <div className="mx-auto mt-3 card card-compact lg:w-48 w-10/12 bg-base-100 border rounded-md border-neutral">
       <figure>
-        <img src={allcard?.img} alt="Shoes" className="lg:h-28 w-full" />
+        <img src={allcard?.img} alt="Shoes" className="lg:h-full w-full" />
       </figure>
       <div className="">
         <div className="px-2 pt-1 flex justify-between">
