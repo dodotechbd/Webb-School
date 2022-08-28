@@ -124,9 +124,10 @@ function App() {
         <Route path="/audiobook" element={<AudioBooks></AudioBooks>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
-          <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+         
           {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
