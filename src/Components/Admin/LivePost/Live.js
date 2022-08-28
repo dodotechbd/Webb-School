@@ -10,7 +10,6 @@ import LanguagesTable from './LanguagesTable';
 const Live = () => {
 
 
-
     const { data: language, refetch,isLoading } = useQuery(["languageCourse"], () =>
         fetch(`http://localhost:5000/language`).then((res) =>
             res.json()
@@ -19,10 +18,6 @@ const Live = () => {
     if (isLoading) {
         return <Loading></Loading>;
       }
-
-    
-   
-
 
     return (
         <div className=''>
@@ -53,9 +48,7 @@ const Live = () => {
                          <Job></Job>
                          <Admission></Admission>
 
-
-
-                </table>
+                   </table>
 
             </div>
         </div>

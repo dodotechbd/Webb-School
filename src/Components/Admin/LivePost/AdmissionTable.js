@@ -46,7 +46,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
       <tr>
          
           <td>{index + 9}</td>
-          <td>{uname}</td>
+          <td className='uppercase'>{uname}</td>
           <td>
       <label
         for={_id}
@@ -63,7 +63,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
             </p>
             <label
               for={_id}
-              className="btn btn-sm btn-ghost text-white btn-square hover:bg-rose-700"
+              className="btn btn-sm btn-ghost text-white btn-square hover:bg-rose-600"
             >
               ✕
             </label>
@@ -114,6 +114,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
                 <option value="4 PM">4 PM</option>
                  <option value="9 PM">9 PM</option>
                 <option value="10 PM">10 PM</option>
+                <option value=""></option>
                  </select>
               </label>
               </div>
@@ -135,7 +136,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
               <div className="card-actions justify-end pt-3">
                 <button
                   type="submit"
-                  className=" btn font-thin btn-sm btn-info text-white hover:bg-green-700"
+                  className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600"
                 >
                   <i className="fa-solid fa-paper-plane mr-1"></i>Post
                 </button>

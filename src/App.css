@@ -54,6 +54,7 @@
   animation: rotate 1s infinite linear;
 }
 
+
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
