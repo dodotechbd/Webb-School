@@ -15,9 +15,16 @@ import Support from "../../Components/../Support/Support"
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { BsArrowUp } from "react-icons/bs";
 const Home = () => {
+
   return (
+    
     <div>
+
       <Hero></Hero>
+      {/* messenger chat */}
+      <MessengerCustomerChat 
+        pageId="101878912628102" appId="3150275291906230"
+      />
       <Navigation></Navigation>
       <Banner></Banner>
       {/* <Courses></Courses> */}
@@ -37,6 +44,7 @@ const Home = () => {
         pageId="101878912628102" appId="3150275291906230"
       />
     </div>
+    
   );
 };
 
