@@ -18,7 +18,7 @@ const Home = () => {
 
   return (
     
-    <div>fd
+    <div>
       <Hero></Hero>
       {/* messenger chat */}
       <MessengerCustomerChat 
