@@ -46,7 +46,7 @@ const AdmissionTable = ({index,admissions ,isLoading}) => {
       <tr>
          
           <td>{index + 9}</td>
-          <td>{uname}</td>
+          <td className='uppercase'>{uname}</td>
           <td>
       <label
         for={_id}

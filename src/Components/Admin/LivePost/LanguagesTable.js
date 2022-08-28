@@ -50,11 +50,11 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
         <tr>
            
             <td>{index + 1}</td>
-            <td>{uname}</td>
+            <td className='uppercase'>{uname}</td>
             <td>
         <label
           for={_id}
-          className="btn modal-button btn-xs btn-outline btn-info hover:text-white"
+          className="btn modal-button btn-xs btn-outline btn-info  hover:text-white "
         >
           Post Link
         </label>
@@ -64,6 +64,7 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
             <div className="px-3 pt-3 pb-2 bg-info flex justify-between">
               <p className="text-xl text-white">
                 <i className="fa-solid fa-paper-plane"></i> Post Your google meet link
+                
               </p>
               <label
                 for={_id}
