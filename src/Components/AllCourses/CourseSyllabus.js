@@ -25,6 +25,7 @@ const CourseSyllabus = ({ course }) => {
     job?.find((allcard) => allcard.uname === uname);
   return (
     <>
+    
       <div
         tabIndex="0"
         className="collapse collapse-arrow border-t border-neutral px-2"

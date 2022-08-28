@@ -4,49 +4,49 @@ import Swal from 'sweetalert2';
 import primaryAxios from '../../../Api/primaryAxios';
 import Loading from '../../Shared/Loading/Loading';
 
-const JobTable = ({jobs,index , isLoading}) => {
-    const { _id,uname, img } = jobs
-
-    
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = (MLink) => {
-
-      (async () => {
-        const { data } = await primaryAxios.put(`/job/${_id}`,MLink)
-        if (isLoading) {
-            return <Loading></Loading>;
-          }
-      else  if (data) {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-right",
-                iconColor: "green",
-                customClass: {
-                  popup: "colored-toast",
-                },
-                showConfirmButton: false,
-                timer: 1500,
-                timerProgressBar: true,
-              });
-              await Toast.fire({
-                icon: "success",
-                title: "Success",
-              });
-              reset();
-            
-            
-        }
-      })();
+const JobTable = ({ jobs, index, isLoading }) => {
+  const { _id, uname, img, name } = jobs
 
 
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (MLink) => {
 
-    }
-    return (
+    (async () => {
+      const { data } = await primaryAxios.put(`/job/${_id}`, MLink)
+      if (isLoading) {
+        return <Loading></Loading>;
+      }
+      else if (data) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-right",
+          iconColor: "green",
+          customClass: {
+            popup: "colored-toast",
+          },
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+        });
+        await Toast.fire({
+          icon: "success",
+          title: "Success",
+        });
+        reset();
 
-        <tr>
-           
-            <td>{index + 5}</td>
-            <td>
+
+      }
+    })();
+
+
+
+  }
+  return (
+
+    <tr>
+
+      <td>{index + 5}</td>
+      <td>
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
@@ -57,9 +57,9 @@ const JobTable = ({jobs,index , isLoading}) => {
             </div>
           </div>
         </div>
-          </td>
-            <td className='uppercase'>{uname}</td>
-            <td>
+      </td>
+      <td className='uppercase'>{name}</td>
+      <td>
         <label
           for={_id}
           className="btn modal-button btn-xs btn-outline btn-info hover:text-white"
@@ -82,7 +82,7 @@ const JobTable = ({jobs,index , isLoading}) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-              <div className='flex'>
+                <div className='flex'>
                   <div className='px-1'>
                     <div class="avatar ">
                       <div class="w-16 mask mask-squircle ">
@@ -101,12 +101,12 @@ const JobTable = ({jobs,index , isLoading}) => {
                       Google Meet Link
                     </span>
                     <input
-                  {...register(`MLink`)}
-                  className="input bg-base-300 input-sm w-full"
-                  placeholder="Google meet link"
-                  type="link"
-                
-                />
+                      {...register(`MLink`)}
+                      className="input bg-base-300 input-sm w-full"
+                      placeholder="Google meet link"
+                      type="link"
+
+                    />
                   </label>
                 </div>
                 <div className="form-control">
@@ -119,7 +119,7 @@ const JobTable = ({jobs,index , isLoading}) => {
                       type="text"
                       placeholder="Teacher name"
                       className="input bg-base-300 input-sm w-full"
-                      
+
                     />
                   </label>
                 </div>
@@ -133,40 +133,40 @@ const JobTable = ({jobs,index , isLoading}) => {
                       type="text"
                       placeholder="Subject here"
                       className="input bg-base-300 input-sm w-full"
-                    
+
                     />
                   </label>
                 </div>
-                
-                <div className='flex justify-between   pt-2'>  
-                   <div>
-                   <label className="input-group input-group-sm ">
-                    <span className="bg-info text-white uppercase ">
-                      Time
-                    </span>
-                    <select 
-                    className='rounded bg-base-300 '
-                    {...register("time")}>    
-                  <option  value="4 PM">4 PM</option>
-                   <option value="9 PM">9 PM</option>
-                  <option value="10 PM">10 PM</option>
-                  <option value=""></option>
-                   </select>
-                </label>
-                </div>
-                <div>
-                <label className="input-group input-group-sm">
-                    <span className="bg-info text-white uppercase">
-                      Date
-                    </span>
-                <input
-                  {...register(`date`)}
-                  className="input input-bordered input-sm w-full  bg-base-300 max-w-xs"
-                  placeholder="Google meet link"
-                  type="Date"
-                />
-                </label>
-                </div>
+
+                <div className='flex justify-between   pt-2'>
+                  <div>
+                    <label className="input-group input-group-sm ">
+                      <span className="bg-info text-white uppercase ">
+                        Time
+                      </span>
+                      <select
+                        className='rounded bg-base-300 '
+                        {...register("time")}>
+                        <option value=""></option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="09:00 PM">09:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div>
+                    <label className="input-group input-group-sm">
+                      <span className="bg-info text-white uppercase">
+                        Date
+                      </span>
+                      <input
+                        {...register(`date`)}
+                        className="input input-bordered input-sm w-full  bg-base-300 max-w-xs"
+                        placeholder="Google meet link"
+                        type="Date"
+                      />
+                    </label>
+                  </div>
                 </div>
 
                 <div className="card-actions justify-end pt-3">
@@ -182,10 +182,10 @@ const JobTable = ({jobs,index , isLoading}) => {
             <div></div>
           </div>
         </div>
-      </td> 
-     </tr>
-        
-    );
+      </td>
+    </tr>
+
+  );
 };
 
 export default JobTable;

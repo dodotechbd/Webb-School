@@ -29,7 +29,10 @@ const CourseVideo = () => {
   );
   return (
     <div>
+     
+
       <div className="lg:h-96 h-48 md:h-96 w-full border border-neutral">
+       
         {videoData?.vurl ? (
           
           <ReactPlayer
