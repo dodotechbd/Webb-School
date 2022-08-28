@@ -23,7 +23,7 @@ const AcadamicBook = ({ acadamicbook }) => {
               )}
             </h1>
             <p className="text-lg">{description}</p>
-            <p className="text-lg text-primary font-bold">৳{price}</p>
+            <p className="text-lg text-primary font-bold">${price}</p>
           </div>
         </div>
       </div>

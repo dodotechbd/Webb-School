@@ -1,20 +1,22 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
 import { AudioPlayer } from "./AudioPlayer";
 import Rating from "react-rating";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import { useQuery } from "react-query";
+import Loader from "../Shared/Loading/Loading";
+import { Link } from "react-router-dom";
 
 const AudioBookDetails = () => {
-  const { audiobookId } = useParams();
-  const [details, setDetails] = useState([]);
-  useEffect(() => {
-    fetch("/audiobook.json")
-      .then((res) => res.json())
-      .then((data) => setDetails(data));
-  }, []);
+  const { bookId } = useParams();
+  const { data: audiobook, isLoading } = useQuery(["audiobooks"], () =>
+    fetch(`http://localhost:5000/audiobook`).then((res) => res.json())
+  );
+  if (isLoading) {
+    return <Loader></Loader>;
+  }
 
-  const newDetails = details.find((s) => s._id === audiobookId);
-  console.log(newDetails);
+  const newDetails = audiobook.find((s) => s._id === bookId);
   //   console.log(newService);
   return (
     <div className="mb-12">
@@ -42,23 +44,23 @@ const AudioBookDetails = () => {
                   <span className="text-2xl text-white drop-shadow-lg">
                     {newDetails?.name} AudioBook
                   </span>
-                  
                   <div className="flex my-2 items-center gap-3">
                     <div className="avatar">
                       <div className="w-16 rounded-lg">
-                      <img src={newDetails?.img2} alt="" />
+                        <img src={newDetails?.img2} alt="" />
                       </div>
                     </div>
                     <div>
-                      <p className="text-xl text-white">{newDetails?.speaker}</p>
+                      <p className="text-xl text-white">
+                        {newDetails?.speaker}
+                      </p>
                     </div>
                   </div>
-                  
                 </h1>
               </div>
             </div>
             <div className="bg-base-200 rounded-b-2xl hidden">
-              <AudioPlayer></AudioPlayer>
+              <AudioPlayer newDetails={newDetails}></AudioPlayer>
             </div>
           </div>
           <div className="border border-neutral rounded-lg px-4">
@@ -180,9 +182,11 @@ const AudioBookDetails = () => {
               </div>
             </div>
             <btn>
-              <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
-                Buy Now
-              </button>
+              <Link to={`/bookcheckout/${bookId}`}>
+                <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
+                  Buy Now
+                </button>
+              </Link>
             </btn>
           </div>
         </div>

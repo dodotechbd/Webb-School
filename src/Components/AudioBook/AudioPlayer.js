@@ -2,7 +2,8 @@ import React, { useState, useRef, useEffect } from "react";
 import { FaPlay } from "react-icons/fa";
 import { FaPause } from "react-icons/fa";
 
-const AudioPlayer = () => {
+const AudioPlayer = ({ newDetails }) => {
+  const { audio } = newDetails; 
   // state
   const [isPlaying, setIsPlaying] = useState(false);
   const [duration, setDuration] = useState(0);
@@ -73,7 +74,7 @@ const AudioPlayer = () => {
         <div>
       <audio
         ref={audioPlayer}
-        src="https://drive.google.com/uc?export=download&id=1gpbeeCK4ZVTn5tlSpl4oD9Moq2f6Wa5w"
+        src={audio}
         preload="metadata"
       ></audio>
       <div className="">

@@ -1,6 +1,5 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { BsFillPlayCircleFill } from 'react-icons/bs'
 
 const AudioBook = ({ audiobook }) => {
   const { _id, name, img, price, deal } = audiobook;
@@ -14,7 +13,7 @@ const AudioBook = ({ audiobook }) => {
 
       <figure>
         <img
-          className="mx-auto mt-4 lg:w-52 sm:w-48 rounded-lg text-center"
+          className="mx-auto lg:mt-4 md:mt-4 md:w-52 lg:w-52 w-full rounded-lg text-center"
           src={img}
           alt="Books"
         />

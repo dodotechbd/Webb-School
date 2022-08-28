@@ -69,9 +69,14 @@ const Checkout = () => {
                     Month
                   </p>
                 </div>
-                <p className="font-bold mt-4 text-2xl text-info rounded-md bg-base-100 p-3 col-span-2">
-                  Pay: ৳{courseData?.price}
-                </p>
+                <div className="flex text-lg font-bold bg-opacity-20 bg-[#495CA9] p-4 my-4 rounded-xl justify-between">
+                  <div>
+                    <p>Price</p>
+                  </div>
+                  <div>
+                    <p className="text-2xl">${courseData?.price}</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

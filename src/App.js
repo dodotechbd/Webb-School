@@ -51,8 +51,6 @@ import Bkash from "./Components/Payments/Bkash";
 
 import AudioBooks from "./Components/AudioBook/AudioBooks";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
-
-import PaidCourse from "./Components/User/PaidCourse";
 import UpdateProfile from "./Components/User/UpdateProfile";
 import Message from "./Components/Admin/Message";
 import BookDetail from "./Components/BookStore/BookDetail";
@@ -106,8 +104,10 @@ function App() {
           path="/skillbook/:bookId"
           element={<BookDetail></BookDetail>}
         ></Route>
-        <Route path='/audiobook/:audiobookId'
-          element={<AudioBookDetails></AudioBookDetails>}></Route>
+        <Route
+          path="/audiobook/:bookId"
+          element={<AudioBookDetails></AudioBookDetails>}
+        ></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route
           path="/admission"
@@ -130,7 +130,6 @@ function App() {
           ></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route path="/profile" element={<Profile></Profile>}>
-            <Route path="/profile" element={<PaidCourse></PaidCourse>}></Route>
             <Route
               path="/profile/update"
               element={<UpdateProfile></UpdateProfile>}
@@ -197,7 +196,6 @@ function App() {
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
           </Route>
-
         </Route>
         {/* courses  */}
         <Route
@@ -212,7 +210,10 @@ function App() {
         </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
-        <Route path="/liveclasses" element={<MyLiveClass></MyLiveClass>}></Route>
+        <Route
+          path="/liveclasses"
+          element={<MyLiveClass></MyLiveClass>}
+        ></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route

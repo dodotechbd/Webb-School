@@ -48,11 +48,11 @@ const OrderCard = ({ order, index, refetch }) => {
         <p>Payment Status: <button className="uppercase font-thin text-green-500">
           {status}
         </button></p>
-        {pdfLink && 
+        {/* {pdfLink && 
         (
           <a className="pt-1 rounded-md border-green-500 border-2 text-green-500 font-bold btn-sm hover:text-red-400 hover:border-red-400" href={pdfLink}>Download</a>
         )
-        }
+        } */}
         </div>
       </div>
     </div>

@@ -16,8 +16,11 @@ const BookCheckout = () => {
       (res) => res.json()
     )
   );
-
+  const { data: audiobook } = useQuery(["audiobook"], () =>
+    fetch(`http://localhost:5000/audiobook`).then((res) => res.json())
+  );
   const bookData =
+    audiobook?.find((s) => s._id === bookId) ||
     skillbook?.find((s) => s._id === bookId) ||
     academicbook?.find((s) => s._id === bookId);
   return (
@@ -29,21 +32,40 @@ const BookCheckout = () => {
           </p>
           <div className="p-6 bg-base-300 border-[0.5px] border-neutral rounded-2xl">
             <div className="lg:flex gap-6 items-center">
-              <img src={bookData?.img} className="w-8/12 mx-auto rounded-lg" alt="" />
+              <img
+                src={bookData?.img}
+                className="h-96 mx-auto rounded-lg"
+                alt=""
+              />
               <div className="card-body p-0 mx-auto w-full">
                 <h1 className="text-2xl font-bold my-2">{bookData?.name}</h1>
                 <div className="grid lg:grid-cols-2 gap-3">
-                  <div className="flex items-center">
-                    <p className="p-3 text-2xl bg-green-300 bg-opacity-25 text-center rounded-md mr-4">
-                      <i className="fa-solid fa-file-lines  text-green-500"></i>
-                    </p>
-                    <p className="uppercase w-6/12 lg:w-full">
-                      Pages <br />{" "}
-                      <span className="uppercase text-[#efad1e]">
-                        {bookData?.pages}
-                      </span>
-                    </p>
-                  </div>
+                  {bookData?.pages && (
+                    <div className="flex items-center">
+                      <p className="p-3 text-2xl bg-green-300 bg-opacity-25 text-center rounded-md mr-4">
+                        <i className="fa-solid fa-file-lines  text-green-500"></i>
+                      </p>
+                      <p className="uppercase w-6/12 lg:w-full">
+                        Pages <br />{" "}
+                        <span className="uppercase text-[#efad1e]">
+                          {bookData?.pages}
+                        </span>
+                      </p>
+                    </div>
+                  )}
+                  {bookData?.addedate && (
+                    <div className="flex items-center">
+                      <p className="p-3 text-2xl bg-green-300 bg-opacity-25 text-center rounded-md mr-4">
+                        <i className="fa-solid fa-file-lines  text-green-500"></i>
+                      </p>
+                      <p className="uppercase w-6/12 lg:w-full">
+                        Addedate <br />{" "}
+                        <span className="uppercase text-[#efad1e]">
+                          {bookData?.addedate}
+                        </span>
+                      </p>
+                    </div>
+                  )}
                   <div className="flex items-center">
                     <p className="p-3 text-2xl bg-red-300 bg-opacity-25 text-center rounded-md mr-4">
                       <i className="fa-solid fa-database    text-red-500"></i>
@@ -55,17 +77,32 @@ const BookCheckout = () => {
                       </span>
                     </p>
                   </div>
-                  <div className="flex items-center">
-                    <p className="p-3 text-2xl bg-pink-300 bg-opacity-25 text-center rounded-md mr-4">
-                      <i className="fa-solid fa-dice-d6    text-pink-500"></i>
-                    </p>
-                    <p className="uppercase w-6/12 lg:w-full">
-                      Interactive <br />{" "}
-                      <span className="uppercase text-[#efad1e]">
-                        {bookData?.interactive}
-                      </span>
-                    </p>
-                  </div>
+                  {bookData?.interactive && (
+                    <div className="flex items-center">
+                      <p className="p-3 text-2xl bg-pink-300 bg-opacity-25 text-center rounded-md mr-4">
+                        <i className="fa-solid fa-dice-d6    text-pink-500"></i>
+                      </p>
+                      <p className="uppercase w-6/12 lg:w-full">
+                        Interactive <br />{" "}
+                        <span className="uppercase text-[#efad1e]">
+                          {bookData?.interactive}
+                        </span>
+                      </p>
+                    </div>
+                  )}
+                  {bookData?.listener && (
+                    <div className="flex items-center">
+                      <p className="p-3 text-2xl bg-pink-300 bg-opacity-25 text-center rounded-md mr-4">
+                        <i className="fa-solid fa-dice-d6    text-pink-500"></i>
+                      </p>
+                      <p className="uppercase w-6/12 lg:w-full">
+                        Listener <br />{" "}
+                        <span className="uppercase text-[#efad1e]">
+                          {bookData?.listener}
+                        </span>
+                      </p>
+                    </div>
+                  )}
                   <div className="flex items-center">
                     <p className="p-3 text-2xl bg-yellow-300 bg-opacity-25 text-center rounded-md mr-4">
                       <i className="fa-solid fa-file-pdf text-yellow-500"></i>

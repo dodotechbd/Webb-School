@@ -24,7 +24,7 @@ const AllCourseCard = ({ allcard }) => {
        hover:-translate-y-3 border-neutral text-warning transform transition duration-300"
       >
         <figure>
-          <img src={allcard?.img} alt="Shoes" className="h-44 w-full" />
+          <img src={allcard?.img} alt="Shoes" className="h-full w-full" />
         </figure>
         <div className="">
           <div className="px-2 pt-1 flex justify-between">
