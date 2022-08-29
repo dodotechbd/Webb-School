@@ -4,6 +4,7 @@ const Support = () => {
   return (
     <div className="py-5 px-5 border-t border-b border-neutral">
       <div className="hero-content flex-col lg:flex-row-reverse">
+        {/* image import */}
         <img src={support} className="lg:w-6/12" />
         <div>
           <h1 className="text-warning text-3xl font-bold mt-10">
