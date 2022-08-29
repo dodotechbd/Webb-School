@@ -16,10 +16,10 @@ const JobCard = ({jobCourse}) => {
             <img src={img} alt="Shoes" />
           </figure>
           <div>
-            <h2 className="text-2xl text-center p-5">{name}</h2>
+            <h2 className="text-xl text-left px-4 py-2">{name.slice(0, 21)}</h2>
 
             <div className="card-actions justify-center">
-              <div className="text-center text-lg uppercase text-primary border-t w-full border-neutral p-2">
+              <div className="text-center text-md uppercase text-primary border-t w-full border-neutral p-2">
                 See Details
               </div>
             </div>

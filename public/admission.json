@@ -1,22 +1,21 @@
 [
   {
-    "_id": "62927935a2fdc60c011f1414",
     "uname": "varsity-admission-course",
-    "name": "Varsity Admission Course - 2022",
+    "name": "University Admission Course - 2022",
     "badge": "TOP",
     "link": "Introduction",
-    "img": "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
-    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "topica": "Provident cupiditate",
-    "topicb": "Provident cupiditate",
-    "topicc": "Provident cupiditate",
-    "topicd": "Provident cupiditate",
-    "instructor": "Programming Hero",
+    "img": "https://i.ibb.co/VwHX8jX/uac.png",
+    "desc": "Improve Your English Communication Skills. Write and speak more professionally in English to increase your business success.",
+    "abouta": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutb": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutc": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "topica": "Professional",
+    "topicb": "Email Writing",
+    "topicc": "Presentation",
+    "topicd": "Communication",
+    "instructor": "MD Badsha",
     "instructoraddress": "CTG, Bangladesh",
-    "instructorb": "Programming Hero",
+    "instructorb": "MD Badsha",
     "instructorbaddress": "CTG, Bangladesh",
     "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
@@ -32,34 +31,44 @@
         "name": "Next",
         "fileName": "next",
         "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      },
+      {
+        "name": "Introductionb",
+        "fileName": "Introductionb",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Nextb",
+        "fileName": "nextb",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
       }
     ],
     "file": [
       {
-        "id": "1",
         "title": "First Video",
         "details": [
           {
-            "id": "2",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "3",
+            "name": "Next",
             "fileName": "next"
           }
         ]
       },
       {
-        "id": "4",
         "title": "Second Video",
         "details": [
           {
-            "id": "5",
-            "fileName": "Introduction"
+            "name": "Introductionb",
+            "fileName": "Introductionb",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "6",
-            "fileName": "next"
+            "name": "Nextb",
+            "fileName": "nextb"
           }
         ]
       }
@@ -68,23 +77,22 @@
     "price": "1600"
   },
   {
-    "_id": "2",
     "uname": "medical-admission-course",
     "name": "Medical Admission Course - 2022",
     "badge": "TOP",
     "link": "Introduction",
-    "img": "https://images.unsplash.com/photo-1530026186672-2cd00ffc50fe?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
-    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "topica": "Provident cupiditate",
-    "topicb": "Provident cupiditate",
-    "topicc": "Provident cupiditate",
-    "topicd": "Provident cupiditate",
-    "instructor": "Programming Hero",
+    "img": "https://i.ibb.co/FxTDdLp/mac.png",
+    "desc": "Improve Your English Communication Skills. Write and speak more professionally in English to increase your business success.",
+    "abouta": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutb": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutc": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "topica": "Professional",
+    "topicb": "Email Writing",
+    "topicc": "Presentation",
+    "topicd": "Communication",
+    "instructor": "MD Badsha",
     "instructoraddress": "CTG, Bangladesh",
-    "instructorb": "Programming Hero",
+    "instructorb": "MD Badsha",
     "instructorbaddress": "CTG, Bangladesh",
     "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
@@ -100,34 +108,44 @@
         "name": "Next",
         "fileName": "next",
         "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      },
+      {
+        "name": "Introductionb",
+        "fileName": "Introductionb",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Nextb",
+        "fileName": "nextb",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
       }
     ],
     "file": [
       {
-        "id": "7",
         "title": "First Video",
         "details": [
           {
-            "id": "8",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "9",
+            "name": "Next",
             "fileName": "next"
           }
         ]
       },
       {
-        "id": "10",
         "title": "Second Video",
         "details": [
           {
-            "id": "11",
-            "fileName": "Introduction"
+            "name": "Introductionb",
+            "fileName": "Introductionb",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "12",
-            "fileName": "next"
+            "name": "Nextb",
+            "fileName": "nextb"
           }
         ]
       }
@@ -135,22 +153,21 @@
     "price": "1600"
   },
   {
-    "_id": "3",
     "uname": "medical-admission-q-solve",
     "name": "Medical Admission Q. Solve Course",
     "link": "Introduction",
-    "img": "https://images.unsplash.com/photo-1606326608606-aa0b62935f2b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80",
-    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
-    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "topica": "Provident cupiditate",
-    "topicb": "Provident cupiditate",
-    "topicc": "Provident cupiditate",
-    "topicd": "Provident cupiditate",
-    "instructor": "Programming Hero",
+    "img": "https://i.ibb.co/1fNJtxv/maqsc.png",
+    "desc": "Improve Your English Communication Skills. Write and speak more professionally in English to increase your business success.",
+    "abouta": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutb": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutc": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "topica": "Professional",
+    "topicb": "Email Writing",
+    "topicc": "Presentation",
+    "topicd": "Communication",
+    "instructor": "MD Badsha",
     "instructoraddress": "CTG, Bangladesh",
-    "instructorb": "Programming Hero",
+    "instructorb": "MD Badsha",
     "instructorbaddress": "CTG, Bangladesh",
     "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
@@ -166,34 +183,44 @@
         "name": "Next",
         "fileName": "next",
         "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      },
+      {
+        "name": "Introductionb",
+        "fileName": "Introductionb",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Nextb",
+        "fileName": "nextb",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
       }
     ],
     "file": [
       {
-        "id": "13",
         "title": "First Video",
         "details": [
           {
-            "id": "14",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "15",
+            "name": "Next",
             "fileName": "next"
           }
         ]
       },
       {
-        "id": "16",
         "title": "Second Video",
         "details": [
           {
-            "id": "17",
-            "fileName": "Introduction"
+            "name": "Introductionb",
+            "fileName": "Introductionb",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "18",
-            "fileName": "next"
+            "name": "Nextb",
+            "fileName": "nextb"
           }
         ]
       }
@@ -201,22 +228,21 @@
     "price": "1600"
   },
   {
-    "_id": "4",
     "uname": "varsity-admission-q-solve",
-    "name": "Varsity Admission Q. Solve Course",
+    "name": "University Admission Q. Solve Course",
     "link": "Introduction",
-    "img": "https://images.unsplash.com/photo-1501290836517-b22a21c522a4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1332&q=80",
-    "desc": "Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi",
-    "abouta": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutb": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "aboutc": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo, blanditiis recusandae asperiores molestias esse minima quam placeat animi, aperiam officia adipisci pariatur laboriosam eum facilis.",
-    "topica": "Provident cupiditate",
-    "topicb": "Provident cupiditate",
-    "topicc": "Provident cupiditate",
-    "topicd": "Provident cupiditate",
-    "instructor": "Programming Hero",
+    "img": "https://i.ibb.co/XCjD9r8/uaqsc.png",
+    "desc": "Improve Your English Communication Skills. Write and speak more professionally in English to increase your business success.",
+    "abouta": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutb": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "aboutc": "This Specialization helps you improve your professional communication in English for successful business interactions. Each course focuses on a particular area of communication in English:  writing emails, speaking at meetings and interviews, giving presentations, and networking online.",
+    "topica": "Professional",
+    "topicb": "Email Writing",
+    "topicc": "Presentation",
+    "topicd": "Communication",
+    "instructor": "MD Badsha",
     "instructoraddress": "CTG, Bangladesh",
-    "instructorb": "Programming Hero",
+    "instructorb": "MD Badsha",
     "instructorbaddress": "CTG, Bangladesh",
     "instructorimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
     "instructorbimg": "https://github.githubassets.com/images/modules/profile/achievements/yolo-default.png",
@@ -232,34 +258,44 @@
         "name": "Next",
         "fileName": "next",
         "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
+      },
+      {
+        "name": "Introductionb",
+        "fileName": "Introductionb",
+        "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
+      },
+      {
+        "name": "Nextb",
+        "fileName": "nextb",
+        "vurl": "https://www.youtube.com/embed/7ABgJxVP34Q"
       }
     ],
     "file": [
       {
-        "id": "19",
         "title": "First Video",
         "details": [
           {
-            "id": "20",
-            "fileName": "Introduction"
+            "name": "Introduction",
+            "fileName": "Introduction",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "21",
+            "name": "Next",
             "fileName": "next"
           }
         ]
       },
       {
-        "id": "24",
         "title": "Second Video",
         "details": [
           {
-            "id": "22",
-            "fileName": "Introduction"
+            "name": "Introductionb",
+            "fileName": "Introductionb",
+            "vurl": "https://www.youtube.com/embed/_CdyZX2OBMk"
           },
           {
-            "id": "23",
-            "fileName": "next"
+            "name": "Nextb",
+            "fileName": "nextb"
           }
         ]
       }

@@ -15,7 +15,6 @@ const MyCourses = () => {
   } = useQuery(["myCourses", user?.email], () =>
   primaryAxios.get(`/mycourse?email=${user?.email}`)
 );
-  console.log(myCourse?.data);
   if (isLoading) {
     return <Loader></Loader>;
   }

@@ -12,6 +12,7 @@ const Messages = () => {
   const {
     data: messageData,
     isLoading,
+    refetch,
   } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
       res.json()
@@ -38,6 +39,7 @@ const Messages = () => {
             <MessageHistory
                 key={message?._id}
                 message={message}
+                refetch={refetch}
               ></MessageHistory>
           </div>
         ))}

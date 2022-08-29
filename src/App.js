@@ -51,14 +51,18 @@ import Bkash from "./Components/Payments/Bkash";
 
 import AudioBooks from "./Components/AudioBook/AudioBooks";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
-
-import PaidCourse from "./Components/User/PaidCourse";
 import UpdateProfile from "./Components/User/UpdateProfile";
 import Message from "./Components/Admin/Message";
 import BookDetail from "./Components/BookStore/BookDetail";
 import BookCheckout from "./Components/BookStore/BookCheckout";
 import Chat from "./Components/Chat/Chat";
 import MyBooks from "./Components/User/MyBooks";
+import MyEbooks from "./Components/User/MyEbooks";
+import MyAudioBooks from "./Components/User/MyAudioBooks";
+import ManageReview from "./Components/Admin/ManageReview/ManageReview";
+import CourseReview from "./Components/Admin/ManageReview/CourseReview";
+import BookReview from "./Components/Admin/ManageReview/BookReview";
+import Special from "./Components/Admin/Courses/Special";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -106,8 +110,10 @@ function App() {
           path="/skillbook/:bookId"
           element={<BookDetail></BookDetail>}
         ></Route>
-        <Route path='/audiobook/:audiobookId'
-          element={<AudioBookDetails></AudioBookDetails>}></Route>
+        <Route
+          path="/audiobook/:bookId"
+          element={<AudioBookDetails></AudioBookDetails>}
+        ></Route>
         <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
         <Route
           path="/admission"
@@ -119,9 +125,10 @@ function App() {
         <Route path="/audiobook" element={<AudioBooks></AudioBooks>}></Route>
         <Route path="/Login" element={<Login></Login>}></Route>
         <Route path="/reset" element={<Reset></Reset>}></Route>
+        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
-          <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+         
           {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
@@ -130,7 +137,6 @@ function App() {
           ></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route path="/profile" element={<Profile></Profile>}>
-            <Route path="/profile" element={<PaidCourse></PaidCourse>}></Route>
             <Route
               path="/profile/update"
               element={<UpdateProfile></UpdateProfile>}
@@ -155,14 +161,18 @@ function App() {
         <Route element={<RequireAdmin></RequireAdmin>}>
           <Route path="/admin" element={<Admin></Admin>}>
             <Route path="/admin" element={<Admins></Admins>}></Route>
-            <Route path="/admin/courses" element={<Manage></Manage>}>
+            <Route path="/admin/courses/manage" element={<Manage></Manage>}>
               <Route
-                path="/admin/courses/language"
+                path="/admin/courses/manage"
+                element={<Special></Special>}
+              ></Route>
+              <Route
+                path="/admin/courses/manage/language"
                 element={<Language></Language>}
               ></Route>
-              <Route path="/admin/courses/job" element={<Job></Job>}></Route>
+              <Route path="/admin/courses/manage/job" element={<Job></Job>}></Route>
               <Route
-                path="/admin/courses/admission"
+                path="/admin/courses/manage/admission"
                 element={<Admission></Admission>}
               ></Route>
             </Route>
@@ -174,7 +184,10 @@ function App() {
               path="/admin/academicbookss"
               element={<AcademicBookss></AcademicBookss>}
             ></Route>
-            <Route path="/admin/post" element={<Post></Post>}></Route>
+            <Route path="/admin/reviews" element={<ManageReview></ManageReview>}>
+              <Route path="/admin/reviews/course" element={<CourseReview></CourseReview>}></Route>
+              <Route path="/admin/reviews/book" element={<BookReview></BookReview>}></Route>
+            </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
 
             <Route
@@ -197,7 +210,6 @@ function App() {
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
           </Route>
-
         </Route>
         {/* courses  */}
         <Route
@@ -212,7 +224,12 @@ function App() {
         </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
-        <Route path="/liveclasses" element={<MyLiveClass></MyLiveClass>}></Route>
+        <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
+        <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
+        <Route
+          path="/liveclasses"
+          element={<MyLiveClass></MyLiveClass>}
+        ></Route>
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route

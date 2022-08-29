@@ -40,13 +40,13 @@ const AllCourseView = () => {
   );
   const reviewData = reviews?.filter((allcard) => allcard.courseName === uname);
   const ratingData = reviewData?.map((allcard) => allcard.rating);
-  const totalRating = ratingData?.reduce((a, b) => a + b, 0)
+  const totalRating = ratingData?.reduce((a, b) => a + b, 0);
   const avgRating = totalRating / ratingData?.length;
   // console.log(ratingData);
   if (isLoading) {
     return <Loading></Loading>;
   }
-  
+
   return (
     <div className="hero bg-base-100 my-10">
       <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
@@ -116,7 +116,7 @@ const AllCourseView = () => {
           </h1>
           <p className="pt-3 text-lg">{courseData?.desc}</p>
           <div className="py-3">
-          {courseData?.badge ? (
+            {courseData?.badge ? (
               <div className="badge rounded-none font-bold text-base-100 bg-info mr-2">
                 Bestseller
               </div>
@@ -130,14 +130,14 @@ const AllCourseView = () => {
             ) : (
               <></>
             )}
-          <Rating
-                className="text-[#FAAF00] mr-2"
-                initialRating={avgRating}
-                readonly
-                emptySymbol={<ImStarEmpty />}
-                fullSymbol={<ImStarFull />}
-              />
-              <span className="opacity-70">({ratingData?.length} ratings)</span>
+            <Rating
+              className="text-[#FAAF00] mr-2"
+              initialRating={avgRating}
+              readonly
+              emptySymbol={<ImStarEmpty />}
+              fullSymbol={<ImStarFull />}
+            />
+            <span className="opacity-70">({ratingData?.length} ratings)</span>
           </div>
           <div className="lg:h-80 h-48 md:h-96 w-full border border-neutral">
             <ReactPlayer
@@ -290,7 +290,9 @@ const AllCourseView = () => {
             </div>
           </div> */}
           <div className="lg:block md:block hidden">
-            <h1 className="text-2xl mt-6 mb-2">Reviews({ratingData?.length})</h1>
+            <h1 className="text-2xl mt-6 mb-2">
+              Reviews({ratingData?.length})
+            </h1>
             <div className="flex flex-col">
               {reviewData
                 ?.slice(0)

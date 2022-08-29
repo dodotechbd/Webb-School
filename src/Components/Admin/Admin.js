@@ -37,7 +37,7 @@ const Admin = () => {
           <label for="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-3 overflow-y-auto w-72 border-r border-neutral bg-base-200 text-base-content gap-3">
             <li>
-              <NavLink to={"/admin/courses/language"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
+              <NavLink to={"/admin/courses/manage"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/academicbookss"}><i className="fa-solid fa-book"></i>Manage Academic Books</NavLink>
@@ -49,10 +49,10 @@ const Admin = () => {
               <NavLink to={"/admin/LivePost/Live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/post"}><i className="fa-solid fa-circle-play"></i>Post Course Video</NavLink>
+              <NavLink to={"/admin/reviews/course"}><i className="fa-solid fa-star-half-stroke"></i>Manage Reviews</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/chat"}><i className="fa-solid fa-file-pen"></i>Chat</NavLink>
+              <NavLink to={"/admin/chat"}><i class="fa-solid fa-comment-sms"></i>Chat</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>

@@ -5,6 +5,7 @@ import primaryAxios from "../../Api/primaryAxios";
 const UserRow = ({ user, refetch, index }) => {
     const { name, email, role, _id, image } = user;
     const [isLoading, setIsLoading] = useState(null);
+    const [loading, setLoading] = useState(null);
 
     const handleMakeAdmin = (id) => {
         setIsLoading(true);
@@ -22,11 +23,13 @@ const UserRow = ({ user, refetch, index }) => {
         })();
       };
       const handleDelete = (id) => {
-        setIsLoading(true);
+        setLoading(true);
         (async () => {
-          const { data } = await primaryAxios.delete(`/user/${id}`);
-          if (data.deletedCount > 0) {
-            Swal.fire(`${name} Is Now Removed`, {
+          const { data } = await primaryAxios.put(`/user-role?id=${id}`, {
+            role: "",
+          });
+          if (data.success) {
+            Swal.fire(`${name} Removed From Admin`, {
               icon: "success",
               className: "rounded-xl",
             });
@@ -64,8 +67,8 @@ const UserRow = ({ user, refetch, index }) => {
           <button className='btn btn-xs btn-secondary btn-outline'>Master Admin</button>
         ) :(
           <button  onClick={() => handleDelete(_id)} className={`btn btn-xs btn-outline ${
-            isLoading && "loading"
-          }`}>Remove User</button>
+            loading && "loading"
+          }`}>Remove Admin</button>
         )}
       </td>
     </tr>

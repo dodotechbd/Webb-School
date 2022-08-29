@@ -48,6 +48,7 @@ const AddReview = () => {
           'success'
         )
         reset();
+        refetch();
       }
     })();
   };

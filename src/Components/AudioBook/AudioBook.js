@@ -1,44 +1,69 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { BsFillPlayCircleFill } from 'react-icons/bs'
+import React from "react";
+import { useNavigate } from "react-router-dom";
+import { useQuery } from "react-query";
+import Rating from "react-rating";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 
 const AudioBook = ({ audiobook }) => {
   const { _id, name, img, price, deal } = audiobook;
   const navigate = useNavigate();
-  const navigateToAudioBookDetail = id => {
+  const navigateToAudioBookDetail = (id) => {
     navigate(`/audiobook/${id}`);
   };
+  const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
+  );
+  const reviewData = bookreviews?.filter(
+    (allcard) => allcard.courseName === _id
+  );
+  const ratingData = reviewData?.map((allcard) => allcard.rating);
+  const totalRating = ratingData?.reduce((a, b) => a + b, 0);
+  const avgRating = totalRating / ratingData?.length;
   return (
-    <div onClick={() => navigateToAudioBookDetail(_id)}
-      className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4">
-
+    <div
+      onClick={() => navigateToAudioBookDetail(_id)}
+      className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4"
+    >
       <figure>
         <img
-          className="mx-auto mt-4 lg:w-52 sm:w-48 rounded-lg text-center"
+          className="mx-auto lg:mt-4 md:mt-4 md:w-52 lg:w-52 w-full rounded-lg text-center"
           src={img}
           alt="Books"
         />
       </figure>
       <div className="card-body p-0">
         <div className="card-body p-4">
-          <div className=' gap-3'>
+          <div className=" gap-3">
             {name?.length >= 18 ? (
-
-              <p className="text-xl font-bold">{name.slice(0, 18)}...</p>,
-
-              <p className="text-xl font-bold">{name?.slice(0, 18)}...</p>
-
+              ((<p className="text-xl font-bold">{name.slice(0, 18)}...</p>),
+              (<p className="text-xl font-bold">{name?.slice(0, 18)}...</p>))
             ) : (
               <p className="text-xl font-bold">{name}</p>
             )}
-            <div class="rating rating-sm">
-              <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-              <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" checked />
-              <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-              <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
-              <input type="radio" name="rating-6" class="mask mask-star-2 bg-orange-400" />
+            <div className="">
+              {avgRating ? (
+                <span className="mr-2 font-bold text-[#c48b07]">
+                  {avgRating.toString().slice(0, 3)}
+                </span>
+              ) : (
+                <></>
+              )}
+
+              <Rating
+                className="text-[#FAAF00]"
+                initialRating={avgRating}
+                readonly
+                emptySymbol={<ImStarEmpty />}
+                fullSymbol={<ImStarFull />}
+              />
+              <span className="opacity-70">({ratingData?.length})</span>
             </div>
-            <p className='font-serif text-xl'>New Deal at {deal} <span className='text-green-500 ml-2 font-serif text-2xl'>${price}</span></p>
+            <p className="font-serif text-xl">
+              New Deal at {deal}{" "}
+              <span className="text-green-500 ml-2 font-serif text-2xl">
+                ${price}
+              </span>
+            </p>
           </div>
         </div>
       </div>
