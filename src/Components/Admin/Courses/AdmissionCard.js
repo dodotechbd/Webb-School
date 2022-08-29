@@ -89,10 +89,10 @@ const AdmissionCard = ({ allcard, deleteItem, refetch }) => {
           {allcard?.name.slice(0, 21)}
         </h2>
         <div>
-        <button onClick={() => handleAddToSpecial(_id)} className="btn btn-block text-green-600 rounded-none btn-sm btn-ghost border-t-neutral">Add To Special</button>
+        <button onClick={() => handleAddToSpecial(_id)} className="btn btn-block text-green-600 rounded-none lg:btn-sm btn-ghost border-t-neutral">Add To Special</button>
           <button
             onClick={() => deleteItems(_id)}
-            className="btn btn-block text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral btn-sm hover:rounded-b-md"
+            className="btn btn-block text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
           >
             Delete Course
           </button>

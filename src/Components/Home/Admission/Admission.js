@@ -27,7 +27,7 @@ const Admission = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Link to={'admission'} className="p-3 border-2 border-primary  hover:bg-base-300 rounded-full text-center font-bold text-primary btn-wide uppercase">
+        <Link to={'admission'} className="p-3 border-2 border-info  hover:bg-base-300 rounded-full text-center font-bold text-info btn-wide uppercase">
           Explore All Programs
         </Link>
       </div>

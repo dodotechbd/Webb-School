@@ -48,6 +48,7 @@
     "react-toastify": "^9.0.8",
     "reactjs-video-playlist-player": "^1.1.1",
     "relative-time-format": "^1.1.4",
+    "sass": "^1.54.5",
     "socket.io-client": "^4.5.1",
     "sweetalert": "^2.1.2",
     "sweetalert2": "^11.4.26",

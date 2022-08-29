@@ -67,9 +67,9 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
             Join
           </a>
         ) : (
-          <button className="btn text-base-100 font-thin pr-4 hover:bg-gray-500 btn-xs bg-gray-400">
+          <button className="btn text-base-100 font-thin pr-4 hover:bg-gray-500 btn-xs bg-gray-400 line-through">
             <MdDoNotDisturbOff className="text-sm" />
-            Not Available
+            Join
           </button>
         )}
       </td>
