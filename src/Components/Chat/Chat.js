@@ -63,7 +63,7 @@ const Chat = () => {
 
     return (
         <div>
-            <h1 className='my-10 text-center font-bold text-3xl '>Massage Your Frind</h1>
+            <h1 className='my-10 text-center font-bold text-3xl '>Massage Your Frinds</h1>
             <div className="chat m-auto ">
                 <div className="head">GROUP CHAT</div>
 
