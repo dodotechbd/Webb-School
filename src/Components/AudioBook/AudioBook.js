@@ -24,9 +24,9 @@ const AudioBook = ({ audiobook }) => {
       onClick={() => navigateToAudioBookDetail(_id)}
       className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4"
     >
-      <figure>
+      <figure className=" px-2 pt-5">
         <img
-          className="mx-auto lg:mt-4 md:mt-4 md:w-52 lg:w-52 w-full rounded-lg text-center"
+          className="mx-auto w-11/12 rounded-lg"
           src={img}
           alt="Books"
         />
