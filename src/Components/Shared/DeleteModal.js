@@ -13,7 +13,7 @@ const DeleteModal = () => {
                     <p className="py-4">You've been selected for a chanc to get one year of subscription to use Wikipedia for free!</p>
                     <div className="modal-action">
                     <button onClick={() => handleDelete()} className="btn btn-xs btn-error">Delete</button>
-                        <label for="delete-confirm-modal" className="btn btn-xs">Cancel</label>
+                        <label htmlFor="delete-confirm-modal" className="btn btn-xs">Cancel</label>
                     </div>
                 </div>
             </div>

@@ -37,7 +37,7 @@ const Checkout = () => {
               <img
                 src={courseData?.img}
                 className="lg:h-60 w-full lg:w-96 rounded-lg"
-                alt=""
+                alt="true"
               />
               <div className="card-body p-0 px-4 lg:block w-full">
                 <div className="text-left">
