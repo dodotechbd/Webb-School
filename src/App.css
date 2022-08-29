@@ -54,7 +54,6 @@
   animation: rotate 1s infinite linear;
 }
 
-
 @keyframes rotate {
   0% {
     transform: rotate(0deg);
@@ -185,4 +184,7 @@
     animation-timing-function: ease-out;
     stroke-dashoffset: -163;
   }
+}
+.read-more {
+  color: #3b82f6;
 }

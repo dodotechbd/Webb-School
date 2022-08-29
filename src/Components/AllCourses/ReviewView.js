@@ -12,8 +12,8 @@ const ReviewView = ({ review, refetch }) => {
   return (
     <div>
       <div className="flex mb-6">
-          <div class="avatar">
-            <div class="w-12 h-12 rounded-full">
+          <div className="avatar">
+            <div className="w-12 h-12 rounded-full">
               <img src={review?.author.photo} />
             </div>
           </div>

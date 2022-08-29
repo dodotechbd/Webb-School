@@ -34,7 +34,7 @@ const Support = () => {
               <i className="fa-solid fa-envelope text-4xl text-orange-500"></i>
             </a>
             <a className="mr-5" href="https://www.linkedin.com/in/md-badsha-6a8668241/">
-              <i class="fa-brands fa-linkedin text-4xl text-blue-500"></i>
+              <i className="fa-brands fa-linkedin text-4xl text-blue-500"></i>
             </a>
           </div>
         </div>

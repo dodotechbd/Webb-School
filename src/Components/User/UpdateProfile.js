@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
@@ -14,7 +14,7 @@ const UpdateProfile = () => {
   const [isEdit, setIsEdit] = useState(null);
   const [role, roleLoading] = useRole();
   const [updateProfile, updating, error] = useUpdateProfile(auth);
-
+  const navigate = useNavigate();
   const {
     register,
     handleSubmit,
@@ -44,6 +44,7 @@ const UpdateProfile = () => {
       if (data) {
         toast.success("User Updated Successfully");
         refetch();
+        navigate('/profile')
       }
     })();
   };

@@ -72,7 +72,7 @@ const MessageRow = ({ user, prefetch, index }) => {
       </td>
       <td>
         <label
-          for={_id}
+          htmlFor={_id}
           className="btn modal-button btn-xs btn-outline btn-primary hover:text-white"
         >
           Send Message
@@ -85,7 +85,7 @@ const MessageRow = ({ user, prefetch, index }) => {
                 <i className="fa-solid fa-paper-plane"></i> New Message
               </p>
               <label
-                for={_id}
+                htmlFor={_id}
                 className="btn btn-sm btn-ghost text-white btn-square"
               >
                 ✕
@@ -131,7 +131,7 @@ const MessageRow = ({ user, prefetch, index }) => {
       </td>
       <td>
         <label
-          for={email}
+          htmlFor={email}
           className="btn modal-button btn-xs btn-outline btn-primary hover:text-white"
         >
           Message History
@@ -144,7 +144,7 @@ const MessageRow = ({ user, prefetch, index }) => {
                 <i className="fa-solid fa-paper-plane"></i> All Messages
               </p>
               <label
-                for={email}
+                htmlFor={email}
                 className="btn btn-sm btn-ghost text-white btn-square"
               >
                 ✕

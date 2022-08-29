@@ -1,45 +1,44 @@
 import React from "react";
 import Rating from "react-rating";
 import swal from "sweetalert";
+import axios from "axios";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
-import primaryAxios from "../../../Api/primaryAxios";
 
-const ReviewCard = ({ allcard, index, refetch }) => {
-  const handleAddToSpecial = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Are you add this in the homepage!",
-      icon: "warning",
-      className: "rounded-xl",
-      buttons: ["Cancle", "Ok"],
-      confirmButtonColor: "#4A4E94",
-    }).then((willDelete) => {
-      if (willDelete) {
-        (async () => {
-          const { data } = await primaryAxios.post(`/allreviews`, {
-            rating: allcard?.rating,
-            review: allcard?.review,
-            reviewDate: allcard?.reviewDate,
-            author: allcard?.author,
-          });
-          if (data.success) {
-            refetch();
-          }
-          swal("The review has been successfully added to homepage", {
-            icon: "success",
-            className: "rounded-xl",
-          });
-        })();
-      } else {
-        swal("Action Canclled", {
-          icon: "success",
+const AllReviewCard = ({ allcard, index, refetch }) => {
+    const deleteItems = (id) => {
+        swal({
+          title: "Are you sure?",
+          text: "Once Deleted,This Process Can't Be Undone",
+          icon: "warning",
           className: "rounded-xl",
+          buttons: ["Cancle", "Yes, delete it!"],
+          confirmButtonColor: "#000000",
+          dangerMode: true,
+        }).then((willDelete) => {
+          if (willDelete) {
+            (async () => {
+              const { data } = await axios.delete(
+                `https://rocky-escarpment-87440.herokuapp.com/allreviews/${id}`
+              );
+              if (data.deletedCount > 0) {
+                swal("The review has been successfully deleted", {
+                  icon: "success",
+                  className: "rounded-xl",
+                });
+    
+                refetch();
+              }
+            })();
+          } else {
+            swal("Action Canclled", {
+              icon: "success",
+              className: "rounded-xl",
+            });
+          }
         });
-      }
-    });
-  };
-  return (
-    <tr>
+      };
+    return (
+        <tr>
       <td>{index + 1}</td>
       <td>
         <div className="flex items-center space-x-3">
@@ -88,12 +87,15 @@ const ReviewCard = ({ allcard, index, refetch }) => {
         </label>
       </td>
       <td>
-        <button onClick={() => handleAddToSpecial(allcard?._id)} className="btn btn-xs btn-outline">
-          Add To Homepage
-        </button>
+      <button
+            onClick={() => deleteItems(allcard?._id)}
+            className="btn text-red-500 hover:bg-red-500 hover:border-red-500 btn-outline btn-xs"
+          >
+            Delete Review
+          </button>
       </td>
     </tr>
-  );
+    );
 };
 
-export default ReviewCard;
+export default AllReviewCard;
