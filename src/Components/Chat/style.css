@@ -52,22 +52,22 @@
     background: #00cec9;
   }
   
-  .footer {
+  .chatfooter {
     display: flex;
     border-top: 1px solid #ddd;
   }
   
-  input {
+  .chatinput {
     padding: 10px;
     width: 290px;
     border: 0;
     margin-right: 10px;
   }
   
-  input:focus {
+  .chatinput:focus {
     outline: none;
   }
   
-  .footer img {
+  .chatfooter img {
     cursor: pointer;
   }
