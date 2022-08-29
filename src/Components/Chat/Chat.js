@@ -28,6 +28,12 @@ const Chat = () => {
         }
     }, [])
 
+    useEffect(() => {
+        socket.on('chat', (payload) => {
+            setChat([...chat, payload]);
+        });
+    });
+    
 
     const sentChat = (e) => {
         e.preventDefault();
@@ -35,14 +41,9 @@ const Chat = () => {
         setMessage("");
     };
 
-    useEffect(() => {
-        socket.on('chat', (payload) => {
-            setChat([...chat, payload]);
-        });
-    });
-
     // const onSubmit = data => {
     //     const url = `https://rocky-escarpment-87440.herokuapp.com/chat`;
+
     //     fetch(url, {
     //         method: 'POST',
     //         headers: {
@@ -54,6 +55,7 @@ const Chat = () => {
     //     .then(data => {
     //         window.alert('Continuing your Chat')
     //         window.location.reload() 
+    //         console.log('hello add data', data);
     //     })
     // }
 
@@ -61,7 +63,7 @@ const Chat = () => {
 
     return (
         <div>
-            <h1 className='my-10 text-center font-bold text-3xl '>Massage Your Frind</h1>
+            <h1 className='my-10 text-center font-bold text-3xl '>Massage Your Frinds</h1>
             <div className="chat m-auto ">
                 <div className="head">GROUP CHAT</div>
 

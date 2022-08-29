@@ -121,6 +121,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
                       className="input bg-base-300 input-sm w-full"
                       placeholder="Google meet link"
                       type="link"
+                      required
                     />
                   </label>
                 </div>
@@ -134,6 +135,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
                       type="text"
                       placeholder="Teacher name"
                       className="input bg-base-300 input-sm w-full"
+                      required
                     />
                   </label>
                 </div>
@@ -147,6 +149,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
                       type="text"
                       placeholder="Subject here"
                       className="input bg-base-300 input-sm w-full"
+                      required
                     />
                   </label>
                 </div>
@@ -160,6 +163,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
                       <select
                         className="rounded bg-base-300"
                         {...register("time")}
+                        required
                       >
                         <option value=""></option>
                         <option value="04:00 PM">04:00 PM</option>
@@ -176,6 +180,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
                         className="input input-bordered input-sm w-full  bg-base-300 max-w-xs"
                         placeholder="Google meet link"
                         type="Date"
+                        required
                       />
                     </label>
                   </div>
