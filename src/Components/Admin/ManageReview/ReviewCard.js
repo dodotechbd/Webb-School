@@ -53,7 +53,7 @@ const ReviewCard = ({ allcard, index }) => {
         </label>
       </td>
       <td>
-        <button className="btn btn-xs btn-warning btn-outline">
+        <button className="btn btn-xs btn-outline">
           Add To Homepage
         </button>
       </td>
