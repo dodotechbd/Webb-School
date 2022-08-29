@@ -17,7 +17,7 @@ const Courses = () => {
                 <h1 className='lg:text-4xl md:text-3xl mb-16 mt-8 text-2xl uppercase font-sub font-bold text-center'>Special Courses</h1>
                 <div className='grid  sm:grid-cols-2 lg:grid-cols-3 gap-12 '>
                     {
-                        special?.map(course => <Course
+                        special?.slice(0,3).reverse().map(course => <Course
                         key={course._id}
                         course={course}
                         ></Course>)

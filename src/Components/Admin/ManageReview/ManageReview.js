@@ -4,11 +4,11 @@ import { NavLink, Outlet } from "react-router-dom";
 const ManageReview = () => {
   return (
     <div className="text-center">
-      <div className="bg-base-200 shadow-lg">
-        <ul className="menu menu-horizontal bg-base-300 w-fit">
+      <div className="bg-base-300 border-b border-neutral">
+        <ul className="menu menu-horizontal w-fit">
           <li>
             <Link to={"/admin/reviews"} className="hover:rounded-none">
-              Reviews
+              All Reviews
             </Link>
           </li>
           <li>
