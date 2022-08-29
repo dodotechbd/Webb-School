@@ -35,7 +35,7 @@ const BookCheckout = () => {
               <img
                 src={bookData?.img}
                 className="h-96 mx-auto rounded-lg"
-                alt=""
+                alt="true"
               />
               <div className="card-body p-0 mx-auto w-full">
                 <h1 className="text-2xl font-bold my-2">{bookData?.name}</h1>

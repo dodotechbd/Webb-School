@@ -82,13 +82,13 @@ const Chat = () => {
                             placeholder="Type here"
                             name="chat"
                             value={message}
-                            className="bg-base-100 chatinput "
+                            className="bg-base-100 chatinput"
                             onChange={(e) => {
                                 setMessage(e.target.value);
                             }}
                         />
                         
-                        <button><i type='submit' class="fa-solid fa-paper-plane text-3xl" ></i></button>
+                        <button><i type='submit' className="fa-solid fa-paper-plane text-3xl" ></i></button>
 
                     </form>
 

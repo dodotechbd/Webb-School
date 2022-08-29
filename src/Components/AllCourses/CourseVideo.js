@@ -58,7 +58,7 @@ const CourseVideo = () => {
       </div>
       <h1 className="text-3xl my-4">{videoData?.name}</h1>
       <label
-        for="my-modal-3"
+        htmlFor="my-modal-3"
         className="text-error underline cursor-pointer text-xl modal-button"
       >
         <i className="fa-solid fa-triangle-exclamation mr-3"></i>Copyright
@@ -66,8 +66,8 @@ const CourseVideo = () => {
       </label>
 
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
-      <label for="my-modal-3" class="modal cursor-pointer">
-      <label className="modal-box relative max-w-4xl text-center bg-[#1E3964] text-[#DBC73D]" for="">
+      <label htmlFor="my-modal-3" className="modal cursor-pointer">
+      <label className="modal-box relative max-w-4xl text-center bg-[#1E3964] text-[#DBC73D]" htmlFor="">
           <h1 className="text-3xl">Disclaimer for Webb School</h1>
           <p>
             If you require any more information or have any questions about our

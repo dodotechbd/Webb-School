@@ -29,7 +29,7 @@ const Test = () => {
 
     return (
         <div className="container-1">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxBIQPsmQjza3nOxVKaxN2JGOHumsm9nHehQ&usqp=CAU" className='logo' alt="" />
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxBIQPsmQjza3nOxVKaxN2JGOHumsm9nHehQ&usqp=CAU" className='logo' alt="true" />
             <div className="content">
                 <p>Welcome to our Webb-School Website</p>
                 <h1>We are <span>Launching</span> Soon</h1>
@@ -53,7 +53,7 @@ const Test = () => {
                 </div>
                 <button type='button'>Learn More</button>
             </div>
-            <img src="https://www.freeiconspng.com/thumbs/rocket-png/red-rocket-png-5.png" className='rocket' alt="" />
+            <img src="https://www.freeiconspng.com/thumbs/rocket-png/red-rocket-png-5.png" className='rocket' alt="true" />
         </div>
     )
 }

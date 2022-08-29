@@ -11,7 +11,7 @@ const Promotional = () => {
           >
             <div className=""></div>
             <div className="hero-content text-center text-neutral-content">
-              <label for="my-modal-5" className="w-full modal-button">
+              <label htmlFor="my-modal-5" className="w-full modal-button">
                 <h1 className="bg-white hover:bg-white btn hover:bg-opacity-60 bg-opacity-40 btn-circle text-white text-3xl">
                   <i className="fa-solid fa-circle-play bg-red-600 rounded-full"></i>
                 </h1>
@@ -40,12 +40,12 @@ const Promotional = () => {
           className="mx-auto w-full lg:h-96 h-48 md:h-96 rounded-lg"
             src="https://www.youtube-nocookie.com/embed/_CdyZX2OBMk"
             title="YouTube video player"
-            frameborder="0"
+            frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
+            allowFullScreen
           ></iframe>
           <div className="modal-action mt-3">
-            <label for="my-modal-5" className="btn btn-primary btn-sm text-white">
+            <label htmlFor="my-modal-5" className="btn btn-primary btn-sm text-white">
               Close
             </label>
             
