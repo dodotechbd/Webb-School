@@ -12,6 +12,7 @@ import { signOut } from "firebase/auth";
 import useRole from "../../../Hooks/useRole";
 import Messages from "../../Messages/Messages";
 import primaryAxios from "../../../Api/primaryAxios";
+import Loading from "../Loading/Loading";
 
 const Header = ({ handleThemeChange, theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +21,16 @@ const Header = ({ handleThemeChange, theme }) => {
   };
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
-
+  
+  console.log(role)
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
       res.json()
     )
   );
-  
+  if (loading || roleLoading) {
+    return <Loading></Loading>;
+  }
   const userMessageData = messageData?.filter(
     (allcard) => allcard.email === user?.email
   );
@@ -38,6 +42,11 @@ const Header = ({ handleThemeChange, theme }) => {
 
   const manuItems = (
     <>
+      <li>
+        <Link className="hover:rounded-none" to="/">
+          Home
+        </Link>
+      </li>
       <li>
         <NavLink to="courses">Courses</NavLink>
       </li>
@@ -59,12 +68,12 @@ const Header = ({ handleThemeChange, theme }) => {
       {/* {user ? <li>
         <NavLink to="chat">Chat</NavLink>
       </li> : ("")} */}
-      <li>
+      {/* <li>
         <NavLink to="LiveClass">Live Class</NavLink>
-      </li>
+      </li> */}
       {role === "admin" && (
         <li>
-          <NavLink to="admin/courses/language">Admin</NavLink>
+          <NavLink to="admin/courses/manage">Admin</NavLink>
         </li>
       )}
     </>
@@ -121,16 +130,16 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink className='hover:rounded-none' to="chat">Chat</NavLink>
                 </li> : ("")} */}
 
-                <li>
+                {/* <li>
                   <NavLink className="hover:rounded-none" to="LiveClass">
                     Live Class
                   </NavLink>
-                </li>
+                </li> */}
                 {role === "admin" && (
                   <li>
                     <NavLink
                       className="hover:rounded-none"
-                      to="admin/courses/language"
+                      to="admin/courses/manage"
                     >
                       Admin
                     </NavLink>
@@ -175,7 +184,10 @@ const Header = ({ handleThemeChange, theme }) => {
                         </NavLink>
                       </li>
                       <li>
-                        <NavLink className="hover:rounded-none" to={"liveclasses"}>
+                        <NavLink
+                          className="hover:rounded-none"
+                          to={"liveclasses"}
+                        >
                           <i className="ml-4 fa-solid fa-video"></i>Live Classes
                         </NavLink>
                       </li>
@@ -360,7 +372,7 @@ const Header = ({ handleThemeChange, theme }) => {
               </li>
               <li>
                 <NavLink className="hover:rounded-none" to={"liveclasses"}>
-                <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                  <i className="ml-4 fa-solid fa-video"></i>Live Classes
                 </NavLink>
               </li>
               {/* <li>

@@ -1,57 +1,79 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import Swal from 'sweetalert2';
-import primaryAxios from '../../../Api/primaryAxios';
-import Loading from '../../Shared/Loading/Loading';
+import React, { useState } from "react";
+import { useForm } from "react-hook-form";
+import Swal from "sweetalert2";
+import primaryAxios from "../../../Api/primaryAxios";
+import Loading from "../../Shared/Loading/Loading";
+import { GoPrimitiveDot } from "react-icons/go";
+import { MdDoNotDisturbOff } from "react-icons/md";
 
+const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
+  const { _id, name, img, uname } = languages;
+  const [loading, setLoading] = useState(null);
 
-const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
-
-    const { _id,uname } = languages
-
-    
-    const { register, handleSubmit, reset } = useForm();
-    const onSubmit = (MLink) => {
-
-      (async () => {
-        const { data } = await primaryAxios.put(`/language/${_id}`,MLink)
-        if (isLoading) {
-            return <Loading></Loading>;
-          }
-       else if (data) {
-            const Toast = Swal.mixin({
-                toast: true,
-                position: "top-right",
-                iconColor: "green",
-                customClass: {
-                  popup: "colored-toast",
-                },
-                showConfirmButton: false,
-                timer: 1500,
-                timerProgressBar: true,
-              });
-              await Toast.fire({
-                icon: "success",
-                title: "Success",
-              });
-              reset();
-              refetch();
-             
-        }
-        
-      })();
-
-
-
-    }
-    return (
-
-        <tr>
-           
-            <td>{index + 1}</td>
-            <td className='uppercase'>{uname}</td>
-            <td>
+  const { register, handleSubmit, reset } = useForm();
+  const onSubmit = (MLink) => {
+    (async () => {
+      const { data } = await primaryAxios.put(`/language/${_id}`, MLink);
+      if (isLoading) {
+        return <Loading></Loading>;
+      } else if (data) {
+        const Toast = Swal.mixin({
+          toast: true,
+          position: "top-right",
+          iconColor: "green",
+          customClass: {
+            popup: "colored-toast",
+          },
+          showConfirmButton: false,
+          timer: 1500,
+          timerProgressBar: true,
+        });
+        await Toast.fire({
+          icon: "success",
+          title: "Success",
+        });
+        reset();
+        refetch();
+      }
+    })();
+  };
+  const handleDelete = (id) => {
+    setLoading(true);
+    (async () => {
+      const { data } = await primaryAxios.put(`/language/${_id}`, {
+        meetLink: "",
+      });
+      if (data.success) {
+        Swal.fire(`${name} Live Class Stopped!`, {
+          icon: "success",
+          className: "rounded-xl",
+        });
+        refetch();
+      }
+    })();
+  };
+  return (
+    <tr>
+      <td>{index + 1}</td>
+      <td className="uppercase">{name}</td>
+      <td>
+        {languages?.meetLink?.MLink ? (
+          <a
+            href={languages?.meetLink?.MLink}
+            target="blank"
+            className="btn text-base-100 font-thin pr-4 hover:bg-green-700 btn-xs bg-green-500"
+          >
+            <GoPrimitiveDot className="text-xl" />
+            Join
+          </a>
+        ) : (
+          <button className="btn text-base-100 font-thin pr-4 hover:bg-gray-500 btn-xs bg-gray-400">
+            <MdDoNotDisturbOff className="text-sm" />
+            Not Available
+          </button>
+        )}
+      </td>
+      <td>
         <label
           for={_id}
           className="btn modal-button btn-xs btn-outline btn-info  hover:text-white "
@@ -63,8 +85,8 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
           <div className="modal-box p-0">
             <div className="px-3 pt-3 pb-2 bg-info flex justify-between">
               <p className="text-xl text-white">
-                <i className="fa-solid fa-paper-plane"></i> Post Your google meet link
-                
+                <i className="fa-solid fa-paper-plane"></i> Post Your google
+                meet link
               </p>
               <label
                 for={_id}
@@ -75,21 +97,32 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-              <p className=' text-info rounded-lg text-center pb-2'>
-                    
-                    <span className='uppercase  text-bold   '> {uname}</span> </p>
+                <div className="flex">
+                  <div className="px-1">
+                    <div class="avatar ">
+                      <div class="w-16 mask mask-squircle ">
+                        <img src={img} alt="Tailwind-CSS-Avatar-component" />
+                      </div>
+                    </div>
+                  </div>
+                  <div className="pt-5 w-full font-semibold">
+                    <p className=" text-info rounded-lg text-center pb-2">
+                      <span className="uppercase  text-bold   "> {uname}</span>{" "}
+                    </p>
+                  </div>
+                </div>
                 <div className="form-control">
                   <label className="input-group input-group-sm pt-2">
                     <span className="bg-info text-white uppercase">
                       Google Meet Link
                     </span>
                     <input
-                  {...register(`MLink`)}
-                  className="input bg-base-300 input-sm w-full"
-                  placeholder="Google meet link"
-                  type="link"
-                  
-                />
+                      {...register(`MLink`)}
+                      className="input bg-base-300 input-sm w-full"
+                      placeholder="Google meet link"
+                      type="link"
+                      required
+                    />
                   </label>
                 </div>
                 <div className="form-control">
@@ -102,7 +135,7 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
                       type="text"
                       placeholder="Teacher name"
                       className="input bg-base-300 input-sm w-full"
-                      
+                      required
                     />
                   </label>
                 </div>
@@ -116,49 +149,49 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
                       type="text"
                       placeholder="Subject here"
                       className="input bg-base-300 input-sm w-full"
-                      
+                      required
                     />
                   </label>
                 </div>
-                
-                
-                <div className='flex justify-between   pt-2'>  
-                   <div>
-                   <label className="input-group input-group-sm ">
-                    <span className="bg-info text-white uppercase ">
-                      Time
-                    </span>
-                    <select 
-                    className='rounded bg-base-300'
-                    {...register("time")}>    
-                  <option value="4 PM">4 PM</option>
-                   <option value="9 PM">9 PM</option>
-                  <option value="10 PM">10 PM</option>
-                  <option value=""></option>
-                   </select>
-                </label>
-                </div>
-                <div>
-                <label className="input-group input-group-sm">
-                    <span className="bg-info text-white uppercase">
-                      Date
-                    </span>
-                <input
-                  {...register(`date`)}
-                  className="input input-bordered input-sm w-full  bg-base-300 max-w-xs"
-                  placeholder="Google meet link"
-                  type="Date"
-                />
-                </label>
-                </div>
+
+                <div className="flex justify-between   pt-2">
+                  <div>
+                    <label className="input-group input-group-sm ">
+                      <span className="bg-info text-white uppercase ">
+                        Time
+                      </span>
+                      <select
+                        className="rounded bg-base-300"
+                        {...register("time")}
+                        required
+                      >
+                        <option value=""></option>
+                        <option value="04:00 PM">04:00 PM</option>
+                        <option value="09:00 PM">09:00 PM</option>
+                        <option value="10:00 PM">10:00 PM</option>
+                      </select>
+                    </label>
+                  </div>
+                  <div>
+                    <label className="input-group input-group-sm">
+                      <span className="bg-info text-white uppercase">Date</span>
+                      <input
+                        {...register(`date`)}
+                        className="input input-bordered input-sm w-full  bg-base-300 max-w-xs"
+                        placeholder="Google meet link"
+                        type="Date"
+                        required
+                      />
+                    </label>
+                  </div>
                 </div>
 
                 <div className="card-actions justify-end pt-3">
                   <button
                     type="submit"
-                    className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600 "
+                    className=" btn font-thin btn-sm btn-info text-white hover:bg-green-600"
                   >
-                    <i className="fa-solid fa-paper-plane mr-1 "></i>Post
+                    <i className="fa-solid fa-paper-plane mr-1"></i>Post
                   </button>
                 </div>
               </div>
@@ -166,12 +199,17 @@ const LanguagesTable = ({ languages, index, refetch ,isLoading}) => {
             <div></div>
           </div>
         </div>
-      </td> 
-     </tr>
-        
-
-
-    );
+      </td>
+      <td>
+        <button
+          onClick={() => handleDelete(_id)}
+          className={`btn btn-xs btn-outline ${loading && "loading"}`}
+        >
+          Stop
+        </button>
+      </td>
+    </tr>
+  );
 };
 
 export default LanguagesTable;

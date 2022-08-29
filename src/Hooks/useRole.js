@@ -1,6 +1,6 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import primaryAxios from "../Api/primaryAxios";
 import auth from "../firebase.init";
 
 const useRole = () => {
@@ -11,13 +11,14 @@ const useRole = () => {
 
   useEffect(() => {
     (async () => {
-      const { data } = await axios.get(
-        `https://rocky-escarpment-87440.herokuapp.com/user-role?email=${user?.email}`
+      const { data } = await primaryAxios.get(
+        `/user-role?email=${user?.email}`
       );
       if (data?.role) {
         setRole(data?.role);
         setRoleLoading(false);
-      } else {
+      }
+       else {
         setRole("");
         setRoleLoading(false);
       }

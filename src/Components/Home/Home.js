@@ -19,7 +19,6 @@ const Home = () => {
   return (
     
     <div>
-
       <Hero></Hero>
       {/* messenger chat */}
       <MessengerCustomerChat 
@@ -27,7 +26,7 @@ const Home = () => {
       />
       <Navigation></Navigation>
       <Banner></Banner>
-      {/* <Courses></Courses> */}
+      <Courses></Courses>
       <Admission></Admission>
       <JobCourses></JobCourses>
       <CoursesTabs></CoursesTabs>
@@ -39,7 +38,7 @@ const Home = () => {
       <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-2xl'>
         <BsArrowUp/>
       </AnchorLink>
-      {/* messenger chat */}
+      {/* messenger chat --- */}
       <MessengerCustomerChat
         pageId="101878912628102" appId="3150275291906230"
       />
