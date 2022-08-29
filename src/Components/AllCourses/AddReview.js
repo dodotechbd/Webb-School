@@ -54,25 +54,25 @@ const AddReview = () => {
   };
   
   return (
-    <div class="card bg-base-100">
+    <div className="card bg-base-100">
       <label
-        for="my-modal-5"
-        class="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
+        htmlFor="my-modal-5"
+        className="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
       >
         ✕
       </label>
-      <figure class="px-10 pt-10">
+      <figure className="px-10 pt-10">
         <img
           src="https://raw.githubusercontent.com/MShafiMS/admission/69bf271511e1e926ff0e90113c90075e937fd205/output-onlinegiftools.gif"
           alt="Shoes"
-          class="rounded-full w-28 bg-base-300"
+          className="rounded-full w-28 bg-base-300"
         />
       </figure>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        class="card-body items-center text-center p-4"
+        className="card-body items-center text-center p-4"
       >
-        <h2 class="text-xl">Rate this course</h2>
+        <h2 className="text-xl">Rate this course</h2>
         <div className="text-3xl text-[#FAAF00]">
           <Rating
             count={5}
@@ -84,11 +84,11 @@ const AddReview = () => {
         </div>
         <textarea
           {...register("review")}
-          class="textarea my-3 textarea-primary w-full max-w-xs"
+          className="textarea my-3 textarea-primary w-full max-w-xs"
           placeholder="Write about this course"
           required
         ></textarea>
-        <button type="submit" class="px-8 py-2 rounded-md btn-primary">
+        <button type="submit" className="px-8 py-2 rounded-md btn-primary">
           Submit
         </button>
       </form>

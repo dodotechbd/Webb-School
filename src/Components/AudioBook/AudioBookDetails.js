@@ -78,9 +78,9 @@ const AudioBookDetails = () => {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <div class="hero-overlay bg-[#0F1729] rounded-2xl bg-opacity-40"></div>
+              <div className="hero-overlay bg-[#0F1729] rounded-2xl bg-opacity-40"></div>
               <div className="flex lg:flex-row flex-col justify-center gap-4 items-center backdrop-blur-md w-full p-4 rounded-2xl">
-                <img className="w-48 rounded-lg" src={newDetails?.img} alt="" />
+                <img className="w-48 rounded-lg" src={newDetails?.img} alt="true" />
                 <h1 className="text-xl">
                   {" "}
                   <span className="text-2xl text-white drop-shadow-lg">
@@ -89,7 +89,7 @@ const AudioBookDetails = () => {
                   <div className="flex my-2 items-center gap-3">
                     <div className="avatar">
                       <div className="w-16 rounded-lg">
-                        <img src={newDetails?.img2} alt="" />
+                        <img src={newDetails?.img2} alt="true" />
                       </div>
                     </div>
                     <div>
@@ -109,7 +109,7 @@ const AudioBookDetails = () => {
           <div className="lg:block md:block hidden">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <h2 class="text-xl mt-3">Rate this book</h2>
+                <h2 className="text-xl mt-3">Rate this book</h2>
                 <div className="text-3xl my-2 text-[#FAAF00]">
                   <Rating
                     count={5}
@@ -121,11 +121,11 @@ const AudioBookDetails = () => {
                 </div>
                 <textarea
                   {...register("review")}
-                  class="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
+                  className="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
                   placeholder="Write about this book"
                   required
                 ></textarea>
-                <button type="submit" class="px-8 py-2 rounded-md btn-primary">
+                <button type="submit" className="px-8 py-2 rounded-md btn-primary">
                   Submit
                 </button>
               </form>

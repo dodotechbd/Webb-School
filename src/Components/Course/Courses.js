@@ -3,11 +3,14 @@ import Course from "../Course/Course";
 import { useQuery } from "react-query";
 
 const Courses = () => {
-    const { data: special } = useQuery(["specialManage"], () =>
+    const { data: special, isLoading } = useQuery(["specialManage"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/special`).then((res) =>
       res.json()
     )
   );
+  if(isLoading){
+    return <div className="mx-auto mt-16" id="preloaders"></div>;
+  }
     return (
         <div>
             <div id='courses' className='p-10 bg-base-100  border-b border-neutral'>

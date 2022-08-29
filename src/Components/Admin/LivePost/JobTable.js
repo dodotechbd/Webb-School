@@ -75,7 +75,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
       </td>
       <td>
         <label
-          for={_id}
+          htmlFor={_id}
           className="btn modal-button btn-xs btn-outline btn-info hover:text-white"
         >
           Post Link
@@ -89,7 +89,7 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
                 meet link
               </p>
               <label
-                for={_id}
+                htmlFor={_id}
                 className="btn btn-sm btn-ghost text-white btn-square hover:bg-rose-600 "
               >
                 ✕
@@ -99,8 +99,8 @@ const JobTable = ({ jobs, index, isLoading, refetch }) => {
               <div className="card-body px-6 py-3">
                 <div className="flex">
                   <div className="px-1">
-                    <div class="avatar ">
-                      <div class="w-16 mask mask-squircle ">
+                    <div className="avatar ">
+                      <div className="w-16 mask mask-squircle ">
                         <img src={img} alt="Tailwind-CSS-Avatar-component" />
                       </div>
                     </div>

@@ -1,39 +1,64 @@
 import React from "react";
 import Rating from "react-rating";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import ReactTimeAgo from "react-time-ago";
+import TimeAgo from "javascript-time-ago";
+import en from "javascript-time-ago/locale/en.json";
+import ru from "javascript-time-ago/locale/ru.json";
+import ReactReadMoreReadLess from "react-read-more-read-less";
 
 const ReviewCard = ({ course }) => {
-  const { name, img, description, address, tag } = course;
+  TimeAgo.addLocale(en);
+  TimeAgo.addLocale(ru);
+  const { rating, review, reviewDate, author } = course;
   return (
-    <div> 
-      <div className="card rounded-lg w-11/12 lg:w-96 md:w-96 mx-auto bg-base-300 border border-neutral mt-6 h-80">
-        <div className="card-body p-7 grid content-between">
-          <div className="flex mb-4">
-            <div className="avatar">
-              <div className="w-12 h-12 rounded-full">
-                <img className="" src={img} />
-              </div>
-            </div>
-            <div className="ml-4 font-sub">
-              <h2 className="text-xl font-bold text-left">
-                {name}
-              </h2>
-              <p className="text-gray-500 text-sm text-left">{address}</p>
+    <div>
+      <div class="avatar top-14">
+        <div class="w-20 rounded-full ring-8 ring-offset-2 shadow-warning shadow-lg ring-offset-base-300 ring-base-300">
+          <img
+            src={
+              author?.photo
+                ? author?.photo
+                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+            }
+          />
+        </div>
+      </div>
+      <div className="rounded-lg w-11/12 mx-auto bg-base-300">
+        <div className="card-body p-7">
+          <div className="mt-10">
+            <div className="text-center font-sub">
+              <h2 className="text-2xl font-bold">{author?.name}</h2>
+              <p className="text-xl">
+                <Rating
+                  className="text-[#FAAF00]"
+                  initialRating={rating}
+                  readonly
+                  emptySymbol={<ImStarEmpty />}
+                  fullSymbol={<ImStarFull />}
+                />
+              </p>
             </div>
           </div>
           <div>
-            <p className="text-left font-sub text-lg font-bold mb-1">
-             Awesome Work!!
+            <p className="text-left text-md font-sub opacity-80">
+              <ReactReadMoreReadLess
+                charLimit={200}
+                readMoreText={"...read more"}
+                readLessText={"...read less"}
+                readMoreClassName="read-more"
+                readLessClassName="read-more"
+              >
+                {review}
+              </ReactReadMoreReadLess>
             </p>
-            <p className="text-left text-md font-sub opacity-80">{description}</p>
+            <p className="text-sm opacity-60 text-right">
+              -
+              <span className="ml-1">
+                <ReactTimeAgo date={reviewDate} locale="en-US" />
+              </span>
+            </p>
           </div>
-          <Rating
-                className="text-[#FAAF00] text-start"
-                initialRating={4.5}
-                readonly
-                emptySymbol={<ImStarEmpty />}
-                fullSymbol={<ImStarFull />}
-              />
         </div>
       </div>
     </div>

@@ -104,7 +104,7 @@ const AudioPlayer = ({ bookData }) => {
         </div>
         <div className="flex gap-8 justify-center py-4">
           <button onClick={backThirty}>
-            <span><i class="fa-solid fa-backward"></i></span>{" "}
+            <span><i className="fa-solid fa-backward"></i></span>{" "}
           </button>
           <span>
             <button onClick={togglePlayPause} className='pl-[14px] pt-[1px] bg-[#005CC8] text-white btn-circle text-xl'>
@@ -113,7 +113,7 @@ const AudioPlayer = ({ bookData }) => {
           </span>
           <button onClick={forwardThirty}>
             {" "}
-            <span><i class="fa-solid fa-forward"></i></span>
+            <span><i className="fa-solid fa-forward"></i></span>
           </button>
         </div>
       </div>

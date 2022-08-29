@@ -5,7 +5,7 @@ import JobCard from "./JobCard";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
-import "swiper/css"; 
+import "swiper/css";
 import "swiper/css/pagination";
 
 import "../Banner/Banner.css";
@@ -28,56 +28,56 @@ const JobCourses = () => {
         Which job are you preparing for?
       </h2>
       <div className="my-4 mx-auto">
-      <Swiper
-        slidesPerView={4}
-        spaceBetween={-25}
-        breakpoints={{
-          "@0.00": {
-            slidesPerView: 1,
-            spaceBetween: -80,
-          },
-          "@0.25": {
-            slidesPerView: 1,
-            spaceBetween: -70,
-          },
-          "@0.60": {
-            slidesPerView: 2,
-            spaceBetween: -80,
-          },
-          "@0.75": {
-            slidesPerView: 2,
-            spaceBetween: -64,
-          },
-          "@1.00": {
-            slidesPerView: 2,
-            spaceBetween: -84,
-          },
-          "@1.25": {
-            slidesPerView: 4,
-            spaceBetween: -20,
-          },
-          "@1.50": {
-            slidesPerView: 4,
-            spaceBetween: -20,
-          },
-          "@1.75": {
-            slidesPerView: 4,
-            spaceBetween: -10,
-          },
-          "@2.00": {
-            slidesPerView: 4,
-            spaceBetween: -10,
-          },
-        }}
-        modules={[Pagination]}
-        className="mySwiper"
-      >
-        {job?.map((jobCourse) => (
-          <SwiperSlide>
-          <JobCard key={jobCourse._id} jobCourse={jobCourse}></JobCard>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+        <Swiper
+          slidesPerView={4}
+          spaceBetween={-25}
+          breakpoints={{
+            "@0.00": {
+              slidesPerView: 1,
+              spaceBetween: -80,
+            },
+            "@0.25": {
+              slidesPerView: 1,
+              spaceBetween: -70,
+            },
+            "@0.60": {
+              slidesPerView: 2,
+              spaceBetween: -80,
+            },
+            "@0.75": {
+              slidesPerView: 2,
+              spaceBetween: -64,
+            },
+            "@1.00": {
+              slidesPerView: 2,
+              spaceBetween: -84,
+            },
+            "@1.25": {
+              slidesPerView: 4,
+              spaceBetween: -20,
+            },
+            "@1.50": {
+              slidesPerView: 4,
+              spaceBetween: -20,
+            },
+            "@1.75": {
+              slidesPerView: 4,
+              spaceBetween: -10,
+            },
+            "@2.00": {
+              slidesPerView: 4,
+              spaceBetween: -10,
+            },
+          }}
+          modules={[Pagination]}
+          className="mySwiper"
+        >
+          {job?.map((jobCourse) => (
+            <SwiperSlide key={jobCourse._id}>
+              <JobCard key={jobCourse._id} jobCourse={jobCourse}></JobCard>
+            </SwiperSlide>
+          ))}
+        </Swiper>
       </div>
     </div>
   );
