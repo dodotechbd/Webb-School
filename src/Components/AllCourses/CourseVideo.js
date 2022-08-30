@@ -31,7 +31,7 @@ const CourseVideo = () => {
     <div>
      
 
-      <div className="lg:h-96 h-48 md:h-96 w-full border border-neutral">
+      <div className="lg:h-96 h-48 md:h-96 w-full">
        
         {videoData?.vurl ? (
           
@@ -59,16 +59,16 @@ const CourseVideo = () => {
       <h1 className="text-3xl my-4">{videoData?.name}</h1>
       <label
         htmlFor="my-modal-3"
-        className="text-error underline cursor-pointer text-xl modal-button"
+        className="text-red-500 underline cursor-pointer text-md modal-button"
       >
-        <i className="fa-solid fa-triangle-exclamation mr-3"></i>Copyright
+        <i className="fa-solid fa-triangle-exclamation mr-1"></i>Copyright
         warning
       </label>
 
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
       <label htmlFor="my-modal-3" className="modal cursor-pointer">
-      <label className="modal-box relative max-w-4xl text-center bg-[#1E3964] text-[#DBC73D]" htmlFor="">
-          <h1 className="text-3xl">Disclaimer for Webb School</h1>
+      <label className="modal-box relative rounded-lg max-w-4xl text-left border border-neutral" htmlFor="">
+          <h1 className="text-2xl font-bold text-info">Copyright Warnning</h1>
           <p>
             If you require any more information or have any questions about our
             site's disclaimer, please feel free to contact us by email at

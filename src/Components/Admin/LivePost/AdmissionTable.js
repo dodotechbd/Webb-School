@@ -14,9 +14,7 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
   const onSubmit = (MLink) => {
     (async () => {
       const { data } = await primaryAxios.put(`/admission/${_id}`, MLink);
-      if (isLoading) {
-        return <Loading></Loading>;
-      } else if (data) {
+      if (data.success) {
         const Toast = Swal.mixin({
           toast: true,
           position: "top-right",
