@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import useTitle from '../Hooks/useTitle';
 
 const Developer = () => {
+  useTitle("Developers");
   return (
     <div className=" font-mono">
       <h1 className="text-4xl text-center my-10">Meet Our Dedicated Team</h1>

@@ -20,7 +20,10 @@ const Live = () => {
   }
 
   return (
-    <div className="">
+    <div>
+      <div class="navbar">
+        <a class="normal-case text-xl">Post Live Class</a>
+      </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
           <thead>

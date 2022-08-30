@@ -9,7 +9,6 @@ const Admission = () => {
     )
   );
 
-
   return (<div id="admission" className="bg-base-100 border-b border-neutral py-16" >
       <div className="">
         <h1 className="lg:text-4xl md:text-3xl text-2xl font-header font-bold text-center">
@@ -28,7 +27,7 @@ const Admission = () => {
         ))}
       </div>
       <div className="flex justify-center">
-        <Link to={'admission'} className="p-3 border-2 border-primary  hover:bg-base-300 rounded-full text-center font-bold text-primary btn-wide uppercase">
+        <Link to={'admission'} className="p-3 border-2 border-info  hover:bg-base-300 rounded-full text-center font-bold text-info btn-wide uppercase">
           Explore All Programs
         </Link>
       </div>

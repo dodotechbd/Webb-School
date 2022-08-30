@@ -46,7 +46,7 @@ const CoursePlay = () => {
               <a
                 className="flex justify-between items-center hover:bg-red-500 w-full text-white font-bold"
                 href={allCourseData?.meetLink?.MLink}
-                target='blank'
+                target="blank"
               >
                 LIVE CLASS<i className="fa-solid fa-video"></i>
               </a>
@@ -55,8 +55,8 @@ const CoursePlay = () => {
         </div>
       )}
       <div className="hero bg-base-100 py-8">
-        <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse items-start">
-          <div className="card rounded-md lg:w-96 w-full bg-base-200 border border-neutral">
+        <div className="flex justify-center lg:w-full w-11/12 gap-8 flex-col-reverse lg:flex-row-reverse items-start">
+          <div className="card rounded-lg lg:w-96 w-full bg-base-200 border border-neutral">
             <div className="card-body p-0">
               <p className="text-lg p-3 border-b border-neutral">
                 Course Lesson
@@ -66,15 +66,15 @@ const CoursePlay = () => {
               ))}
               {/* modal button  */}
               <label
-                for="my-modal-5"
-                className="text-center py-2 text-white rounded-none btn-block btn-primary cursor-pointer mx-auto mt-3"
+                htmlFor="my-modal-5"
+                className="text-center py-2 text-white rounded-none btn-block btn-info cursor-pointer mx-auto mt-3"
               >
-                Add a review
+                Add a Review
               </label>
               {/* modal box */}
-              <input type="checkbox" id="my-modal-5" class="modal-toggle" />
-              <label for="my-modal-5" class="modal cursor-pointer">
-                <label class="modal-box relative p-0" for="">
+              <input type="checkbox" id="my-modal-5" className="modal-toggle" />
+              <label htmlFor="my-modal-5" className="modal cursor-pointer">
+                <label className="modal-box relative p-0" htmlFor="">
                   <AddReview></AddReview>
                 </label>
               </label>

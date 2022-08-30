@@ -18,26 +18,26 @@ const BookStripe = ({ bookData }) => {
     primaryAxios.get(`/user-role?email=${email}`)
   );
   return (
-    <div class="hero bg-base-300">
-      <div class="hero-content flex-col">
-        <div class="card flex-shrink-0">
-        <div class="card-body lg:w-96 p-5">
+    <div className="hero bg-base-300">
+      <div className="hero-content flex-col">
+        <div className="card flex-shrink-0">
+        <div className="card-body lg:w-96 p-5">
             <h1 className="text-xl font-mono uppercase border-b border-gray-500 pb-1 mb-2">
-              <i class="fa-solid fa-circle-info"></i> Account Info
+              <i className="fa-solid fa-circle-info"></i> Account Info
             </h1>
             <div className="flex">
               <div>
                 <h1>
-                  <i class="fa-solid mr-2 fa-id-card-clip"></i>
+                  <i className="fa-solid mr-2 fa-id-card-clip"></i>
                 </h1>
                 <h1>
-                  <i class="fa-solid mr-2 fa-envelope"></i>
+                  <i className="fa-solid mr-2 fa-envelope"></i>
                 </h1>
                 <h1>
-                  <i class="fa-solid mr-2 fa-bookmark"></i>
+                  <i className="fa-solid mr-2 fa-bookmark"></i>
                 </h1>
                 <h1>
-                  <i class="fa-solid mr-2 fa-square-phone"></i>
+                  <i className="fa-solid mr-2 fa-square-phone"></i>
                 </h1>
               </div>
               <div>
@@ -63,9 +63,9 @@ const BookStripe = ({ bookData }) => {
         </div>
         <h1 className="text-lg border-b border-gray-500 font-mono mt-4 uppercase">
           Fully secured payment guarantee{" "}
-          <i class="fa-solid text-primary fa-credit-card"></i>
+          <i className="fa-solid text-primary fa-credit-card"></i>
         </h1>
-        <div class="card rounded-lg flex-shrink-0 w-full border border-neutral bg-base-100">
+        <div className="card rounded-lg flex-shrink-0 w-full border border-neutral bg-base-100">
           <Elements stripe={stripePromise}>
             <BookStripeForm
               totalAmount={bookData?.price}

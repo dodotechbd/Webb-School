@@ -11,8 +11,7 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import useRole from "../../../Hooks/useRole";
 import Messages from "../../Messages/Messages";
-import primaryAxios from "../../../Api/primaryAxios";
-import Loading from "../Loading/Loading";
+import Loading from "../Loading/PreLoader";
 
 const Header = ({ handleThemeChange, theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,17 +21,14 @@ const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
 
-  console.log(role)
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
       res.json()
     )
   );
-  if (loading || roleLoading) {
-    return <Loading></Loading>;
-  }
+
   const userMessageData = messageData?.filter(
-    (allcard) => allcard.email === user?.email
+    (allcard) => allcard?.email === user?.email
   );
   const logout = () => {
     signOut(auth);
@@ -95,7 +91,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <ul tabIndex="0" className="bg-base-200 h-screen">
               <Link to="/">
                 <div className="flex items-center p-2 w-full">
-                  <img className="w-9 ml-3" src={wslogo} alt="" />
+                  <img className="w-9 ml-3" src={wslogo} alt="true" />
                   <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
@@ -248,7 +244,7 @@ const Header = ({ handleThemeChange, theme }) => {
         </Drawer>
         <Link to="/">
           <div className="flex items-center">
-            <img className="w-9 ml-3" src={wslogo} alt="" />
+            <img className="w-9 ml-3" src={wslogo} alt="true" />
             <div className="ml-1 text-md font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>
@@ -265,9 +261,9 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-end hidden lg:flex">
         {user ? (
           <div className="dropdown dropdown-end">
-            <button tabindex="0" className="pr-6 mt-3">
-              <div class="indicator">
-                <span class="indicator-item badge right-1 badge-xs w-[16px] h-[16px] bg-red-600 text-white">
+            <button tabIndex="0" className="pr-6 mt-3">
+              <div className="indicator">
+                <span className="indicator-item badge right-1 badge-xs w-[16px] h-[16px] bg-red-600 text-white">
                   {userMessageData?.length > 9 ? (
                     <span>9+</span>
                   ) : (
@@ -278,7 +274,7 @@ const Header = ({ handleThemeChange, theme }) => {
               </div>
             </button>
             <div
-              tabindex="0"
+              tabIndex="0"
               className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
             >
               <div className="card-body p-1">
@@ -328,7 +324,7 @@ const Header = ({ handleThemeChange, theme }) => {
 
         {user ? (
           <div className="dropdown dropdown-end">
-            <label tabindex="0" className="btn btn-ghost btn-circle avatar">
+            <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-9 rounded-full">
                 <img
                   src={`${user?.photoURL
@@ -339,7 +335,7 @@ const Header = ({ handleThemeChange, theme }) => {
               </div>
             </label>
             <ul
-              tabindex="0"
+              tabIndex="0"
               className="mt-3 shadow menu menu-compact dropdown-content rounded-md w-56 bg-base-100 text-warning"
             >
               <div className="mx-auto mt-3">
@@ -477,7 +473,7 @@ const Header = ({ handleThemeChange, theme }) => {
       <div className="navbar-end lg:hidden flex">
         {user ? (
           <div className="dropdown dropdown-end">
-            <button tabindex="0" className="pr-3 mt-3">
+            <button tabIndex="0" className="pr-3 mt-3">
               <p>
                 <FiBell className="text-xl" />
                 <span className="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-3 h-3 z-0 left-[8px] bottom-[18px] justify-center text-white">
@@ -488,7 +484,7 @@ const Header = ({ handleThemeChange, theme }) => {
               </p>
             </button>
             <div
-              tabindex="0"
+              tabIndex="0"
               className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72  -mr-14"
             >
               <div className="card-body p-1">

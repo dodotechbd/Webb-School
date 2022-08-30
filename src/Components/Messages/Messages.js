@@ -8,7 +8,7 @@ import auth from "../../firebase.init";
 const Messages = () => {
   const [user, loading] = useAuthState(auth);
   const userEmail = user?.email;
-  
+
   const {
     data: messageData,
     isLoading,
@@ -18,8 +18,8 @@ const Messages = () => {
       res.json()
     )
   );
-  if(isLoading){
-    return  <div className="mx-auto" id="preloaders"></div>;
+  if (isLoading) {
+    return <div className="mx-auto" id="preloaders"></div>;
   }
   const userMessageData = messageData?.filter(
     (allcard) => allcard.email === userEmail
@@ -28,20 +28,18 @@ const Messages = () => {
     <div>
       {userMessageData?.length === 0 && (
         <div className="py-8 bg-base-200 text-center uppercase">
-          no message here <i className="fa-solid fa-bell-slash"></i>
+          no notifications here <i className="fa-solid fa-bell-slash"></i>
         </div>
       )}
       {userMessageData
         ?.slice(0)
         .reverse()
         .map((message, index) => (
-          <div>
-            <MessageHistory
-                key={message?._id}
-                message={message}
-                refetch={refetch}
-              ></MessageHistory>
-          </div>
+          <MessageHistory
+            key={message?._id}
+            message={message}
+            refetch={refetch}
+          ></MessageHistory>
         ))}
     </div>
   );

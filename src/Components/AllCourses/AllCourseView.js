@@ -223,11 +223,11 @@ const AllCourseView = () => {
             <div className="text-center font-bold ">
               <h1 className="text-7xl">5.0</h1>
               <h1 className="text-yellow-400">
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
-                <i class="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
+                <i className="fa-solid fa-star"></i>
               </h1>
               <h1 className="whitespace-nowrap">Course Rating</h1>
             </div>
@@ -236,8 +236,8 @@ const AllCourseView = () => {
                 <h1 className=" font-bold">
                   <span className="ml-2">5</span>
                 </h1>
-                <div class="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div class="h-4 bg-yellow-400 rounded w-[70%]"></div>
+                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
+                  <div className="h-4 bg-yellow-400 rounded w-[70%]"></div>
                 </div>
                 <h1 className=" font-bold">
                   <span className="ml-2">70%</span>
@@ -247,8 +247,8 @@ const AllCourseView = () => {
                 <h1 className=" font-bold">
                   <span className="ml-2">4</span>
                 </h1>
-                <div class="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div class="h-4 bg-yellow-400 rounded w-[17%]"></div>
+                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
+                  <div className="h-4 bg-yellow-400 rounded w-[17%]"></div>
                 </div>
                 <h1 className=" font-bold">
                   <span className="ml-2">17%</span>
@@ -258,8 +258,8 @@ const AllCourseView = () => {
                 <h1 className=" font-bold">
                   <span className="ml-2">3</span>
                 </h1>
-                <div class="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div class="h-4 bg-yellow-400 rounded w-[8%]"></div>
+                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
+                  <div className="h-4 bg-yellow-400 rounded w-[8%]"></div>
                 </div>
                 <h1 className=" font-bold">
                   <span className="ml-2">8%</span>
@@ -269,8 +269,8 @@ const AllCourseView = () => {
                 <h1 className=" font-bold">
                   <span className="ml-2">2</span>
                 </h1>
-                <div class="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div class="h-4 bg-yellow-400 rounded w-[3%]"></div>
+                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
+                  <div className="h-4 bg-yellow-400 rounded w-[3%]"></div>
                 </div>
                 <h1 className=" font-bold">
                   <span className="ml-2">4%</span>
@@ -280,8 +280,8 @@ const AllCourseView = () => {
                 <h1 className=" font-bold">
                   <span className="ml-2">1</span>
                 </h1>
-                <div class="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div class="h-4 bg-yellow-400 rounded w-[1%]"></div>
+                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
+                  <div className="h-4 bg-yellow-400 rounded w-[1%]"></div>
                 </div>
                 <h1 className=" font-bold">
                   <span className="ml-2">1%</span>

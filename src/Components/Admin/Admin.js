@@ -1,13 +1,15 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Admin = () => {
+  useTitle("Admin Panel");
   return (
     <div className="min-h-screen">
       <div className="navbar bg-base-200 border-b border-neutral">
         <div className="flex-none lg:hidden">
           <div>
-            <label for="my-drawer" className="btn btn-ghost drawer-button">
+            <label htmlFor="my-drawer" className="btn btn-ghost drawer-button">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
@@ -15,9 +17,9 @@ const Admin = () => {
                 className="inline-block w-5 h-5 stroke-current"
               >
                 <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 6h16M4 12h16M4 18h16"
                 ></path>
               </svg>
@@ -34,7 +36,7 @@ const Admin = () => {
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">
-          <label for="my-drawer" className="drawer-overlay"></label>
+          <label htmlFor="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-3 overflow-y-auto w-72 border-r border-neutral bg-base-200 text-base-content gap-3">
             <li>
               <NavLink to={"/admin/courses/manage"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
@@ -49,10 +51,10 @@ const Admin = () => {
               <NavLink to={"/admin/LivePost/Live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/reviews/course"}><i className="fa-solid fa-star-half-stroke"></i>Manage Reviews</NavLink>
+              <NavLink to={"/admin/reviews"}><i className="fa-solid fa-star-half-stroke"></i>Manage Reviews</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/chat"}><i class="fa-solid fa-comment-sms"></i>Chat</NavLink>
+              <NavLink to={"/admin/chat"}><i className="fa-solid fa-comment-sms"></i>Chat</NavLink>
             </li>
             <li>
               <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
@@ -64,10 +66,10 @@ const Admin = () => {
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/message"}><i className="fa-solid fa-paper-plane"></i>Send Message</NavLink>
+              <NavLink to={"/admin/message"}><i className="fa-solid fa-bell"></i>Send Notification</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/showteacher"}><i className="fa-solid fa-paper-plane"></i>Manage Teacher</NavLink>
+              <NavLink to={"/admin/showteacher"}><i class="fa-solid fa-user-tie"></i>Manage Teacher</NavLink>
             </li>
           </ul>
         </div>

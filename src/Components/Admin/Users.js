@@ -15,6 +15,9 @@ const Users = () => {
   }
   return (
     <div>
+      <div class="navbar">
+        <a class="normal-case text-xl">Users</a>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table table-zebra w-full">
           <thead>

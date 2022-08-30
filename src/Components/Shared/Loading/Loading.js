@@ -4,7 +4,7 @@ const Loading = () => {
   return (
     <div className="hero min-h-screen">
       <svg
-        class="pl"
+        className="pl"
         viewBox="0 0 200 200"
         width="200"
         height="200"
@@ -21,28 +21,28 @@ const Loading = () => {
           </linearGradient>
         </defs>
         <circle
-          class="pl__ring"
+          className="pl__ring"
           cx="100"
           cy="100"
           r="82"
           fill="none"
           stroke="url(#pl-grad1)"
-          stroke-width="36"
+          strokeWidth="36"
           stroke-dasharray="0 257 1 257"
           stroke-dashoffset="0.01"
-          stroke-linecap="round"
+          strokeLinecap="round"
           transform="rotate(-90,100,100)"
         />
         <line
-          class="pl__ball"
+          className="pl__ball"
           stroke="url(#pl-grad2)"
           x1="100"
           y1="18"
           x2="100.01"
           y2="182"
-          stroke-width="36"
+          strokeWidth="36"
           stroke-dasharray="1 165"
-          stroke-linecap="round"
+          strokeLinecap="round"
         />
       </svg>
     </div>

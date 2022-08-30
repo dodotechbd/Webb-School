@@ -66,19 +66,13 @@ import Special from "./Components/Admin/Courses/Special";
 import AddTeacher from "./Features/Teachers/AddTeacher";
 import EditTeacher from "./Features/Teachers/EditTeacher";
 import TeacherView from "./Features/Teachers/TeacherView";
-
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import AllReviews from "./Components/Admin/ManageReview/AllReviews";
+import PaidCourse from "./Components/User/PaidCourse";
 function App() {
   const [theme, setTheme] = useState(false);
-
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
+  const [user, loading] = useAuthState(auth);
   useEffect(() => {
     setTheme(JSON.parse(window.localStorage.getItem("theme")));
   }, []);
@@ -141,6 +135,10 @@ function App() {
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route path="/profile" element={<Profile></Profile>}>
             <Route
+              path="/profile"
+              element={<PaidCourse></PaidCourse>}
+            ></Route>
+            <Route
               path="/profile/update"
               element={<UpdateProfile></UpdateProfile>}
             ></Route>
@@ -173,7 +171,10 @@ function App() {
                 path="/admin/courses/manage/language"
                 element={<Language></Language>}
               ></Route>
-              <Route path="/admin/courses/manage/job" element={<Job></Job>}></Route>
+              <Route
+                path="/admin/courses/manage/job"
+                element={<Job></Job>}
+              ></Route>
               <Route
                 path="/admin/courses/manage/admission"
                 element={<Admission></Admission>}
@@ -187,9 +188,22 @@ function App() {
               path="/admin/academicbookss"
               element={<AcademicBookss></AcademicBookss>}
             ></Route>
-            <Route path="/admin/reviews" element={<ManageReview></ManageReview>}>
-              <Route path="/admin/reviews/course" element={<CourseReview></CourseReview>}></Route>
-              <Route path="/admin/reviews/book" element={<BookReview></BookReview>}></Route>
+            <Route
+              path="/admin/reviews"
+              element={<ManageReview></ManageReview>}
+            >
+              <Route
+                path="/admin/reviews"
+                element={<AllReviews></AllReviews>}
+              ></Route>
+              <Route
+                path="/admin/reviews/course"
+                element={<CourseReview></CourseReview>}
+              ></Route>
+              <Route
+                path="/admin/reviews/book"
+                element={<BookReview></BookReview>}
+              ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
             <Route path="/admin/showTeacher" element={<TeacherView></TeacherView>}></Route>
@@ -235,6 +249,10 @@ function App() {
         <Route path="/showteacher" element={<TeacherView></TeacherView>}></Route>
         <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
         <Route
+          path="/audiobooks"
+          element={<MyAudioBooks></MyAudioBooks>}
+        ></Route>
+        <Route
           path="/liveclasses"
           element={<MyLiveClass></MyLiveClass>}
         ></Route>
@@ -245,10 +263,10 @@ function App() {
           element={<UnderConstruction></UnderConstruction>}
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
-      </Routes>
+      </Routes >
       <FooterTwo></FooterTwo>
       <Footer></Footer>
-    </div>
+    </div >
   );
 }
 

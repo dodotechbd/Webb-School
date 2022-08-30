@@ -158,7 +158,7 @@ const BookDetail = () => {
           <div className="lg:block md:block hidden">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
-                <h2 class="text-xl mt-3">Rate this book</h2>
+                <h2 className="text-xl mt-3">Rate this book</h2>
                 <div className="text-3xl my-2 text-[#FAAF00]">
                   <Rating
                     count={5}
@@ -170,11 +170,11 @@ const BookDetail = () => {
                 </div>
                 <textarea
                   {...register("review")}
-                  class="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
+                  className="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
                   placeholder="Write about this book"
                   required
                 ></textarea>
-                <button type="submit" class="px-8 py-2 rounded-md btn-primary">
+                <button type="submit" className="px-8 py-2 rounded-md btn-primary">
                   Submit
                 </button>
               </form>

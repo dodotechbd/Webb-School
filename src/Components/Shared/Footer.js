@@ -13,7 +13,7 @@ const Footer = () => {
       <footer className="footer p-10 text-base-content">
         <div className="md:w-60">
           <Link to={"/"} className="flex items-center lg:mx-0 md:mx-0 mx-auto">
-            <img className="w-11" src={logo} alt="" />
+            <img className="w-11" src={logo} alt="true" />
             <div className="ml-1 text-lg font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>

@@ -62,13 +62,13 @@ const Login = () => {
           <div
             className="hidden p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
           >
-            <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="" />
+            <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="true" />
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Login</h3>
             <form onSubmit={handleSubmit(onSubmit)} action="#" className="flex flex-col space-y-5">
               <div className="flex flex-col space-y-1">
-                <label for="email" className="text-sm font-semibold text-gray-900">Email</label>
+                <label htmlFor="email" className="text-sm font-semibold text-gray-900">Email</label>
                 <input
                   type="email"
                   placeholder="Email"
@@ -91,7 +91,7 @@ const Login = () => {
               </div>
               <div className="flex flex-col space-y-1">
                 <div className="flex items-center justify-between">
-                  <label for="password" className="text-sm font-semibold text-gray-900">Password</label>
+                  <label htmlFor="password" className="text-sm font-semibold text-gray-900">Password</label>
                   <Link to={'/reset'} className="text-sm text-[#A25BF7] hover:underline focus:text-blue-800">Forgot Password?</Link>
                 </div>
                 <input
@@ -120,7 +120,7 @@ const Login = () => {
                   id="red-checkbox"
                   className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
                 />
-                <label for="remember" className="text-sm font-semibold text-gray-900">Remember me</label>
+                <label htmlFor="remember" className="text-sm font-semibold text-gray-900">Remember me</label>
               </div>
               <div>
                 {singInError}

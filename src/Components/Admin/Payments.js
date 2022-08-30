@@ -15,8 +15,11 @@ const Payments = () => {
   }
   return (
     <div>
+      <div class="navbar">
+        <a class="normal-case text-xl">Payments</a>
+      </div>
       <div className="overflow-x-auto">
-        <table className="table table-zebra w-full">
+        <table className="table table-compact table-zebra w-full">
           <thead>
             <tr>
               <th>Name</th>

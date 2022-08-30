@@ -72,13 +72,13 @@ const SignUp = () => {
         <div
           className= " hidden p-4 py-6 text-white bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
         >
-          <img className='' src='https://i.postimg.cc/MpZtxwyx/casual-life-3d-girl-and-boy-in-the-worker-jumpsuits-looking-at-tablet.pngss' alt="" />
+          <img className='' src='https://i.postimg.cc/MpZtxwyx/casual-life-3d-girl-and-boy-in-the-worker-jumpsuits-looking-at-tablet.pngss' alt="true" />
         </div>
         <div className="p-5 bg-white md:flex-1">
           <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Account Register</h3>
           <form  onSubmit={handleSubmit(onSubmit)} action="#" className="flex flex-col space-y-5">
             <div className="flex flex-col space-y-1">
-            <label for="name" className="text-sm font-semibold text-gray-900">Name</label>
+            <label htmlFor="name" className="text-sm font-semibold text-gray-900">Name</label>
             
                     <input
                         type="text"
@@ -96,7 +96,7 @@ const SignUp = () => {
                         
 
                     </label>
-              <label for="email" className="text-sm font-semibold text-gray-900">Email</label>
+              <label htmlFor="email" className="text-sm font-semibold text-gray-900">Email</label>
               <input
                         type="email"
                         placeholder="Email"
@@ -119,7 +119,7 @@ const SignUp = () => {
             </div>
             <div className="flex flex-col space-y-1">
               <div className="flex items-center justify-between">
-                <label for="password" className="text-sm font-semibold text-gray-900">Password</label>
+                <label htmlFor="password" className="text-sm font-semibold text-gray-900">Password</label>
                
               </div>
               <input

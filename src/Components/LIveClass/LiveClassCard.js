@@ -9,8 +9,8 @@ const LiveClassCard = ({ live }) => {
 
     return (
 
-            <div class="card w-96  border  ">
-                <div class="">
+            <div className="card w-96  border  ">
+                <div className="">
             <div className="card w-96 ">
                 <div className="card-body">
 

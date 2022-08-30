@@ -38,11 +38,11 @@ const LiveCard = ({ allcard }) => {
         <div className="text-right">
           {courseData?.meetLink?.MLink ? (
             <p className="bg-red-500 inline py-1 px-2 text-center rounded-lg text-sm text-white">
-              <i class="fa-solid fa-circle text-xs"></i> Live
+              <i className="fa-solid fa-circle text-xs"></i> Live
             </p>
           ) : (
             <p className="bg-gray-500 inline py-1 px-2 text-center rounded-lg text-sm text-white">
-              <i class="fa-solid fa-ban text-xs"></i> Not Available
+              <i className="fa-solid fa-ban text-xs"></i> Not Available
             </p>
           )}
         </div>
@@ -64,11 +64,11 @@ const LiveCard = ({ allcard }) => {
                     className="btn btn-sm btn-info font-thin text-white"
                   >
                     Join
-                    <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
+                    <i className="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
                   </a>
                 ) : (
                   <a className="px-3 py-2 rounded-lg line-through uppercase bg-base-300 btn-sm font-thin">
-                    <i class="fa-solid fa-ban text-xs mr-1"></i> Join
+                    <i className="fa-solid fa-ban text-xs mr-1"></i> Join
                   </a>
                 )}
               </div>
