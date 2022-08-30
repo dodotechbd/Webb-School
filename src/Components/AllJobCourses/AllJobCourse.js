@@ -2,8 +2,10 @@ import React from "react";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
 import { useQuery } from "react-query";
+import useTitle from "../../Hooks/useTitle";
 
 const AllJobCourse = () => {
+  useTitle("Job Recruiment");
   const { data: job, isLoading } = useQuery(["jobCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then(
       (res) => res.json()

@@ -5,8 +5,10 @@ import AllAdmission from "../AllAdmission/AllAdmission";
 import AllJobCourse from "../AllJobCourses/AllJobCourse";
 import Instructor from "../Home/Instructor/Instructor";
 import { useQuery } from "react-query";
+import useTitle from "../../Hooks/useTitle";
 
 const AllCourses = () => {
+  useTitle("Courses");
   const { data: language, isLoading } = useQuery(["languageCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then(
       (res) => res.json()

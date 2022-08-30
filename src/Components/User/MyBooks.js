@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const MyBooks = () => {
+  useTitle("My Books");
   return (
     <div id="admission" className="lg:mb-40">
       <div className="lg:mx-8 mx-4 pt-10">

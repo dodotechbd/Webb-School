@@ -2,8 +2,10 @@ import React from "react";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
 import { useQuery } from "react-query";
+import useTitle from "../../Hooks/useTitle";
 
 const AllAdmission = () => {
+  useTitle("Admission");
   const { data: admission, isLoading } = useQuery(["admissionCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
       (res) => res.json()
