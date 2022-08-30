@@ -28,7 +28,7 @@ const Messages = () => {
     <div>
       {userMessageData?.length === 0 && (
         <div className="py-8 bg-base-200 text-center uppercase">
-          no message here <i className="fa-solid fa-bell-slash"></i>
+          no notifications here <i className="fa-solid fa-bell-slash"></i>
         </div>
       )}
       {userMessageData

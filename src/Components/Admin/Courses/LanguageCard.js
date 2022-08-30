@@ -98,13 +98,13 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
         <div>
           <button
             onClick={() => handleAddToSpecial(_id)}
-            className="btn btn-block text-green-600 rounded-none lg:btn-sm btn-ghost border-t-neutral"
+            className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral"
           >
             Add To Special
           </button>
           <button
             onClick={() => deleteItems(_id)}
-            className="btn btn-block text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
+            className="btn btn-block hover:bg-red-600 hover:text-base-100 text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
           >
             Delete Course
           </button>

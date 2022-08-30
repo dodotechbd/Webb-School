@@ -7,16 +7,20 @@ const MessageHistory = ({ message, refetch }) => {
         (async () => {
           const { data } = await primaryAxios.delete(`/message/${id}`);
           if (data.deletedCount > 0) {
-            Swal.fire(`message Is Now Removed`, {
-              icon: "success",
-              className: "rounded-xl",
-            });
+            Swal.fire({
+              text: 'Message Removed',
+              target: '#custom-target',
+              customClass: {
+                container: 'position-absolute'
+              },
+              toast: true,
+            })
             refetch();
           }
         })();
       };
   return (
-    <div className="card hover:bg-base-100 bg-base-300 rounded-none p-0">
+    <div className="card p-0">
       <div className="card-body px-2 py-2 flex-row justify-between items-center">
         <div>
         <h2 className="text-lg font-bold">{message?.title}</h2>

@@ -74,7 +74,7 @@ const JobCard = ({ allcard, deleteItem, refetch }) => {
   return (
     <div className="mx-auto mt-3 card card-compact lg:w-48 w-10/12 bg-base-100 border rounded-md border-neutral">
       <figure>
-        <img src={allcard?.img} alt="Shoes" className="lg:h-full w-full" />
+        <img src={allcard?.img} alt="Shoes" className="lg:h-32 w-full" />
       </figure>
       <div className="">
         <div className="px-2 pt-1 flex justify-between">
@@ -89,12 +89,12 @@ const JobCard = ({ allcard, deleteItem, refetch }) => {
           {allcard?.name.slice(0, 20)}
         </h2>
         <div>
-          <button onClick={() => handleAddToSpecial(_id)} className="btn btn-block text-green-600 rounded-none lg:btn-sm btn-ghost border-t-neutral">
+          <button onClick={() => handleAddToSpecial(_id)} className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral">
             Add To Special
           </button>
           <button
             onClick={() => deleteItems(_id)}
-            className="btn btn-block text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
+            className="btn btn-block hover:bg-red-600 hover:text-base-100 text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
           >
             Delete Course
           </button>
