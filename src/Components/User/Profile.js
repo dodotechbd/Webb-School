@@ -9,7 +9,9 @@ import primaryAxios from "../../Api/primaryAxios";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import { NavHashLink } from "react-router-hash-link";
 import "./Profile.css";
+import useTitle from "../../Hooks/useTitle";
 const Profile = () => {
+  useTitle("Profile");
   const [{ email }] = useAuthState(auth);
   const [isEdit, setIsEdit] = useState(null);
   const [role, roleLoading] = useRole();

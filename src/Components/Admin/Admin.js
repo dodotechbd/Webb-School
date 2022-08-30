@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Admin = () => {
+  useTitle("Admin Panel");
   return (
     <div className="min-h-screen">
       <div className="navbar bg-base-200 border-b border-neutral">

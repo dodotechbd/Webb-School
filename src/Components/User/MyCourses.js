@@ -5,8 +5,10 @@ import { useQuery } from "react-query";
 import primaryAxios from "../../Api/primaryAxios";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import useTitle from "../../Hooks/useTitle";
 
 const MyCourses = () => {
+  useTitle("My Courses");
   const [user, loading] = useAuthState(auth);
   const {
     data: myCourse,

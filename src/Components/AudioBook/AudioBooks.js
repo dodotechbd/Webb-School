@@ -2,8 +2,10 @@ import React from "react";
 import AudioBook from "./AudioBook";
 import { useQuery } from "react-query";
 import Loader from "../Shared/Loading/Loading";
+import useTitle from "../../Hooks/useTitle";
 
 const AudioBooks = () => {
+  useTitle("Audio Books");
   const { data: audiobook, isLoading } = useQuery(["audiobook"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
   );
