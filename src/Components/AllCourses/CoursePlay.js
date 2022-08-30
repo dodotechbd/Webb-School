@@ -40,7 +40,7 @@ const CoursePlay = () => {
   return (
     <div>
       {allCourseData?.meetLink?.MLink && (
-        <div className="hidden lg:flex fixed flex-col top-[20%] left-1 ">
+        <div className="hidden lg:flex fixed flex-col top-[20%] left-1">
           <ul>
             <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-5px] duration-300 bg-red-500 rounded">
               <a
@@ -80,7 +80,7 @@ const CoursePlay = () => {
               </label>
             </div>
           </div>
-          <div className="lg:w-7/12 w-full">
+          <div className="lg:w-[640px] w-full">
             <Outlet></Outlet>
           </div>
         </div>

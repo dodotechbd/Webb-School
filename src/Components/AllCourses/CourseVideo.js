@@ -11,37 +11,42 @@ const CourseVideo = () => {
   const { fileName } = useParams();
   const { video } = useParams();
   const [user, loading] = useAuthState(auth);
-  const {
-    data: myCourse,
-    isLoading,
-    refetch,
-  } = useQuery(["myCourse", user?.email], () =>
-    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  const { data: language, isLoading } = useQuery(["languageCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
+      res.json()
+    )
   );
-  if (isLoading) {
-    return <Loading></Loading>;
+  const { data: job } = useQuery(["jobCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: admission } = useQuery(["admissionCourses"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
+      (res) => res.json()
+    )
+  );
+  const courseData =
+    admission?.find((allcard) => allcard.videos) ||
+    language?.find((allcard) => allcard.videos) ||
+    job?.find((allcard) => allcard.videos);
+  if(isLoading){
+    return <div className="mx-auto hero py-36 bg-base-300"><div  id="preloaders"></div></div>;
   }
 
-  const courseData = myCourse?.data?.find((allcard) => allcard.video === video);
-
-  const videoData = courseData?.videos.find(
-    (allcard) => allcard.fileName === fileName
-  );
-  console.log(courseData)
+  const fileData = courseData?.videos?.find((s) => s.fileName === fileName)
+  
+  console.log(fileData);
   return (
     <div>
-     
-
-      <div className="lg:h-96 h-48 md:h-96 w-full">
-       
-        {videoData?.vurl ? (
-          
+      <div className="lg:h-[360px] h-48 md:h-96">
+        {fileData?.vurl ? (
           <ReactPlayer
             width={"100%"}
             height={"100%"}
             controls
             light={true}
-            url={videoData?.vurl}
+            url={fileData?.vurl}
             playing
           />
         ) : (
@@ -57,7 +62,7 @@ const CourseVideo = () => {
           </div>
         )}
       </div>
-      <h1 className="text-3xl my-4">{videoData?.name}</h1>
+      <h1 className="text-3xl my-4">{fileData?.name}</h1>
       <label
         htmlFor="my-modal-3"
         className="text-red-500 underline cursor-pointer text-md modal-button"
@@ -68,7 +73,10 @@ const CourseVideo = () => {
 
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
       <label htmlFor="my-modal-3" className="modal cursor-pointer">
-      <label className="modal-box relative rounded-lg max-w-4xl text-left border border-neutral" htmlFor="">
+        <label
+          className="modal-box relative rounded-lg max-w-4xl text-left border border-neutral"
+          htmlFor=""
+        >
           <h1 className="text-2xl font-bold text-info">Copyright Warnning</h1>
           <p>
             If you require any more information or have any questions about our
