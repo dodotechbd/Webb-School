@@ -3,8 +3,10 @@ import { useQuery } from "react-query";
 import Loader from "../Shared/Loading/Loading";
 import AcadamicBook from "./AcadamicBook/AcadamicBook";
 import SkillBooks from "./SkillBooks";
+import useTitle from "../../Hooks/useTitle";
 
 const BookStore = () => {
+  useTitle("Book Store");
   const { data: acadamicbook, isLoading } = useQuery(["acadamicbook"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`).then(
       (res) => res.json()

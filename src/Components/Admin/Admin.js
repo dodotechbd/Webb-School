@@ -1,7 +1,9 @@
 import React from "react";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Admin = () => {
+  useTitle("Admin Panel");
   return (
     <div className="min-h-screen">
       <div className="navbar bg-base-200 border-b border-neutral">
@@ -64,7 +66,7 @@ const Admin = () => {
               <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/message"}><i className="fa-solid fa-paper-plane"></i>Send Message</NavLink>
+              <NavLink to={"/admin/message"}><i className="fa-solid fa-bell"></i>Send Notification</NavLink>
             </li>
             
           </ul>

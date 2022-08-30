@@ -30,7 +30,7 @@ const MessageRow = ({ user, prefetch, index }) => {
         const Toast = Swal.mixin({
           toast: true,
           position: "top-right",
-          iconColor: "white",
+          iconColor: "green",
           customClass: {
             popup: "colored-toast",
           },
@@ -82,11 +82,11 @@ const MessageRow = ({ user, prefetch, index }) => {
           <div className="modal-box p-0">
             <div className="px-3 pt-3 pb-2 bg-primary flex justify-between">
               <p className="text-xl text-white">
-                <i className="fa-solid fa-paper-plane"></i> New Message
+                <i className="fa-solid fa-bell"></i> Send Notification
               </p>
               <label
                 htmlFor={_id}
-                className="btn btn-sm btn-ghost text-white btn-square"
+                className="btn btn-sm btn-ghost hover:bg-red-600 text-white btn-square"
               >
                 ✕
               </label>
@@ -94,8 +94,8 @@ const MessageRow = ({ user, prefetch, index }) => {
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
                 <h2 className="text-lg">
-                  To <span className="ml-1 font-bold">{name}</span>
-                  <span className="ml-2 badge">{email}</span>
+                  <p><span className="ml-1 font-bold">{name}</span></p>
+                  <p className="badge">{email}</p>
                 </h2>
                 <div className="form-control">
                   <label className="input-group input-group-sm">
@@ -141,11 +141,11 @@ const MessageRow = ({ user, prefetch, index }) => {
           <div className="modal-box p-0">
             <div className="px-3 pt-3 pb-2 bg-primary flex justify-between">
               <p className="text-xl text-white">
-                <i className="fa-solid fa-paper-plane"></i> All Messages
+                <i className="fa-solid fa-bell"></i> All Notification
               </p>
               <label
                 htmlFor={email}
-                className="btn btn-sm btn-ghost text-white btn-square"
+                className="btn btn-sm btn-ghost  hover:bg-red-600 text-white btn-square"
               >
                 ✕
               </label>
@@ -156,7 +156,7 @@ const MessageRow = ({ user, prefetch, index }) => {
                   <span className="ml-1 font-bold">{name}</span>
                   <span className="ml-2 badge">{email}</span>
                 </h2>
-                <div>
+                <div className="bg-base-200 rounded-md">
                   {message?.data?.slice(0).reverse().map((message, index) => (
                     <div>
                       {message?.email === email && 

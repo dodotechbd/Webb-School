@@ -57,7 +57,7 @@ const SpecialCard = ({ allcard, refetch }) => {
         <div>
           <button
             onClick={() => deleteItems(_id)}
-            className="btn btn-block text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral btn-md hover:rounded-b-md"
+            className="btn btn-block hover:bg-red-600 hover:text-white text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral btn-md hover:rounded-b-md"
           >
             Delete Course
           </button>
