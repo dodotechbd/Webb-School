@@ -66,7 +66,9 @@ const Admin = () => {
             <li>
               <NavLink to={"/admin/message"}><i className="fa-solid fa-paper-plane"></i>Send Message</NavLink>
             </li>
-            
+            <li>
+              <NavLink to={"/admin/showteacher"}><i className="fa-solid fa-paper-plane"></i>Manage Teacher</NavLink>
+            </li>
           </ul>
         </div>
       </div>

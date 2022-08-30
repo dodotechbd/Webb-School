@@ -17,11 +17,11 @@ import { BsArrowUp } from "react-icons/bs";
 const Home = () => {
 
   return (
-    
-    <div>fd
+
+    <div>
       <Hero></Hero>
       {/* messenger chat */}
-      <MessengerCustomerChat 
+      <MessengerCustomerChat
         pageId="101878912628102" appId="3150275291906230"
       />
       <Navigation></Navigation>
@@ -36,14 +36,14 @@ const Home = () => {
       <Support></Support>
       <Question></Question>
       <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-primary text-2xl'>
-        <BsArrowUp/>
+        <BsArrowUp />
       </AnchorLink>
       {/* messenger chat --- */}
       <MessengerCustomerChat
         pageId="101878912628102" appId="3150275291906230"
       />
     </div>
-    
+
   );
 };
 

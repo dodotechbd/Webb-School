@@ -21,7 +21,7 @@ const Header = ({ handleThemeChange, theme }) => {
   };
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
-  
+
   console.log(role)
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
@@ -65,6 +65,15 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
+      {/* <li>
+        <NavLink to="showteacher">Show-Teacher</NavLink>
+      </li> */}
+      <li>
+        <NavLink to="addteacher">Add-Teacher</NavLink>
+      </li>
+      {/* <li>
+        <NavLink to="editteacher">Edit-Teacher</NavLink>
+      </li> */}
       {/* {user ? <li>
         <NavLink to="chat">Chat</NavLink>
       </li> : ("")} */}
@@ -153,11 +162,10 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${
-                              user?.photoURL
-                                ? user?.photoURL
-                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                            }`}
+                            src={`${user?.photoURL
+                              ? user?.photoURL
+                              : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                              }`}
                           />
                         </div>
                       </label>
@@ -323,11 +331,10 @@ const Header = ({ handleThemeChange, theme }) => {
             <label tabindex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-9 rounded-full">
                 <img
-                  src={`${
-                    user?.photoURL
-                      ? user?.photoURL
-                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                  }`}
+                  src={`${user?.photoURL
+                    ? user?.photoURL
+                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                    }`}
                 />
               </div>
             </label>
@@ -339,11 +346,10 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div className="avatar">
                   <div className="w-20 rounded-full">
                     <img
-                      src={`${
-                        user?.photoURL
-                          ? user?.photoURL
-                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                      }`}
+                      src={`${user?.photoURL
+                        ? user?.photoURL
+                        : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                        }`}
                     />
                   </div>
                 </div>

@@ -63,6 +63,9 @@ import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import BookReview from "./Components/Admin/ManageReview/BookReview";
 import Special from "./Components/Admin/Courses/Special";
+import AddTeacher from "./Features/Teachers/AddTeacher";
+import EditTeacher from "./Features/Teachers/EditTeacher";
+import TeacherView from "./Features/Teachers/TeacherView";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -128,7 +131,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
-         
+
           {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
@@ -189,6 +192,7 @@ function App() {
               <Route path="/admin/reviews/book" element={<BookReview></BookReview>}></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+            <Route path="/admin/showTeacher" element={<TeacherView></TeacherView>}></Route>
 
             <Route
               path="/admin/addlanguage"
@@ -209,6 +213,7 @@ function App() {
               element={<Payments></Payments>}
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
+
           </Route>
         </Route>
         {/* courses  */}
@@ -225,6 +230,9 @@ function App() {
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
+        <Route path="/addteacher" element={<AddTeacher></AddTeacher>}></Route>
+        <Route path="/editteacher" element={<EditTeacher></EditTeacher>}></Route>
+        <Route path="/showteacher" element={<TeacherView></TeacherView>}></Route>
         <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
         <Route
           path="/liveclasses"
