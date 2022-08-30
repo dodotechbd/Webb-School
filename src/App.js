@@ -63,6 +63,7 @@ import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import BookReview from "./Components/Admin/ManageReview/BookReview";
 import Special from "./Components/Admin/Courses/Special";
+import Demo from "./Components/Shared/Header/Demo/Demo";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -227,9 +228,11 @@ function App() {
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
         <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
         <Route
-          path="/liveclasses"
-          element={<MyLiveClass></MyLiveClass>}
+          path="/liveclasses" element={<MyLiveClass></MyLiveClass>}
+           
         ></Route>
+       
+
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route

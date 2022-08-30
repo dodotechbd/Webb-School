@@ -1,3 +1,4 @@
+import { map } from "@firebase/util";
 import React from "react";
 import { useQuery } from "react-query";
 
@@ -27,6 +28,7 @@ const LiveCard = ({ allcard }) => {
       className="mx-auto lg:flex bg-base-200 shadow-lg rounded-2xl
        hover:-translate-y-3 border-neutral  transform transition duration-300 text-warning h-full"
     >
+      
       <figure className="p-4">
         <img
           src={allcard?.img}
@@ -34,6 +36,8 @@ const LiveCard = ({ allcard }) => {
           className="h-full md:h-48 lg:h-36 rounded-xl w-96"
         />
       </figure>
+      
+       
       <div className="w-full p-4 lg:pr-4 lg:pl-0 lg:pt-4 pt-0">
         <div className="text-right">
           {courseData?.meetLink?.MLink ? (
@@ -61,7 +65,7 @@ const LiveCard = ({ allcard }) => {
                   <a
                     href={courseData?.meetLink?.MLink}
                     target="blank"
-                    className="btn btn-sm btn-info font-thin text-white"
+                    className="btn btn-sm bg-green-500 font-thin text-white"
                   >
                     Join
                     <i class="fa-solid fa-arrow-up-right-from-square text-xs ml-1"></i>
@@ -76,6 +80,7 @@ const LiveCard = ({ allcard }) => {
           </div>
         </div>
       </div>
+      
     </div>
   );
 };

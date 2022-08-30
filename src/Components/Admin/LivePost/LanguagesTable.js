@@ -81,8 +81,8 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
           Post Link
         </label>
         <input type="checkbox" id={_id} className="modal-toggle" />
-        <div className="modal">
-          <div className="modal-box p-0">
+        <div className="modal ">
+          <div className="modal-box  p-0">
             <div className="px-3 pt-3 pb-2 bg-info flex justify-between">
               <p className="text-xl text-white">
                 <i className="fa-solid fa-paper-plane"></i> Post Your google
@@ -97,7 +97,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
             </div>
             <form onSubmit={handleSubmit(onSubmit)}>
               <div className="card-body px-6 py-3">
-                <div className="flex">
+                <div className="flex items-center">
                   <div className="px-1">
                     <div class="avatar ">
                       <div class="w-16 mask mask-squircle ">
@@ -105,9 +105,9 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                       </div>
                     </div>
                   </div>
-                  <div className="pt-5 w-full font-semibold">
-                    <p className=" text-info rounded-lg text-center pb-2">
-                      <span className="uppercase  text-bold   "> {uname}</span>{" "}
+                  <div className="w-full font-semibold">
+                    <p className=" text-info rounded-lg text-left whitespace-normal ">
+                      <span className="uppercase  text-bold   "> {name}</span>{" "}
                     </p>
                   </div>
                 </div>
@@ -154,7 +154,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                   </label>
                 </div>
 
-                <div className="flex justify-between   pt-2">
+                <div className="flex flex-col lg:flex-row md:flex-row justify-between gap-2  pt-2">
                   <div>
                     <label className="input-group input-group-sm ">
                       <span className="bg-info text-white uppercase ">

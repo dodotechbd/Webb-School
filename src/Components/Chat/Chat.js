@@ -4,7 +4,7 @@ import auth from '../../firebase.init';
 import io from 'socket.io-client';
 import { nanoid } from 'nanoid';
 import { sendEmailVerification } from 'firebase/auth';
-import './style.css';
+
 
 
 const socket = io.connect("https://rocky-escarpment-87440.herokuapp.com/");
