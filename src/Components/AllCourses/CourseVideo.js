@@ -1,45 +1,56 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import primaryAxios from "../../Api/primaryAxios";
-import Loading from "../Shared/Loading/Loading";
+import { signOut } from "firebase/auth";
 
 const CourseVideo = () => {
   const { fileName } = useParams();
-  const { video } = useParams();
+  const { uname } = useParams();
+  let location = useLocation();
   const [user, loading] = useAuthState(auth);
   const { data: language, isLoading } = useQuery(["languageCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
       res.json()
     )
   );
-  const { data: job } = useQuery(["jobCourse"], () =>
+  const { data: job, jobLoading } = useQuery(["jobCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
       res.json()
     )
   );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
+  const { data: admission, aLoading } = useQuery(["admissionCourses"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
       (res) => res.json()
     )
   );
   const courseData =
-    admission?.find((allcard) => allcard.videos) ||
-    language?.find((allcard) => allcard.videos) ||
-    job?.find((allcard) => allcard.videos);
-  if(isLoading){
-    return <div className="mx-auto hero py-36 bg-base-300"><div  id="preloaders"></div></div>;
+    admission?.find((allcard) => allcard.uname === uname) ||
+    language?.find((allcard) => allcard.uname === uname) ||
+    job?.find((allcard) => allcard.uname === uname);
+
+  const { data: myCourse } = useQuery(["myCourses", user?.email], () =>
+    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  );
+  const myCourseData = myCourse?.data?.find((s) => s.uname === uname);
+
+  if (isLoading || jobLoading || aLoading) {
+    return (
+      <div className="mx-auto hero py-36 bg-base-300">
+        <div id="preloaders"></div>
+      </div>
+    );
   }
 
-  const fileData = courseData?.videos?.find((s) => s.fileName === fileName)
-  
-  console.log(fileData);
+  const fileData = courseData?.videos?.find((s) => s.fileName === fileName);
+
   return (
     <div>
-      <div className="lg:h-[360px] h-48 md:h-96">
+      {courseData?.uname === myCourseData?.uname ? (
+        <div className="lg:h-[360px] h-48 md:h-96">
         {fileData?.vurl ? (
           <ReactPlayer
             width={"100%"}
@@ -62,6 +73,19 @@ const CourseVideo = () => {
           </div>
         )}
       </div>
+      ) : (
+        <div className="w-full h-full bg-base-300">
+            <img
+              className="mx-auto lg:w-72 md:w-72 w-40"
+              src="https://github.com/MShafiMS/admission/blob/gh-pages/output-onlinegiftools%20(1).gif?raw=true"
+              alt="error"
+            />
+            <h1 className="text-xl text-center">
+              You Need To Purchase!
+            </h1>
+          </div>
+      )}
+      
       <h1 className="text-3xl my-4">{fileData?.name}</h1>
       <label
         htmlFor="my-modal-3"

@@ -132,10 +132,7 @@ function App() {
           ></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route path="/profile" element={<Profile></Profile>}>
-            <Route
-              path="/profile"
-              element={<PaidCourse></PaidCourse>}
-            ></Route>
+            <Route path="/profile" element={<PaidCourse></PaidCourse>}></Route>
             <Route
               path="/profile/update"
               element={<UpdateProfile></UpdateProfile>}
@@ -149,6 +146,15 @@ function App() {
             path="/bookcheckout/:bookId"
             element={<BookCheckout></BookCheckout>}
           ></Route>
+          <Route
+            path="/course/:uname/:list"
+            element={<CoursePlay></CoursePlay>}
+          >
+            <Route
+              path="/course/:uname/:list/:fileName"
+              element={<CourseVideo></CourseVideo>}
+            ></Route>
+          </Route>
         </Route>
 
         <Route
@@ -231,12 +237,6 @@ function App() {
           path="/course/:uname"
           element={<AllCourseView></AllCourseView>}
         ></Route>
-        <Route path="/course/:uname/:list" element={<CoursePlay></CoursePlay>}>
-          <Route
-            path="/course/:uname/:list/:fileName"
-            element={<CourseVideo></CourseVideo>}
-          ></Route>
-        </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
