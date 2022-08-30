@@ -14,7 +14,7 @@ const Admission = () => {
     )
   );
   if (isLoading) {
-    return <Loading></Loading>;
+    return  <div className="mx-auto" id="preloaders"></div>;
   }
   return (
     <tbody>
