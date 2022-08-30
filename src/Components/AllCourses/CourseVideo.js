@@ -27,6 +27,7 @@ const CourseVideo = () => {
   const videoData = courseData?.videos.find(
     (allcard) => allcard.fileName === fileName
   );
+  console.log(courseData)
   return (
     <div>
      
