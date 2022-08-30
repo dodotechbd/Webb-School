@@ -8,13 +8,15 @@ const Message = () => {
     const {
         data: users,
         isLoading,
-        refetch,
       } = useQuery(["ourUsers"], () => primaryAxios.get(`/user`));
       if (isLoading) {
         return <Loading></Loading>;
       }
     return (
         <div>
+          <div class="navbar">
+        <a class="normal-case text-xl">Send Message</a>
+      </div>
       <div className="overflow-x-auto w-full">
         <table className="table table-zebra w-full">
           <thead>
@@ -31,7 +33,6 @@ const Message = () => {
                 key={user._id}
                 index={index}
                 user={user}
-                prefetch={refetch}
               />
             ))}
           </tbody>

@@ -14,9 +14,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
   const onSubmit = (MLink) => {
     (async () => {
       const { data } = await primaryAxios.put(`/language/${_id}`, MLink);
-      if (isLoading) {
-        return <Loading></Loading>;
-      } else if (data) {
+      if (data.success) {
         const Toast = Swal.mixin({
           toast: true,
           position: "top-right",
