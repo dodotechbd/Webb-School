@@ -12,7 +12,7 @@ const useRole = () => {
   useEffect(() => {
     const email = user?.email;
     if (email) {
-      fetch(`http://rocky-escarpment-87440.herokuapp.com/user-role?email=${email}`, {
+      fetch(`http://rocky-escarpment-87440.herokuapp.com/user-role?email=${user?.email}`, {
         method: "GET",
         headers: {
           "content-type": "application/json",
