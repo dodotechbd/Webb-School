@@ -10,21 +10,38 @@ const useRole = () => {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    (async () => {
-      const { data } = await primaryAxios.get(
-        `/user-role?email=${user?.email}`
-      );
-      if (data?.role) {
-        setRole(data?.role);
-        setRoleLoading(false);
-      }
-       else {
-        setRole("");
-        setRoleLoading(false);
-      }
-      setUserName(data?.name);
-    })();
+    const email = user?.email;
+    if (email) {
+      fetch(`http://rocky-escarpment-87440.herokuapp.com/user-role?email=${email}`, {
+        method: "GET",
+        headers: {
+          "content-type": "application/json",
+          authorization: `Bearer ${localStorage.getItem("authorizationToken")}`,
+        },
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          setRole(data?.role);
+          setRoleLoading(false);
+          setUserName(data?.name);
+        });
+    }
   }, [user]);
+  //   (async () => {
+  //     const { data } = await primaryAxios.get(
+  //       `/user-role?email=${user?.email}`
+  //     );
+  //     if (data?.role) {
+  //       setRole(data?.role);
+  //       setRoleLoading(false);
+  //     }
+  //      else {
+  //       setRole("");
+  //       setRoleLoading(false);
+  //     }
+  //     setUserName(data?.name);
+  //   })();
+  // }, [user]);
   return [role, roleLoading, userName];
 };
 
