@@ -1,47 +1,63 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useLocation, useParams } from "react-router-dom";
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import primaryAxios from "../../Api/primaryAxios";
-import Loading from "../Shared/Loading/Loading";
+import { signOut } from "firebase/auth";
 
 const CourseVideo = () => {
   const { fileName } = useParams();
-  const { video } = useParams();
+  const { uname } = useParams();
+  let location = useLocation();
   const [user, loading] = useAuthState(auth);
-  const {
-    data: myCourse,
-    isLoading,
-    refetch,
-  } = useQuery(["myCourse", user?.email], () =>
+  const { data: language, isLoading } = useQuery(["languageCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: job, jobLoading } = useQuery(["jobCourse"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
+      res.json()
+    )
+  );
+  const { data: admission, aLoading } = useQuery(["admissionCourses"], () =>
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
+      (res) => res.json()
+    )
+  );
+  const courseData =
+    admission?.find((allcard) => allcard.uname === uname) ||
+    language?.find((allcard) => allcard.uname === uname) ||
+    job?.find((allcard) => allcard.uname === uname);
+
+  const { data: myCourse } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
-  if (isLoading) {
-    return <Loading></Loading>;
+  const myCourseData = myCourse?.data?.find((s) => s.uname === uname);
+
+  if (isLoading || jobLoading || aLoading) {
+    return (
+      <div className="mx-auto hero py-36 bg-base-300">
+        <div id="preloaders"></div>
+      </div>
+    );
   }
 
-  const courseData = myCourse?.data?.find((allcard) => allcard.video === video);
+  const fileData = courseData?.videos?.find((s) => s.fileName === fileName);
 
-  const videoData = courseData?.videos.find(
-    (allcard) => allcard.fileName === fileName
-  );
-  console.log(courseData)
   return (
     <div>
-     
-
-      <div className="lg:h-96 h-48 md:h-96 w-full">
-       
-        {videoData?.vurl ? (
-          
+      {courseData?.uname === myCourseData?.uname ? (
+        <div className="lg:h-[360px] h-48 md:h-96">
+        {fileData?.vurl ? (
           <ReactPlayer
             width={"100%"}
             height={"100%"}
             controls
             light={true}
-            url={videoData?.vurl}
+            url={fileData?.vurl}
             playing
           />
         ) : (
@@ -57,7 +73,20 @@ const CourseVideo = () => {
           </div>
         )}
       </div>
-      <h1 className="text-3xl my-4">{videoData?.name}</h1>
+      ) : (
+        <div className="w-full h-full bg-base-300">
+            <img
+              className="mx-auto lg:w-72 md:w-72 w-40"
+              src="https://github.com/MShafiMS/admission/blob/gh-pages/output-onlinegiftools%20(1).gif?raw=true"
+              alt="error"
+            />
+            <h1 className="text-xl text-center">
+              You Need To Purchase!
+            </h1>
+          </div>
+      )}
+      
+      <h1 className="text-3xl my-4">{fileData?.name}</h1>
       <label
         htmlFor="my-modal-3"
         className="text-red-500 underline cursor-pointer text-md modal-button"
@@ -68,7 +97,10 @@ const CourseVideo = () => {
 
       <input type="checkbox" id="my-modal-3" className="modal-toggle" />
       <label htmlFor="my-modal-3" className="modal cursor-pointer">
-      <label className="modal-box relative rounded-lg max-w-4xl text-left border border-neutral" htmlFor="">
+        <label
+          className="modal-box relative rounded-lg max-w-4xl text-left border border-neutral"
+          htmlFor=""
+        >
           <h1 className="text-2xl font-bold text-info">Copyright Warnning</h1>
           <p>
             If you require any more information or have any questions about our
