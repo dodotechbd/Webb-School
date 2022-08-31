@@ -14,7 +14,9 @@ import Question from "./Question/Question";
 import Support from "../../Components/../Support/Support"
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { BsArrowUp } from "react-icons/bs";
+import useTitle from "../../Hooks/useTitle";
 const Home = () => {
+  useTitle("Home Page");
 
   return (
     

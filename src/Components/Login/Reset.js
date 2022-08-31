@@ -101,7 +101,7 @@ const Reset = () => {
           <div
             className="hidden p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
           >
-            <img className=' ' src={reset} alt="" />
+            <img className=' ' src={reset} alt="true" />
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Forgot your password ?</h3>

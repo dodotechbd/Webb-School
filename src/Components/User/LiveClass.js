@@ -6,7 +6,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import LiveCard from "./LiveCard";
 
+import useTitle from "../../Hooks/useTitle";
+
 const LiveClass = () => {
+  useTitle("Live Classes");
     const [user, loading] = useAuthState(auth);
   const {
     data: myCourse,

@@ -48,7 +48,6 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
-
 import AudioBooks from "./Components/AudioBook/AudioBooks";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 import UpdateProfile from "./Components/User/UpdateProfile";
@@ -63,20 +62,15 @@ import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import BookReview from "./Components/Admin/ManageReview/BookReview";
 import Special from "./Components/Admin/Courses/Special";
-import Demo from "./Components/Shared/Header/Demo/Demo";
+import { useAuthState } from "react-firebase-hooks/auth";
+import auth from "./firebase.init";
+import AllReviews from "./Components/Admin/ManageReview/AllReviews";
+import PaidCourse from "./Components/User/PaidCourse";
+
 
 function App() {
   const [theme, setTheme] = useState(false);
-
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
-  }, []);
-
+  const [user, loading] = useAuthState(auth);
   useEffect(() => {
     setTheme(JSON.parse(window.localStorage.getItem("theme")));
   }, []);
@@ -129,7 +123,7 @@ function App() {
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
           <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
-         
+
           {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
@@ -138,6 +132,10 @@ function App() {
           ></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route path="/profile" element={<Profile></Profile>}>
+            <Route
+              path="/profile"
+              element={<PaidCourse></PaidCourse>}
+            ></Route>
             <Route
               path="/profile/update"
               element={<UpdateProfile></UpdateProfile>}
@@ -171,7 +169,10 @@ function App() {
                 path="/admin/courses/manage/language"
                 element={<Language></Language>}
               ></Route>
-              <Route path="/admin/courses/manage/job" element={<Job></Job>}></Route>
+              <Route
+                path="/admin/courses/manage/job"
+                element={<Job></Job>}
+              ></Route>
               <Route
                 path="/admin/courses/manage/admission"
                 element={<Admission></Admission>}
@@ -185,9 +186,22 @@ function App() {
               path="/admin/academicbookss"
               element={<AcademicBookss></AcademicBookss>}
             ></Route>
-            <Route path="/admin/reviews" element={<ManageReview></ManageReview>}>
-              <Route path="/admin/reviews/course" element={<CourseReview></CourseReview>}></Route>
-              <Route path="/admin/reviews/book" element={<BookReview></BookReview>}></Route>
+            <Route
+              path="/admin/reviews"
+              element={<ManageReview></ManageReview>}
+            >
+              <Route
+                path="/admin/reviews"
+                element={<AllReviews></AllReviews>}
+              ></Route>
+              <Route
+                path="/admin/reviews/course"
+                element={<CourseReview></CourseReview>}
+              ></Route>
+              <Route
+                path="/admin/reviews/book"
+                element={<BookReview></BookReview>}
+              ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
 
@@ -226,7 +240,10 @@ function App() {
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
-        <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
+        <Route
+          path="/audiobooks"
+          element={<MyAudioBooks></MyAudioBooks>}
+        ></Route>
         <Route
           path="/liveclasses" element={<MyLiveClass></MyLiveClass>}
            

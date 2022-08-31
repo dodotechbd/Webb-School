@@ -20,8 +20,8 @@ const MyCourseCard = ({ allcard }) => {
           <h2 className="px-2 py-1 text-xl">{allcard?.name.slice(0,30)}</h2>
           <div>
             <div className="flex justify-between items-center gap-3">
-              <div class="w-full mx-2 bg-[#EBEDEF] rounded-full h-2.5">
-                <div class="bg-[#3EC65D] h-2.5 rounded-full w-[45%]"></div>
+              <div className="w-full mx-2 bg-[#EBEDEF] rounded-full h-2.5">
+                <div className="bg-[#3EC65D] h-2.5 rounded-full w-[45%]"></div>
               </div>
               <p>45%</p>
             </div>

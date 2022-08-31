@@ -14,9 +14,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
   const onSubmit = (MLink) => {
     (async () => {
       const { data } = await primaryAxios.put(`/language/${_id}`, MLink);
-      if (isLoading) {
-        return <Loading></Loading>;
-      } else if (data) {
+      if (data.success) {
         const Toast = Swal.mixin({
           toast: true,
           position: "top-right",
@@ -67,15 +65,15 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
             Join
           </a>
         ) : (
-          <button className="btn text-base-100 font-thin pr-4 hover:bg-gray-500 btn-xs bg-gray-400">
+          <button className="btn text-base-100 font-thin pr-4 hover:bg-gray-500 btn-xs bg-gray-400 line-through">
             <MdDoNotDisturbOff className="text-sm" />
-            Not Available
+            Join
           </button>
         )}
       </td>
       <td>
         <label
-          for={_id}
+          htmlFor={_id}
           className="btn modal-button btn-xs btn-outline btn-info  hover:text-white "
         >
           Post Link
@@ -89,7 +87,7 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
                 meet link
               </p>
               <label
-                for={_id}
+                htmlFor={_id}
                 className="btn btn-sm btn-ghost text-white btn-square hover:bg-rose-600"
               >
                 ✕
@@ -99,8 +97,8 @@ const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
               <div className="card-body px-6 py-3">
                 <div className="flex items-center">
                   <div className="px-1">
-                    <div class="avatar ">
-                      <div class="w-16 mask mask-squircle ">
+                    <div className="avatar ">
+                      <div className="w-16 mask mask-squircle ">
                         <img src={img} alt="Tailwind-CSS-Avatar-component" />
                       </div>
                     </div>

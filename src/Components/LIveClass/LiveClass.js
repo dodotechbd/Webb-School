@@ -28,7 +28,7 @@ const LiveClass = () => {
       </div>
 
       <div className="flex h-screen justify-center items-center ">
-        <div class=" cardGlass card  w-96  ">
+        <div className=" cardGlass card  w-96  ">
           <div className="card  w-96 shadow-xl ">
             {Lives.map((live) => (
               <LiveClassCard live={live}></LiveClassCard>

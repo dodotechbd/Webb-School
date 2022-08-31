@@ -1,5 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
+import { Link } from "react-router-dom";
 import "./Banner/Banner.css";
 const Navigation = () => {
   return (
@@ -13,8 +14,8 @@ const Navigation = () => {
         </p>
       </div>
       <div className="grid grid-cols-2 lg:gap-5 lg:grid-cols-4 gap-4 px-3 py-3 rounded-xl">
-        <AnchorLink
-          href="#store"
+        <Link
+          to={'/bookstore'}
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
         >
           {" "}
@@ -26,7 +27,7 @@ const Navigation = () => {
               <span className="lg:pt-7 md:pt-7">Book Store</span>
             </p>
           </div>
-        </AnchorLink>
+        </Link>
         <AnchorLink
           href="#admission"
           className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "

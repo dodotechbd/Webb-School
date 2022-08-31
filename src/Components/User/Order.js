@@ -5,8 +5,10 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from '../../firebase.init';
 import Loading from "../../Components/Shared/Loading/Loading";
 import OrderCard from './OrderCard';
+import useTitle from '../../Hooks/useTitle';
 
 const Order = () => {
+  useTitle("Payment History");
     const [user] = useAuthState(auth);
     const {
         data: orders,

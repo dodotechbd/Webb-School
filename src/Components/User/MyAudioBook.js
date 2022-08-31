@@ -16,9 +16,9 @@ const MyAudioBook = ({ allcard }) => {
             backgroundRepeat: "no-repeat",
           }}
         >
-          <div class="hero-overlay bg-[#0F1729] rounded-2xl bg-opacity-40"></div>
+          <div className="hero-overlay bg-[#0F1729] rounded-2xl bg-opacity-40"></div>
           <div className="flex lg:flex-row flex-col justify-center gap-4 items-center backdrop-blur-md w-full p-4 rounded-t-2xl">
-            <img className="h-36 rounded-lg" src={bookData?.img} alt="" />
+            <img className="h-36 rounded-lg" src={bookData?.img} alt="true" />
             <h1 className="text-xl">
               {" "}
               <span className="text-2xl text-white drop-shadow-lg">
@@ -27,7 +27,7 @@ const MyAudioBook = ({ allcard }) => {
               <div className="flex my-2 items-center gap-3">
                 <div className="avatar">
                   <div className="w-16 rounded-lg">
-                    <img src={bookData?.img2} alt="" />
+                    <img src={bookData?.img2} alt="true" />
                   </div>
                 </div>
                 <div>

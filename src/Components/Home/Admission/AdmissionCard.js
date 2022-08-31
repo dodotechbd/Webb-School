@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const AdmissionCard = ({ admission }) => {
   const { name, img, link, instructor } = admission;
-  console.log(name);
   const { uname } = admission;
 
   return (

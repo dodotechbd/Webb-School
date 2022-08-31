@@ -9,7 +9,9 @@ import primaryAxios from "../../Api/primaryAxios";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
 import { NavHashLink } from "react-router-hash-link";
 import "./Profile.css";
+import useTitle from "../../Hooks/useTitle";
 const Profile = () => {
+  useTitle("Profile");
   const [{ email }] = useAuthState(auth);
   const [isEdit, setIsEdit] = useState(null);
   const [role, roleLoading] = useRole();
@@ -119,6 +121,7 @@ const Profile = () => {
                 <h1>Phone</h1>
                 <h1>Address</h1>
                 <h1>Education</h1>
+                <h1>Reputation</h1>
                 <h1>Rank</h1>
               </div>
               <div>
@@ -126,8 +129,8 @@ const Profile = () => {
                 <h1 className="ml-8">{user?.data?.phone ? user?.data?.phone : "- - -"}</h1>
                 <h1 className="ml-8">{user?.data?.address ? user?.data?.address : "- - -"}</h1>
                 <h1 className="ml-8">{user?.data?.education ? user?.data?.education : "- - -"}</h1>
-                <h1 className="ml-8">2022</h1>
-                <h1 className="ml-8">User</h1>
+                <h1 className="ml-8">000</h1>
+                <h1 className="ml-8 capitalize">{role ? role : "Newbie"}</h1>
               </div>
             </div>
             <div className="card-body py-2 gap-0">
