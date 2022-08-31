@@ -61,9 +61,9 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
-      {/* <li>
+      <li>
         <NavLink to="showteacher">Show-Teacher</NavLink>
-      </li> */}
+      </li>
       {/* <li>
         <NavLink to="addteacher">Add-Teacher</NavLink>
       </li> */}

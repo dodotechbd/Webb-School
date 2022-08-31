@@ -206,7 +206,9 @@ function App() {
               ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-            <Route path="/admin/showTeacher" element={<TeacherView></TeacherView>}></Route>
+            <Route path="/admin/showteacher" element={<TeacherView></TeacherView>}></Route>
+            <Route path="/admin/editteacher" element={<TeacherView></TeacherView>}></Route>
+            <Route path="/admin/addteacher" element={<TeacherView></TeacherView>}></Route>
 
             <Route
               path="/admin/addlanguage"
