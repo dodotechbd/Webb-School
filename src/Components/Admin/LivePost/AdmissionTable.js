@@ -18,7 +18,7 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
         const Toast = Swal.mixin({
           toast: true,
           position: "top-right",
-          iconColor: "green",
+          iconColor: "green", 
           customClass: {
             popup: "colored-toast",
           },

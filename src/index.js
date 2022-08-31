@@ -7,6 +7,9 @@ import { BrowserRouter } from "react-router-dom";
 import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
+import { Provider } from "react-redux";
+import store from "./ReduxStore/Store";
+
 // create client 
 const queryClient = new QueryClient();
 
@@ -25,7 +28,9 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ScrollToTop />
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

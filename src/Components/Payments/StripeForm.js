@@ -125,8 +125,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         list: courseData?.list,
         img: courseData?.img,
         name: courseData?.name,
-        uname: courseData?.uname,
-        videos: courseData?.videos,
+        uname: courseData?.uname
       };
       const { data } =
         (await primaryAxios.post(`/order?email=${user?.email}`, payment)) &&

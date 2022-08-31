@@ -65,7 +65,7 @@ const Instructor = () => {
             />
             <div className="flex flex-col items-center">
               <p className="text-lg font-bold">Amit Sharma</p>
-              <p className="text-sm">Bad boy</p>
+              <p className="text-sm">Senior Web Instractor</p>
             </div>
           </div>
           <div className="flex flex-col items-center">
