@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const FooterTwo = () => {
   return (
@@ -11,7 +12,7 @@ const FooterTwo = () => {
                 Language Learning
               </h2>
               <nav className="flex flex-col  items-start -mb-1 space-y-2.5 ">
-                <a>
+                <Link to={'/course/english-for-career-development'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -26,8 +27,8 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   English for Career Development
-                </a>
-                <a>
+                </Link>
+                <Link  to={'/course/improve-english-communcation-skills'}> 
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -41,9 +42,9 @@ const FooterTwo = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Improve English Communication Skills
-                </a>
-                <a>
+                  Improve English Communication 
+                </Link >
+                <Link to={'/course/chinese-for-beginners'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -58,8 +59,8 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   Chinese For Beginners
-                </a>
-                <a>
+                </Link>
+                <Link to={'course/grammar-and-punctuation'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -74,7 +75,7 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   Grammar and Punctuation
-                </a>
+                </Link>
               </nav>
             </div>
             <div className="p-4 lg:w-1/4 sm:w-1/2 w-full">
@@ -82,7 +83,7 @@ const FooterTwo = () => {
                 Job Recruitment
               </h2>
               <nav className="flex flex-col text-cestarttems-center -mb-1 space-y-2.5">
-                <a>
+                <Link  to={'/course/bank-job'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -97,8 +98,8 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   Bank Job
-                </a>
-                <a>
+                </Link >
+                <Link to={'/course/developer-job'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -112,9 +113,9 @@ const FooterTwo = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Developer JOb
-                </a>
-                <a>
+                  Complete Web Development
+                </Link>
+                <Link  to={'/course/corporate-job'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -128,9 +129,9 @@ const FooterTwo = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Corporate Job
-                </a>
-                <a>
+                  Govt Job
+                </Link>
+                <Link  to={'/course/freelancer-job'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -144,8 +145,8 @@ const FooterTwo = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Freelancer Job
-                </a>
+                  BCS Preliminary
+                </Link>
               </nav>
             </div>
             <div className="p-4 lg:w-1/4 sm:w-1/2 w-full">
@@ -153,7 +154,7 @@ const FooterTwo = () => {
                 Prepare For The Admission
               </h2>
               <nav className="flex flex-col text-cestarttems-center -mb-1 space-y-2.5">
-                <a>
+                <Link to={'/course/varsity-admission-course'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -168,8 +169,8 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   University Admission
-                </a>
-                <a>
+                </Link>
+                <Link  to={'/course/medical-admission-course'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -184,8 +185,8 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   Medical Admission
-                </a>
-                <a>
+                </Link>
+                <Link  to={'/course/medical-admission-q-solve'}> 
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -200,8 +201,8 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   Medical Q.Sol
-                </a>
-                <a>
+                </Link>
+                <Link to={'/course/varsity-admission-q-solve'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
                     <svg
                       fill="none"
@@ -216,7 +217,7 @@ const FooterTwo = () => {
                     </svg>
                   </span>
                   University Q.Sol
-                </a>
+                </Link>
               </nav>
             </div>
             <div className="p-4 lg:w-1/4 sm:w-1/2 w-full">

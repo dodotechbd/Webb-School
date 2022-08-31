@@ -6,10 +6,12 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import primaryAxios from "../../Api/primaryAxios";
 import AddReview from "./AddReview";
+import useCourse from "../../Hooks/useCourse";
 
 const CoursePlay = () => {
   const { uname } = useParams();
   const [user, loading] = useAuthState(auth);
+  const [courseData] = useCourse();
   const {
     data: myCourse,
     isLoading,
@@ -17,35 +19,17 @@ const CoursePlay = () => {
   } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
-  const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
-  const allCourseData =
-    admission?.find((allcard) => allcard.uname === uname) ||
-    language?.find((allcard) => allcard.uname === uname) ||
-    job?.find((allcard) => allcard.uname === uname);
+  const myCourseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
+  console.log(myCourseData)
   return (
     <div>
-      {allCourseData?.meetLink?.MLink && (
-        <div className="hidden lg:flex fixed flex-col top-[20%] left-1 ">
+      {courseData?.meetLink?.MLink && (
+        <div className="hidden lg:flex fixed flex-col top-[20%] left-1">
           <ul>
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-5px] duration-300 bg-red-500 rounded">
+            <li className="w-[140px] h-[50px] flex justify-between items-center ml-[-100px] hover:ml-[-5px] duration-300 bg-red-500 rounded">
               <a
-                className="flex justify-between items-center hover:bg-red-500 w-full text-white font-bold"
-                href={allCourseData?.meetLink?.MLink}
+                className="flex justify-between mx-3 items-center hover:bg-red-500 w-full text-white font-bold"
+                href={courseData?.meetLink?.MLink}
                 target="blank"
               >
                 LIVE CLASS<i className="fa-solid fa-video"></i>
@@ -61,8 +45,8 @@ const CoursePlay = () => {
               <p className="text-lg p-3 border-b border-neutral">
                 Course Lesson
               </p>
-              {courseData?.file.map((course) => (
-                <CourseLink key={course.id} course={course}></CourseLink>
+              {myCourseData?.file.map((course) => (
+                <CourseLink key={course.id} course={course} allCourseData={courseData}></CourseLink>
               ))}
               {/* modal button  */}
               <label
@@ -80,7 +64,7 @@ const CoursePlay = () => {
               </label>
             </div>
           </div>
-          <div className="lg:w-7/12 w-full">
+          <div className="lg:w-[640px] w-full">
             <Outlet></Outlet>
           </div>
         </div>

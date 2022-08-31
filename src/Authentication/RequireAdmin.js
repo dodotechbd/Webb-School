@@ -8,14 +8,14 @@ import useRole from "../Hooks/useRole";
 
 function RequireAdmin() {
   const [user, loading] = useAuthState(auth);
-  const [role, roleLoading] = useRole(user);
+  const [role, roleLoading] = useRole();
   let location = useLocation();
 
   if (loading || roleLoading) {
     return <Loading></Loading>;
   }
 
-  if (!user || !role ) {
+  if (!user || role !== "admin") {
     signOut(auth);
     localStorage.removeItem("authorizationToken");
     return <Navigate to="/login" state={{ from: location }} replace></Navigate>

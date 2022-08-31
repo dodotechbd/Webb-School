@@ -48,7 +48,6 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
-
 import AudioBooks from "./Components/AudioBook/AudioBooks";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 import UpdateProfile from "./Components/User/UpdateProfile";
@@ -70,6 +69,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import AllReviews from "./Components/Admin/ManageReview/AllReviews";
 import PaidCourse from "./Components/User/PaidCourse";
+
 function App() {
   const [theme, setTheme] = useState(false);
   const [user, loading] = useAuthState(auth);
@@ -134,10 +134,7 @@ function App() {
           ></Route>
           <Route path="/orders" element={<Order></Order>}></Route>
           <Route path="/profile" element={<Profile></Profile>}>
-            <Route
-              path="/profile"
-              element={<PaidCourse></PaidCourse>}
-            ></Route>
+            <Route path="/profile" element={<PaidCourse></PaidCourse>}></Route>
             <Route
               path="/profile/update"
               element={<UpdateProfile></UpdateProfile>}
@@ -151,6 +148,15 @@ function App() {
             path="/bookcheckout/:bookId"
             element={<BookCheckout></BookCheckout>}
           ></Route>
+          <Route
+            path="/course/:uname/:list"
+            element={<CoursePlay></CoursePlay>}
+          >
+            <Route
+              path="/course/:uname/:list/:fileName"
+              element={<CourseVideo></CourseVideo>}
+            ></Route>
+          </Route>
         </Route>
 
         <Route
@@ -206,9 +212,11 @@ function App() {
               ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+
             <Route path="/admin/showteacher" element={<TeacherView></TeacherView>}></Route>
             <Route path="/admin/editteacher" element={<TeacherView></TeacherView>}></Route>
             <Route path="/admin/addteacher" element={<TeacherView></TeacherView>}></Route>
+
 
             <Route
               path="/admin/addlanguage"
@@ -229,7 +237,6 @@ function App() {
               element={<Payments></Payments>}
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
-
           </Route>
         </Route>
         {/* courses  */}
@@ -237,19 +244,14 @@ function App() {
           path="/course/:uname"
           element={<AllCourseView></AllCourseView>}
         ></Route>
-        <Route path="/course/:uname/:list" element={<CoursePlay></CoursePlay>}>
-          <Route
-            path="/course/:uname/:list/:fileName"
-            element={<CourseVideo></CourseVideo>}
-          ></Route>
-        </Route>
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
         <Route path="/addteacher" element={<AddTeacher></AddTeacher>}></Route>
-        <Route path="/editteacher" element={<EditTeacher></EditTeacher>}></Route>
-        <Route path="/showteacher" element={<TeacherView></TeacherView>}></Route>
-        <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
+        <Route
+          path="/audiobooks"
+          element={<MyAudioBooks></MyAudioBooks>}
+        ></Route>
         <Route
           path="/audiobooks"
           element={<MyAudioBooks></MyAudioBooks>}
@@ -258,6 +260,7 @@ function App() {
           path="/liveclasses"
           element={<MyLiveClass></MyLiveClass>}
         ></Route>
+
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route
@@ -265,10 +268,10 @@ function App() {
           element={<UnderConstruction></UnderConstruction>}
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
-      </Routes >
+      </Routes>
       <FooterTwo></FooterTwo>
       <Footer></Footer>
-    </div >
+    </div>
   );
 }
 

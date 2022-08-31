@@ -1,22 +1,9 @@
 import React from "react";
 import { useParams, NavLink } from "react-router-dom";
-import { useQuery } from "react-query";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import primaryAxios from "../../Api/primaryAxios";
 
-const CourseLink = ({ course }) => {
+const CourseLink = ({ course, allCourseData }) => {
   const { uname } = useParams();
-  const [user, loading] = useAuthState(auth);
-  const {
-    data: myCourse,
-    isLoading,
-    refetch,
-  } = useQuery(["myCourses", user?.email], () =>
-    primaryAxios.get(`/mycourse?email=${user?.email}`)
-  );
-  const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
-  let activeClassName = "bg-base-300";
+  let activeClassName = "bg-neutral";
   return (
     <>
       <div
@@ -31,7 +18,7 @@ const CourseLink = ({ course }) => {
           {course.details.map((detail) => (
             <li>
               <NavLink
-                to={`/course/${uname}/${courseData?.list}/${detail?.fileName}`}
+                to={`/course/${uname}/${allCourseData?.list}/${detail?.fileName}`}
                 className="border-t border-neutral text-warning"
                 className={({ isActive }) =>
                   isActive ? activeClassName : undefined
