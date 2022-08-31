@@ -25,14 +25,12 @@ const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
 
-
-
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
       res.json()
     )
   );
-  
+
   const userMessageData = messageData?.filter(
     (allcard) => allcard?.email === user?.email
   );
@@ -67,6 +65,15 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
+      {/* <li>
+        <NavLink to="showteacher">Show-Teacher</NavLink>
+      </li> */}
+      {/* <li>
+        <NavLink to="addteacher">Add-Teacher</NavLink>
+      </li> */}
+      {/* <li>
+        <NavLink to="editteacher">Edit-Teacher</NavLink>
+      </li> */}
       {/* {user ? <li>
         <NavLink to="chat">Chat</NavLink>
       </li> : ("")} */}

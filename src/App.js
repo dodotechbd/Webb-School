@@ -62,11 +62,13 @@ import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import BookReview from "./Components/Admin/ManageReview/BookReview";
 import Special from "./Components/Admin/Courses/Special";
+import AddTeacher from "./Features/Teachers/AddTeacher";
+import EditTeacher from "./Features/Teachers/EditTeacher";
+import TeacherView from "./Features/Teachers/TeacherView";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import AllReviews from "./Components/Admin/ManageReview/AllReviews";
 import PaidCourse from "./Components/User/PaidCourse";
-
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -210,6 +212,7 @@ function App() {
               ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
+            <Route path="/admin/showTeacher" element={<TeacherView></TeacherView>}></Route>
 
             <Route
               path="/admin/addlanguage"
@@ -230,6 +233,7 @@ function App() {
               element={<Payments></Payments>}
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
+
           </Route>
         </Route>
         {/* courses  */}
@@ -240,6 +244,10 @@ function App() {
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
+        <Route path="/addteacher" element={<AddTeacher></AddTeacher>}></Route>
+        <Route path="/editteacher" element={<EditTeacher></EditTeacher>}></Route>
+        <Route path="/showteacher" element={<TeacherView></TeacherView>}></Route>
+        <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
         <Route
           path="/audiobooks"
           element={<MyAudioBooks></MyAudioBooks>}
@@ -257,10 +265,10 @@ function App() {
           element={<UnderConstruction></UnderConstruction>}
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
-      </Routes>
+      </Routes >
       <FooterTwo></FooterTwo>
       <Footer></Footer>
-    </div>
+    </div >
   );
 }
 
