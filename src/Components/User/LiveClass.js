@@ -5,7 +5,9 @@ import primaryAxios from "../../Api/primaryAxios";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
 import LiveCard from "./LiveCard";
+
 import useTitle from "../../Hooks/useTitle";
+
 const LiveClass = () => {
   useTitle("Live Classes");
     const [user, loading] = useAuthState(auth);
@@ -26,9 +28,13 @@ const LiveClass = () => {
         <h1 className="text-3xl pb-5 ">Live Classes</h1>
         <div className="grid sm:grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 mb-10">
           {myCourse?.data?.map((allcard) => (
-            <LiveCard key={allcard._id} allcard={allcard}></LiveCard>
+            <LiveCard
+             key={allcard._id}
+             allcard={allcard}
+             ></LiveCard>
           ))}
         </div>
+        
       </div>
     </div>
     );

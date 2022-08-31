@@ -48,7 +48,6 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Stripe from "./Components/Payments/Stripe";
 import Order from "./Components/User/Order";
 import Bkash from "./Components/Payments/Bkash";
-
 import AudioBooks from "./Components/AudioBook/AudioBooks";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 import UpdateProfile from "./Components/User/UpdateProfile";
@@ -67,6 +66,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import AllReviews from "./Components/Admin/ManageReview/AllReviews";
 import PaidCourse from "./Components/User/PaidCourse";
+
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -245,9 +245,11 @@ function App() {
           element={<MyAudioBooks></MyAudioBooks>}
         ></Route>
         <Route
-          path="/liveclasses"
-          element={<MyLiveClass></MyLiveClass>}
+          path="/liveclasses" element={<MyLiveClass></MyLiveClass>}
+           
         ></Route>
+       
+
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
         <Route
