@@ -212,8 +212,14 @@ function App() {
               ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-            <Route path="/admin/showTeacher" element={<TeacherView></TeacherView>}></Route>
-
+            <Route
+              path="/admin/showTeacher"
+              element={<TeacherView></TeacherView>}
+            ></Route>
+              <Route
+          path="/admin/editteacher"
+          element={<EditTeacher></EditTeacher>}
+        ></Route>
             <Route
               path="/admin/addlanguage"
               element={<AddLanguage></AddLanguage>}
@@ -233,7 +239,6 @@ function App() {
               element={<Payments></Payments>}
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
-
           </Route>
         </Route>
         {/* courses  */}
@@ -245,18 +250,18 @@ function App() {
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
         <Route path="/addteacher" element={<AddTeacher></AddTeacher>}></Route>
-        <Route path="/editteacher" element={<EditTeacher></EditTeacher>}></Route>
-        <Route path="/showteacher" element={<TeacherView></TeacherView>}></Route>
-        <Route path="/audiobooks" element={<MyAudioBooks></MyAudioBooks>}></Route>
         <Route
           path="/audiobooks"
           element={<MyAudioBooks></MyAudioBooks>}
         ></Route>
         <Route
-          path="/liveclasses" element={<MyLiveClass></MyLiveClass>}
-           
+          path="/audiobooks"
+          element={<MyAudioBooks></MyAudioBooks>}
         ></Route>
-       
+        <Route
+          path="/liveclasses"
+          element={<MyLiveClass></MyLiveClass>}
+        ></Route>
 
         <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
         <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
@@ -265,10 +270,10 @@ function App() {
           element={<UnderConstruction></UnderConstruction>}
         ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
-      </Routes >
+      </Routes>
       <FooterTwo></FooterTwo>
       <Footer></Footer>
-    </div >
+    </div>
   );
 }
 
