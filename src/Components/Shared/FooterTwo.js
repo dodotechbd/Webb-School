@@ -113,7 +113,7 @@ const FooterTwo = () => {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Complete Web Development
+                  Complete Web Development skills
                 </Link>
                 <Link  to={'/course/corporate-job'}>
                   <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
