@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { Link } from 'react-router-dom';
 import AddTeacher from './AddTeacher';
 import { deleteTeacher } from './TeacherSlice';
-import "./TeacherView.css"
 const TeacherView = () => {
     const teachers = useSelector((state) => state.teachersReducer.teachers)
     const dispatch = useDispatch();
