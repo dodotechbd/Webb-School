@@ -37,14 +37,16 @@ const CoursePlay = () => {
     admission?.find((allcard) => allcard.uname === uname) ||
     language?.find((allcard) => allcard.uname === uname) ||
     job?.find((allcard) => allcard.uname === uname);
+
+   
   return (
     <div>
       {allCourseData?.meetLink?.MLink && (
-        <div className="hidden lg:flex fixed flex-col top-[20%] left-1 ">
+        <div className="hidden lg:flex fixed flex-col top-[20%] left-1">
           <ul>
-            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-5px] duration-300 bg-red-500 rounded">
+            <li className="w-[160px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-5px] duration-300 bg-green-500 rounded">
               <a
-                className="flex justify-between items-center hover:bg-red-500 w-full text-white font-bold"
+                className="flex justify-between items-center hover:bg-green-500 w-full text-white font-bold"
                 href={allCourseData?.meetLink?.MLink}
                 target="blank"
               >
@@ -80,7 +82,7 @@ const CoursePlay = () => {
               </label>
             </div>
           </div>
-          <div className="lg:w-7/12 w-full">
+          <div className="lg:w-[640px] w-full">
             <Outlet></Outlet>
           </div>
         </div>
