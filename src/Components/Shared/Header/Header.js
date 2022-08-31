@@ -11,7 +11,11 @@ import auth from "../../../firebase.init";
 import { signOut } from "firebase/auth";
 import useRole from "../../../Hooks/useRole";
 import Messages from "../../Messages/Messages";
+
+import primaryAxios from "../../../Api/primaryAxios";
+
 import Loading from "../Loading/PreLoader";
+
 
 const Header = ({ handleThemeChange, theme }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,13 +24,13 @@ const Header = ({ handleThemeChange, theme }) => {
   };
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
-  
+
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
       res.json()
     )
   );
-  
+
   const userMessageData = messageData?.filter(
     (allcard) => allcard?.email === user?.email
   );
@@ -61,12 +65,26 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
+      {/* <li>
+        <NavLink to="showteacher">Show-Teacher</NavLink>
+      </li> */}
+      {/* <li>
+        <NavLink to="addteacher">Add-Teacher</NavLink>
+      </li> */}
+      {/* <li>
+        <NavLink to="editteacher">Edit-Teacher</NavLink>
+      </li> */}
       {/* {user ? <li>
         <NavLink to="chat">Chat</NavLink>
       </li> : ("")} */}
-      {/* <li>
-        <NavLink to="LiveClass">Live Class</NavLink>
-      </li> */}
+
+
+
+
+
+
+
+
       {role === "admin" && (
         <li>
           <NavLink to="admin/courses/manage">Admin</NavLink>
@@ -74,6 +92,8 @@ const Header = ({ handleThemeChange, theme }) => {
       )}
     </>
   );
+
+
   return (
     <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
       <div className="navbar-start">
@@ -86,6 +106,7 @@ const Header = ({ handleThemeChange, theme }) => {
                   <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
+
                   </div>
                 </div>
               </Link>
@@ -126,11 +147,9 @@ const Header = ({ handleThemeChange, theme }) => {
                   <NavLink className='hover:rounded-none' to="chat">Chat</NavLink>
                 </li> : ("")} */}
 
-                {/* <li>
-                  <NavLink className="hover:rounded-none" to="LiveClass">
-                    Live Class
-                  </NavLink>
-                </li> */}
+
+
+                
                 {role === "admin" && (
                   <li>
                     <NavLink
@@ -149,11 +168,10 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${
-                              user?.photoURL
-                                ? user?.photoURL
-                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                            }`}
+                            src={`${user?.photoURL
+                              ? user?.photoURL
+                              : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                              }`}
                           />
                         </div>
                       </label>
@@ -319,11 +337,10 @@ const Header = ({ handleThemeChange, theme }) => {
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-9 rounded-full">
                 <img
-                  src={`${
-                    user?.photoURL
-                      ? user?.photoURL
-                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                  }`}
+                  src={`${user?.photoURL
+                    ? user?.photoURL
+                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                    }`}
                 />
               </div>
             </label>
@@ -335,11 +352,10 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div className="avatar">
                   <div className="w-20 rounded-full">
                     <img
-                      src={`${
-                        user?.photoURL
-                          ? user?.photoURL
-                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                      }`}
+                      src={`${user?.photoURL
+                        ? user?.photoURL
+                        : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                        }`}
                     />
                   </div>
                 </div>
