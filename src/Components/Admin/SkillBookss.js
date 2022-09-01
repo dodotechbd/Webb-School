@@ -28,7 +28,7 @@ const SkillBookss = () => {
       </div>
       <div>
         <form className="" onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid lg:grid-cols-2 md:grid-cols-2 justify-around">
+          <div className="grid m-auto lg:grid-cols-2 md:grid-cols-2 justify-around">
             <div>
               <label className="label">
                 <span className="label-text ml-4  font-bold">Books img</span>
