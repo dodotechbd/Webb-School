@@ -62,9 +62,9 @@ import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import BookReview from "./Components/Admin/ManageReview/BookReview";
 import Special from "./Components/Admin/Courses/Special";
-import AddTeacher from "./Features/Teachers/AddTeacher";
-import EditTeacher from "./Features/Teachers/EditTeacher";
-import TeacherView from "./Features/Teachers/TeacherView";
+import AddTeacher from "./Components/Admin/Teachers/AddTeacher";
+import EditTeacher from "./Components/Admin/Teachers/EditTeacher";
+import TeacherView from "./Components/Admin/Teachers/TeacherView";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "./firebase.init";
 import AllReviews from "./Components/Admin/ManageReview/AllReviews";
@@ -212,14 +212,12 @@ function App() {
               ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-            <Route
-              path="/admin/showTeacher"
-              element={<TeacherView></TeacherView>}
-            ></Route>
-              <Route
-          path="/admin/editteacher"
-          element={<EditTeacher></EditTeacher>}
-        ></Route>
+
+            <Route path="/admin/showteacher" element={<TeacherView></TeacherView>}></Route>
+            <Route path="/admin/editteacher" element={<TeacherView></TeacherView>}></Route>
+            <Route path="/admin/addteacher" element={<TeacherView></TeacherView>}></Route>
+
+
             <Route
               path="/admin/addlanguage"
               element={<AddLanguage></AddLanguage>}
