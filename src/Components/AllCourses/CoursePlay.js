@@ -3,6 +3,7 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { Outlet, useParams } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
+import success from "../../Assets/success.svg";
 import auth from "../../firebase.init";
 import useCourse from "../../Hooks/useCourse";
 import AddReview from "./AddReview";
@@ -25,6 +26,11 @@ const CoursePlay = () => {
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
   const stringProgress = progress.toString() + "%";
+
+  const { data: userData } = useQuery(["userProfile", user?.email], () =>
+    primaryAxios.get(`/user-role?email=${user?.email}`)
+  );
+  console.log(userData);
   return (
     <div>
       {courseData?.meetLink?.MLink && (
@@ -89,26 +95,117 @@ const CoursePlay = () => {
                   allCourseData={courseData}
                 ></CourseLink>
               ))}
-              {/* modal button  */}
+            </div>
+            <div>
               {progress === 100 && (
                 <>
-                  <label
-                    htmlFor="my-modal-5"
-                    className="text-center py-2 text-white rounded-none btn-block btn-info cursor-pointer mx-auto mt-3"
-                  >
-                    Add a Review
-                  </label>
-                  {/* modal box */}
-                  <input
-                    type="checkbox"
-                    id="my-modal-5"
-                    className="modal-toggle"
-                  />
-                  <label htmlFor="my-modal-5" className="modal cursor-pointer">
-                    <label className="modal-box relative p-0" htmlFor="">
-                      <AddReview></AddReview>
+                  <div>
+                    <label
+                      htmlFor="my-modal-4"
+                      className="text-center py-2 text-accent border-t border-neutral font-bold hover:bg-green-600 hover:text-base-100 rounded-none inline-block
+                    btn-block btn-ghost uppercase cursor-pointer mx-auto"
+                    >
+                      Course Summary
                     </label>
-                  </label>
+                    <input
+                      type="checkbox"
+                      id="my-modal-4"
+                      className="modal-toggle"
+                    />
+                    <label
+                      htmlFor="my-modal-4"
+                      className="modal cursor-pointer"
+                    >
+                      <label className="modal-box relative p-0" htmlFor="">
+                        <div className="card bg-base-100">
+                          <div className="card-body">
+                            <label
+                              htmlFor="my-modal-4"
+                              className="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
+                            >
+                              ✕
+                            </label>
+                            <div>
+                              <p className="text-2xl">
+                                Congratulations !{" "}
+                                <span className="text-green-600 font-mono">
+                                  {userData?.data?.name}
+                                </span>,
+                              </p>
+                              <img
+                                src={success}
+                                className="w-32 mx-auto h-32"
+                                alt="success"
+                              />
+                              <p className="text-xl text-green-600 mb-4 text-center">
+                                You Are Successfully Completed The Course
+                              </p>
+                              <div className="flex bg-base-200 p-4 rounded-lg flex-col gap-2 font-bold">
+                                <p>
+                                  {myCourseData?.progress?.length
+                                    ? myCourseData?.progress?.length
+                                    : "0"}
+                                  /{courseData?.videos?.length} Module Completed
+                                  - Progress {progress ? progress : "0"}%
+                                </p>
+                                <div>
+                                  {progress > 0 ? (
+                                    <div className="bg-neutral rounded-full h-2.5">
+                                      <div
+                                        className={`bg-[#3EC65D] h-2.5 rounded-full`}
+                                        style={{
+                                          width: `${stringProgress}`,
+                                          maxWidth: "100%",
+                                        }}
+                                      ></div>
+                                    </div>
+                                  ) : (
+                                    <div className="bg-neutral rounded-full h-2.5">
+                                      <div
+                                        className={`bg-[#3EC65D] h-2.5 rounded-full`}
+                                        style={{
+                                          width: "0%",
+                                        }}
+                                      ></div>
+                                    </div>
+                                  )}
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </label>
+                    </label>
+                    <label
+                      htmlFor="my-modal-5"
+                      className="text-center py-2 uppercase rounded-none inline-block
+                    btn-block btn-info cursor-pointer mx-auto"
+                    >
+                      Add A Review
+                    </label>
+                    {/* modal box */}
+                    <input
+                      type="checkbox"
+                      id="my-modal-5"
+                      className="modal-toggle"
+                    />
+                    <label
+                      htmlFor="my-modal-5"
+                      className="modal cursor-pointer"
+                    >
+                      <label className="modal-box relative p-0" htmlFor="">
+                        <div className="card bg-base-100">
+                          <label
+                            htmlFor="my-modal-5"
+                            className="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
+                          >
+                            ✕
+                          </label>
+                          <AddReview></AddReview>
+                        </div>
+                      </label>
+                    </label>
+                  </div>
                 </>
               )}
             </div>
