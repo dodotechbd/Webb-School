@@ -92,14 +92,15 @@ const Header = ({ handleThemeChange, theme }) => {
 
       {courseData?.meetLink?.MLink && (
         <li>
-
+<NavLink   to="LiveClasses">
           <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
             <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
             <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
-            <span class="text-green-700 ml-1.5">
-            <NavLink to="LiveClasses">Live Class</NavLink>
+            <span class=" ml-1.5">
+            Live Class
             </span>
           </strong>
+          </NavLink>
           
         </li>
       )}
