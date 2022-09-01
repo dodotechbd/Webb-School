@@ -222,7 +222,7 @@ const FooterTwo = () => {
             </div>
             <div className="p-4 lg:w-1/4 sm:w-1/2 w-full">
               <h2 className="tracking-widest font-header mb-4 text-lg sm:text-left">
-                Coming Soon
+                New Courses
               </h2>
               <nav className="flex flex-col text-cestarttems-center -mb-1 space-y-2.5">
                 <a>
