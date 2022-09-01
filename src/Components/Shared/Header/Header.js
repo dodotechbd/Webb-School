@@ -92,16 +92,16 @@ const Header = ({ handleThemeChange, theme }) => {
 
       {courseData?.meetLink?.MLink && (
         <li>
-<NavLink   to="LiveClasses">
-          <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
-            <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
-            <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
-            <span class=" ml-1.5">
-            Live Class
-            </span>
-          </strong>
+          <NavLink to="LiveClasses">
+            <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
+              <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
+              <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
+              <span class=" ml-1.5 text-green-600 hover:text-white ">
+                Live Class
+              </span>
+            </strong>
           </NavLink>
-          
+
         </li>
       )}
 
@@ -183,6 +183,21 @@ const Header = ({ handleThemeChange, theme }) => {
                     Blog
                   </NavLink>
                 </li>
+                {courseData?.meetLink?.MLink && (
+                  <li>
+                    <NavLink to="LiveClasses">
+                      <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
+                        <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
+                        <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
+                        <span class=" ml-1.5 text-green-600 hover:text-white">
+                          Live Class
+                        </span>
+                      </strong>
+                    </NavLink>
+
+                  </li>
+                )}
+
 
                 {/* {user ? <li>
                   <NavLink className='hover:rounded-none' to="chat">Chat</NavLink>
@@ -424,8 +439,14 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
+
                 <NavLink className="hover:rounded-none" to={"liveclasses"}>
-                  <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                  {
+                    courseData?.meetLink?.MLink ? (
+                      <i className="ml-4 fa-solid fa-video text-green-500 "></i>
+                    ) : (<i className="ml-4 fa-solid fa-video"></i>)
+                  }
+                  Live Class
                 </NavLink>
               </li>
               {/* <li>
