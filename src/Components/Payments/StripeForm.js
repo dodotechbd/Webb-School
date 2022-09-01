@@ -101,7 +101,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
             className: "rounded-3xl",
           }
         ).then((value) => {
-          navigate("/orders");
+          navigate("/mycourse");
         });
       }
       const payment = {
