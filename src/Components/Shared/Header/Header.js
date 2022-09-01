@@ -15,15 +15,38 @@ import Messages from "../../Messages/Messages";
 import primaryAxios from "../../../Api/primaryAxios";
 
 import Loading from "../Loading/PreLoader";
+import useAllCourse from "../../../Hooks/useAllCourse";
 
 
 const Header = ({ handleThemeChange, theme }) => {
+  const [user, loading] = useAuthState(auth);
+  const [role, roleLoading, userName] = useRole();
+
+
+  const [admission, job, language] = useAllCourse();
+  const {
+    data: myCourse,
+
+    refetch
+  } = useQuery(["myCourses", user?.email], () =>
+    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  );
+
+  const myCourseData = myCourse?.data.find((s) => s.uname)
+
+  const courseData =
+    admission?.find((s) => s.uname === myCourseData?.uname) ||
+    language?.find((s) => s.uname === myCourseData?.uname) ||
+    job?.find((s) => s.uname === myCourseData?.uname);
+
+  console.log(courseData)
+
+
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
-  const [user, loading] = useAuthState(auth);
-  const [role, roleLoading, userName] = useRole();
+
 
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
@@ -39,7 +62,7 @@ const Header = ({ handleThemeChange, theme }) => {
     //Token Remove
     localStorage.removeItem("accessToken");
   };
-
+  console.log(courseData)
   const manuItems = (
     <>
       <li>
@@ -65,6 +88,24 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
+
+
+      {courseData?.meetLink?.MLink && (
+        <li>
+          <NavLink to="LiveClasses">
+            <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
+              <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
+              <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
+              <span class=" ml-1.5 text-green-600 hover:text-white ">
+                Live Class
+              </span>
+            </strong>
+          </NavLink>
+
+        </li>
+      )}
+
+
       {/* <li>
         <NavLink to="showteacher">Show-Teacher</NavLink>
       </li> */}
@@ -142,6 +183,21 @@ const Header = ({ handleThemeChange, theme }) => {
                     Blog
                   </NavLink>
                 </li>
+                {courseData?.meetLink?.MLink && (
+                  <li>
+                    <NavLink to="LiveClasses">
+                      <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
+                        <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
+                        <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
+                        <span class=" ml-1.5 text-green-600 hover:text-white">
+                          Live Class
+                        </span>
+                      </strong>
+                    </NavLink>
+
+                  </li>
+                )}
+
 
                 {/* {user ? <li>
                   <NavLink className='hover:rounded-none' to="chat">Chat</NavLink>
@@ -383,8 +439,14 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
+
                 <NavLink className="hover:rounded-none" to={"liveclasses"}>
-                  <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                  {
+                    courseData?.meetLink?.MLink ? (
+                      <i className="ml-4 fa-solid fa-video text-green-500 "></i>
+                    ) : (<i className="ml-4 fa-solid fa-video"></i>)
+                  }
+                  Live Class
                 </NavLink>
               </li>
               {/* <li>
