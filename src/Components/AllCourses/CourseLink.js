@@ -1,14 +1,15 @@
 import React from "react";
-import { useParams, NavLink } from "react-router-dom";
+import { useParams } from "react-router-dom";
+import LinkChild from "./LinkChild";
 
-const CourseLink = ({ course, allCourseData }) => {
+const CourseLink = ({ course, allCourseData, myCourseData, refetch }) => {
   const { uname } = useParams();
-  let activeClassName = "bg-neutral";
+  
   return (
     <>
       <div
         tabIndex="0"
-        className="collapse collapse-plus border-b border-neutral mx-4"
+        className="collapse collapse-plus border-t border-neutral mx-4"
       >
         <input type="checkbox" class="peer" />
         <div className="collapse-title text-md font-medium peer-checked:bg-info peer-checked:text-white peer-checked:font-bold">
@@ -17,18 +18,7 @@ const CourseLink = ({ course, allCourseData }) => {
         <ul className="menu px-0 collapse-content peer-checked:text-warning">
           {course.details.map((detail) => (
             <li>
-              <NavLink
-                to={`/course/${uname}/${allCourseData?.list}/${detail?.fileName}`}
-                className="border-t border-neutral text-warning"
-                className={({ isActive }) =>
-                  isActive ? activeClassName : undefined
-                }
-              >
-                <p className="text-md">
-                  <i className="fa-solid text-info fa-circle-play mr-2"></i>
-                  {detail?.name}
-                </p>
-              </NavLink>
+              <LinkChild detail={detail} refetch={refetch} uname={uname} myCourseData={myCourseData} allCourseData={allCourseData}></LinkChild>
             </li>
           ))}
         </ul>

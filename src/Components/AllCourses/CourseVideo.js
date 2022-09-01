@@ -1,10 +1,10 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useAuthState } from "react-firebase-hooks/auth";
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
+import { useParams } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
+import auth from "../../firebase.init";
 import useCourse from "../../Hooks/useCourse";
 
 const CourseVideo = () => {
@@ -17,7 +17,7 @@ const CourseVideo = () => {
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
   const myCourseData = myCourse?.data?.find((s) => s.uname === uname);
-
+  
   if (courseLoading || loading) {
     return (
       <div className="mx-auto hero py-36 bg-base-300">
@@ -27,7 +27,6 @@ const CourseVideo = () => {
   }
 
   const fileData = courseData?.videos?.find((s) => s.fileName === fileName);
-
   return (
     <div>
       {courseData?.uname === myCourseData?.uname ? (
