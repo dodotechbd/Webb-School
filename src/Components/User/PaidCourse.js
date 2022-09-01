@@ -1,10 +1,10 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import primaryAxios from "../../Api/primaryAxios";
-import Loader from "../Shared/Loading/Loading";
 import { useQuery } from "react-query";
-import auth from "../../firebase.init";
 import { Link } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
+import auth from "../../firebase.init";
+import Loader from "../Shared/Loading/Loading";
 
 const PaidCourse = () => {
   const [user, loading] = useAuthState(auth);
@@ -15,7 +15,6 @@ const PaidCourse = () => {
   } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
-  console.log(myCourse?.data);
   if (isLoading) {
     return <Loader></Loader>;
   }
