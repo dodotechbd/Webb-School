@@ -1,6 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { NavLink, Outlet } from "react-router-dom";
+import { Link, NavLink, Outlet } from "react-router-dom";
 const Courses = () => {
   return (
     <div className="text-center">
@@ -10,10 +9,10 @@ const Courses = () => {
         </div>
         <div class="lg:flex flex-none hidden">
           <ul class="menu menu-compact menu-horizontal p-0">
-            <li>
+            <li className='mx-1'>
               <Link to={"/admin/courses/manage"}>Special</Link>
             </li>
-            <li>
+            <li className='mx-1'>
               <NavLink
                 to={"/admin/courses/manage/language"}
                 className="hover:rounded-none"
@@ -21,7 +20,7 @@ const Courses = () => {
                 Language
               </NavLink>
             </li>
-            <li>
+            <li className='mx-1'>
               <NavLink
                 to={"/admin/courses/manage/job"}
                 className="hover:rounded-none"
@@ -29,7 +28,7 @@ const Courses = () => {
                 Job
               </NavLink>
             </li>
-            <li>
+            <li className='mx-1'>
               <NavLink
                 to={"/admin/courses/manage/admission"}
                 className="hover:rounded-none"

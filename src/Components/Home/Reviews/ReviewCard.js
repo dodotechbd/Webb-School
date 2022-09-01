@@ -1,18 +1,18 @@
-import React from "react";
-import Rating from "react-rating";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
-import ReactTimeAgo from "react-time-ago";
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ru from "javascript-time-ago/locale/ru.json";
+import React from "react";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import Rating from "react-rating";
 import ReactReadMoreReadLess from "react-read-more-read-less";
+import ReactTimeAgo from "react-time-ago";
 
 const ReviewCard = ({ course }) => {
   TimeAgo.addLocale(en);
   TimeAgo.addLocale(ru);
   const { rating, review, reviewDate, author } = course;
   return (
-    <div>
+    <div className="w-full">
       <div class="avatar top-14">
         <div class="w-20 rounded-full ring-8 ring-offset-2 shadow-warning shadow-lg ring-offset-base-300 ring-base-300">
           <img
@@ -43,7 +43,7 @@ const ReviewCard = ({ course }) => {
           <div>
             <p className="text-left text-md font-sub opacity-80">
               <ReactReadMoreReadLess
-                charLimit={200}
+                charLimit={170}
                 readMoreText={"...read more"}
                 readLessText={"...read less"}
                 readMoreClassName="read-more"
