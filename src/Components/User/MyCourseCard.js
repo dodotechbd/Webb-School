@@ -15,7 +15,8 @@ const MyCourseCard = ({ allcard, refetch }) => {
 
   const progress =
     (allcard?.progress?.length / courseData?.videos?.length) * 100;
-  const stringProgress = progress.toString() + "%";
+  const stringProgress = progress.toString();
+  const stringProgressp = progress.toString() + '%';
 
 
   const fileName = allcard?.progress?.find((s) => s.i === cardIndex);
@@ -56,11 +57,11 @@ const MyCourseCard = ({ allcard, refetch }) => {
                   <div
                     className={`bg-[#3EC65D] h-2.5 rounded-full`}
                     style={{
-                      width: `${stringProgress}`,
+                      width: `${stringProgressp}`,
                     }}
                   ></div>
                 </div>
-                <p>{progress ? progress : "0"}%</p>
+                <p>{progress ? stringProgress?.slice(0,4) : "0"}%</p>
               </div>
             ) : (
               <div className="flex justify-between items-center gap-3">

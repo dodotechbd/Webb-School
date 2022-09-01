@@ -1,8 +1,8 @@
 import React from "react";
-import "./Hero.css";
-import { Link } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
 import auth from "../../../firebase.init";
+import "./Hero.css";
 
 const Hero = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -23,7 +23,7 @@ const Hero = () => {
             </h1>
             <p className="py-6 font-sans text-3xl drop-shadow-lg text-center lg:text-left">
               "If kids can be super engaged in video games, there’s a way for
-              them to be super engaged in education as well."
+              them to be engaged in education as well."
             </p>
             <div className="flex lg:mx-0 mx-auto items-center w-80 justify-between bg-base-100 bg-opacity-20 backdrop-filter backdrop-blur-lg p-2 rounded-2xl">
               <p>Start Your Learning</p>

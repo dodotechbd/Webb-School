@@ -1,16 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
-import { BrowserRouter } from "react-router-dom";
-import { useEffect } from "react";
-import { useLocation } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
-import { Provider } from "react-redux";
-import store from "./ReduxStore/Store";
+import { BrowserRouter, useLocation } from "react-router-dom";
+import App from "./App";
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
 
-// create client 
+// create client
 const queryClient = new QueryClient();
 
 export default function ScrollToTop() {
@@ -28,9 +24,8 @@ root.render(
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ScrollToTop />
-        <Provider store={store}>
-          <App />
-        </Provider>
+
+        <App />
       </BrowserRouter>
     </QueryClientProvider>
   </React.StrictMode>

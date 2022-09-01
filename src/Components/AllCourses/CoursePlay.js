@@ -25,12 +25,13 @@ const CoursePlay = () => {
   );
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
-  const stringProgress = progress.toString() + "%";
+  const stringProgress = progress.toString();
+  const stringProgressp = progress.toString() + '%';
 
   const { data: userData } = useQuery(["userProfile", user?.email], () =>
     primaryAxios.get(`/user-role?email=${user?.email}`)
   );
-  console.log(userData);
+  console.log();
   return (
     <div>
       {courseData?.meetLink?.MLink && (
@@ -55,13 +56,13 @@ const CoursePlay = () => {
               <p className="text-lg p-3 border-b border-neutral">
                 Course Lesson
               </p>
-              <div className="px-4 flex flex-col gap-2 text-warning font-bold">
+              <div className="px-5 flex flex-col gap-2 text-warning font-bold">
                 <p>
                   {myCourseData?.progress?.length
                     ? myCourseData?.progress?.length
                     : "0"}
                   /{courseData?.videos?.length} Module Completed - Progress{" "}
-                  {progress ? progress : "0"}%
+                  {progress ? stringProgress.slice(0,4) : "0"}%
                 </p>
                 <div>
                   {progress > 0 ? (
@@ -69,7 +70,7 @@ const CoursePlay = () => {
                       <div
                         className={`bg-[#3EC65D] h-2.5 rounded-full`}
                         style={{
-                          width: `${stringProgress}`,
+                          width: `${stringProgressp}`,
                           maxWidth: "100%",
                         }}
                       ></div>
@@ -102,7 +103,7 @@ const CoursePlay = () => {
                   <div>
                     <label
                       htmlFor="my-modal-4"
-                      className="text-center py-2 text-accent border-t border-neutral font-bold hover:bg-green-600 hover:text-base-100 rounded-none inline-block
+                      className="text-center py-2 text-accent border-t border-neutral hover:bg-info hover:text-base-100 rounded-none inline-block
                     btn-block btn-ghost uppercase cursor-pointer mx-auto"
                     >
                       Course Summary
@@ -116,19 +117,19 @@ const CoursePlay = () => {
                       htmlFor="my-modal-4"
                       className="modal cursor-pointer"
                     >
-                      <label className="modal-box relative p-0" htmlFor="">
+                      <label className="modal-box rounded-lg border border-neutral relative p-0" htmlFor="">
                         <div className="card bg-base-100">
                           <div className="card-body">
                             <label
                               htmlFor="my-modal-4"
-                              className="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
+                              className="btn btn-sm btn-ghost text-primary btn-square absolute right-2 top-2 hover:bg-red-600 hover:text-white"
                             >
                               ✕
                             </label>
                             <div>
                               <p className="text-2xl">
                                 Congratulations !{" "}
-                                <span className="text-green-600 font-mono">
+                                <span className="text-info font-mono">
                                   {userData?.data?.name}
                                 </span>,
                               </p>
@@ -137,7 +138,7 @@ const CoursePlay = () => {
                                 className="w-32 mx-auto h-32"
                                 alt="success"
                               />
-                              <p className="text-xl text-green-600 mb-4 text-center">
+                              <p className="text-xl text-info mb-4 text-center">
                                 You Are Successfully Completed The Course
                               </p>
                               <div className="flex bg-base-200 p-4 rounded-lg flex-col gap-2 font-bold">
@@ -179,7 +180,7 @@ const CoursePlay = () => {
                     <label
                       htmlFor="my-modal-5"
                       className="text-center py-2 uppercase rounded-none inline-block
-                    btn-block btn-info cursor-pointer mx-auto"
+                    btn-block hover:bg-secondary text-info hover:text-base-100 cursor-pointer mx-auto"
                     >
                       Add A Review
                     </label>
@@ -193,11 +194,11 @@ const CoursePlay = () => {
                       htmlFor="my-modal-5"
                       className="modal cursor-pointer"
                     >
-                      <label className="modal-box relative p-0" htmlFor="">
+                      <label className="modal-box rounded-lg border border-neutral relative p-0" htmlFor="">
                         <div className="card bg-base-100">
                           <label
                             htmlFor="my-modal-5"
-                            className="btn btn-sm btn-ghost text-primary btn-circle absolute right-2 top-2"
+                            className="btn btn-sm btn-ghost text-primary btn-square absolute right-2 top-2 hover:bg-red-600 hover:text-white"
                           >
                             ✕
                           </label>

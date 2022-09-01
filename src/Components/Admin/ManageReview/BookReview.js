@@ -29,7 +29,7 @@ const BookReview = () => {
             </tr>
           </thead>
           <tbody>
-            {bookreviews?.map((allcard, index) => (
+            {bookreviews?.slice(0).reverse().map((allcard, index) => (
               <ReviewCard
                 key={allcard._id}
                 allcard={allcard}
