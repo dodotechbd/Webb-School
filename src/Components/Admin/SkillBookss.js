@@ -28,7 +28,7 @@ const SkillBookss = () => {
       </div>
       <div>
         <form className="" onSubmit={handleSubmit(onSubmit)}>
-          <div className="grid lg:grid-cols-2 justify-around">
+          <div className="grid lg:grid-cols-2 md:grid-cols-2 px-24 gap-4 justify-around">
             <div>
               <label className="label">
                 <span className="label-text ml-4  font-bold">Books img</span>
@@ -281,7 +281,7 @@ const SkillBookss = () => {
           <br></br>
           <input
             type="submit"
-            className="btn ml-4 text-base-100 btn-primary"
+            className="btn ml-28 text-base-100 btn-primary"
           />
         </form>
       </div>
