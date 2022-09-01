@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from "react";
-import ReviewCard from "./ReviewCard";
+import React from "react";
 import { useQuery } from "react-query";
+import ReviewCard from "./ReviewCard";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/pagination";
 import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import "./Review.css";
 
@@ -29,7 +29,7 @@ const Reviews = () => {
         Our students reviews
       </p>
       <Swiper
-        slidesPerGroup={3}
+        slidesPerGroup={2}
         loop={true}
         pagination={{
           el: '.my-custom-pagination-div',
@@ -63,7 +63,7 @@ const Reviews = () => {
       >
         <div className="mx-auto">
           {allreviews?.map((course) => (
-            <SwiperSlide key={course._id}>
+            <SwiperSlide className="h-full" key={course._id}>
               <ReviewCard key={course._id} course={course}></ReviewCard>
             </SwiperSlide>
           ))}

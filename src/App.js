@@ -1,74 +1,71 @@
-import { Routes, Route } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import RequireAdmin from "./Authentication/RequireAdmin";
+import RequireAuth from "./Authentication/RequireAuth";
+import AcademicBookss from "./Components/Admin/AcademicBookss";
+import AddBlogs from "./Components/Admin/AddBlogs";
 import Admin from "./Components/Admin/Admin";
 import Admins from "./Components/Admin/Admins";
-import Live from "./Components/Admin/LivePost/Live";
+import AddAdmission from "./Components/Admin/Courses/AddAdmission";
+import AddJob from "./Components/Admin/Courses/AddJob";
+import AddLanguage from "./Components/Admin/Courses/AddLanguage";
+import Admission from "./Components/Admin/Courses/Admission";
+import Job from "./Components/Admin/Courses/Job";
+import Language from "./Components/Admin/Courses/Language";
 import Manage from "./Components/Admin/Courses/Manage";
+import Special from "./Components/Admin/Courses/Special";
+import Live from "./Components/Admin/LivePost/Live";
+import AllReviews from "./Components/Admin/ManageReview/AllReviews";
+import BookReview from "./Components/Admin/ManageReview/BookReview";
+import CourseReview from "./Components/Admin/ManageReview/CourseReview";
+import ManageReview from "./Components/Admin/ManageReview/ManageReview";
+import Message from "./Components/Admin/Message";
 import Payments from "./Components/Admin/Payments";
 import Post from "./Components/Admin/Post";
+import SkillBookss from "./Components/Admin/SkillBookss";
 import Users from "./Components/Admin/Users";
 import AllAdmission from "./Components/AllAdmission/AllAdmission";
 import AllCourses from "./Components/AllCourses/AllCourses";
 import AllCourseView from "./Components/AllCourses/AllCourseView";
-import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
-import Blogs from "./Components/Blogs/Blogs";
-import BookStore from "./Components/BookStore/BookStore";
-import Developer from "./Components/Developer";
-import Home from "./Components/Home/Home";
-import Login from "./Components/Login/Login";
-import SignUp from "./Components/Login/SingUp";
-import Footer from "./Components/Shared/Footer";
-import Header from "./Components/Shared/Header/Header";
-import NoteFound from "./Components/WrongRoute/NoteFound";
-import { useEffect, useState } from "react";
-import BlogDetails from "./Components/Blogs/BlogDetails";
+import Checkout from "./Components/AllCourses/Checkout";
 import CoursePlay from "./Components/AllCourses/CoursePlay";
 import CourseVideo from "./Components/AllCourses/CourseVideo";
-import Profile from "./Components/User/Profile";
-import MyCourses from "./Components/User/MyCourses";
-import FooterTwo from "./Components/Shared/FooterTwo";
-import Dashboard from "./Components/User/Dashboard";
-import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
-import Checkout from "./Components/AllCourses/Checkout";
-import PreLoader from "./Components/Shared/Loading/PreLoader";
-import LiveClass from "./Components/LIveClass/LiveClass";
-import MyLiveClass from "./Components/User/LiveClass";
-import AddBlogs from "./Components/Admin/AddBlogs";
-import AcademicBookss from "./Components/Admin/AcademicBookss";
-import SkillBookss from "./Components/Admin/SkillBookss";
-import Language from "./Components/Admin/Courses/Language";
-import Job from "./Components/Admin/Courses/Job";
-import Admission from "./Components/Admin/Courses/Admission";
-import AddLanguage from "./Components/Admin/Courses/AddLanguage";
-import AddJob from "./Components/Admin/Courses/AddJob";
-import AddAdmission from "./Components/Admin/Courses/AddAdmission";
-import Reset from "./Components/Login/Reset";
-import RequireAuth from "./Authentication/RequireAuth";
-import RequireAdmin from "./Authentication/RequireAdmin";
-import Stripe from "./Components/Payments/Stripe";
-import Order from "./Components/User/Order";
-import Bkash from "./Components/Payments/Bkash";
-import AudioBooks from "./Components/AudioBook/AudioBooks";
+import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
-import UpdateProfile from "./Components/User/UpdateProfile";
-import Message from "./Components/Admin/Message";
-import BookDetail from "./Components/BookStore/BookDetail";
+import AudioBooks from "./Components/AudioBook/AudioBooks";
+import BlogDetails from "./Components/Blogs/BlogDetails";
+import Blogs from "./Components/Blogs/Blogs";
 import BookCheckout from "./Components/BookStore/BookCheckout";
+import BookDetail from "./Components/BookStore/BookDetail";
+import BookStore from "./Components/BookStore/BookStore";
 import Chat from "./Components/Chat/Chat";
-import MyBooks from "./Components/User/MyBooks";
-import MyEbooks from "./Components/User/MyEbooks";
+import Developer from "./Components/Developer";
+import Home from "./Components/Home/Home";
+import LiveClass from "./Components/LIveClass/LiveClass";
+import Login from "./Components/Login/Login";
+import Reset from "./Components/Login/Reset";
+import SignUp from "./Components/Login/SingUp";
+import Bkash from "./Components/Payments/Bkash";
+import Stripe from "./Components/Payments/Stripe";
+import Footer from "./Components/Shared/Footer";
+import FooterTwo from "./Components/Shared/FooterTwo";
+import Header from "./Components/Shared/Header/Header";
+import PreLoader from "./Components/Shared/Loading/PreLoader";
+import Dashboard from "./Components/User/Dashboard";
+import MyLiveClass from "./Components/User/LiveClass";
 import MyAudioBooks from "./Components/User/MyAudioBooks";
-import ManageReview from "./Components/Admin/ManageReview/ManageReview";
-import CourseReview from "./Components/Admin/ManageReview/CourseReview";
-import BookReview from "./Components/Admin/ManageReview/BookReview";
-import Special from "./Components/Admin/Courses/Special";
-import AddTeacher from "./Components/Admin/Teachers/AddTeacher";
-import EditTeacher from "./Components/Admin/Teachers/EditTeacher";
-import TeacherView from "./Components/Admin/Teachers/TeacherView";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "./firebase.init";
-import AllReviews from "./Components/Admin/ManageReview/AllReviews";
+import MyBooks from "./Components/User/MyBooks";
+import MyCourses from "./Components/User/MyCourses";
+import MyEbooks from "./Components/User/MyEbooks";
+import Order from "./Components/User/Order";
 import PaidCourse from "./Components/User/PaidCourse";
+import Profile from "./Components/User/Profile";
+import UpdateProfile from "./Components/User/UpdateProfile";
+import NoteFound from "./Components/WrongRoute/NoteFound";
+import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
+import auth from "./firebase.init";
 
 function App() {
   const [theme, setTheme] = useState(false);
@@ -212,12 +209,6 @@ function App() {
               ></Route>
             </Route>
             <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-
-            <Route path="/admin/showteacher" element={<TeacherView></TeacherView>}></Route>
-            <Route path="/admin/editteacher" element={<TeacherView></TeacherView>}></Route>
-            <Route path="/admin/addteacher" element={<TeacherView></TeacherView>}></Route>
-
-
             <Route
               path="/admin/addlanguage"
               element={<AddLanguage></AddLanguage>}
@@ -247,7 +238,6 @@ function App() {
         <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
         <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
         <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
-        <Route path="/addteacher" element={<AddTeacher></AddTeacher>}></Route>
         <Route
           path="/audiobooks"
           element={<MyAudioBooks></MyAudioBooks>}
