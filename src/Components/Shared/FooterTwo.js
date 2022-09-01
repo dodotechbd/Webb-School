@@ -203,7 +203,7 @@ const FooterTwo = () => {
                   Medical Q.Sol
                 </Link>
                 <Link to={'/course/varsity-admission-q-solve'}>
-                  <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center">
+                  <span className="bg-base-300 text-primary w-4 h-4 mr-2 rounded-full inline-flex items-center justify-center o">
                     <svg
                       fill="none"
                       stroke="currentColor"
