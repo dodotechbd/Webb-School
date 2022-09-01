@@ -12,7 +12,7 @@ const MyCourseCard = ({ allcard, refetch }) => {
     admission?.find((s) => s.uname === allcard?.uname) ||
     language?.find((s) => s.uname === allcard?.uname) ||
     job?.find((s) => s.uname === allcard?.uname);
-
+    // const meetData = courseData?.filter((s) => s.meetLink)
   const progress =
     (allcard?.progress?.length / courseData?.videos?.length) * 100;
   const stringProgress = progress.toString();

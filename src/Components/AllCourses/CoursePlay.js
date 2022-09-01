@@ -26,7 +26,7 @@ const CoursePlay = () => {
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
   const stringProgress = progress.toString();
-  const stringProgressp = progress.toString() + '%';
+  const stringProgressp = progress.toString() + "%";
 
   const { data: userData } = useQuery(["userProfile", user?.email], () =>
     primaryAxios.get(`/user-role?email=${user?.email}`)
@@ -62,7 +62,7 @@ const CoursePlay = () => {
                     ? myCourseData?.progress?.length
                     : "0"}
                   /{courseData?.videos?.length} Module Completed - Progress{" "}
-                  {progress ? stringProgress.slice(0,4) : "0"}%
+                  {progress ? stringProgress.slice(0, 4) : "0"}%
                 </p>
                 <div>
                   {progress > 0 ? (
@@ -117,7 +117,10 @@ const CoursePlay = () => {
                       htmlFor="my-modal-4"
                       className="modal cursor-pointer"
                     >
-                      <label className="modal-box rounded-lg border border-neutral relative p-0" htmlFor="">
+                      <label
+                        className="modal-box rounded-lg border border-neutral relative p-0"
+                        htmlFor=""
+                      >
                         <div className="card bg-base-100">
                           <div className="card-body">
                             <label
@@ -131,7 +134,8 @@ const CoursePlay = () => {
                                 Congratulations !{" "}
                                 <span className="text-info font-mono">
                                   {userData?.data?.name}
-                                </span>,
+                                </span>
+                                ,
                               </p>
                               <img
                                 src={success}
@@ -194,7 +198,10 @@ const CoursePlay = () => {
                       htmlFor="my-modal-5"
                       className="modal cursor-pointer"
                     >
-                      <label className="modal-box rounded-lg border border-neutral relative p-0" htmlFor="">
+                      <label
+                        className="modal-box rounded-lg border border-neutral relative p-0"
+                        htmlFor=""
+                      >
                         <div className="card bg-base-100">
                           <label
                             htmlFor="my-modal-5"
@@ -203,6 +210,12 @@ const CoursePlay = () => {
                             ✕
                           </label>
                           <AddReview></AddReview>
+                          <div>
+                            <span class="flex h-3 w-3">
+                              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75"></span>
+                              <span class="relative inline-flex rounded-full h-3 w-3 bg-sky-500"></span>
+                            </span>
+                          </div>
                         </div>
                       </label>
                     </label>
