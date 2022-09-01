@@ -1,12 +1,12 @@
 import React from "react";
-import { Outlet, useParams } from "react-router-dom";
-import CourseLink from "./CourseLink";
-import { useQuery } from "react-query";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
+import { useQuery } from "react-query";
+import { Outlet, useParams } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
-import AddReview from "./AddReview";
+import auth from "../../firebase.init";
 import useCourse from "../../Hooks/useCourse";
+import AddReview from "./AddReview";
+import CourseLink from "./CourseLink";
 
 const CoursePlay = () => {
   const { uname } = useParams();
@@ -19,8 +19,12 @@ const CoursePlay = () => {
   } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
-  const myCourseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
-  console.log(myCourseData)
+  const myCourseData = myCourse?.data?.find(
+    (allcard) => allcard.uname === uname
+  );
+  const progress =
+    (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
+  const stringProgress = progress.toString() + "%";
   return (
     <div>
       {courseData?.meetLink?.MLink && (
@@ -45,23 +49,68 @@ const CoursePlay = () => {
               <p className="text-lg p-3 border-b border-neutral">
                 Course Lesson
               </p>
+              <div className="px-4 flex flex-col gap-2 text-warning font-bold">
+                <p>
+                  {myCourseData?.progress?.length
+                    ? myCourseData?.progress?.length
+                    : "0"}
+                  /{courseData?.videos?.length} Module Completed - Progress{" "}
+                  {progress ? progress : "0"}%
+                </p>
+                <div>
+                  {progress > 0 ? (
+                    <div className="bg-neutral rounded-full h-2.5">
+                      <div
+                        className={`bg-[#3EC65D] h-2.5 rounded-full`}
+                        style={{
+                          width: `${stringProgress}`,
+                          maxWidth: "100%",
+                        }}
+                      ></div>
+                    </div>
+                  ) : (
+                    <div className="bg-neutral rounded-full h-2.5">
+                      <div
+                        className={`bg-[#3EC65D] h-2.5 rounded-full`}
+                        style={{
+                          width: "0%",
+                        }}
+                      ></div>
+                    </div>
+                  )}
+                </div>
+              </div>
               {myCourseData?.file.map((course) => (
-                <CourseLink key={course.id} course={course} allCourseData={courseData}></CourseLink>
+                <CourseLink
+                  key={course.id}
+                  refetch={refetch}
+                  course={course}
+                  myCourseData={myCourseData}
+                  allCourseData={courseData}
+                ></CourseLink>
               ))}
               {/* modal button  */}
-              <label
-                htmlFor="my-modal-5"
-                className="text-center py-2 text-white rounded-none btn-block btn-info cursor-pointer mx-auto mt-3"
-              >
-                Add a Review
-              </label>
-              {/* modal box */}
-              <input type="checkbox" id="my-modal-5" className="modal-toggle" />
-              <label htmlFor="my-modal-5" className="modal cursor-pointer">
-                <label className="modal-box relative p-0" htmlFor="">
-                  <AddReview></AddReview>
-                </label>
-              </label>
+              {progress === 100 && (
+                <>
+                  <label
+                    htmlFor="my-modal-5"
+                    className="text-center py-2 text-white rounded-none btn-block btn-info cursor-pointer mx-auto mt-3"
+                  >
+                    Add a Review
+                  </label>
+                  {/* modal box */}
+                  <input
+                    type="checkbox"
+                    id="my-modal-5"
+                    className="modal-toggle"
+                  />
+                  <label htmlFor="my-modal-5" className="modal cursor-pointer">
+                    <label className="modal-box relative p-0" htmlFor="">
+                      <AddReview></AddReview>
+                    </label>
+                  </label>
+                </>
+              )}
             </div>
           </div>
           <div className="lg:w-[640px] w-full">

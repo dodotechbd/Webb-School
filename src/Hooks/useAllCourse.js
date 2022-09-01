@@ -1,7 +1,7 @@
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 
-const useCourse = () => {
+const useAllCourse = () => {
   const { uname } = useParams();
   const { data: language, isLoading } = useQuery(["languageCourse"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
@@ -18,12 +18,8 @@ const useCourse = () => {
       (res) => res.json()
     )
   );
-  const courseData =
-    admission?.find((allcard) => allcard.uname === uname) ||
-    language?.find((allcard) => allcard.uname === uname) ||
-    job?.find((allcard) => allcard.uname === uname);
   const courseLoading = isLoading && jobLoading && aLoading;
-  return [courseData, courseLoading];
+  return [admission, job, language, courseLoading];
 };
 
-export default useCourse;
+export default useAllCourse;
