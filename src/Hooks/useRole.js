@@ -14,8 +14,12 @@ const useRole = () => {
       const { data } = await primaryAxios.get(
         `/user-role?email=${user?.email}`
       );
-      if (data) {
+      if (data?.role) {
         setRole(data?.role);
+        setRoleLoading(false);
+      }
+       else {
+        setRole("");
         setRoleLoading(false);
       }
       setUserName(data?.name);
