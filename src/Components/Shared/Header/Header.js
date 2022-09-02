@@ -81,10 +81,10 @@ const Header = ({ handleThemeChange, theme }) => {
       {courseData?.meetLink?.MLink && (
         <li>
           <NavLink to="LiveClasses">
-            <a class="relative items-center">
+            <a class="relative text-green-600 items-center">
               Live Class
-              <div class="inline-flex absolute -top-3 -right-6 justify-center items-center w-5 h-5 text-xs font-bold text-red-600">
-                <i class="fa-solid fa-video"></i>
+              <div class="inline-flex absolute -top-3 -right-6 justify-center items-center w-5 h-5 text-xs font-bold text-green-600">
+                <i class="fa-solid fa-circle"></i>
               </div>
             </a>
           </NavLink>
@@ -148,8 +148,8 @@ const Header = ({ handleThemeChange, theme }) => {
                 </li>
                 {courseData?.meetLink?.MLink && (
                   <li>
-                    <NavLink to="LiveClasses">
-                      <i class="fa-solid text-red-600 fa-video"></i> Live Class
+                    <NavLink to="LiveClasses" className='text-green-600'>
+                      <i class="fa-solid text-green-600 fa-video"></i> Live Class
                     </NavLink>
                   </li>
                 )}
@@ -209,8 +209,8 @@ const Header = ({ handleThemeChange, theme }) => {
                         >
                           {courseData?.meetLink?.MLink ? (
                             <>
-                              <i className="ml-4 fa-solid fa-video text-red-600 "></i>
-                              <span className="text-red-600">Live Class</span>
+                              <i className="ml-4 fa-solid fa-video text-green-600 "></i>
+                              <span className="text-green-600">Live Class</span>
                             </>
                           ) : (
                             <>
@@ -394,8 +394,8 @@ const Header = ({ handleThemeChange, theme }) => {
                 <NavLink className="hover:rounded-none" to={"liveclasses"}>
                   {courseData?.meetLink?.MLink ? (
                     <>
-                      <i className="ml-4 fa-solid fa-video text-red-600 "></i>
-                      <span className="text-red-600">Live Class</span>
+                      <i className="ml-4 fa-solid fa-video text-green-600 "></i>
+                      <span className="text-green-600">Live Class</span>
                     </>
                   ) : (
                     <>
