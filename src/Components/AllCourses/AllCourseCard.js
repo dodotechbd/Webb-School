@@ -1,8 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import { Link } from "react-router-dom";
 
 const AllCourseCard = ({ allcard }) => {
   const { uname } = allcard;
@@ -15,7 +15,6 @@ const AllCourseCard = ({ allcard }) => {
   const ratingData = reviewData?.map((allcard) => allcard.rating);
   const totalRating = ratingData?.reduce((a, b) => a + b, 0);
   const avgRating = totalRating / ratingData?.length;
-  // console.log(ratingData);
 
   return (
     <Link to={`/course/${uname}`}>

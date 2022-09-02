@@ -1,9 +1,9 @@
 import React from "react";
-import Loader from "../Shared/Loading/Loading";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import primaryAxios from "../../Api/primaryAxios";
-import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Loader from "../Shared/Loading/Loading";
 import LiveCard from "./LiveCard";
 
 import useTitle from "../../Hooks/useTitle";
@@ -18,7 +18,6 @@ const LiveClass = () => {
   } = useQuery(["myCourses", user?.email], () =>
   primaryAxios.get(`/mycourse?email=${user?.email}`)
 );
-  console.log(myCourse?.data);
   if (isLoading) {
     return <Loader></Loader>;
   }

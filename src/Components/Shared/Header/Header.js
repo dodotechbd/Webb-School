@@ -32,7 +32,6 @@ const Header = ({ handleThemeChange, theme }) => {
     language?.find((s) => s.uname === myCourseData?.uname) ||
     job?.find((s) => s.uname === myCourseData?.uname);
 
-  console.log(courseData);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
