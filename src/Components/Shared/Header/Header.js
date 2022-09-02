@@ -21,11 +21,7 @@ const Header = ({ handleThemeChange, theme }) => {
   const [role, roleLoading, userName] = useRole();
 
   const [admission, job, language] = useAllCourse();
-  const {
-    data: myCourse,
-
-    refetch,
-  } = useQuery(["myCourses", user?.email], () =>
+  const { data: myCourse } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
 
@@ -57,7 +53,6 @@ const Header = ({ handleThemeChange, theme }) => {
     //Token Remove
     localStorage.removeItem("accessToken");
   };
-  console.log(courseData);
   const manuItems = (
     <>
       <li>
@@ -216,7 +211,7 @@ const Header = ({ handleThemeChange, theme }) => {
                           {courseData?.meetLink?.MLink ? (
                             <>
                               <i className="ml-4 fa-solid fa-video text-red-600 "></i>
-                              <span className="text-red-600">Live Classes</span>
+                              <span className="text-red-600">Live Class</span>
                             </>
                           ) : (
                             <>
@@ -401,7 +396,7 @@ const Header = ({ handleThemeChange, theme }) => {
                   {courseData?.meetLink?.MLink ? (
                     <>
                       <i className="ml-4 fa-solid fa-video text-red-600 "></i>
-                      <span className="text-red-600">Live Classes</span>
+                      <span className="text-red-600">Live Class</span>
                     </>
                   ) : (
                     <>
