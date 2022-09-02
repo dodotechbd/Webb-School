@@ -103,7 +103,7 @@ const BookStripeForm = ({ totalAmount, orderInfo }) => {
             className: "rounded-3xl",
           }
         ).then((value) => {
-          navigate("/orders");
+          navigate("/mybooks");
         });
       }
       const payment = {
