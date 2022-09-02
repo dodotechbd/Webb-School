@@ -1,14 +1,14 @@
-import React from "react";
-import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
-import primaryAxios from "../../Api/primaryAxios";
-import Loading from "../Shared/Loading/Loading";
-import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
-import StripeForm from "./StripeForm";
+import { loadStripe } from "@stripe/stripe-js";
+import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
+import Loading from "../Shared/Loading/Loading";
+import StripeForm from "./StripeForm";
 
 const Stripe = ({ courseData }) => {
   const stripePromise = loadStripe(
@@ -28,7 +28,6 @@ const Stripe = ({ courseData }) => {
     primaryAxios.get(`/order?email=${user?.email}`)
   );
   const orderData = orders?.data?.find((allcard) => allcard.uname === uname);
-  console.log(orderData);
   if (isLoading) {
     return <Loading></Loading>;
   }

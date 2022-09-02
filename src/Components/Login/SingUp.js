@@ -1,10 +1,10 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import auth from '../../firebase.init';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import Loading from '../Shared/Loading/Loading'
-import axios from 'axios';
+import auth from '../../firebase.init';
+import Loading from '../Shared/Loading/Loading';
 import Social from './Social';
 
 
@@ -53,7 +53,6 @@ const SignUp = () => {
     }
   
     // if (user || gUser ) {
-    //   console.log(gUser)
     //   return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
     // }
   
@@ -61,7 +60,6 @@ const SignUp = () => {
       setName(data?.name);
       await createUserWithEmailAndPassword(data.email,data.password)
       await updateProfile({ displayName: data.name });
-      console.log('done')
     }
     return (
         <div >

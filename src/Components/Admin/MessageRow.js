@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import { useQuery } from "react-query";
+import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
 import MessageHistory from "./MessageHistory";
 
@@ -13,7 +13,6 @@ const MessageRow = ({ user, prefetch, index }) => {
     isLoading,
     refetch,
   } = useQuery(["message"], () => primaryAxios.get(`/message`));
-  console.log(message?.data);
 
   const onSubmit = (data) => {
     const newReview = {
@@ -23,7 +22,6 @@ const MessageRow = ({ user, prefetch, index }) => {
       // name: user?.displayName,
       // image: user?.photoURL,
     };
-    console.log(data);
     (async () => {
       const { data } = await primaryAxios.post(`/message`, newReview);
       if (data.acknowledged) {

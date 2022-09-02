@@ -1,9 +1,8 @@
+import { nanoid } from 'nanoid';
 import React, { useEffect, useRef, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
 import io from 'socket.io-client';
-import { nanoid } from 'nanoid';
-import { sendEmailVerification } from 'firebase/auth';
+import auth from '../../firebase.init';
 
 
 
@@ -55,7 +54,6 @@ const Chat = () => {
     //     .then(data => {
     //         window.alert('Continuing your Chat')
     //         window.location.reload() 
-    //         console.log('hello add data', data);
     //     })
     // }
 
