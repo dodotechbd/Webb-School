@@ -9,12 +9,13 @@ const Hero = () => {
   return (
     <div id="top">
       <div className="zero hero -mt-12 pt-12 min-h-screen bg-base-100 border-b border-neutral">
-        <div className="hero-content p-0 flex-col-reverse lg:flex-row-reverse">
+        <div className="hero-content w-10/12 p-0 flex-col-reverse lg:flex-row-reverse">
+          <div className="w-full">
           <img
-            className="lg:w-7/12"
             src="https://raw.githubusercontent.com/MShafiMS/admission/eeb6c9456e6bec86eeddaf072a43cd089f371637/hero.svg"
           />
-          <div className="w-11/12">
+          </div>
+          <div className="w-full">
             <h1 className="text-7xl text-warning font-mono drop-shadow-lg text-center lg:text-left">
               Webb
             </h1>
@@ -22,8 +23,7 @@ const Hero = () => {
               School
             </h1>
             <p className="py-6 font-sans text-3xl drop-shadow-lg text-center lg:text-left">
-              "If kids can be super engaged in video games, there’s a way for
-              them to be engaged in education as well."
+              The online learning industry is growing by 15% annually e-Learning is quickly becoming the preferred way to learn.
             </p>
             <div className="flex lg:mx-0 mx-auto items-center w-80 justify-between bg-base-100 bg-opacity-20 backdrop-filter backdrop-blur-lg p-2 rounded-2xl">
               <p>Start Your Learning</p>
