@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 // Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 import SwiperCore, { Autoplay } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
@@ -11,23 +11,18 @@ import "swiper/css/pagination";
 import "./Banner.css";
 
 // import required module
-import { EffectCoverflow, Pagination } from "swiper";
 import { Link } from "react-router-dom";
+import { EffectCoverflow, Pagination } from "swiper";
 
 const Banner = () => {
   return (
     <div className=" banner">
-      <div className="px-12 lg:py-10 lg:pb-16 py-10 pt-2  bg-base-100 border-b border-neutral hero-overlay bg-opacity-50">
+      <div className="px-12 lg:pb-16 py-10 pt-2  bg-base-100 border-b border-neutral hero-overlay bg-opacity-50">
         <h1
-          className="lg:text-4xl md:text-3xl text-2xl lg:mb-0 my-6 font-header font-bold text-center"
+          className="lg:text-4xl md:text-3xl text-2xl lg:mt-10 lg:mb-12 my-6 font-header font-bold text-center"
         >
           Discounts On Our Exclusives!
         </h1>
-        <p
-          className="lg:text-2xl md:text-xl text-lg mt-6 mb-12 text-center font-sub hidden lg:block"
-        >
-          Various courses on across site wide can be done more cost-effectively throughout the month of July on the occasion of Eid-Al-Adha!
-        </p>
         <Swiper
           effect={"coverflow"}
           grabCursor={true}
