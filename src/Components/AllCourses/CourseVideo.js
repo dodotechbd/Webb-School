@@ -17,7 +17,7 @@ const CourseVideo = () => {
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
   const myCourseData = myCourse?.data?.find((s) => s.uname === uname);
-  
+
   if (courseLoading || loading) {
     return (
       <div className="mx-auto hero py-36 bg-base-300">
