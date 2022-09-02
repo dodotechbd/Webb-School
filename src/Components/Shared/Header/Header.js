@@ -1,52 +1,47 @@
+import { signOut } from "firebase/auth";
 import React, { useState } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { FiBell } from "react-icons/fi";
+import Drawer from "react-modern-drawer";
+import "react-modern-drawer/dist/index.css";
+import { useQuery } from "react-query";
 import { Link, NavLink } from "react-router-dom";
 import wslogo from "../../../Assets/wslogo.png";
-import "./Header.css";
-import { useQuery } from "react-query";
-import Drawer from "react-modern-drawer";
-import { FiBell } from "react-icons/fi";
-import "react-modern-drawer/dist/index.css";
-import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../../firebase.init";
-import { signOut } from "firebase/auth";
 import useRole from "../../../Hooks/useRole";
 import Messages from "../../Messages/Messages";
+import "./Header.css";
 
 import primaryAxios from "../../../Api/primaryAxios";
 
-import Loading from "../Loading/PreLoader";
 import useAllCourse from "../../../Hooks/useAllCourse";
-
 
 const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
 
-
   const [admission, job, language] = useAllCourse();
   const {
     data: myCourse,
 
-    refetch
+    refetch,
   } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
 
-  const myCourseData = myCourse?.data.find((s) => s.uname)
+  const myCourseData = myCourse?.data.find((s) => s.uname);
 
   const courseData =
     admission?.find((s) => s.uname === myCourseData?.uname) ||
     language?.find((s) => s.uname === myCourseData?.uname) ||
     job?.find((s) => s.uname === myCourseData?.uname);
 
-  console.log(courseData)
-
+  console.log(courseData);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
-
 
   const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
     fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
@@ -62,7 +57,7 @@ const Header = ({ handleThemeChange, theme }) => {
     //Token Remove
     localStorage.removeItem("accessToken");
   };
-  console.log(courseData)
+  console.log(courseData);
   const manuItems = (
     <>
       <li>
@@ -89,42 +84,18 @@ const Header = ({ handleThemeChange, theme }) => {
         <NavLink to="blogs">Blog</NavLink>
       </li>
 
-
       {courseData?.meetLink?.MLink && (
         <li>
           <NavLink to="LiveClasses">
-            <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
-              <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
-              <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
-              <span class=" ml-1.5 text-green-600 hover:text-white ">
-                Live Class
-              </span>
-            </strong>
+            <a class="relative items-center">
+              Live Class
+              <div class="inline-flex absolute -top-3 -right-6 justify-center items-center w-5 h-5 text-xs font-bold text-red-600">
+                <i class="fa-solid fa-video"></i>
+              </div>
+            </a>
           </NavLink>
-
         </li>
       )}
-
-
-      {/* <li>
-        <NavLink to="showteacher">Show-Teacher</NavLink>
-      </li> */}
-      {/* <li>
-        <NavLink to="addteacher">Add-Teacher</NavLink>
-      </li> */}
-      {/* <li>
-        <NavLink to="editteacher">Edit-Teacher</NavLink>
-      </li> */}
-      {/* {user ? <li>
-        <NavLink to="chat">Chat</NavLink>
-      </li> : ("")} */}
-
-
-
-
-
-
-
 
       {role === "admin" && (
         <li>
@@ -133,7 +104,6 @@ const Header = ({ handleThemeChange, theme }) => {
       )}
     </>
   );
-
 
   return (
     <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
@@ -147,7 +117,6 @@ const Header = ({ handleThemeChange, theme }) => {
                   <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
-
                   </div>
                 </div>
               </Link>
@@ -186,25 +155,10 @@ const Header = ({ handleThemeChange, theme }) => {
                 {courseData?.meetLink?.MLink && (
                   <li>
                     <NavLink to="LiveClasses">
-                      <strong class="inline-flex items-center  relative px-2.5 py-1.5 ">
-                        <span class="animate-ping w-2.5 h-2.5 bg-green-600/75 rounded-full absolute -top-1 -left-1"></span>
-                        <span class="w-2.5 h-2.5 bg-green-600 rounded-full absolute -top-1 -left-1"></span>
-                        <span class=" ml-1.5 text-green-600 hover:text-white">
-                          Live Class
-                        </span>
-                      </strong>
+                      <i class="fa-solid text-red-600 fa-video"></i> Live Class
                     </NavLink>
-
                   </li>
                 )}
-
-
-                {/* {user ? <li>
-                  <NavLink className='hover:rounded-none' to="chat">Chat</NavLink>
-                </li> : ("")} */}
-
-
-
 
                 {role === "admin" && (
                   <li>
@@ -224,10 +178,11 @@ const Header = ({ handleThemeChange, theme }) => {
                       <label className="avatar">
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
-                            src={`${user?.photoURL
-                              ? user?.photoURL
-                              : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                              }`}
+                            src={`${
+                              user?.photoURL
+                                ? user?.photoURL
+                                : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                            }`}
                           />
                         </div>
                       </label>
@@ -258,18 +213,19 @@ const Header = ({ handleThemeChange, theme }) => {
                           className="hover:rounded-none"
                           to={"liveclasses"}
                         >
-                          <i className="ml-4 fa-solid fa-video"></i>Live Classes
+                          {courseData?.meetLink?.MLink ? (
+                            <>
+                              <i className="ml-4 fa-solid fa-video text-red-600 "></i>
+                              <span className="text-red-600">Live Classes</span>
+                            </>
+                          ) : (
+                            <>
+                              <i className="ml-4 fa-solid fa-video"></i>
+                              <span>Live Class</span>
+                            </>
+                          )}
                         </NavLink>
                       </li>
-                      {/* <li>
-                        <NavLink
-                          className="hover:rounded-none"
-                          to={"dashboard"}
-                        >
-                          <i className="ml-4 fa-solid fa-chart-line"></i>
-                          Dashboard
-                        </NavLink>
-                      </li> */}
                       <li>
                         <NavLink className="hover:rounded-none" to={"/orders"}>
                           <i className="ml-4 fa-solid fa-clock"></i>Payment
@@ -393,10 +349,11 @@ const Header = ({ handleThemeChange, theme }) => {
             <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
               <div className="w-9 rounded-full">
                 <img
-                  src={`${user?.photoURL
-                    ? user?.photoURL
-                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                    }`}
+                  src={`${
+                    user?.photoURL
+                      ? user?.photoURL
+                      : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                  }`}
                 />
               </div>
             </label>
@@ -408,10 +365,11 @@ const Header = ({ handleThemeChange, theme }) => {
                 <div className="avatar">
                   <div className="w-20 rounded-full">
                     <img
-                      src={`${user?.photoURL
-                        ? user?.photoURL
-                        : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                        }`}
+                      src={`${
+                        user?.photoURL
+                          ? user?.photoURL
+                          : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
+                      }`}
                     />
                   </div>
                 </div>
@@ -439,14 +397,18 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
-
                 <NavLink className="hover:rounded-none" to={"liveclasses"}>
-                  {
-                    courseData?.meetLink?.MLink ? (
-                      <i className="ml-4 fa-solid fa-video text-green-500 "></i>
-                    ) : (<i className="ml-4 fa-solid fa-video"></i>)
-                  }
-                  Live Class
+                  {courseData?.meetLink?.MLink ? (
+                    <>
+                      <i className="ml-4 fa-solid fa-video text-red-600 "></i>
+                      <span className="text-red-600">Live Classes</span>
+                    </>
+                  ) : (
+                    <>
+                      <i className="ml-4 fa-solid fa-video"></i>
+                      <span>Live Class</span>
+                    </>
+                  )}
                 </NavLink>
               </li>
               {/* <li>
@@ -462,7 +424,7 @@ const Header = ({ handleThemeChange, theme }) => {
               <li>
                 <a
                   onClick={logout}
-                  className="hover:rounded-b-md hover:rounded-none text-red-500"
+                  className="hover:rounded-b-md hover:rounded-none text-red-600"
                 >
                   <i className="ml-4 fa-solid fa-right-from-bracket"></i>
                   Logout
@@ -471,66 +433,6 @@ const Header = ({ handleThemeChange, theme }) => {
             </ul>
           </div>
         ) : (
-          // <div className="dropdown dropdown-end">
-          //   <div
-          //     tabIndex="0"
-          //     className="flex flex-nowrap items-center cursor-pointer"
-          //   >
-          //     <label className="avatar">
-          //       <div className="w-7 mr-2 rounded-full border border-gray-200">
-          //         <img
-          //           src={`${
-          //             user?.photoURL
-          //               ? user?.photoURL
-          //               : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-          //           }`}
-          //         />
-          //       </div>
-          //     </label>
-          //     <p className="whitespace-nowrap">
-          //       {userName ? userName : "User"}
-          //       <i className="ml-2 fa-solid fa-angle-down"></i>
-          //     </p>
-          //   </div>
-          //   <ul
-          //     tabIndex="0"
-          //     className="mt-4 menu menu-compact w-48 dropdown-content rounded-xl bg-base-300"
-          //   >
-          //     <li>
-          //       <NavLink
-          //         to={"profile"}
-          //         className="hover:rounded-t-xl hover:rounded-none"
-          //       >
-          //         <i className="ml-4 fa-solid fa-user" />
-          //         Profile
-          //       </NavLink>
-          //     </li>
-          //     <li>
-          //       <NavLink to={"mycourse"} className="hover:rounded-none">
-          //         <i className="ml-4 fa-solid fa-bolt"></i>My Courses
-          //       </NavLink>
-          //     </li>
-          //     <li>
-          //       <NavLink to={"dashboard"} className="hover:rounded-none">
-          //         <i className="ml-4 fa-solid fa-chart-line"></i>Dashboard
-          //       </NavLink>
-          //     </li>
-          //     <li>
-          //       <NavLink to={"coming"} className="hover:rounded-none">
-          //         <i className="ml-4 fa-solid fa-clock"></i>Payment History
-          //       </NavLink>
-          //     </li>
-          //     <li>
-          //       <a
-          //         onClick={logout}
-          //         className="hover:rounded-b-xl hover:rounded-none"
-          //       >
-          //         <i className="ml-4 fa-solid fa-right-from-bracket"></i>
-          //         Logout
-          //       </a>
-          //     </li>
-          //   </ul>
-          // </div>
           <div className="flex">
             <a className="btn-accent btn-sm btn rounded-md text-white font-thin">
               <Link to="Login">Login</Link>

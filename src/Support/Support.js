@@ -2,7 +2,7 @@ import React from "react";
 import support from "../Assets/SUPPORT.svg";
 const Support = () => {
   return (
-    <div className="py-5 px-5 border-t border-b border-neutral">
+    <div className="py-5 hero px-5 border-t border-b border-neutral">
       <div className="hero-content flex-col lg:flex-row-reverse">
         {/* image import */}
         <img src={support} className="lg:w-6/12" />
