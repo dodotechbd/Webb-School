@@ -1,10 +1,10 @@
+import axios from 'axios';
 import React, { useEffect } from 'react';
-import auth from '../../firebase.init';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
+import auth from '../../firebase.init';
 import Loading from '../Shared/Loading/Loading';
-import axios from 'axios';
 import Social from './Social';
 
 const Login = () => {
@@ -49,7 +49,6 @@ const Login = () => {
   }
 
   const onSubmit = (data) => {
-    console.log(data)
     signInWithEmailAndPassword(data.email, data.password);
   }
 

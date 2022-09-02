@@ -31,7 +31,6 @@ const CoursePlay = () => {
   const { data: userData } = useQuery(["userProfile", user?.email], () =>
     primaryAxios.get(`/user-role?email=${user?.email}`)
   );
-  console.log();
   return (
     <div>
       {courseData?.meetLink?.MLink && (
