@@ -21,6 +21,7 @@ const AddReview = () => {
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
   const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
+  console.log(courseData);
   const {
     register,
     handleSubmit,
@@ -50,39 +51,39 @@ const AddReview = () => {
   };
 
   return (
-    <>
-      <figure className="px-10 pt-10">
-        <img
-          src="https://raw.githubusercontent.com/MShafiMS/admission/69bf271511e1e926ff0e90113c90075e937fd205/output-onlinegiftools.gif"
-          alt="Shoes"
-          className="rounded-full w-28 bg-base-300"
-        />
-      </figure>
-      <form
-        onSubmit={handleSubmit(onSubmit)}
-        className="card-body items-center text-center p-4"
-      >
-        <h2 className="text-xl">Rate this course</h2>
-        <div className="text-3xl text-[#FAAF00]">
-          <Rating
-            count={5}
-            onChange={setRating}
-            fractions={2}
-            emptySymbol={<ImStarEmpty />}
-            fullSymbol={<ImStarFull />}
-          />
+    <div className="bg-base-100 rounded-lg  shadow-xl card-body items-start p-4">
+      <div className="lg:flex items-center gap-4">
+        <img src={courseData?.img} className="lg:w-72 mx-auto rounded-md" alt="" />
+        <div>
+          <p className="text-2xl my-1">{courseData?.name}</p>
+          <form className="my-2" onSubmit={handleSubmit(onSubmit)}>
+            <div className="flex gap-6">
+              <h2 className="text-lg font-bold">Feedback Rating</h2>
+              <div className="text-xl mt-1 text-[#FAAF00]">
+                <Rating
+                  count={5}
+                  onChange={setRating}
+                  fractions={2}
+                  emptySymbol={<ImStarEmpty />}
+                  fullSymbol={<ImStarFull />}
+                />
+              </div>
+            </div>
+            <textarea
+              {...register("review")}
+              className="textarea mb-2 textarea-primary w-full"
+              placeholder="Write about course"
+              required
+            ></textarea>
+            <div className="card-actions justify-end">
+            <button type="submit" className="px-8 py-2 rounded-md btn-primary">
+              Update
+            </button>
+            </div>
+          </form>
         </div>
-        <textarea
-          {...register("review")}
-          className="textarea my-3 textarea-primary w-full max-w-xs"
-          placeholder="Write about this course"
-          required
-        ></textarea>
-        <button type="submit" className="px-8 py-2 rounded-md btn-primary">
-          Submit
-        </button>
-      </form>
-    </>
+      </div>
+    </div>
   );
 };
 
