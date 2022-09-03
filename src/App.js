@@ -32,6 +32,7 @@ import AllCourseView from "./Components/AllCourses/AllCourseView";
 import Checkout from "./Components/AllCourses/Checkout";
 import CoursePlay from "./Components/AllCourses/CoursePlay";
 import CourseVideo from "./Components/AllCourses/CourseVideo";
+import Summary from "./Components/AllCourses/Summary";
 import AllJobCourse from "./Components/AllJobCourses/AllJobCourse";
 import AudioBookDetails from "./Components/AudioBook/AudioBookDetails";
 import AudioBooks from "./Components/AudioBook/AudioBooks";
@@ -155,6 +156,10 @@ function App() {
             ></Route>
           </Route>
         </Route>
+        <Route
+          path="/course/summary/:uname"
+          element={<Summary></Summary>}
+        ></Route>
 
         <Route
           path="/blogdetails/:detailsId"
