@@ -54,7 +54,7 @@ const AddReview = () => {
     <div className="bg-base-100 rounded-lg  shadow-xl card-body items-start p-4">
       <div className="lg:flex items-center gap-4">
         <img src={courseData?.img} className="lg:w-72 mx-auto rounded-md" alt="" />
-        <div>
+        <div className="w-full">
           <p className="text-2xl my-1">{courseData?.name}</p>
           <form className="my-2" onSubmit={handleSubmit(onSubmit)}>
             <div className="flex gap-6">

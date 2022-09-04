@@ -1,7 +1,7 @@
 import React from 'react';
-import Loading from "../Shared/Loading/Loading";
 import { useQuery } from "react-query";
 import primaryAxios from '../../Api/primaryAxios';
+import Loading from "../Shared/Loading/Loading";
 import MessageRow from './MessageRow';
 
 const Message = () => {
@@ -14,8 +14,8 @@ const Message = () => {
       }
     return (
         <div>
-          <div class="navbar">
-        <a class="normal-case text-xl">Send Message</a>
+          <div className="navbar">
+        <a className="normal-case text-xl">Send Message</a>
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table table-zebra w-full">

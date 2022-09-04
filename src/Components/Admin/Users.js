@@ -1,8 +1,8 @@
 import React from "react";
-import Loading from "../Shared/Loading/Loading";
 import { useQuery } from "react-query";
-import UserRow from "./UserRow";
 import primaryAxios from "../../Api/primaryAxios";
+import Loading from "../Shared/Loading/Loading";
+import UserRow from "./UserRow";
 
 const Users = () => {
   const {
@@ -15,8 +15,8 @@ const Users = () => {
   }
   return (
     <div>
-      <div class="navbar">
-        <a class="normal-case text-xl">Users</a>
+      <div className="navbar">
+        <a className="normal-case text-xl">Users</a>
       </div>
       <div className="overflow-x-auto w-full">
         <table className="table table-zebra w-full">

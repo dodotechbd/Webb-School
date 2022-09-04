@@ -5,9 +5,9 @@ const CirtificateForm = ({ userData, courseData }) => {
   return (
     <form className="font-header">
       <div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Awarded to</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Awarded to</span>
           </label>
           <input
             type="text"
@@ -16,14 +16,14 @@ const CirtificateForm = ({ userData, courseData }) => {
             placeholder={userData?.name}
             value={userData?.name}
             disabled
-            class="input input-bordered"
+            className="input input-bordered"
           />
         </div>
       </div>
       <div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">For completing</span>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">For completing</span>
           </label>
           <input
             id="course"
@@ -33,7 +33,7 @@ const CirtificateForm = ({ userData, courseData }) => {
               courseData?.name === "" && "No Course Showing"
             }
             value={courseData?.name}
-            class="input input-bordered"
+            className="input input-bordered"
           />
         </div>
       </div>

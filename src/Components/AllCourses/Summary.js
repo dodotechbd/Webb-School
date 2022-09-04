@@ -30,7 +30,7 @@ const Summary = () => {
             <div className="lg:w-7/12 md:w-9/12 shadow-xl bg-base-100 rounded-lg">
               <SummaryUser></SummaryUser>
             </div>
-            <div className="w-full">
+            <div className="w-full lg:w-full">
               <AddReview></AddReview>
             </div>
           </div>
