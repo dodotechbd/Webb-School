@@ -13,8 +13,8 @@ const ReviewCard = ({ course }) => {
   const { rating, review, reviewDate, author } = course;
   return (
     <div className="w-full">
-      <div class="avatar top-14">
-        <div class="w-20 rounded-full ring-8 ring-offset-2 shadow-warning shadow-lg ring-offset-base-300 ring-base-300">
+      <div className="avatar top-14">
+        <div className="w-20 rounded-full ring-8 ring-offset-2 shadow-warning shadow-lg ring-offset-base-300 ring-base-300">
           <img
             src={
               author?.photo

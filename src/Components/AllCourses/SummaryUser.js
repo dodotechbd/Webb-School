@@ -63,7 +63,7 @@ const SummaryUser = () => {
               tabIndex="0"
               className="collapse collapse-plus bg-base-200 border-t border-neutral"
             >
-              <input type="checkbox" class="peer" />
+              <input type="checkbox" className="peer" />
               <div className="collapse-title text-md font-medium peer-checked:bg-info peer-checked:text-white peer-checked:font-bold">
                 {course?.title}
               </div>
@@ -75,7 +75,7 @@ const SummaryUser = () => {
                         <i className="fa-solid text-xl text-info fa-circle-play"></i>
                         <p>{detail?.name}</p>
                       </div>
-                      <i class="fa-solid fa-circle-check text-green-500"></i>
+                      <i className="fa-solid fa-circle-check text-green-500"></i>
                     </a>
                   </li>
                 ))}
@@ -98,10 +98,10 @@ const SummaryUser = () => {
             >
               Apply for certificate
             </label>
-            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-            <label for="my-modal-4" class="modal cursor-pointer">
+            <input type="checkbox" id="my-modal-4" className="modal-toggle" />
+            <label for="my-modal-4" className="modal cursor-pointer">
               <label
-                class="modal-box rounded-lg border border-neutral relative"
+                className="modal-box rounded-lg border border-neutral relative"
                 for=""
               >
                 <Cirtificate

@@ -10,7 +10,7 @@ const CourseLink = ({ course, allCourseData, myCourseData, refetch }) => {
         tabIndex="0"
         className="collapse collapse-plus border-t border-neutral mx-4"
       >
-        <input type="checkbox" class="peer" />
+        <input type="checkbox" className="peer" />
         <div className="collapse-title text-md font-medium peer-checked:bg-info peer-checked:text-white peer-checked:font-bold">
           {course?.title}
         </div>
