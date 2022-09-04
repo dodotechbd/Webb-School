@@ -5,18 +5,16 @@ import { useParams } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 import useCourse from "../../Hooks/useCourse";
-import Loading from '../Shared/Loading/Loading';
+import Loading from "../Shared/Loading/Loading";
 import Cirtificate from "./Cirtificate/Cirtificate";
 
 const SummaryUser = () => {
   const [user] = useAuthState(auth);
   const [courseData] = useCourse();
   const { uname } = useParams();
-  const {
-    data: myCourse,
-    mcLoading
-  } = useQuery(["myCourses", user?.email], () =>
-    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  const { data: myCourse, mcLoading } = useQuery(
+    ["myCourses", user?.email],
+    () => primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
   const myCourseData = myCourse?.data?.find(
     (allcard) => allcard.uname === uname
@@ -24,7 +22,7 @@ const SummaryUser = () => {
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
   const stringProgress = progress.toString();
-  console.log(stringProgress)
+  console.log(stringProgress);
   const {
     data: muser,
     isLoading,
@@ -32,11 +30,11 @@ const SummaryUser = () => {
   } = useQuery(["userProfile", user?.email], () =>
     primaryAxios.get(`/user-role?email=${user?.email}`)
   );
-  if(isLoading || mcLoading){
-    return <Loading></Loading>
+  if (isLoading || mcLoading) {
+    return <Loading></Loading>;
   }
   return (
-    <div className="mx-10 lg:mt-7 my-8 pb-8 pt-1">
+    <div className="mx-8 lg:mt-0 my-8 pb-8 pt-1">
       <div>
         <img
           src={muser?.data?.image}
@@ -57,6 +55,7 @@ const SummaryUser = () => {
         </div>
       </div>
       <div className=" my-8">
+        <p className="text-lg font-mono text-blue-400">{myCourseData?.name}</p>
         <p className="text-lg font-mono uppercase">Finished Lessons</p>
         <div className="border border-neutral border-t-0">
           {myCourseData?.file.map((course) => (
@@ -87,18 +86,32 @@ const SummaryUser = () => {
       </div>
       <div className="flex justify-between font-mono">
         <p className="text-xl">Certificate</p>
-        <label
-          for="my-modal-4"
-          className="btn modal-button btn-sm font-header btn-primary"
-        >
-          Download
-        </label>
-        <input type="checkbox" id="my-modal-4" class="modal-toggle" />
-        <label for="my-modal-4" class="modal cursor-pointer">
-          <label class="modal-box rounded-lg border border-neutral relative" for="">
-            <Cirtificate userData={muser?.data} courseData={myCourseData}></Cirtificate>
-          </label>
-        </label>
+        {myCourseData?.certificate ? (
+          <>
+          <a href={myCourseData?.certificate?.certificate} target='_blank' className='btn btn-sm font-header btn-primary' rel="noreferrer">Download</a>
+          </>
+        ) : (
+          <>
+            <label
+              for="my-modal-4"
+              className="btn modal-button btn-sm font-header btn-primary"
+            >
+              Download
+            </label>
+            <input type="checkbox" id="my-modal-4" class="modal-toggle" />
+            <label for="my-modal-4" class="modal cursor-pointer">
+              <label
+                class="modal-box rounded-lg border border-neutral relative"
+                for=""
+              >
+                <Cirtificate
+                  userData={muser?.data}
+                  courseData={myCourseData}
+                ></Cirtificate>
+              </label>
+            </label>
+          </>
+        )}
       </div>
     </div>
   );

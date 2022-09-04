@@ -4,7 +4,6 @@ import LinkChild from "./LinkChild";
 
 const CourseLink = ({ course, allCourseData, myCourseData, refetch }) => {
   const { uname } = useParams();
-  
   return (
     <>
       <div

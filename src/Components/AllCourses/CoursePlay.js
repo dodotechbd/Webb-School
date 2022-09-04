@@ -53,37 +53,39 @@ const CoursePlay = () => {
               <p className="text-lg p-3 border-b border-neutral">
                 Course Lesson
               </p>
-              <div className="px-5 flex flex-col gap-2 text-warning font-bold">
-                <p>
-                  {myCourseData?.progress?.length
-                    ? myCourseData?.progress?.length
-                    : "0"}
-                  /{courseData?.videos?.length} Module Completed - Progress{" "}
-                  {progress ? stringProgress.slice(0, 4) : "0"}%
-                </p>
-                <div>
-                  {progress > 0 ? (
-                    <div className="bg-neutral rounded-full h-2.5">
-                      <div
-                        className={`bg-[#3EC65D] h-2.5 rounded-full`}
-                        style={{
-                          width: `${stringProgressp}`,
-                          maxWidth: "100%",
-                        }}
-                      ></div>
-                    </div>
-                  ) : (
-                    <div className="bg-neutral rounded-full h-2.5">
-                      <div
-                        className={`bg-[#3EC65D] h-2.5 rounded-full`}
-                        style={{
-                          width: "0%",
-                        }}
-                      ></div>
-                    </div>
-                  )}
+              {myCourseData && (
+                <div className="px-5 flex flex-col gap-2 text-warning font-bold">
+                  <p>
+                    {myCourseData?.progress?.length
+                      ? myCourseData?.progress?.length
+                      : "0"}
+                    /{courseData?.videos?.length} Module Completed - Progress{" "}
+                    {progress ? stringProgress.slice(0, 4) : "0"}%
+                  </p>
+                  <div>
+                    {progress > 0 ? (
+                      <div className="bg-neutral rounded-full h-2.5">
+                        <div
+                          className={`bg-[#3EC65D] h-2.5 rounded-full`}
+                          style={{
+                            width: `${stringProgressp}`,
+                            maxWidth: "100%",
+                          }}
+                        ></div>
+                      </div>
+                    ) : (
+                      <div className="bg-neutral rounded-full h-2.5">
+                        <div
+                          className={`bg-[#3EC65D] h-2.5 rounded-full`}
+                          style={{
+                            width: "0%",
+                          }}
+                        ></div>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
+              )}
               {myCourseData?.file.map((course) => (
                 <CourseLink
                   key={course.id}
@@ -98,12 +100,12 @@ const CoursePlay = () => {
               {progress === 100 && (
                 <>
                   <Link to={`/course/summary/${myCourseData?.uname}`}>
-                  <button
-                    className="text-center py-2 text-accent border-t border-neutral hover:bg-info hover:text-base-100 rounded-none inline-block
+                    <button
+                      className="text-center py-2 text-accent border-t border-neutral hover:bg-info hover:text-base-100 rounded-none inline-block
                     btn-block btn-ghost uppercase cursor-pointer mx-auto"
-                  >
-                    Course Summary
-                  </button>
+                    >
+                      Course Summary
+                    </button>
                   </Link>
                   {/* */}
                 </>

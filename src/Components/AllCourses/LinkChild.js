@@ -5,7 +5,8 @@ import primaryAxios from "../../Api/primaryAxios";
 const LinkChild = ({ detail, allCourseData, uname, myCourseData, refetch }) => {
   const { _id } = myCourseData;
   const [loading, setLoading] = useState(false);
-  let activeClassName = "bg-base-300";
+  let activeClassName = "text-warning bg-base-300 border-t border-neutral";
+  let deactiveClassName = "text-warning border-t border-neutral";
   const progress = myCourseData?.progress?.find(
     (s) => s.i === detail?.fileName
   );
@@ -33,8 +34,7 @@ const LinkChild = ({ detail, allCourseData, uname, myCourseData, refetch }) => {
     <>
       {loading ? (
         <a
-          className="border-t border-neutral text-warning"
-          className={({ isActive }) => (isActive ? activeClassName : undefined)}
+          className={({ isActive }) => (isActive ? activeClassName : deactiveClassName)}
         >
           <i className="fa-solid text-xl text-info fa-circle-play"></i>
           <p>{detail?.name}</p>
@@ -48,8 +48,7 @@ const LinkChild = ({ detail, allCourseData, uname, myCourseData, refetch }) => {
         <NavLink
           onClick={() => handleStatus(_id)}
           to={`/course/${uname}/${allCourseData?.list}/${detail?.fileName}`}
-          className="border-t border-neutral text-warning"
-          className={({ isActive }) => (isActive ? activeClassName : undefined)}
+          className={({ isActive }) => (isActive ? activeClassName : deactiveClassName)}
         >
           <i className="fa-solid text-xl text-info fa-circle-play"></i>
           <p>{detail?.name}</p>

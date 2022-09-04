@@ -32,7 +32,6 @@ const Header = ({ handleThemeChange, theme }) => {
     language?.find((s) => s.uname === myCourseData?.uname) ||
     job?.find((s) => s.uname === myCourseData?.uname);
 
-
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -52,6 +51,8 @@ const Header = ({ handleThemeChange, theme }) => {
     //Token Remove
     localStorage.removeItem("accessToken");
   };
+  let activeClassName = "relative text-white bg-red-600";
+  let deactiveClassName = "relative text-green-600";
   const manuItems = (
     <>
       <li>
@@ -80,13 +81,16 @@ const Header = ({ handleThemeChange, theme }) => {
 
       {courseData?.meetLink?.MLink && (
         <li>
-          <NavLink to="LiveClasses">
-            <a class="relative text-green-600 items-center">
-              Live Class
-              <div class="inline-flex absolute -top-3 -right-6 justify-center items-center w-5 h-5 text-xs font-bold text-green-600">
-                <i class="fa-solid fa-circle"></i>
-              </div>
-            </a>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? activeClassName : deactiveClassName
+            }
+            to="LiveClasses"
+          >
+            Live Class
+            <div class="inline-flex absolute -top-2 -right-2 justify-center items-center w-4 h-4 font-bold border-8 border-base-100 rounded-full text-green-600">
+              <i class="fa-solid fa-circle"></i>
+            </div>
           </NavLink>
         </li>
       )}
@@ -146,13 +150,6 @@ const Header = ({ handleThemeChange, theme }) => {
                     Blog
                   </NavLink>
                 </li>
-                {courseData?.meetLink?.MLink && (
-                  <li>
-                    <NavLink to="LiveClasses" className='text-green-600'>
-                      <i class="fa-solid text-green-600 fa-video"></i> Live Class
-                    </NavLink>
-                  </li>
-                )}
 
                 {role === "admin" && (
                   <li>
@@ -204,13 +201,15 @@ const Header = ({ handleThemeChange, theme }) => {
                       </li>
                       <li>
                         <NavLink
-                          className="hover:rounded-none"
+                          className={({ isActive }) =>
+                            isActive ? activeClassName : deactiveClassName
+                          }
                           to={"liveclasses"}
                         >
                           {courseData?.meetLink?.MLink ? (
                             <>
-                              <i className="ml-4 fa-solid fa-video text-green-600 "></i>
-                              <span className="text-green-600">Live Class</span>
+                              <i className="ml-4 fa-solid fa-video "></i>
+                              <span>Live Class</span>
                             </>
                           ) : (
                             <>
@@ -391,11 +390,16 @@ const Header = ({ handleThemeChange, theme }) => {
                 </NavLink>
               </li>
               <li>
-                <NavLink className="hover:rounded-none" to={"liveclasses"}>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive ? activeClassName : deactiveClassName
+                  }
+                  to={"liveclasses"}
+                >
                   {courseData?.meetLink?.MLink ? (
                     <>
-                      <i className="ml-4 fa-solid fa-video text-green-600 "></i>
-                      <span className="text-green-600">Live Class</span>
+                      <i className="ml-4 fa-solid fa-video  "></i>
+                      <span className="">Live Class</span>
                     </>
                   ) : (
                     <>
