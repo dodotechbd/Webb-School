@@ -22,8 +22,7 @@ const Hero = () => {
               School
             </h1>
             <p className="py-6 font-sans text-3xl drop-shadow-lg text-center lg:text-left">
-              "If kids can be super engaged in video games, there’s a way for
-              them to be engaged in education as well."
+              "The online learning industry is growing by 15% annually e-Learning is quickly becoming the preferred way to learn."
             </p>
             <div className="flex lg:mx-0 mx-auto items-center w-80 justify-between bg-base-100 bg-opacity-20 backdrop-filter backdrop-blur-lg p-2 rounded-2xl">
               <p>Start Your Learning</p>
