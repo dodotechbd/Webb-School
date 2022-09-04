@@ -73,7 +73,7 @@ const MessageRow = ({ user, prefetch, index }) => {
           htmlFor={_id}
           className="btn modal-button btn-xs btn-outline btn-primary hover:text-white"
         >
-          Send Message
+          Send
         </label>
         <input type="checkbox" id={_id} className="modal-toggle" />
         <div className="modal">
@@ -132,7 +132,7 @@ const MessageRow = ({ user, prefetch, index }) => {
           htmlFor={email}
           className="btn modal-button btn-xs btn-outline btn-primary hover:text-white"
         >
-          Message History
+          History
         </label>
         <input type="checkbox" id={email} className="modal-toggle" />
         <div className="modal">
