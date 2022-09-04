@@ -43,7 +43,7 @@ const AddReview = () => {
     (async () => {
       const { data } = await primaryAxios.post(`/reviews`, reviewData);
       if (data.acknowledged) {
-        Swal.fire("Thank You!", "For Your Feedback!", "success");
+        Swal.fire("Thank You!", `You Give ${rating} Stars!`, "success");
         reset();
         refetch();
       }
@@ -62,7 +62,8 @@ const AddReview = () => {
               <div className="text-xl mt-1 text-[#FAAF00]">
                 <Rating
                   count={5}
-                  onChange={setRating}
+                  onClick={setRating}
+                  initialRating={rating}
                   fractions={2}
                   emptySymbol={<ImStarEmpty />}
                   fullSymbol={<ImStarFull />}

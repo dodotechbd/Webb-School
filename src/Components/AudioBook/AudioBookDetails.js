@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
-import Rating from "react-rating";
+import { useForm } from "react-hook-form";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
-import Loader from "../Shared/Loading/Loading";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import auth from "../../firebase.init";
-import primaryAxios from "../../Api/primaryAxios";
+import Rating from "react-rating";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
+import primaryAxios from "../../Api/primaryAxios";
+import auth from "../../firebase.init";
 import ReviewView from "../AllCourses/ReviewView";
+import Loader from "../Shared/Loading/Loading";
 
 const AudioBookDetails = () => {
   const { bookId } = useParams();
@@ -22,7 +21,9 @@ const AudioBookDetails = () => {
     formState: { errors },
   } = useForm();
   const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then(
+      (res) => res.json()
+    )
   );
   const reviewData = bookreviews?.filter(
     (allcard) => allcard.courseName === bookId
@@ -54,7 +55,9 @@ const AudioBookDetails = () => {
   };
   // end
   const { data: audiobook, isLoading } = useQuery(["audiobooks"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then(
+      (res) => res.json()
+    )
   );
   if (isLoading) {
     return <Loader></Loader>;
@@ -80,7 +83,11 @@ const AudioBookDetails = () => {
             >
               <div className="hero-overlay bg-[#0F1729] rounded-2xl bg-opacity-40"></div>
               <div className="flex lg:flex-row flex-col justify-center gap-4 items-center backdrop-blur-md w-full p-4 rounded-2xl">
-                <img className="w-48 rounded-lg" src={newDetails?.img} alt="true" />
+                <img
+                  className="w-48 rounded-lg"
+                  src={newDetails?.img}
+                  alt="true"
+                />
                 <h1 className="text-xl">
                   {" "}
                   <span className="text-2xl text-white drop-shadow-lg">
@@ -114,6 +121,7 @@ const AudioBookDetails = () => {
                   <Rating
                     count={5}
                     onChange={setRating}
+                    initialRating={rating}
                     fractions={2}
                     emptySymbol={<ImStarEmpty />}
                     fullSymbol={<ImStarFull />}
@@ -125,7 +133,10 @@ const AudioBookDetails = () => {
                   placeholder="Write about this book"
                   required
                 ></textarea>
-                <button type="submit" className="px-8 py-2 rounded-md btn-primary">
+                <button
+                  type="submit"
+                  className="px-8 py-2 rounded-md btn-primary"
+                >
                   Submit
                 </button>
               </form>
@@ -227,9 +238,7 @@ const AudioBookDetails = () => {
                       {avgRating.toString().slice(0, 3)}
                     </span>
                   ) : (
-                    <span className="uppercase text-[#efad1e]">
-                      0
-                    </span>
+                    <span className="uppercase text-[#efad1e]">0</span>
                   )}
                 </p>
               </div>
@@ -251,6 +260,48 @@ const AudioBookDetails = () => {
                 </button>
               </Link>
             </btn>
+          </div>
+        </div>
+        <div className="lg:hidden md:hidden">
+          <div>
+            <form onSubmit={handleSubmit(onSubmit)}>
+              <h2 className="text-xl mt-3">Rate this book</h2>
+              <div className="text-3xl my-2 text-[#FAAF00]">
+                <Rating
+                  count={5}
+                  onChange={setRating}
+                  initialRating={rating}
+                  fractions={2}
+                  emptySymbol={<ImStarEmpty />}
+                  fullSymbol={<ImStarFull />}
+                />
+              </div>
+              <textarea
+                {...register("review")}
+                className="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
+                placeholder="Write about this book"
+                required
+              ></textarea>
+              <button
+                type="submit"
+                className="px-8 py-2 rounded-md btn-primary"
+              >
+                Submit
+              </button>
+            </form>
+          </div>
+          <h1 className="text-2xl mt-6 mb-2">Reviews({ratingData?.length})</h1>
+          <div className="flex flex-col">
+            {reviewData
+              ?.slice(0)
+              .reverse()
+              .map((review) => (
+                <ReviewView
+                  key={review._id}
+                  review={review}
+                  refetch={refetch}
+                ></ReviewView>
+              ))}
           </div>
         </div>
       </div>

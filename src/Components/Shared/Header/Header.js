@@ -88,7 +88,7 @@ const Header = ({ handleThemeChange, theme }) => {
             to="LiveClasses"
           >
             Live Class
-            <div class="inline-flex absolute -top-2 -right-2 justify-center items-center w-4 h-4 font-bold border-8 border-base-100 rounded-full text-green-600">
+            <div class="inline-flex absolute -top-1.5 -right-1.5 justify-center items-center text-xs font-bold border-2 border-base-100 rounded-full text-green-600">
               <i class="fa-solid fa-circle"></i>
             </div>
           </NavLink>
