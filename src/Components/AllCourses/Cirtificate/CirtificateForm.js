@@ -1,9 +1,9 @@
 import React from "react";
 import "./Cirtificate.css";
 
-const CirtificateForm = ({ formData, userData, courseData }) => {
+const CirtificateForm = ({ userData, courseData }) => {
   return (
-    <form>
+    <form className="font-header">
       <div>
         <div class="form-control">
           <label class="label">
@@ -23,14 +23,14 @@ const CirtificateForm = ({ formData, userData, courseData }) => {
       <div>
         <div class="form-control">
           <label class="label">
-            <span class="label-text">for completing</span>
+            <span class="label-text">For completing</span>
           </label>
           <input
             id="course"
             name="course"
             disabled
             placeholder={
-              courseData?.name === "" && "Creating PDFs with React & Make.cm"
+              courseData?.name === "" && "No Course Showing"
             }
             value={courseData?.name}
             class="input input-bordered"
