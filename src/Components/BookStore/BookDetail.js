@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import { useParams } from "react-router-dom";
+import { useForm } from "react-hook-form";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
-import { Link } from "react-router-dom";
-import { useForm } from "react-hook-form";
-import auth from "../../firebase.init";
-import primaryAxios from "../../Api/primaryAxios";
+import { Link, useParams } from "react-router-dom";
 import Swal from "sweetalert2";
-import Loading from "../Shared/Loading/Loading";
+import primaryAxios from "../../Api/primaryAxios";
+import auth from "../../firebase.init";
 import ReviewView from "../AllCourses/ReviewView";
+import Loading from "../Shared/Loading/Loading";
 
 const BookDetail = () => {
   const { bookId } = useParams();
@@ -60,7 +59,9 @@ const BookDetail = () => {
     isLoading,
     refetch,
   } = useQuery(["bookreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
+    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then(
+      (res) => res.json()
+    )
   );
   const reviewData = bookreviews?.filter(
     (allcard) => allcard.courseName === bookId
@@ -155,7 +156,7 @@ const BookDetail = () => {
               Text. AI Writing Assistant
             </p>
           </div>
-          <div className="lg:block md:block hidden">
+          <div className="lg:hidden md:hidden">
             <div>
               <form onSubmit={handleSubmit(onSubmit)}>
                 <h2 className="text-xl mt-3">Rate this book</h2>
@@ -163,6 +164,7 @@ const BookDetail = () => {
                   <Rating
                     count={5}
                     onChange={setRating}
+                    initialRating={rating}
                     fractions={2}
                     emptySymbol={<ImStarEmpty />}
                     fullSymbol={<ImStarFull />}
@@ -174,7 +176,54 @@ const BookDetail = () => {
                   placeholder="Write about this book"
                   required
                 ></textarea>
-                <button type="submit" className="px-8 py-2 rounded-md btn-primary">
+                <button
+                  type="submit"
+                  className="px-8 py-2 rounded-md btn-primary"
+                >
+                  Submit
+                </button>
+              </form>
+            </div>
+            <h1 className="text-2xl mt-6 mb-2">
+              Reviews({ratingData?.length})
+            </h1>
+            <div className="flex flex-col">
+              {reviewData
+                ?.slice(0)
+                .reverse()
+                .map((review) => (
+                  <ReviewView
+                    key={review._id}
+                    review={review}
+                    refetch={refetch}
+                  ></ReviewView>
+                ))}
+            </div>
+          </div>
+          <div className="lg:block md:block hidden">
+            <div>
+              <form onSubmit={handleSubmit(onSubmit)}>
+                <h2 className="text-xl mt-3">Rate this book</h2>
+                <div className="text-3xl my-2 text-[#FAAF00]">
+                  <Rating
+                    count={5}
+                    onChange={setRating}
+                    initialRating={rating}
+                    fractions={2}
+                    emptySymbol={<ImStarEmpty />}
+                    fullSymbol={<ImStarFull />}
+                  />
+                </div>
+                <textarea
+                  {...register("review")}
+                  className="textarea textarea-bordered h-24 mb-2 bg-base-300 w-full rounded-md"
+                  placeholder="Write about this book"
+                  required
+                ></textarea>
+                <button
+                  type="submit"
+                  className="px-8 py-2 rounded-md btn-primary"
+                >
                   Submit
                 </button>
               </form>
