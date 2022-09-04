@@ -39,9 +39,9 @@ const LinkChild = ({ detail, allCourseData, uname, myCourseData, refetch }) => {
           <i className="fa-solid text-xl text-info fa-circle-play"></i>
           <p>{detail?.name}</p>
           {progress ? (
-            <i class="fa-solid fa-circle-check text-green-500"></i>
+            <i className="fa-solid fa-circle-check text-green-500"></i>
           ) : (
-            <i class="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-lock"></i>
           )}
         </a>
       ) : (
@@ -53,9 +53,9 @@ const LinkChild = ({ detail, allCourseData, uname, myCourseData, refetch }) => {
           <i className="fa-solid text-xl text-info fa-circle-play"></i>
           <p>{detail?.name}</p>
           {progress ? (
-            <i class="fa-solid fa-circle-check text-green-500"></i>
+            <i className="fa-solid fa-circle-check text-green-500"></i>
           ) : (
-            <i class="fa-solid fa-lock"></i>
+            <i className="fa-solid fa-lock"></i>
           )}
         </NavLink>
       )}

@@ -1,17 +1,16 @@
-import React, { useState } from "react";
+import React from "react";
 import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
+import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
 import Loading from "../Shared/Loading/Loading";
-import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
-import { toast } from "react-toastify";
 
 const UpdateProfile = () => {
   const [{ email }] = useAuthState(auth);
-  const [isEdit, setIsEdit] = useState(null);
   const [role, roleLoading] = useRole();
   const [updateProfile, updating, error] = useUpdateProfile(auth);
   const navigate = useNavigate();
@@ -44,27 +43,30 @@ const UpdateProfile = () => {
       if (data) {
         toast.success("User Updated Successfully");
         refetch();
-        navigate('/profile')
+        navigate("/profile");
       }
     })();
   };
   return (
-    <form
-      onSubmit={handleSubmit(onSubmit)}
-      id="profile"
-    >
-      <div className="grid gap-x-7 grid-cols-2 ">
-        <div>
-          <h2 className="text-xl p-5 m-3 text-bold">My Account</h2>
-        </div>
-        <div className="text-end m-5">
-          <Link to={"/profile"} className="btn btn-primary btn-sm mt-2 ">
-            Profile
-          </Link>
+    <form onSubmit={handleSubmit(onSubmit)} id="profile">
+      <div className="justify-end card-actions mx-4 mt-2">
+        <Link to={"/profile"} className="btn btn-primary btn-sm mt-2 ">
+          Profile
+        </Link>
+      </div>
+      <h1 className="text-xl font-semibold m-5">User Information</h1>
+      <div>
+        <div className="m-8 rounded-xl bg-[url('https://placeimg.com/1000/800/arch')]">
+          <div className="justify-start pt-8 pl-4 card-actions">
+            <div className="avatar">
+              <div className="w-24 rounded-full">
+                <img src="https://placeimg.com/192/192/people" />
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <h1 className="text-xl font-semibold m-5 mt-[-15px]">User Information</h1>
-      <div className="card-body grid gap-x-8 gap-y-4 grid-cols-2 mt-[-50px]">
+      <div className="card-body grid gap-x-8 gap-y-4 grid-cols-2">
         <div className="form-control">
           <label className="label">
             <span className="label-text ">Full Name</span>
@@ -229,8 +231,8 @@ const UpdateProfile = () => {
           <span className="label-text">About Me</span>
         </label>
         <textarea
-        {...register("bio")}
-        defaultValue={user?.data?.bio && user?.data?.bio}
+          {...register("bio")}
+          defaultValue={user?.data?.bio && user?.data?.bio}
           className="textarea textarea-bordered"
           placeholder="Tell us about yourself"
           required

@@ -21,8 +21,8 @@ const Live = () => {
 
   return (
     <div>
-      <div class="navbar">
-        <a class="normal-case text-xl">Post Live Class</a>
+      <div className="navbar">
+        <a className="normal-case text-xl">Post Live Class</a>
       </div>
       <div className="overflow-x-auto">
         <table className="table w-full">
