@@ -1,11 +1,10 @@
 import axios from "axios";
 import React, { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../../firebase.init";
+import primaryAxios from "../../../Api/primaryAxios";
 import Preview from "./Preview";
 
 const Cirtificate = ({ courseData, userData }) => {
-  const [user] = useAuthState(auth);
+  const { _id } = courseData;
 
   const [formData, setFormData] = useState({
     name: userData?.name,
@@ -42,7 +41,6 @@ const Cirtificate = ({ courseData, userData }) => {
         optimize: true,
       },
     };
-
     axios
       .post(url, data, {
         headers: headers,
@@ -57,6 +55,11 @@ const Cirtificate = ({ courseData, userData }) => {
           setIsLoading(false);
         }
       );
+  }
+  if(certificate){
+    primaryAxios.put(`/certificate/${_id}`, {
+      certificate,
+    });
   }
   return (
     <div>

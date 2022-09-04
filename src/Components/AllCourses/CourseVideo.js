@@ -57,7 +57,7 @@ const CourseVideo = () => {
         <div className="w-full h-full bg-base-300">
           <img
             className="mx-auto lg:w-72 md:w-72 w-40"
-            src="https://github.com/MShafiMS/admission/blob/gh-pages/output-onlinegiftools%20(1).gif?raw=true"
+            src="https://raw.githubusercontent.com/MShafiMS/admission/c4e8100572f53303ffbe5fdc958901cc7886d051/purchase.svg"
             alt="error"
           />
           <h1 className="text-xl text-center">You Need To Purchase!</h1>
