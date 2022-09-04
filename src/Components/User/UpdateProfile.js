@@ -54,8 +54,8 @@ const UpdateProfile = () => {
           Profile
         </Link>
       </div>
-      <h1 className="text-xl font-semibold m-5">User Information</h1>
-      <div>
+      <h1 className="text-xl font-semibold mx-5">User Information</h1>
+      {/* <div>
         <div className="m-8 rounded-xl bg-[url('https://placeimg.com/1000/800/arch')]">
           <div className="justify-start pt-8 pl-4 card-actions">
             <div className="avatar">
@@ -65,7 +65,7 @@ const UpdateProfile = () => {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className="card-body grid gap-x-8 gap-y-4 grid-cols-2">
         <div className="form-control">
           <label className="label">
