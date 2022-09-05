@@ -19,8 +19,10 @@ const AddLanguage = () => {
   });
 
   const onSubmit = (data) => {
+    const rvw = data?.file?.find((s) => s.details)
     const newReview = {
       ...data,
+      videos: rvw?.details
       // email: user?.email,
       // name: user?.displayName,
       // image: user?.photoURL,
@@ -28,7 +30,7 @@ const AddLanguage = () => {
     (async () => {
       const { data } = await primaryAxios.post(`/language`, newReview);
       if (data.acknowledged) {
-        swal("The course has been successfully deleted", {
+        swal("The course has been successfully posted", {
           icon: "success",
           className: "rounded-xl",
         });
