@@ -1,9 +1,18 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink, Outlet } from "react-router-dom";
+import auth from "../../firebase.init";
+import useRole from "../../Hooks/useRole";
 import useTitle from "../../Hooks/useTitle";
+import PreLoader from "../Shared/Loading/Loading";
 
 const Admin = () => {
   useTitle("Admin Panel");
+  const [user, loading] = useAuthState(auth);
+  const [role, roleLoading] = useRole();
+  if (loading || roleLoading) {
+    return <PreLoader></PreLoader>;
+  }
   return (
     <div className="min-h-screen">
       <div className="navbar bg-base-200 border-b border-neutral">
@@ -27,7 +36,9 @@ const Admin = () => {
           </div>
         </div>
         <div className="flex-1">
-          <Link to={'/admin'} className="btn btn-ghost font-thin text-xl">Admin Panel</Link>
+          <Link to={"/admin"} className="btn btn-ghost font-thin text-xl">
+            Admin Panel
+          </Link>
         </div>
       </div>
       <div className="drawer drawer-mobile">
@@ -39,32 +50,50 @@ const Admin = () => {
           <label htmlFor="my-drawer" className="drawer-overlay"></label>
           <ul className="menu p-3 overflow-y-auto w-72 border-r border-neutral bg-base-200 text-base-content gap-3">
             <li>
-              <NavLink to={"/admin/courses/manage"}><i className="fa-solid fa-list-check"></i>Manage Courses</NavLink>
+              <NavLink to={"/admin/courses/manage"}>
+                <i className="fa-solid fa-list-check"></i>Manage Courses
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/academicbookss"}><i className="fa-solid fa-book"></i>Manage Academic Books</NavLink>
+              <NavLink to={"/admin/academicbookss"}>
+                <i className="fa-solid fa-book"></i>Manage Academic Books
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/skillbookss"}><i className="fa-solid fa-book"></i>Manage Skill Books</NavLink>
+              <NavLink to={"/admin/skillbookss"}>
+                <i className="fa-solid fa-book"></i>Manage Skill Books
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/LivePost/Live"}><i className="fa-solid fa-video"></i>Post Live Classes</NavLink>
+              <NavLink to={"/admin/LivePost/Live"}>
+                <i className="fa-solid fa-video"></i>Post Live Classes
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/reviews"}><i className="fa-solid fa-star-half-stroke"></i>Manage Reviews</NavLink>
+              <NavLink to={"/admin/reviews"}>
+                <i className="fa-solid fa-star-half-stroke"></i>Manage Reviews
+              </NavLink>
             </li>
-            
+
             <li>
-              <NavLink to={"/admin/blogs"}><i className="fa-solid fa-file-pen"></i>Add Blogs</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/admin/users"}><i className="fa-solid fa-users"></i>Users</NavLink>
-            </li>
-            <li>
-              <NavLink to={"/admin/payments"}><i className="fa-solid fa-credit-card"></i>Payments</NavLink>
+              <NavLink to={"/admin/blogs"}>
+                <i className="fa-solid fa-file-pen"></i>Add Blogs
+              </NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/message"}><i className="fa-solid fa-bell"></i>Send Notification</NavLink>
+              <NavLink to={"/admin/users"}>
+                <i className="fa-solid fa-users"></i>Users
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/payments"}>
+                <i className="fa-solid fa-credit-card"></i>Payments
+              </NavLink>
+            </li>
+            <li>
+              <NavLink to={"/admin/message"}>
+                <i className="fa-solid fa-bell"></i>Send Notification
+              </NavLink>
             </li>
           </ul>
         </div>
