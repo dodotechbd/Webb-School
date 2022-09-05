@@ -20,12 +20,12 @@ import useMessage from "../../../Hooks/useMessage";
 const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
-
+  
   const [admission, job, language] = useAllCourse();
   const { data: myCourse } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
-
+  
   const myCourseData = myCourse?.data.find((s) => s.uname);
 
   const courseData =
