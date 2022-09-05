@@ -64,10 +64,12 @@ import UpdateProfile from "./Components/User/UpdateProfile";
 import NoteFound from "./Components/WrongRoute/NoteFound";
 import UnderConstruction from "./Components/WrongRoute/UnderConstruction";
 import auth from "./firebase.init";
+import useRole from "./Hooks/useRole";
 
 function App() {
   const [theme, setTheme] = useState(false);
   const [user, loading] = useAuthState(auth);
+  const [role, roleLoading] = useRole();
   useEffect(() => {
     setTheme(JSON.parse(window.localStorage.getItem("theme")));
   }, []);
@@ -81,7 +83,7 @@ function App() {
       data-theme={theme && "my_dark"}
       className="pt-16 font-header min-h-screen"
     >
-      {loading ? (
+      {loading || roleLoading ? (
         <div
           className="bg-gradient-to-r from-base-300 to-base-200"
           id="preloader"
@@ -119,7 +121,6 @@ function App() {
         <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
-
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
             path="/checkout/bkash/:uname"
