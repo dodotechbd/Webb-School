@@ -1,13 +1,12 @@
 import React from "react";
-import SkillBook from "./SkillBook/SkillBook";
 import { useQuery } from "react-query";
+import primaryAxios from "../../Api/primaryAxios";
 import Loader from "../Shared/Loading/Loader";
+import SkillBook from "./SkillBook/SkillBook";
 
 const SkillBooks = () => {
   const { data: skillbook, isLoading } = useQuery(["skillbook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/SkillBooks`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/SkillBooks`)
   );
   if (isLoading) {
     return <Loader></Loader>;
@@ -20,7 +19,7 @@ const SkillBooks = () => {
           Skill Development Books
         </h1>
         <div className="grid  sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-4 gap-6  ">
-          {skillbook?.map((skillbook) => (
+          {skillbook?.data?.map((skillbook) => (
             <SkillBook key={skillbook._id} skillbook={skillbook}></SkillBook>
           ))}
         </div>

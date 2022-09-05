@@ -9,7 +9,7 @@ const PreLoader = () => {
     <div className="loader">
       <div className="logo-loader">
       <div to={"/"} className="flex items-center lg:mx-0 md:mx-0 mx-auto">
-            <img className="w-14" src={wslogo} alt="true" />
+            <img className="w-14" src={wslogo} alt="image" />
             <div className="ml-1 text-2xl font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>

@@ -23,7 +23,6 @@ import CourseReview from "./Components/Admin/ManageReview/CourseReview";
 import ManageReview from "./Components/Admin/ManageReview/ManageReview";
 import Message from "./Components/Admin/Message";
 import Payments from "./Components/Admin/Payments";
-import Post from "./Components/Admin/Post";
 import SkillBookss from "./Components/Admin/SkillBookss";
 import Users from "./Components/Admin/Users";
 import AllAdmission from "./Components/AllAdmission/AllAdmission";
@@ -41,10 +40,8 @@ import Blogs from "./Components/Blogs/Blogs";
 import BookCheckout from "./Components/BookStore/BookCheckout";
 import BookDetail from "./Components/BookStore/BookDetail";
 import BookStore from "./Components/BookStore/BookStore";
-import Chat from "./Components/Chat/Chat";
 import Developer from "./Components/Developer";
 import Home from "./Components/Home/Home";
-import LiveClass from "./Components/LIveClass/LiveClass";
 import Login from "./Components/Login/Login";
 import Reset from "./Components/Login/Reset";
 import SignUp from "./Components/Login/SingUp";
@@ -122,9 +119,7 @@ function App() {
         <Route path="/reset" element={<Reset></Reset>}></Route>
         <Route path="/blogs" element={<Blogs></Blogs>}></Route>
         <Route element={<RequireAuth></RequireAuth>}>
-          <Route path="/LiveClass" element={<LiveClass></LiveClass>}></Route>
 
-          {/* <Route path="/chat" element={<Chat></Chat>}></Route> */}
           <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
           <Route
             path="/checkout/bkash/:uname"
@@ -225,8 +220,6 @@ function App() {
             ></Route>
             <Route path="/admin/live" element={<Live></Live>}></Route>
             <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
-            <Route path="/admin/post" element={<Post></Post>}></Route>
-            <Route path="/admin/chat" element={<Chat></Chat>}></Route>
             <Route path="/admin/users" element={<Users></Users>}></Route>
             <Route
               path="/admin/payments"

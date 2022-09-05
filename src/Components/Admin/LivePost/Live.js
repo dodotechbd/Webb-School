@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../../Api/primaryAxios";
 import Loading from "../../Shared/Loading/Loading";
 import Admission from "./Admission";
 import Job from "./Job";
@@ -10,15 +11,10 @@ const Live = () => {
     data: language,
     refetch,
     isLoading,
-  } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
+  } = useQuery(["languageCourse"], () => primaryAxios.get(`/language`));
   if (isLoading) {
     return <Loading></Loading>;
   }
-
   return (
     <div>
       <div className="navbar">
@@ -37,7 +33,7 @@ const Live = () => {
           </thead>
 
           <tbody>
-            {language.map((languages, index) => (
+            {language?.data?.map((languages, index) => (
               <LanguagesTable
                 key={languages._id}
                 languages={languages}

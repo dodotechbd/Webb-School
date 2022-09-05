@@ -1,22 +1,26 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
+import primaryAxios from "../../Api/primaryAxios";
 
 const AcademicBookss = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    const url = `https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
+    const booksData = {
+      ...data
+    };
+    (async () => {
+      const { data } = await primaryAxios.post(`/AcadamicBook`, booksData);
+      if (data.acknowledged) {
+        swal("The book has been successfully posted", {
+          icon: "success",
+          className: "rounded-xl",
+        });
 
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-      });
+        reset();
+      }
+    })();
   };
   return (
     <div className="pb-12">
@@ -278,7 +282,7 @@ const AcademicBookss = () => {
             </div>
           </div>
           <br></br>
-          <input 
+          <input
             type="submit"
             className="btn btn-primary  ml-28  text-base-100"
           />

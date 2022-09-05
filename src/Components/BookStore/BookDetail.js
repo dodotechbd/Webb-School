@@ -14,19 +14,15 @@ const BookDetail = () => {
   const { bookId } = useParams();
   const [rating, setRating] = useState(0);
   const { data: skillbook } = useQuery(["skillbook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/SkillBooks`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/SkillBooks`)
   );
 
   const { data: academicbook } = useQuery(["academicboook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/AcadamicBook`)
   );
   const newService =
-    skillbook?.find((s) => s._id === bookId) ||
-    academicbook?.find((s) => s._id === bookId);
+    skillbook?.data?.find((s) => s._id === bookId) ||
+    academicbook?.data?.find((s) => s._id === bookId);
   const {
     register,
     handleSubmit,
@@ -58,12 +54,8 @@ const BookDetail = () => {
     data: bookreviews,
     isLoading,
     refetch,
-  } = useQuery(["bookreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then(
-      (res) => res.json()
-    )
-  );
-  const reviewData = bookreviews?.filter(
+  } = useQuery(["bookreviewsData"], () => primaryAxios.get(`/bookreviews`));
+  const reviewData = bookreviews?.data?.filter(
     (allcard) => allcard.courseName === bookId
   );
   const ratingData = reviewData?.map((allcard) => allcard.rating);
@@ -80,7 +72,7 @@ const BookDetail = () => {
           <div className="py-3">
             {avgRating ? (
               <span className="mr-2 font-bold text-[#c48b07]">
-                {avgRating.toString().slice(0, 3)}
+                {avgRating?.toString().slice(0, 3)}
               </span>
             ) : (
               <></>

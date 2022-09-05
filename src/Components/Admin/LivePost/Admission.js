@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../../Api/primaryAxios";
 import AdmissionTable from "./AdmissionTable";
 
 const Admission = () => {
@@ -7,17 +8,13 @@ const Admission = () => {
     data: admission,
     refetch,
     isLoading,
-  } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
+  } = useQuery(["admissionCourses"], () => primaryAxios.get(`/admission`));
   if (isLoading) {
-    return  <div className="mx-auto" id="preloaders"></div>;
+    return <div className="mx-auto" id="preloaders"></div>;
   }
   return (
     <tbody>
-      {admission.map((admissions, index) => (
+      {admission?.data?.map((admissions, index) => (
         <AdmissionTable
           key={admissions._id}
           admissions={admissions}

@@ -1,7 +1,7 @@
-import axios from "axios";
 import React from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import swal from "sweetalert";
+import primaryAxios from "../../../Api/primaryAxios";
 import NestedFieldArray from "./NestedFieldArray";
 
 const AddAdmission = () => {
@@ -18,17 +18,11 @@ const AddAdmission = () => {
   });
 
   const onSubmit = (data) => {
-    const newReview = {
-      ...data,
-      // email: user?.email,
-      // name: user?.displayName,
-      // image: user?.photoURL,
+    const blogsData = {
+      ...data
     };
     (async () => {
-      const { data } = await axios.post(
-        `https://rocky-escarpment-87440.herokuapp.com/admission`,
-        newReview
-      );
+      const { data } = await primaryAxios.post(`/admission`, blogsData);
       if (data.acknowledged) {
         swal("The course has been successfully deleted", {
           icon: "success",

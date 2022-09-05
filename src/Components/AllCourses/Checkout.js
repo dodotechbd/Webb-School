@@ -1,29 +1,15 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { useQuery } from "react-query";
+import useAllCourse from "../../Hooks/useAllCourse";
 import Stripe from "../Payments/Stripe";
 
 const Checkout = () => {
   const { uname } = useParams();
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
+  const [admission, job, language] = useAllCourse();
   const courseData =
-    admission?.find((allcard) => allcard.uname === uname) ||
-    language?.find((allcard) => allcard.uname === uname) ||
-    job?.find((allcard) => allcard.uname === uname);
+    admission?.data?.find((allcard) => allcard.uname === uname) ||
+    language?.data?.find((allcard) => allcard.uname === uname) ||
+    job?.data?.find((allcard) => allcard.uname === uname);
 
   return (
     <div className="hero bg-base-100 py-8">
@@ -37,11 +23,13 @@ const Checkout = () => {
               <img
                 src={courseData?.img}
                 className="lg:h-60 w-full lg:w-96 rounded-lg"
-                alt="true"
+                alt="image"
               />
               <div className="card-body p-0 px-4 lg:block w-full">
                 <div className="text-left">
-                  <p className="text-2xl font-bold lg:my-0 my-2">{courseData?.name}</p>
+                  <p className="text-2xl font-bold lg:my-0 my-2">
+                    {courseData?.name}
+                  </p>
                 </div>
                 <div className="grid grid-cols-2 gap-3 text-left">
                   <p>

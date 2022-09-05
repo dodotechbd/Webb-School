@@ -1,9 +1,8 @@
 import React from "react";
 import swal from "sweetalert";
-import axios from "axios";
 import primaryAxios from "../../../Api/primaryAxios";
 
-const JobCard = ({ allcard, deleteItem, refetch }) => {
+const JobCard = ({ allcard, refetch }) => {
   const { _id } = allcard;
 
   const deleteItems = (id) => {
@@ -18,9 +17,7 @@ const JobCard = ({ allcard, deleteItem, refetch }) => {
     }).then((willDelete) => {
       if (willDelete) {
         (async () => {
-          const { data } = await axios.delete(
-            `https://rocky-escarpment-87440.herokuapp.com/job/${id}`
-          );
+          const { data } = await primaryAxios.delete(`/job/${id}`);
           if (data.deletedCount > 0) {
             swal("The course has been successfully deleted", {
               icon: "success",
@@ -89,7 +86,10 @@ const JobCard = ({ allcard, deleteItem, refetch }) => {
           {allcard?.name.slice(0, 20)}
         </h2>
         <div>
-          <button onClick={() => handleAddToSpecial(_id)} className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral">
+          <button
+            onClick={() => handleAddToSpecial(_id)}
+            className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral"
+          >
             Add To Special
           </button>
           <button

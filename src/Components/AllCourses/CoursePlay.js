@@ -23,8 +23,8 @@ const CoursePlay = () => {
   );
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
-  const stringProgress = progress.toString();
-  const stringProgressp = progress.toString() + "%";
+  const stringProgress = progress?.toString();
+  const stringProgressp = progress?.toString() + "%";
 
   const { data: userData } = useQuery(["userProfile", user?.email], () =>
     primaryAxios.get(`/user-role?email=${user?.email}`)

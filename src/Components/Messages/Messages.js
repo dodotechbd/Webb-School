@@ -1,27 +1,18 @@
 import React from "react";
-import primaryAxios from "../../Api/primaryAxios";
-import { useQuery } from "react-query";
-import MessageHistory from "../Admin/MessageHistory";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import useMessage from "../../Hooks/useMessage";
+import MessageHistory from "../Admin/MessageHistory";
 
 const Messages = () => {
   const [user, loading] = useAuthState(auth);
   const userEmail = user?.email;
 
-  const {
-    data: messageData,
-    isLoading,
-    refetch,
-  } = useQuery(["messagedata"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
-      res.json()
-    )
-  );
+  const [message, isLoading, refetch] = useMessage();
   if (isLoading) {
     return <div className="mx-auto" id="preloaders"></div>;
   }
-  const userMessageData = messageData?.filter(
+  const userMessageData = message?.data?.filter(
     (allcard) => allcard.email === userEmail
   );
   return (

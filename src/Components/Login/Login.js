@@ -61,7 +61,7 @@ const Login = () => {
           <div
             className="hidden p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
           >
-            <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="true" />
+            <img className=' ' src='https://i.postimg.cc/7LVfyJkP/casual-life-3d-young-people-in-the-worker-jumpsuits-with-gadgets.png' alt="image" />
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Login</h3>

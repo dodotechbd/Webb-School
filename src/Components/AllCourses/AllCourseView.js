@@ -4,41 +4,27 @@ import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
 import { Link, useParams } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
+import useAllCourse from "../../Hooks/useAllCourse";
 import Loading from "../Shared/Loading/Loading";
 import CourseSyllabus from "./CourseSyllabus";
 import ReviewView from "./ReviewView";
 
 const AllCourseView = () => {
   const { uname } = useParams();
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
+  const [admission, job, language] = useAllCourse();
   const courseData =
-    admission?.find((allcard) => allcard.uname === uname) ||
-    language?.find((allcard) => allcard.uname === uname) ||
-    job?.find((allcard) => allcard.uname === uname);
+    admission?.data?.find((allcard) => allcard.uname === uname) ||
+    language?.data?.find((allcard) => allcard.uname === uname) ||
+    job?.data?.find((allcard) => allcard.uname === uname);
   const {
     data: reviews,
     isLoading,
     refetch,
-  } = useQuery(["reviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/reviews`).then((res) =>
-      res.json()
-    )
+  } = useQuery(["reviewsData"], () => primaryAxios.get(`/reviews`));
+  const reviewData = reviews?.data?.filter(
+    (allcard) => allcard.courseName === uname
   );
-  const reviewData = reviews?.filter((allcard) => allcard.courseName === uname);
   const ratingData = reviewData?.map((allcard) => allcard.rating);
   const totalRating = ratingData?.reduce((a, b) => a + b, 0);
   const avgRating = totalRating / ratingData?.length;
@@ -124,7 +110,7 @@ const AllCourseView = () => {
             )}
             {avgRating ? (
               <span className="mr-2 font-bold text-[#c48b07]">
-                {avgRating.toString().slice(0, 3)}
+                {avgRating?.toString().slice(0, 3)}
               </span>
             ) : (
               <></>

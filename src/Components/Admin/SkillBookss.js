@@ -1,22 +1,26 @@
 import React from "react";
 import { useForm } from "react-hook-form";
+import swal from "sweetalert";
+import primaryAxios from "../../Api/primaryAxios";
 
 const SkillBookss = () => {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, reset } = useForm();
 
   const onSubmit = (data) => {
-    const url = `https://rocky-escarpment-87440.herokuapp.com/SkillBooks`;
-    fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
+    const newReview = {
+      ...data,
+    };
+    (async () => {
+      const { data } = await primaryAxios.post(`/SkillBooks`, newReview);
+      if (data.acknowledged) {
+        swal("The book has been successfully posted", {
+          icon: "success",
+          className: "rounded-xl",
+        });
 
-      body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-      });
+        reset();
+      }
+    })();
   };
   return (
     <div className="pb-12">

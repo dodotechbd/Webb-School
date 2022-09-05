@@ -1,28 +1,25 @@
 import React from "react";
-import { useParams } from "react-router-dom";
 import { useQuery } from "react-query";
+import { useParams } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
 import BookStripe from "./BookStripe";
 
 const BookCheckout = () => {
   const { bookId } = useParams();
-  const { data: skillbook } = useQuery(["skillbook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/SkillBooks`).then(
-      (res) => res.json()
-    )
+  const { data: acadamicbook } = useQuery(["acadamicbook"], () =>
+    primaryAxios.get(`/AcadamicBook`)
   );
-
-  const { data: academicbook } = useQuery(["academicboook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`).then(
-      (res) => res.json()
-    )
+  const { data: skillbook } = useQuery(["skillbook"], () =>
+    primaryAxios.get(`/SkillBooks`)
   );
   const { data: audiobook } = useQuery(["audiobook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
+    primaryAxios.get(`/audiobook`)
   );
+
   const bookData =
-    audiobook?.find((s) => s._id === bookId) ||
-    skillbook?.find((s) => s._id === bookId) ||
-    academicbook?.find((s) => s._id === bookId);
+    audiobook?.data?.find((s) => s._id === bookId) ||
+    skillbook?.data?.find((s) => s._id === bookId) ||
+    acadamicbook?.data?.find((s) => s._id === bookId);
   return (
     <div className="hero bg-base-100 py-8">
       <div className="flex justify-between w-full flex-col md:flex-row lg:flex-row items-start">
@@ -35,7 +32,7 @@ const BookCheckout = () => {
               <img
                 src={bookData?.img}
                 className="h-96 mx-auto rounded-lg"
-                alt="true"
+                alt="image"
               />
               <div className="card-body p-0 mx-auto w-full">
                 <h1 className="text-2xl font-bold my-2">{bookData?.name}</h1>

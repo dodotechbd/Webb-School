@@ -1,8 +1,9 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import { useNavigate } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
 
 const AudioBook = ({ audiobook }) => {
   const { _id, name, img, price, deal } = audiobook;
@@ -11,9 +12,9 @@ const AudioBook = ({ audiobook }) => {
     navigate(`/audiobook/${id}`);
   };
   const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
+    primaryAxios.get(`/bookreviews`)
   );
-  const reviewData = bookreviews?.filter(
+  const reviewData = bookreviews?.data?.filter(
     (allcard) => allcard.courseName === _id
   );
   const ratingData = reviewData?.map((allcard) => allcard.rating);
@@ -25,11 +26,7 @@ const AudioBook = ({ audiobook }) => {
       className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4"
     >
       <figure className=" px-2 pt-5">
-        <img
-          className="mx-auto w-11/12 rounded-lg"
-          src={img}
-          alt="Books"
-        />
+        <img className="mx-auto w-11/12 rounded-lg" src={img} alt="Books" />
       </figure>
       <div className="card-body p-0">
         <div className="card-body p-4">
@@ -43,7 +40,7 @@ const AudioBook = ({ audiobook }) => {
             <div className="">
               {avgRating ? (
                 <span className="mr-2 font-bold text-[#c48b07]">
-                  {avgRating.toString().slice(0, 3)}
+                  {avgRating?.toString().slice(0, 3)}
                 </span>
               ) : (
                 <></>

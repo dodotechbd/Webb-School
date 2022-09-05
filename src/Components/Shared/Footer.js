@@ -1,7 +1,7 @@
 import React from "react";
-import logo from "../../Assets/wslogo.png";
-import { Link, useLocation } from "react-router-dom";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { Link } from "react-router-dom";
+import logo from "../../Assets/wslogo.png";
 import auth from "../../firebase.init";
 
 const Footer = () => {
@@ -13,7 +13,7 @@ const Footer = () => {
       <footer className="footer p-10 text-base-content">
         <div className="md:w-60">
           <Link to={"/"} className="flex items-center lg:mx-0 md:mx-0 mx-auto">
-            <img className="w-11" src={logo} alt="true" />
+            <img className="w-11" src={logo} alt="image" />
             <div className="ml-1 text-lg font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>

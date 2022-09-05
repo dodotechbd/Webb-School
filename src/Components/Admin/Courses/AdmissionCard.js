@@ -1,9 +1,8 @@
 import React from "react";
 import swal from "sweetalert";
-import axios from "axios";
 import primaryAxios from "../../../Api/primaryAxios";
 
-const AdmissionCard = ({ allcard, deleteItem, refetch }) => {
+const AdmissionCard = ({ allcard, refetch }) => {
   const { _id } = allcard;
 
   const deleteItems = (id) => {
@@ -18,9 +17,7 @@ const AdmissionCard = ({ allcard, deleteItem, refetch }) => {
     }).then((willDelete) => {
       if (willDelete) {
         (async () => {
-          const { data } = await axios.delete(
-            `https://rocky-escarpment-87440.herokuapp.com/admission/${id}`
-          );
+          const { data } = await primaryAxios.delete(`/admission/${id}`);
           if (data.deletedCount > 0) {
             swal("The course has been successfully deleted", {
               icon: "success",
@@ -89,7 +86,12 @@ const AdmissionCard = ({ allcard, deleteItem, refetch }) => {
           {allcard?.name.slice(0, 21)}
         </h2>
         <div>
-        <button onClick={() => handleAddToSpecial(_id)} className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral">Add To Special</button>
+          <button
+            onClick={() => handleAddToSpecial(_id)}
+            className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral"
+          >
+            Add To Special
+          </button>
           <button
             onClick={() => deleteItems(_id)}
             className="btn btn-block hover:bg-red-600 hover:text-base-100 text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
