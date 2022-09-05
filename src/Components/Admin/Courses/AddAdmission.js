@@ -18,13 +18,15 @@ const AddAdmission = () => {
   });
 
   const onSubmit = (data) => {
+    const rvw = data?.file?.find((s) => s.details);
     const blogsData = {
-      ...data
+      ...data,
+      videos: rvw?.details,
     };
     (async () => {
       const { data } = await primaryAxios.post(`/admission`, blogsData);
       if (data.acknowledged) {
-        swal("The course has been successfully deleted", {
+        swal("The course has been successfully posted", {
           icon: "success",
           className: "rounded-xl",
         });
