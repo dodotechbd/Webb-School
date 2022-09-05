@@ -1,9 +1,9 @@
 import React from "react";
 import swal from "sweetalert";
-import axios from "axios";
+import primaryAxios from "../../../Api/primaryAxios";
 
 const SpecialCard = ({ allcard, refetch }) => {
-    const { _id } = allcard;
+  const { _id } = allcard;
 
   const deleteItems = (id) => {
     swal({
@@ -17,9 +17,7 @@ const SpecialCard = ({ allcard, refetch }) => {
     }).then((willDelete) => {
       if (willDelete) {
         (async () => {
-          const { data } = await axios.delete(
-            `https://rocky-escarpment-87440.herokuapp.com/special/${id}`
-          );
+          const { data } = await primaryAxios.delete(`/special/${id}`);
           if (data.deletedCount > 0) {
             swal("The course has been successfully deleted", {
               icon: "success",
@@ -37,8 +35,8 @@ const SpecialCard = ({ allcard, refetch }) => {
       }
     });
   };
-    return (
-        <div className="mx-auto mt-3 card card-compact lg:w-48 w-10/12 bg-base-100 border rounded-md border-neutral">
+  return (
+    <div className="mx-auto mt-3 card card-compact lg:w-48 w-10/12 bg-base-100 border rounded-md border-neutral">
       <figure>
         <img src={allcard?.img} alt="Shoes" className="lg:h-full w-full" />
       </figure>
@@ -64,7 +62,7 @@ const SpecialCard = ({ allcard, refetch }) => {
         </div>
       </div>
     </div>
-    );
+  );
 };
 
 export default SpecialCard;

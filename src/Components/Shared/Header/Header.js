@@ -15,6 +15,7 @@ import "./Header.css";
 import primaryAxios from "../../../Api/primaryAxios";
 
 import useAllCourse from "../../../Hooks/useAllCourse";
+import useMessage from "../../../Hooks/useMessage";
 
 const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
@@ -28,22 +29,18 @@ const Header = ({ handleThemeChange, theme }) => {
   const myCourseData = myCourse?.data.find((s) => s.uname);
 
   const courseData =
-    admission?.find((s) => s.uname === myCourseData?.uname) ||
-    language?.find((s) => s.uname === myCourseData?.uname) ||
-    job?.find((s) => s.uname === myCourseData?.uname);
+    admission?.data?.find((s) => s.uname === myCourseData?.uname) ||
+    language?.data?.find((s) => s.uname === myCourseData?.uname) ||
+    job?.data?.find((s) => s.uname === myCourseData?.uname);
 
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const { data: messageData, isLoading } = useQuery(["messagedata"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/message`).then((res) =>
-      res.json()
-    )
-  );
+  const [message, isLoading, refetch] = useMessage();
 
-  const userMessageData = messageData?.filter(
+  const userMessageData = message?.data?.filter(
     (allcard) => allcard?.email === user?.email
   );
   const logout = () => {
@@ -88,7 +85,7 @@ const Header = ({ handleThemeChange, theme }) => {
             to="LiveClasses"
           >
             Live Class
-            <div className="inline-flex absolute -top-1.5 -right-1.5 justify-center items-center text-xs font-bold border-2 border-base-100 rounded-full text-green-600">
+            <div className="inline-flex absolute -top-1.5 -right-1.5 justify-center items-center text-xs font-bold border-2 border-base-200 rounded-full text-green-600">
               <i className="fa-solid fa-circle"></i>
             </div>
           </NavLink>
@@ -111,7 +108,7 @@ const Header = ({ handleThemeChange, theme }) => {
             <ul tabIndex="0" className="bg-base-200 h-screen">
               <Link to="/">
                 <div className="flex items-center p-2 w-full">
-                  <img className="w-9 ml-3" src={wslogo} alt="true" />
+                  <img className="w-9 ml-3" src={wslogo} alt="image" />
                   <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
@@ -259,7 +256,7 @@ const Header = ({ handleThemeChange, theme }) => {
         </Drawer>
         <Link to="/">
           <div className="flex items-center">
-            <img className="w-9 ml-3" src={wslogo} alt="true" />
+            <img className="w-9 ml-3" src={wslogo} alt="image" />
             <div className="ml-1 text-md font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>

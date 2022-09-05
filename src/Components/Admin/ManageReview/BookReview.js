@@ -1,20 +1,17 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../../Api/primaryAxios";
 import Loading from "../../Shared/Loading/Loading";
 import ReviewCard from "./ReviewCard";
 const BookReview = () => {
-    const {
-        data: bookreviews,
-        isLoading,
-        refetch,
-      } = useQuery(["bookreviewsData"], () =>
-        fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) =>
-          res.json()
-        )
-      );
-      if (isLoading) {
-        return <Loading></Loading>;
-      }
+  const {
+    data: bookreviews,
+    isLoading,
+    refetch,
+  } = useQuery(["bookreviewsData"], () => primaryAxios.get(`/bookreviews`));
+  if (isLoading) {
+    return <Loading></Loading>;
+  }
   return (
     <div className="mt-4 text-center">
       <h1 className="text-3xl pb-5 ">Book Reviews</h1>
@@ -29,14 +26,17 @@ const BookReview = () => {
             </tr>
           </thead>
           <tbody>
-            {bookreviews?.slice(0).reverse().map((allcard, index) => (
-              <ReviewCard
-                key={allcard._id}
-                allcard={allcard}
-                index={index}
-                refetch={refetch}
-              ></ReviewCard>
-            ))}
+            {bookreviews?.data
+              ?.slice(0)
+              .reverse()
+              .map((allcard, index) => (
+                <ReviewCard
+                  key={allcard._id}
+                  allcard={allcard}
+                  index={index}
+                  refetch={refetch}
+                ></ReviewCard>
+              ))}
           </tbody>
         </table>
       </div>

@@ -1,10 +1,8 @@
 import React from "react";
 import swal from "sweetalert";
-import axios from "axios";
 import primaryAxios from "../../../Api/primaryAxios";
-import Swal from "sweetalert2";
 
-const LanguageCard = ({ allcard, deleteItem, refetch }) => {
+const LanguageCard = ({ allcard, refetch }) => {
   const { _id } = allcard;
 
   const deleteItems = (id) => {
@@ -19,9 +17,7 @@ const LanguageCard = ({ allcard, deleteItem, refetch }) => {
     }).then((willDelete) => {
       if (willDelete) {
         (async () => {
-          const { data } = await axios.delete(
-            `https://rocky-escarpment-87440.herokuapp.com/language/${id}`
-          );
+          const { data } = await primaryAxios.delete(`/language/${id}`);
           if (data.deletedCount > 0) {
             swal("The course has been successfully deleted", {
               icon: "success",

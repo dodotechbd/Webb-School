@@ -1,20 +1,19 @@
 import React from "react";
 import { useQuery } from "react-query";
 import { Link, useParams } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
 import Loader from "../Shared/Loading/Loading";
 
 const BlogDetails = () => {
   const { detailsId } = useParams();
   const { data: blogs, isLoading } = useQuery(["blogs"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/blogs`).then((res) =>
-      res.json()
-    )
+    primaryAxios.get(`/blogs`)
   );
   if (isLoading) {
     return <Loader></Loader>;
   }
 
-  const newBlogs = blogs.filter((blog) => blog._id == detailsId);
+  const newBlogs = blogs?.data?.filter((blog) => blog._id == detailsId);
 
   return (
     <div className="hero">
@@ -48,7 +47,7 @@ const BlogDetails = () => {
           <div className="card bg-base-300 shadow-xl">
             <div className="card-body">
               <h2 className="card-title">Recent Post</h2>
-              {blogs
+              {blogs?.data
                 ?.slice(0, 6)
                 .reverse()
                 .map((blog) => (

@@ -1,16 +1,15 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../Api/primaryAxios";
+import useTitle from "../../Hooks/useTitle";
 import Loader from "../Shared/Loading/Loading";
 import AcadamicBook from "./AcadamicBook/AcadamicBook";
 import SkillBooks from "./SkillBooks";
-import useTitle from "../../Hooks/useTitle";
 
 const BookStore = () => {
   useTitle("Book Store");
   const { data: acadamicbook, isLoading } = useQuery(["acadamicbook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/AcadamicBook`)
   );
   if (isLoading) {
     return <Loader></Loader>;
@@ -23,7 +22,7 @@ const BookStore = () => {
             Academic BookStore
           </h1>
           <div className="grid  sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-4 gap-6  ">
-            {acadamicbook?.map((acadamicbook) => (
+            {acadamicbook?.data?.map((acadamicbook) => (
               <AcadamicBook
                 key={acadamicbook._id}
                 acadamicbook={acadamicbook}

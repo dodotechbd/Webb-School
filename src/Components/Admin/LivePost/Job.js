@@ -1,6 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
-import Loading from "../../Shared/Loading/Loading";
+import primaryAxios from "../../../Api/primaryAxios";
 import JobTable from "./JobTable";
 
 const Job = () => {
@@ -8,18 +8,13 @@ const Job = () => {
     data: job,
     refetch,
     isLoading,
-  } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
+  } = useQuery(["jobCourse"], () => primaryAxios.get(`/job`));
   if (isLoading) {
     return <div className="mx-auto" id="preloaders"></div>;
   }
-
   return (
     <tbody>
-      {job.map((jobs, index) => (
+      {job?.data?.map((jobs, index) => (
         <JobTable
           key={jobs._id}
           jobs={jobs}

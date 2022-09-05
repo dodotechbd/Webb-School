@@ -1,17 +1,13 @@
+import {
+  CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe
+} from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import auth from "../../firebase.init";
-import swal from "sweetalert";
-import {
-  useStripe,
-  useElements,
-  CardNumberElement,
-  CardExpiryElement,
-  CardCvcElement,
-} from "@stripe/react-stripe-js";
-import { useNavigate, useParams } from "react-router-dom";
 import { useQuery } from "react-query";
+import { useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
 import primaryAxios from "../../Api/primaryAxios";
+import auth from "../../firebase.init";
 
 const BookStripeForm = ({ totalAmount, orderInfo }) => {
   const [user, loading] = useAuthState(auth);
@@ -24,23 +20,19 @@ const BookStripeForm = ({ totalAmount, orderInfo }) => {
   const navigate = useNavigate();
 
   const { data: acadamicbook } = useQuery(["acadamicbook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/AcadamicBook`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/AcadamicBook`)
   );
   const { data: skillbook } = useQuery(["skillbook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/SkillBooks`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/SkillBooks`)
   );
   const { data: audiobook } = useQuery(["audiobook"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then((res) => res.json())
+    primaryAxios.get(`/audiobook`)
   );
 
   const bookData =
-    audiobook?.find((s) => s._id === bookId) ||
-    skillbook?.find((s) => s._id === bookId) ||
-    acadamicbook?.find((s) => s._id === bookId);
+    audiobook?.data?.find((s) => s._id === bookId) ||
+    skillbook?.data?.find((s) => s._id === bookId) ||
+    acadamicbook?.data?.find((s) => s._id === bookId);
 
   useEffect(() => {
     (async () => {

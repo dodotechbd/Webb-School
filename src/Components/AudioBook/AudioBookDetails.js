@@ -21,11 +21,9 @@ const AudioBookDetails = () => {
     formState: { errors },
   } = useForm();
   const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/bookreviews`)
   );
-  const reviewData = bookreviews?.filter(
+  const reviewData = bookreviews?.data?.filter(
     (allcard) => allcard.courseName === bookId
   );
   const ratingData = reviewData?.map((allcard) => allcard.rating);
@@ -55,14 +53,12 @@ const AudioBookDetails = () => {
   };
   // end
   const { data: audiobook, isLoading } = useQuery(["audiobooks"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/audiobook`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/audiobook`)
   );
   if (isLoading) {
     return <Loader></Loader>;
   }
-  const newDetails = audiobook.find((s) => s._id === bookId);
+  const newDetails = audiobook?.data?.find((s) => s._id === bookId);
   return (
     <div className="mb-12">
       <h1 className="text-3xl text-center pt-6 font-bold mb-8">
@@ -86,7 +82,7 @@ const AudioBookDetails = () => {
                 <img
                   className="w-48 rounded-lg"
                   src={newDetails?.img}
-                  alt="true"
+                  alt="image"
                 />
                 <h1 className="text-xl">
                   {" "}
@@ -96,7 +92,7 @@ const AudioBookDetails = () => {
                   <div className="flex my-2 items-center gap-3">
                     <div className="avatar">
                       <div className="w-16 rounded-lg">
-                        <img src={newDetails?.img2} alt="true" />
+                        <img src={newDetails?.img2} alt="image" />
                       </div>
                     </div>
                     <div>
@@ -235,7 +231,7 @@ const AudioBookDetails = () => {
                   Avg Ratings <br />{" "}
                   {avgRating ? (
                     <span className="uppercase text-[#efad1e]">
-                      {avgRating.toString().slice(0, 3)}
+                      {avgRating?.toString().slice(0, 3)}
                     </span>
                   ) : (
                     <span className="uppercase text-[#efad1e]">0</span>
@@ -253,13 +249,11 @@ const AudioBookDetails = () => {
                 <p className="text-2xl">${newDetails?.price}</p>
               </div>
             </div>
-            <btn>
-              <Link to={`/bookcheckout/${bookId}`}>
-                <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
-                  Buy Now
-                </button>
-              </Link>
-            </btn>
+            <Link to={`/bookcheckout/${bookId}`}>
+              <button className="text-lg font-bold p-4 rounded-xl bg-[#efad1e] w-full text-blue-900 hover:bg-secondary hover:text-white">
+                Buy Now
+              </button>
+            </Link>
           </div>
         </div>
         <div className="lg:hidden md:hidden">

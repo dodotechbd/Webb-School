@@ -1,34 +1,18 @@
-import { map } from "@firebase/util";
 import React from "react";
-import { useQuery } from "react-query";
+import useAllCourse from "../../Hooks/useAllCourse";
 
 const LiveCard = ({ allcard }) => {
   const { uname } = allcard;
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
+  const [admission, job, language] = useAllCourse();
   const courseData =
-    admission?.find((allcard) => allcard.uname === uname) ||
-    language?.find((allcard) => allcard.uname === uname) ||
-    job?.find((allcard) => allcard.uname === uname);
+    admission?.data?.find((allcard) => allcard.uname === uname) ||
+    language?.data?.find((allcard) => allcard.uname === uname) ||
+    job?.data?.find((allcard) => allcard.uname === uname);
   return (
     <div
       className="mx-auto lg:flex bg-base-200 shadow-lg rounded-2xl
        hover:-translate-y-3 border-neutral  transform transition duration-300 text-warning h-full"
     >
-      
       <figure className="p-4">
         <img
           src={allcard?.img}
@@ -36,8 +20,7 @@ const LiveCard = ({ allcard }) => {
           className="h-full md:h-48 lg:h-36 rounded-xl w-96"
         />
       </figure>
-      
-       
+
       <div className="w-full p-4 lg:pr-4 lg:pl-0 lg:pt-4 pt-0">
         <div className="text-right">
           {courseData?.meetLink?.MLink ? (
@@ -53,12 +36,16 @@ const LiveCard = ({ allcard }) => {
         <div className="content-between grid">
           <h2 className="text-xl">{allcard?.name.slice(0, 30)}</h2>
           <div>
-            <p className="text-lg text-info font-bold uppercase">{courseData?.meetLink?.title}</p>
+            <p className="text-lg text-info font-bold uppercase">
+              {courseData?.meetLink?.title}
+            </p>
             <div className="flex items-end gap-4">
               <div>
                 <p className="opacity-80">{courseData?.meetLink?.teacher}</p>
                 <p className="text-error">{courseData?.meetLink?.date}</p>
-                <p className="text-error">{courseData?.meetLink?.time} (Sharp)</p>
+                <p className="text-error">
+                  {courseData?.meetLink?.time} (Sharp)
+                </p>
               </div>
               <div className="mt-2 text-sm">
                 {courseData?.meetLink?.MLink ? (
@@ -80,7 +67,6 @@ const LiveCard = ({ allcard }) => {
           </div>
         </div>
       </div>
-      
     </div>
   );
 };

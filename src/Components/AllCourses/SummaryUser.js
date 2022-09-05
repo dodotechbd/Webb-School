@@ -21,7 +21,7 @@ const SummaryUser = () => {
   );
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
-  const stringProgress = progress.toString();
+  const stringProgress = progress?.toString();
   console.log(stringProgress);
   const {
     data: muser,
@@ -39,7 +39,7 @@ const SummaryUser = () => {
         <img
           src={muser?.data?.image}
           className="w-24 my-12 rounded-full mx-auto"
-          alt=""
+          alt="image"
         />
         <div className="flex justify-between font-mono text-lg">
           <div>
@@ -88,7 +88,14 @@ const SummaryUser = () => {
         <p className="text-xl">Certificate</p>
         {myCourseData?.certificate ? (
           <>
-          <a href={myCourseData?.certificate?.certificate} target='_blank' className='btn btn-sm font-header btn-primary' rel="noreferrer">Download</a>
+            <a
+              href={myCourseData?.certificate?.certificate}
+              target="_blank"
+              className="btn btn-sm font-header btn-primary"
+              rel="noreferrer"
+            >
+              Download
+            </a>
           </>
         ) : (
           <>

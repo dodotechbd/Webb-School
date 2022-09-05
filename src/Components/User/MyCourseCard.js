@@ -9,15 +9,14 @@ const MyCourseCard = ({ allcard, refetch }) => {
   const [admission, job, language] = useAllCourse();
 
   const courseData =
-    admission?.find((s) => s.uname === allcard?.uname) ||
-    language?.find((s) => s.uname === allcard?.uname) ||
-    job?.find((s) => s.uname === allcard?.uname);
-    // const meetData = courseData?.filter((s) => s.meetLink)
+    admission?.data?.find((s) => s.uname === allcard?.uname) ||
+    language?.data?.find((s) => s.uname === allcard?.uname) ||
+    job?.data?.find((s) => s.uname === allcard?.uname);
+  // const meetData = courseData?.filter((s) => s.meetLink)
   const progress =
     (allcard?.progress?.length / courseData?.videos?.length) * 100;
-  const stringProgress = progress.toString();
-  const stringProgressp = progress.toString() + '%';
-
+  const stringProgress = progress?.toString();
+  const stringProgressp = progress?.toString() + "%";
 
   const fileName = allcard?.progress?.find((s) => s.i === cardIndex);
   const handleStatus = (_id) => {
@@ -36,7 +35,11 @@ const MyCourseCard = ({ allcard, refetch }) => {
     }
   };
   return (
-    <Link onClick={() => handleStatus(allcard?._id)} to={`/course/${allcard?.uname}/${allcard?.list}/${cardIndex}`} className='justify-self-center'>
+    <Link
+      onClick={() => handleStatus(allcard?._id)}
+      to={`/course/${allcard?.uname}/${allcard?.list}/${cardIndex}`}
+      className="justify-self-center"
+    >
       <div
         className="mx-auto p-6 lg:flex bg-base-200 shadow-lg rounded-2xl
        hover:-translate-y-3 border-neutral  transform transition duration-300 text-warning h-full"
@@ -61,7 +64,7 @@ const MyCourseCard = ({ allcard, refetch }) => {
                     }}
                   ></div>
                 </div>
-                <p>{progress ? stringProgress?.slice(0,4) : "0"}%</p>
+                <p>{progress ? stringProgress?.slice(0, 4) : "0"}%</p>
               </div>
             ) : (
               <div className="flex justify-between items-center gap-3">

@@ -1,26 +1,12 @@
 import React from "react";
-import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { Tab, TabList, TabPanel, Tabs } from "react-tabs";
 import "react-tabs/style/react-tabs.css";
+import useAllCourse from "../../Hooks/useAllCourse";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import "./CoursesTab.css";
-import { useQuery } from "react-query";
 
 const CoursesTabs = () => {
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
+  const [admission, job, language] = useAllCourse();
   return (
     <div className="py-16 md:block bg-base-100 border-b border-neutral">
       <div className="">
@@ -41,17 +27,7 @@ const CoursesTabs = () => {
 
           <TabPanel className="mt-5 bg-base-100">
             <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
-              {language?.slice(0, 4).map((allcard) => (
-                <AllCourseCard
-                  key={allcard._id}
-                  allcard={allcard}
-                ></AllCourseCard>
-              ))}
-            </div> 
-          </TabPanel>
-          <TabPanel>
-            <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
-              {job?.slice(0, 4).map((allcard) => (
+              {language?.data?.slice(0, 4).map((allcard) => (
                 <AllCourseCard
                   key={allcard._id}
                   allcard={allcard}
@@ -61,7 +37,17 @@ const CoursesTabs = () => {
           </TabPanel>
           <TabPanel>
             <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
-              {admission?.slice(0, 4).map((allcard) => (
+              {job?.data?.slice(0, 4).map((allcard) => (
+                <AllCourseCard
+                  key={allcard._id}
+                  allcard={allcard}
+                ></AllCourseCard>
+              ))}
+            </div>
+          </TabPanel>
+          <TabPanel>
+            <div className="grid lg:gap-0 gap-x-[310px] -mr-6 lg:-mr-0 md:-mr-0 lg:overflow-hidden overflow-x-scroll grid-cols-4 mb-10">
+              {admission?.data?.slice(0, 4).map((allcard) => (
                 <AllCourseCard
                   key={allcard._id}
                   allcard={allcard}

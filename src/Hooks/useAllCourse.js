@@ -1,22 +1,15 @@
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import primaryAxios from "../Api/primaryAxios";
 
 const useAllCourse = () => {
-  const { uname } = useParams();
   const { data: language, isLoading } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
+    primaryAxios.get(`/language`)
   );
   const { data: job, jobLoading } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
+    primaryAxios.get(`/job`)
   );
   const { data: admission, aLoading } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/admission`)
   );
   const courseLoading = isLoading && jobLoading && aLoading;
   return [admission, job, language, courseLoading];

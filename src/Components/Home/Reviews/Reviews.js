@@ -13,26 +13,23 @@ import "./Review.css";
 
 // import required modules
 import { Pagination } from "swiper";
+import primaryAxios from "../../../Api/primaryAxios";
 const Reviews = () => {
   const {
     data: allreviews,
     isLoading,
     refetch,
-  } = useQuery(["allreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/allreviews`).then((res) =>
-      res.json()
-    )
-  );
+  } = useQuery(["allreviewsData"], () => primaryAxios.get(`/allreviews`));
   return (
     <div className="lg:px-4 py-16 bg-base-100 border-b border-neutral">
       <p className="lg:text-4xl md:text-3xl mt-8 text-2xl uppercase font-sub font-bold text-center">
         Our students reviews
       </p>
       <Swiper
-        slidesPerGroup={2}
+        slidesPerGroup={1}
         loop={true}
         pagination={{
-          el: '.my-custom-pagination-div',
+          el: ".my-custom-pagination-div",
           clickable: true,
         }}
         breakpoints={{
@@ -55,14 +52,14 @@ const Reviews = () => {
             slidesPerView: 2,
           },
           "@1.50": {
-            slidesPerView: 2, 
+            slidesPerView: 2,
           },
         }}
         modules={[Pagination]}
         className="mySwiper"
       >
         <div className="mx-auto">
-          {allreviews?.map((course) => (
+          {allreviews?.data?.map((course) => (
             <SwiperSlide className="h-full" key={course._id}>
               <ReviewCard key={course._id} course={course}></ReviewCard>
             </SwiperSlide>
