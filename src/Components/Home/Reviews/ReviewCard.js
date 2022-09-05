@@ -55,7 +55,7 @@ const ReviewCard = ({ course }) => {
             <p className="text-sm opacity-60 text-right">
               -
               <span className="ml-1">
-                <ReactTimeAgo date={reviewDate} locale="en-US" />
+                <ReactTimeAgo date={Date.parse(reviewDate)} locale="en-US" />
               </span>
             </p>
           </div>

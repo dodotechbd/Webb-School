@@ -3,7 +3,6 @@ import { loadStripe } from "@stripe/stripe-js";
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
@@ -15,19 +14,10 @@ const Stripe = ({ courseData }) => {
     "pk_test_51LWltUCPn2JHPi081EFxPygcOJOvtghmISJBIxeobWbHIH1BT7TgPBEQoF6YZ75OqiFMJVXZEbfBGwefP5I2InKr005L3Un3xL"
   );
   const [role] = useRole();
-  const { uname } = useParams();
   const [{ email }] = useAuthState(auth);
-  const { data: user } = useQuery(["userProfile", email], () =>
+  const { data: user, isLoading } = useQuery(["userProfile", email], () =>
     primaryAxios.get(`/user-role?email=${email}`)
   );
-  const {
-    data: orders,
-    isLoading,
-    refetch,
-  } = useQuery(["orders", user?.email], () =>
-    primaryAxios.get(`/order?email=${user?.email}`)
-  );
-  const orderData = orders?.data?.find((allcard) => allcard.uname === uname);
   if (isLoading) {
     return <Loading></Loading>;
   }

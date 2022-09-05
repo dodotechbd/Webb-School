@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../Api/primaryAxios";
 import useTitle from "../../Hooks/useTitle";
 import AllAdmission from "../AllAdmission/AllAdmission";
 import AllJobCourse from "../AllJobCourses/AllJobCourse";
@@ -10,9 +11,7 @@ import AllCourseCard from "./AllCourseCard";
 const AllCourses = () => {
   useTitle("Courses");
   const { data: language, isLoading } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then(
-      (res) => res.json()
-    )
+    primaryAxios.get(`/language`)
   );
   if (isLoading) {
     return <Loader></Loader>;
@@ -23,7 +22,7 @@ const AllCourses = () => {
       <div className="lg:mx-8 mx-4 pt-10">
         <h1 className="text-3xl pb-5 ">Language Learning</h1>
         <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">
-          {language?.map((allcard) => (
+          {language?.data?.map((allcard) => (
             <AllCourseCard key={allcard._id} allcard={allcard}></AllCourseCard>
           ))}
         </div>

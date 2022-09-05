@@ -1,7 +1,7 @@
-import axios from "axios";
 import React from "react";
 import { useFieldArray, useForm } from "react-hook-form";
 import swal from "sweetalert";
+import primaryAxios from "../../../Api/primaryAxios";
 import NestedFieldArray from "./NestedFieldArray";
 
 const AddJob = () => {
@@ -25,10 +25,7 @@ const AddJob = () => {
       // image: user?.photoURL,
     };
     (async () => {
-      const { data } = await axios.post(
-        `https://rocky-escarpment-87440.herokuapp.com/job`,
-        newReview
-      );
+      const { data } = await primaryAxios.post(`/job`, newReview);
       if (data.acknowledged) {
         swal("The course has been successfully deleted", {
           icon: "success",

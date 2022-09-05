@@ -1,10 +1,10 @@
 import React from 'react';
 import { useSendPasswordResetEmail } from 'react-firebase-hooks/auth';
 import { useForm } from 'react-hook-form';
-import auth from '../../firebase.init';
-import reset from '../../Assets/reset.svg';
-import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import reset from '../../Assets/reset.svg';
+import auth from '../../firebase.init';
 
 const Reset = () => {
     const [sendPasswordResetEmail, sending, resetError] =
@@ -101,7 +101,7 @@ const Reset = () => {
           <div
             className="hidden p-4 py-6 text-white  bg-gradient-to-r from-[#4828A9] to-[#A25BF7] md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly"
           >
-            <img className=' ' src={reset} alt="true" />
+            <img className=' ' src={reset} alt="image" />
           </div>
           <div className="p-5 bg-white md:flex-1">
             <h3 className="my-4 text-3xl font-bold text-[#A25BF7] text-center ">Forgot your password ?</h3>

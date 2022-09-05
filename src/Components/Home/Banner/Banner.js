@@ -65,34 +65,34 @@ const Banner = () => {
           className="mySwiper"
         >
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/english-for-career-development'}><img src="https://i.postimg.cc/J0XQf9dR/18899221.png" alt="true" /></Link>
+            <Link to={'/course/english-for-career-development'}><img src="https://i.postimg.cc/J0XQf9dR/18899221.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/medical-admission-course'}><img src="https://i.postimg.cc/MTd507f8/18899230.png" alt="true" /></Link>
+            <Link to={'/course/medical-admission-course'}><img src="https://i.postimg.cc/MTd507f8/18899230.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/varsity-admission-course'}><img src="https://i.postimg.cc/T1vbDhCX/18899243.png" alt="true" /></Link>
+            <Link to={'/course/varsity-admission-course'}><img src="https://i.postimg.cc/T1vbDhCX/18899243.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/bank-job'}><img src="https://i.postimg.cc/252Pjhct/18899245.png" alt="true" /></Link>
+            <Link to={'/course/bank-job'}><img src="https://i.postimg.cc/252Pjhct/18899245.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/corporate-job'}><img src="https://i.postimg.cc/jSWtfc9y/Black-Friday-Instagram-Story-01.png" alt="true" /></Link>
+            <Link to={'/course/corporate-job'}><img src="https://i.postimg.cc/jSWtfc9y/Black-Friday-Instagram-Story-01.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/improve-english-communcation-skills'}><img src="https://i.postimg.cc/QNg9z8fH/Black-Friday-Instagram-Story-05.png" alt="true" /></Link>
+            <Link to={'/course/improve-english-communcation-skills'}><img src="https://i.postimg.cc/QNg9z8fH/Black-Friday-Instagram-Story-05.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/chinese-for-beginners'}><img src="https://i.postimg.cc/fy2QtSfH/Black-Friday-Instagram-Story-10.png" alt="true" /></Link>
+            <Link to={'/course/chinese-for-beginners'}><img src="https://i.postimg.cc/fy2QtSfH/Black-Friday-Instagram-Story-10.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/developer-job'}><img src="https://i.postimg.cc/fRshrsgT/Black-Friday-Instagram-Story-14.png" alt="true" /></Link>
+            <Link to={'/course/developer-job'}><img src="https://i.postimg.cc/fRshrsgT/Black-Friday-Instagram-Story-14.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'course/grammar-and-punctuation'}><img src="https://i.postimg.cc/dVPfV98W/Black-Friday-Instagram-Story-18.png" alt="true" /></Link>
+            <Link to={'course/grammar-and-punctuation'}><img src="https://i.postimg.cc/dVPfV98W/Black-Friday-Instagram-Story-18.png" alt="image" /></Link>
           </SwiperSlide>
           <SwiperSlide className="card mb-8 shadow-xl">
-            <Link to={'/course/freelancer-job'}><img src="https://i.postimg.cc/RZCnxkW4/Black-Friday-Instagram-Story-20.png" alt="true" /></Link>
+            <Link to={'/course/freelancer-job'}><img src="https://i.postimg.cc/RZCnxkW4/Black-Friday-Instagram-Story-20.png" alt="image" /></Link>
           </SwiperSlide>
         </Swiper>
       </div>

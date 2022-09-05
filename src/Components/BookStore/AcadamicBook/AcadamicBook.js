@@ -1,15 +1,16 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import { Link } from "react-router-dom";
+import primaryAxios from "../../../Api/primaryAxios";
 
 const AcadamicBook = ({ acadamicbook }) => {
   const { _id, name, img, description, price } = acadamicbook;
   const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/bookreviews`).then((res) => res.json())
+    primaryAxios.get(`/bookreviews`)
   );
-  const reviewData = bookreviews?.filter(
+  const reviewData = bookreviews?.data?.filter(
     (allcard) => allcard.courseName === _id
   );
   const ratingData = reviewData?.map((allcard) => allcard.rating);
@@ -39,7 +40,7 @@ const AcadamicBook = ({ acadamicbook }) => {
             <div className="">
               {avgRating ? (
                 <span className="mr-2 font-bold text-[#c48b07]">
-                  {avgRating.toString().slice(0, 3)}
+                  {avgRating?.toString().slice(0, 3)}
                 </span>
               ) : (
                 <></>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../../Api/primaryAxios";
 import Loading from "../../Shared/Loading/Loading";
 import AllReviewCard from "./AllReviewCard";
 
@@ -9,9 +10,7 @@ const AllReviews = () => {
         isLoading,
         refetch,
       } = useQuery(["allreviewsData"], () =>
-        fetch(`https://rocky-escarpment-87440.herokuapp.com/allreviews`).then((res) =>
-          res.json()
-        )
+        primaryAxios.get(`/allreviews`)
       );
       if (isLoading) {
         return <Loading></Loading>;
@@ -30,7 +29,7 @@ const AllReviews = () => {
             </tr>
           </thead>
           <tbody>
-            {allreviews?.map((allcard, index) => (
+            {allreviews?.data?.map((allcard, index) => (
               <AllReviewCard
                 key={allcard._id}
                 allcard={allcard}

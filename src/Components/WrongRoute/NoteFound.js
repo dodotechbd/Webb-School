@@ -23,7 +23,7 @@ const NoteFound = () => {
     // <div className="hero min-h-screen bg-base-200">
     //   <div className="hero-content text-center">
     //     <div className="max-w-md">
-    //       <img className="w-screen" src={img} alt="true" />
+    //       <img className="w-screen" src={img} alt="image" />
     //       <Link className="btn btn-wide bg-[#407BFF] text-white font-thin" to={"/"}>
     //         Go to homepage
     //       </Link>

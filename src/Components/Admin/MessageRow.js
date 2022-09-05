@@ -1,18 +1,14 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
 import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
+import useMessage from "../../Hooks/useMessage";
 import MessageHistory from "./MessageHistory";
 
 const MessageRow = ({ user, prefetch, index }) => {
   const { register, handleSubmit, reset } = useForm({});
   const { name, email, role, _id, image } = user;
-  const {
-    data: message,
-    isLoading,
-    refetch,
-  } = useQuery(["message"], () => primaryAxios.get(`/message`));
+  const [message, isLoading, refetch] = useMessage();
 
   const onSubmit = (data) => {
     const newReview = {

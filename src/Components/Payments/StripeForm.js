@@ -1,18 +1,13 @@
-import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
 import {
-  CardElement,
-  useStripe,
-  useElements,
-  CardNumberElement,
-  CardExpiryElement,
-  CardCvcElement,
+  CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe
 } from "@stripe/react-stripe-js";
-import primaryAxios from "../../Api/primaryAxios";
-import swal from "sweetalert";
-import { useQuery } from "react-query";
+import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useNavigate, useParams } from "react-router-dom";
+import swal from "sweetalert";
+import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
+import useAllCourse from "../../Hooks/useAllCourse";
 
 const StripeForm = ({ totalAmount, orderInfo }) => {
   const [user, loading] = useAuthState(auth);
@@ -24,25 +19,11 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
   const [isPaying, setIsPaying] = useState(false);
   const navigate = useNavigate();
 
-  const { data: language } = useQuery(["languageCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/language`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: job } = useQuery(["jobCourse"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/job`).then((res) =>
-      res.json()
-    )
-  );
-  const { data: admission } = useQuery(["admissionCourses"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/admission`).then(
-      (res) => res.json()
-    )
-  );
+  const [admission, job, language] = useAllCourse();
   const courseData =
-    admission?.find((allcard) => allcard.uname === uname) ||
-    language?.find((allcard) => allcard.uname === uname) ||
-    job?.find((allcard) => allcard.uname === uname);
+    admission?.data?.find((allcard) => allcard.uname === uname) ||
+    language?.data?.find((allcard) => allcard.uname === uname) ||
+    job?.data?.find((allcard) => allcard.uname === uname);
 
   useEffect(() => {
     (async () => {
@@ -63,7 +44,11 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
       return;
     }
 
-    const card = elements.getElement(CardNumberElement, CardExpiryElement, CardCvcElement);
+    const card = elements.getElement(
+      CardNumberElement,
+      CardExpiryElement,
+      CardCvcElement
+    );
 
     const { error, paymentMethod } = await stripe.createPaymentMethod({
       type: "card",
@@ -125,7 +110,7 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         list: courseData?.list,
         img: courseData?.img,
         name: courseData?.name,
-        uname: courseData?.uname
+        uname: courseData?.uname,
       };
       const { data } =
         (await primaryAxios.post(`/order?email=${user?.email}`, payment)) &&
@@ -160,46 +145,46 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
         ></CardNumberElement>
       </div>
       <div className="flex gap-4">
-      <div className="mb-3 w-full">
-        <label className="text-lg">Expiration Date</label>
-        <CardExpiryElement
-          className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
-          options={{
-            style: {
-              base: {
-                fontSize: "20px",
-                color: "#424770",
-                "::placeholder": {
-                  color: "#aab7c4",
+        <div className="mb-3 w-full">
+          <label className="text-lg">Expiration Date</label>
+          <CardExpiryElement
+            className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
+            options={{
+              style: {
+                base: {
+                  fontSize: "20px",
+                  color: "#424770",
+                  "::placeholder": {
+                    color: "#aab7c4",
+                  },
+                },
+                invalid: {
+                  color: "#9e2146",
                 },
               },
-              invalid: {
-                color: "#9e2146",
-              },
-            },
-          }}
-        ></CardExpiryElement>
-      </div>
-      <div className="mb-3 w-full">
-        <label className="text-lg">CVC</label>
-        <CardCvcElement
-          className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
-          options={{
-            style: {
-              base: {
-                fontSize: "20px",
-                color: "#424770",
-                "::placeholder": {
-                  color: "#aab7c4",
+            }}
+          ></CardExpiryElement>
+        </div>
+        <div className="mb-3 w-full">
+          <label className="text-lg">CVC</label>
+          <CardCvcElement
+            className="p-2 bg-base-100 border border-neutral rounded-md mt-1"
+            options={{
+              style: {
+                base: {
+                  fontSize: "20px",
+                  color: "#424770",
+                  "::placeholder": {
+                    color: "#aab7c4",
+                  },
+                },
+                invalid: {
+                  color: "#9e2146",
                 },
               },
-              invalid: {
-                color: "#9e2146",
-              },
-            },
-          }}
-        ></CardCvcElement>
-      </div>
+            }}
+          ></CardCvcElement>
+        </div>
       </div>
       {paymentError && (
         <p className="mt-5 -mb-5 text-red-600 text-center">{paymentError}</p>

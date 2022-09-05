@@ -1,5 +1,6 @@
 import React from "react";
 import { useQuery } from "react-query";
+import primaryAxios from "../../../Api/primaryAxios";
 import Loading from "../../Shared/Loading/Loading";
 import ReviewCard from "./ReviewCard";
 
@@ -8,11 +9,7 @@ const CourseReview = () => {
     data: reviews,
     isLoading,
     refetch,
-  } = useQuery(["reviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/reviews`).then((res) =>
-      res.json()
-    )
-  );
+  } = useQuery(["reviewsData"], () => primaryAxios.get(`/reviews`));
   if (isLoading) {
     return <Loading></Loading>;
   }
@@ -30,14 +27,17 @@ const CourseReview = () => {
             </tr>
           </thead>
           <tbody>
-            {reviews?.slice(0).reverse().map((allcard, index) => (
-              <ReviewCard
-                key={allcard._id}
-                allcard={allcard}
-                index={index}
-                refetch={refetch}
-              ></ReviewCard>
-            ))}
+            {reviews?.data
+              ?.slice(0)
+              .reverse()
+              .map((allcard, index) => (
+                <ReviewCard
+                  key={allcard._id}
+                  allcard={allcard}
+                  index={index}
+                  refetch={refetch}
+                ></ReviewCard>
+              ))}
           </tbody>
         </table>
       </div>

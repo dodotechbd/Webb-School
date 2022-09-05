@@ -21,7 +21,7 @@ const Summary = () => {
   );
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
-  const stringProgress = progress.toString();
+  const stringProgress = progress?.toString();
   return (
     <>
       {stringProgress === "100" ? (

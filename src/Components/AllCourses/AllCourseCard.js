@@ -3,15 +3,16 @@ import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
 import { Link } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
 
 const AllCourseCard = ({ allcard }) => {
   const { uname } = allcard;
   const { data: reviews } = useQuery(["reviewsData"], () =>
-    fetch(`https://rocky-escarpment-87440.herokuapp.com/reviews`).then((res) =>
-      res.json()
-    )
+    primaryAxios.get(`/reviews`)
   );
-  const reviewData = reviews?.filter((allcard) => allcard.courseName === uname);
+  const reviewData = reviews?.data?.filter(
+    (allcard) => allcard.courseName === uname
+  );
   const ratingData = reviewData?.map((allcard) => allcard.rating);
   const totalRating = ratingData?.reduce((a, b) => a + b, 0);
   const avgRating = totalRating / ratingData?.length;
@@ -40,7 +41,7 @@ const AllCourseCard = ({ allcard }) => {
           <div className="px-2">
             {avgRating ? (
               <span className="mr-2 font-bold text-[#c48b07]">
-                {avgRating.toString().slice(0, 3)}
+                {avgRating?.toString().slice(0, 3)}
               </span>
             ) : (
               <></>

@@ -3,7 +3,6 @@ import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../firebase.init";
-import Loading from "../Shared/Loading/Loading";
 
 const Social = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
@@ -38,7 +37,7 @@ const Social = () => {
         onClick={() => signInWithGoogle()}
         className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-[#A25BF7] rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black"
       >
-        <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="true" /> <span>Login with Google</span>
+        <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="image" /> <span>Login with Google</span>
       </button>
     </div>
   );
