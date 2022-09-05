@@ -1,7 +1,7 @@
-import axios from "axios";
 import React, { useEffect } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 
 const Social = () => {
@@ -15,7 +15,7 @@ const Social = () => {
   useEffect(() => {
     if (user) {
       (async () => {
-        const { data } = await axios.put(`https://rocky-escarpment-87440.herokuapp.com/user`, {
+        const { data } = await primaryAxios.put(`/user`, {
           name: user?.user?.displayName,
           email: user?.user?.email,
         });
@@ -37,7 +37,12 @@ const Social = () => {
         onClick={() => signInWithGoogle()}
         className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-[#A25BF7] rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black"
       >
-        <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="image" /> <span>Login with Google</span>
+        <img
+          src="https://www.svgrepo.com/show/355037/google.svg"
+          className="w-6 h-6"
+          alt="image"
+        />{" "}
+        <span>Login with Google</span>
       </button>
     </div>
   );
