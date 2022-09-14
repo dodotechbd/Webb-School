@@ -17,7 +17,6 @@ const AddAdmission = () => {
     name: "file",
   });
 
-  // const onSubmit = (data) => console.log("data", data);
   const onSubmit = (data) => {
     const newReview = {
       ...data,

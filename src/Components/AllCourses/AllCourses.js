@@ -1,11 +1,11 @@
 import React from "react";
-import AllCourseCard from "./AllCourseCard";
-import Loader from "../Shared/Loading/Loader";
+import { useQuery } from "react-query";
+import useTitle from "../../Hooks/useTitle";
 import AllAdmission from "../AllAdmission/AllAdmission";
 import AllJobCourse from "../AllJobCourses/AllJobCourse";
 import Instructor from "../Home/Instructor/Instructor";
-import { useQuery } from "react-query";
-import useTitle from "../../Hooks/useTitle";
+import Loader from "../Shared/Loading/Loader";
+import AllCourseCard from "./AllCourseCard";
 
 const AllCourses = () => {
   useTitle("Courses");

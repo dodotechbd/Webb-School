@@ -71,7 +71,7 @@ const Navigation = () => {
           </div>
         </AnchorLink>
       </div>
-      <div className="flex flex-col w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
+      <div className="flex flex-col justify-center w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
         <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">
           <span className="text-info">Webb School</span> is the great platform
           for distance learning.

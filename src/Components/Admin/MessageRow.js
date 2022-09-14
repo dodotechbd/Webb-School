@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import { useQuery } from "react-query";
+import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
 import MessageHistory from "./MessageHistory";
 
@@ -13,7 +13,6 @@ const MessageRow = ({ user, prefetch, index }) => {
     isLoading,
     refetch,
   } = useQuery(["message"], () => primaryAxios.get(`/message`));
-  console.log(message?.data);
 
   const onSubmit = (data) => {
     const newReview = {
@@ -23,7 +22,6 @@ const MessageRow = ({ user, prefetch, index }) => {
       // name: user?.displayName,
       // image: user?.photoURL,
     };
-    console.log(data);
     (async () => {
       const { data } = await primaryAxios.post(`/message`, newReview);
       if (data.acknowledged) {
@@ -75,7 +73,7 @@ const MessageRow = ({ user, prefetch, index }) => {
           htmlFor={_id}
           className="btn modal-button btn-xs btn-outline btn-primary hover:text-white"
         >
-          Send Message
+          Send
         </label>
         <input type="checkbox" id={_id} className="modal-toggle" />
         <div className="modal">
@@ -134,7 +132,7 @@ const MessageRow = ({ user, prefetch, index }) => {
           htmlFor={email}
           className="btn modal-button btn-xs btn-outline btn-primary hover:text-white"
         >
-          Message History
+          History
         </label>
         <input type="checkbox" id={email} className="modal-toggle" />
         <div className="modal">

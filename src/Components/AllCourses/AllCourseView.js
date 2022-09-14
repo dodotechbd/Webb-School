@@ -1,12 +1,12 @@
 import React from "react";
-import { Link, useParams } from "react-router-dom";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import ReactPlayer from "react-player";
 import { useQuery } from "react-query";
-import CourseSyllabus from "./CourseSyllabus";
-import Loading from "../Shared/Loading/Loading";
-import ReviewView from "./ReviewView";
 import Rating from "react-rating";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
+import { Link, useParams } from "react-router-dom";
+import Loading from "../Shared/Loading/Loading";
+import CourseSyllabus from "./CourseSyllabus";
+import ReviewView from "./ReviewView";
 
 const AllCourseView = () => {
   const { uname } = useParams();
@@ -42,7 +42,6 @@ const AllCourseView = () => {
   const ratingData = reviewData?.map((allcard) => allcard.rating);
   const totalRating = ratingData?.reduce((a, b) => a + b, 0);
   const avgRating = totalRating / ratingData?.length;
-  // console.log(ratingData);
   if (isLoading) {
     return <Loading></Loading>;
   }
