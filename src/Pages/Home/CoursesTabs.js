@@ -37,8 +37,8 @@ const CoursesTabs = () => {
             <button
               type="button"
               onClick={() => handleCourse("language")}
-              className={`hover:bg-neutral text-white p-3 rounded-t-lg ${
-                course === "language" && "bg-primary"
+              className={`hover:bg-neutral p-3 rounded-t-lg ${
+                course === "language" && "bg-primary text-white"
               }`}
             >
               Language Learning
@@ -46,8 +46,8 @@ const CoursesTabs = () => {
             <button
               type="button"
               onClick={() => handleCourse("job")}
-              className={`hover:bg-neutral text-white p-3 rounded-t-lg ${
-                course === "job" && "bg-primary"
+              className={`hover:bg-neutral p-3 rounded-t-lg ${
+                course === "job" && "bg-primary text-white"
               }`}
             >
               Jobs Requirments
@@ -55,8 +55,8 @@ const CoursesTabs = () => {
             <button
               type="button"
               onClick={() => handleCourse("admission")}
-              className={`hover:bg-neutral text-white p-3 rounded-t-lg ${
-                course === "admission" && "bg-primary"
+              className={`hover:bg-neutral p-3 rounded-t-lg ${
+                course === "admission" && "bg-primary text-white"
               }`}
             >
               Admission Preparation
