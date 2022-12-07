@@ -2,9 +2,9 @@ import React from 'react';
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import primaryAxios from "../../Api/primaryAxios";
-import Loading from "../../Components/Shared/Loading/Loading";
 import auth from '../../firebase.init';
 import useTitle from '../../Hooks/useTitle';
+import Loading from "../../Pages/Shared/Loading/Loading";
 import OrderCard from './OrderCard';
 
 const Order = () => {
