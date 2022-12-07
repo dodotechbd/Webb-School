@@ -33,8 +33,8 @@ const AllCourseView = () => {
   }
 
   return (
-    <div className="hero bg-base-100 my-10">
-      <div className="flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
+    <div className="bg-base-100 my-10">
+      <div className="container mx-auto flex justify-center lg:w-full w-11/12 gap-10 flex-col-reverse lg:flex-row-reverse md:flex-row-reverse items-start">
         <div className="lg:hidden md:hidden">
           <h1 className="text-2xl mt-6 mb-2">Reviews({ratingData?.length})</h1>
           <div className="flex flex-col">
@@ -203,77 +203,6 @@ const AllCourseView = () => {
               <div>Coming Soon</div>
             )}
           </div>
-          {/* <h1 className="text-2xl mt-6 mb-2">Student Feedback</h1>
-          <div className="flex items-center gap-3">
-            <div className="text-center font-bold ">
-              <h1 className="text-7xl">5.0</h1>
-              <h1 className="text-yellow-400">
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-                <i className="fa-solid fa-star"></i>
-              </h1>
-              <h1 className="whitespace-nowrap">Course Rating</h1>
-            </div>
-            <div className="w-full">
-              <div className="flex items-center">
-                <h1 className=" font-bold">
-                  <span className="ml-2">5</span>
-                </h1>
-                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div className="h-4 bg-yellow-400 rounded w-[70%]"></div>
-                </div>
-                <h1 className=" font-bold">
-                  <span className="ml-2">70%</span>
-                </h1>
-              </div>
-              <div className="flex items-center">
-                <h1 className=" font-bold">
-                  <span className="ml-2">4</span>
-                </h1>
-                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div className="h-4 bg-yellow-400 rounded w-[17%]"></div>
-                </div>
-                <h1 className=" font-bold">
-                  <span className="ml-2">17%</span>
-                </h1>
-              </div>
-              <div className="flex items-center">
-                <h1 className=" font-bold">
-                  <span className="ml-2">3</span>
-                </h1>
-                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div className="h-4 bg-yellow-400 rounded w-[8%]"></div>
-                </div>
-                <h1 className=" font-bold">
-                  <span className="ml-2">8%</span>
-                </h1>
-              </div>
-              <div className="flex items-center">
-                <h1 className=" font-bold">
-                  <span className="ml-2">2</span>
-                </h1>
-                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div className="h-4 bg-yellow-400 rounded w-[3%]"></div>
-                </div>
-                <h1 className=" font-bold">
-                  <span className="ml-2">4%</span>
-                </h1>
-              </div>
-              <div className="flex items-center">
-                <h1 className=" font-bold">
-                  <span className="ml-2">1</span>
-                </h1>
-                <div className="mx-4 lg:w-10/12 md:w-8/12 w-7/12 h-4 bg-base-300 rounded">
-                  <div className="h-4 bg-yellow-400 rounded w-[1%]"></div>
-                </div>
-                <h1 className=" font-bold">
-                  <span className="ml-2">1%</span>
-                </h1>
-              </div>
-            </div>
-          </div> */}
           <div className="lg:block md:block hidden">
             <h1 className="text-2xl mt-6 mb-2">
               Reviews({ratingData?.length})

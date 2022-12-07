@@ -12,9 +12,9 @@ const Blogs = () => {
     return <Loader></Loader>;
   }
   return (
-    <div>
+    <div className="container mx-auto">
       <div>
-        <h1 className="text-4xl text-center my-10">Our site Blogs</h1>
+        <h1 className="text-4xl text-center my-10">Featured Blogs</h1>
       </div>
       <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 lg:mx-10 gap-5 my-10">
         {blogs?.data?.map((blog) => (

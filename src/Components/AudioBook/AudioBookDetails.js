@@ -60,7 +60,7 @@ const AudioBookDetails = () => {
   }
   const newDetails = audiobook?.data?.find((s) => s._id === bookId);
   return (
-    <div className="mb-12">
+    <div className="mb-12 container mx-auto">
       <h1 className="text-3xl text-center pt-6 font-bold mb-8">
         Explore Top Rated Podcasts
       </h1>

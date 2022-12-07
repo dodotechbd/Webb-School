@@ -11,8 +11,8 @@ const Courses = () => {
     return <div className="mx-auto mt-16" id="preloaders"></div>;
   }
   return (
-    <div>
-      <div id="courses" className="p-10 bg-base-100  border-b border-neutral">
+    <div id="courses" className="p-10 bg-base-100  border-b border-neutral">
+      <div className="container mx-auto">
         <h1 className="lg:text-4xl md:text-3xl mb-16 mt-8 text-2xl uppercase font-sub font-bold text-center">
           Special Courses
         </h1>

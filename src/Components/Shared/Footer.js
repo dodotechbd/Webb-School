@@ -10,7 +10,7 @@ const Footer = () => {
   const year = today.getFullYear();
   return (
     <div className="bg-base-200 border-t border-neutral">
-      <footer className="footer p-10 text-base-content">
+      <footer className="container mx-auto footer p-10 text-base-content">
         <div className="md:w-60">
           <Link to={"/"} className="flex items-center lg:mx-0 md:mx-0 mx-auto">
             <img className="w-11" src={logo} alt="image" />
@@ -117,28 +117,28 @@ const Footer = () => {
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://web.facebook.com/rashelmahomudf/"
+              href="https://web.facebook.com/rashelmahomudf/" rel="noreferrer"
             >
               <i className="fa-brands fa-facebook"></i>
             </a>
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://www.instagram.com/rashel_mahomud/"
+              href="https://www.instagram.com/rashel_mahomud/" rel="noreferrer"
             >
               <i className="fa-brands fa-instagram"></i>
             </a>
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://www.linkedin.com/in/rashelmahomud/"
+              href="https://www.linkedin.com/in/rashelmahomud/" rel="noreferrer"
             >
               <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
+              href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos" rel="noreferrer"
             >
               <i className="fa-brands fa-youtube"></i>
             </a>
@@ -150,28 +150,28 @@ const Footer = () => {
           <a
             target="_blank"
             className="text-2xl"
-            href="https://web.facebook.com/rashelmahomudf/"
+            href="https://web.facebook.com/rashelmahomudf/" rel="noreferrer"
           >
             <i className="fa-brands fa-facebook"></i>
           </a>
           <a
             target="_blank"
             className="text-2xl"
-            href="https://www.instagram.com/rashel_mahomud/"
+            href="https://www.instagram.com/rashel_mahomud/" rel="noreferrer"
           >
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a
             target="_blank"
             className="text-2xl"
-            href="https://www.linkedin.com/in/rashelmahomud/"
+            href="https://www.linkedin.com/in/rashelmahomud/" rel="noreferrer"
           >
             <i className="fa-brands fa-linkedin"></i>
           </a>
           <a
             target="_blank"
             className="text-2xl"
-            href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
+            href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos" rel="noreferrer"
           >
             <i className="fa-brands fa-youtube"></i>
           </a>

@@ -16,8 +16,8 @@ const BlogDetails = () => {
   const newBlogs = blogs?.data?.filter((blog) => blog._id == detailsId);
 
   return (
-    <div className="hero">
-      <div className="hero-content items-start lg:flex-row flex-col lg:px-20 my-2 lg:my-20">
+    <div className="container mx-auto">
+      <div className="hero-content mx-auto items-start lg:flex-row flex-col lg:px-20 my-2 lg:my-20">
         <div className="lg:mx-20 w-full">
           <h1 className="text-2xl font-bold my-2">{newBlogs[0]?.title}</h1>{" "}
           <br />

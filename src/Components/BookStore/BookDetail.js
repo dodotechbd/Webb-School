@@ -65,8 +65,8 @@ const BookDetail = () => {
     return <Loading></Loading>;
   }
   return (
-    <div className="hero bg-base-100 my-6">
-      <div className="flex lg:w-full w-11/12 gap-10  justify-center flex-col-reverse lg:flex-row md:flex-row items-start">
+    <div className="bg-base-100 my-6">
+      <div className="container mx-auto flex lg:w-full w-11/12 gap-10  justify-center flex-col-reverse lg:flex-row md:flex-row items-start">
         <div className="lg:w-6/12 md:w-full">
           <h1 className="text-3xl uppercase font-bold">{newService?.name}</h1>
           <div className="py-3">
