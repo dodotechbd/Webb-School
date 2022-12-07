@@ -3,8 +3,8 @@ import vdo from "../../Assets/vdo.jpg";
 const Promotional = () => {
   return ( 
     <div className="my-16 bg-base-100">
-      <div className="hero">
-        <div className="hero-content flex-col lg:flex-row-reverse">
+      <div className="container mx-auto">
+        <div className="hero-content mx-auto flex-col lg:flex-row-reverse">
           <div
             className="hero h-48 md:h-72 lg:h-80 rounded-xl"
             style={{ backgroundImage: `url(${vdo})` }}
@@ -27,7 +27,7 @@ const Promotional = () => {
               We provide easiest formula, notes and guidelines to ensure best
               education. Enroll yours now.
             </p>
-            <a href="https://web.facebook.com/groups/programmingherocommunity" target={'_blank'} className="btn btn-accent btn-sm font-thin text-white">
+            <a href="https://web.facebook.com/groups/programmingherocommunity" target={'_blank'} className="btn btn-accent btn-sm font-thin text-white" rel="noreferrer">
               Join Us
             </a>
           </div>

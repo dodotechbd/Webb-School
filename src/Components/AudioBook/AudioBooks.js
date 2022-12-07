@@ -14,7 +14,7 @@ const AudioBooks = () => {
     return <Loader></Loader>;
   }
   return (
-    <div>
+    <div className="container mx-auto">
       <div className="lg:mx-10 lg:my-10 mx-6 my-6">
         <h1 className="lg:text-3xl md:text-2xl text-xl mb-6 uppercase">
           Latest Audiobooks

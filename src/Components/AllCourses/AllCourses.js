@@ -18,7 +18,7 @@ const AllCourses = () => {
   }
 
   return (
-    <div id="courses" className="courses">
+    <div id="courses" className="courses container mx-auto">
       <div className="lg:mx-8 mx-4 pt-10">
         <h1 className="text-3xl pb-5 ">Language Learning</h1>
         <div className="grid sm:grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-10">

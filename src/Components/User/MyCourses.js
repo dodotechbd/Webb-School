@@ -22,7 +22,7 @@ const MyCourses = () => {
   }
 
   return (
-    <div id="admission" className="lg:mb-40">
+    <div id="admission" className="lg:mb-40 container mx-auto">
       <div className="lg:mx-8 mx-4 pt-10">
         <h1 className="text-3xl pb-5 ">My Courses</h1>
         <div className="grid justify-items-center sm:grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-2 mb-10">

@@ -15,20 +15,18 @@ const BookStore = () => {
     return <Loader></Loader>;
   }
   return (
-    <div>
-      <div>
-        <div className="p-10">
-          <h1 className="lg:text-3xl md:text-2xl text-xl mb-6 uppercase">
-            Academic BookStore
-          </h1>
-          <div className="grid  sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-4 gap-6  ">
-            {acadamicbook?.data?.map((acadamicbook) => (
-              <AcadamicBook
-                key={acadamicbook._id}
-                acadamicbook={acadamicbook}
-              ></AcadamicBook>
-            ))}
-          </div>
+    <div className="container mx-auto">
+      <div className="p-10">
+        <h1 className="lg:text-3xl md:text-2xl text-xl mb-6 uppercase">
+          Academic BookStore
+        </h1>
+        <div className="grid  sm:grid-cols-2 md:grid-cols-2  lg:grid-cols-4 gap-6  ">
+          {acadamicbook?.data?.map((acadamicbook) => (
+            <AcadamicBook
+              key={acadamicbook._id}
+              acadamicbook={acadamicbook}
+            ></AcadamicBook>
+          ))}
         </div>
       </div>
       <SkillBooks></SkillBooks>

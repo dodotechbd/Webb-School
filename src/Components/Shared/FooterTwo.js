@@ -4,8 +4,7 @@ import { Link } from "react-router-dom";
 const FooterTwo = () => {
   return (
     <div className="bg-base-200 border-t font-sub border-neutral">
-      <section>
-        <div className="container py-16 mx-auto">
+      <div className="container py-16 mx-auto">
           <div className="flex flex-wrap pl-10 ">
             <div className="p-4  lg:w-1/4 sm:w-1/2 w-full ">
               <h2 className="tracking-widest font-header mb-4 text-lg sm:text-left ">
@@ -293,7 +292,6 @@ const FooterTwo = () => {
             </div>
           </div>
         </div>
-      </section>
     </div>
   );
 };
