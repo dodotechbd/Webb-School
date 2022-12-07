@@ -1,6 +1,6 @@
 # Webb-School Website
 
- This website will be created to serve education purposes. [Sorry,Site is under construction]().
+ Live website link here. [Webb School](https://webb-school.netlify.app/).
 
 ## Features will be uploaded soon.
 
