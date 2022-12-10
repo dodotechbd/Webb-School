@@ -1,72 +1,40 @@
-import React from "react";
-import swal from "sweetalert";
+import React, { useState } from "react";
 import primaryAxios from "../../../Api/primaryAxios";
+import ActionModal from "../../../Components/ActionModal";
 
 const AdmissionCard = ({ allcard, refetch }) => {
   const { _id } = allcard;
 
-  const deleteItems = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Once Deleted,This Process Can't Be Undone",
-      icon: "warning",
-      className: "rounded-xl",
-      buttons: ["Cancle", "Yes, delete it!"],
-      confirmButtonColor: "#000000",
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        (async () => {
-          const { data } = await primaryAxios.delete(`/admission/${id}`);
-          if (data.deletedCount > 0) {
-            swal("The course has been successfully deleted", {
-              icon: "success",
-              className: "rounded-xl",
-            });
+  const [open, setOpen] = useState("");
 
+  const deleteItems = (id) => {
+    (async () => {
+      setOpen("loading");
+      const { data } = await primaryAxios.delete(`/admission/${id}`);
+      if (data.deletedCount > 0) {
+        setOpen("success");
+        setTimeout(
+          () => {
             refetch();
-          }
-        })();
-      } else {
-        swal("Action Canclled", {
-          icon: "success",
-          className: "rounded-xl",
-        });
+          },
+          open === "" ? 0 : 2000
+        );
       }
-    });
+    })();
   };
   const handleAddToSpecial = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Are you add this in the special!",
-      icon: "warning",
-      className: "rounded-xl",
-      buttons: ["Cancle", "Ok"],
-      confirmButtonColor: "#000000",
-    }).then((willDelete) => {
-      if (willDelete) {
-        (async () => {
-          const { data } = await primaryAxios.post(`/special`, {
-            name: allcard?.name,
-            uname: allcard?.uname,
-            img: allcard?.img,
-            instructor: allcard?.instructor,
-          });
-          if (data.success) {
-            refetch();
-          }
-          swal("The course has been successfully added to special", {
-            icon: "success",
-            className: "rounded-xl",
-          });
-        })();
-      } else {
-        swal("Action Canclled", {
-          icon: "success",
-          className: "rounded-xl",
-        });
+    (async () => {
+      const { data } = await primaryAxios.post(`/special`, {
+        name: allcard?.name,
+        uname: allcard?.uname,
+        img: allcard?.img,
+        instructor: allcard?.instructor,
+      });
+      if (data.success) {
+        refetch();
       }
-    });
+      setOpen("added");
+    })();
   };
   return (
     <div className="mx-auto mt-3 card card-compact lg:w-48 w-10/12 bg-base-100 border rounded-md border-neutral">
@@ -87,19 +55,30 @@ const AdmissionCard = ({ allcard, refetch }) => {
         </h2>
         <div>
           <button
-            onClick={() => handleAddToSpecial(_id)}
+            onClick={() => setOpen("special")}
             className="btn btn-block text-green-600 hover:bg-green-600 hover:text-base-100 rounded-none lg:btn-sm btn-ghost border-t-neutral"
           >
             Add To Special
           </button>
           <button
-            onClick={() => deleteItems(_id)}
+            onClick={() => setOpen("remove")}
             className="btn btn-block hover:bg-red-600 hover:text-base-100 text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral lg:btn-sm hover:rounded-b-md"
           >
             Delete Course
           </button>
         </div>
       </div>
+      <ActionModal
+        open={open === "remove"}
+        special={open === "special"}
+        success={open === "success"}
+        added={open === "added"}
+        loading={open === "loading"}
+        onSpecial={() => handleAddToSpecial(_id)}
+        remove={() => deleteItems(_id)}
+        title={allcard?.name}
+        cancel={() => setOpen("")}
+      />
     </div>
   );
 };

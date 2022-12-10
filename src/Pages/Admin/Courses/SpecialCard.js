@@ -1,39 +1,25 @@
-import React from "react";
-import swal from "sweetalert";
+import React, { useState } from "react";
 import primaryAxios from "../../../Api/primaryAxios";
+import ActionModal from "../../../Components/ActionModal";
 
 const SpecialCard = ({ allcard, refetch }) => {
   const { _id } = allcard;
 
+  const [open, setOpen] = useState("");
   const deleteItems = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Once Deleted,This Process Can't Be Undone",
-      icon: "warning",
-      className: "rounded-xl",
-      buttons: ["Cancle", "Yes, delete it!"],
-      confirmButtonColor: "#000000",
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
-        (async () => {
-          const { data } = await primaryAxios.delete(`/special/${id}`);
-          if (data.deletedCount > 0) {
-            swal("The course has been successfully deleted", {
-              icon: "success",
-              className: "rounded-xl",
-            });
-
+    (async () => {
+      setOpen("loading");
+      const { data } = await primaryAxios.delete(`/special/${id}`);
+      if (data.deletedCount > 0) {
+        setOpen("success");
+        setTimeout(
+          () => {
             refetch();
-          }
-        })();
-      } else {
-        swal("Action Canclled", {
-          icon: "success",
-          className: "rounded-xl",
-        });
+          },
+          open === "" ? 0 : 2000
+        );
       }
-    });
+    })();
   };
   return (
     <div className="mx-auto mt-3 card card-compact lg:w-48 w-10/12 bg-base-100 border rounded-md border-neutral">
@@ -54,13 +40,21 @@ const SpecialCard = ({ allcard, refetch }) => {
         </h2>
         <div>
           <button
-            onClick={() => deleteItems(_id)}
+            onClick={() => setOpen("remove")}
             className="btn btn-block hover:bg-red-600 hover:text-white text-red-600 rounded-none rounded-b-md btn-ghost border-t-neutral btn-md hover:rounded-b-md"
           >
             Delete Course
           </button>
         </div>
       </div>
+      <ActionModal
+        open={open === "remove"}
+        success={open === "success"}
+        loading={open === "loading"}
+        remove={() => deleteItems(_id)}
+        title={allcard?.name}
+        cancel={() => setOpen("")}
+      />
     </div>
   );
 };
