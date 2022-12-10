@@ -1,8 +1,8 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
-import logo from "../../Assets/wslogo.png";
 import auth from "../../firebase.init";
+import { ReactComponent as WsLogo } from "../../webb-school-logo.svg";
 
 const Footer = () => {
   const [user, loading, error] = useAuthState(auth);
@@ -13,7 +13,7 @@ const Footer = () => {
       <footer className="container mx-auto footer p-10 text-base-content">
         <div className="md:w-60">
           <Link to={"/"} className="flex items-center lg:mx-0 md:mx-0 mx-auto">
-            <img className="w-11" src={logo} alt="image" />
+            <WsLogo className="w-10 h-10" />
             <div className="ml-1 text-lg font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>
@@ -24,7 +24,7 @@ const Footer = () => {
               Create your free account and start learning
             </p>
             {user ? (
-              <Link to={'courses'}>
+              <Link to={"courses"}>
                 <button className="btn mt-2 btn-accent font-thin text-white btn-sm">
                   Enroll Now
                 </button>
@@ -117,28 +117,32 @@ const Footer = () => {
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://web.facebook.com/rashelmahomudf/" rel="noreferrer"
+              href="https://web.facebook.com/rashelmahomudf/"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-facebook"></i>
             </a>
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://www.instagram.com/rashel_mahomud/" rel="noreferrer"
+              href="https://www.instagram.com/rashel_mahomud/"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-instagram"></i>
             </a>
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://www.linkedin.com/in/rashelmahomud/" rel="noreferrer"
+              href="https://www.linkedin.com/in/rashelmahomud/"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-linkedin"></i>
             </a>
             <a
               target="_blank"
               className="text-2xl mr-4"
-              href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos" rel="noreferrer"
+              href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
+              rel="noreferrer"
             >
               <i className="fa-brands fa-youtube"></i>
             </a>
@@ -150,28 +154,32 @@ const Footer = () => {
           <a
             target="_blank"
             className="text-2xl"
-            href="https://web.facebook.com/rashelmahomudf/" rel="noreferrer"
+            href="https://web.facebook.com/rashelmahomudf/"
+            rel="noreferrer"
           >
             <i className="fa-brands fa-facebook"></i>
           </a>
           <a
             target="_blank"
             className="text-2xl"
-            href="https://www.instagram.com/rashel_mahomud/" rel="noreferrer"
+            href="https://www.instagram.com/rashel_mahomud/"
+            rel="noreferrer"
           >
             <i className="fa-brands fa-instagram"></i>
           </a>
           <a
             target="_blank"
             className="text-2xl"
-            href="https://www.linkedin.com/in/rashelmahomud/" rel="noreferrer"
+            href="https://www.linkedin.com/in/rashelmahomud/"
+            rel="noreferrer"
           >
             <i className="fa-brands fa-linkedin"></i>
           </a>
           <a
             target="_blank"
             className="text-2xl"
-            href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos" rel="noreferrer"
+            href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
+            rel="noreferrer"
           >
             <i className="fa-brands fa-youtube"></i>
           </a>

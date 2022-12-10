@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
-import primaryAxios from "../../../Api/primaryAxios";
-import Loading from "../../Shared/Loading/Loading";
 import { GoPrimitiveDot } from "react-icons/go";
 import { MdDoNotDisturbOff } from "react-icons/md";
+import Swal from "sweetalert2";
+import primaryAxios from "../../../Api/primaryAxios";
 
 const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
   const { _id, name, img, uname } = languages;
