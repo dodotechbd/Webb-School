@@ -6,9 +6,10 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { useQuery } from "react-query";
 import { Link, NavLink } from "react-router-dom";
-import wslogo from "../../../Assets/wslogo.png";
 import auth from "../../../firebase.init";
 import useRole from "../../../Hooks/useRole";
+import { ReactComponent as WsLogo } from "../../../webb-school-logo.svg";
+
 import Messages from "../../Messages/Messages";
 import "./Header.css";
 
@@ -20,12 +21,12 @@ import useMessage from "../../../Hooks/useMessage";
 const Header = ({ handleThemeChange, theme }) => {
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading, userName] = useRole();
-  
+
   const [admission, job, language] = useAllCourse();
   const { data: myCourse } = useQuery(["myCourses", user?.email], () =>
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
-  
+
   const myCourseData = myCourse?.data.find((s) => s.uname);
 
   const courseData =
@@ -101,14 +102,16 @@ const Header = ({ handleThemeChange, theme }) => {
   );
 
   return (
-    <div className="navbar fixed top-0 w-full z-50 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
+    <div className="navbar fixed top-0 w-full z-40 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
+
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
             <ul tabIndex="0" className="bg-base-200 h-screen">
               <Link to="/">
                 <div className="flex items-center p-2 w-full">
-                  <img className="w-9 ml-3" src={wslogo} alt="image" />
+                  <WsLogo className="w-9 h-8 ml-3" />
+
                   <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
@@ -256,7 +259,8 @@ const Header = ({ handleThemeChange, theme }) => {
         </Drawer>
         <Link to="/">
           <div className="flex items-center">
-            <img className="w-9 ml-3" src={wslogo} alt="image" />
+            <WsLogo className="w-9 h-8 ml-3" />
+
             <div className="ml-1 text-md font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>
