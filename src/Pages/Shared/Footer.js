@@ -143,6 +143,7 @@ const Footer = () => {
               className="text-2xl mr-4"
               href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
               rel="noreferrer"
+
             >
               <i className="fa-brands fa-youtube"></i>
             </a>
@@ -156,6 +157,7 @@ const Footer = () => {
             className="text-2xl"
             href="https://web.facebook.com/rashelmahomudf/"
             rel="noreferrer"
+
           >
             <i className="fa-brands fa-facebook"></i>
           </a>
@@ -164,6 +166,7 @@ const Footer = () => {
             className="text-2xl"
             href="https://www.instagram.com/rashel_mahomud/"
             rel="noreferrer"
+
           >
             <i className="fa-brands fa-instagram"></i>
           </a>
@@ -172,6 +175,7 @@ const Footer = () => {
             className="text-2xl"
             href="https://www.linkedin.com/in/rashelmahomud/"
             rel="noreferrer"
+
           >
             <i className="fa-brands fa-linkedin"></i>
           </a>
@@ -180,6 +184,7 @@ const Footer = () => {
             className="text-2xl"
             href="https://www.youtube.com/channel/UC34_bPGvxSQLNb8D8OcPRbA/videos"
             rel="noreferrer"
+
           >
             <i className="fa-brands fa-youtube"></i>
           </a>

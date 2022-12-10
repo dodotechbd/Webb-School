@@ -1,5 +1,6 @@
 import React from "react";
 import { ReactComponent as WsLogo } from "../../../webb-school-logo.svg";
+
 import "./PreLoader.css";
 
 const PreLoader = () => {
@@ -24,6 +25,7 @@ const PreLoader = () => {
         </div>
       </div>
     </div>
+
   );
 };
 

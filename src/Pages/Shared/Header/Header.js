@@ -9,6 +9,7 @@ import { Link, NavLink } from "react-router-dom";
 import auth from "../../../firebase.init";
 import useRole from "../../../Hooks/useRole";
 import { ReactComponent as WsLogo } from "../../../webb-school-logo.svg";
+
 import Messages from "../../Messages/Messages";
 import "./Header.css";
 
@@ -102,6 +103,7 @@ const Header = ({ handleThemeChange, theme }) => {
 
   return (
     <div className="navbar fixed top-0 w-full z-40 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
+
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
@@ -109,6 +111,7 @@ const Header = ({ handleThemeChange, theme }) => {
               <Link to="/">
                 <div className="flex items-center p-2 w-full">
                   <WsLogo className="w-9 h-8 ml-3" />
+
                   <div className="ml-1 text-md font-sub font-bold mt-1">
                     <p>Webb</p>
                     <p className="-mt-2">School</p>
@@ -257,6 +260,7 @@ const Header = ({ handleThemeChange, theme }) => {
         <Link to="/">
           <div className="flex items-center">
             <WsLogo className="w-9 h-8 ml-3" />
+
             <div className="ml-1 text-md font-header font-bold">
               <p>Webb</p>
               <p className="-mt-2">School</p>
