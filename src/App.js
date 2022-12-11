@@ -1,10 +1,8 @@
 import { useEffect, useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import RequireAdmin from "./Authentication/RequireAdmin";
 import RequireAuth from "./Authentication/RequireAuth";
-import auth from "./firebase.init";
 import AcademicBookss from "./Pages/Admin/AcademicBookss";
 import AddBlogs from "./Pages/Admin/AddBlogs";
 import Admin from "./Pages/Admin/Admin";
@@ -25,6 +23,7 @@ import ManageReview from "./Pages/Admin/ManageReview/ManageReview";
 import Message from "./Pages/Admin/Message";
 import Payments from "./Pages/Admin/Payments";
 import SkillBookss from "./Pages/Admin/SkillBookss";
+import UserDetails from "./Pages/Admin/UserDetails";
 import Users from "./Pages/Admin/Users";
 import AllAdmission from "./Pages/AllAdmission/AllAdmission";
 import AllCourses from "./Pages/AllCourses/AllCourses";
@@ -51,7 +50,6 @@ import Stripe from "./Pages/Payments/Stripe";
 import Footer from "./Pages/Shared/Footer";
 import FooterTwo from "./Pages/Shared/FooterTwo";
 import Header from "./Pages/Shared/Header/Header";
-import PreLoader from "./Pages/Shared/Loading/PreLoader";
 import Dashboard from "./Pages/User/Dashboard";
 import MyLiveClass from "./Pages/User/LiveClass";
 import MyAudioBooks from "./Pages/User/MyAudioBooks";
@@ -67,7 +65,6 @@ import UnderConstruction from "./Pages/WrongRoute/UnderConstruction";
 
 function App() {
   const [theme, setTheme] = useState(false);
-  const [user, loading] = useAuthState(auth);
   useEffect(() => {
     setTheme(JSON.parse(window.localStorage.getItem("theme")));
   }, []);
@@ -81,16 +78,7 @@ function App() {
       data-theme={theme && "my_dark"}
       className="pt-16 font-header min-h-screen"
     >
-      {loading ? (
-        <div
-          className="bg-gradient-to-r from-base-300 to-base-200"
-          id="preloader"
-        >
-          <PreLoader></PreLoader>
-        </div>
-      ) : (
-        <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
-      )}
+      <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
 
       <Routes>
         <Route path="/" element={<Home></Home>}></Route>
@@ -225,6 +213,10 @@ function App() {
               element={<Payments></Payments>}
             ></Route>
             <Route path="/admin/message" element={<Message></Message>}></Route>
+            <Route
+              path="/admin/users/:email"
+              element={<UserDetails></UserDetails>}
+            ></Route>
           </Route>
         </Route>
         {/* courses  */}

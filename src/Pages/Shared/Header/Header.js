@@ -1,30 +1,30 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
-import { FiBell } from "react-icons/fi";
+import { FiSend } from "react-icons/fi";
+import { HiMoon, HiSun } from "react-icons/hi";
 import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { useQuery } from "react-query";
 import { Link, NavLink } from "react-router-dom";
-import auth from "../../../firebase.init";
-import useRole from "../../../Hooks/useRole";
-import { ReactComponent as WsLogo } from "../../../webb-school-logo.svg";
-
-import Messages from "../../Messages/Messages";
-import "./Header.css";
-
 import primaryAxios from "../../../Api/primaryAxios";
-
+import auth from "../../../firebase.init";
 import useAllCourse from "../../../Hooks/useAllCourse";
 import useMessage from "../../../Hooks/useMessage";
+import useRole from "../../../Hooks/useRole";
+import useUser from "../../../Hooks/useUser";
+import { ReactComponent as WsLogo } from "../../../webb-school-logo.svg";
+import SendMessage from "../../Admin/SendMessage";
+import Preloader from "../Loading/PreLoader";
+import "./Header.css";
 
 const Header = ({ handleThemeChange, theme }) => {
+  const [role] = useRole();
   const [user, loading] = useAuthState(auth);
-  const [role, roleLoading, userName] = useRole();
-
+  const [fuser] = useUser();
   const [admission, job, language] = useAllCourse();
-  const { data: myCourse } = useQuery(["myCourses", user?.email], () =>
-    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  const { data: myCourse } = useQuery(["myCourses", fuser?.data?.email], () =>
+    primaryAxios.get(`/mycourse?email=${fuser?.data.email}`)
   );
 
   const myCourseData = myCourse?.data.find((s) => s.uname);
@@ -39,10 +39,10 @@ const Header = ({ handleThemeChange, theme }) => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const [message, isLoading, refetch] = useMessage();
+  const [message] = useMessage();
 
   const userMessageData = message?.data?.filter(
-    (allcard) => allcard?.email === user?.email
+    (allcard) => allcard?.email === fuser?.data?.email
   );
   const logout = () => {
     signOut(auth);
@@ -67,12 +67,6 @@ const Header = ({ handleThemeChange, theme }) => {
       <li>
         <NavLink to="audiobook">AudioBook</NavLink>
       </li>
-      {/* <li>
-        <NavLink to="admission">Admission</NavLink>
-      </li>
-      <li>
-        <NavLink to="jobs">Jobs</NavLink>
-      </li> */}
       <li>
         <NavLink to="blogs">Blog</NavLink>
       </li>
@@ -100,10 +94,18 @@ const Header = ({ handleThemeChange, theme }) => {
       )}
     </>
   );
-
+  if (loading) {
+    return (
+      <div
+        className="bg-gradient-to-r from-base-300 to-base-200"
+        id="preloader"
+      >
+        <Preloader></Preloader>
+      </div>
+    );
+  }
   return (
     <div className="navbar fixed top-0 w-full z-40 lg:px-10  bg-base-200 bg-opacity-30 backdrop-filter backdrop-blur-lg border-b-[0.5px] border-neutral">
-
       <div className="navbar-start">
         <Drawer open={isOpen} onClose={toggleDrawer} direction="left">
           <div>
@@ -170,15 +172,15 @@ const Header = ({ handleThemeChange, theme }) => {
                         <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                           <img
                             src={`${
-                              user?.photoURL
-                                ? user?.photoURL
+                              fuser?.data?.image
+                                ? fuser?.data?.image
                                 : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                             }`}
                           />
                         </div>
                       </label>
                       <p className="whitespace-nowrap">
-                        {userName ? userName : "User"}
+                        {fuser?.data?.name || "User"}
                         <i className="ml-2 fa-solid fa-angle-down"></i>
                       </p>
                     </div>
@@ -274,19 +276,21 @@ const Header = ({ handleThemeChange, theme }) => {
         </ul>
       </div>
 
-      <div className="navbar-end hidden lg:flex">
+      <div className="navbar-end hidden lg:flex items-center">
         {user ? (
           <div className="dropdown dropdown-end">
-            <button tabIndex="0" className="pr-6 mt-3">
+            <button tabIndex="0" className="pr-5 mt-2">
               <div className="indicator">
-                <span className="indicator-item badge right-1 badge-xs w-[16px] h-[16px] bg-red-600 text-white">
-                  {userMessageData?.length > 9 ? (
-                    <span>9+</span>
-                  ) : (
-                    <span>{userMessageData?.length}</span>
-                  )}
-                </span>
-                <FiBell className="text-xl" />
+                {userMessageData?.length >= 1 && (
+                  <span className="indicator-item badge right-[1px] badge-xs w-[16px] h-[16px] bg-red-600 text-white">
+                    {userMessageData?.length > 9 ? (
+                      <span>9+</span>
+                    ) : (
+                      <span>{userMessageData?.length}</span>
+                    )}
+                  </span>
+                )}
+                <FiSend className="text-[22px]" />
               </div>
             </button>
             <div
@@ -295,10 +299,14 @@ const Header = ({ handleThemeChange, theme }) => {
             >
               <div className="card-body p-1">
                 <h3 className="text-xl px-3 pt-2">
-                  Notifications!{" "}
-                  <i className="text-yellow-500 fa-solid fa-bell"></i>
+                  Messages !
+                  <i className="text-primary fa-solid fa-paper-plane ml-2"></i>
                 </h3>
-                <Messages></Messages>
+                <SendMessage
+                  header
+                  name={fuser?.data?.name}
+                  email={fuser?.data?.email}
+                />
               </div>
             </div>
           </div>
@@ -310,31 +318,9 @@ const Header = ({ handleThemeChange, theme }) => {
           className="rounded-full lg:mx-2 pr-5"
         >
           {theme ? (
-            <svg
-              aria-hidden="true"
-              id="theme-toggle-light-icon"
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fillRule="evenodd"
-                clipRule="evenodd"
-              ></path>
-            </svg>
+            <HiSun className="text-2xl" />
           ) : (
-            <svg
-              aria-hidden="true"
-              id="theme-toggle-dark-icon"
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
+            <HiMoon className="text-2xl" />
           )}
         </button>
 
@@ -344,8 +330,8 @@ const Header = ({ handleThemeChange, theme }) => {
               <div className="w-9 rounded-full">
                 <img
                   src={`${
-                    user?.photoURL
-                      ? user?.photoURL
+                    fuser?.data?.image
+                      ? fuser?.data?.image
                       : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                   }`}
                 />
@@ -360,8 +346,8 @@ const Header = ({ handleThemeChange, theme }) => {
                   <div className="w-20 rounded-full">
                     <img
                       src={`${
-                        user?.photoURL
-                          ? user?.photoURL
+                        fuser?.data?.image
+                          ? fuser?.data?.image
                           : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                       }`}
                     />
@@ -370,9 +356,11 @@ const Header = ({ handleThemeChange, theme }) => {
               </div>
               <div className="border-b border-neutral">
                 <h1 className="text-lg text-center">
-                  {userName ? userName.slice(0, 14) : "User"}
+                  {fuser?.data?.name?.slice(0, 14) || "User"}
                 </h1>
-                <p className="text-xs mb-2 text-center">Student</p>
+                <p className="text-xs mb-2 text-center">
+                  {fuser?.data?.profession?.slice(0, 30) || "---"}
+                </p>
               </div>
               <li>
                 <NavLink to={"profile"} className=" hover:rounded-none">
@@ -447,14 +435,18 @@ const Header = ({ handleThemeChange, theme }) => {
         {user ? (
           <div className="dropdown dropdown-end">
             <button tabIndex="0" className="pr-3 mt-3">
-              <p>
-                <FiBell className="text-xl" />
-                <span className="inline-flex absolute text-xs text-left bg-red-600 rounded-full w-3 h-3 z-0 left-[8px] bottom-[18px] justify-center text-white">
-                  <span className="text-xs -mt-[1.8px]">
-                    {userMessageData?.length}
+              <div className="indicator">
+                {userMessageData?.length >= 1 && (
+                  <span className="indicator-item badge right-[1px] badge-xs w-[16px] h-[16px] bg-red-600 text-white">
+                    {userMessageData?.length > 9 ? (
+                      <span>9+</span>
+                    ) : (
+                      <span>{userMessageData?.length}</span>
+                    )}
                   </span>
-                </span>
-              </p>
+                )}
+                <FiSend className="text-[22px]" />
+              </div>
             </button>
             <div
               tabIndex="0"
@@ -462,10 +454,14 @@ const Header = ({ handleThemeChange, theme }) => {
             >
               <div className="card-body p-1">
                 <h3 className="text-xl px-3 pt-2">
-                  Notifications!{" "}
-                  <i className="text-yellow-500 fa-solid fa-bell"></i>
+                  Messages !
+                  <i className="text-primary fa-solid fa-paper-plane ml-2"></i>
                 </h3>
-                <Messages></Messages>
+                <SendMessage
+                  header
+                  name={fuser?.data?.name}
+                  email={fuser?.data?.email}
+                />
               </div>
             </div>
           </div>
@@ -477,31 +473,9 @@ const Header = ({ handleThemeChange, theme }) => {
           className="rounded-full lg:mx-2 font-bold px-2"
         >
           {theme ? (
-            <svg
-              aria-hidden="true"
-              id="theme-toggle-light-icon"
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-                fillRule="evenodd"
-                clipRule="evenodd"
-              ></path>
-            </svg>
+            <HiSun className="text-2xl" />
           ) : (
-            <svg
-              aria-hidden="true"
-              id="theme-toggle-dark-icon"
-              className="w-5 h-5"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-            </svg>
+            <HiMoon className="text-2xl" />
           )}
         </button>
         <div className="dropdown">

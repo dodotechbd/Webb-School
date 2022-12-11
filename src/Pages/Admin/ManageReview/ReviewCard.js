@@ -1,8 +1,9 @@
 import React from "react";
+import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
 import swal from "sweetalert";
-import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import primaryAxios from "../../../Api/primaryAxios";
+import { ReactComponent as Profile } from "../../../Assets/user.svg";
 
 const ReviewCard = ({ allcard, index, refetch }) => {
   const handleAddToSpecial = (id) => {
@@ -45,14 +46,14 @@ const ReviewCard = ({ allcard, index, refetch }) => {
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img
-                src={
-                  allcard?.author?.photo
-                    ? allcard?.author?.photo
-                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                }
-                alt="Avatar Tailwind CSS Component"
-              />
+              {allcard?.author?.photo ? (
+                <img
+                  src={allcard?.author?.photo}
+                  alt="Avatar Tailwind CSS Component"
+                />
+              ) : (
+                <Profile />
+              )}
             </div>
           </div>
           <div>
@@ -73,22 +74,31 @@ const ReviewCard = ({ allcard, index, refetch }) => {
         <label
           htmlFor={allcard?._id}
           className="btn modal-button py-[5px] btn-xs btn-primary tooltip tooltip-bottom tooltip-base-300 font-thin"
-          data-tip={allcard?.review.slice(0,40)}
+          data-tip={allcard?.review.slice(0, 40)}
         >
           View Review
         </label>
         <input type="checkbox" id={allcard?._id} className="modal-toggle" />
         <label htmlFor={allcard?._id} className="modal cursor-pointer">
-          <label className="modal-box relative whitespace-normal p-4" htmlFor="">
-          <label htmlFor={allcard?._id} className="btn btn-xs btn-circle absolute right-2 top-2">✕</label>
-            <p className="py-4">
-              {allcard?.review}
-            </p>
+          <label
+            className="modal-box relative whitespace-normal p-4"
+            htmlFor=""
+          >
+            <label
+              htmlFor={allcard?._id}
+              className="btn btn-xs btn-circle absolute right-2 top-2"
+            >
+              ✕
+            </label>
+            <p className="py-4">{allcard?.review}</p>
           </label>
         </label>
       </td>
       <td>
-        <button onClick={() => handleAddToSpecial(allcard?._id)} className="btn btn-xs btn-outline">
+        <button
+          onClick={() => handleAddToSpecial(allcard?._id)}
+          className="btn btn-xs btn-outline"
+        >
           Add To Homepage
         </button>
       </td>
