@@ -57,7 +57,7 @@ const UserDetails = () => {
   }
   return (
     <div className="flex items-center gap-4 m-4">
-      <div className="w-5/12 h-full border border-neutral rounded-xl shadow-2xl bg-base-100">
+      <div className="lg:w-5/12 mx-auto h-full border border-neutral rounded-xl shadow-2xl bg-base-100">
         <div>
           <div className="items-center form-control">
             <div>
@@ -234,7 +234,7 @@ const UserDetails = () => {
           </a>
         </div>
       </div>
-      <div className="bg-base-200 rounded-xl border border-neutral w-7/12 h-96"></div>
+      <div className="bg-base-200 rounded-xl border border-neutral w-7/12 h-96 hidden lg:block"></div>
     </div>
   );
 };
