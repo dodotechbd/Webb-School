@@ -1,6 +1,7 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import { ReactComponent as HeroImage } from "../../../Assets/hero.svg";
 import auth from "../../../firebase.init";
 import "./Hero.css";
 
@@ -11,7 +12,7 @@ const Hero = () => {
       <div className="zero hero -mt-12 pt-12 min-h-screen bg-base-100 border-b border-neutral">
         <div className="container mx-auto hero-content w-10/12 p-0 flex-col-reverse lg:flex-row-reverse">
           <div className="w-full">
-            <img src="https://raw.githubusercontent.com/MShafiMS/admission/eeb6c9456e6bec86eeddaf072a43cd089f371637/hero.svg" />
+            <HeroImage />
           </div>
           <div className="w-full">
             <h1 className="text-7xl text-warning font-mono drop-shadow-lg text-center lg:text-left">

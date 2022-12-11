@@ -8,10 +8,7 @@ const Messages = () => {
   const [user, loading] = useAuthState(auth);
   const userEmail = user?.email;
 
-  const [message, isLoading, refetch] = useMessage();
-  if (isLoading) {
-    return <div className="mx-auto" id="preloaders"></div>;
-  }
+  const [message, refetch] = useMessage();
   const userMessageData = message?.data?.filter(
     (allcard) => allcard.email === userEmail
   );

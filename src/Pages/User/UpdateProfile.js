@@ -1,33 +1,27 @@
 import React from "react";
-import { useAuthState, useUpdateProfile } from "react-firebase-hooks/auth";
+import { useUpdateProfile } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { useQuery } from "react-query";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
+import useUser from "../../Hooks/useUser";
 import Loading from "../Shared/Loading/Loading";
 
 const UpdateProfile = () => {
-  const [{ email }] = useAuthState(auth);
   const [role, roleLoading] = useRole();
   const [updateProfile, updating, error] = useUpdateProfile(auth);
+  const [user, userLoading, userFetch] = useUser();
   const navigate = useNavigate();
+
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const {
-    data: user,
-    isLoading,
-    refetch,
-  } = useQuery(["userProfile", email], () =>
-    primaryAxios.get(`/user-role?email=${email}`)
-  );
-  if (roleLoading || isLoading || updating) {
+  if (roleLoading || userLoading || updating) {
     return <Loading></Loading>;
   }
   const onSubmit = async (updatedInfo) => {
@@ -37,12 +31,12 @@ const UpdateProfile = () => {
     });
     (async () => {
       const { data } = await primaryAxios.put(
-        `/update-user?qEmail=${email}`,
+        `/update-user?qEmail=${user?.data?.email}`,
         updatedInfo
       );
       if (data) {
         toast.success("User Updated Successfully");
-        refetch();
+        userFetch();
         navigate("/profile");
       }
     })();
@@ -55,17 +49,30 @@ const UpdateProfile = () => {
         </Link>
       </div>
       <h1 className="text-xl font-semibold mx-5">User Information</h1>
-      {/* <div>
-        <div className="m-8 rounded-xl bg-[url('https://placeimg.com/1000/800/arch')]">
-          <div className="justify-start pt-8 pl-4 card-actions">
+      <div>
+        <div className="m-8 mb-0 relative rounded-xl bg-[url('https://placeimg.com/1000/800/arch')]">
+          <div className="relative z-30 flex items-center gap-6 pt-8 pb-2 pl-6">
             <div className="avatar">
               <div className="w-24 rounded-full">
-                <img src="https://placeimg.com/192/192/people" />
+                <img
+                  src={`${
+                    user?.data?.image
+                      ? user?.data?.image
+                      : "https://placeimg.com/192/192/people"
+                  }`}
+                />
               </div>
             </div>
+            <div>
+              <h1 className="text-3xl uppercase font-sub">
+                {user?.data?.name}
+              </h1>
+              <p className="text-sm font-sub">{user?.data?.email}</p>
+            </div>
           </div>
+          <div className="absolute z-0 h-full w-full bg-base-100 bg-opacity-60 rounded-xl top-0 left-0" />
         </div>
-      </div> */}
+      </div>
       <div className="card-body grid gap-x-8 gap-y-4 grid-cols-2">
         <div className="form-control">
           <label className="label">

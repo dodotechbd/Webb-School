@@ -3,6 +3,7 @@ import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
 import swal from "sweetalert";
 import primaryAxios from "../../../Api/primaryAxios";
+import { ReactComponent as Profile } from "../../../Assets/user.svg";
 
 const AllReviewCard = ({ allcard, index, refetch }) => {
   const deleteItems = (id) => {
@@ -42,14 +43,14 @@ const AllReviewCard = ({ allcard, index, refetch }) => {
         <div className="flex items-center space-x-3">
           <div className="avatar">
             <div className="mask mask-squircle w-12 h-12">
-              <img
-                src={
-                  allcard?.author?.photo
-                    ? allcard?.author?.photo
-                    : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
-                }
-                alt="Avatar Tailwind CSS Component"
-              />
+              {allcard?.author?.photo ? (
+                <img
+                  src={allcard?.author?.photo}
+                  alt="Avatar Tailwind CSS Component"
+                />
+              ) : (
+                <Profile />
+              )}
             </div>
           </div>
           <div>

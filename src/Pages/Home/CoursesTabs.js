@@ -65,15 +65,13 @@ const CoursesTabs = () => {
           {course === "language" && (
             <Swiper
               slidesPerView={4}
-              spaceBetween={-25}
+              spaceBetween={45}
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,
-                  spaceBetween: -80,
                 },
                 "@0.25": {
                   slidesPerView: 1,
-                  spaceBetween: -70,
                 },
                 "@0.60": {
                   slidesPerView: 2,
@@ -120,15 +118,13 @@ const CoursesTabs = () => {
           {course === "job" && (
             <Swiper
               slidesPerView={4}
-              spaceBetween={-25}
+              spaceBetween={45}
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,
-                  spaceBetween: -80,
                 },
                 "@0.25": {
                   slidesPerView: 1,
-                  spaceBetween: -70,
                 },
                 "@0.60": {
                   slidesPerView: 2,
@@ -175,15 +171,13 @@ const CoursesTabs = () => {
           {course === "admission" && (
             <Swiper
               slidesPerView={4}
-              spaceBetween={-25}
+              spaceBetween={45}
               breakpoints={{
                 "@0.00": {
                   slidesPerView: 1,
-                  spaceBetween: -80,
                 },
                 "@0.25": {
                   slidesPerView: 1,
-                  spaceBetween: -70,
                 },
                 "@0.60": {
                   slidesPerView: 2,
