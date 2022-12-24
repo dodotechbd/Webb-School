@@ -7,7 +7,7 @@ import primaryAxios from "../../../Api/primaryAxios";
 
 const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
   const { _id, uname, img, name } = admissions;
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (MLink) => {

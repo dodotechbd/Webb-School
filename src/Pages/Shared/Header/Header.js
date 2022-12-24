@@ -19,7 +19,7 @@ import Preloader from "../Loading/PreLoader";
 import "./Header.css";
 
 const Header = ({ handleThemeChange, theme }) => {
-  const [role] = useRole();
+  const [role, roleLoading] = useRole();
   const [user, loading] = useAuthState(auth);
   const [fuser] = useUser();
   const [admission, job, language] = useAllCourse();
@@ -94,7 +94,7 @@ const Header = ({ handleThemeChange, theme }) => {
       )}
     </>
   );
-  if (loading) {
+  if ((user && (loading || roleLoading))) {
     return (
       <div
         className="bg-gradient-to-r from-base-300 to-base-200"

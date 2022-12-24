@@ -10,8 +10,8 @@ const UserDetails = () => {
   const { email } = useParams();
   const [send, setSend] = useState(false);
   const [history, setHistory] = useState(false);
-  const [aLoading, setALoading] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [aLoading, setALoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     data: users,
     isLoading,

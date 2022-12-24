@@ -8,7 +8,7 @@ import primaryAxios from "../../../Api/primaryAxios";
 
 const LanguagesTable = ({ languages, index, refetch, isLoading }) => {
   const { _id, name, img, uname } = languages;
-  const [loading, setLoading] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const { register, handleSubmit, reset } = useForm();
   const onSubmit = (MLink) => {
