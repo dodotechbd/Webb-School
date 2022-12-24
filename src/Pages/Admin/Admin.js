@@ -43,7 +43,7 @@ const Admin = () => {
       </div>
       <div className="drawer drawer-mobile">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
-        <div className="bg-base-100 drawer-content">
+        <div className="bg-base-100 drawer-content outlet dark:outlet-dark">
           <Outlet></Outlet>
         </div>
         <div className="drawer-side">

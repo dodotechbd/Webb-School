@@ -40,7 +40,6 @@ const UserRow = ({ user, refetch, index }) => {
       }
     })();
   };
-
   return (
     <tr>
       <td>{index + 1}</td>
@@ -69,7 +68,7 @@ const UserRow = ({ user, refetch, index }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{name}</div>
+            <Link to={`${email}`} className="font-bold hover:underline">{name}</Link>
             <div className="text-sm opacity-50">{email}</div>
           </div>
         </div>

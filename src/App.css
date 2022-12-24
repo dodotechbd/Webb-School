@@ -188,3 +188,25 @@
 .read-more {
   color: #3b82f6;
 }
+
+.outlet::-webkit-scrollbar {
+  /* height: 5px; */
+  width: 8px;
+  background: none;
+  border-left: 1px solid #24467e;
+}
+
+.outlet::-webkit-scrollbar-thumb {
+  background: #24467e;
+}
+
+::-webkit-scrollbar {
+  /* height: 5px; */
+  width: 10px;
+  background: none;
+  border-left: 1px solid #444444;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #444444;
+}
