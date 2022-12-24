@@ -1,17 +1,53 @@
 import React, { useState } from "react";
+import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
+import useAllCourse from "../../Hooks/useAllCourse";
 import PreLoader from "../Shared/Loading/PreLoader";
 import SendMessage from "./SendMessage";
+
+const CourseRow = (course) => {
+  const [admission, job, language] = useAllCourse();
+  const courseData =
+    admission?.data?.find((s) => s.uname === course?.course.uname) ||
+    language?.data?.find((s) => s.uname === course?.course.uname) ||
+    job?.data?.find((s) => s.uname === course?.course.uname);
+  console.log(courseData);
+  return (
+    <tr>
+      <td className="p-0 px-2">
+        <img src={course?.course.img} className="w-20" alt="" />
+      </td>
+      <td>
+        <h1>{course?.course?.name}</h1>
+        <p className="text-xs">{courseData?.instructor}</p>
+      </td>
+      <td className="flex justify-center">
+        <div
+          className="radial-progress bg-secondary text-primary-content border-4 border-secondary text-xs"
+          style={{
+            "--value":
+              (course?.course?.progress?.length / courseData?.videos?.length) *
+                100 || 0,
+            "--size": "35px",
+          }}
+        >
+          {(course?.course?.progress?.length / courseData?.videos?.length) *
+            100 || 0}
+        </div>
+      </td>
+    </tr>
+  );
+};
 
 const UserDetails = () => {
   const { email } = useParams();
   const [send, setSend] = useState(false);
   const [history, setHistory] = useState(false);
-  const [aLoading, setALoading] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [aLoading, setALoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const {
     data: users,
     isLoading,
@@ -52,12 +88,17 @@ const UserDetails = () => {
       }
     })();
   };
+
+  const { data: myCourse } = useQuery(["myCourses", email], () =>
+    primaryAxios.get(`/mycourse?email=${email}`)
+  );
+
   if (isLoading) {
     <PreLoader />;
   }
   return (
-    <div className="flex items-center gap-4 m-4">
-      <div className="lg:w-5/12 mx-auto h-full border border-neutral rounded-xl shadow-2xl bg-base-100">
+    <div className="flex lg:flex-row flex-col items-start gap-4 lg:m-4 m-2">
+      <div className="lg:w-5/12 w-full mx-auto h-full border border-neutral rounded-xl shadow-2xl bg-base-100">
         <div>
           <div className="items-center form-control">
             <div>
@@ -234,7 +275,34 @@ const UserDetails = () => {
           </a>
         </div>
       </div>
-      <div className="bg-base-200 rounded-xl border border-neutral w-7/12 h-96 hidden lg:block"></div>
+      <div className="bg-base-200 rounded-xl border border-neutral lg:w-7/12 w-full h-full lg:block">
+        <h1 className="text-lg p-2 border-b border-neutral">
+          Purchased Courses:
+        </h1>
+        <table className="table table-zebra w-full">
+          <thead>
+            <tr>
+              <th>Image</th>
+              <th>Name</th>
+              <th>Progress</th>
+            </tr>
+          </thead>
+          <tbody>
+            {myCourse?.data?.map((course, index) => (
+              <CourseRow key={index} course={course} />
+            ))}
+          </tbody>
+        </table>
+        {!myCourse?.data && (
+          <AiOutlineLoading3Quarters
+            size={40}
+            className="mx-auto my-3 fill-primary animate-spin"
+          />
+        )}
+        {!myCourse?.data?.length && (
+          <p className="text-center border-t border-neutral py-3">No Course Purchased!</p>
+        )}
+      </div>
     </div>
   );
 };

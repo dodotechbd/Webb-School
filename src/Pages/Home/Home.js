@@ -1,7 +1,6 @@
 import React from "react";
 import AnchorLink from "react-anchor-link-smooth-scroll";
 import { BsArrowUp } from "react-icons/bs";
-import MessengerCustomerChat from 'react-messenger-customer-chat';
 import useTitle from "../../Hooks/useTitle";
 import Support from "../../Pages/../Support/Support";
 import Courses from "../Course/Courses";
@@ -23,9 +22,6 @@ const Home = () => {
     <div>
       <Hero></Hero>
       {/* messenger chat */}
-      <MessengerCustomerChat
-        pageId="101878912628102" appId="3150275291906230"
-      />
       <Navigation></Navigation>
       <Banner></Banner>
       <Courses></Courses>
@@ -41,9 +37,6 @@ const Home = () => {
         <BsArrowUp />
       </AnchorLink>
       {/* messenger chat --- */}
-      <MessengerCustomerChat
-        pageId="101878912628102" appId="3150275291906230"
-      />
     </div>
 
   );

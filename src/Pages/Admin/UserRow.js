@@ -5,8 +5,8 @@ import primaryAxios from "../../Api/primaryAxios";
 import { ReactComponent as Profile } from "../../Assets/user.svg";
 const UserRow = ({ user, refetch, index }) => {
   const { name, email, role, _id, image } = user;
-  const [isLoading, setIsLoading] = useState(null);
-  const [loading, setLoading] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [loading, setLoading] = useState(false);
   const randomColor = Math.floor(Math.random() * 16777215).toString(16);
   const handleMakeAdmin = (id) => {
     setIsLoading(true);
@@ -40,7 +40,6 @@ const UserRow = ({ user, refetch, index }) => {
       }
     })();
   };
-
   return (
     <tr>
       <td>{index + 1}</td>
@@ -69,7 +68,7 @@ const UserRow = ({ user, refetch, index }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{name}</div>
+            <Link to={`${email}`} className="font-bold hover:underline">{name}</Link>
             <div className="text-sm opacity-50">{email}</div>
           </div>
         </div>
