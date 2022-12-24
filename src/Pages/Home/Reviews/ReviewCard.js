@@ -1,13 +1,13 @@
 import TimeAgo from "javascript-time-ago";
 import en from "javascript-time-ago/locale/en.json";
 import ru from "javascript-time-ago/locale/ru.json";
-import React from "react";
+import React, { useState } from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
-import ReactReadMoreReadLess from "react-read-more-read-less";
 import ReactTimeAgo from "react-time-ago";
 
 const ReviewCard = ({ course }) => {
+  const [readmore, setReadmore] = useState(false);
   TimeAgo.addLocale(en);
   TimeAgo.addLocale(ru);
   const { rating, review, reviewDate, author } = course;
@@ -24,7 +24,11 @@ const ReviewCard = ({ course }) => {
           />
         </div>
       </div>
-      <div className="rounded-lg w-11/12 mx-auto bg-base-300">
+      <div
+        className={`rounded-lg w-11/12 ${
+          readmore ? "h-full" : "h-72"
+        } mx-auto bg-base-300`}
+      >
         <div className="card-body p-7">
           <div className="mt-10">
             <div className="text-center font-sub">
@@ -42,15 +46,13 @@ const ReviewCard = ({ course }) => {
           </div>
           <div>
             <p className="text-left text-md font-sub opacity-80">
-              <ReactReadMoreReadLess
-                charLimit={170}
-                readMoreText={"...read more"}
-                readLessText={"...read less"}
-                readMoreClassName="read-more"
-                readLessClassName="read-more"
+              {readmore ? review : review?.slice(0, 170)}
+              <button
+                className="text-accent"
+                onClick={() => setReadmore(!readmore)}
               >
-                {review}
-              </ReactReadMoreReadLess>
+                {readmore ? "...read less" : "...read more"}
+              </button>
             </p>
             <p className="text-sm opacity-60 text-right">
               -
