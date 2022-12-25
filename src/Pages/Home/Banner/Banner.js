@@ -96,7 +96,7 @@ const Banner = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide className="card mb-8 shadow-xl">
-              <Link to={"/course/corporate-job"}>
+              <Link to={"/course/govt-job"}>
                 <img
                   src="https://i.postimg.cc/jSWtfc9y/Black-Friday-Instagram-Story-01.png"
                   alt="image"
@@ -136,7 +136,7 @@ const Banner = () => {
               </Link>
             </SwiperSlide>
             <SwiperSlide className="card mb-8 shadow-xl">
-              <Link to={"/course/freelancer-job"}>
+              <Link to={"/course/bcs-preliminary"}>
                 <img
                   src="https://i.postimg.cc/RZCnxkW4/Black-Friday-Instagram-Story-20.png"
                   alt="image"

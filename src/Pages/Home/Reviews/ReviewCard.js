@@ -26,7 +26,7 @@ const ReviewCard = ({ course }) => {
       </div>
       <div
         className={`rounded-lg w-11/12 ${
-          readmore ? "h-full" : "h-72"
+          readmore ? "h-full" : "lg:h-72 h-full"
         } mx-auto bg-base-300`}
       >
         <div className="card-body p-7">
@@ -47,12 +47,14 @@ const ReviewCard = ({ course }) => {
           <div>
             <p className="text-left text-md font-sub opacity-80">
               {readmore ? review : review?.slice(0, 170)}
-              <button
-                className="text-accent"
-                onClick={() => setReadmore(!readmore)}
-              >
-                {readmore ? "...read less" : "...read more"}
-              </button>
+              {review?.length > 170 && (
+                <button
+                  className="text-accent"
+                  onClick={() => setReadmore(!readmore)}
+                >
+                  {readmore ? "...read less" : "...read more"}
+                </button>
+              )}
             </p>
             <p className="text-sm opacity-60 text-right">
               -

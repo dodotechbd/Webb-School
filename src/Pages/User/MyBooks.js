@@ -1,9 +1,19 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
+import primaryAxios from "../../Api/primaryAxios";
+import auth from "../../firebase.init";
 import useTitle from "../../Hooks/useTitle";
 
 const MyBooks = () => {
   useTitle("My Books");
+  const [user] = useAuthState(auth);
+  const { data: Mybooks } = useQuery(["myEBooks", user?.email], () =>
+    primaryAxios.get(`/mybooks?email=${user?.email}`)
+  );
+  const myEbooks = Mybooks?.data?.filter((a) => a?.bookData?.pdfLink);
+  const myAudiobooks = Mybooks?.data?.filter((a) => a?.bookData?.audio);
   return (
     <div id="admission" className="lg:mb-40 container mx-auto">
       <div className="lg:mx-8 mx-4 pt-10">
@@ -22,7 +32,9 @@ const MyBooks = () => {
                 />
               </figure>
               <div className="w-full content-between grid">
-                <h2 className="px-2 py-1 text-xl">Audio Books</h2>
+                <h2 className="px-2 py-1 text-xl">
+                  Audio Books({myAudiobooks?.length})
+                </h2>
                 <div className="mx-2 mt-2 w-36 text-sm">
                   <p className="text-white p-[5px] h-8 rounded-full text-center btn-secondary">
                     Continue Listening
@@ -44,7 +56,9 @@ const MyBooks = () => {
                 />
               </figure>
               <div className="w-full content-between grid">
-                <h2 className="px-2 py-1 text-xl">eBooks</h2>
+                <h2 className="px-2 py-1 text-xl">
+                  eBooks({myEbooks?.length})
+                </h2>
                 <div className="mx-2 mt-2 w-36 text-sm">
                   <p className="text-white p-[5px] h-8 rounded-full text-center btn-secondary">
                     Continue Reading
