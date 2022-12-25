@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import useTitle from '../Hooks/useTitle';
 
 const Developer = () => {
