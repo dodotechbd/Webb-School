@@ -251,6 +251,18 @@ const SignUp = () => {
                     </span>
                   )}
                 </label>
+                <label className="label">
+                  {errors.confirmPassword?.type === "required" && (
+                    <span className="label-text-alt text-red-700">
+                      {errors.confirmPassword.message}
+                    </span>
+                  )}
+                  {errors.confirmPassword?.type === "minLength" && (
+                    <span className="label-text-alt text-red-700">
+                      {errors.confirmPassword.message}
+                    </span>
+                  )}
+                </label>
               </div>
 
               <div>
