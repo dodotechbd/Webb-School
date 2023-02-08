@@ -4,6 +4,7 @@ import {
   useUpdateProfile
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
@@ -15,8 +16,14 @@ const SignUp = () => {
     register,
     formState: { errors },
     handleSubmit,
+    watch,
   } = useForm();
+
+  const password = watch("password");
+
   const [name, setName] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+  const [confirmPassword, setConfirmPassword] = useState(false);
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -79,7 +86,7 @@ const SignUp = () => {
             <form
               onSubmit={handleSubmit(onSubmit)}
               action="#"
-              className="flex flex-col space-y-5"
+              className="flex flex-col space-y-2"
             >
               <div className="flex flex-col space-y-1">
                 <label
@@ -150,21 +157,35 @@ const SignUp = () => {
                     Password
                   </label>
                 </div>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="px-4 py-2 transition duration-300 border  text-black border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
-                  {...register("password", {
-                    required: {
-                      value: true,
-                      message: "Password is require",
-                    },
-                    minLength: {
-                      value: 6,
-                      message: "Must be 6 characters or longer",
-                    },
-                  })}
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    className="px-4 py-2 transition duration-300 border  text-black border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-full"
+                    {...register("password", {
+                      required: {
+                        value: true,
+                        message: "Password is require",
+                      },
+                      minLength: {
+                        value: 6,
+                        message: "Must be 6 characters or longer",
+                      },
+                    })}
+                  />
+                  <div className="absolute right-4 top-2.5 text-black">
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <IoEyeOutline size={20} />
+                      ) : (
+                        <IoEyeOffOutline size={20} />
+                      )}
+                    </button>
+                  </div>
+                </div>
                 <label className="label">
                   {errors.password?.type === "required" && (
                     <span className="label-text-alt text-red-700">
@@ -178,11 +199,65 @@ const SignUp = () => {
                   )}
                 </label>
               </div>
+              <div className="flex flex-col space-y-1">
+                <div className="flex items-center justify-between">
+                  <label
+                    htmlFor="password"
+                    className="text-sm font-semibold text-gray-900"
+                  >
+                    Confirm Password
+                  </label>
+                </div>
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    className="px-4 py-2 transition duration-300 border  text-black border-gray-300 rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-full"
+                    {...register("confirmPassword", {
+                      required: {
+                        value: true,
+                        message: "Please retype your password",
+                      },
+                      minLength: {
+                        value: 6,
+                        message: "Must be 6 characters or longer",
+                      },
+                    })}
+                    onChange={(e) => {
+                      if (e.target.value !== password) {
+                        setConfirmPassword(true);
+                      } else {
+                        setConfirmPassword(false);
+                      }
+                    }}
+                  />
+                  <div className="absolute right-4 top-2.5 text-black">
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <IoEyeOutline size={20} />
+                      ) : (
+                        <IoEyeOffOutline size={20} />
+                      )}
+                    </button>
+                  </div>
+                </div>
+                <label className="label">
+                  {confirmPassword && (
+                    <span className="label-text-alt text-red-700">
+                      Password does not match
+                    </span>
+                  )}
+                </label>
+              </div>
 
               <div>
                 {singInError}
                 <button
                   type="submit"
+                  disabled={confirmPassword}
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
                   Register

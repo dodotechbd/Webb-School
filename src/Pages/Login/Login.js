@@ -1,6 +1,7 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import auth from "../../firebase.init";
@@ -13,6 +14,7 @@ const Login = () => {
     formState: { errors },
     handleSubmit,
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
@@ -121,21 +123,35 @@ const Login = () => {
                     Forgot Password?
                   </Link>
                 </div>
-                <input
-                  type="password"
-                  placeholder="Password"
-                  className="px-4 py-2 transition duration-300 border border-gray-300  text-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200"
-                  {...register("password", {
-                    required: {
-                      value: true,
-                      message: "Password is require",
-                    },
-                    minLength: {
-                      value: 6,
-                      message: "Must be 6 characters or longer",
-                    },
-                  })}
-                />
+                <div className="relative">
+                  <input
+                    type={showPassword ? "text" : "password"}
+                    placeholder="Password"
+                    className="px-4 py-2 transition duration-300 border border-gray-300  text-black rounded focus:border-transparent focus:outline-none focus:ring-4 focus:ring-blue-200 w-full"
+                    {...register("password", {
+                      required: {
+                        value: true,
+                        message: "Password is require",
+                      },
+                      minLength: {
+                        value: 6,
+                        message: "Must be 6 characters or longer",
+                      },
+                    })}
+                  />
+                  <div className="absolute right-4 top-2.5 text-black">
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <IoEyeOutline size={20} />
+                      ) : (
+                        <IoEyeOffOutline size={20} />
+                      )}
+                    </button>
+                  </div>
+                </div>
                 <label className="label">
                   {errors.password?.type === "required" && (
                     <span className="label-text-alt text-red-700">
