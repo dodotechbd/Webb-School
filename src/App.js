@@ -66,13 +66,12 @@ import UnderConstruction from "./Pages/WrongRoute/UnderConstruction";
 function App() {
   const [theme, setTheme] = useState(false);
   useEffect(() => {
-    setTheme(JSON.parse(window.localStorage.getItem("theme")));
+    setTheme(JSON.parse(window.localStorage?.getItem("webb-school-theme")) || theme);
   }, []);
   const handleThemeChange = () => {
     setTheme(!theme);
-    window.localStorage.setItem("theme", !theme);
+    window.localStorage.setItem("webb-school-theme", !theme);
   };
-
   return (
     <div
       data-theme={theme && "my_dark"}
