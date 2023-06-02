@@ -1,9 +1,10 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Link, NavLink, Outlet } from "react-router-dom";
-import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
 import useTitle from "../../Hooks/useTitle";
+import auth from "../../firebase.init";
+import { ReactComponent as WsLogo } from "../../webb-school-logo.svg";
 import PreLoader from "../Shared/Loading/Loading";
 
 const Admin = () => {
@@ -35,9 +36,19 @@ const Admin = () => {
             </label>
           </div>
         </div>
-        <div className="flex-1">
+        <div className="flex justify-between items-center w-full">
           <Link to={"/admin"} className="btn btn-ghost font-thin text-xl">
             Admin Panel
+          </Link>
+          <Link to="/" target="self">
+            <div className="flex items-center px-8">
+              <WsLogo className="w-9 h-8 ml-3" />
+
+              <div className="ml-1 text-md font-header font-bold">
+                <p>Webb</p>
+                <p className="-mt-2">School</p>
+              </div>
+            </div>
           </Link>
         </div>
       </div>
