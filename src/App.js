@@ -26,8 +26,8 @@ import SkillBookss from "./Pages/Admin/SkillBookss";
 import UserDetails from "./Pages/Admin/UserDetails";
 import Users from "./Pages/Admin/Users";
 import AllAdmission from "./Pages/AllAdmission/AllAdmission";
-import AllCourses from "./Pages/AllCourses/AllCourses";
 import AllCourseView from "./Pages/AllCourses/AllCourseView";
+import AllCourses from "./Pages/AllCourses/AllCourses";
 import Checkout from "./Pages/AllCourses/Checkout";
 import CoursePlay from "./Pages/AllCourses/CoursePlay";
 import CourseVideo from "./Pages/AllCourses/CourseVideo";
@@ -49,7 +49,6 @@ import Bkash from "./Pages/Payments/Bkash";
 import Stripe from "./Pages/Payments/Stripe";
 import Footer from "./Pages/Shared/Footer";
 import FooterTwo from "./Pages/Shared/FooterTwo";
-import Header from "./Pages/Shared/Header/Header";
 import Dashboard from "./Pages/User/Dashboard";
 import MyLiveClass from "./Pages/User/LiveClass";
 import MyAudioBooks from "./Pages/User/MyAudioBooks";
@@ -62,11 +61,14 @@ import Profile from "./Pages/User/Profile";
 import UpdateProfile from "./Pages/User/UpdateProfile";
 import NoteFound from "./Pages/WrongRoute/NoteFound";
 import UnderConstruction from "./Pages/WrongRoute/UnderConstruction";
+import UserSite from "./UserSite";
 
 function App() {
   const [theme, setTheme] = useState(false);
   useEffect(() => {
-    setTheme(JSON.parse(window.localStorage?.getItem("webb-school-theme")) || theme);
+    setTheme(
+      JSON.parse(window.localStorage?.getItem("webb-school-theme")) || theme
+    );
   }, []);
   const handleThemeChange = () => {
     setTheme(!theme);
@@ -75,79 +77,108 @@ function App() {
   return (
     <div
       data-theme={theme && "my_dark"}
-      className="pt-16 font-header min-h-screen"
+      className="font-header min-h-screen"
     >
-      <Header handleThemeChange={handleThemeChange} theme={theme}></Header>
 
       <Routes>
-        <Route path="/" element={<Home></Home>}></Route>
-        <Route
-          path="/acadamicbook/:bookId"
-          element={<BookDetail></BookDetail>}
-        ></Route>
-        <Route
-          path="/skillbook/:bookId"
-          element={<BookDetail></BookDetail>}
-        ></Route>
-        <Route
-          path="/audiobook/:bookId"
-          element={<AudioBookDetails></AudioBookDetails>}
-        ></Route>
-        <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
-        <Route
-          path="/admission"
-          element={<AllAdmission></AllAdmission>}
-        ></Route>
-        <Route path="/jobs" element={<AllJobCourse></AllJobCourse>}></Route>
-        <Route path="/developer" element={<Developer></Developer>}></Route>
-        <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
-        <Route path="/audiobook" element={<AudioBooks></AudioBooks>}></Route>
-        <Route path="/Login" element={<Login></Login>}></Route>
-        <Route path="/reset" element={<Reset></Reset>}></Route>
-        <Route path="/blogs" element={<Blogs></Blogs>}></Route>
-        <Route element={<RequireAuth></RequireAuth>}>
-          <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
+        <Route element={<UserSite handleThemeChange={handleThemeChange} theme={theme} />}>
+          <Route path="/" element={<Home></Home>}></Route>
           <Route
-            path="/checkout/bkash/:uname"
-            element={<Bkash></Bkash>}
+            path="/acadamicbook/:bookId"
+            element={<BookDetail></BookDetail>}
           ></Route>
-          <Route path="/orders" element={<Order></Order>}></Route>
-          <Route path="/profile" element={<Profile></Profile>}>
-            <Route path="/profile" element={<PaidCourse></PaidCourse>}></Route>
+          <Route
+            path="/skillbook/:bookId"
+            element={<BookDetail></BookDetail>}
+          ></Route>
+          <Route
+            path="/audiobook/:bookId"
+            element={<AudioBookDetails></AudioBookDetails>}
+          ></Route>
+          <Route path="/courses" element={<AllCourses></AllCourses>}></Route>
+          <Route
+            path="/admission"
+            element={<AllAdmission></AllAdmission>}
+          ></Route>
+          <Route path="/jobs" element={<AllJobCourse></AllJobCourse>}></Route>
+          <Route path="/developer" element={<Developer></Developer>}></Route>
+          <Route path="/bookstore" element={<BookStore></BookStore>}></Route>
+          <Route path="/audiobook" element={<AudioBooks></AudioBooks>}></Route>
+          <Route path="/Login" element={<Login></Login>}></Route>
+          <Route path="/reset" element={<Reset></Reset>}></Route>
+          <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+          <Route element={<RequireAuth></RequireAuth>}>
+            <Route path="/checkout/stripe" element={<Stripe></Stripe>}></Route>
             <Route
-              path="/profile/update"
-              element={<UpdateProfile></UpdateProfile>}
+              path="/checkout/bkash/:uname"
+              element={<Bkash></Bkash>}
             ></Route>
+            <Route path="/orders" element={<Order></Order>}></Route>
+            <Route path="/profile" element={<Profile></Profile>}>
+              <Route
+                path="/profile"
+                element={<PaidCourse></PaidCourse>}
+              ></Route>
+              <Route
+                path="/profile/update"
+                element={<UpdateProfile></UpdateProfile>}
+              ></Route>
+            </Route>
+            <Route
+              path="/checkout/:uname"
+              element={<Checkout></Checkout>}
+            ></Route>
+            <Route
+              path="/bookcheckout/:bookId"
+              element={<BookCheckout></BookCheckout>}
+            ></Route>
+            <Route
+              path="/course/:uname/:list"
+              element={<CoursePlay></CoursePlay>}
+            >
+              <Route
+                path="/course/:uname/:list/:fileName"
+                element={<CourseVideo></CourseVideo>}
+              ></Route>
+            </Route>
           </Route>
           <Route
-            path="/checkout/:uname"
-            element={<Checkout></Checkout>}
+            path="/course/summary/:uname"
+            element={<Summary></Summary>}
+          ></Route>
+
+          <Route
+            path="/blogdetails/:detailsId"
+            element={<BlogDetails></BlogDetails>}
+          ></Route>
+          {/* courses  */}
+          <Route
+            path="/course/:uname"
+            element={<AllCourseView></AllCourseView>}
+          ></Route>
+          <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
+          <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
+          <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
+          <Route
+            path="/audiobooks"
+            element={<MyAudioBooks></MyAudioBooks>}
           ></Route>
           <Route
-            path="/bookcheckout/:bookId"
-            element={<BookCheckout></BookCheckout>}
+            path="/audiobooks"
+            element={<MyAudioBooks></MyAudioBooks>}
           ></Route>
           <Route
-            path="/course/:uname/:list"
-            element={<CoursePlay></CoursePlay>}
-          >
-            <Route
-              path="/course/:uname/:list/:fileName"
-              element={<CourseVideo></CourseVideo>}
-            ></Route>
-          </Route>
+            path="/liveclasses"
+            element={<MyLiveClass></MyLiveClass>}
+          ></Route>
+
+          <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
+          <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
+          <Route
+            path="/coming"
+            element={<UnderConstruction></UnderConstruction>}
+          ></Route>
         </Route>
-        <Route
-          path="/course/summary/:uname"
-          element={<Summary></Summary>}
-        ></Route>
-
-        <Route
-          path="/blogdetails/:detailsId"
-          element={<BlogDetails></BlogDetails>}
-        ></Route>
-        {/* admim */}
-
         <Route element={<RequireAdmin></RequireAdmin>}>
           <Route path="/admin" element={<Admin></Admin>}>
             <Route path="/admin" element={<Admins></Admins>}></Route>
@@ -218,33 +249,6 @@ function App() {
             ></Route>
           </Route>
         </Route>
-        {/* courses  */}
-        <Route
-          path="/course/:uname"
-          element={<AllCourseView></AllCourseView>}
-        ></Route>
-        <Route path="/mycourse" element={<MyCourses></MyCourses>}></Route>
-        <Route path="/mybooks" element={<MyBooks></MyBooks>}></Route>
-        <Route path="/ebooks" element={<MyEbooks></MyEbooks>}></Route>
-        <Route
-          path="/audiobooks"
-          element={<MyAudioBooks></MyAudioBooks>}
-        ></Route>
-        <Route
-          path="/audiobooks"
-          element={<MyAudioBooks></MyAudioBooks>}
-        ></Route>
-        <Route
-          path="/liveclasses"
-          element={<MyLiveClass></MyLiveClass>}
-        ></Route>
-
-        <Route path="/SignUp" element={<SignUp></SignUp>}></Route>
-        <Route path="/dashboard" element={<Dashboard></Dashboard>}></Route>
-        <Route
-          path="/coming"
-          element={<UnderConstruction></UnderConstruction>}
-        ></Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
       <FooterTwo></FooterTwo>
