@@ -7,11 +7,13 @@ import Rating from "react-rating";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
+import useUser from "../../Hooks/useUser";
 import auth from "../../firebase.init";
 
 const AddReview = () => {
   const { uname } = useParams();
   const [user, loading] = useAuthState(auth);
+  const [fuser] = useUser();
   const [rating, setRating] = useState(0);
   const {
     data: myCourse,
@@ -35,9 +37,9 @@ const AddReview = () => {
       courseName: courseData?.uname,
       reviewDate: new Date(),
       author: {
-        name: auth?.currentUser?.displayName,
+        name: fuser?.name || auth?.currentUser?.displayName,
         uid: auth?.currentUser?.uid,
-        photo: auth?.currentUser?.photoURL,
+        photo: fuser?.image || auth?.currentUser?.photoURL,
       },
     };
     (async () => {
@@ -53,7 +55,11 @@ const AddReview = () => {
   return (
     <div className="bg-base-100 rounded-lg  shadow-xl card-body items-start p-4">
       <div className="lg:flex items-center gap-4">
-        <img src={courseData?.img} className="lg:w-72 mx-auto rounded-md" alt="image" />
+        <img
+          src={courseData?.img}
+          className="lg:w-72 mx-auto rounded-md"
+          alt="image"
+        />
         <div className="w-full">
           <p className="text-2xl my-1">{courseData?.name}</p>
           <form className="my-2" onSubmit={handleSubmit(onSubmit)}>
@@ -77,9 +83,12 @@ const AddReview = () => {
               required
             ></textarea>
             <div className="card-actions justify-end">
-            <button type="submit" className="px-8 py-2 rounded-md btn-primary">
-              Update
-            </button>
+              <button
+                type="submit"
+                className="px-8 py-2 rounded-md btn-primary"
+              >
+                Update
+              </button>
             </div>
           </form>
         </div>

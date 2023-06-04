@@ -10,16 +10,19 @@ const useRole = () => {
   const [userName, setUserName] = useState("");
 
   useEffect(() => {
-    if (user?.email) {
-      (async () => {
-        const { data } = await primaryAxios.get(
-          `/user-role?email=${user?.email}`
-        );
+    (async () => {
+      const { data } = await primaryAxios.get(
+        `/user-role?email=${user?.email}`
+      );
+      if (data?.role) {
         setRole(data?.role);
         setRoleLoading(false);
-        setUserName(data?.name);
-      })();
-    }
+      } else {
+        setRole("");
+        setRoleLoading(false);
+      }
+      setUserName(data?.name);
+    })();
   }, [user]);
   return [role, roleLoading, userName];
 };

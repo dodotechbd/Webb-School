@@ -18,6 +18,7 @@ const Social = () => {
         const { data } = await primaryAxios.put(`/user`, {
           name: user?.user?.displayName,
           email: user?.user?.email,
+          // image: user?.user?.photoURL,
         });
         if (data.token) {
           localStorage.setItem("authorizationToken", data.token);

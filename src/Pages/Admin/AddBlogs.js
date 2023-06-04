@@ -8,8 +8,8 @@ const AddBlogs = (e) => {
 
   const onSubmit = (data) => {
     const newReview = {
-        ...data
-      };
+      ...data,
+    };
     (async () => {
       const { data } = await primaryAxios.post(`/blogs`, newReview);
       if (data.acknowledged) {
@@ -76,3 +76,27 @@ const AddBlogs = (e) => {
 };
 
 export default AddBlogs;
+
+/* 
+63a870a97846a236b345e751,
+63a870a97846a236b345e752,
+63a870a97846a236b345e753,
+63a870a97846a236b345e754,
+63a870a97846a236b345e755,
+63a870a97846a236b345e756,
+63a870a97846a236b345e757,
+63a870a97846a236b345e758,
+630b465fb1d3b4b5d629777b,
+630b465fb1d3b4b5d629777a,
+630b465fb1d3b4b5d629777c,
+630b465fb1d3b4b5d629777d,
+630b465fb1d3b4b5d629777e,
+630b465fb1d3b4b5d629777f,
+630b465fb1d3b4b5d6297780,
+630b465fb1d3b4b5d6297781,
+630b158ab1d3b4b5d6e000c1,
+630b158ab1d3b4b5d6e000c2,
+630b158ab1d3b4b5d6e000c3,
+630b158ab1d3b4b5d6e000c4,
+630b158ab1d3b4b5d6e000c5
+*/

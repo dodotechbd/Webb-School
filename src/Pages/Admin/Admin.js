@@ -66,13 +66,8 @@ const Admin = () => {
               </NavLink>
             </li>
             <li>
-              <NavLink to={"/admin/academicbookss"}>
-                <i className="fa-solid fa-book"></i>Manage Academic Books
-              </NavLink>
-            </li>
-            <li>
-              <NavLink to={"/admin/skillbookss"}>
-                <i className="fa-solid fa-book"></i>Manage Skill Books
+              <NavLink to={"/admin/books/academicbooks"}>
+                <i className="fa-solid fa-book"></i>Manage Books
               </NavLink>
             </li>
             <li>
