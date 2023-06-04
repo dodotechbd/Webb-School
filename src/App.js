@@ -7,6 +7,7 @@ import AcademicBookss from "./Pages/Admin/AcademicBookss";
 import AddBlogs from "./Pages/Admin/AddBlogs";
 import Admin from "./Pages/Admin/Admin";
 import Admins from "./Pages/Admin/Admins";
+import ManageBooks from "./Pages/Admin/Books/ManageBooks";
 import AddAdmission from "./Pages/Admin/Courses/AddAdmission";
 import AddJob from "./Pages/Admin/Courses/AddJob";
 import AddLanguage from "./Pages/Admin/Courses/AddLanguage";
@@ -47,8 +48,6 @@ import Reset from "./Pages/Login/Reset";
 import SignUp from "./Pages/Login/SingUp";
 import Bkash from "./Pages/Payments/Bkash";
 import Stripe from "./Pages/Payments/Stripe";
-import Footer from "./Pages/Shared/Footer";
-import FooterTwo from "./Pages/Shared/FooterTwo";
 import Dashboard from "./Pages/User/Dashboard";
 import MyLiveClass from "./Pages/User/LiveClass";
 import MyAudioBooks from "./Pages/User/MyAudioBooks";
@@ -75,13 +74,13 @@ function App() {
     window.localStorage.setItem("webb-school-theme", !theme);
   };
   return (
-    <div
-      data-theme={theme && "my_dark"}
-      className="font-header min-h-screen"
-    >
-
+    <div data-theme={theme && "my_dark"} className="font-header min-h-screen">
       <Routes>
-        <Route element={<UserSite handleThemeChange={handleThemeChange} theme={theme} />}>
+        <Route
+          element={
+            <UserSite handleThemeChange={handleThemeChange} theme={theme} />
+          }
+        >
           <Route path="/" element={<Home></Home>}></Route>
           <Route
             path="/acadamicbook/:bookId"
@@ -179,80 +178,91 @@ function App() {
             element={<UnderConstruction></UnderConstruction>}
           ></Route>
         </Route>
-        <Route element={<RequireAdmin></RequireAdmin>}>
-          <Route path="/admin" element={<Admin></Admin>}>
-            <Route path="/admin" element={<Admins></Admins>}></Route>
-            <Route path="/admin/courses/manage" element={<Manage></Manage>}>
-              <Route
-                path="/admin/courses/manage"
-                element={<Special></Special>}
-              ></Route>
-              <Route
-                path="/admin/courses/manage/language"
-                element={<Language></Language>}
-              ></Route>
-              <Route
-                path="/admin/courses/manage/job"
-                element={<Job></Job>}
-              ></Route>
-              <Route
-                path="/admin/courses/manage/admission"
-                element={<Admission></Admission>}
-              ></Route>
-            </Route>
-            <Route
-              path="/admin/skillbookss"
-              element={<SkillBookss></SkillBookss>}
-            ></Route>
-            <Route
-              path="/admin/academicbookss"
-              element={<AcademicBookss></AcademicBookss>}
-            ></Route>
-            <Route
-              path="/admin/reviews"
-              element={<ManageReview></ManageReview>}
-            >
+        <Route element={<RequireAuth />}>
+          <Route element={<RequireAdmin></RequireAdmin>}>
+            <Route path="/admin" element={<Admin></Admin>}>
+              <Route path="/admin" element={<Admins></Admins>}></Route>
+              <Route path="/admin/courses/manage" element={<Manage></Manage>}>
+                <Route
+                  path="/admin/courses/manage"
+                  element={<Special></Special>}
+                ></Route>
+                <Route
+                  path="/admin/courses/manage/language"
+                  element={<Language></Language>}
+                ></Route>
+                <Route
+                  path="/admin/courses/manage/job"
+                  element={<Job></Job>}
+                ></Route>
+                <Route
+                  path="/admin/courses/manage/admission"
+                  element={<Admission></Admission>}
+                ></Route>
+              </Route>
+              <Route element={<ManageBooks />}>
+                <Route
+                  path="/admin/books/academicbooks"
+                  element={<SkillBookss></SkillBookss>}
+                ></Route>
+                <Route
+                  path="/admin/books/skillbooks"
+                  element={<AcademicBookss></AcademicBookss>}
+                ></Route>
+              </Route>
               <Route
                 path="/admin/reviews"
-                element={<AllReviews></AllReviews>}
+                element={<ManageReview></ManageReview>}
+              >
+                <Route
+                  path="/admin/reviews"
+                  element={<AllReviews></AllReviews>}
+                ></Route>
+                <Route
+                  path="/admin/reviews/course"
+                  element={<CourseReview></CourseReview>}
+                ></Route>
+                <Route
+                  path="/admin/reviews/book"
+                  element={<BookReview></BookReview>}
+                ></Route>
+              </Route>
+              <Route
+                path="/admin/livePost/live"
+                element={<Live></Live>}
               ></Route>
               <Route
-                path="/admin/reviews/course"
-                element={<CourseReview></CourseReview>}
+                path="/admin/addlanguage"
+                element={<AddLanguage></AddLanguage>}
+              ></Route>
+              <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
+              <Route
+                path="/admin/addadmission"
+                element={<AddAdmission></AddAdmission>}
+              ></Route>
+              <Route path="/admin/live" element={<Live></Live>}></Route>
+              <Route
+                path="/admin/blogs"
+                element={<AddBlogs></AddBlogs>}
+              ></Route>
+              <Route path="/admin/users" element={<Users></Users>}></Route>
+              <Route
+                path="/admin/payments"
+                element={<Payments></Payments>}
               ></Route>
               <Route
-                path="/admin/reviews/book"
-                element={<BookReview></BookReview>}
+                path="/admin/message"
+                element={<Message></Message>}
+              ></Route>
+              <Route
+                path="/admin/users/:email"
+                element={<UserDetails></UserDetails>}
               ></Route>
             </Route>
-            <Route path="/admin/livePost/live" element={<Live></Live>}></Route>
-            <Route
-              path="/admin/addlanguage"
-              element={<AddLanguage></AddLanguage>}
-            ></Route>
-            <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
-            <Route
-              path="/admin/addadmission"
-              element={<AddAdmission></AddAdmission>}
-            ></Route>
-            <Route path="/admin/live" element={<Live></Live>}></Route>
-            <Route path="/admin/blogs" element={<AddBlogs></AddBlogs>}></Route>
-            <Route path="/admin/users" element={<Users></Users>}></Route>
-            <Route
-              path="/admin/payments"
-              element={<Payments></Payments>}
-            ></Route>
-            <Route path="/admin/message" element={<Message></Message>}></Route>
-            <Route
-              path="/admin/users/:email"
-              element={<UserDetails></UserDetails>}
-            ></Route>
           </Route>
         </Route>
         <Route path="*" element={<NoteFound></NoteFound>}></Route>
       </Routes>
-      <FooterTwo></FooterTwo>
-      <Footer></Footer>
     </div>
   );
 }

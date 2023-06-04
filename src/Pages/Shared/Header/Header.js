@@ -19,10 +19,10 @@ import Preloader from "../Loading/PreLoader";
 import "./Header.css";
 
 const Header = ({ handleThemeChange, theme }) => {
-  const [role] = useRole();
+  const [role, roleLoading] = useRole();
   const pathname = window.location.pathname;
   const [user, loading] = useAuthState(auth);
-  const [fuser] = useUser();
+  const [fuser, userLoading] = useUser();
   const [admission, job, language] = useAllCourse();
   const [isLiveNav, setIsLiveNav] = useState(true);
   const { data: myCourse } = useQuery(["myCourses", fuser?.data?.email], () =>
@@ -74,7 +74,7 @@ const Header = ({ handleThemeChange, theme }) => {
       </li>
     </>
   );
-  if (loading) {
+  if (loading || roleLoading || userLoading) {
     return (
       <div
         className="bg-gradient-to-r from-base-300 to-base-200"

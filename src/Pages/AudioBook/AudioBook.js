@@ -2,15 +2,11 @@ import React from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import { useQuery } from "react-query";
 import Rating from "react-rating";
-import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 
 const AudioBook = ({ audiobook }) => {
   const { _id, name, img, price, deal } = audiobook;
-  const navigate = useNavigate();
-  const navigateToAudioBookDetail = (id) => {
-    navigate(`/audiobook/${id}`);
-  };
   const { data: bookreviews, refetch } = useQuery(["bookreviewsData"], () =>
     primaryAxios.get(`/bookreviews`)
   );
@@ -21,8 +17,8 @@ const AudioBook = ({ audiobook }) => {
   const totalRating = ratingData?.reduce((a, b) => a + b, 0);
   const avgRating = totalRating / ratingData?.length;
   return (
-    <div
-      onClick={() => navigateToAudioBookDetail(_id)}
+    <Link
+      to={`/audiobook/${_id}`}
       className="btn-ghost bg-base-300 rounded-lg position relative p-0 shadow-lg cursor-pointer mb-4"
     >
       <figure className=" px-2 pt-5">
@@ -64,7 +60,7 @@ const AudioBook = ({ audiobook }) => {
           </div>
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 

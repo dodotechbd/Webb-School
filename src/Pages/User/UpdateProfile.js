@@ -4,9 +4,9 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import primaryAxios from "../../Api/primaryAxios";
-import auth from "../../firebase.init";
 import useRole from "../../Hooks/useRole";
 import useUser from "../../Hooks/useUser";
+import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
 const UpdateProfile = () => {
@@ -50,7 +50,15 @@ const UpdateProfile = () => {
       </div>
       <h1 className="text-xl font-semibold mx-5">User Information</h1>
       <div>
-        <div className="m-8 mb-0 relative rounded-xl bg-[url('https://placeimg.com/1000/800/arch')]">
+        <div
+          style={{
+            // eslint-disable-next-line no-undef
+            backgroundImage: `url(${
+              user?.data?.coverPhoto || "https://placeimg.com/1000/800/arch"
+            })`,
+          }}
+          className="m-8 mb-0 relative rounded-xl"
+        >
           <div className="relative z-30 flex items-center gap-6 pt-8 pb-2 pl-6">
             <div className="avatar">
               <div className="w-24 rounded-full">
