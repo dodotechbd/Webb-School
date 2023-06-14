@@ -9,7 +9,6 @@ import { useQuery } from "react-query";
 import { Link, NavLink } from "react-router-dom";
 import primaryAxios from "../../../Api/primaryAxios";
 import useAllCourse from "../../../Hooks/useAllCourse";
-import useMessage from "../../../Hooks/useMessage";
 import useRole from "../../../Hooks/useRole";
 import useUser from "../../../Hooks/useUser";
 import auth from "../../../firebase.init";
@@ -22,7 +21,7 @@ const Header = ({ handleThemeChange, theme }) => {
   const [role, roleLoading] = useRole();
   const pathname = window.location.pathname;
   const [user, loading] = useAuthState(auth);
-  const [fuser, userLoading] = useUser();
+  const [fuser, userLoading, userFetch] = useUser();
   const [admission, job, language] = useAllCourse();
   const [isLiveNav, setIsLiveNav] = useState(true);
   const { data: myCourse } = useQuery(["myCourses", fuser?.data?.email], () =>
@@ -30,7 +29,7 @@ const Header = ({ handleThemeChange, theme }) => {
   );
 
   const myCourseData = myCourse?.data.find((s) => s.uname);
-
+  const userMessageData = fuser?.data.messages;
   const courseData =
     admission?.data?.find((s) => s.uname === myCourseData?.uname) ||
     language?.data?.find((s) => s.uname === myCourseData?.uname) ||
@@ -41,11 +40,6 @@ const Header = ({ handleThemeChange, theme }) => {
     setIsOpen((prevState) => !prevState);
   };
 
-  const [message] = useMessage();
-
-  const userMessageData = message?.data?.filter(
-    (allcard) => allcard?.email === fuser?.data?.email
-  );
   const logout = () => {
     signOut(auth);
     //Token Remove
@@ -53,6 +47,17 @@ const Header = ({ handleThemeChange, theme }) => {
   };
   let activeClassName = "relative text-white bg-red-600";
   let deactiveClassName = "relative text-green-600";
+  const handleRead = async () => {
+    if (userMessageData) {
+      await primaryAxios.put(`/user`, {
+        name: fuser?.data?.name,
+        email: fuser?.data?.email,
+        image: fuser?.data?.image,
+        messages: 0,
+      });
+      userFetch();
+    }
+  };
   const manuItems = (
     <>
       <li>
@@ -293,14 +298,18 @@ const Header = ({ handleThemeChange, theme }) => {
           <div className="navbar-end hidden lg:flex items-center">
             {user ? (
               <div className="dropdown dropdown-end">
-                <button tabIndex="0" className="pr-5 mt-2">
+                <button
+                  onClick={() => handleRead()}
+                  tabIndex="0"
+                  className="pr-5 mt-2"
+                >
                   <div className="indicator">
-                    {userMessageData?.length >= 1 && (
+                    {userMessageData >= 1 && (
                       <span className="indicator-item badge right-[1px] badge-xs w-[16px] h-[16px] bg-red-600 text-white">
-                        {userMessageData?.length > 9 ? (
+                        {userMessageData > 9 ? (
                           <span>9+</span>
                         ) : (
-                          <span>{userMessageData?.length}</span>
+                          <span>{userMessageData}</span>
                         )}
                       </span>
                     )}
@@ -309,18 +318,16 @@ const Header = ({ handleThemeChange, theme }) => {
                 </button>
                 <div
                   tabIndex="0"
-                  className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-72 "
+                  className="dropdown-content  rounded-lg bg-base-200 border border-neutral mt-6 w-96"
                 >
-                  <div className="card-body p-1">
+                  <div className="card-body pt-1 pb-2 pl-2 pr-0 max-h-96">
                     <h3 className="text-xl px-3 pt-2">
                       Messages !
                       <i className="text-primary fa-solid fa-paper-plane ml-2"></i>
                     </h3>
-                    <SendMessage
-                      header
-                      name={fuser?.data?.name}
-                      email={fuser?.data?.email}
-                    />
+                    <div className="message overflow-y-auto pr-1">
+                      <SendMessage header user={fuser?.data} />
+                    </div>
                   </div>
                 </div>
               </div>
@@ -446,13 +453,19 @@ const Header = ({ handleThemeChange, theme }) => {
               </div>
             ) : (
               <div className="flex">
-                <a className="btn-accent btn-sm btn rounded-md text-white font-thin">
-                  <Link to="Login">Login</Link>
-                </a>
+                <Link
+                  className="btn-accent btn-sm btn rounded-md text-white font-thin"
+                  to="Login"
+                >
+                  Login
+                </Link>
                 <div className="divider lg:divider-horizontal"></div>
-                <a className="bg-[#494FC1] hover:bg-[#4a4e94] btn-sm btn rounded-md text-white font-thin">
-                  <Link to="SignUp">Register</Link>
-                </a>
+                <Link
+                  className="bg-[#494FC1] hover:bg-[#4a4e94] btn-sm btn rounded-md text-white font-thin"
+                  to="SignUp"
+                >
+                  Register
+                </Link>
               </div>
             )}
           </div>
@@ -461,12 +474,12 @@ const Header = ({ handleThemeChange, theme }) => {
               <div className="dropdown dropdown-end">
                 <button tabIndex="0" className="pr-3 mt-3">
                   <div className="indicator">
-                    {userMessageData?.length >= 1 && (
+                    {userMessageData >= 1 && (
                       <span className="indicator-item badge right-[1px] badge-xs w-[16px] h-[16px] bg-red-600 text-white">
-                        {userMessageData?.length > 9 ? (
+                        {userMessageData > 9 ? (
                           <span>9+</span>
                         ) : (
-                          <span>{userMessageData?.length}</span>
+                          <span>{userMessageData}</span>
                         )}
                       </span>
                     )}
@@ -482,11 +495,7 @@ const Header = ({ handleThemeChange, theme }) => {
                       Messages !
                       <i className="text-primary fa-solid fa-paper-plane ml-2"></i>
                     </h3>
-                    <SendMessage
-                      header
-                      name={fuser?.data?.name}
-                      email={fuser?.data?.email}
-                    />
+                    <SendMessage header user={fuser?.data} />
                   </div>
                 </div>
               </div>

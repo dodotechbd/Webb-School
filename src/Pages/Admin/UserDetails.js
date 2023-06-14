@@ -14,7 +14,6 @@ const CourseRow = (course) => {
     admission?.data?.find((s) => s.uname === course?.course.uname) ||
     language?.data?.find((s) => s.uname === course?.course.uname) ||
     job?.data?.find((s) => s.uname === course?.course.uname);
-  console.log(courseData);
   return (
     <tr>
       <td className="p-0 px-2">
@@ -186,14 +185,12 @@ const UserDetails = () => {
                 <SendMessage
                   send={send}
                   back={() => setSend(false)}
-                  email={userData?.email}
-                  name={userData?.name}
+                  user={userData}
                 />
                 <SendMessage
                   history={history}
                   back={() => setHistory(false)}
-                  email={userData?.email}
-                  name={userData?.name}
+                  user={userData}
                 />
               </div>
             </div>
@@ -300,7 +297,9 @@ const UserDetails = () => {
           />
         )}
         {!myCourse?.data?.length && (
-          <p className="text-center border-t border-neutral py-3">No Course Purchased!</p>
+          <p className="text-center border-t border-neutral py-3">
+            No Course Purchased!
+          </p>
         )}
       </div>
     </div>

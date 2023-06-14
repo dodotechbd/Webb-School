@@ -1,34 +1,57 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
+import useMessage from "../../Hooks/useMessage";
+import useUser from "../../Hooks/useUser";
 import auth from "../../firebase.init";
 
 const Social = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
+  const [fuser, , userFetch] = useUser();
+  const [message] = useMessage();
+  const gUser = user?.user;
+  const [isLoading, setIsLoading] = useState(false);
 
   let navigate = useNavigate();
   let location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
 
-  useEffect(() => {
-    if (user) {
-      (async () => {
-        const { data } = await primaryAxios.put(`/user`, {
-          name: user?.user?.displayName,
-          email: user?.user?.email,
-          // image: user?.user?.photoURL,
+  const createUser = async () => {
+    const welcome = message?.data.find((msg) => msg?.email === gUser?.email);
+    if (!fuser?.data) {
+      const { data } = await primaryAxios.put(`/user`, {
+        name: gUser.displayName,
+        email: gUser.email,
+        image: gUser.photoURL,
+        messages: 1,
+      });
+      if (data.token) {
+        localStorage.setItem("authorizationToken", data.token);
+      }
+      if (!welcome) {
+        await primaryAxios.post(`/message`, {
+          title: "Welcome to Webb School: Igniting Educational Innovation!",
+          details:
+            "Welcome to Webb School, where education meets innovation! Join us and explore limitless learning possibilities. Let's embark on this educational journey together!",
+          email: gUser.email,
         });
-        if (data.token) {
-          localStorage.setItem("authorizationToken", data.token);
-        }
-      })();
-      navigate(from, { replace: true });
+      }
     }
-  }, [user, from, navigate]);
-
-  if (loading) {
+  };
+  useEffect(() => {
+    (async () => {
+      if (user) {
+        setIsLoading(true);
+        await createUser();
+        await userFetch();
+        setIsLoading(false);
+        navigate(from, { replace: true });
+      }
+    })();
+  });
+  if (loading || isLoading) {
     return <div className="mx-auto" id="preloaders"></div>;
   }
   return (

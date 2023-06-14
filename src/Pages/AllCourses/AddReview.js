@@ -23,7 +23,6 @@ const AddReview = () => {
     primaryAxios.get(`/mycourse?email=${user?.email}`)
   );
   const courseData = myCourse?.data?.find((allcard) => allcard.uname === uname);
-  console.log(courseData);
   const {
     register,
     handleSubmit,

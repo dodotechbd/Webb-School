@@ -165,19 +165,6 @@ const Login = () => {
                   )}
                 </label>
               </div>
-              <div className="flex items-center space-x-2">
-                <input
-                  type="checkbox"
-                  id="red-checkbox"
-                  className="w-4 h-4 transition duration-300 rounded focus:ring-2 focus:ring-offset-0 focus:outline-none focus:ring-blue-200"
-                />
-                <label
-                  htmlFor="remember"
-                  className="text-sm font-semibold text-gray-900"
-                >
-                  Remember me
-                </label>
-              </div>
               <div>
                 {singInError}
 
@@ -188,7 +175,7 @@ const Login = () => {
                   Log in
                 </button>
 
-                <p className="text-gray-500">
+                <p className="text-gray-500 mt-2">
                   New to Webb School?{" "}
                   <Link to="/SignUp" className=" text-light text-[#A25BF7]">
                     Create New Account
