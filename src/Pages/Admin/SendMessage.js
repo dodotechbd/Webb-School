@@ -1,19 +1,20 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
 import useMessage from "../../Hooks/useMessage";
 
-const SendMessage = ({ name, email, send, back, history, header }) => {
+const SendMessage = ({ user, send, back, history, header }) => {
   const { register, handleSubmit, reset } = useForm({});
   const [message, isLoading, refetch] = useMessage();
+  const [loading, setLoading] = useState("");
   const userMessageData = message?.data?.filter(
-    (allcard) => allcard.email === email
+    (allcard) => allcard.email === user?.email
   );
   const onSubmit = (data) => {
     const newReview = {
       ...data,
-      email: email,
+      email: user?.email,
     };
     (async () => {
       const { data } = await primaryAxios.post(`/message`, newReview);
@@ -33,12 +34,19 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
           icon: "success",
           title: "Success",
         });
+        await primaryAxios.put(`/user`, {
+          name: user?.name,
+          email: user?.email,
+          image: user?.image,
+          messages: user?.messages + 1,
+        });
         reset();
         refetch();
       }
     })();
   };
   const handleDelete = (id) => {
+    setLoading(id);
     (async () => {
       const { data } = await primaryAxios.delete(`/message/${id}`);
       if (data.deletedCount > 0) {
@@ -58,6 +66,7 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
           title: "deleted",
         });
         refetch();
+        setLoading("");
       }
     })();
   };
@@ -84,9 +93,9 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
               <div className="card-body px-6 py-3">
                 <h2 className="text-lg">
                   <p>
-                    <span className="ml-1 font-bold">{name}</span>
+                    <span className="ml-1 font-bold">{user?.name}</span>
                   </p>
-                  <p className="badge">{email}</p>
+                  <p className="badge">{user?.email}</p>
                 </h2>
                 <div className="form-control">
                   <label className="input-group input-group-sm">
@@ -136,8 +145,8 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
             <div>
               <div className="card-body px-6 py-3">
                 <h2 className="text-lg">
-                  <span className="ml-1 font-bold">{name}</span>
-                  <span className="ml-2 badge">{email}</span>
+                  <span className="ml-1 font-bold">{user?.name}</span>
+                  <span className="ml-2 badge">{user?.email}</span>
                 </h2>
                 <div className="rounded-md">
                   {userMessageData?.length === 0 && (
@@ -151,7 +160,7 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
                     .reverse()
                     .map((message, index) => (
                       <div>
-                        {message?.email === email && (
+                        {message?.email === user?.email && (
                           <div className="card p-0 bg-neutral my-1 rounded-md">
                             <div className="card-body px-2 py-2 flex-row justify-between items-center">
                               <div>
@@ -162,9 +171,13 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
                               </div>
                               <button
                                 onClick={() => handleDelete(message?._id)}
-                                className="btn btn-sm bg-base-300 btn-ghost text-red-500"
+                                className="btn btn-sm bg-base-300 btn-ghost"
                               >
-                                <i className="fa-solid fa-trash"></i>
+                                {loading === message?._id ? (
+                                  <i class="fa-solid fa-spinner animate-spin text-primary"></i>
+                                ) : (
+                                  <i className="fa-solid fa-trash text-red-500"></i>
+                                )}
                               </button>
                             </div>
                           </div>
@@ -189,19 +202,25 @@ const SendMessage = ({ name, email, send, back, history, header }) => {
             .reverse()
             .map((message, index) => (
               <div>
-                {message?.email === email && (
-                  <div className="card p-0 bg-neutral my-1 rounded-md">
-                    <div className="card-body px-2 py-2 flex-row justify-between items-center">
+                {message?.email === user?.email && (
+                  <div className="card p-0 bg-neutral/50 my-1 rounded-md">
+                    <div className="card-body p-0 flex-row justify-between items-center">
                       <div>
-                        <h2 className="text-lg font-bold">{message?.title}</h2>
-                        <p>{message?.details}</p>
+                        <div className="flex justify-between items-start bg-neutral p-2">
+                          <h2 className="font-bold">{message?.title}</h2>
+                          <button
+                            onClick={() => handleDelete(message?._id)}
+                            className="btn btn-sm bg-base-300 btn-ghost"
+                          >
+                            {loading === message?._id ? (
+                              <i class="fa-solid fa-spinner animate-spin text-primary"></i>
+                            ) : (
+                              <i className="fa-solid fa-trash text-red-500"></i>
+                            )}
+                          </button>
+                        </div>
+                        <p className="text-sm p-2">{message?.details}</p>
                       </div>
-                      <button
-                        onClick={() => handleDelete(message?._id)}
-                        className="btn btn-sm bg-base-300 btn-ghost text-red-500"
-                      >
-                        <i className="fa-solid fa-trash"></i>
-                      </button>
                     </div>
                   </div>
                 )}

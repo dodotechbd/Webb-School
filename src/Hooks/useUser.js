@@ -14,7 +14,7 @@ const useUser = () => {
   );
   const userLoading = isLoading;
   const userFetch = refetch;
-  return [fuser, userLoading, userFetch];
+  return [fuser, userLoading, userFetch, user];
 };
 
 export default useUser;

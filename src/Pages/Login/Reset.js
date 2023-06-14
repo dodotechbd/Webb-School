@@ -1,7 +1,7 @@
 import React from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { ReactComponent as IReset } from "../../Assets/reset.svg";
 import auth from "../../firebase.init";
@@ -11,69 +11,52 @@ const Reset = () => {
     useSendPasswordResetEmail(auth);
   const {
     register,
-    handleSubmit,
     getValues,
     formState: { errors },
   } = useForm();
 
+  const navigate = useNavigate();
+
   const handleResetPassword = async () => {
     const email = getValues("email");
     if (email) {
-      if (sending) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "#3fc3ee",
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1500,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "info",
-          title: "Email is sending",
-        });
-        // toast("Email is sending");
-      }
-      if (resetError) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "#f27474",
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1500,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "error",
-          title: "Something Went Wrong, Try Again",
-        });
-        // toast.error("Something Went Wrong, Try Again");
-      }
-      await sendPasswordResetEmail(email);
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-right",
-        iconColor: "#a5dc86",
-        customClass: {
-          popup: "colored-toast",
-        },
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
+      await sendPasswordResetEmail(email).then(async () => {
+        if (resetError) {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-right",
+            iconColor: "#f27474",
+            customClass: {
+              popup: "colored-toast",
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          });
+          await Toast.fire({
+            icon: "error",
+            title: resetError?.code,
+          });
+        } else {
+          const Toast = Swal.mixin({
+            toast: true,
+            position: "top-right",
+            iconColor: "#a5dc86",
+            customClass: {
+              popup: "colored-toast",
+            },
+            showConfirmButton: false,
+            timer: 1500,
+            timerProgressBar: true,
+          });
+          await Toast.fire({
+            icon: "success",
+            title: "Email Sent , Please Check !",
+          });
+          navigate("/login");
+        }
       });
-      await Toast.fire({
-        icon: "success",
-        title: "Email Sent , Please Check !",
-      });
-      //   toast.success("Email Sent , Please Check !");
-    }
-    if (!email) {
+    } else {
       const Toast = Swal.mixin({
         toast: true,
         position: "top-right",
@@ -89,7 +72,6 @@ const Reset = () => {
         icon: "warning",
         title: "Please Provide Your Email !",
       });
-      //   toast.warning("Please Provide Your Email !");
     }
   };
   return (
@@ -136,15 +118,16 @@ const Reset = () => {
               </div>
               <button
                 onClick={handleResetPassword}
+                disabled={sending}
                 className="btn border-[#A25BF7] hover:border-[#A25BF7] text-white bg-gradient-to-r from-[#4828A9] to-[#A25BF7]"
               >
-                Send
+                {sending ? "Sending..." : "Send"}
               </button>
               <Link
                 to={"/login"}
                 className="link link-hover text-center text-[#A25BF7]"
               >
-                back to login
+                Cancel
               </Link>
             </div>
           </div>

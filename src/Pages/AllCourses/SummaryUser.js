@@ -3,8 +3,8 @@ import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
-import auth from "../../firebase.init";
 import useCourse from "../../Hooks/useCourse";
+import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import Cirtificate from "./Cirtificate/Cirtificate";
 
@@ -22,7 +22,6 @@ const SummaryUser = () => {
   const progress =
     (myCourseData?.progress?.length / courseData?.videos?.length) * 100;
   const stringProgress = progress?.toString();
-  console.log(stringProgress);
   const {
     data: muser,
     isLoading,

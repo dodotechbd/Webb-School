@@ -210,3 +210,15 @@
 ::-webkit-scrollbar-thumb {
   background: #444444;
 }
+
+.message::-webkit-scrollbar {
+  /* height: 5px; */
+  width: 5px;
+  background: none;
+  border-left: 0px;
+}
+
+.message::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 5px;
+}

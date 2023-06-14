@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
-  useUpdateProfile
+  useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
+import useMessage from "../../Hooks/useMessage";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import Social from "./Social";
@@ -21,9 +22,10 @@ const SignUp = () => {
 
   const password = watch("password");
 
-  const [name, setName] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [message] = useMessage();
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -34,40 +36,54 @@ const SignUp = () => {
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  let singInError;
-  useEffect(() => {
-    if (user) {
-      (async () => {
-        const { data } = await primaryAxios.put(`/user`, {
-          name: name,
-          email: user?.user?.email,
-        });
-        if (data.token) {
-          localStorage.setItem("authorizationToken", data.token);
-        }
-      })();
-
-      navigate(from, { replace: true });
+  const createUser = async (userData) => {
+    const welcome = message?.data.find((msg) => msg?.email === userData.email);
+    const { data } = await primaryAxios.put(`/user`, {
+      name: userData.name,
+      email: userData.email,
+      image: "",
+      messages: 1,
+    });
+    if (data.token) {
+      localStorage.setItem("authorizationToken", data.token);
     }
-  }, [user, from, navigate, updating, name]);
+    if (!welcome) {
+      await primaryAxios.post(`/message`, {
+        title: "Welcome to Webb School: Igniting Educational Innovation!",
+        details:
+          "Welcome to Webb School, where education meets innovation! Join us and explore limitless learning possibilities. Let's embark on this educational journey together!",
+        email: userData.email,
+      });
+    }
+  };
 
-  if (loading || updating) {
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    await createUserWithEmailAndPassword(data.email, data.password);
+    await updateProfile({ displayName: data.name });
+    await createUser(data);
+    navigate(from, { replace: true });
+    setIsLoading(false);
+  };
+
+  useEffect(() => {
+    (async () => {
+      if (user) {
+        setIsLoading(true);
+        await createUser();
+        setIsLoading(false);
+        navigate(from, { replace: true });
+      }
+    })();
+  });
+
+  if (loading || updating || isLoading) {
     return <Loading></Loading>;
   }
-
+  let singInError;
   if (error || upError) {
     singInError = <p>{error?.message || upError?.message}</p>;
   }
-
-  // if (user || gUser ) {
-  //   return <Navigate to="/" state={{ from: location }} replace  ></Navigate>
-  // }
-
-  const onSubmit = async (data) => {
-    setName(data?.name);
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-  };
   return (
     <div>
       <div className="flex items-center min-h-screen p-4 lg:justify-center">
@@ -274,7 +290,7 @@ const SignUp = () => {
                 >
                   Register
                 </button>
-                <p className="text-gray-500 text-bold">
+                <p className="text-gray-500 text-bold mt-2">
                   Already have an account?{" "}
                   <Link to="/LogIn" className=" text-light text-[#A25BF7]">
                     Please Login

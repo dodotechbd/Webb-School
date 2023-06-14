@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import SendMessage from "./SendMessage";
 
 const MessageRow = ({ user, prefetch, index }) => {
-  const { name, email, image } = user;
   const [send, setSend] = useState(false);
   const [history, setHistory] = useState(false);
 
@@ -15,8 +14,8 @@ const MessageRow = ({ user, prefetch, index }) => {
             <div className="mask mask-squircle w-12 h-12">
               <img
                 src={`${
-                  image
-                    ? image
+                  user?.image
+                    ? user?.image
                     : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                 }`}
                 alt="Avatar Tailwind CSS Component"
@@ -24,8 +23,8 @@ const MessageRow = ({ user, prefetch, index }) => {
             </div>
           </div>
           <div>
-            <div className="font-bold">{name}</div>
-            <div className="text-sm opacity-50">{email}</div>
+            <div className="font-bold">{user?.name}</div>
+            <div className="text-sm opacity-50">{user?.email}</div>
           </div>
         </div>
       </td>
@@ -36,12 +35,7 @@ const MessageRow = ({ user, prefetch, index }) => {
         >
           Send
         </label>
-        <SendMessage
-          send={send}
-          back={() => setSend(false)}
-          email={email}
-          name={name}
-        />
+        <SendMessage send={send} back={() => setSend(false)} user={user} />
       </td>
       <td>
         <label
@@ -53,8 +47,7 @@ const MessageRow = ({ user, prefetch, index }) => {
         <SendMessage
           history={history}
           back={() => setHistory(false)}
-          email={email}
-          name={name}
+          user={user}
         />
       </td>
     </tr>
