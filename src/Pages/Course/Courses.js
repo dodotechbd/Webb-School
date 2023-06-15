@@ -2,13 +2,14 @@ import React from "react";
 import { useQuery } from "react-query";
 import primaryAxios from "../../Api/primaryAxios";
 import Course from "../Course/Course";
+import Loader from "../Shared/Loading/Loader";
 
 const Courses = () => {
   const { data: special, isLoading } = useQuery(["specialManage"], () =>
     primaryAxios.get(`/special`)
   );
   if (isLoading) {
-    return <div className="mx-auto mt-16" id="preloaders"></div>;
+    return <Loader special />;
   }
   return (
     <div id="courses" className="p-10 bg-base-100  border-b border-neutral">
