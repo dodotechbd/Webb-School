@@ -1,13 +1,18 @@
 import {
-  CardCvcElement, CardExpiryElement, CardNumberElement, useElements, useStripe
+  CardCvcElement,
+  CardExpiryElement,
+  CardNumberElement,
+  useElements,
+  useStripe,
 } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
 import swal from "sweetalert";
 import primaryAxios from "../../Api/primaryAxios";
-import auth from "../../firebase.init";
 import useAllCourse from "../../Hooks/useAllCourse";
+import auth from "../../firebase.init";
 
 const StripeForm = ({ totalAmount, orderInfo }) => {
   const [user, loading] = useAuthState(auth);
@@ -19,7 +24,19 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
   const [isPaying, setIsPaying] = useState(false);
   const navigate = useNavigate();
 
-  const [admission, job, language] = useAllCourse();
+  const {
+    data: myCourse,
+    isLoading,
+    refetch,
+  } = useQuery(["myCourses", user?.email], () =>
+    primaryAxios.get(`/mycourse?email=${user?.email}`)
+  );
+
+  const alreadyPurchased = myCourse?.data.find(
+    (course) => course?.uname === orderInfo?.uname
+  );
+
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const courseData =
     admission?.data?.find((allcard) => allcard.uname === uname) ||
     language?.data?.find((allcard) => allcard.uname === uname) ||
@@ -189,15 +206,25 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
       {paymentError && (
         <p className="mt-5 -mb-5 text-red-600 text-center">{paymentError}</p>
       )}
-      <button
-        className={`btn btn-md w-full btn-primary uppercase mt-6 rounded-lg ${
-          isPaying && "loading"
-        }`}
-        type="submit"
-        disabled={!stripe || !elements || !clientSecret}
-      >
-        Pay ${totalAmount}
-      </button>
+      {alreadyPurchased ? (
+        <button
+          disabled
+          title="Already Purchased"
+          className="cursor-not-allowed btn btn-md w-full btn-primary uppercase mt-6 rounded-lg"
+        >
+          Already Purchased
+        </button>
+      ) : (
+        <button
+          className={`btn btn-md w-full btn-primary uppercase mt-6 rounded-lg ${
+            isPaying && "loading"
+          }`}
+          type="submit"
+          disabled={!stripe || !elements || !clientSecret}
+        >
+          Pay ${totalAmount}
+        </button>
+      )}
     </form>
   );
 };

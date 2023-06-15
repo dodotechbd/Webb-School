@@ -1,14 +1,9 @@
 import React from "react";
-import { useQuery } from "react-query";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import JobTable from "./JobTable";
 
 const Job = () => {
-  const {
-    data: job,
-    refetch,
-    isLoading,
-  } = useQuery(["jobCourse"], () => primaryAxios.get(`/job`));
+  const [job, isLoading, refetch] = useAllCourse.useJob();
   if (isLoading) {
     return <div className="mx-auto" id="preloaders"></div>;
   }

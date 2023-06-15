@@ -17,7 +17,7 @@ import { Pagination } from "swiper";
 
 const CoursesTabs = () => {
   const [course, setCourse] = useState("language");
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const handleCourse = (courses) => {
     setCourse(courses);
   };

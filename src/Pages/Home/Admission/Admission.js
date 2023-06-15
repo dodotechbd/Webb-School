@@ -1,12 +1,9 @@
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import AdmissionCard from "./AdmissionCard";
 
 const Admission = () => {
-  const { data: admission } = useQuery(["admissionCourse"], () =>
-    primaryAxios.get(`/admission`)
-  );
+  const [admission] = useAllCourse.useAdmission();
 
   return (
     <div id="admission" className="bg-base-100 border-b border-neutral py-16">

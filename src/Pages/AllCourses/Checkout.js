@@ -5,7 +5,7 @@ import Stripe from "../Payments/Stripe";
 
 const Checkout = () => {
   const { uname } = useParams();
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const courseData =
     admission?.data?.find((allcard) => allcard.uname === uname) ||
     language?.data?.find((allcard) => allcard.uname === uname) ||

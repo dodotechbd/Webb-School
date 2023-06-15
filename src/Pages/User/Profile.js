@@ -3,15 +3,12 @@ import { Outlet } from "react-router-dom";
 import { NavHashLink } from "react-router-hash-link";
 import useRole from "../../Hooks/useRole";
 import useTitle from "../../Hooks/useTitle";
-import useUser from "../../Hooks/useUser";
 import Loading from "../Shared/Loading/Loading";
 import "./Profile.css";
 const Profile = () => {
   useTitle("Profile");
-  const [role] = useRole();
-  const [fuser, userLoading] = useUser();
-  const user = fuser
-  if (userLoading) {
+  const [role, roleLoading, userData] = useRole();
+  if (roleLoading) {
     return <Loading></Loading>;
   }
   return (
@@ -20,8 +17,8 @@ const Profile = () => {
         className="hero"
         style={{
           backgroundImage: `url(${
-            user?.data?.coverPhoto
-              ? user?.data?.coverPhoto
+            userData?.coverPhoto
+              ? userData?.coverPhoto
               : "https://images.unsplash.com/photo-1542831371-29b0f74f9713?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80"
           })`,
           backgroundPosition: "center",
@@ -32,7 +29,7 @@ const Profile = () => {
         <div className="bg-opacity-70 hero-overlay"></div>
         <div className="text-left text-warning lg:pt-32 lg:pb-60 px-4 pt-20 pb-52">
           <h1 className="text-left text-5xl font-bold">
-            Hello, {user?.data?.name ? user?.data?.name : "- - -"}
+            Hello, {userData?.name ? userData?.name : "- - -"}
           </h1>
           <p className="my-5 font-serif text-lg">
             This is your profile page. You can see the progress you've made with
@@ -59,27 +56,27 @@ const Profile = () => {
                 <div>
                   <img
                     src={`${
-                      user?.data?.image
-                        ? user?.data?.image
+                      userData?.image
+                        ? userData?.image
                         : "https://cdn3d.iconscout.com/3d/premium/thumb/profile-5590850-4652486.png"
                     }`}
                     className="w-32 h-32 rounded-full m-2"
                   />
                 </div>
                 <h1 className="text-2xl font-bold">
-                  {user?.data?.name ? user?.data?.name : "- - -"}
-                  {user?.data?.gender === "Male" && (
+                  {userData?.name ? userData?.name : "- - -"}
+                  {userData?.gender === "Male" && (
                     <i className="fa-solid fa-mars text-primary ml-2"></i>
                   )}
-                  {user?.data?.gender === "Female" && (
+                  {userData?.gender === "Female" && (
                     <i className="fa-solid fa-venus text-secondary ml-2"></i>
                   )}
                 </h1>
                 <h1 className="text-sm opacity-60">
-                  {user?.data?.email ? user?.data?.email : "- - -"}
+                  {userData?.email ? userData?.email : "- - -"}
                 </h1>
                 <h1 className="text-lg">
-                  {user?.data?.profession ? user?.data?.profession : "- - -"}
+                  {userData?.profession ? userData?.profession : "- - -"}
                 </h1>
                 <div className="stats form-control">
                   <div className="stat place-items-center">
@@ -134,16 +131,16 @@ const Profile = () => {
               </div>
               <div>
                 <h1 className="ml-8">
-                  {user?.data?.joinDate ? user?.data?.joinDate : "- - -"}
+                  {userData?.joinDate ? userData?.joinDate : "- - -"}
                 </h1>
                 <h1 className="ml-8">
-                  {user?.data?.phone ? user?.data?.phone : "- - -"}
+                  {userData?.phone ? userData?.phone : "- - -"}
                 </h1>
                 <h1 className="ml-8">
-                  {user?.data?.address ? user?.data?.address : "- - -"}
+                  {userData?.address ? userData?.address : "- - -"}
                 </h1>
                 <h1 className="ml-8">
-                  {user?.data?.education ? user?.data?.education : "- - -"}
+                  {userData?.education ? userData?.education : "- - -"}
                 </h1>
                 <h1 className="ml-8">000</h1>
                 <h1 className="ml-8 capitalize">{role ? role : "Newbie"}</h1>
@@ -154,12 +151,12 @@ const Profile = () => {
                 <i className="fa-solid fa-user-tie mr-1 text-red-500"></i>About
                 Me
               </h1>
-              <p>{user?.data?.bio ? user?.data?.bio : "- - -"}</p>
+              <p>{userData?.bio ? userData?.bio : "- - -"}</p>
             </div>
             <div className="card-body flex-row gap-5 justify-center py-5 text-2xl">
               <a
                 href={
-                  user?.data?.facebookLink ? user?.data?.facebookLink : "- - -"
+                  userData?.facebookLink ? userData?.facebookLink : "- - -"
                 }
                 target="_blank"
                 rel="noreferrer"
@@ -167,7 +164,7 @@ const Profile = () => {
                 <i className="fa-brands fa-facebook"></i>
               </a>
               <a
-                href={user?.data?.instaLink ? user?.data?.instaLink : "- - -"}
+                href={userData?.instaLink ? userData?.instaLink : "- - -"}
                 target="_blank"
                 rel="noreferrer"
               >
@@ -175,7 +172,7 @@ const Profile = () => {
               </a>
               <a
                 href={
-                  user?.data?.linkedInLink ? user?.data?.linkedInLink : "- - -"
+                  userData?.linkedInLink ? userData?.linkedInLink : "- - -"
                 }
                 target="_blank"
                 rel="noreferrer"

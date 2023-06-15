@@ -3,12 +3,12 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import useMessage from "../../Hooks/useMessage";
-import useUser from "../../Hooks/useUser";
+import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 
 const Social = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [fuser, , userFetch] = useUser();
+  const [, , userData, fetchRole] = useRole();
   const [message] = useMessage();
   const gUser = user?.user;
   const [isLoading, setIsLoading] = useState(false);
@@ -19,18 +19,18 @@ const Social = () => {
   let from = location.state?.from?.pathname || "/";
 
   const createUser = async () => {
-    const welcome = message?.data.find((msg) => msg?.email === gUser?.email);
-    if (!fuser?.data) {
-      const { data } = await primaryAxios.put(`/user`, {
-        name: gUser.displayName,
-        email: gUser.email,
-        image: gUser.photoURL,
-        messages: 1,
-      });
-      if (data.token) {
-        localStorage.setItem("authorizationToken", data.token);
-      }
+    if (!userData) {
+      const welcome = message?.data.find((msg) => msg?.email === gUser.email);
       if (!welcome) {
+        const { data } = await primaryAxios.put(`/user`, {
+          name: gUser.displayName,
+          email: gUser.email,
+          image: gUser.photoURL,
+          messages: 1,
+        });
+        if (data.token) {
+          localStorage.setItem("authorizationToken", data.token);
+        }
         await primaryAxios.post(`/message`, {
           title: "Welcome to Webb School: Igniting Educational Innovation!",
           details:
@@ -42,10 +42,9 @@ const Social = () => {
   };
   useEffect(() => {
     (async () => {
-      if (user) {
+      if (gUser) {
         setIsLoading(true);
         await createUser();
-        await userFetch();
         setIsLoading(false);
         navigate(from, { replace: true });
       }

@@ -7,13 +7,13 @@ import Rating from "react-rating";
 import { useParams } from "react-router-dom";
 import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
-import useUser from "../../Hooks/useUser";
+import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 
 const AddReview = () => {
   const { uname } = useParams();
   const [user, loading] = useAuthState(auth);
-  const [fuser] = useUser();
+  const [, , userData] = useRole();
   const [rating, setRating] = useState(0);
   const {
     data: myCourse,
@@ -36,9 +36,9 @@ const AddReview = () => {
       courseName: courseData?.uname,
       reviewDate: new Date(),
       author: {
-        name: fuser?.name || auth?.currentUser?.displayName,
+        name: userData?.name,
         uid: auth?.currentUser?.uid,
-        photo: fuser?.image || auth?.currentUser?.photoURL,
+        photo: userData?.image,
       },
     };
     (async () => {

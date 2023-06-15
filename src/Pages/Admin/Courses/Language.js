@@ -1,16 +1,11 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import Loading from "../../Shared/Loading/Loading";
 import LanguageCard from "./LanguageCard";
 
 const Language = () => {
-  const {
-    data: language,
-    isLoading,
-    refetch,
-  } = useQuery(["languageManage"], () => primaryAxios.get(`/language`));
+  const [language, isLoading, refetch] = useAllCourse.useLanguage();
   if (isLoading) {
     return <Loading></Loading>;
   }

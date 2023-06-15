@@ -3,7 +3,7 @@ import { signOut } from "firebase/auth";
 import auth from "../firebase.init";
 
 const primaryAxios = axios.create({
-  baseURL: "https://webb-school-server.vercel.app/",
+  baseURL: "http://localhost:5000/",
   // https://webb-school-server.onrender.com/
 });
 
