@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
+import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import Social from "./Social";
@@ -18,6 +19,8 @@ const Login = () => {
 
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [role, roleLoading, userData] = useRole();
+  const [isLoading, setIsLoading] = useState(false);
 
   let singInError;
 
@@ -26,11 +29,12 @@ const Login = () => {
   let from = location.state?.from?.pathname || "/";
 
   useEffect(() => {
-    if (user) {
+    if (userData) {
       (async () => {
         const { data } = await primaryAxios.put(`user`, {
-          name: user?.user?.displayName,
-          email: user?.user?.email,
+          name: userData.name,
+          email: userData.email,
+          image: userData.image,
         });
         if (data.token) {
           localStorage.setItem("authorizationToken", data.token);
@@ -39,9 +43,9 @@ const Login = () => {
 
       navigate(from, { replace: true });
     }
-  }, [user, from, navigate]);
+  }, [userData, from, navigate]);
 
-  if (loading) {
+  if (loading || isLoading) {
     return <Loading></Loading>;
   }
 
@@ -190,7 +194,7 @@ const Login = () => {
                   </span>
                   <span className="h-px bg-gray-400 w-14"></span>
                 </span>
-                <Social></Social>
+                <Social setLoading={setIsLoading}></Social>
               </div>
             </form>
           </div>

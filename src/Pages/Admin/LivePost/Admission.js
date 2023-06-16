@@ -1,14 +1,9 @@
 import React from "react";
-import { useQuery } from "react-query";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import AdmissionTable from "./AdmissionTable";
 
 const Admission = () => {
-  const {
-    data: admission,
-    refetch,
-    isLoading,
-  } = useQuery(["admissionCourses"], () => primaryAxios.get(`/admission`));
+  const [admission, isLoading, refetch] = useAllCourse.useAdmission();
   if (isLoading) {
     return <div className="mx-auto" id="preloaders"></div>;
   }

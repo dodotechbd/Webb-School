@@ -12,7 +12,7 @@ import ReviewView from "./ReviewView";
 
 const AllCourseView = () => {
   const { uname } = useParams();
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const courseData =
     admission?.data?.find((allcard) => allcard.uname === uname) ||
     language?.data?.find((allcard) => allcard.uname === uname) ||

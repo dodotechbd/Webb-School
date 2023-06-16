@@ -10,7 +10,6 @@ import { Link, NavLink } from "react-router-dom";
 import primaryAxios from "../../../Api/primaryAxios";
 import useAllCourse from "../../../Hooks/useAllCourse";
 import useRole from "../../../Hooks/useRole";
-import useUser from "../../../Hooks/useUser";
 import auth from "../../../firebase.init";
 import { ReactComponent as WsLogo } from "../../../webb-school-logo.svg";
 import SendMessage from "../../Admin/SendMessage";
@@ -18,18 +17,17 @@ import Preloader from "../Loading/PreLoader";
 import "./Header.css";
 
 const Header = ({ handleThemeChange, theme }) => {
-  const [role, roleLoading] = useRole();
+  const [role, roleLoading, userData, fetchRole] = useRole();
   const pathname = window.location.pathname;
   const [user, loading] = useAuthState(auth);
-  const [fuser, userLoading, userFetch] = useUser();
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const [isLiveNav, setIsLiveNav] = useState(true);
-  const { data: myCourse } = useQuery(["myCourses", fuser?.data?.email], () =>
-    primaryAxios.get(`/mycourse?email=${fuser?.data.email}`)
+  const { data: myCourse } = useQuery(["myCourses", userData?.email], () =>
+    primaryAxios.get(`/mycourse?email=${userData?.email}`)
   );
 
   const myCourseData = myCourse?.data.find((s) => s.uname);
-  const userMessageData = fuser?.data.messages;
+  const userMessageData = userData?.messages;
   const courseData =
     admission?.data?.find((s) => s.uname === myCourseData?.uname) ||
     language?.data?.find((s) => s.uname === myCourseData?.uname) ||
@@ -50,12 +48,12 @@ const Header = ({ handleThemeChange, theme }) => {
   const handleRead = async () => {
     if (userMessageData) {
       await primaryAxios.put(`/user`, {
-        name: fuser?.data?.name,
-        email: fuser?.data?.email,
-        image: fuser?.data?.image,
+        name: userData?.name,
+        email: userData?.email,
+        image: userData?.image,
         messages: 0,
       });
-      userFetch();
+      fetchRole();
     }
   };
   const manuItems = (
@@ -79,7 +77,7 @@ const Header = ({ handleThemeChange, theme }) => {
       </li>
     </>
   );
-  if (loading || roleLoading || userLoading) {
+  if (loading || roleLoading) {
     return (
       <div
         className="bg-gradient-to-r from-base-300 to-base-200"
@@ -169,15 +167,15 @@ const Header = ({ handleThemeChange, theme }) => {
                             <div className="w-7 mx-2 my-2 rounded-full border border-gray-200">
                               <img
                                 src={`${
-                                  fuser?.data?.image
-                                    ? fuser?.data?.image
+                                  userData?.image
+                                    ? userData?.image
                                     : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                                 }`}
                               />
                             </div>
                           </label>
                           <p className="whitespace-nowrap">
-                            {fuser?.data?.name || "User"}
+                            {userData?.name || "User"}
                             <i className="ml-2 fa-solid fa-angle-down"></i>
                           </p>
                         </div>
@@ -326,7 +324,7 @@ const Header = ({ handleThemeChange, theme }) => {
                       <i className="text-primary fa-solid fa-paper-plane ml-2"></i>
                     </h3>
                     <div className="message overflow-y-auto pr-1">
-                      <SendMessage header user={fuser?.data} />
+                      <SendMessage header user={userData} />
                     </div>
                   </div>
                 </div>
@@ -351,8 +349,8 @@ const Header = ({ handleThemeChange, theme }) => {
                   <div className="w-9 rounded-full">
                     <img
                       src={`${
-                        fuser?.data?.image
-                          ? fuser?.data?.image
+                        userData?.image
+                          ? userData?.image
                           : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                       }`}
                     />
@@ -367,8 +365,8 @@ const Header = ({ handleThemeChange, theme }) => {
                       <div className="w-20 rounded-full">
                         <img
                           src={`${
-                            fuser?.data?.image
-                              ? fuser?.data?.image
+                            userData?.image
+                              ? userData?.image
                               : "https://github.com/MShafiMS/admission/blob/gh-pages/profile.png?raw=true"
                           }`}
                         />
@@ -377,10 +375,10 @@ const Header = ({ handleThemeChange, theme }) => {
                   </div>
                   <div className="border-b border-neutral">
                     <h1 className="text-lg text-center">
-                      {fuser?.data?.name?.slice(0, 14) || "User"}
+                      {userData?.name?.slice(0, 14) || "User"}
                     </h1>
                     <p className="text-xs mb-2 text-center">
-                      {fuser?.data?.profession?.slice(0, 30) || "---"}
+                      {userData?.profession?.slice(0, 30) || "---"}
                     </p>
                     {role === "admin" && (
                       <div className="flex justify-center">
@@ -495,7 +493,7 @@ const Header = ({ handleThemeChange, theme }) => {
                       Messages !
                       <i className="text-primary fa-solid fa-paper-plane ml-2"></i>
                     </h3>
-                    <SendMessage header user={fuser?.data} />
+                    <SendMessage header user={userData} />
                   </div>
                 </div>
               </div>

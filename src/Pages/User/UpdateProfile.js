@@ -5,14 +5,12 @@ import { Link, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import primaryAxios from "../../Api/primaryAxios";
 import useRole from "../../Hooks/useRole";
-import useUser from "../../Hooks/useUser";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 
 const UpdateProfile = () => {
-  const [role, roleLoading] = useRole();
+  const [role, roleLoading, userData, fetchRole] = useRole();
   const [updateProfile, updating, error] = useUpdateProfile(auth);
-  const [user, userLoading, userFetch] = useUser();
   const navigate = useNavigate();
 
   const {
@@ -21,7 +19,7 @@ const UpdateProfile = () => {
     formState: { errors },
   } = useForm();
 
-  if (roleLoading || userLoading || updating) {
+  if (roleLoading || updating) {
     return <Loading></Loading>;
   }
   const onSubmit = async (updatedInfo) => {
@@ -31,12 +29,12 @@ const UpdateProfile = () => {
     });
     (async () => {
       const { data } = await primaryAxios.put(
-        `/update-user?qEmail=${user?.data?.email}`,
+        `/update-user?qEmail=${userData?.email}`,
         updatedInfo
       );
       if (data) {
         toast.success("User Updated Successfully");
-        userFetch();
+        fetchRole();
         navigate("/profile");
       }
     })();
@@ -54,7 +52,7 @@ const UpdateProfile = () => {
           style={{
             // eslint-disable-next-line no-undef
             backgroundImage: `url(${
-              user?.data?.coverPhoto || "https://placeimg.com/1000/800/arch"
+              userData?.coverPhoto || "https://placeimg.com/1000/800/arch"
             })`,
           }}
           className="m-8 mb-0 relative rounded-xl"
@@ -64,18 +62,16 @@ const UpdateProfile = () => {
               <div className="w-24 rounded-full">
                 <img
                   src={`${
-                    user?.data?.image
-                      ? user?.data?.image
+                    userData?.image
+                      ? userData?.image
                       : "https://placeimg.com/192/192/people"
                   }`}
                 />
               </div>
             </div>
             <div>
-              <h1 className="text-3xl uppercase font-sub">
-                {user?.data?.name}
-              </h1>
-              <p className="text-sm font-sub">{user?.data?.email}</p>
+              <h1 className="text-3xl uppercase font-sub">{userData?.name}</h1>
+              <p className="text-sm font-sub">{userData?.email}</p>
             </div>
           </div>
           <div className="absolute z-0 h-full w-full bg-base-100 bg-opacity-60 rounded-xl top-0 left-0" />
@@ -94,7 +90,7 @@ const UpdateProfile = () => {
                 message: "Minimum Eight Characters",
               },
             })}
-            defaultValue={user?.data?.name && user?.data?.name}
+            defaultValue={userData?.name && userData?.name}
             placeholder="Stephen Brown"
             required
             className="input input-bordered"
@@ -107,7 +103,7 @@ const UpdateProfile = () => {
           <input
             type="text"
             {...register("profession")}
-            defaultValue={user?.data?.profession && user?.data?.profession}
+            defaultValue={userData?.profession && userData?.profession}
             placeholder="Student"
             required
             className="input input-bordered"
@@ -120,7 +116,7 @@ const UpdateProfile = () => {
           <input
             type="url"
             {...register("image")}
-            defaultValue={user?.data?.image && user?.data?.image}
+            defaultValue={userData?.image && userData?.image}
             placeholder="www.profile.photo.com"
             required
             className="input input-bordered"
@@ -133,7 +129,7 @@ const UpdateProfile = () => {
           <input
             type="url"
             {...register("coverPhoto")}
-            defaultValue={user?.data?.coverPhoto && user?.data?.coverPhoto}
+            defaultValue={userData?.coverPhoto && userData?.coverPhoto}
             placeholder="www.cover.photo.com"
             required
             className="input input-bordered"
@@ -146,7 +142,7 @@ const UpdateProfile = () => {
           <select
             {...register("gender")}
             className="select select-bordered w-full font-thin"
-            defaultValue={user?.data?.gender ? user?.data?.gender : "Male"}
+            defaultValue={userData?.gender ? userData?.gender : "Male"}
             placeholder="Gender"
             required
           >
@@ -160,7 +156,7 @@ const UpdateProfile = () => {
           </label>
           <input
             {...register("education")}
-            defaultValue={user?.data?.education && user?.data?.education}
+            defaultValue={userData?.education && userData?.education}
             type="text"
             placeholder="Bachelor of Business Administration"
             required
@@ -178,7 +174,7 @@ const UpdateProfile = () => {
           </label>
           <input
             {...register("address")}
-            defaultValue={user?.data?.address && user?.data?.address}
+            defaultValue={userData?.address && userData?.address}
             type="text"
             placeholder="92, Lawrence View Streets"
             required
@@ -191,7 +187,7 @@ const UpdateProfile = () => {
           </label>
           <input
             {...register("phone")}
-            defaultValue={user?.data?.phone && user?.data?.phone}
+            defaultValue={userData?.phone && userData?.phone}
             type="tel"
             placeholder="123-456-789"
             required
@@ -207,7 +203,7 @@ const UpdateProfile = () => {
           </label>
           <input
             {...register("facebookLink")}
-            defaultValue={user?.data?.facebookLink && user?.data?.facebookLink}
+            defaultValue={userData?.facebookLink && userData?.facebookLink}
             type="url"
             placeholder="www.facebook.com/id"
             required
@@ -221,7 +217,7 @@ const UpdateProfile = () => {
           <input
             type="url"
             {...register("instaLink")}
-            defaultValue={user?.data?.instaLink && user?.data?.instaLink}
+            defaultValue={userData?.instaLink && userData?.instaLink}
             placeholder="www.instagram.com/id"
             required
             className="input input-bordered"
@@ -234,7 +230,7 @@ const UpdateProfile = () => {
           <input
             type="url"
             {...register("linkedInLink")}
-            defaultValue={user?.data?.linkedInLink && user?.data?.linkedInLink}
+            defaultValue={userData?.linkedInLink && userData?.linkedInLink}
             placeholder="www.linkedin.com/id"
             required
             className="input input-bordered"
@@ -247,7 +243,7 @@ const UpdateProfile = () => {
         </label>
         <textarea
           {...register("bio")}
-          defaultValue={user?.data?.bio && user?.data?.bio}
+          defaultValue={userData?.bio && userData?.bio}
           className="textarea textarea-bordered"
           placeholder="Tell us about yourself"
           required

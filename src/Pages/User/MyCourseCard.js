@@ -6,7 +6,7 @@ import useAllCourse from "../../Hooks/useAllCourse";
 const MyCourseCard = ({ allcard, refetch }) => {
   const cardIndex = allcard?.file[0].details[0].fileName;
 
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
 
   const courseData =
     admission?.data?.find((s) => s.uname === allcard?.uname) ||

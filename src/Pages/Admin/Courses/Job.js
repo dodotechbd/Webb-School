@@ -1,16 +1,11 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import Loading from "../../Shared/Loading/Loading";
 import JobCard from "./JobCard";
 
 const Job = () => {
-  const {
-    data: job,
-    isLoading,
-    refetch,
-  } = useQuery(["jobManage"], () => primaryAxios.get(`/job`));
+  const [job, isLoading, refetch] = useAllCourse.useJob();
   if (isLoading) {
     return <Loading></Loading>;
   }

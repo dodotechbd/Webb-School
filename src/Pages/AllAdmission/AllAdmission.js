@@ -1,15 +1,12 @@
 import React from "react";
-import { useQuery } from "react-query";
-import primaryAxios from "../../Api/primaryAxios";
+import useAllCourse from "../../Hooks/useAllCourse";
 import useTitle from "../../Hooks/useTitle";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
 
 const AllAdmission = () => {
   useTitle("Admission");
-  const { data: admission, isLoading } = useQuery(["admissionCourse"], () =>
-    primaryAxios.get(`/admission`)
-  );
+  const [admission, isLoading] = useAllCourse.useAdmission();
   if (isLoading) {
     return <Loader></Loader>;
   }

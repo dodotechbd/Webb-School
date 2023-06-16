@@ -3,13 +3,13 @@ import { useSignInWithGoogle } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import useMessage from "../../Hooks/useMessage";
-import useUser from "../../Hooks/useUser";
+import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 
-const Social = () => {
+const Social = ({ setLoading }) => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [fuser, , userFetch] = useUser();
-  const [message] = useMessage();
+  const [role, roleLoading, userData, fetchRole] = useRole();
+  const [message, , refetch] = useMessage();
   const gUser = user?.user;
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,8 +19,8 @@ const Social = () => {
   let from = location.state?.from?.pathname || "/";
 
   const createUser = async () => {
-    const welcome = message?.data.find((msg) => msg?.email === gUser?.email);
-    if (!fuser?.data) {
+    const welcome = message?.data.find((msg) => msg.email === gUser.email);
+    if (!userData && !welcome) {
       const { data } = await primaryAxios.put(`/user`, {
         name: gUser.displayName,
         email: gUser.email,
@@ -30,13 +30,15 @@ const Social = () => {
       if (data.token) {
         localStorage.setItem("authorizationToken", data.token);
       }
-      if (!welcome) {
+      if (data.success) {
         await primaryAxios.post(`/message`, {
           title: "Welcome to Webb School: Igniting Educational Innovation!",
           details:
             "Welcome to Webb School, where education meets innovation! Join us and explore limitless learning possibilities. Let's embark on this educational journey together!",
           email: gUser.email,
         });
+        await refetch();
+        await fetchRole();
       }
     }
   };
@@ -44,16 +46,27 @@ const Social = () => {
     (async () => {
       if (user) {
         setIsLoading(true);
-        await createUser();
-        await userFetch();
-        setIsLoading(false);
-        navigate(from, { replace: true });
+        if (
+          user.user.metadata.creationTime === user.user.metadata.lastSignInTime
+        ) {
+          await createUser();
+          setIsLoading(false);
+          navigate(from, { replace: true });
+        } else {
+          setIsLoading(false);
+          navigate(from, { replace: true });
+        }
       }
     })();
-  });
-  if (loading || isLoading) {
-    return <div className="mx-auto" id="preloaders"></div>;
-  }
+    fetchRole();
+  }, [from, navigate, user]);
+  useEffect(() => {
+    if (loading || isLoading) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [loading, isLoading]);
   return (
     <div className="flex flex-col space-y-4">
       {error && <p className="error my-5">{error.message}</p>}

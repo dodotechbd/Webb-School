@@ -1,15 +1,12 @@
 import React from "react";
-import { useQuery } from "react-query";
-import primaryAxios from "../../Api/primaryAxios";
+import useAllCourse from "../../Hooks/useAllCourse";
 import useTitle from "../../Hooks/useTitle";
 import AllCourseCard from "../AllCourses/AllCourseCard";
 import Loader from "../Shared/Loading/Loader";
 
 const AllJobCourse = () => {
   useTitle("Job Recruiment");
-  const { data: job, isLoading } = useQuery(["jobCourse"], () =>
-    primaryAxios.get(`/job`)
-  );
+  const [job, isLoading] = useAllCourse.useJob();
   if (isLoading) {
     return <Loader></Loader>;
   }

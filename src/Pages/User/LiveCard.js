@@ -3,7 +3,7 @@ import useAllCourse from "../../Hooks/useAllCourse";
 
 const LiveCard = ({ allcard }) => {
   const { uname } = allcard;
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const courseData =
     admission?.data?.find((allcard) => allcard.uname === uname) ||
     language?.data?.find((allcard) => allcard.uname === uname) ||

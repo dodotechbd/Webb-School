@@ -9,7 +9,7 @@ import PreLoader from "../Shared/Loading/PreLoader";
 import SendMessage from "./SendMessage";
 
 const CourseRow = (course) => {
-  const [admission, job, language] = useAllCourse();
+  const [admission, job, language] = useAllCourse.useAllCourse();
   const courseData =
     admission?.data?.find((s) => s.uname === course?.course.uname) ||
     language?.data?.find((s) => s.uname === course?.course.uname) ||

@@ -14,7 +14,7 @@ import { Pagination } from "swiper";
 import useAllCourse from "../../../Hooks/useAllCourse";
 
 const JobCourses = () => {
-  const [job] = useAllCourse();
+  const [job] = useAllCourse.useJob();
   return (
     <div className="pt-12 bg-base-100 border-b border-neutral" id="job">
       <div className="container mx-auto">

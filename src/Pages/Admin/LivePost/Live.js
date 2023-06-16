@@ -1,17 +1,12 @@
 import React from "react";
-import { useQuery } from "react-query";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import Loading from "../../Shared/Loading/Loading";
 import Admission from "./Admission";
 import Job from "./Job";
 import LanguagesTable from "./LanguagesTable";
 
 const Live = () => {
-  const {
-    data: language,
-    refetch,
-    isLoading,
-  } = useQuery(["languageCourse"], () => primaryAxios.get(`/language`));
+  const [language, isLoading, refetch] = useAllCourse.useLanguage();
   if (isLoading) {
     return <Loading></Loading>;
   }

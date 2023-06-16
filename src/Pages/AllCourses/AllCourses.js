@@ -1,6 +1,5 @@
 import React from "react";
-import { useQuery } from "react-query";
-import primaryAxios from "../../Api/primaryAxios";
+import useAllCourse from "../../Hooks/useAllCourse";
 import useTitle from "../../Hooks/useTitle";
 import AllAdmission from "../AllAdmission/AllAdmission";
 import AllJobCourse from "../AllJobCourses/AllJobCourse";
@@ -10,9 +9,7 @@ import AllCourseCard from "./AllCourseCard";
 
 const AllCourses = () => {
   useTitle("Courses");
-  const { data: language, isLoading } = useQuery(["languageCourse"], () =>
-    primaryAxios.get(`/language`)
-  );
+  const [language, isLoading] = useAllCourse.useLanguage();
   if (isLoading) {
     return <Loader></Loader>;
   }

@@ -1,16 +1,11 @@
 import React from "react";
-import { useQuery } from "react-query";
 import { Link } from "react-router-dom";
-import primaryAxios from "../../../Api/primaryAxios";
+import useAllCourse from "../../../Hooks/useAllCourse";
 import Loading from "../../Shared/Loading/Loading";
 import AdmissionCard from "./AdmissionCard";
 
 const Admission = () => {
-  const {
-    data: admission,
-    isLoading,
-    refetch,
-  } = useQuery(["admissionManage"], () => primaryAxios.get(`/admission`));
+  const [admission, isLoading, refetch] = useAllCourse.useAdmission();
   if (isLoading) {
     return <Loading></Loading>;
   }
