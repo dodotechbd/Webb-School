@@ -1,6 +1,6 @@
 # Webb School
 
-To See My Project Live , Click on This: [Webb School]([https://motion-diary.vercel.app/](https://webb-school-mission-2022.vercel.app/))
+To See My Project Live , Click on This: [Webb School](https://webb-school-mission-2022.vercel.app/)
 
 ### Features Of This Site
 
