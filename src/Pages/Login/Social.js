@@ -6,10 +6,10 @@ import useMessage from "../../Hooks/useMessage";
 import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 
-const Social = () => {
+const Social = ({ setLoading }) => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
-  const [, , userData, fetchRole] = useRole();
-  const [message] = useMessage();
+  const [role, roleLoading, userData, fetchRole] = useRole();
+  const [message, , refetch] = useMessage();
   const gUser = user?.user;
   const [isLoading, setIsLoading] = useState(false);
 
@@ -19,40 +19,54 @@ const Social = () => {
   let from = location.state?.from?.pathname || "/";
 
   const createUser = async () => {
-    if (!userData) {
-      const welcome = message?.data.find((msg) => msg?.email === gUser.email);
-      if (!welcome) {
-        const { data } = await primaryAxios.put(`/user`, {
-          name: gUser.displayName,
-          email: gUser.email,
-          image: gUser.photoURL,
-          messages: 1,
-        });
-        if (data.token) {
-          localStorage.setItem("authorizationToken", data.token);
-        }
+    const welcome = message?.data.find((msg) => msg.email === gUser.email);
+    if (!userData && !welcome) {
+      const { data } = await primaryAxios.put(`/user`, {
+        name: gUser.displayName,
+        email: gUser.email,
+        image: gUser.photoURL,
+        messages: 1,
+      });
+      if (data.token) {
+        localStorage.setItem("authorizationToken", data.token);
+      }
+      if (data.success) {
         await primaryAxios.post(`/message`, {
           title: "Welcome to Webb School: Igniting Educational Innovation!",
           details:
             "Welcome to Webb School, where education meets innovation! Join us and explore limitless learning possibilities. Let's embark on this educational journey together!",
           email: gUser.email,
         });
+        await refetch();
+        await fetchRole();
       }
     }
   };
   useEffect(() => {
     (async () => {
-      if (gUser) {
+      if (user) {
         setIsLoading(true);
-        await createUser();
-        setIsLoading(false);
-        navigate(from, { replace: true });
+        if (
+          user.user.metadata.creationTime === user.user.metadata.lastSignInTime
+        ) {
+          await createUser();
+          setIsLoading(false);
+          navigate(from, { replace: true });
+        } else {
+          setIsLoading(false);
+          navigate(from, { replace: true });
+        }
       }
     })();
-  });
-  if (loading || isLoading) {
-    return <div className="mx-auto" id="preloaders"></div>;
-  }
+    fetchRole();
+  }, [from, navigate, user]);
+  useEffect(() => {
+    if (loading || isLoading) {
+      setLoading(true);
+    } else {
+      setLoading(false);
+    }
+  }, [loading, isLoading]);
   return (
     <div className="flex flex-col space-y-4">
       {error && <p className="error my-5">{error.message}</p>}

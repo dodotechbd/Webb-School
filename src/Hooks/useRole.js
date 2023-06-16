@@ -7,25 +7,25 @@ const useRole = () => {
   const [user] = useAuthState(auth);
   const [roleLoading, setRoleLoading] = useState(true);
   const [role, setRole] = useState("");
-  const [userData, setUserData] = useState("");
+  const [userData, setUserData] = useState(null);
 
   const fetchRoleData = async () => {
-    if (user) {
-      try {
-        const { data } = await primaryAxios.get(
-          `/user-role?email=${user?.email}`
-        );
-        setRole(data?.role);
-        setUserData(data);
-      } catch (error) {
-        console.error(error);
-      }
+    const { data } = await primaryAxios.get(`/user-role?email=${user?.email}`);
+    if (data) {
+      setRole(data?.role);
+      setUserData(data);
+      setRoleLoading(false);
+    } else {
+      setRoleLoading(false);
     }
-    setRoleLoading(false);
   };
 
   useEffect(() => {
-    fetchRoleData();
+    if (user) {
+      fetchRoleData();
+    } else {
+      setRoleLoading(false);
+    }
   }, [user]);
   const fetchRole = () => {
     fetchRoleData();

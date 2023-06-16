@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   useCreateUserWithEmailAndPassword,
   useUpdateProfile,
@@ -8,6 +8,7 @@ import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import useMessage from "../../Hooks/useMessage";
+import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading/Loading";
 import Social from "./Social";
@@ -25,7 +26,8 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [message] = useMessage();
+  const [message, , refetch] = useMessage();
+  const [role, roleLoading, userData, fetchRole] = useRole();
 
   const [createUserWithEmailAndPassword, user, loading, error] =
     useCreateUserWithEmailAndPassword(auth);
@@ -37,7 +39,6 @@ const SignUp = () => {
   let from = location.state?.from?.pathname || "/";
 
   const createUser = async (userData) => {
-    const welcome = message?.data.find((msg) => msg?.email === userData.email);
     const { data } = await primaryAxios.put(`/user`, {
       name: userData.name,
       email: userData.email,
@@ -47,13 +48,14 @@ const SignUp = () => {
     if (data.token) {
       localStorage.setItem("authorizationToken", data.token);
     }
-    if (!welcome) {
+    if (data.success) {
       await primaryAxios.post(`/message`, {
         title: "Welcome to Webb School: Igniting Educational Innovation!",
         details:
           "Welcome to Webb School, where education meets innovation! Join us and explore limitless learning possibilities. Let's embark on this educational journey together!",
         email: userData.email,
       });
+      await fetchRole();
     }
   };
 
@@ -65,17 +67,6 @@ const SignUp = () => {
     navigate(from, { replace: true });
     setIsLoading(false);
   };
-
-  useEffect(() => {
-    (async () => {
-      if (user) {
-        setIsLoading(true);
-        await createUser();
-        setIsLoading(false);
-        navigate(from, { replace: true });
-      }
-    })();
-  });
 
   if (loading || updating || isLoading) {
     return <Loading></Loading>;
@@ -305,7 +296,7 @@ const SignUp = () => {
                   </span>
                   <span className="h-px bg-gray-400 w-14"></span>
                 </span>
-                <Social></Social>
+                <Social setLoading={setIsLoading}></Social>
               </div>
             </form>
           </div>

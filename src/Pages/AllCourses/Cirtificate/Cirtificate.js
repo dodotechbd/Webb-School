@@ -52,7 +52,6 @@ const Cirtificate = ({ courseData, userData }) => {
           setCertificate(response.data.resultUrl);
         },
         (error) => {
-          console.log(error);
           setIsLoading(false);
         }
       );
