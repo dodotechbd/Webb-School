@@ -205,8 +205,8 @@ const SendMessage = ({ user, send, back, history, header }) => {
                 {message?.email === user?.email && (
                   <div className="card p-0 bg-neutral/50 my-1 rounded-md">
                     <div className="card-body p-0 flex-row justify-between items-center">
-                      <div>
-                        <div className="flex justify-between items-start bg-neutral p-2">
+                      <div className="w-full">
+                        <div className="flex justify-between w-full items-start bg-neutral p-2">
                           <h2 className="font-bold">{message?.title}</h2>
                           <button
                             onClick={() => handleDelete(message?._id)}
