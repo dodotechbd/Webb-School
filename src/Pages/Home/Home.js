@@ -1,8 +1,7 @@
-import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
+import React, { useEffect } from "react";
 import { BsArrowUp } from "react-icons/bs";
+import { Link, useLocation } from "react-router-dom";
 import useTitle from "../../Hooks/useTitle";
-import Support from "../../Pages/../Support/Support";
 import Courses from "../Course/Courses";
 import Admission from "./Admission/Admission";
 import Banner from "./Banner/Banner";
@@ -14,8 +13,19 @@ import Promotional from "./Promotional";
 import Question from "./Question/Question";
 import Review from './Review/Review';
 import Reviews from "./Reviews/Reviews";
+import Support from "./Support/Support";
 const Home = () => {
   useTitle("Home Page");
+  const location = useLocation();
+  useEffect(() => {
+    const hash = location.hash;
+    if (hash) {
+      const targetDiv = document.querySelector(hash);
+      if (targetDiv) {
+        targetDiv.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [location]);
 
   return (
 
@@ -33,9 +43,9 @@ const Home = () => {
       <Promotional></Promotional>
       <Support></Support>
       <Question></Question>
-      <AnchorLink href='#top' className='fixed z-50 bottom-4 right-4 text-info text-2xl'>
+      <Link to='/#top' className='fixed z-50 bottom-4 right-4 text-info text-2xl'>
         <BsArrowUp />
-      </AnchorLink>
+      </Link>
       {/* messenger chat --- */}
     </div>
 

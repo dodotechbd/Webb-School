@@ -1,15 +1,10 @@
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en.json";
-import ru from "javascript-time-ago/locale/ru.json";
 import React, { useState } from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
-import ReactTimeAgo from "react-time-ago";
+import { getTimeAgo } from "../../../utils/utils";
 
 const ReviewCard = ({ course }) => {
   const [readmore, setReadmore] = useState(false);
-  TimeAgo.addLocale(en);
-  TimeAgo.addLocale(ru);
   const { rating, review, reviewDate, author } = course;
   return (
     <div className="w-full">
@@ -59,7 +54,7 @@ const ReviewCard = ({ course }) => {
             <p className="text-sm opacity-60 text-right">
               -
               <span className="ml-1">
-                <ReactTimeAgo date={Date.parse(reviewDate)} locale="en-US" />
+                {getTimeAgo(reviewDate)}
               </span>
             </p>
           </div>

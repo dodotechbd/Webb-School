@@ -1,20 +1,15 @@
-import TimeAgo from "javascript-time-ago";
-import en from "javascript-time-ago/locale/en.json";
-import ru from "javascript-time-ago/locale/ru.json";
 import React from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
-import ReactTimeAgo from "react-time-ago";
+import { getTimeAgo } from "../../utils/utils";
 
 const ReviewView = ({ review, refetch }) => {
-  TimeAgo.addLocale(en);
-  TimeAgo.addLocale(ru);
   return (
     <div>
       <div className="flex mb-6">
         <div className="avatar">
           <div className="w-12 h-12 rounded-full">
-            <img src={review?.author.photo} />
+            <img src={review?.author.photo} alt="Reviewer" />
           </div>
         </div>
         <div className="ml-3">
@@ -29,10 +24,7 @@ const ReviewView = ({ review, refetch }) => {
             />
             <span className="text-gray-500 mx-2">-</span>
             <span>
-              <ReactTimeAgo
-                date={Date.parse(review?.reviewDate)}
-                locale="en-US"
-              />
+              {getTimeAgo(review?.reviewDate)}
             </span>
           </div>
           <p>{review?.review}</p>
