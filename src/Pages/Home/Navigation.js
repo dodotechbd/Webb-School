@@ -1,5 +1,4 @@
 import React from "react";
-import AnchorLink from "react-anchor-link-smooth-scroll";
 import { Link } from "react-router-dom";
 import "./Banner/Banner.css";
 const Navigation = () => {
@@ -29,8 +28,8 @@ const Navigation = () => {
               </p>
             </div>
           </Link>
-          <AnchorLink
-            href="#admission"
+          <Link
+            to="/#admission"
             className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
           >
             {" "}
@@ -42,9 +41,9 @@ const Navigation = () => {
                 <span className="lg:pt-7 md:pt-7">Admission</span>
               </p>
             </div>
-          </AnchorLink>
-          <AnchorLink
-            href="#job"
+          </Link>
+          <Link
+            to="/#job"
             className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
           >
             {" "}
@@ -56,9 +55,9 @@ const Navigation = () => {
                 <span className="lg:pt-7 md:pt-7">Job Exam</span>
               </p>
             </div>
-          </AnchorLink>
-          <AnchorLink
-            href="#courses"
+          </Link>
+          <Link
+            to="/#courses"
             className="hover:border hover:border-success border border-base-100 hover:text-success text-lg bg-base-100 rounded-xl "
           >
             {" "}
@@ -70,7 +69,7 @@ const Navigation = () => {
                 <span className="lg:pt-7 md:pt-7">Courses</span>
               </p>
             </div>
-          </AnchorLink>
+          </Link>
         </div>
         <div className="flex flex-col justify-center w-full lg:flex-row mt-14 mb-8  lg:text-left text-center font-sub">
           <h1 className="text-3xl font-bold lg:mx-8 mx-4 lg:text-left text-center">

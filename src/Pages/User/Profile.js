@@ -1,6 +1,5 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
-import { NavHashLink } from "react-router-hash-link";
+import { Link, Outlet } from "react-router-dom";
 import useRole from "../../Hooks/useRole";
 import useTitle from "../../Hooks/useTitle";
 import Loading from "../Shared/Loading/Loading";
@@ -35,22 +34,22 @@ const Profile = () => {
             This is your profile page. You can see the progress you've made with
             your work and manage your projects or assigned tasks
           </p>
-          <NavHashLink
-            to={"/profile/update#profile"}
+          <Link
+            to={"/profile/update/#profile"}
             className="mt-5 btn btn-primary rounded-md"
           >
             Edit profile
-          </NavHashLink>
+          </Link>
         </div>
       </div>
       <div className="lg:flex justify-between lg:mx-8">
         <div className=" lg:w-4/12 w-11/12 md:w-10/12 mx-auto mt-[-170px] mb-6">
           <div className="card shadow-2xl bg-base-100">
-            <NavHashLink to={"/profile/update#profile"}>
+            <Link to={"/profile/update/#profile"}>
               <p className="text-right pr-3 pt-2">
                 <i className="fa-solid fa-pen-to-square"></i>
               </p>
-            </NavHashLink>
+            </Link>
             <div>
               <div className="items-center form-control">
                 <div>
@@ -60,6 +59,7 @@ const Profile = () => {
                         ? userData?.image
                         : "https://cdn3d.iconscout.com/3d/premium/thumb/profile-5590850-4652486.png"
                     }`}
+                    alt="Profile"
                     className="w-32 h-32 rounded-full m-2"
                   />
                 </div>
