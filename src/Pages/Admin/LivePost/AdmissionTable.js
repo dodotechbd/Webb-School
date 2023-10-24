@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { GoPrimitiveDot } from "react-icons/go";
 import { MdDoNotDisturbOff } from "react-icons/md";
-import Swal from "sweetalert2";
 import primaryAxios from "../../../Api/primaryAxios";
+import { successToast } from "../../../utils/utils";
 
 const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
   const { _id, uname, img, name } = admissions;
@@ -14,21 +14,7 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
     (async () => {
       const { data } = await primaryAxios.put(`/admission/${_id}`, MLink);
       if (data.success) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "green", 
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1500,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "success",
-          title: "Success",
-        });
+        successToast('Live class added successfully')
         reset();
         refetch();
       }
@@ -41,13 +27,11 @@ const AdmissionTable = ({ index, admissions, isLoading, refetch }) => {
         meetLink: "",
       });
       if (data.success) {
-        Swal.fire(`${name} Live Class Stopped!`, {
-          icon: "success",
-          className: "rounded-xl",
-        });
+        successToast('Live Class Stopped!')
         refetch();
       }
     })();
+    setLoading(false);
   };
   return (
     <tr>

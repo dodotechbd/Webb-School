@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useQuery } from "react-query";
 import { useNavigate, useParams } from "react-router-dom";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
 import useAllCourse from "../../Hooks/useAllCourse";
 import auth from "../../firebase.init";
@@ -95,16 +95,11 @@ const StripeForm = ({ totalAmount, orderInfo }) => {
     } else {
       setPaymentError("");
       if (paymentIntent.id) {
-        swal(
+        Swal.fire(
           "Payment Successful",
           `Your Transaction Id Is ${paymentIntent.id}`,
-          "success",
-          {
-            className: "rounded-3xl",
-          }
-        ).then((value) => {
-          navigate("/mycourse");
-        });
+          "success"
+        ).then(() => navigate("/mycourse"));
       }
       const payment = {
         orderId: orderInfo._id,

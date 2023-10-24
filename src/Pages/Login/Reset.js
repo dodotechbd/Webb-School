@@ -2,9 +2,9 @@ import React from "react";
 import { useSendPasswordResetEmail } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import Swal from "sweetalert2";
 import { ReactComponent as IReset } from "../../Assets/reset.svg";
 import auth from "../../firebase.init";
+import { errorToast, successToast, warnToast } from "../../utils/utils";
 
 const Reset = () => {
   const [sendPasswordResetEmail, sending, resetError] =
@@ -22,56 +22,14 @@ const Reset = () => {
     if (email) {
       await sendPasswordResetEmail(email).then(async () => {
         if (resetError) {
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-right",
-            iconColor: "#f27474",
-            customClass: {
-              popup: "colored-toast",
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-          });
-          await Toast.fire({
-            icon: "error",
-            title: resetError?.code,
-          });
+          errorToast(resetError?.code);
         } else {
-          const Toast = Swal.mixin({
-            toast: true,
-            position: "top-right",
-            iconColor: "#a5dc86",
-            customClass: {
-              popup: "colored-toast",
-            },
-            showConfirmButton: false,
-            timer: 1500,
-            timerProgressBar: true,
-          });
-          await Toast.fire({
-            icon: "success",
-            title: "Email Sent , Please Check !",
-          });
+          successToast("Email Sent , Please Check Inbox!");
           navigate("/login");
         }
       });
     } else {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: "top-right",
-        iconColor: "#f27474",
-        customClass: {
-          popup: "colored-toast",
-        },
-        showConfirmButton: false,
-        timer: 1500,
-        timerProgressBar: true,
-      });
-      await Toast.fire({
-        icon: "warning",
-        title: "Please Provide Your Email !",
-      });
+      warnToast("Please Provide Your Email First!");
     }
   };
   return (

@@ -2,10 +2,10 @@ import React from "react";
 import { useUpdateProfile } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
 import primaryAxios from "../../Api/primaryAxios";
 import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
+import { successToast } from "../../utils/utils";
 import Loading from "../Shared/Loading/Loading";
 
 const UpdateProfile = () => {
@@ -33,7 +33,7 @@ const UpdateProfile = () => {
         updatedInfo
       );
       if (data) {
-        toast.success("User Updated Successfully");
+        successToast("User Updated Successfully");
         fetchRole();
         navigate("/profile");
       }

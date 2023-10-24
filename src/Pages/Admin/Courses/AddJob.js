@@ -1,7 +1,7 @@
 import React from "react";
 import { useFieldArray, useForm } from "react-hook-form";
-import swal from "sweetalert";
 import primaryAxios from "../../../Api/primaryAxios";
+import { successToast } from "../../../utils/utils";
 import NestedFieldArray from "./NestedFieldArray";
 
 const AddJob = () => {
@@ -29,11 +29,7 @@ const AddJob = () => {
     (async () => {
       const { data } = await primaryAxios.post(`/job`, newReview);
       if (data.acknowledged) {
-        swal("The course has been successfully posted", {
-          icon: "success",
-          className: "rounded-xl",
-        });
-
+        successToast("The course has been successfully posted")
         reset();
       }
     })();

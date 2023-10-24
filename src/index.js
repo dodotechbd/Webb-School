@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import ReactDOM from "react-dom/client";
+import { render } from "react-dom";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { BrowserRouter, useLocation } from "react-router-dom";
 import App from "./App";
@@ -18,8 +18,7 @@ export default function ScrollToTop() {
 
   return null;
 }
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(
+render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
@@ -28,7 +27,8 @@ root.render(
         <App />
       </BrowserRouter>
     </QueryClientProvider>
-  </React.StrictMode>
+  </React.StrictMode>,
+  document.getElementById("root")
 );
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

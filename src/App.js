@@ -9,9 +9,11 @@ import Admin from "./Pages/Admin/Admin";
 import Admins from "./Pages/Admin/Admins";
 import ManageBooks from "./Pages/Admin/Books/ManageBooks";
 import AddAdmission from "./Pages/Admin/Courses/AddAdmission";
+import AddCourse from "./Pages/Admin/Courses/AddCourse";
 import AddJob from "./Pages/Admin/Courses/AddJob";
 import AddLanguage from "./Pages/Admin/Courses/AddLanguage";
 import Admission from "./Pages/Admin/Courses/Admission";
+import AllCourse from "./Pages/Admin/Courses/AllCourse";
 import Job from "./Pages/Admin/Courses/Job";
 import Language from "./Pages/Admin/Courses/Language";
 import Manage from "./Pages/Admin/Courses/Manage";
@@ -180,11 +182,20 @@ function App() {
         </Route>
         <Route element={<RequireAuth />}>
           <Route element={<RequireAdmin></RequireAdmin>}>
-            <Route path="/admin" element={<Admin></Admin>}>
+            <Route
+              path="/admin"
+              element={
+                <Admin handleThemeChange={handleThemeChange} theme={theme} />
+              }
+            >
               <Route path="/admin" element={<Admins></Admins>}></Route>
               <Route path="/admin/courses/manage" element={<Manage></Manage>}>
                 <Route
                   path="/admin/courses/manage"
+                  element={<AllCourse />}
+                ></Route>
+                <Route
+                  path="/admin/courses/manage/special"
                   element={<Special></Special>}
                 ></Route>
                 <Route
@@ -231,6 +242,7 @@ function App() {
                 path="/admin/livePost/live"
                 element={<Live></Live>}
               ></Route>
+              <Route path="/admin/addcourse" element={<AddCourse />}></Route>
               <Route
                 path="/admin/addlanguage"
                 element={<AddLanguage></AddLanguage>}

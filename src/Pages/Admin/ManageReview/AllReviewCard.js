@@ -1,40 +1,35 @@
 import React from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import primaryAxios from "../../../Api/primaryAxios";
 import { ReactComponent as Profile } from "../../../Assets/user.svg";
 
 const AllReviewCard = ({ allcard, index, refetch }) => {
   const deleteItems = (id) => {
-    swal({
-      title: "Are you sure?",
+    Swal.fire({
+      title: 'Are you sure?',
       text: "Once Deleted,This Process Can't Be Undone",
-      icon: "warning",
-      className: "rounded-xl",
-      buttons: ["Cancle", "Yes, delete it!"],
-      confirmButtonColor: "#000000",
-      dangerMode: true,
-    }).then((willDelete) => {
-      if (willDelete) {
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!'
+    }).then((result) => {
+      if (result.isConfirmed) {
         (async () => {
           const { data } = await primaryAxios.delete(`/allreviews/${id}`);
           if (data.deletedCount > 0) {
-            swal("The review has been successfully deleted", {
-              icon: "success",
-              className: "rounded-xl",
-            });
-
+            Swal.fire(
+              'Deleted!',
+              'Review has been deleted.',
+              'success'
+            )
             refetch();
           }
         })();
-      } else {
-        swal("Action Canclled", {
-          icon: "success",
-          className: "rounded-xl",
-        });
       }
-    });
+    })
   };
   return (
     <tr>

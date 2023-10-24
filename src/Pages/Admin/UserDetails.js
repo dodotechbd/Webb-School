@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import { AiOutlineLoading3Quarters } from "react-icons/ai";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
-import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
 import useAllCourse from "../../Hooks/useAllCourse";
+import { successToast } from "../../utils/utils";
 import PreLoader from "../Shared/Loading/PreLoader";
 import SendMessage from "./SendMessage";
 
@@ -61,10 +61,7 @@ const UserDetails = () => {
         role: "admin",
       });
       if (data.success) {
-        Swal.fire(`${userData?.name} Is Now Admin`, {
-          icon: "success",
-          className: "rounded-xl",
-        });
+        successToast(`${userData?.name} Is Now Admin`)
         refetch();
         setALoading(false);
       }
@@ -78,10 +75,7 @@ const UserDetails = () => {
         role: "",
       });
       if (data.success) {
-        Swal.fire(`${userData?.name} Removed From Admin`, {
-          icon: "success",
-          className: "rounded-xl",
-        });
+        successToast(`${userData?.name} Removed From Admin`)
         refetch();
         setLoading(false);
       }
