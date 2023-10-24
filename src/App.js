@@ -23,7 +23,6 @@ import AllReviews from "./Pages/Admin/ManageReview/AllReviews";
 import BookReview from "./Pages/Admin/ManageReview/BookReview";
 import CourseReview from "./Pages/Admin/ManageReview/CourseReview";
 import ManageReview from "./Pages/Admin/ManageReview/ManageReview";
-import Message from "./Pages/Admin/Message";
 import Payments from "./Pages/Admin/Payments";
 import SkillBookss from "./Pages/Admin/SkillBookss";
 import UserDetails from "./Pages/Admin/UserDetails";
@@ -261,10 +260,6 @@ function App() {
               <Route
                 path="/admin/payments"
                 element={<Payments></Payments>}
-              ></Route>
-              <Route
-                path="/admin/message"
-                element={<Message></Message>}
               ></Route>
               <Route
                 path="/admin/users/:email"
