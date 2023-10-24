@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import "react-tabs/style/react-tabs.css";
+import { Swiper, SwiperSlide } from "swiper/react";
 import useAllCourse from "../../Hooks/useAllCourse";
 import AllCourseCard from "../AllCourses/AllCourseCard";
-import "./CoursesTab.css";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";

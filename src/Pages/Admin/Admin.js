@@ -1,5 +1,6 @@
 import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
+import { HiMoon, HiSun } from "react-icons/hi";
 import { Link, NavLink, Outlet } from "react-router-dom";
 import useRole from "../../Hooks/useRole";
 import useTitle from "../../Hooks/useTitle";
@@ -7,7 +8,7 @@ import auth from "../../firebase.init";
 import { ReactComponent as WsLogo } from "../../webb-school-logo.svg";
 import PreLoader from "../Shared/Loading/Loading";
 
-const Admin = () => {
+const Admin = ({ handleThemeChange, theme }) => {
   useTitle("Admin Panel");
   const [user, loading] = useAuthState(auth);
   const [role, roleLoading] = useRole();
@@ -40,16 +41,27 @@ const Admin = () => {
           <Link to={"/admin"} className="btn btn-ghost font-thin text-xl">
             Admin Panel
           </Link>
-          <Link to="/" target="self">
-            <div className="flex items-center px-8">
-              <WsLogo className="w-9 h-8 ml-3" />
-
-              <div className="ml-1 text-md font-header font-bold">
-                <p>Webb</p>
-                <p className="-mt-2">School</p>
+          <div className="flex items-center">
+            <button
+              onClick={handleThemeChange}
+              className="btn btn-square btn-sm btn-ghost lg:mx-2"
+            >
+              {theme ? (
+                <HiSun className="text-2xl" />
+              ) : (
+                <HiMoon className="text-2xl" />
+              )}
+            </button>
+            <Link to="/" target="self">
+              <div className="flex items-center">
+                <WsLogo className="w-fit h-8" />
+                <div className="ml-2 text-md font-header font-bold">
+                  <p>Webb</p>
+                  <p className="-mt-2">School</p>
+                </div>
               </div>
-            </div>
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
       <div className="drawer drawer-mobile">

@@ -1,21 +1,22 @@
 import React from "react";
 import { ImStarEmpty, ImStarFull } from "react-icons/im";
 import Rating from "react-rating";
-import swal from "sweetalert";
+import Swal from "sweetalert2";
 import primaryAxios from "../../../Api/primaryAxios";
 import { ReactComponent as Profile } from "../../../Assets/user.svg";
 
 const ReviewCard = ({ allcard, index, refetch }) => {
   const handleAddToSpecial = (id) => {
-    swal({
-      title: "Are you sure?",
-      text: "Are you add this in the homepage!",
-      icon: "warning",
-      className: "rounded-xl",
-      buttons: ["Cancle", "Ok"],
-      confirmButtonColor: "#4A4E94",
-    }).then((willDelete) => {
-      if (willDelete) {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You want to add this in the homepage!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes'
+    }).then((result) => {
+      if (result.isConfirmed) {
         (async () => {
           const { data } = await primaryAxios.post(`/allreviews`, {
             rating: allcard?.rating,
@@ -26,18 +27,14 @@ const ReviewCard = ({ allcard, index, refetch }) => {
           if (data.success) {
             refetch();
           }
-          swal("The review has been successfully added to homepage", {
-            icon: "success",
-            className: "rounded-xl",
-          });
+          Swal.fire(
+            'Success',
+            'Review added to homepage',
+            'success'
+          )
         })();
-      } else {
-        swal("Action Canclled", {
-          icon: "success",
-          className: "rounded-xl",
-        });
       }
-    });
+    })
   };
   return (
     <tr>

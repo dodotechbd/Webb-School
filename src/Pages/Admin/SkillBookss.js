@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import swal from "sweetalert";
 import primaryAxios from "../../Api/primaryAxios";
+import { successToast } from "../../utils/utils";
 
 const SkillBookss = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -13,11 +13,7 @@ const SkillBookss = () => {
     (async () => {
       const { data } = await primaryAxios.post(`/SkillBooks`, newReview);
       if (data.acknowledged) {
-        swal("The book has been successfully posted", {
-          icon: "success",
-          className: "rounded-xl",
-        });
-
+        successToast("The book has been successfully posted");
         reset();
       }
     })();

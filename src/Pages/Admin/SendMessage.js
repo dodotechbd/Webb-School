@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import Swal from "sweetalert2";
 import primaryAxios from "../../Api/primaryAxios";
 import useMessage from "../../Hooks/useMessage";
+import { successToast } from "../../utils/utils";
 
 const SendMessage = ({ user, send, back, history, header }) => {
   const { register, handleSubmit, reset } = useForm({});
@@ -19,21 +19,7 @@ const SendMessage = ({ user, send, back, history, header }) => {
     (async () => {
       const { data } = await primaryAxios.post(`/message`, newReview);
       if (data.acknowledged) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "green",
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1000,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "success",
-          title: "Success",
-        });
+        successToast("Message sent successfully!");
         await primaryAxios.put(`/user`, {
           name: user?.name,
           email: user?.email,
@@ -50,21 +36,7 @@ const SendMessage = ({ user, send, back, history, header }) => {
     (async () => {
       const { data } = await primaryAxios.delete(`/message/${id}`);
       if (data.deletedCount > 0) {
-        const Toast = Swal.mixin({
-          toast: true,
-          position: "top-right",
-          iconColor: "green",
-          customClass: {
-            popup: "colored-toast",
-          },
-          showConfirmButton: false,
-          timer: 1000,
-          timerProgressBar: true,
-        });
-        await Toast.fire({
-          icon: "success",
-          title: "deleted",
-        });
+        successToast("Message deleted!")
         refetch();
         setLoading("");
       }
