@@ -64,7 +64,7 @@ import UnderConstruction from "./Pages/WrongRoute/UnderConstruction";
 import UserSite from "./UserSite";
 
 function App() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
   useEffect(() => {
     setTheme(
       JSON.parse(window.localStorage?.getItem("webb-school-theme")) || theme
