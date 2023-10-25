@@ -54,3 +54,11 @@ export const getTimeAgo = (dateData) => {
     return `${years} ${years === 1 ? "year" : "years"} ago`;
   }
 };
+
+export const getFirebaseErrorMessage = (e) => {
+  if (e?.code == "auth/user-not-found") return "User not found!";
+  if (e?.code == "auth/invalid-password") return "Invalid Password!";
+  if (e?.code == "auth/wrong-password") return "Wrong Password!";
+  if (e?.code == "auth/email-already-in-use") return "Email already in use.";
+  return e?.message || "Something went wrong. Please try again.";
+};

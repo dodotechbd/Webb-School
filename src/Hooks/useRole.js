@@ -16,17 +16,21 @@ const useRole = () => {
       setUserData(data);
       setRoleLoading(false);
     } else {
+      setRole("");
+      setUserData(null);
       setRoleLoading(false);
     }
   };
 
   useEffect(() => {
-    if (user) {
+    if (user || (user && userData)) {
       fetchRoleData();
     } else {
+      setRole("");
+      setUserData(null);
       setRoleLoading(false);
     }
-  }, [user]);
+  }, [user, userData]);
   const fetchRole = () => {
     fetchRoleData();
   };

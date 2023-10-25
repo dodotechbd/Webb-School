@@ -4,13 +4,13 @@ import {
   useUpdateProfile,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { ImSpinner9 } from "react-icons/im";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
-import useMessage from "../../Hooks/useMessage";
 import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
-import Loading from "../Shared/Loading/Loading";
+import { getFirebaseErrorMessage } from "../../utils/utils";
 import Social from "./Social";
 
 const SignUp = () => {
@@ -26,7 +26,6 @@ const SignUp = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [confirmPassword, setConfirmPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
-  const [message, , refetch] = useMessage();
   const [role, roleLoading, userData, fetchRole] = useRole();
 
   const [createUserWithEmailAndPassword, user, loading, error] =
@@ -38,42 +37,38 @@ const SignUp = () => {
   let location = useLocation();
   let from = location.state?.from?.pathname || "/";
 
-  const createUser = async (userData) => {
-    const { data } = await primaryAxios.put(`/user`, {
-      name: userData.name,
-      email: userData.email,
+  const onSubmit = async (data) => {
+    setIsLoading(true);
+    const firebaseUser = await createUserWithEmailAndPassword(
+      data.email,
+      data.password
+    );
+    if (!firebaseUser) return setIsLoading(false);
+    await updateProfile({ displayName: data.name });
+    const { dbUser } = await primaryAxios.put(`/dbUser`, {
+      name: data.name,
+      email: data.email,
       image: "",
       messages: 1,
     });
-    if (data.token) {
-      localStorage.setItem("authorizationToken", data.token);
-    }
-    if (data.success) {
+    if (dbUser?.token) {
+      localStorage.setItem("authorizationToken", dbUser.token);
       await primaryAxios.post(`/message`, {
         title: "Welcome to Webb School: Igniting Educational Innovation!",
         details:
           "Welcome to Webb School, where education meets innovation! Join us and explore limitless learning possibilities. Let's embark on this educational journey together!",
-        email: userData.email,
+        email: dbUser.email,
       });
       await fetchRole();
+      navigate(from, { replace: true });
     }
-  };
-
-  const onSubmit = async (data) => {
-    setIsLoading(true);
-    await createUserWithEmailAndPassword(data.email, data.password);
-    await updateProfile({ displayName: data.name });
-    await createUser(data);
-    navigate(from, { replace: true });
     setIsLoading(false);
   };
-
-  if (loading || updating || isLoading) {
-    return <Loading></Loading>;
-  }
   let singInError;
   if (error || upError) {
-    singInError = <p>{error?.message || upError?.message}</p>;
+    singInError = (
+      <p className="text-error">{getFirebaseErrorMessage(error || upError)}</p>
+    );
   }
   return (
     <div>
@@ -276,10 +271,14 @@ const SignUp = () => {
                 {singInError}
                 <button
                   type="submit"
-                  disabled={confirmPassword}
+                  disabled={confirmPassword || loading || updating || isLoading}
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
-                  Register
+                  {isLoading ? (
+                    <ImSpinner9 className="text-2xl mx-auto animate-spin" />
+                  ) : (
+                    "Register"
+                  )}
                 </button>
                 <p className="text-gray-500 text-bold mt-2">
                   Already have an account?{" "}
@@ -288,17 +287,15 @@ const SignUp = () => {
                   </Link>
                 </p>
               </div>
-              <div className="flex flex-col space-y-5">
-                <span className="flex items-center justify-center space-x-2">
-                  <span className="h-px bg-gray-400 w-14"></span>
-                  <span className="font-normal text-gray-500">
-                    or login with
-                  </span>
-                  <span className="h-px bg-gray-400 w-14"></span>
-                </span>
-                <Social setLoading={setIsLoading}></Social>
-              </div>
             </form>
+            <div className="flex flex-col mt-5 space-y-5">
+              <span className="flex items-center justify-center space-x-2">
+                <span className="h-px bg-gray-400 w-14"></span>
+                <span className="font-normal text-gray-500">or login with</span>
+                <span className="h-px bg-gray-400 w-14"></span>
+              </span>
+              <Social></Social>
+            </div>
           </div>
         </div>
       </div>

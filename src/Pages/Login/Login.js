@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { ImSpinner9 } from "react-icons/im";
 import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import primaryAxios from "../../Api/primaryAxios";
 import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
-import Loading from "../Shared/Loading/Loading";
+import { getFirebaseErrorMessage } from "../../utils/utils";
 import Social from "./Social";
 
 const Login = () => {
@@ -45,12 +46,10 @@ const Login = () => {
     }
   }, [userData, from, navigate]);
 
-  if (loading || isLoading) {
-    return <Loading></Loading>;
-  }
-
   if (error) {
-    singInError = <p className="text-error">{error?.message}</p>;
+    singInError = (
+      <p className="text-error">{getFirebaseErrorMessage(error)}</p>
+    );
   }
 
   const onSubmit = (data) => {
@@ -174,9 +173,14 @@ const Login = () => {
 
                 <button
                   type="submit"
+                  disabled={loading || isLoading}
                   className="w-full px-4 py-2 text-lg font-semibold text-white transition-colors duration-300 bg-gradient-to-r from-[#4828A9] to-[#A25BF7] rounded-md shadow  hover:bg-gradient-to-l focus:outline-none focus:ring-blue-200 focus:ring-4"
                 >
-                  Log in
+                  {loading || isLoading ? (
+                    <ImSpinner9 className="text-2xl mx-auto animate-spin" />
+                  ) : (
+                    "Login"
+                  )}
                 </button>
 
                 <p className="text-gray-500 mt-2">
@@ -186,17 +190,15 @@ const Login = () => {
                   </Link>
                 </p>
               </div>
-              <div className="flex flex-col space-y-5">
-                <span className="flex items-center justify-center space-x-2">
-                  <span className="h-px bg-gray-400 w-14"></span>
-                  <span className="font-normal text-gray-500">
-                    or login with
-                  </span>
-                  <span className="h-px bg-gray-400 w-14"></span>
-                </span>
-                <Social setLoading={setIsLoading}></Social>
-              </div>
             </form>
+            <div className="flex flex-col mt-5 space-y-5">
+              <span className="flex items-center justify-center space-x-2">
+                <span className="h-px bg-gray-400 w-14"></span>
+                <span className="font-normal text-gray-500">or login with</span>
+                <span className="h-px bg-gray-400 w-14"></span>
+              </span>
+              <Social></Social>
+            </div>
           </div>
         </div>
       </div>
