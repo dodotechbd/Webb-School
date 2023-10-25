@@ -201,14 +201,19 @@
 }
 
 ::-webkit-scrollbar {
-  /* height: 5px; */
-  width: 10px;
-  background: none;
-  border-left: 1px solid #444444;
+  width: 8px;
+  background: #0b1120;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #444444;
+  background: #ffffff;
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  border: 0px solid transparent;
 }
 
 .message::-webkit-scrollbar {
