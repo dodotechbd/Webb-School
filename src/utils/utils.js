@@ -1,12 +1,19 @@
 import Swal from "sweetalert2";
 
 const Toast = (type, message) => {
+  const iconColor =
+    type === "success"
+      ? "#00A96E"
+      : type === "error"
+      ? "#FF5861"
+      : type === "warning"
+      ? "#FFBE00"
+      : "#00B5FF";
   Swal.mixin({
     toast: true,
     position: "top-end",
     showConfirmButton: false,
     timer: 3000,
-    timerProgressBar: true,
     didOpen: (toast) => {
       toast.addEventListener("mouseenter", Swal.stopTimer);
       toast.addEventListener("mouseleave", Swal.resumeTimer);
@@ -14,6 +21,9 @@ const Toast = (type, message) => {
   }).fire({
     icon: type,
     title: message,
+    background: isDarkMode() ? "#182233" : "#f0f0f0",
+    color: !isDarkMode() ? "#182233" : "#f0f0f0",
+    iconColor,
   });
 };
 
@@ -55,6 +65,9 @@ export const getTimeAgo = (dateData) => {
   }
 };
 
+export const isDarkMode = () =>
+  JSON.parse(window.localStorage?.getItem("webb-school-theme"));
+
 export const getFirebaseErrorMessage = (e) => {
   if (e?.code == "auth/user-not-found") return "User not found!";
   if (e?.code == "auth/invalid-password") return "Invalid Password!";
@@ -63,13 +76,15 @@ export const getFirebaseErrorMessage = (e) => {
   return e?.message || "Something went wrong. Please try again.";
 };
 
-export const actionModal = (onClick ) => {
+export const actionModal = (onClick) => {
   Swal.fire({
     title: "Are you sure?",
     text: "You won't be able to revert this!",
     icon: "warning",
     showCancelButton: true,
     confirmButtonColor: "#3085d6",
+    background: isDarkMode() ? "#182233" : "#f0f0f0",
+    color: !isDarkMode() ? "#182233" : "#f0f0f0",
     cancelButtonColor: "#d33",
     confirmButtonText: "Yes",
   }).then((result) => {
@@ -79,6 +94,8 @@ export const actionModal = (onClick ) => {
         title: "Success!",
         text: "Operation Completed.",
         icon: "success",
+        background: isDarkMode() ? "#182233" : "#f0f0f0",
+        color: !isDarkMode() ? "#182233" : "#f0f0f0",
       });
     }
   });

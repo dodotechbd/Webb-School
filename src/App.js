@@ -10,7 +10,6 @@ import Admins from "./Pages/Admin/Admins";
 import ManageBooks from "./Pages/Admin/Books/ManageBooks";
 import AddCourse from "./Pages/Admin/Courses/AddCourse";
 import AllCourse from "./Pages/Admin/Courses/AllCourse";
-import Language from "./Pages/Admin/Courses/Language";
 import Manage from "./Pages/Admin/Courses/Manage";
 import Special from "./Pages/Admin/Courses/Special";
 import Live from "./Pages/Admin/LivePost/Live";
@@ -191,10 +190,6 @@ function App() {
                 <Route
                   path="/admin/courses/manage/special"
                   element={<Special></Special>}
-                ></Route>
-                <Route
-                  path="/admin/courses/manage/language"
-                  element={<Language></Language>}
                 ></Route>
               </Route>
               <Route element={<ManageBooks />}>
