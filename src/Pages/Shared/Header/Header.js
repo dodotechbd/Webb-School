@@ -1,6 +1,5 @@
 import { signOut } from "firebase/auth";
 import React, { useState } from "react";
-import { useAuthState } from "react-firebase-hooks/auth";
 import { FiSend } from "react-icons/fi";
 import { HiMoon, HiSun } from "react-icons/hi";
 import Drawer from "react-modern-drawer";
@@ -19,7 +18,6 @@ import "./Header.css";
 const Header = ({ handleThemeChange, theme }) => {
   const [role, roleLoading, userData, fetchRole] = useRole();
   const pathname = window.location.pathname;
-  const [user, loading] = useAuthState(auth);
   const [admission, job, language] = useAllCourse.useAllCourse();
   const [isLiveNav, setIsLiveNav] = useState(true);
   const { data: myCourse } = useQuery(["myCourses", userData?.email], () =>
@@ -77,7 +75,7 @@ const Header = ({ handleThemeChange, theme }) => {
       </li>
     </>
   );
-  if (loading || roleLoading) {
+  if (roleLoading) {
     return (
       <div
         className="bg-gradient-to-r from-base-300 to-base-200"
@@ -160,7 +158,7 @@ const Header = ({ handleThemeChange, theme }) => {
                     </li>
                   </ul>
                   <li>
-                    {user ? (
+                    {userData ? (
                       <div>
                         <div className="flex flex-nowrap items-center cursor-pointer border-b border-neutral w-full">
                           <label className="avatar">
@@ -294,7 +292,7 @@ const Header = ({ handleThemeChange, theme }) => {
           </div>
 
           <div className="navbar-end hidden lg:flex items-center">
-            {user ? (
+            {userData ? (
               <div className="dropdown dropdown-end">
                 <button
                   onClick={() => handleRead()}
@@ -343,7 +341,7 @@ const Header = ({ handleThemeChange, theme }) => {
               )}
             </button>
 
-            {user ? (
+            {userData ? (
               <div className="dropdown dropdown-end">
                 <label tabIndex="0" className="btn btn-ghost btn-circle avatar">
                   <div className="w-9 rounded-full">
@@ -468,7 +466,7 @@ const Header = ({ handleThemeChange, theme }) => {
             )}
           </div>
           <div className="navbar-end lg:hidden flex">
-            {user ? (
+            {userData ? (
               <div className="dropdown dropdown-end">
                 <button tabIndex="0" className="pr-3 mt-3">
                   <div className="indicator">

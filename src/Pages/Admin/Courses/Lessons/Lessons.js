@@ -1,16 +1,29 @@
 import React, { useState } from "react";
-import { v4 as uuid } from "uuid";
 import Add from "./Add";
 
 const Lessons = ({ lessons, setLessons }) => {
   const [showLesson, setShowLesson] = useState(false);
+  const [selectedLesson, setSelectedLesson] = useState(null);
   const onSubmit = (data) => {
-    setLessons((prev) =>
-      prev ? [...prev, { ...data, id: uuid() }] : [{ ...data, id: uuid() }]
-    );
+    setLessons((prev) => {
+      if (!prev) {
+        return [data];
+      }
+      const updatedLessons = prev.map((lesson) =>
+        lesson.id === data.id ? data : lesson
+      );
+      if (!updatedLessons.some((lesson) => lesson.id === data.id)) {
+        updatedLessons.push(data);
+      }
+      return updatedLessons;
+    });
   };
-  const handleDeleteUser = (userId) => {
-    setLessons((prev) => prev.filter((item) => item.id !== userId));
+  const handleDeleteLesson = (id) => {
+    setLessons((prev) => prev.filter((item) => item.id !== id));
+  };
+  const closeModal = () => {
+    setShowLesson(false);
+    setSelectedLesson(null);
   };
   return (
     <div className="mb-16">
@@ -22,7 +35,7 @@ const Lessons = ({ lessons, setLessons }) => {
               <th>Index</th>
               <th>Title</th>
               <th align="center">Total Videos</th>
-              <th align="right">Remove</th>
+              <th align="right">Actions</th>
             </tr>
           </thead>
           <tbody>
@@ -35,8 +48,17 @@ const Lessons = ({ lessons, setLessons }) => {
                 <td align="center">{item.videos.length}</td>
                 <td align="right">
                   <button
-                    onClick={() => handleDeleteUser(item.id)}
-                    className="btn btn-error btn-xs"
+                    onClick={() => {
+                      setShowLesson(true);
+                      setSelectedLesson(item);
+                    }}
+                    className="btn btn-info btn-outline btn-xs mr-2"
+                  >
+                    Edit
+                  </button>
+                  <button
+                    onClick={() => handleDeleteLesson(item.id)}
+                    className="btn btn-error btn-outline btn-xs"
                   >
                     Delete
                   </button>
@@ -55,7 +77,8 @@ const Lessons = ({ lessons, setLessons }) => {
       <Add
         onSubmit={onSubmit}
         show={showLesson}
-        close={() => setShowLesson(false)}
+        close={closeModal}
+        selectedLesson={selectedLesson}
       />
     </div>
   );

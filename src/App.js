@@ -8,13 +8,8 @@ import AddBlogs from "./Pages/Admin/AddBlogs";
 import Admin from "./Pages/Admin/Admin";
 import Admins from "./Pages/Admin/Admins";
 import ManageBooks from "./Pages/Admin/Books/ManageBooks";
-import AddAdmission from "./Pages/Admin/Courses/AddAdmission";
 import AddCourse from "./Pages/Admin/Courses/AddCourse";
-import AddJob from "./Pages/Admin/Courses/AddJob";
-import AddLanguage from "./Pages/Admin/Courses/AddLanguage";
-import Admission from "./Pages/Admin/Courses/Admission";
 import AllCourse from "./Pages/Admin/Courses/AllCourse";
-import Job from "./Pages/Admin/Courses/Job";
 import Language from "./Pages/Admin/Courses/Language";
 import Manage from "./Pages/Admin/Courses/Manage";
 import Special from "./Pages/Admin/Courses/Special";
@@ -23,7 +18,6 @@ import AllReviews from "./Pages/Admin/ManageReview/AllReviews";
 import BookReview from "./Pages/Admin/ManageReview/BookReview";
 import CourseReview from "./Pages/Admin/ManageReview/CourseReview";
 import ManageReview from "./Pages/Admin/ManageReview/ManageReview";
-import Message from "./Pages/Admin/Message";
 import Payments from "./Pages/Admin/Payments";
 import SkillBookss from "./Pages/Admin/SkillBookss";
 import UserDetails from "./Pages/Admin/UserDetails";
@@ -65,7 +59,7 @@ import UnderConstruction from "./Pages/WrongRoute/UnderConstruction";
 import UserSite from "./UserSite";
 
 function App() {
-  const [theme, setTheme] = useState(false);
+  const [theme, setTheme] = useState(true);
   useEffect(() => {
     setTheme(
       JSON.parse(window.localStorage?.getItem("webb-school-theme")) || theme
@@ -202,14 +196,6 @@ function App() {
                   path="/admin/courses/manage/language"
                   element={<Language></Language>}
                 ></Route>
-                <Route
-                  path="/admin/courses/manage/job"
-                  element={<Job></Job>}
-                ></Route>
-                <Route
-                  path="/admin/courses/manage/admission"
-                  element={<Admission></Admission>}
-                ></Route>
               </Route>
               <Route element={<ManageBooks />}>
                 <Route
@@ -243,15 +229,6 @@ function App() {
                 element={<Live></Live>}
               ></Route>
               <Route path="/admin/addcourse" element={<AddCourse />}></Route>
-              <Route
-                path="/admin/addlanguage"
-                element={<AddLanguage></AddLanguage>}
-              ></Route>
-              <Route path="/admin/addjob" element={<AddJob></AddJob>}></Route>
-              <Route
-                path="/admin/addadmission"
-                element={<AddAdmission></AddAdmission>}
-              ></Route>
               <Route path="/admin/live" element={<Live></Live>}></Route>
               <Route
                 path="/admin/blogs"
@@ -261,10 +238,6 @@ function App() {
               <Route
                 path="/admin/payments"
                 element={<Payments></Payments>}
-              ></Route>
-              <Route
-                path="/admin/message"
-                element={<Message></Message>}
               ></Route>
               <Route
                 path="/admin/users/:email"

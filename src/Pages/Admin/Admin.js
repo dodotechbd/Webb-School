@@ -108,11 +108,6 @@ const Admin = ({ handleThemeChange, theme }) => {
                 <i className="fa-solid fa-credit-card"></i>Payments
               </NavLink>
             </li>
-            <li>
-              <NavLink to={"/admin/message"}>
-                <i className="fa-solid fa-bell"></i>Send Notification
-              </NavLink>
-            </li>
           </ul>
         </div>
       </div>

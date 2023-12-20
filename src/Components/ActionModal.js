@@ -21,7 +21,7 @@ const ActionModal = ({
   return (
     <>
       {open && (
-        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0">
+        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0 bg-base-100/50">
           <div className="w-96 bg-base-300 pt-6 rounded-3xl">
             <div className="flex justify-center">
               <div className="px-5 py-4 rounded-2xl bg-[#EF4444]/10">
@@ -55,7 +55,7 @@ const ActionModal = ({
         </div>
       )}
       {special && (
-        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0">
+        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0 bg-base-100/50">
           <div className="w-96 bg-base-300 pt-6 rounded-3xl">
             <div className="flex justify-center">
               <div className="px-5 py-4 rounded-2xl bg-secondary/10">
@@ -90,7 +90,7 @@ const ActionModal = ({
         </div>
       )}
       {success && (
-        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0">
+        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0 bg-base-100/50">
           <div className="w-96 bg-base-300 pt-6 rounded-3xl">
             <div className="flex justify-center">
               <div className="px-5 py-4 rounded-2xl bg-[#22C55E]/10">
@@ -112,7 +112,7 @@ const ActionModal = ({
         </div>
       )}
       {added && (
-        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0">
+        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0 bg-base-100/50">
           <div className="w-96 bg-base-300 pt-6 rounded-3xl">
             <div className="flex justify-center">
               <div className="px-5 py-4 rounded-2xl bg-[#22C55E]/10">
@@ -135,7 +135,7 @@ const ActionModal = ({
         </div>
       )}
       {loading && (
-        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0">
+        <div className="fixed z-50 w-full h-full flex items-center justify-center top-0 left-0 bg-base-100/50">
           <div className="w-96 bg-base-300 pt-6 rounded-3xl">
             <div className="flex justify-center">
               <div className="px-5 py-4 rounded-2xl bg-primary/10">

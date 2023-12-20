@@ -54,3 +54,32 @@ export const getTimeAgo = (dateData) => {
     return `${years} ${years === 1 ? "year" : "years"} ago`;
   }
 };
+
+export const getFirebaseErrorMessage = (e) => {
+  if (e?.code == "auth/user-not-found") return "User not found!";
+  if (e?.code == "auth/invalid-password") return "Invalid Password!";
+  if (e?.code == "auth/wrong-password") return "Wrong Password!";
+  if (e?.code == "auth/email-already-in-use") return "Email already in use.";
+  return e?.message || "Something went wrong. Please try again.";
+};
+
+export const actionModal = (onClick ) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      onClick();
+      Swal.fire({
+        title: "Success!",
+        text: "Operation Completed.",
+        icon: "success",
+      });
+    }
+  });
+};

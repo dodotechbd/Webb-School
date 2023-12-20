@@ -6,7 +6,7 @@ import useMessage from "../../Hooks/useMessage";
 import useRole from "../../Hooks/useRole";
 import auth from "../../firebase.init";
 
-const Social = ({ setLoading }) => {
+const Social = () => {
   const [signInWithGoogle, user, loading, error] = useSignInWithGoogle(auth);
   const [role, roleLoading, userData, fetchRole] = useRole();
   const [message, , refetch] = useMessage();
@@ -46,32 +46,28 @@ const Social = ({ setLoading }) => {
     (async () => {
       if (user) {
         setIsLoading(true);
-        if (
-          user.user.metadata.creationTime === user.user.metadata.lastSignInTime
-        ) {
+        const { data } = await primaryAxios.get(
+          `/user-role?email=${user.user.email}`
+        );
+        if (!data.email) {
           await createUser();
+          await fetchRole();
           setIsLoading(false);
           navigate(from, { replace: true });
         } else {
+          await fetchRole();
           setIsLoading(false);
           navigate(from, { replace: true });
         }
       }
     })();
-    fetchRole();
   }, [from, navigate, user]);
-  useEffect(() => {
-    if (loading || isLoading) {
-      setLoading(true);
-    } else {
-      setLoading(false);
-    }
-  }, [loading, isLoading]);
   return (
     <div className="flex flex-col space-y-4">
-      {error && <p className="error my-5">{error.message}</p>}
+      {error && <p className="text-error">{error.message}</p>}
       <button
         onClick={() => signInWithGoogle()}
+        disabled={isLoading || loading}
         className="flex items-center justify-center px-4 py-2 space-x-2 transition-colors duration-300 border border-[#A25BF7] rounded-md group hover:bg-gradient-to-r from-[#4828A9] to-[#A25BF7] hover:text-white hover:font-bold focus:outline-none text-black"
       >
         <img
@@ -79,7 +75,7 @@ const Social = ({ setLoading }) => {
           className="w-6 h-6"
           alt="image"
         />{" "}
-        <span>Login with Google</span>
+        <span>{isLoading || loading ? "Loading..." : "Login with Google"}</span>
       </button>
     </div>
   );
