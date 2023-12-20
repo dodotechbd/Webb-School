@@ -28,6 +28,15 @@ const useJob = () => {
   return [job, isLoading, refetch, jobLoading];
 };
 
+const useAllCourses = () => {
+  const {
+    data: courses,
+    isLoading,
+    refetch,
+  } = useQuery(["all"], () => primaryAxios.get(`/courses`));
+  return { courses, isLoading, refetch };
+};
+
 const useAllCourse = () => {
   const [language, isLoading] = useLanguage();
   const [admission, , , admissionLoading] = useAdmission();
@@ -43,4 +52,5 @@ export default {
   useJob,
   useAdmission,
   useAllCourse,
+  useAllCourses,
 };
