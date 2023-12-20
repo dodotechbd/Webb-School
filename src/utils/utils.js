@@ -62,3 +62,24 @@ export const getFirebaseErrorMessage = (e) => {
   if (e?.code == "auth/email-already-in-use") return "Email already in use.";
   return e?.message || "Something went wrong. Please try again.";
 };
+
+export const actionModal = (onClick ) => {
+  Swal.fire({
+    title: "Are you sure?",
+    text: "You won't be able to revert this!",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Yes",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      onClick();
+      Swal.fire({
+        title: "Success!",
+        text: "Operation Completed.",
+        icon: "success",
+      });
+    }
+  });
+};

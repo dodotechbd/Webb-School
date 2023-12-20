@@ -18,7 +18,7 @@ const Courses = () => {
             </li>
             <li className="mx-1">
               <Link className="btn-sm btn-secondary text-base-200" to={"/admin/addcourse"}>
-                Create New Course<i className="fa-solid fa-folder-plus"></i>
+                Add New Course<i className="fa-solid fa-folder-plus"></i>
               </Link>
             </li>
           </ul>

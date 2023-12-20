@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { IoCreateOutline } from "react-icons/io5";
-import { successToast } from "../../../../utils/utils";
+import { v4 as uuid } from "uuid";
+import { errorToast, successToast } from "../../../../utils/utils";
 
 const tableHead = [
   { id: 1, name: "Video Title", required: true },
   { id: 2, name: "Video URL", required: true },
 ];
 
-const Add = ({ onSubmit, show, close }) => {
+const Add = ({ onSubmit, show, close, selectedLesson }) => {
   const [videos, setVideos] = useState();
   const [title, setTitle] = useState("");
   const [refresh, setRefresh] = useState(false);
@@ -24,6 +25,11 @@ const Add = ({ onSubmit, show, close }) => {
       values[row][column] = value;
       return values;
     });
+  };
+
+  const onClose = () => {
+    clear();
+    close();
   };
 
   const handleChange = (value, row, column) => {
@@ -46,16 +52,22 @@ const Add = ({ onSubmit, show, close }) => {
   };
 
   const handleSubmit = () => {
-    let filterData = videos.filter((arr) => arr.join("").length !== 0);
-    if (filterData.length === 0) {
-      successToast("Please fill atleast one video data")
+    let filterVideos = videos.filter(
+      (arr) => arr[0].length !== 0 && arr[1].length !== 0
+    );
+    if (filterVideos.length === 0) {
+      errorToast("Please fill atleast one video data");
       return;
     }
-    const data = {
-      title,
-      videos,
-    };
-    // onSubmit(data);
+    const videoData = filterVideos.map((video, idx) => ({
+      index: idx + 1,
+      title: video[0],
+      videoUrl: video[1],
+    }));
+    const data = { id: selectedLesson?.id || uuid(), title, videos: videoData };
+    onSubmit(data);
+    onClose();
+    successToast("Lessons added successfully");
   };
 
   const remove = (index) => {
@@ -87,16 +99,28 @@ const Add = ({ onSubmit, show, close }) => {
       setVideos([...videos, getEmptyValues()]);
   }, [videos]);
 
+  useEffect(() => {
+    if (selectedLesson) {
+      const initialVideos = selectedLesson?.videos?.map((video) => [
+        video?.title,
+        video?.videoUrl,
+      ]);
+      setVideos(initialVideos);
+      setTitle(selectedLesson?.title);
+    }
+  }, [selectedLesson]);
+
   if (show) {
     return (
       <div className="fixed z-50 w-screen h-screen top-0 left-right">
         <div className="modal-box p-0 bg-base-200 max-w-2xl w-full h-full">
           <div className="px-3 pt-3 pb-2 bg-info flex justify-between">
             <p className="text-xl text-white flex items-center gap-2">
-              <IoCreateOutline size={24} /> Create Lesson
+              <IoCreateOutline size={24} /> {selectedLesson ? "Edit" : "Add"}{" "}
+              Lesson
             </p>
             <button
-              onClick={close}
+              onClick={onClose}
               className="btn btn-sm btn-ghost text-white btn-square hover:bg-rose-600 "
             >
               ✕
@@ -126,7 +150,8 @@ const Add = ({ onSubmit, show, close }) => {
                 onClick={() => handleSubmit()}
                 className="btn font-thin btn-success hover:bg-green-600"
               >
-                Create <IoCreateOutline className="ml-2 text-lg" />
+                {selectedLesson ? "Update" : "Add"}
+                <IoCreateOutline className="ml-2 text-lg" />
               </button>
             </div>
             <p className="px-4 py-2 text-sm text-gray-400">
